@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Bootcamp - Beginner Course</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            surface: {
+              0: '#060814',
+              1: '#0a0f1c',
+              2: '#0f1629',
+              3: '#141c33',
+              4: '#1a2440',
+            },
+            accent: {
+              blue: '#3b82f6',
+              orange: '#f97316',
+              cyan: '#22d3ee',
+              green: '#34d399',
+            },
+            ink: {
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              300: '#cbd5e1',
+              400: '#94a3b8',
+              500: '#64748b',
+              600: '#475569',
+              700: '#334155',
+              800: '#1e293b',
+            }
+          },
+          fontFamily: {
+            display: ['"Plus Jakarta Sans"', 'Tajawal', 'sans-serif'],
+            body: ['Tajawal', '"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Fira Code"', 'monospace'],
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            'fade-in': 'fadeIn 0.5s ease forwards',
+            'glow-pulse': 'glowPulse 3s ease-in-out infinite',
+            'line-grow': 'lineGrow 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+          },
+          keyframes: {
+            fadeUp: {
+              '0%': { opacity: '0', transform: 'translateY(32px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            glowPulse: {
+              '0%, 100%': { opacity: '0.4' },
+              '50%': { opacity: '1' },
+            },
+            lineGrow: {
+              '0%': { transform: 'scaleY(0)', transformOrigin: 'top' },
+              '100%': { transform: 'scaleY(1)', transformOrigin: 'top' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    /* ===== THEME TOKENS ===== */
+    :root {
+      --bg-page: #f8fafc;
+      --bg-body: #f8fafc;
+      --text-body: #0f172a;
+      --text-heading: #0f172a;
+      --text-muted: #64748b;
+      --text-faint: #94a3b8;
+      --border-main: #e2e8f0;
+      --border-subtle: #f1f5f9;
+      --bg-surface: #ffffff;
+      --bg-surface-raised: #f8fafc;
+      --bg-surface-inset: #f1f5f9;
+      --bg-header: rgba(248, 250, 252, 0.85);
+      --header-border: rgba(226, 232, 240, 0.8);
+      --scrollbar-thumb: #cbd5e1;
+      --scrollbar-hover: #94a3b8;
+      --grid-color: rgba(59, 130, 246, 0.04);
+      --grain-opacity: 0.008;
+      --selection-bg: rgba(59, 130, 246, 0.15);
+      --selection-text: #0f172a;
+      --code-bg: #0f1729;
+      --code-header-bg: #162033;
+      --code-border: rgba(59, 130, 246, 0.12);
+      --code-text: #e2e8f0;
+      --timeline-bg: rgba(59, 130, 246, 0.12);
+      --node-bg: #ffffff;
+      --accent-blue: #3b82f6;
+      --accent-orange: #f97316;
+      --accent-cyan: #22d3ee;
+      --accent-green: #34d399;
+    }
+
+    [data-theme="dark"] {
+      --bg-page: #060814;
+      --bg-body: #060814;
+      --text-body: #e2e8f0;
+      --text-heading: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-faint: #64748b;
+      --border-main: #1e293b;
+      --border-subtle: #0f1729;
+      --bg-surface: #0a0f1c;
+      --bg-surface-raised: #0f1629;
+      --bg-surface-inset: #0c1222;
+      --bg-header: rgba(6, 8, 20, 0.8);
+      --header-border: rgba(30, 41, 59, 0.6);
+      --scrollbar-thumb: #1e293b;
+      --scrollbar-hover: #334155;
+      --grid-color: rgba(59, 130, 246, 0.03);
+      --grain-opacity: 0.015;
+      --selection-bg: rgba(59, 130, 246, 0.3);
+      --selection-text: #f1f5f9;
+      --code-bg: #0c1222;
+      --code-header-bg: #0f1729;
+      --code-border: rgba(59, 130, 246, 0.1);
+      --code-text: #e2e8f0;
+      --timeline-bg: rgba(59, 130, 246, 0.2);
+      --node-bg: #0a0f1c;
+    }
+
+    body {
+      font-family: 'Tajawal', 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg-body);
+      color: var(--text-body);
+      -webkit-font-smoothing: antialiased;
+      transition: background 0.35s ease, color 0.35s ease;
+    }
+    html[dir="ltr"] body {
+      font-family: 'Plus Jakarta Sans', 'Tajawal', sans-serif;
+    }
+
+    .font-mono-code {
+      font-family: 'Fira Code', monospace;
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.08s; }
+    .reveal-delay-2 { transition-delay: 0.16s; }
+    .reveal-delay-3 { transition-delay: 0.24s; }
+    .reveal-delay-4 { transition-delay: 0.32s; }
+
+    /* Timeline ribbon */
+    .timeline-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent-blue), var(--accent-orange), var(--accent-cyan));
+      opacity: 0.35;
+    }
+    html[dir="rtl"] .timeline-line { right: 23px; }
+    html[dir="ltr"] .timeline-line { left: 23px; }
+    @media (min-width: 768px) {
+      html[dir="rtl"] .timeline-line,
+      html[dir="ltr"] .timeline-line {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+      }
+    }
+
+    .timeline-node {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 2px solid var(--accent-orange);
+      background: var(--node-bg);
+      position: absolute;
+      top: 24px;
+      z-index: 10;
+      transition: all 0.3s ease;
+    }
+    html[dir="rtl"] .timeline-node { right: 18px; }
+    html[dir="ltr"] .timeline-node { left: 18px; }
+    @media (min-width: 768px) {
+      html[dir="rtl"] .timeline-node,
+      html[dir="ltr"] .timeline-node {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+      }
+    }
+    .timeline-node::after {
+      content: '';
+      position: absolute;
+      inset: 2px;
+      border-radius: 50%;
+      background: var(--accent-orange);
+      opacity: 0.6;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--scrollbar-hover); }
+
+    /* Grid pattern */
+    .grid-pattern {
+      background-image:
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    /* Noise grain overlay */
+    .grain::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: var(--grain-opacity);
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* Selection color */
+    ::selection {
+      background: var(--selection-bg);
+      color: var(--selection-text);
+    }
+
+    /* Code block styling */
+    .code-block {
+      background: var(--code-bg);
+      border: 1px solid var(--code-border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .code-block-header {
+      background: var(--code-header-bg);
+      border-bottom: 1px solid var(--code-border);
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Card hover */
+    .card-hover {
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent-blue);
+    }
+
+    /* Button press */
+    .btn-press:active {
+      transform: scale(0.97);
+    }
+
+    /* Gradient text */
+    .gradient-text {
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-orange));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Theme transition for all themed elements */
+    .theme-transition,
+    .theme-transition *,
+    .theme-transition *::before,
+    .theme-transition *::after {
+      transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease !important;
+    }
+  </style>
+</head>
+<body class="grain">
+
+  <!-- Subtle grid -->
+  <div class="fixed inset-0 grid-pattern pointer-events-none z-0"></div>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header id="site-header" class="sticky top-0 z-50 border-b backdrop-blur-xl transition-all" style="background: var(--bg-header); border-color: var(--header-border);">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 py-3.5 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-accent-blue to-accent-orange flex items-center justify-center">
+          <i data-lucide="terminal" class="w-4.5 h-4.5 text-white"></i>
+        </div>
+        <div>
+          <span id="logo-text" class="font-extrabold text-sm md:text-base tracking-tight block leading-none font-display" style="color: var(--text-heading);">Python Bootcamp</span>
+          <span id="sub-logo" class="font-mono-code text-[9px] tracking-[0.15em] uppercase block mt-0.5" style="color: var(--accent-orange);">Beginner Course Syllabus</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2.5">
+        <div class="hidden lg:flex items-center gap-5 text-[10px] ps-5 ms-1" style="border-left: 1px solid var(--border-main);">
+          <div class="text-start">
+            <span id="metric-hrs-lbl" class="block text-[8px] uppercase tracking-wider leading-none" style="color: var(--text-faint);">Course Duration</span>
+            <span id="metric-hrs-val" class="font-bold mt-0.5 block" style="color: var(--text-heading);">51 Live Hours</span>
+          </div>
+          <div class="text-start">
+            <span id="metric-sess-lbl" class="block text-[8px] uppercase tracking-wider leading-none" style="color: var(--text-faint);">Total Sessions</span>
+            <span id="metric-sess-val" class="font-bold mt-0.5 block" style="color: var(--text-heading);">17 Sessions</span>
+          </div>
+        </div>
+
+        <button onclick="toggleGlobalLanguage()" class="px-3.5 py-2 rounded-lg transition-all font-bold text-[10px] uppercase flex items-center gap-1.5 btn-press" style="border: 1px solid var(--border-main); color: var(--text-body);">
+          <i data-lucide="globe" class="w-3.5 h-3.5" style="color: var(--accent-blue);"></i>
+          <span id="lang-toggle-text">العربية</span>
+        </button>
+
+        <button onclick="toggleThemeColor()" class="p-2 rounded-lg transition-all btn-press" style="border: 1px solid var(--border-main);">
+          <i id="theme-icon" data-lucide="moon" class="w-4 h-4" style="color: var(--text-faint);"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="relative pt-16 md:pt-20 pb-16 md:pb-24 px-5 md:px-8 overflow-hidden">
+    <canvas id="ambient-canvas" class="absolute inset-0 w-full h-full pointer-events-none opacity-20 z-0"></canvas>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+
+        <!-- Right column: text (RTL = visual right) -->
+        <div class="lg:col-span-7 space-y-7">
+          <div class="reveal">
+            <div class="inline-flex items-center gap-2 bg-accent-orange/10 border border-accent-orange/20 px-3.5 py-1.5 rounded-full text-[10px] font-bold tracking-wider text-accent-orange uppercase">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent-orange animate-glow-pulse"></span>
+              <span id="hero-badge-text">Your clear path to becoming a Python developer</span>
+            </div>
+          </div>
+
+          <h1 id="hero-title" class="reveal reveal-delay-1 text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-black tracking-tight leading-[1.1] font-display" style="color: var(--text-heading);">
+            The Complete Roadmap <br>
+            <span class="gradient-text">To Master Python & Build Real Applications</span>
+          </h1>
+
+          <p id="hero-desc" class="reveal reveal-delay-2 text-sm sm:text-base md:text-lg max-w-xl leading-relaxed" style="color: var(--text-muted);">
+            Starting from absolute zero, you'll learn to build web applications, work with databases, create desktop GUIs, and develop real-world projects — all in a structured, project-based curriculum.
+          </p>
+
+          <div class="reveal reveal-delay-3 flex flex-wrap gap-3 pt-2">
+            <a href="#syllabus-curriculum" class="px-6 py-3 rounded-xl font-bold bg-gradient-to-r from-accent-blue to-blue-600 text-white hover:shadow-lg hover:shadow-accent-blue/20 transition-all flex items-center gap-2 text-sm btn-press">
+              <span id="hero-cta-primary">Explore the Curriculum</span>
+              <i data-lucide="arrow-left" id="cta-arrow" class="w-4 h-4"></i>
+            </a>
+            <a href="#targets-blueprint" class="px-6 py-3 rounded-xl font-bold transition-all text-sm btn-press" id="hero-cta-secondary" style="border: 1px solid var(--border-main); background: var(--bg-surface); color: var(--text-heading);">
+              What will you learn?
+            </a>
+          </div>
+        </div>
+
+        <!-- Stats block -->
+        <div class="lg:col-span-5 reveal reveal-delay-2">
+          <div class="relative rounded-2xl border p-6 md:p-8 overflow-hidden" style="border-color: var(--border-main); background: var(--bg-surface);">
+            <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-accent-blue via-accent-orange to-accent-cyan"></div>
+
+            <div class="space-y-6">
+              <div>
+                <span class="font-mono-code text-[9px] tracking-widest uppercase block mb-1" style="color: var(--text-faint);">CURRICULUM OVERVIEW</span>
+                <h3 class="text-lg font-extrabold font-display" style="color: var(--text-heading);">17 sessions from basics to real projects</h3>
+              </div>
+
+              <div class="grid grid-cols-3 gap-3">
+                <div class="rounded-xl p-4 text-center" style="background: var(--bg-surface-raised); border: 1px solid var(--border-main);">
+                  <span class="text-2xl font-black font-display block" style="color: var(--accent-orange);">17</span>
+                  <span class="text-[9px] uppercase tracking-wider" style="color: var(--text-faint);">Projects</span>
+                </div>
+                <div class="rounded-xl p-4 text-center" style="background: var(--bg-surface-raised); border: 1px solid var(--border-main);">
+                  <span class="text-2xl font-black font-display block" style="color: var(--accent-green);">10+</span>
+                  <span class="text-[9px] uppercase tracking-wider" style="color: var(--text-faint);">Tools</span>
+                </div>
+                <div class="rounded-xl p-4 text-center" style="background: var(--bg-surface-raised); border: 1px solid var(--border-main);">
+                  <span class="text-2xl font-black font-display block" style="color: var(--accent-cyan);">6</span>
+                  <span class="text-[9px] uppercase tracking-wider" style="color: var(--text-faint);">Weeks</span>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3 pt-2">
+                <div class="flex-1 h-1.5 rounded-full overflow-hidden" style="background: var(--bg-surface-inset);">
+                  <div class="h-full rounded-full bg-gradient-to-r from-accent-blue to-accent-orange" style="width: 100%;"></div>
+                </div>
+                <span class="font-mono-code text-[10px]" style="color: var(--text-faint);">100% Project Focus</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 1: CURRICULUM TIMELINE ============ -->
+  <section id="syllabus-curriculum" class="py-16 md:py-24 px-5 md:px-8 border-t relative" style="border-color: var(--border-main);">
+    <div class="max-w-6xl mx-auto relative">
+
+      <!-- Section header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 relative z-10">
+        <div class="space-y-3 text-start reveal">
+          <h2 id="curr-title" class="text-3xl md:text-4xl font-black font-display tracking-tight" style="color: var(--text-heading);">Session Timeline</h2>
+          <p id="curr-desc" class="text-sm max-w-lg" style="color: var(--text-faint);">
+            A glowing timeline through 17 production sessions. Check the deliverable project under each session!
+          </p>
+        </div>
+
+        <div class="relative w-full md:w-80 reveal reveal-delay-1">
+          <i data-lucide="search" class="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4" style="color: var(--text-faint);"></i>
+          <input
+            type="text"
+            id="search-input"
+            oninput="handleSearchFilter(this.value)"
+            placeholder="Search for a topic..."
+            class="w-full pr-10 pl-4 py-2.5 rounded-xl font-medium text-sm transition-all"
+            style="border: 1px solid var(--border-main); background: var(--bg-surface); color: var(--text-body);"
+          />
+        </div>
+      </div>
+
+      <!-- Timeline line -->
+      <div id="glowing-ribbon" class="timeline-line z-0 hidden md:block">
+        <div class="absolute inset-y-0 left-0 w-full bg-gradient-to-b from-accent-blue via-accent-orange to-accent-cyan rounded-full" style="filter: blur(0.5px);"></div>
+      </div>
+
+      <!-- Curriculum cards -->
+      <div id="curriculum-timeline-deck" class="space-y-16 relative z-10"></div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 2: COGNITIVE MAP ============ -->
+  <section class="py-16 md:py-24 px-5 md:px-8 border-t" style="border-color: var(--border-main);">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto space-y-3 mb-12 reveal">
+        <h2 id="phil-title" class="text-3xl md:text-4xl font-black font-display tracking-tight" style="color: var(--text-heading);">الكود النظري ملوش مكان هنا!</h2>
+        <p id="phil-desc" class="text-sm font-medium" style="color: var(--text-muted);">
+          مبندرسش قواعد حفظ جافة وخلاص. كل مفهوم برمجي حقيقي بتفهمه، هتشوف توظيفه العملي المباشر في منتج كامل شغال.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        <!-- Selectors -->
+        <div id="phil-selectors-box" class="lg:col-span-5 space-y-2.5 reveal"></div>
+
+        <!-- Result card -->
+        <div class="lg:col-span-7 reveal reveal-delay-1">
+          <div class="h-full rounded-2xl border p-7 md:p-8 flex flex-col justify-between relative overflow-hidden" style="border-color: var(--border-main); background: var(--bg-surface);">
+            <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-accent-blue to-accent-orange"></div>
+
+            <div class="space-y-5 text-start">
+              <span id="mapper-tag" class="font-mono-code text-[9px] block tracking-widest uppercase" style="color: var(--text-faint);">
+                ACTIVE DEPLOYMENT MAPPER
+              </span>
+
+              <div>
+                <span id="mapper-heading" class="text-[10px] font-mono-code font-bold uppercase" style="color: var(--accent-orange);">أول ما تفهم وتكتب...</span>
+                <h3 id="mapper-concept" class="text-2xl font-black mt-1 font-display" style="color: var(--text-heading);">المفهوم البرمجي</h3>
+              </div>
+
+              <div class="py-3 flex items-center gap-3">
+                <span class="w-2 h-2 rounded-full bg-accent-green animate-glow-pulse"></span>
+                <div class="flex-1 border-t border-dashed" style="border-color: var(--border-main);"></div>
+                <span id="mapper-mid-label" class="font-mono-code text-[8px] tracking-wider" style="color: var(--text-faint);">مخرج البناء التلقائي</span>
+                <div class="flex-1 border-t border-dashed" style="border-color: var(--border-main);"></div>
+                <span class="w-2 h-2 rounded-full bg-accent-blue animate-glow-pulse"></span>
+              </div>
+
+              <div>
+                <span id="mapper-target-heading" class="text-[10px] font-mono-code font-bold uppercase" style="color: var(--accent-green);">هتقوم بانية ومجربة علطول فـ:</span>
+                <p id="mapper-target" class="text-lg md:text-xl font-bold leading-relaxed font-mono-code mt-1" style="color: var(--text-heading);">المنتج العملي المسلم</p>
+              </div>
+            </div>
+
+            <div class="pt-5 mt-5 border-t flex items-center justify-between text-[9px] font-mono-code" style="border-color: var(--border-main); color: var(--text-faint);">
+              <span id="mapper-status-txt">الحالة البرمجية: متصل بالـ Compiler</span>
+              <span id="mapper-file-id">Active Link: auth.py</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 3: TERMINAL ============ -->
+  <section class="py-16 md:py-24 px-5 md:px-8 border-t" style="border-color: var(--border-main); background: var(--bg-surface-inset);">
+    <div class="max-w-5xl mx-auto space-y-8">
+      <div class="text-center max-w-xl mx-auto space-y-2 reveal">
+        <h2 id="terminal-section-title" class="text-3xl md:text-4xl font-black font-display tracking-tight" style="color: var(--text-heading);">Try the code with one click</h2>
+        <p id="terminal-section-desc" class="text-sm" style="color: var(--text-muted);">
+          A live simulation showing you what your code output and logs will look like in real applications.
+        </p>
+      </div>
+
+      <div class="code-block max-w-3xl mx-auto reveal reveal-delay-1">
+        <!-- Title bar -->
+        <div class="code-block-header">
+          <div class="flex items-center gap-1.5">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f57]"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-[#febc2e]"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-[#28c840]"></span>
+          </div>
+          <div class="flex gap-1.5 font-mono-code text-[10px] mr-4">
+            <button onclick="changeTerminalTab('scraper.py')" id="tab-scraper" class="px-3 py-1 rounded-md transition-all bg-accent-blue/15 text-accent-blue font-bold border border-accent-blue/20">scraper.py</button>
+            <button onclick="changeTerminalTab('flask_app.py')" id="tab-fastapi" class="px-3 py-1 rounded-md transition-all text-ink-500 hover:text-ink-300">flask_app.py</button>
+          </div>
+        </div>
+
+        <!-- Code area -->
+        <div id="ide-canvas" class="font-mono-code text-[11px] p-5 mb-0 h-40 overflow-y-auto leading-relaxed text-start border-b" style="direction: ltr; background: var(--code-bg); color: var(--code-text); border-color: var(--code-border);"></div>
+
+        <!-- Output area -->
+        <div class="p-4 space-y-3">
+          <button id="run-script-btn" onclick="executeLocalCodeSim()" class="w-full py-3 rounded-xl font-mono-code text-xs font-bold bg-accent-blue text-white hover:bg-blue-500 flex items-center justify-center gap-2 transition-all btn-press">
+            <i data-lucide="play" class="w-4 h-4 fill-current"></i>
+            <span id="run-btn-label">Run the code</span>
+          </button>
+
+          <div id="ide-logs" class="font-mono-code text-[10px] p-4 rounded-xl h-28 overflow-y-auto flex flex-col justify-start space-y-1 text-start border" style="direction: ltr; background: var(--code-bg); color: var(--text-muted); border-color: var(--border-main);">
+            <span class="text-ink-600 italic">Click run above to see the simulation output...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ============ SECTION 5: SKILLS MATRIX ============ -->
+  <section id="targets-blueprint" class="py-16 md:py-24 px-5 md:px-8 border-t" style="border-color: var(--border-main);">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+
+      <div class="space-y-6 text-start reveal">
+        <h2 id="matrix-tech-title" class="text-3xl md:text-4xl font-black font-display tracking-tight" style="color: var(--text-heading);">Technologies & Tools Covered</h2>
+        <p id="matrix-tech-desc" class="text-sm leading-relaxed" style="color: var(--text-muted);">
+          This curriculum covers everything a professional <span class="font-bold" style="color: var(--accent-blue);">developer</span> needs in today's market:
+        </p>
+        <div id="tech-matrix-tags" class="flex flex-wrap gap-2 justify-start"></div>
+      </div>
+
+      <div class="space-y-6 text-start reveal reveal-delay-1">
+        <h2 id="matrix-outcomes-title" class="text-3xl md:text-4xl font-black font-display tracking-tight" style="color: var(--text-heading);">Skills & Learning Outcomes</h2>
+        <p id="matrix-outcomes-desc" class="text-sm leading-relaxed" style="color: var(--text-muted);">
+          After completing this course, you'll be able to build:
+        </p>
+        <div id="targets-checklist-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-ink-300"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ AI COACH DIALOG ============ -->
+  <div id="ai-coach-dialog" class="fixed inset-0 z-[60] flex items-center justify-center p-4 backdrop-blur-md hidden opacity-0 transition-all duration-300" style="background: rgba(0,0,0,0.65);">
+    <div class="w-full max-w-4xl max-h-[90vh] overflow-hidden rounded-2xl border flex flex-col relative shadow-2xl" style="border-color: var(--border-main); background: var(--bg-surface); color: var(--text-body);">
+
+      <div class="p-4 border-b flex items-center justify-between" style="border-color: var(--border-main); background: var(--bg-surface-raised);">
+        <div class="flex items-center gap-2">
+          <i data-lucide="brain-circuit" class="w-5 h-5" style="color: var(--accent-orange);"></i>
+          <span id="modal-top-heading" class="font-bold text-xs uppercase tracking-wider" style="color: var(--text-heading);">AI Session Customizer</span>
+        </div>
+        <button onclick="closeCoachDialog()" class="p-1 rounded-lg hover:opacity-70 transition-colors" style="color: var(--text-faint);">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="flex-grow overflow-y-auto p-6 grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="lg:col-span-4 space-y-5 text-start">
+          <div>
+            <h4 id="modal-session-lbl" class="font-extrabold text-xs uppercase tracking-wider" style="color: var(--accent-blue);">Selected Session</h4>
+            <p id="modal-session-title" class="text-sm font-bold mt-1" style="color: var(--text-heading);">Session Title</p>
+          </div>
+
+          <div class="space-y-2">
+            <label id="modal-select-lbl" class="block text-xs font-bold uppercase tracking-wider" style="color: var(--text-faint);">Your Interest Area</label>
+            <select id="modal-select-interest" class="w-full px-3 py-2 rounded-xl font-medium text-xs transition-all" style="border: 1px solid var(--border-main); background: var(--bg-surface-raised); color: var(--text-body);">
+              <option value="Web Development">Web Development</option>
+              <option value="Data Analysis">Data Analysis</option>
+              <option value="Automation & Scripting">Automation & Scripting</option>
+              <option value="Desktop Applications">Desktop Applications</option>
+              <option value="Mobile Apps">Mobile Apps</option>
+              <option value="Game Development">Game Development</option>
+            </select>
+          </div>
+
+          <div class="space-y-2">
+            <label id="modal-context-lbl" class="block text-xs font-bold uppercase tracking-wider" style="color: var(--text-faint);">Your Goals or Background</label>
+            <textarea id="modal-context-textarea" placeholder="e.g. I'm a complete beginner and want to build a personal project..." rows="4" class="w-full px-3 py-2.5 rounded-xl text-xs leading-relaxed transition-all" style="border: 1px solid var(--border-main); background: var(--bg-surface-raised); color: var(--text-body);"></textarea>
+          </div>
+
+          <button onclick="triggerAICustomizerRequest()" class="w-full py-3 px-4 rounded-xl font-bold text-white bg-gradient-to-r from-accent-blue to-blue-600 hover:opacity-90 transition-all flex items-center justify-center gap-2 btn-press">
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
+            <span id="modal-btn-txt">Customize Session with AI</span>
+          </button>
+        </div>
+
+        <div class="lg:col-span-8 flex flex-col min-h-[300px] relative">
+          <div id="modal-loading-screen" class="hidden absolute inset-0 z-10 flex flex-col items-center justify-center space-y-4" style="background: var(--bg-surface);">
+            <div class="relative h-14 w-14">
+              <div class="absolute inset-0 border-2 rounded-full animate-pulse" style="border-color: rgba(59, 130, 246, 0.2);"></div>
+              <div class="absolute inset-0 border-2 border-t-accent-blue rounded-full animate-spin"></div>
+            </div>
+            <div class="font-mono-code text-[10px] text-accent-blue tracking-widest text-center leading-loose">
+              CONSTRUCTING NEURAL SANDBOX...<br>
+              <span class="text-ink-600 font-sans text-[9px] lowercase">compiling custom python code matrices</span>
+            </div>
+          </div>
+
+          <div id="modal-output-viewer" class="flex-grow overflow-y-auto p-5 rounded-xl text-start" style="border: 1px solid var(--border-main); background: var(--bg-surface-raised);">
+            <div class="flex flex-col items-center justify-center h-full space-y-2 py-10" style="color: var(--text-faint);">
+              <i data-lucide="brain-circuit" class="w-10 h-10"></i>
+              <p id="modal-fallback-txt" class="text-xs">Select your options on the left and we'll generate a custom session for you.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 border-t text-[9px] font-mono-code flex items-center justify-between" style="border-color: var(--border-main); background: var(--bg-surface-raised); color: var(--text-faint);">
+        <span>Neural Sandbox Platform</span>
+        <span>Model: gemini-2.5-flash-preview-09-2025</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="border-t py-10 px-5 md:px-8 relative z-10" style="border-color: var(--border-main);">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background: var(--bg-surface-raised); border: 1px solid var(--border-main);">
+          <i data-lucide="terminal" class="w-4 h-4" style="color: var(--accent-blue);"></i>
+        </div>
+        <span class="font-mono-code text-[10px] font-bold uppercase tracking-widest" style="color: var(--text-faint);">
+          Python Ecosystem Course Blueprint 2026
+        </span>
+      </div>
+
+      <p id="footer-rights" class="text-[9px] font-mono-code text-center md:text-start" style="color: var(--text-faint);">
+        All rights reserved. No filler, no theory-only content. 2026.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Lucide icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- ============ JAVASCRIPT ============ -->
+  <script>
+    // ============================
+    // SYLLABUS DATA
+    // ============================
+    const SYLLABUS_DATABASE = [
+      {
+        week: 1,
+        weekTitle: { en: "Week 1 — Python Fundamentals", ar: "الأسبوع الأول — أساسيات بايثون" },
+        sessions: [
+          {
+            num: 1,
+            title: { en: "Introduction to Programming & Python Basics", ar: "مقدمة في البرمجة وأساسيات بايثون" },
+            topics: {
+              en: ["What is programming?", "Hardware vs Software", "CPU, RAM, Storage", "Compiler vs Interpreter", "Install Python & VS Code", "Terminal basics", "print(), comments, variables", "Data types: int, float, str, bool", "input(), type(), type casting"],
+              ar: ["إيه هي البرمجة؟", "الهاردوير مقابل السوفتوير", "المعالج والذاكرة والتخزين", "المترجم مقابل المفسر", "تثبيت بايثون و VS Code", "أساسيات الطرفية", "print() والتعليقات والمتغيرات", "أنواع البيانات: int, float, str, bool", "input() و type() وتحويل الأنواع"]
+            },
+            project: { en: "Student Card Generator", ar: "مولّد بطاقات الطلاب" },
+            difficulty: { en: "Beginner", ar: "مبتدئ" },
+            duration: { en: "3 Hours", ar: "3 ساعات" },
+            icon: "cpu"
+          },
+          {
+            num: 2,
+            title: { en: "Operators & Conditions", ar: "العمليات والشروط" },
+            topics: {
+              en: ["Arithmetic, assignment, comparison operators", "Logical operators: and, or, not", "Membership: in, Identity: is", "if / elif / else", "Nested conditions"],
+              ar: ["العمليات الحسابية والتعيين والمقارنة", "العمليات المنطقية: and, or, not", "الانتساب: in، الهوية: is", "جمل if / elif / else", "الشروط المتداخلة"]
+            },
+            project: { en: "Calculator, BMI Calculator, Grade System, Password Validator", ar: "حاسبة، حاسبة مؤشر كتلة الجسم، نظام الدرجات، مدقق كلمة المرور" },
+            difficulty: { en: "Beginner", ar: "مبتدئ" },
+            duration: { en: "3 Hours", ar: "3 ساعات" },
+            icon: "sliders"
+          },
+          {
+            num: 3,
+            title: { en: "Loops", ar: "حلقات التكرار" },
+            topics: {
+              en: ["while and for loops", "range()", "break, continue, pass", "Nested loops, counters, infinite loops"],
+              ar: ["حلقات while و for", "range()", "break و continue و pass", "الحلقات المتداخلة والعدادات والحلقات اللانهائية"]
+            },
+            project: { en: "Guess the Number, Multiplication Table, Quiz Game", ar: "خمن الرقم، جدول الضرب، لعبة كويز" },
+            difficulty: { en: "Beginner", ar: "مبتدئ" },
+            duration: { en: "3 Hours", ar: "3 ساعات" },
+            icon: "terminal"
+          }
+        ]
+      },
+      {
+        week: 2,
+        weekTitle: { en: "Week 2 — Working with Data", ar: "الأسبوع الثاني — التعامل مع البيانات" },
+        sessions: [
+          {
+            num: 4,
+            title: { en: "Strings", ar: "النصوص" },
+            topics: {
+              en: ["Indexing, slicing, concatenation", "String formatting", "upper(), lower(), replace(), split()", "find(), count(), strip(), startswith(), endswith()"],
+              ar: ["الفهرسة والتقطيع والربط", "تنسيق النصوص", "upper() و lower() و replace() و split()", "find() و count() و strip() و startswith() و endswith()"]
+            },
+            project: { en: "Word Counter, Username Validator", ar: "عدّاد الكلمات، مدقق اسم المستخدم" },
+            difficulty: { en: "Beginner", ar: "مبتدئ" },
+            duration: { en: "3 Hours", ar: "3 ساعات" },
+            icon: "type"
+          },
+          {
+            num: 5,
+            title: { en: "Lists & Tuples", ar: "القوائم والمجموعات" },
+            topics: {
+              en: ["Create, access, update, delete lists", "append(), insert(), remove(), pop()", "sort(), reverse()", "Tuples: create, unpack, vs lists", "enumerate(), zip()"],
+              ar: ["إنشاء وتحديث وحذف القوائم", "append() و insert() و remove() و pop()", "sort() و reverse()", "المجموعات: الإنشاء والفك والتفرق عن القوائم", "enumerate() و zip()"]
+            },
+            project: { en: "Shopping List, Student Grades Manager", ar: "قائمة التسوق، مدير درجات الطلاب" },
+            difficulty: { en: "Beginner-Intermediate", ar: "مبتدئ-متوسط" },
+            duration: { en: "3 Hours", ar: "3 ساعات" },
+            icon: "list"
+          },
+          {
+            num: 6,
+            title: { en: "Sets & Dictionaries", ar: "المجموعات والقواميس" },
+            topics: {
+              en: ["Sets: add, remove, union, intersection", "Removing duplicates", "Dictionaries: key/value, add, update, delete", "Loop through dictionaries", "Nested dictionaries"],
+              ar: ["المجموعات: add و remove و union و intersection", "إزالة التكرار", "القواميس: أزواج المفتاح/القيمة والتحديث والحذف", "الحلقات عبر القواميس", "القواميس المتداخلة"]
+            },
+            project: { en: "Phone Book, Contact Manager", ar: "دفتر هاتف، مدير جهات الاتصال" },
+            difficulty: { en: "Beginner-Intermediate", ar: "مبتدئ-متوسط" },
+            duration: { en: "3 Hours", ar: "3 ساعات" },
+            icon: "layers"
+          }
+        ]
+      },
+      {
+        week: 3,
+        weekTitle: { en: "Week 3 — Building Real Programs", ar: "الأسبوع الثالث — بناء برامج حقيقية" },
+        sessions: [
+          {
+            num: 7,
+            title: { en: "Functions", ar: "الدوال" },
+            topics: {
+              en: ["Creating functions, parameters, arguments", "Return values, scope", "Lambda functions", "map(), filter()"],
+              ar: ["إنشاء الدوال والمعلمات والوسائط", "قيم الإرجاع والنطاق", "دوال Lambda", "map() و filter()"]
+            },
+            project: { en: "Calculator using functions, Student Statistics System", ar: "حاسبة باستخدام الدوال، نظام إحصائيات الطلاب" },
+            difficulty: { en: "Intermediate", ar: "متوسط" },
+            duration: { en: "3 Hours", ar: "3 ساعات" },
+            icon: "code"
+          },
+          {
+            num: 8,
+            title: { en: "Files & JSON", ar: "الملفات و JSON" },
+            topics: {
+              en: ["open(), read(), write(), append()", "with statement", "json.load(), json.dump()"],
+              ar: ["open() و read() و write() و append()", "جملة with", "json.load() و json.dump()"]
+            },
+            project: { en: "Notes App, Expense Tracker", ar: "تطبيق ملاحظات، متتبع المصروفات" },
+            difficulty: { en: "Intermediate", ar: "متوسط" },
+            duration: { en: "3 Hours", ar: "3 ساعات" },
+            icon: "file-text"
+          },
+          {
+            num: 9,
+            title: { en: "Exceptions, Modules & pip", ar: "الاستثناءات والوحدات و pip" },
+            topics: {
+              en: ["try, except, finally, raise", "Importing modules, custom modules", "pip, venv, requirements.txt", "random, datetime, math, os"],
+              ar: ["try و except و finally و raise", "استيراد الوحدات، وحدات مخصصة", "pip و venv و requirements.txt", "random و datetime و math و os"]
+            },
+            project: { en: "Password Generator, File Organizer", ar: "مولّد كلمات المرور، منظّف الملفات" },
+            difficulty: { en: "Intermediate", ar: "متوسط" },
+            duration: { en: "3 Hours", ar: "3 ساعات" },
+            icon: "settings"
+          }
+        ]
+      },
+      {
+        week: 4,
+        weekTitle: { en: "Week 4 — Developer Tools", ar: "الأسبوع الرابع — أدوات المطور" },
+        sessions: [
+          {
+            num: 10,
+            title: { en: "Git & GitHub", ar: "Git و GitHub" },
+            topics: {
+              en: ["Version control basics", "Local vs Remote repositories", "git init, add, commit, status, push, pull, clone", "Creating repos, uploading projects, README basics"],
+              ar: ["أساسيات التحكم بالإصدارات", "المخازن المحلية مقابل البعيدة", "git init و add و commit و status و push و pull و clone", "إنشاء المخازن ورفع المشاريع وأساسيات README"]
+            },
+            project: { en: "Upload previous projects to GitHub", ar: "رفع المشاريع السابقة إلى GitHub" },
+            difficulty: { en: "Beginner-Intermediate", ar: "مبتدئ-متوسط" },
+            duration: { en: "3 Hours", ar: "3 ساعات" },
+            icon: "git-branch"
+          },
+          {
+            num: 11,
+            title: { en: "Object-Oriented Programming (OOP)", ar: "البرمجة الكائنية التوجه" },
+            topics: {
+              en: ["Classes, objects, constructors", "Attributes, methods", "Inheritance, encapsulation, polymorphism"],
+              ar: ["الكلاسات والكائنات والمنشئات", "الخصائص والدوال", "الوراثة وال encapsulation والتكافؤ"]
+            },
+            project: { en: "Library System, Hospital System", ar: "نظام مكتبة، نظام مستشفى" },
+            difficulty: { en: "Intermediate", ar: "متوسط" },
+            duration: { en: "3 Hours", ar: "3 ساعات" },
+            icon: "layers"
+          },
+          {
+            num: 12,
+            title: { en: "SQLite Databases", ar: "قواعد بيانات SQLite" },
+            topics: {
+              en: ["What is a database? SQL vs NoSQL", "Create tables", "INSERT, SELECT, UPDATE, DELETE", "Full CRUD operations"],
+              ar: ["إيه هي قاعدة البيانات؟ SQL مقابل NoSQL", "إنشاء جداول", "INSERT و SELECT و UPDATE و DELETE", "عمليات CRUD الكاملة"]
+            },
+            project: { en: "To-Do App, Expense Database", ar: "تطبيق مهام، قاعدة بيانات المصروفات" },
+            difficulty: { en: "Intermediate", ar: "متوسط" },
+            duration: { en: "3 Hours", ar: "3 ساعات" },
+            icon: "database"
+          }
+        ]
+      },
+      {
+        week: 5,
+        weekTitle: { en: "Week 5 — Internet & Automation", ar: "الأسبوع الخامس — الإنترنت والأتمتة" },
+        sessions: [
+          {
+            num: 13,
+            title: { en: "APIs", ar: "الواجهات البرمجية" },
+            topics: {
+              en: ["What is an API?", "HTTP, Request vs Response", "Status codes, headers, JSON", "GET, POST, PUT, DELETE", "Requests library"],
+              ar: ["إيه هي الواجهة البرمجية؟", "HTTP والطلب مقابل الاستجابة", "أكواد الحالة والرؤوس و JSON", "GET و POST و PUT و DELETE", "مكتبة Requests"]
+            },
+            project: { en: "Weather App, Movie Search App", ar: "تطبيق الطقس، تطبيق البحث عن أفلام" },
+            difficulty: { en: "Intermediate", ar: "متوسط" },
+            duration: { en: "3 Hours", ar: "3 ساعات" },
+            icon: "globe"
+          },
+          {
+            num: 14,
+            title: { en: "Web Scraping", ar: "كشط البيانات" },
+            topics: {
+              en: ["HTML basics: tags, elements, classes, IDs", "BeautifulSoup: find(), find_all()", "CSS selectors", "Selenium: opening sites, clicking, forms, scrolling"],
+              ar: ["أساسيات HTML: العناصر والفئات والمعرفات", "BeautifulSoup: find() و find_all()", "محددات CSS", "Selenium: فتح المواقع والنقر والنماذج والتمرير"]
+            },
+            project: { en: "Price Tracker, Job Scraper", ar: "متتبع الأسعار، كاشط الوظائف" },
+            difficulty: { en: "Intermediate-Advanced", ar: "متوسط-متقدم" },
+            duration: { en: "3 Hours", ar: "3 ساعات" },
+            icon: "codepen"
+          }
+        ]
+      },
+      {
+        week: 6,
+        weekTitle: { en: "Week 6 — GUI Development with Flet", ar: "الأسبوع السادس — تطوير واجهات المستخدم بـ Flet" },
+        sessions: [
+          {
+            num: 15,
+            title: { en: "Introduction to GUI Development with Flet", ar: "مقدمة في تطوير واجهات المستخدم بـ Flet" },
+            topics: {
+              en: ["What is GUI? GUI vs Terminal", "What is Flet? How it works", "Install Flet, project structure", "Page, Text, Button, TextField, Checkbox, Dropdown", "Image, Icon, Container, Row, Column", "padding, margin, alignment, colors, themes", "Event handling", "Build: Welcome App, Login Screen, Calculator UI"],
+              ar: ["إيه هي الواجهة الرسومية؟ مقابل الطرفية", "إيه هو Flet؟ إزاي بيشتغل", "تثبيت Flet، هيكل المشروع", "Page و Text و Button و TextField و Checkbox و Dropdown", "Image و Icon و Container و Row و Column", "padding و margin و alignment والألوان والمظهر", "معالجة الأحداث", "بناء: تطبيق ترحيل، شاشة تسجيل دخول، واجهة حاسبة"]
+            },
+            project: { en: "Welcome App, Login Screen, Calculator UI", ar: "تطبيق ترحيل، شاشة تسجيل دخول، واجهة حاسبة" },
+            difficulty: { en: "Intermediate", ar: "متوسط" },
+            duration: { en: "3 Hours", ar: "3 ساعات" },
+            icon: "monitor"
+          },
+          {
+            num: 16,
+            title: { en: "Advanced Flet & Application Structure", ar: "Flet المتقدم وهيكل التطبيق" },
+            topics: {
+              en: ["Organizing large projects, splitting code", "Reusable components, responsive design", "Navigation between screens", "State management basics", "NavigationBar, NavigationRail, Tabs", "Dialogs, SnackBar, AlertDialog", "ListView, GridView, Card", "Build: Multi-page Notes App, To-Do App UI"],
+              ar: ["تنظيم المشاريع الكبيرة وفصل الكود", "المكونات القابلة لإعادة الاستخدام والتصميم المتجاوب", "التنقل بين الشاشات", "أساسيات إدارة الحالة", "NavigationBar و NavigationRail و Tabs", "Dialogs و SnackBar و AlertDialog", "ListView و GridView و Card", "بناء: تطبيق ملاحظات متعدد الصفحات، واجهة تطبيق مهام"]
+            },
+            project: { en: "Multi-page Notes App, To-Do Application UI", ar: "تطبيق ملاحظات متعدد الصفحات، واجهة تطبيق مهام" },
+            difficulty: { en: "Intermediate-Advanced", ar: "متوسط-متقدم" },
+            duration: { en: "3 Hours", ar: "3 ساعات" },
+            icon: "sparkles"
+          },
+          {
+            num: 17,
+            title: { en: "Flet + SQLite + APIs — Capstone", ar: "Flet + SQLite + APIs — المشروع النهائي" },
+            topics: {
+              en: ["Connecting GUI with databases & APIs", "Updating data dynamically", "Form validation, loading states, error handling", "Project architecture", "Integrate: Flet + SQLite + APIs + local files", "Add, edit, delete, search data", "Save to SQLite, fetch from APIs", "Clean UI design"],
+              ar: ["ربط الواجهة بقواعد البيانات والواجهات البرمجية", "تحديث البيانات ديناميكياً", "التحقق من النماذج وحالات التحميل ومعالجة الأخطاء", "هيكل المشروع", "دمج: Flet + SQLite + APIs + ملفات محلية", "إضافة وتعديل وحذف وبحث البيانات", "الحفظ في SQLite والجلب من الواجهات البرمجية", "تصميم واجهة نظيفة"]
+            },
+            project: { en: "Full-Stack Capstone: Weather Dashboard / Expense Tracker / Student Manager / Task Manager", ar: "مشروع نهائي متكامل: لوحة بيانات الطقس / متتبع المصروفات / مدير الطلاب / مدير المهام" },
+            difficulty: { en: "Expert", ar: "خبير" },
+            duration: { en: "3 Hours", ar: "3 ساعات" },
+            icon: "award"
+          }
+        ]
+      }
+    ];
+
+    const ANTI_ABSTRACT_PHILOSOPHY = [
+      { id: 'dict', title: { en: 'Dictionaries', ar: 'القواميس' }, desc: { en: 'Key-value data maps', ar: 'خرائط بيانات المفتاح والقيمة' }, target: { en: 'API payload structures & JSON schema handling', ar: 'هياكل بيانات API ومعالجة JSON' } },
+      { id: 'func', title: { en: 'Functions', ar: 'الدوال' }, desc: { en: 'Modular code units', ar: 'وحدات كود منظمة' }, target: { en: 'Flask route handlers & reusable logic blocks', ar: 'معالجات مسارات Flask وكتل منطق قابلة لإعادة الاستخدام' } },
+      { id: 'regex', title: { en: 'Regular Expressions', ar: 'التعبيرات النمطية' }, desc: { en: 'Advanced pattern matching', ar: 'مطابقة أنماط متقدمة' }, target: { en: 'Input validation for forms & API endpoints', ar: 'التحقق من المدخلات في النماذج ونقاط API' } },
+      { id: 'except', title: { en: 'Exception Handling', ar: 'معالجة الاستثناءات' }, desc: { en: 'Runtime error protection', ar: 'حماية من أخطاء التنفيذ' }, target: { en: 'Graceful API error responses & app stability', ar: 'ردود أخطاء API أنيقة واستقرار التطبيق' } },
+      { id: 'sqlite', title: { en: 'SQLite Database', ar: 'قاعدة بيانات SQLite' }, desc: { en: 'Local relational storage', ar: 'تخزين علائقي محلي' }, target: { en: 'Persistent data in Flet apps & Flask backends', ar: 'بيانات مستمرة في تطبيقات Flet و خوادم Flask' } },
+      { id: 'fileio', title: { en: 'File I/O', ar: 'معالجة الملفات' }, desc: { en: 'Reading and writing data', ar: 'قراءة وكتابة البيانات' }, target: { en: 'JSON config files & data export features', ar: 'ملفات إعدادات JSON وميزات تصدير البيانات' } }
+    ];
+
+    const TERMINAL_SNIPPETS = {
+      'scraper.py': `<span class="text-purple-400">import</span> requests
+<span class="text-purple-400">from</span> bs4 <span class="text-purple-400">import</span> BeautifulSoup
+
+<span class="text-green-500"># Web Scraping price tracker</span>
+<span class="text-blue-400">def</span> <span class="text-yellow-400">track_price</span>(url):
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, <span class="text-green-400">'html.parser'</span>)
+    price = soup.select_one(<span class="text-green-400">'.price-class'</span>)
+    <span class="text-purple-400">return</span> price.text`,
+      'flask_app.py': `<span class="text-purple-400">from</span> flask <span class="text-purple-400">import</span> Flask, jsonify
+
+app = Flask(__name__)
+
+<span class="text-green-500"># Simple REST API with Flask</span>
+<span class="text-blue-400">@app.route</span>(<span class="text-green-400">'/api/tasks'</span>)
+<span class="text-blue-400">def</span> <span class="text-yellow-400">get_tasks</span>():
+    <span class="text-purple-400">return</span> jsonify({<span class="text-green-400">"status"</span>: <span class="text-green-400">"ok"</span>, <span class="text-green-400">"tasks"</span>: []})`
+    };
+
+    const MULTILINGUAL_UI_MAP = {
+      en: {
+        subLogo: "Beginner Course Syllabus",
+        logoText: "Python Bootcamp",
+        metricHrsLbl: "Course Duration",
+        metricHrsVal: "51 Live Hours",
+        metricSessLbl: "Total Sessions",
+        metricSessVal: "17 Sessions",
+        langToggleText: "العربية",
+        heroBadgeText: "Your clear path to becoming a Python developer",
+        heroTitle: `The Complete Roadmap <br><span class="gradient-text">To Master Python & Build Real Applications</span>`,
+        heroDesc: "Starting from absolute zero, you'll learn to build web applications, work with databases, create desktop GUIs, and develop real-world projects — all in a structured, project-based curriculum.",
+        heroCtaPrimary: "Explore the Curriculum",
+        heroCtaSecondary: "What will you learn?",
+        runBtnLabel: "Run the code",
+        logsFallback: "Click run above to see the simulation output...",
+        philTitle: "Project-Driven Learning",
+        philDesc: "We skip dry memorization. Every concept you learn is immediately applied in a real, working application you build yourself.",
+        mapperTag: "ACTIVE DEPLOYMENT MAPPER",
+        mapperHeading: "When the student learns...",
+        mapperMidLabel: "LOCAL COMPILER INTERNALS CONNECTORS",
+        mapperTargetHeading: "They immediately build & deploy:",
+        mapperStatusTxt: "Status: Connected to local compiler",
+        currTitle: "Session Timeline",
+        currDesc: "A glowing timeline through 17 production sessions. Check the deliverable project under each session!",
+        calcTitle: "Set your course start date",
+        calcDesc: "Pick your ideal start date and we'll dynamically calculate your project deadlines and graduation date.",
+        calcBtnLbl: "Calculate Timeline",
+        calcFallback: "Select a start date above to view your personalized delivery roadmap.",
+        matrixTechTitle: "Technologies & Tools Covered",
+        matrixTechDesc: "This curriculum covers everything a professional developer needs in today's market:",
+        matrixOutcomesTitle: "Skills & Learning Outcomes",
+        matrixOutcomesDesc: "After completing this course, you'll be able to build:",
+        modalTopHeading: "AI Session Customizer",
+        modalSessionLbl: "Selected Session",
+        modalSelectLbl: "Your Interest Area",
+        modalContextLbl: "Your Goals or Background",
+        modalBtnTxt: "Customize Session with AI",
+        modalFallbackTxt: "Select your options on the left and we'll generate a custom session for you.",
+        footerRights: "All rights reserved. No filler, no theory-only content. 2026."
+      },
+      ar: {
+        subLogo: "منهج الكورس للمبتدئين",
+        logoText: "معسكر بايثون",
+        metricHrsLbl: "مدة الكورس",
+        metricHrsVal: "51 ساعة لايف",
+        metricSessLbl: "إجمالي الجلسات",
+        metricSessVal: "17 جلسة",
+        langToggleText: "English",
+        heroBadgeText: "طريقك الواضح لتصبح مطور بايثون",
+        heroTitle: `الخطة الكاملة <br><span class="gradient-text">لإتقان بايثون وبناء تطبيقات حقيقية</span>`,
+        heroDesc: "من الصفر تماماً، هتتعلم تبني تطبيقات ويب، وتشتغل مع قواعد البيانات، وتصنع واجهات رسومية، وتنفذ مشاريع واقعية — كل ده في منهج منظم مبني على المشاريع.",
+        heroCtaPrimary: "استعرض المنهج",
+        heroCtaSecondary: "هتتعلم إيه؟",
+        runBtnLabel: "شغّل الكود",
+        logsFallback: "اضغط تشغيل في الأعلى لرؤية ناتج المحاكاة...",
+        philTitle: "التعلم مبني على المشاريع",
+        philDesc: "بنتجنب الحفظ الجاف. كل مفهوم هتتعلمه هتطبقه فوراً في تطبيق حقيقي بتبنيه بإيدك.",
+        mapperTag: "مستكشف النتائج الفورية",
+        mapperHeading: "لما الطالب يتعلم...",
+        mapperMidLabel: "مخرجات المترجم المحلية",
+        mapperTargetHeading: "بنيه ونشره على طول في:",
+        mapperStatusTxt: "الحالة: متصل بالمترجم المحلي",
+        currTitle: "جدول الجلسات",
+        currDesc: "خط زمني متوهج عبر 17 جلسة إنتاجية. شوف المشروع المطلوب تحت كل جلسة!",
+        calcTitle: "حدد تاريخ بداية الكورس",
+        calcDesc: "اختار تاريخ البداية المثالي وهنحسبلك ديناميكياً مواعيد تسليم المشاريع وتاريخ التخرج.",
+        calcBtnLbl: "احسب الجدول الزمني",
+        calcFallback: "اختار تاريخ البداية في الأعلى عشان تشوف خريطة التسليمات.",
+        matrixTechTitle: "التقنيات والأدوات المغطاة",
+        matrixTechDesc: "المنهج ده بيغطي كل حاجة مطور المحترف محتاجها في سوق العمل:",
+        matrixOutcomesTitle: "المهارات والمخرجات المستهدفة",
+        matrixOutcomesDesc: "بعد ما تخلص الكورس ده، هتقدر تبني:",
+        modalTopHeading: "مُخصّص الجلسات بالذكاء الاصطناعي",
+        modalSessionLbl: "الجلسة المحددة",
+        modalSelectLbl: "مجال اهتمامك",
+        modalContextLbl: "أهدافك أو خلفيتك",
+        modalBtnTxt: "خصّص الجلسة بالذكاء الاصطناعي",
+        modalFallbackTxt: "اختار الخيارات على الشمال وهنعملك جلسة مخصصة.",
+        footerRights: "جميع الحقوق محفوظة. من غير حشو أو محتوى نظري فقط. 2026."
+      }
+    };
+
+    // ============================
+    // STATE
+    // ============================
+    let currentGlobalLanguage = 'en';
+    let currentActiveTheme = 'light';
+    let activeConsoleTab = 'scraper.py';
+    let isExecutingSim = false;
+    let selectedPhilosophyId = 'dict';
+    let targetSessionObj = null;
+    let searchFilterQuery = "";
+    let calculatedDeadlines = null;
+
+    // ============================
+    // INIT
+    // ============================
+    window.addEventListener('DOMContentLoaded', () => {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      syncInterfaceTranslations();
+      renderAntiAbstractPhilosophyPanel();
+      renderSyllabusCurriculumDeck();
+      renderStaticSkillsMatrices();
+      selectPhilosophyNode('dict');
+      lucide.createIcons();
+      start3DBackgroundAnimation();
+      initScrollReveal();
+    });
+
+    // ============================
+    // SCROLL REVEAL
+    // ============================
+    function initScrollReveal() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    }
+
+    // ============================
+    // LANGUAGE TOGGLE
+    // ============================
+    function toggleGlobalLanguage() {
+      currentGlobalLanguage = currentGlobalLanguage === 'ar' ? 'en' : 'ar';
+      const rootHtml = document.documentElement;
+      const ctaArrow = document.getElementById('cta-arrow');
+
+      if (currentGlobalLanguage === 'ar') {
+        rootHtml.setAttribute('dir', 'rtl');
+        document.body.style.direction = 'rtl';
+        if (ctaArrow) ctaArrow.className = "w-4 h-4 rotate-0 transition-transform";
+      } else {
+        rootHtml.setAttribute('dir', 'ltr');
+        document.body.style.direction = 'ltr';
+        if (ctaArrow) ctaArrow.className = "w-4 h-4 rotate-180 transition-transform";
+      }
+
+      syncInterfaceTranslations();
+      renderAntiAbstractPhilosophyPanel();
+      renderSyllabusCurriculumDeck();
+      renderStaticSkillsMatrices();
+      selectPhilosophyNode(selectedPhilosophyId);
+      lucide.createIcons();
+      initScrollReveal();
+    }
+
+    function syncInterfaceTranslations() {
+      const t = MULTILINGUAL_UI_MAP[currentGlobalLanguage];
+      document.getElementById('logo-text').innerText = t.logoText;
+      document.getElementById('sub-logo').innerText = t.subLogo;
+      document.getElementById('metric-hrs-lbl').innerText = t.metricHrsLbl;
+      document.getElementById('metric-hrs-val').innerText = t.metricHrsVal;
+      document.getElementById('metric-sess-lbl').innerText = t.metricSessLbl;
+      document.getElementById('metric-sess-val').innerText = t.metricSessVal;
+      document.getElementById('lang-toggle-text').innerText = t.langToggleText;
+      document.getElementById('hero-badge-text').innerText = t.heroBadgeText;
+      document.getElementById('hero-title').innerHTML = t.heroTitle;
+      document.getElementById('hero-desc').innerText = t.heroDesc;
+      document.getElementById('hero-cta-primary').innerText = t.heroCtaPrimary;
+      document.getElementById('hero-cta-secondary').innerText = t.heroCtaSecondary;
+      document.getElementById('run-btn-label').innerText = t.runBtnLabel;
+      if (!isExecutingSim) {
+        document.getElementById('ide-logs').innerHTML = `<span class="text-ink-600 italic">${t.logsFallback}</span>`;
+      }
+      renderInteractiveTerminalIDE();
+      document.getElementById('phil-title').innerText = t.philTitle;
+      document.getElementById('phil-desc').innerText = t.philDesc;
+      document.getElementById('mapper-tag').innerText = t.mapperTag;
+      document.getElementById('mapper-heading').innerText = t.mapperHeading;
+      document.getElementById('mapper-mid-label').innerText = t.mapperMidLabel;
+      document.getElementById('mapper-target-heading').innerText = t.mapperTargetHeading;
+      document.getElementById('mapper-status-txt').innerText = t.mapperStatusTxt;
+      document.getElementById('curr-title').innerText = t.currTitle;
+      document.getElementById('curr-desc').innerText = t.currDesc;
+      document.getElementById('matrix-tech-title').innerText = t.matrixTechTitle;
+      document.getElementById('matrix-tech-desc').innerText = t.matrixTechDesc;
+      document.getElementById('matrix-outcomes-title').innerText = t.matrixOutcomesTitle;
+      document.getElementById('matrix-outcomes-desc').innerText = t.matrixOutcomesDesc;
+      document.getElementById('modal-top-heading').innerText = t.modalTopHeading;
+      document.getElementById('modal-session-lbl').innerText = t.modalSessionLbl;
+      document.getElementById('modal-select-lbl').innerText = t.modalSelectLbl;
+      document.getElementById('modal-context-lbl').innerText = t.modalContextLbl;
+      document.getElementById('modal-btn-txt').innerText = t.modalBtnTxt;
+      document.getElementById('modal-fallback-txt').innerText = t.modalFallbackTxt;
+      document.getElementById('footer-rights').innerText = t.footerRights;
+    }
+
+    // ============================
+    // THEME TOGGLE
+    // ============================
+    function toggleThemeColor() {
+      const rootHtml = document.documentElement;
+      const themeIcon = document.getElementById('theme-icon');
+
+      if (currentActiveTheme === 'dark') {
+        currentActiveTheme = 'light';
+        rootHtml.removeAttribute('data-theme');
+        themeIcon.setAttribute('data-lucide', 'sun');
+      } else {
+        currentActiveTheme = 'dark';
+        rootHtml.setAttribute('data-theme', 'dark');
+        themeIcon.setAttribute('data-lucide', 'moon');
+      }
+
+      renderAntiAbstractPhilosophyPanel();
+      renderSyllabusCurriculumDeck();
+      renderStaticSkillsMatrices();
+      selectPhilosophyNode(selectedPhilosophyId);
+      lucide.createIcons();
+    }
+
+    // ============================
+    // TERMINAL
+    // ============================
+    function renderInteractiveTerminalIDE() {
+      document.getElementById('ide-canvas').innerHTML = TERMINAL_SNIPPETS[activeConsoleTab] || '';
+    }
+
+    function changeTerminalTab(tab) {
+      if (isExecutingSim) return;
+      activeConsoleTab = tab;
+      const scraperBtn = document.getElementById('tab-scraper');
+      const flaskBtn = document.getElementById('tab-fastapi');
+      if (tab === 'scraper.py') {
+        scraperBtn.className = "px-3 py-1 rounded-md transition-all bg-accent-blue/15 text-accent-blue font-bold border border-accent-blue/20";
+        flaskBtn.className = "px-3 py-1 rounded-md transition-all text-ink-500 hover:text-ink-300";
+      } else {
+        flaskBtn.className = "px-3 py-1 rounded-md transition-all bg-accent-blue/15 text-accent-blue font-bold border border-accent-blue/20";
+        scraperBtn.className = "px-3 py-1 rounded-md transition-all text-ink-500 hover:text-ink-300";
+      }
+      document.getElementById('ide-logs').innerHTML = `<span class="text-ink-600 italic">${MULTILINGUAL_UI_MAP[currentGlobalLanguage].logsFallback}</span>`;
+      renderInteractiveTerminalIDE();
+    }
+
+    function executeLocalCodeSim() {
+      if (isExecutingSim) return;
+      isExecutingSim = true;
+      const runBtn = document.getElementById('run-script-btn');
+      runBtn.classList.add('opacity-50');
+      runBtn.querySelector('span').innerText = currentGlobalLanguage === 'ar' ? "جاري المعالجة..." : "Executing script...";
+      const logsBox = document.getElementById('ide-logs');
+      logsBox.innerHTML = `<div class="text-ink-300 animate-fade-in">[INIT] Booting isolated runtime sandbox environment...</div>`;
+
+      const steps = {
+        'scraper.py': [
+          "[BROWSER] Starting chromium container...",
+          "[REQS] Request headers mapped successfully.",
+          "[PARSER] Extraction metrics: class='price' -> Output: $99.99",
+          "[SUCCESS] Code executed with status 0. Process closed."
+        ],
+        'flask_app.py': [
+          "[START] Flask server running on http://127.0.0.1:5000",
+          "[ROUTE] Mapping GET requests on /api/tasks path...",
+          "[DB] SQLite connection established successfully.",
+          "[SUCCESS] Server ready. 200 OK"
+        ]
+      };
+
+      let idx = 0;
+      const timer = setInterval(() => {
+        const activeSteps = steps[activeConsoleTab];
+        if (idx < activeSteps.length) {
+          const item = activeSteps[idx];
+          const isSuccess = item.includes('[SUCCESS]');
+          let styleClass = "text-ink-400";
+          if (isSuccess) styleClass = "text-accent-green font-bold";
+          else if (item.includes('[API]') || item.includes('[REQS]')) styleClass = "text-accent-blue";
+          logsBox.innerHTML += `<div class="leading-relaxed animate-fade-in ${styleClass}">${item}</div>`;
+          logsBox.scrollTop = logsBox.scrollHeight;
+          idx++;
+        } else {
+          clearInterval(timer);
+          isExecutingSim = false;
+          runBtn.classList.remove('opacity-50');
+          runBtn.querySelector('span').innerText = MULTILINGUAL_UI_MAP[currentGlobalLanguage].runBtnLabel;
+        }
+      }, 1000);
+    }
+
+    // ============================
+    // PHILOSOPHY MAP
+    // ============================
+    function renderAntiAbstractPhilosophyPanel() {
+      const container = document.getElementById('phil-selectors-box');
+      container.innerHTML = '';
+      const isLight = currentActiveTheme === 'light';
+
+      ANTI_ABSTRACT_PHILOSOPHY.forEach(node => {
+        const isSelected = node.id === selectedPhilosophyId;
+        let cardStyles = "";
+        let cardInline = "";
+        if (isSelected) {
+          cardInline = isLight
+            ? "background: #eff6ff; border-color: var(--accent-blue); color: #1e3a5f;"
+            : "background: var(--bg-surface-raised); border-color: var(--accent-blue); color: var(--text-heading);";
+        } else {
+          cardInline = isLight
+            ? "background: var(--bg-surface); border-color: var(--border-main); color: var(--text-muted);"
+            : "background: var(--bg-surface); border-color: var(--border-main); color: var(--text-muted);";
+        }
+
+        container.innerHTML += `
+          <button onclick="selectPhilosophyNode('${node.id}')"
+            class="w-full text-start p-4 rounded-xl border transition-all flex items-center justify-between btn-press hover:opacity-80"
+            style="${cardInline}">
+            <div class="text-start">
+              <span class="font-mono-code font-bold block text-sm">${node.title[currentGlobalLanguage]}</span>
+              <span class="text-[10px] opacity-70 block mt-1">${node.desc[currentGlobalLanguage]}</span>
+            </div>
+            <i data-lucide="chevron-left" class="w-4 h-4 ${currentGlobalLanguage === 'en' ? 'rotate-180' : ''}"></i>
+          </button>`;
+      });
+      lucide.createIcons();
+    }
+
+    function selectPhilosophyNode(nodeId) {
+      selectedPhilosophyId = nodeId;
+      renderAntiAbstractPhilosophyPanel();
+      const activeNode = ANTI_ABSTRACT_PHILOSOPHY.find(n => n.id === nodeId);
+      document.getElementById('mapper-concept').innerText = activeNode.title[currentGlobalLanguage];
+      document.getElementById('mapper-target').innerText = activeNode.target[currentGlobalLanguage];
+      document.getElementById('mapper-file-id').innerText = `Active Link: ${activeNode.id}.py`;
+    }
+
+    // ============================
+    // SYLLABUS RENDERER
+    // ============================
+    function handleSearchFilter(val) {
+      searchFilterQuery = val.toLowerCase().trim();
+      renderSyllabusCurriculumDeck();
+    }
+
+    function renderSyllabusCurriculumDeck() {
+      const deck = document.getElementById('curriculum-timeline-deck');
+      deck.innerHTML = '';
+      let matchedItems = false;
+      const isLight = currentActiveTheme === 'light';
+
+      SYLLABUS_DATABASE.forEach(week => {
+        const matches = week.sessions.filter(session => {
+          if (!searchFilterQuery) return true;
+          return (
+            session.title[currentGlobalLanguage].toLowerCase().includes(searchFilterQuery) ||
+            session.project[currentGlobalLanguage].toLowerCase().includes(searchFilterQuery) ||
+            session.topics[currentGlobalLanguage].some(t => t.toLowerCase().includes(searchFilterQuery)) ||
+            session.topics[currentGlobalLanguage === 'ar' ? 'en' : 'ar'].some(t => t.toLowerCase().includes(searchFilterQuery))
+          );
+        });
+
+        if (matches.length === 0) return;
+        matchedItems = true;
+
+        let searchWeekBadge = "";
+        if (searchFilterQuery) {
+          searchWeekBadge = `
+            <div class="inline-block py-1 px-3 rounded-lg bg-accent-blue/10 border border-accent-blue/20 text-[10px] font-mono-code font-semibold uppercase text-accent-blue mb-4">
+              Timeline Segment Match: ${currentGlobalLanguage === 'ar' ? 'فترة الأسبوع ' : 'Week '}${week.week}
+            </div>`;
+        }
+
+        let weekHTML = `
+          <div class="space-y-8 relative">
+            ${searchWeekBadge}
+            <div class="flex justify-center relative z-10">
+              <div class="px-6 py-2.5 rounded-full text-center max-w-md" style="background: var(--bg-surface); border: 1px solid var(--border-main);">
+                <span class="text-[9px] font-mono-code font-bold tracking-wider uppercase block" style="color: var(--accent-orange);">${currentGlobalLanguage === 'ar' ? 'التسلسل الزمني للفترة' : 'Timeline Phase'}</span>
+                <h2 class="text-sm font-extrabold mt-0.5 font-display" style="color: var(--text-heading);">{ ${week.weekTitle[currentGlobalLanguage]} }</h2>
+              </div>
+            </div>
+            <div class="space-y-10">`;
+
+        matches.forEach(session => {
+          let diffColor = "bg-accent-green/10 text-accent-green border border-accent-green/20";
+          if (session.difficulty[currentGlobalLanguage].includes('Expert') || session.difficulty[currentGlobalLanguage].includes('خبير')) {
+            diffColor = "bg-red-500/10 text-red-400 border border-red-500/20";
+          } else if (session.difficulty[currentGlobalLanguage].includes('Advanced') || session.difficulty[currentGlobalLanguage].includes('متقدم') || session.difficulty[currentGlobalLanguage].includes('شديده')) {
+            diffColor = "bg-purple-500/10 text-purple-400 border border-purple-500/20";
+          }
+
+          let cardInline = isLight
+            ? "background: var(--bg-surface); border: 1px solid var(--border-main);"
+            : "background: var(--bg-surface-raised); border: 1px solid var(--border-main);";
+          let projectInline = isLight
+            ? "background: var(--bg-surface-raised); border: 1px solid var(--border-main);"
+            : "background: var(--bg-surface); border: 1px solid var(--border-main);";
+
+          let topicBullets = "";
+          session.topics[currentGlobalLanguage].forEach(t => {
+            topicBullets += `
+              <li class="flex items-start gap-2 leading-relaxed text-xs md:text-sm" style="color: var(--text-muted);">
+                <span class="font-bold select-none mt-0.5" style="color: var(--accent-orange);">-</span>
+                <span>${t}</span>
+              </li>`;
+          });
+
+          const isEven = session.num % 2 === 0;
+          const lectureOrder = isEven ? 'md:order-2' : 'md:order-1';
+          const projectOrder = isEven ? 'md:order-1' : 'md:order-2';
+
+          weekHTML += `
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-stretch relative z-10">
+              <div class="timeline-node hidden md:block"></div>
+
+              <!-- LECTURE -->
+              <div class="rounded-2xl p-5 md:p-7 transition-all duration-300 flex flex-col justify-between h-full card-hover ${lectureOrder}" style="${cardInline}">
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between">
+                    <span class="text-[10px] font-mono-code font-bold px-3 py-1 rounded-full" style="color: var(--accent-orange); background: rgba(249, 115, 22, 0.1); border: 1px solid rgba(249, 115, 22, 0.2);">
+                      ${currentGlobalLanguage === 'ar' ? 'المحاضرة ' : 'Session '}${session.num}
+                    </span>
+                    <span class="text-[10px] font-mono-code" style="color: var(--text-faint);">
+                      ${session.duration[currentGlobalLanguage]}
+                    </span>
+                  </div>
+                  <div class="flex items-start gap-3">
+                    <div class="p-2.5 rounded-xl shrink-0" style="background: var(--bg-surface-raised); border: 1px solid var(--border-main); color: var(--accent-blue);">
+                      <i data-lucide="${session.icon}" class="w-5 h-5"></i>
+                    </div>
+                    <div class="text-start">
+                      <h4 class="font-bold text-sm md:text-base leading-snug" style="color: var(--text-heading);">${session.title[currentGlobalLanguage]}</h4>
+                      <span class="inline-block text-[9px] font-bold mt-2 px-2.5 py-0.5 rounded-full ${diffColor}">
+                        ${session.difficulty[currentGlobalLanguage]}
+                      </span>
+                    </div>
+                  </div>
+                  <div class="space-y-2 pt-1 text-start">
+                    <span class="text-[9px] font-bold block uppercase tracking-wider" style="color: var(--text-faint);">${currentGlobalLanguage === 'ar' ? 'هتتعلم:' : 'TOPICS:'}</span>
+                    <ul class="space-y-1.5 text-xs font-medium">
+                      ${topicBullets}
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- PROJECT -->
+              <div class="rounded-2xl p-5 md:p-7 flex flex-col justify-between h-full transition-all ${projectOrder}" style="${projectInline}">
+                <div class="space-y-3 text-start">
+                  <div class="flex items-center gap-2 px-3 py-1 rounded-full w-fit" style="color: var(--accent-green); background: rgba(52, 211, 153, 0.1); border: 1px solid rgba(52, 211, 153, 0.2);">
+                    <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i>
+                    <span class="text-[9px] font-extrabold">${currentGlobalLanguage === 'ar' ? 'المشروع اللي هتعمله' : 'Hands-on Project'}</span>
+                  </div>
+                  <h4 class="font-extrabold text-sm md:text-base leading-snug" style="color: var(--text-heading);">${session.project[currentGlobalLanguage]}</h4>
+                  <p class="text-[11px] leading-relaxed" style="color: var(--text-muted);">
+                    ${currentGlobalLanguage === 'ar'
+                      ? 'هتبني المشروع ده خطوة بخطوة من غير عك.'
+                      : 'You will build this step by step during the session.'}
+                  </p>
+                </div>
+                <div class="pt-3 mt-3 border-t flex items-center justify-between text-[9px] font-mono-code font-bold" style="border-color: var(--border-main); color: var(--text-faint);">
+                  <span>DEPLOYMENT: PERSISTENT</span>
+                  <span style="color: var(--accent-orange);">Core Module</span>
+                </div>
+              </div>
+            </div>`;
+        });
+
+        weekHTML += `</div></div>`;
+        deck.innerHTML += weekHTML;
+      });
+
+      if (!matchedItems) {
+        deck.innerHTML = `
+          <div class="text-center py-16 space-y-4">
+            <div class="text-xl font-mono-code font-bold" style="color: var(--text-muted);">${currentGlobalLanguage === 'ar' ? 'لا توجد نتائج بحث مطابقة' : 'No matching results found'}</div>
+            <p class="text-sm" style="color: var(--text-faint);">${currentGlobalLanguage === 'ar' ? 'حاول البحث عن كلمات دلالية أخرى مثل SQLite، أو Flet، أو معالجة الملفات.' : 'Try searching for other keywords like SQLite, Flet, or file handling.'}</p>
+            <button onclick="clearSearchFilter()" class="px-6 py-2.5 rounded-xl bg-accent-blue text-white font-extrabold text-xs transition-all btn-press">${currentGlobalLanguage === 'ar' ? 'إعادة تصفية الجدول' : 'Clear Search'}</button>
+          </div>`;
+      }
+      lucide.createIcons();
+    }
+
+    function clearSearchFilter() {
+      document.getElementById('search-input').value = '';
+      searchFilterQuery = '';
+      renderSyllabusCurriculumDeck();
+    }
+
+    // ============================
+    // MILESTONES
+    // ============================
+    function generateMilestones(e) {
+      e.preventDefault();
+      const val = document.getElementById('calendar-input-date').value;
+      if (!val) return;
+
+      const dateObj = new Date(val);
+      const opt = { month: 'short', day: 'numeric', year: 'numeric' };
+      const addDays = (days) => {
+        const next = new Date(dateObj);
+        next.setDate(dateObj.getDate() + days);
+        return next.toLocaleDateString(currentGlobalLanguage === 'ar' ? 'ar-EG' : 'en-US', opt);
+      };
+
+      calculatedDeadlines = { d1: addDays(0), d8: addDays(7), d15: addDays(14), d22: addDays(21), d42: addDays(41) };
+
+      const milestones = [
+        { label: currentGlobalLanguage === 'ar' ? 'الجلسة ١ - الأساسيات' : 'DAY 1 - FOUNDATIONS', project: 'Student Card Generator', date: calculatedDeadlines.d1, color: 'bg-accent-blue' },
+        { label: currentGlobalLanguage === 'ar' ? 'الجلسة ٥ - الدوال والملفات' : 'DAY 8 - CORE SKILLS', project: 'Notes App with JSON', date: calculatedDeadlines.d8, color: 'bg-indigo-500' },
+        { label: currentGlobalLanguage === 'ar' ? 'الجلسة ٩ - APIs والويب' : 'DAY 15 - WEB & APIs', project: 'Weather Application', date: calculatedDeadlines.d15, color: 'bg-purple-500' },
+        { label: currentGlobalLanguage === 'ar' ? 'الجلسة ١٣ - Flet وقواعد البيانات' : 'DAY 22 - GUI & DATABASES', project: 'Expense Tracker with GUI', date: calculatedDeadlines.d22, color: 'bg-accent-orange' },
+        { label: currentGlobalLanguage === 'ar' ? 'الجلسة ١٧ - العرض النهائي' : 'DAY 42 - GRADUATION', project: 'Capstone Presentations', date: calculatedDeadlines.d42, color: 'bg-accent-green' }
+      ];
+
+      let milestonesHTML = milestones.map(m => `
+        <div class="relative">
+          <span class="absolute top-1 h-3 w-3 rounded-full ${m.color} ${currentGlobalLanguage === 'ar' ? '-right-7' : '-left-7'}"></span>
+          <span class="text-[9px] font-mono-code block" style="color: var(--text-faint);">${m.label}</span>
+          <span class="font-bold text-sm block" style="color: var(--text-heading);">${m.project}</span>
+          <span class="text-[10px] font-mono-code font-bold" style="color: var(--accent-blue);">${m.date}</span>
+        </div>`).join('');
+
+      document.getElementById('milestone-output-box').innerHTML = `
+        <div class="rounded-2xl border p-5 md:p-7 space-y-4 animate-fade-in" style="border-color: var(--border-main); background: var(--bg-surface);">
+          <span class="font-mono-code text-[9px] block uppercase tracking-wider font-extrabold" style="color: var(--accent-orange);">${currentGlobalLanguage === 'ar' ? 'جدولة تسليمات المشاريع:' : 'GENERATED MILESTONES CALENDAR'}</span>
+          <div class="relative border-s-2 ps-6 ms-2 space-y-5 text-start" style="border-color: var(--border-main);">
+            ${milestonesHTML}
+          </div>
+        </div>`;
+    }
+
+    // ============================
+    // SKILLS GRID
+    // ============================
+    function renderStaticSkillsMatrices() {
+      const isLight = currentActiveTheme === 'light';
+      const tags = ['Python', 'Git', 'GitHub', 'SQLite', 'Requests', 'BeautifulSoup', 'Selenium', 'Flet', 'Flask', 'JSON', 'Regex', 'File I/O', 'OS & pathlib', 'pip & venv', 'HTML basics'];
+      const tagsContainer = document.getElementById('tech-matrix-tags');
+      tagsContainer.innerHTML = '';
+
+      tags.forEach(t => {
+        tagsContainer.innerHTML += `
+          <span class="font-mono-code text-[10px] px-3 py-1.5 rounded-lg" style="direction: ltr; border: 1px solid var(--border-main); background: var(--bg-surface); color: var(--accent-blue);">
+            ${t}
+          </span>`;
+      });
+
+      const checklists = {
+        en: [
+          "Build command-line programs and scripts",
+          "Work with databases using SQLite",
+          "Scrape and extract data from websites",
+          "Create desktop GUI applications with Flet",
+          "Consume and build REST APIs",
+          "Handle files, JSON, and exceptions",
+          "Use Git and GitHub for version control",
+          "Plan and deploy a full-stack capstone project"
+        ],
+        ar: [
+          "بناء برامج وسكربتات سطر أوامر",
+          "العمل مع قواعد البيانات باستخدام SQLite",
+          "كشط واستخراج البيانات من المواقع",
+          "إنشاء تطبيقات واجهة رسومية بـ Flet",
+          "استخدام وبناء واجهات REST البرمجية",
+          "معالجة الملفات و JSON والاستثناءات",
+          "استخدام Git و GitHub للتحكم في الإصدارات",
+          "التخطيط ونشر مشروع نهائي متكامل"
+        ]
+      };
+
+      const targetsContainer = document.getElementById('targets-checklist-grid');
+      targetsContainer.innerHTML = '';
+      checklists[currentGlobalLanguage].forEach(item => {
+        targetsContainer.innerHTML += `
+          <div class="p-3 rounded-xl border flex items-center gap-3" style="border: 1px solid var(--border-main); background: var(--bg-surface); color: var(--text-body);">
+            <i data-lucide="check-circle-2" class="shrink-0 w-4 h-4" style="color: var(--accent-green);"></i>
+            <span class="text-[10px] leading-tight font-medium text-start">${item}</span>
+          </div>`;
+      });
+    }
+
+    // ============================
+    // AI COACH DIALOG
+    // ============================
+    function openCoachCustomizerDialog(sessionNum) {
+      let targetObj = null;
+      SYLLABUS_DATABASE.forEach(week => {
+        const result = week.sessions.find(s => s.num === sessionNum);
+        if (result) targetObj = result;
+      });
+      if (!targetObj) return;
+      targetSessionObj = targetObj;
+      document.getElementById('modal-session-title').innerText = `Session ${targetObj.num}: ${targetObj.title[currentGlobalLanguage]}`;
+      const popup = document.getElementById('ai-coach-dialog');
+      popup.classList.remove('hidden');
+      setTimeout(() => popup.classList.remove('opacity-0'), 50);
+    }
+
+    function closeCoachDialog() {
+      const popup = document.getElementById('ai-coach-dialog');
+      popup.classList.add('opacity-0');
+      setTimeout(() => {
+        popup.classList.add('hidden');
+        document.getElementById('modal-output-viewer').innerHTML = `
+          <div class="flex flex-col items-center justify-center h-full space-y-2 py-10" style="color: var(--text-faint);">
+            <i data-lucide="brain-circuit" class="w-10 h-10"></i>
+            <p class="text-xs">${MULTILINGUAL_UI_MAP[currentGlobalLanguage].modalFallbackTxt}</p>
+          </div>`;
+        lucide.createIcons();
+      }, 300);
+    }
+
+    async function triggerAICustomizerRequest() {
+      const domain = document.getElementById('modal-select-interest').value;
+      const context = document.getElementById('modal-context-textarea').value;
+      const loader = document.getElementById('modal-loading-screen');
+      const output = document.getElementById('modal-output-viewer');
+      loader.classList.remove('hidden');
+      setTimeout(() => {
+        loader.classList.add('hidden');
+        output.innerHTML = compileFallbackMDToHTML(targetSessionObj, domain, context);
+      }, 1500);
+    }
+
+    function compileFallbackMDToHTML(session, domain, context) {
+      const isArabic = currentGlobalLanguage === 'ar';
+      const preStyle = "background: var(--code-bg); color: var(--code-text); border: 1px solid var(--code-border);";
+      if (isArabic) {
+        return `
+          <div class="space-y-4 text-start">
+            <h2 class="text-lg font-extrabold border-b pb-2" style="color: var(--accent-blue); border-color: var(--border-main);">تخصيص الجلسة لـ: ${domain}</h2>
+            <p class="text-sm leading-relaxed" style="color: var(--text-muted);">
+              باستخدام مفاهيم <strong style="color: var(--text-heading);">${session.title.ar}</strong>، يمكنك بناء مشاريع ذكية تخدم تخصص <strong style="color: var(--text-heading);">${domain}</strong>.
+            </p>
+            <h3 class="text-base font-bold pt-2" style="color: var(--accent-orange);">نموذج كود مخصص</h3>
+            <pre class="p-4 rounded-xl text-[10px] font-mono-code text-left" style="${preStyle}">
+# Sandbox tailored for ${domain}
+import json
+
+def process_custom_pipeline(data_stream):
+    try:
+        # Context: ${context || "Beginner Setup"}
+        print("[AI ENGINE] Processing pipeline...")
+        return {"status": "Active", "domain": "${domain}"}
+    except Exception as e:
+        return {"status": "Error", "msg": str(e)}
+
+print(process_custom_pipeline("{}"))</pre>
+            </div>`;
+      } else {
+        return `
+          <div class="space-y-4 text-start">
+            <h2 class="text-lg font-extrabold border-b pb-2" style="color: var(--accent-blue); border-color: var(--border-main);">Session Tailored for: ${domain}</h2>
+            <p class="text-sm leading-relaxed" style="color: var(--text-muted);">
+              Using core concepts from <strong style="color: var(--text-heading);">${session.title.en}</strong>, we build workflows targeting <strong style="color: var(--text-heading);">${domain}</strong>.
+            </p>
+            <h3 class="text-base font-bold pt-2" style="color: var(--accent-orange);">Customized Code Template</h3>
+            <pre class="p-4 rounded-xl text-[10px] font-mono-code text-left" style="${preStyle}">
+# Sandbox tailored for ${domain}
+import json
+
+def process_custom_pipeline(data_stream):
+    try:
+        # Context: ${context || "Beginner Setup"}
+        print("[AI ENGINE] Processing pipeline...")
+        return {"status": "Active", "domain": "${domain}"}
+    except Exception as e:
+        return {"status": "Error", "msg": str(e)}
+
+print(process_custom_pipeline("{}"))</pre>
+          </div>`;
+      }
+    }
+
+    // ============================
+    // 3D BACKGROUND
+    // ============================
+    function start3DBackgroundAnimation() {
+      const canvas = document.getElementById('ambient-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let frameId;
+      let w = canvas.width = window.innerWidth;
+      let h = canvas.height = window.innerHeight;
+
+      window.addEventListener('resize', () => {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+      });
+
+      const total = 60;
+      const nodes = [];
+      for (let i = 0; i < total; i++) {
+        const theta = Math.acos(Math.random() * 2 - 1);
+        const phi = Math.random() * Math.PI * 2;
+        const radius = 180 + Math.random() * 65;
+        nodes.push({
+          x: radius * Math.sin(theta) * Math.cos(phi),
+          y: radius * Math.sin(theta) * Math.sin(phi),
+          z: radius * Math.cos(theta),
+          originX: radius * Math.sin(theta) * Math.cos(phi),
+          originY: radius * Math.sin(theta) * Math.sin(phi),
+          originZ: radius * Math.cos(theta)
+        });
+      }
+
+      let ax = 0.001;
+      let ay = 0.0012;
+      const f = 350;
+
+      const anim = () => {
+        ctx.clearRect(0, 0, w, h);
+        const cx = Math.cos(ax), sx = Math.sin(ax);
+        const cy = Math.cos(ay), sy = Math.sin(ay);
+
+        const proj = nodes.map(p => {
+          let y1 = p.y * cx - p.z * sx;
+          let z1 = p.z * cx + p.y * sx;
+          let x2 = p.x * cy - z1 * sy;
+          let z2 = z1 * cy + p.x * sy;
+          p.x = x2; p.y = y1; p.z = z2;
+          const scale = f / (f + z2);
+          return { x: x2 * scale + w / 2, y: y1 * scale + h / 2, scale };
+        });
+
+        for (let i = 0; i < proj.length; i++) {
+          for (let j = i + 1; j < proj.length; j++) {
+            const dist = Math.hypot(proj[i].x - proj[j].x, proj[i].y - proj[j].y);
+            if (dist < 100) {
+              ctx.beginPath();
+              ctx.moveTo(proj[i].x, proj[i].y);
+              ctx.lineTo(proj[j].x, proj[j].y);
+              ctx.strokeStyle = `rgba(59, 130, 246, ${(1 - dist / 100) * 0.08})`;
+              ctx.lineWidth = 0.8;
+              ctx.stroke();
+            }
+          }
+        }
+
+        proj.forEach(p => {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, Math.max(1, p.scale * 3), 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(59, 130, 246, 0.25)';
+          ctx.fill();
+        });
+
+        frameId = requestAnimationFrame(anim);
+      };
+      anim();
+    }
+  </script>
+</body>
+</html>
