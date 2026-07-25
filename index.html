@@ -327,6 +327,11 @@
           </div>
         </div>
 
+        <a href="platform/login.html" class="px-4 py-2 rounded-lg transition-all font-bold text-[10px] uppercase flex items-center gap-1.5 btn-press bg-gradient-to-r from-accent-blue to-blue-600 text-white hover:shadow-lg hover:shadow-accent-blue/20">
+          <i data-lucide="log-in" class="w-3.5 h-3.5"></i>
+          <span>Student Login</span>
+        </a>
+
         <button onclick="toggleGlobalLanguage()" class="px-3.5 py-2 rounded-lg transition-all font-bold text-[10px] uppercase flex items-center gap-1.5 btn-press" style="border: 1px solid var(--border-main); color: var(--text-body);">
           <i data-lucide="globe" class="w-3.5 h-3.5" style="color: var(--accent-blue);"></i>
           <span id="lang-toggle-text">العربية</span>
@@ -1040,7 +1045,9 @@ app = Flask(__name__)
     // INIT
     // ============================
     window.addEventListener('DOMContentLoaded', () => {
-      document.documentElement.setAttribute('data-theme', 'dark');
+      if (currentActiveTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
       syncInterfaceTranslations();
       renderAntiAbstractPhilosophyPanel();
       renderSyllabusCurriculumDeck();

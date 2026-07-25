@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Bootcamp - Session</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            surface: { 0: '#060814', 1: '#0a0f1c', 2: '#0f1629', 3: '#141c33', 4: '#1a2440' },
+            accent: { blue: '#3b82f6', orange: '#f97316', cyan: '#22d3ee', green: '#34d399' },
+            ink: { 100: '#f1f5f9', 200: '#e2e8f0', 300: '#cbd5e1', 400: '#94a3b8', 500: '#64748b', 600: '#475569', 700: '#334155', 800: '#1e293b' }
+          },
+          fontFamily: {
+            display: ['"Plus Jakarta Sans"', 'Tajawal', 'sans-serif'],
+            body: ['Tajawal', '"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Fira Code"', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/dracula.min.css">
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: 'Plus Jakarta Sans', 'Tajawal', sans-serif; }
+    .gradient-text { background: linear-gradient(135deg, #3b82f6, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .glass { background: rgba(10, 15, 28, 0.6); backdrop-filter: blur(20px); border: 1px solid rgba(59, 130, 246, 0.1); }
+    .grid-pattern { background-image: linear-gradient(rgba(59,130,246,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.03) 1px, transparent 1px); background-size: 50px 50px; }
+    .CodeMirror { height: 300px; border-radius: 12px; font-size: 14px; }
+    .cm-s-dracula .CodeMirror-gutters { background: #0f1629; border: none; }
+    .cm-s-dracula .CodeMirror { background: #0a0f1c; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+    .tab-active { background: rgba(59, 130, 246, 0.15); color: #3b82f6; border-color: rgba(59, 130, 246, 0.3); }
+    .exercise-card { transition: all 0.3s ease; }
+    .exercise-card:hover { border-color: #3b82f6; }
+    .exercise-card.completed { border-color: #34d399; background: rgba(52, 211, 153, 0.05); }
+    .btn-press:active { transform: scale(0.97); }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+    .animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+  </style>
+</head>
+<body class="bg-surface-0 text-ink-200 min-h-screen">
+  <div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 glass border-b border-ink-800/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-4">
+          <a href="dashboard.html" class="p-2 rounded-lg bg-surface-2 border border-ink-800 text-ink-400 hover:text-ink-100 hover:border-accent-blue transition-all">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+            </svg>
+          </a>
+          <div>
+            <span class="font-bold text-ink-100 block leading-none" id="sessionTitle">Session Title</span>
+            <span class="text-[10px] font-mono text-accent-orange tracking-wider" id="sessionNumber">SESSION 00</span>
+          </div>
+        </div>
+        
+        <div class="flex items-center gap-3">
+          <button onclick="prevSession()" class="p-2 rounded-lg bg-surface-2 border border-ink-800 text-ink-400 hover:text-ink-100 hover:border-accent-blue transition-all" id="prevBtn">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+          </button>
+          <button onclick="nextSession()" class="p-2 rounded-lg bg-surface-2 border border-ink-800 text-ink-400 hover:text-ink-100 hover:border-accent-blue transition-all" id="nextBtn">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+          <button onclick="markComplete()" id="completeBtn" class="px-4 py-2 rounded-xl font-bold text-sm bg-gradient-to-r from-accent-green to-green-500 text-white hover:shadow-lg hover:shadow-accent-green/20 transition-all btn-press hidden">
+            Mark Complete
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <!-- Main Content -->
+      <div class="lg:col-span-2 space-y-6">
+        <!-- Video Player -->
+        <div id="videoSection" class="glass rounded-2xl overflow-hidden">
+          <div class="aspect-video bg-surface-2 flex items-center justify-center relative">
+            <video id="videoPlayer" class="w-full h-full" controls>
+              <source id="videoSource" src="" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div id="videoPlaceholder" class="absolute inset-0 flex flex-col items-center justify-center text-ink-500">
+              <svg class="w-16 h-16 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <p class="font-medium">Session Video</p>
+              <p class="text-sm mt-1">Video will be available soon</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="glass rounded-2xl overflow-hidden">
+          <div class="flex border-b border-ink-800/50 overflow-x-auto">
+            <button onclick="switchTab('materials')" class="tab-btn tab-active px-6 py-4 text-sm font-bold whitespace-nowrap transition-all border-b-2 border-transparent" data-tab="materials">
+              Materials
+            </button>
+            <button onclick="switchTab('code')" class="tab-btn px-6 py-4 text-sm font-bold text-ink-400 hover:text-ink-100 whitespace-nowrap transition-all border-b-2 border-transparent" data-tab="code">
+              Code Editor
+            </button>
+            <button onclick="switchTab('exercises')" class="tab-btn px-6 py-4 text-sm font-bold text-ink-400 hover:text-ink-100 whitespace-nowrap transition-all border-b-2 border-transparent" data-tab="exercises">
+              Exercises
+            </button>
+            <button onclick="switchTab('homework')" class="tab-btn px-6 py-4 text-sm font-bold text-ink-400 hover:text-ink-100 whitespace-nowrap transition-all border-b-2 border-transparent" data-tab="homework">
+              Homework
+            </button>
+          </div>
+
+          <!-- Materials Tab -->
+          <div id="materialsTab" class="tab-content p-6">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <h3 class="font-bold text-ink-100">Session Slides</h3>
+                <a id="slidesDownload" href="#" download class="px-4 py-2 rounded-xl text-sm font-bold bg-surface-2 border border-ink-800 text-ink-300 hover:border-accent-blue hover:text-accent-blue transition-all flex items-center gap-2">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                  </svg>
+                  Download PPTX
+                </a>
+              </div>
+              
+              <div id="slidesViewer" class="rounded-xl overflow-hidden border border-ink-800 bg-surface-2" style="height: 500px;">
+                <iframe id="slidesIframe" src="" class="w-full h-full" frameborder="0"></iframe>
+              </div>
+
+              <div id="noSlides" class="hidden text-center py-12 text-ink-500">
+                <svg class="w-12 h-12 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                <p>Materials coming soon</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Code Editor Tab -->
+          <div id="codeTab" class="tab-content p-6 hidden">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <h3 class="font-bold text-ink-100">Interactive Code Editor</h3>
+                <div class="flex items-center gap-2">
+                  <span id="pyodideStatus" class="text-xs font-mono text-ink-500">Loading Python...</span>
+                  <button onclick="runCode()" class="px-4 py-2 rounded-xl text-sm font-bold bg-gradient-to-r from-accent-green to-green-500 text-white hover:shadow-lg transition-all btn-press flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                    </svg>
+                    Run Code
+                  </button>
+                </div>
+              </div>
+              
+              <textarea id="codeEditor"></textarea>
+
+              <div class="rounded-xl border border-ink-800 bg-surface-2 overflow-hidden">
+                <div class="px-4 py-2 border-b border-ink-800 flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-accent-green"></span>
+                  <span class="text-xs font-mono text-ink-500">Output</span>
+                </div>
+                <pre id="codeOutput" class="p-4 font-mono text-sm text-ink-300 overflow-auto max-h-64">Click "Run Code" to see the output...</pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- Exercises Tab -->
+          <div id="exercisesTab" class="tab-content p-6 hidden">
+            <div id="exercisesList" class="space-y-4"></div>
+          </div>
+
+          <!-- Homework Tab -->
+          <div id="homeworkTab" class="tab-content p-6 hidden">
+            <div id="homeworkContent" class="space-y-4"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="space-y-6">
+        <!-- Session Info -->
+        <div class="glass rounded-2xl p-6">
+          <h3 class="font-bold text-ink-100 mb-4">Session Info</h3>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3 text-sm">
+              <svg class="w-5 h-5 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span class="text-ink-400">Duration:</span>
+              <span class="font-bold text-ink-100" id="sessionDuration">3 Hours</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm">
+              <svg class="w-5 h-5 text-accent-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+              <span class="text-ink-400">Difficulty:</span>
+              <span class="font-bold text-ink-100" id="sessionDifficulty">Beginner</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm">
+              <svg class="w-5 h-5 text-accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+              </svg>
+              <span class="text-ink-400">Project:</span>
+              <span class="font-bold text-ink-100" id="sessionProject">-</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topics -->
+        <div class="glass rounded-2xl p-6">
+          <h3 class="font-bold text-ink-100 mb-4">Topics Covered</h3>
+          <ul id="topicsList" class="space-y-2 text-sm"></ul>
+        </div>
+
+        <!-- Quick Navigation -->
+        <div class="glass rounded-2xl p-6">
+          <h3 class="font-bold text-ink-100 mb-4">Quick Navigation</h3>
+          <div id="quickNav" class="grid grid-cols-4 gap-2"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/python/python.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+  <script>
+    // Session data
+    const SESSIONS = {
+      1: { title: "Introduction to Programming & Python Basics", duration: "3 Hours", difficulty: "Beginner", project: "Student Card Generator", hasVideo: true, hasMaterial: true, topics: ["What is programming?", "Hardware vs Software", "CPU, RAM, Storage", "Compiler vs Interpreter", "Install Python & VS Code", "Terminal basics", "print(), comments, variables", "Data types: int, float, str, bool", "input(), type(), type casting"], exercises: [{ title: "Hello World", desc: "Write a program that prints 'Hello, World!'", starter: "print('Hello, World!')", solution: "print('Hello, World!')" }, { title: "Variables", desc: "Create variables and print them", starter: "# Create your variables here\nname = 'Your Name'\nage = 25\nprint(f'My name is {name} and I am {age} years old')", solution: "" }], homework: "Create a Student Card Generator that takes user input for name, age, grade, and student ID, then displays a formatted student card." },
+      2: { title: "Operators & Conditions", duration: "3 Hours", difficulty: "Beginner", project: "Calculator, BMI Calculator", hasVideo: true, hasMaterial: true, topics: ["Arithmetic operators", "Comparison operators", "Logical operators", "if / elif / else", "Nested conditions"], exercises: [{ title: "Calculator", desc: "Build a simple calculator", starter: "# Simple Calculator\nnum1 = float(input('Enter first number: '))\nop = input('Enter operator: ')\nnum2 = float(input('Enter second number: '))\n\nif op == '+':\n    print(f'Result: {num1 + num2}')", solution: "" }], homework: "Build a BMI Calculator that takes weight (kg) and height (m), calculates BMI, and categorizes the result." },
+      3: { title: "Loops", duration: "3 Hours", difficulty: "Beginner", project: "Guess the Number Game", hasVideo: false, hasMaterial: false, topics: ["while and for loops", "range()", "break, continue, pass", "Nested loops"], exercises: [{ title: "For Loop", desc: "Print numbers 1-10", starter: "# Print numbers 1 to 10\nfor i in range(1, 11):\n    print(i)", solution: "" }], homework: "Create a Guess the Number game where the computer picks a random number and the user guesses." },
+      4: { title: "Strings", duration: "3 Hours", difficulty: "Beginner", project: "Word Counter", hasVideo: false, hasMaterial: false, topics: ["Indexing, slicing", "String formatting", "String methods"], exercises: [], homework: "Build a Word Counter that counts words, characters, and sentences in a text." },
+      5: { title: "Lists & Tuples", duration: "3 Hours", difficulty: "Beginner-Intermediate", project: "Shopping List", hasVideo: false, hasMaterial: false, topics: ["Create, access, update lists", "List methods", "Tuples", "enumerate(), zip()"], exercises: [], homework: "Create a Shopping List app with add, remove, and display functionality." },
+      6: { title: "Sets & Dictionaries", duration: "3 Hours", difficulty: "Beginner-Intermediate", project: "Phone Book", hasVideo: false, hasMaterial: false, topics: ["Sets operations", "Dictionaries", "Nested dictionaries"], exercises: [], homework: "Build a Contact Manager using dictionaries." },
+      7: { title: "Functions", duration: "3 Hours", difficulty: "Intermediate", project: "Calculator with Functions", hasVideo: false, hasMaterial: false, topics: ["Creating functions", "Parameters and return values", "Lambda functions", "map(), filter()"], exercises: [], homework: "Refactor your calculator to use functions for each operation." },
+      8: { title: "Files & JSON", duration: "3 Hours", difficulty: "Intermediate", project: "Notes App", hasVideo: false, hasMaterial: false, topics: ["File operations", "with statement", "JSON handling"], exercises: [], homework: "Build a Notes App that saves notes to a JSON file." },
+      9: { title: "Exceptions, Modules & pip", duration: "3 Hours", difficulty: "Intermediate", project: "Password Generator", hasVideo: false, hasMaterial: false, topics: ["try/except/finally", "Importing modules", "pip, venv"], exercises: [], homework: "Create a secure Password Generator using the random module." },
+      10: { title: "Git & GitHub", duration: "3 Hours", difficulty: "Beginner-Intermediate", project: "Upload to GitHub", hasVideo: false, hasMaterial: false, topics: ["Version control", "Git commands", "GitHub basics"], exercises: [], homework: "Create a GitHub repository and upload all your previous projects." },
+      11: { title: "Object-Oriented Programming (OOP)", duration: "3 Hours", difficulty: "Intermediate", project: "Library System", hasVideo: false, hasMaterial: false, topics: ["Classes and objects", "Methods", "Inheritance", "Encapsulation"], exercises: [], homework: "Build a Library Management System using OOP concepts." },
+      12: { title: "SQLite Databases", duration: "3 Hours", difficulty: "Intermediate", project: "To-Do App", hasVideo: false, hasMaterial: false, topics: ["Database basics", "SQL commands", "CRUD operations"], exercises: [], homework: "Create a To-Do App with SQLite database backend." },
+      13: { title: "APIs", duration: "3 Hours", difficulty: "Intermediate", project: "Weather App", hasVideo: false, hasMaterial: false, topics: ["What is an API?", "HTTP methods", "JSON", "Requests library"], exercises: [], homework: "Build a Weather App that fetches data from a weather API." },
+      14: { title: "Web Scraping", duration: "3 Hours", difficulty: "Intermediate-Advanced", project: "Price Tracker", hasVideo: false, hasMaterial: false, topics: ["HTML basics", "BeautifulSoup", "Selenium"], exercises: [], homework: "Create a Price Tracker that monitors product prices." },
+      15: { title: "Introduction to GUI with Flet", duration: "3 Hours", difficulty: "Intermediate", project: "Welcome App", hasVideo: false, hasMaterial: false, topics: ["What is GUI?", "Flet basics", "UI components", "Event handling"], exercises: [], homework: "Build a Welcome App with Login Screen using Flet." },
+      16: { title: "Advanced Flet", duration: "3 Hours", difficulty: "Intermediate-Advanced", project: "Multi-page Notes App", hasVideo: false, hasMaterial: false, topics: ["Project structure", "Navigation", "State management", "Responsive design"], exercises: [], homework: "Create a Multi-page Notes App with navigation." },
+      17: { title: "Flet + SQLite + APIs — Capstone", duration: "3 Hours", difficulty: "Expert", project: "Full-Stack Capstone", hasVideo: false, hasMaterial: false, topics: ["Integration", "Form validation", "Error handling", "Project architecture"], exercises: [], homework: "Build a complete Full-Stack application combining Flet, SQLite, and APIs." }
+    };
+
+    let currentSession = 1;
+    let editor = null;
+    let pyodide = null;
+
+    // Get session number from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    currentSession = parseInt(urlParams.get('num')) || 1;
+
+    // Load user data
+    function getUserData() {
+      const data = localStorage.getItem('python_bootcamp_user');
+      if (!data) { window.location.href = 'login.html'; return null; }
+      return JSON.parse(data);
+    }
+
+    // Save user data
+    function saveUserData(data) {
+      localStorage.setItem('python_bootcamp_user', JSON.stringify(data));
+    }
+
+    // Initialize page
+    function initPage() {
+      const user = getUserData();
+      if (!user) return;
+
+      const session = SESSIONS[currentSession];
+      if (!session) { window.location.href = 'dashboard.html'; return; }
+
+      document.title = `Python Bootcamp - ${session.title}`;
+      document.getElementById('sessionTitle').textContent = session.title;
+      document.getElementById('sessionNumber').textContent = `SESSION ${String(currentSession).padStart(2, '0')}`;
+      document.getElementById('sessionDuration').textContent = session.duration;
+      document.getElementById('sessionDifficulty').textContent = session.difficulty;
+      document.getElementById('sessionProject').textContent = session.project;
+
+      // Topics
+      const topicsList = document.getElementById('topicsList');
+      topicsList.innerHTML = session.topics.map(t => `
+        <li class="flex items-start gap-2">
+          <svg class="w-4 h-4 text-accent-green mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <span class="text-ink-300">${t}</span>
+        </li>
+      `).join('');
+
+      // Video
+      if (session.hasVideo) {
+        document.getElementById('videoPlaceholder').classList.add('hidden');
+        document.getElementById('videoSource').src = `assets/videos/session${currentSession}.mp4`;
+        document.getElementById('videoPlayer').load();
+      }
+
+      // Materials
+      if (session.hasMaterial) {
+        document.getElementById('slidesIframe').src = `assets/materials/session${currentSession}-slides/index.html`;
+        document.getElementById('slidesDownload').href = `assets/materials/session${currentSession}.pptx`;
+      } else {
+        document.getElementById('slidesViewer').classList.add('hidden');
+        document.getElementById('noSlides').classList.remove('hidden');
+      }
+
+      // Exercises
+      const exercisesList = document.getElementById('exercisesList');
+      if (session.exercises.length > 0) {
+        exercisesList.innerHTML = session.exercises.map((ex, i) => `
+          <div class="exercise-card p-4 rounded-xl border border-ink-800 bg-surface-2">
+            <div class="flex items-start justify-between mb-2">
+              <h4 class="font-bold text-ink-100">${ex.title}</h4>
+              <span class="text-xs font-mono text-accent-blue">EXERCISE ${i + 1}</span>
+            </div>
+            <p class="text-sm text-ink-400 mb-3">${ex.desc}</p>
+            <button onclick="loadExercise('${ex.starter.replace(/'/g, "\\'")}')" class="px-4 py-2 rounded-lg text-xs font-bold bg-accent-blue/10 text-accent-blue border border-accent-blue/20 hover:bg-accent-blue/20 transition-all">
+              Load in Editor
+            </button>
+          </div>
+        `).join('');
+      } else {
+        exercisesList.innerHTML = '<p class="text-ink-500 text-center py-8">Exercises coming soon</p>';
+      }
+
+      // Homework
+      const homeworkContent = document.getElementById('homeworkContent');
+      homeworkContent.innerHTML = `
+        <div class="p-4 rounded-xl border border-accent-orange/30 bg-accent-orange/5">
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-lg bg-accent-orange/20 flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-accent-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-bold text-ink-100 mb-1">Assignment</h4>
+              <p class="text-sm text-ink-300">${session.homework}</p>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Quick navigation
+      const quickNav = document.getElementById('quickNav');
+      quickNav.innerHTML = Object.keys(SESSIONS).map(num => `
+        <a href="session.html?num=${num}" class="p-2 rounded-lg text-center text-xs font-bold ${parseInt(num) === currentSession ? 'bg-accent-blue text-white' : 'bg-surface-2 border border-ink-800 text-ink-400 hover:border-accent-blue hover:text-accent-blue'} transition-all">
+          ${num}
+        </a>
+      `).join('');
+
+      // Navigation buttons
+      document.getElementById('prevBtn').style.visibility = currentSession > 1 ? 'visible' : 'hidden';
+      document.getElementById('nextBtn').style.visibility = currentSession < 17 ? 'visible' : 'hidden';
+
+      // Complete button
+      if (user.completedSessions.includes(currentSession)) {
+        document.getElementById('completeBtn').textContent = 'Completed ✓';
+        document.getElementById('completeBtn').classList.remove('from-accent-green', 'to-green-500');
+        document.getElementById('completeBtn').classList.add('from-accent-blue', 'to-blue-600');
+      }
+    }
+
+    // Tab switching
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.tab-btn').forEach(el => {
+        el.classList.remove('tab-active');
+        el.classList.add('text-ink-400');
+      });
+      document.getElementById(tab + 'Tab').classList.remove('hidden');
+      document.querySelector(`[data-tab="${tab}"]`).classList.add('tab-active');
+      document.querySelector(`[data-tab="${tab}"]`).classList.remove('text-ink-400');
+    }
+
+    // Initialize CodeMirror
+    function initEditor() {
+      editor = CodeMirror.fromTextArea(document.getElementById('codeEditor'), {
+        mode: 'python',
+        theme: 'dracula',
+        lineNumbers: true,
+        indentUnit: 4,
+        tabSize: 4,
+        lineWrapping: true
+      });
+      editor.setValue("# Write your Python code here\nprint('Hello, Python!')");
+    }
+
+    // Load exercise into editor
+    function loadExercise(code) {
+      editor.setValue(code);
+      switchTab('code');
+    }
+
+    // Run code
+    async function runCode() {
+      if (!pyodide) {
+        document.getElementById('codeOutput').textContent = 'Loading Python... Please wait.';
+        return;
+      }
+      
+      const code = editor.getValue();
+      document.getElementById('codeOutput').textContent = 'Running...';
+      
+      try {
+        pyodide.runPython(`
+import sys
+from io import StringIO
+sys.stdout = StringIO()
+        `);
+        
+        pyodide.runPython(code);
+        
+        const output = pyodide.runPython('sys.stdout.getvalue()');
+        document.getElementById('codeOutput').textContent = output || 'No output';
+      } catch (err) {
+        document.getElementById('codeOutput').textContent = `Error: ${err.message}`;
+      }
+    }
+
+    // Mark session complete
+    function markComplete() {
+      const user = getUserData();
+      if (!user) return;
+      
+      if (!user.completedSessions.includes(currentSession)) {
+        user.completedSessions.push(currentSession);
+        user.progress = Math.round((user.completedSessions.length / 17) * 100);
+        saveUserData(user);
+        
+        document.getElementById('completeBtn').textContent = 'Completed ✓';
+        document.getElementById('completeBtn').classList.remove('from-accent-green', 'to-green-500');
+        document.getElementById('completeBtn').classList.add('from-accent-blue', 'to-blue-600');
+      }
+    }
+
+    // Navigation
+    function prevSession() {
+      if (currentSession > 1) window.location.href = `session.html?num=${currentSession - 1}`;
+    }
+
+    function nextSession() {
+      if (currentSession < 17) window.location.href = `session.html?num=${currentSession + 1}`;
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      initPage();
+      initEditor();
+      
+      // Load Pyodide
+      loadPyodide().then(p => {
+        pyodide = p;
+        document.getElementById('pyodideStatus').textContent = 'Python ready';
+        document.getElementById('pyodideStatus').classList.add('text-accent-green');
+      });
+    });
+  </script>
+</body>
+</html>

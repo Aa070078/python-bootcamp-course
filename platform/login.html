@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Bootcamp - Student Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            surface: { 0: '#060814', 1: '#0a0f1c', 2: '#0f1629', 3: '#141c33', 4: '#1a2440' },
+            accent: { blue: '#3b82f6', orange: '#f97316', cyan: '#22d3ee', green: '#34d399' },
+            ink: { 100: '#f1f5f9', 200: '#e2e8f0', 300: '#cbd5e1', 400: '#94a3b8', 500: '#64748b', 600: '#475569', 700: '#334155', 800: '#1e293b' }
+          },
+          fontFamily: {
+            display: ['"Plus Jakarta Sans"', 'Tajawal', 'sans-serif'],
+            body: ['Tajawal', '"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Fira Code"', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: 'Plus Jakarta Sans', 'Tajawal', sans-serif; }
+    .gradient-text { background: linear-gradient(135deg, #3b82f6, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .glass { background: rgba(10, 15, 28, 0.8); backdrop-filter: blur(20px); border: 1px solid rgba(59, 130, 246, 0.15); }
+    .glow { box-shadow: 0 0 40px rgba(59, 130, 246, 0.15), 0 0 80px rgba(59, 130, 246, 0.05); }
+    @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+    .float { animation: float 6s ease-in-out infinite; }
+    @keyframes pulse-ring { 0% { transform: scale(0.9); opacity: 1; } 100% { transform: scale(1.5); opacity: 0; } }
+    .pulse-ring { animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite; }
+    .grid-pattern { background-image: linear-gradient(rgba(59,130,246,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.03) 1px, transparent 1px); background-size: 50px 50px; }
+    input:focus { outline: none; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3); }
+    .btn-press:active { transform: scale(0.97); }
+  </style>
+</head>
+<body class="bg-surface-0 text-ink-200 min-h-screen overflow-hidden">
+  <!-- Grid pattern background -->
+  <div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+  
+  <!-- Animated orbs -->
+  <div class="fixed top-1/4 left-1/4 w-96 h-96 bg-accent-blue/10 rounded-full blur-3xl float"></div>
+  <div class="fixed bottom-1/4 right-1/4 w-80 h-80 bg-accent-orange/10 rounded-full blur-3xl float" style="animation-delay: -3s;"></div>
+
+  <div class="relative z-10 min-h-screen flex items-center justify-center p-4">
+    <div class="w-full max-w-md">
+      <!-- Logo -->
+      <div class="text-center mb-8">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-accent-blue to-accent-orange mb-4 glow">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+        </div>
+        <h1 class="text-2xl font-bold text-ink-100 font-display">Python Bootcamp</h1>
+        <p class="text-sm text-ink-500 mt-1 font-mono text-xs tracking-wider">STUDENT PLATFORM</p>
+      </div>
+
+      <!-- Login Card -->
+      <div class="glass rounded-3xl p-8 glow">
+        <div class="text-center mb-6">
+          <h2 class="text-xl font-bold text-ink-100">Welcome Back</h2>
+          <p class="text-sm text-ink-400 mt-1">Sign in to access your course</p>
+        </div>
+
+        <form id="loginForm" class="space-y-5">
+          <div>
+            <label class="block text-xs font-bold text-ink-400 uppercase tracking-wider mb-2">Email Address</label>
+            <input 
+              type="email" 
+              id="emailInput"
+              placeholder="student@example.com"
+              class="w-full px-4 py-3 rounded-xl bg-surface-2 border border-ink-800 text-ink-100 placeholder-ink-600 font-medium transition-all focus:border-accent-blue"
+              required
+            >
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-ink-400 uppercase tracking-wider mb-2">Full Name</label>
+            <input 
+              type="text" 
+              id="nameInput"
+              placeholder="Your name"
+              class="w-full px-4 py-3 rounded-xl bg-surface-2 border border-ink-800 text-ink-100 placeholder-ink-600 font-medium transition-all focus:border-accent-blue"
+              required
+            >
+          </div>
+
+          <button 
+            type="submit"
+            class="w-full py-3.5 rounded-xl font-bold bg-gradient-to-r from-accent-blue to-blue-600 text-white hover:shadow-lg hover:shadow-accent-blue/20 transition-all btn-press flex items-center justify-center gap-2"
+          >
+            <span>Access Platform</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </button>
+        </form>
+
+        <div id="errorMessage" class="hidden mt-4 p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm text-center"></div>
+      </div>
+
+      <!-- Footer -->
+      <p class="text-center text-xs text-ink-600 mt-6">
+        Don't have access? Contact your instructor.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // Allowed student emails
+    const ALLOWED_EMAILS = [
+      // Add student emails here
+    ];
+
+    // Check if already logged in
+    const currentUser = localStorage.getItem('python_bootcamp_user');
+    if (currentUser) {
+      window.location.href = 'dashboard.html';
+    }
+
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const email = document.getElementById('emailInput').value.toLowerCase().trim();
+      const name = document.getElementById('nameInput').value.trim();
+      const errorDiv = document.getElementById('errorMessage');
+      
+      // Hide previous errors
+      errorDiv.classList.add('hidden');
+      
+      // Validate email
+      if (!email || !name) {
+        errorDiv.textContent = 'Please fill in all fields';
+        errorDiv.classList.remove('hidden');
+        return;
+      }
+
+      // Check if email is in allowed list (if list is not empty)
+      if (ALLOWED_EMAILS.length > 0 && !ALLOWED_EMAILS.includes(email)) {
+        errorDiv.textContent = 'This email is not authorized. Contact your instructor.';
+        errorDiv.classList.remove('hidden');
+        return;
+      }
+      
+      // Save user data
+      const userData = {
+        email: email,
+        name: name,
+        loginTime: new Date().toISOString(),
+        completedSessions: [],
+        progress: 0
+      };
+      
+      localStorage.setItem('python_bootcamp_user', JSON.stringify(userData));
+      
+      // Redirect to dashboard
+      window.location.href = 'dashboard.html';
+    });
+  </script>
+</body>
+</html>

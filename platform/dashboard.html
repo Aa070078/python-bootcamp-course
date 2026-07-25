@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Bootcamp - Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            surface: { 0: '#060814', 1: '#0a0f1c', 2: '#0f1629', 3: '#141c33', 4: '#1a2440' },
+            accent: { blue: '#3b82f6', orange: '#f97316', cyan: '#22d3ee', green: '#34d399' },
+            ink: { 100: '#f1f5f9', 200: '#e2e8f0', 300: '#cbd5e1', 400: '#94a3b8', 500: '#64748b', 600: '#475569', 700: '#334155', 800: '#1e293b' }
+          },
+          fontFamily: {
+            display: ['"Plus Jakarta Sans"', 'Tajawal', 'sans-serif'],
+            body: ['Tajawal', '"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"Fira Code"', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: 'Plus Jakarta Sans', 'Tajawal', sans-serif; }
+    .gradient-text { background: linear-gradient(135deg, #3b82f6, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .glass { background: rgba(10, 15, 28, 0.6); backdrop-filter: blur(20px); border: 1px solid rgba(59, 130, 246, 0.1); }
+    .card-hover { transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    .card-hover:hover { transform: translateY(-4px); border-color: #3b82f6; box-shadow: 0 20px 40px rgba(59, 130, 246, 0.1); }
+    .grid-pattern { background-image: linear-gradient(rgba(59,130,246,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.03) 1px, transparent 1px); background-size: 50px 50px; }
+    .progress-ring { transform: rotate(-90deg); }
+    .progress-ring-circle { transition: stroke-dashoffset 0.5s ease; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: #334155; }
+  </style>
+</head>
+<body class="bg-surface-0 text-ink-200 min-h-screen">
+  <!-- Grid pattern background -->
+  <div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 glass border-b border-ink-800/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-blue to-accent-orange flex items-center justify-center">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <div>
+            <span class="font-bold text-ink-100 block leading-none">Python Bootcamp</span>
+            <span class="text-[10px] font-mono text-accent-orange tracking-wider">STUDENT DASHBOARD</span>
+          </div>
+        </div>
+        
+        <div class="flex items-center gap-4">
+          <div class="hidden sm:block text-right">
+            <p class="text-xs text-ink-400">Welcome back,</p>
+            <p id="userName" class="text-sm font-bold text-ink-100">Student</p>
+          </div>
+          <button onclick="logout()" class="p-2 rounded-lg bg-surface-2 border border-ink-800 text-ink-400 hover:text-ink-100 hover:border-accent-blue transition-all">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Welcome Section -->
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold text-ink-100 font-display">
+        Your Learning <span class="gradient-text">Journey</span>
+      </h1>
+      <p class="text-ink-400 mt-2">17 sessions to master Python development</p>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+      <div class="glass rounded-2xl p-5">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-xs text-ink-500 uppercase tracking-wider">Completed</p>
+            <p id="completedCount" class="text-3xl font-bold text-ink-100 mt-1">0</p>
+          </div>
+          <div class="w-12 h-12 rounded-xl bg-accent-green/10 flex items-center justify-center">
+            <svg class="w-6 h-6 text-accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass rounded-2xl p-5">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-xs text-ink-500 uppercase tracking-wider">In Progress</p>
+            <p id="inProgressCount" class="text-3xl font-bold text-ink-100 mt-1">0</p>
+          </div>
+          <div class="w-12 h-12 rounded-xl bg-accent-orange/10 flex items-center justify-center">
+            <svg class="w-6 h-6 text-accent-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass rounded-2xl p-5">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-xs text-ink-500 uppercase tracking-wider">Progress</p>
+            <p id="progressPercent" class="text-3xl font-bold text-ink-100 mt-1">0%</p>
+          </div>
+          <div class="w-12 h-12 rounded-xl bg-accent-blue/10 flex items-center justify-center">
+            <svg class="w-6 h-6 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="glass rounded-2xl p-6 mb-8">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-sm font-bold text-ink-100">Course Progress</h3>
+        <span id="progressText" class="text-xs font-mono text-accent-blue">0 / 17 sessions</span>
+      </div>
+      <div class="h-3 bg-surface-3 rounded-full overflow-hidden">
+        <div id="progressBar" class="h-full bg-gradient-to-r from-accent-blue to-accent-orange rounded-full transition-all duration-500" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <!-- Week Sections -->
+    <div id="sessionsContainer" class="space-y-8"></div>
+  </main>
+
+  <script>
+    // Session data
+    const SESSIONS = [
+      { week: 1, title: "Python Fundamentals", sessions: [
+        { num: 1, title: "Introduction to Programming & Python Basics", icon: "cpu", hasVideo: true, hasMaterial: true },
+        { num: 2, title: "Operators & Conditions", icon: "sliders", hasVideo: true, hasMaterial: true },
+        { num: 3, title: "Loops", icon: "terminal", hasVideo: false, hasMaterial: false }
+      ]},
+      { week: 2, title: "Working with Data", sessions: [
+        { num: 4, title: "Strings", icon: "type", hasVideo: false, hasMaterial: false },
+        { num: 5, title: "Lists & Tuples", icon: "list", hasVideo: false, hasMaterial: false },
+        { num: 6, title: "Sets & Dictionaries", icon: "layers", hasVideo: false, hasMaterial: false }
+      ]},
+      { week: 3, title: "Building Real Programs", sessions: [
+        { num: 7, title: "Functions", icon: "code", hasVideo: false, hasMaterial: false },
+        { num: 8, title: "Files & JSON", icon: "file-text", hasVideo: false, hasMaterial: false },
+        { num: 9, title: "Exceptions, Modules & pip", icon: "settings", hasVideo: false, hasMaterial: false }
+      ]},
+      { week: 4, title: "Developer Tools", sessions: [
+        { num: 10, title: "Git & GitHub", icon: "git-branch", hasVideo: false, hasMaterial: false },
+        { num: 11, title: "Object-Oriented Programming (OOP)", icon: "layers", hasVideo: false, hasMaterial: false },
+        { num: 12, title: "SQLite Databases", icon: "database", hasVideo: false, hasMaterial: false }
+      ]},
+      { week: 5, title: "Internet & Automation", sessions: [
+        { num: 13, title: "APIs", icon: "globe", hasVideo: false, hasMaterial: false },
+        { num: 14, title: "Web Scraping", icon: "codepen", hasVideo: false, hasMaterial: false }
+      ]},
+      { week: 6, title: "GUI Development with Flet", sessions: [
+        { num: 15, title: "Introduction to GUI Development with Flet", icon: "monitor", hasVideo: false, hasMaterial: false },
+        { num: 16, title: "Advanced Flet & Application Structure", icon: "sparkles", hasVideo: false, hasMaterial: false },
+        { num: 17, title: "Flet + SQLite + APIs — Capstone", icon: "award", hasVideo: false, hasMaterial: false }
+      ]}
+    ];
+
+    // Icon SVGs
+    const ICONS = {
+      cpu: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>',
+      sliders: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>',
+      terminal: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>',
+      type: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>',
+      list: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>',
+      layers: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>',
+      code: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>',
+      'file-text': '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>',
+      settings: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>',
+      'git-branch': '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 3v12m6-12v12m6-12v12M6 9h12M6 15h12"></path>',
+      database: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>',
+      globe: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>',
+      codepen: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path>',
+      monitor: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>',
+      sparkles: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>',
+      award: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>'
+    };
+
+    // Get user data
+    function getUserData() {
+      const data = localStorage.getItem('python_bootcamp_user');
+      if (!data) {
+        window.location.href = 'login.html';
+        return null;
+      }
+      return JSON.parse(data);
+    }
+
+    // Save user data
+    function saveUserData(data) {
+      localStorage.setItem('python_bootcamp_user', JSON.stringify(data));
+    }
+
+    // Logout
+    function logout() {
+      localStorage.removeItem('python_bootcamp_user');
+      window.location.href = 'login.html';
+    }
+
+    // Render sessions
+    function renderSessions() {
+      const user = getUserData();
+      if (!user) return;
+
+      document.getElementById('userName').textContent = user.name;
+
+      const container = document.getElementById('sessionsContainer');
+      container.innerHTML = '';
+
+      let completedCount = 0;
+      let inProgressCount = 0;
+
+      SESSIONS.forEach(week => {
+        const weekHtml = `
+          <div class="glass rounded-2xl overflow-hidden">
+            <div class="p-5 border-b border-ink-800/50">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-accent-orange/10 flex items-center justify-center">
+                  <span class="text-accent-orange font-bold">W${week.week}</span>
+                </div>
+                <div>
+                  <h3 class="font-bold text-ink-100">Week ${week.week}</h3>
+                  <p class="text-xs text-ink-500">${week.title}</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-5 grid grid-cols-1 md:grid-cols-3 gap-4">
+              ${week.sessions.map(s => {
+                const isCompleted = user.completedSessions.includes(s.num);
+                const status = isCompleted ? 'completed' : 'available';
+                if (isCompleted) completedCount++;
+                else inProgressCount++;
+
+                return `
+                  <a href="session.html?num=${s.num}" class="card-hover block p-4 rounded-xl border ${isCompleted ? 'border-accent-green/30 bg-accent-green/5' : 'border-ink-800 bg-surface-2'}">
+                    <div class="flex items-start justify-between mb-3">
+                      <div class="w-10 h-10 rounded-lg ${isCompleted ? 'bg-accent-green/20' : 'bg-accent-blue/10'} flex items-center justify-center">
+                        <svg class="w-5 h-5 ${isCompleted ? 'text-accent-green' : 'text-accent-blue'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          ${ICONS[s.icon]}
+                        </svg>
+                      </div>
+                      ${isCompleted ? `
+                        <span class="px-2 py-1 rounded-full bg-accent-green/20 text-accent-green text-[10px] font-bold">DONE</span>
+                      ` : s.hasVideo ? `
+                        <span class="px-2 py-1 rounded-full bg-accent-blue/20 text-accent-blue text-[10px] font-bold">VIDEO</span>
+                      ` : ''}
+                    </div>
+                    <p class="text-xs text-ink-500 font-mono mb-1">SESSION ${String(s.num).padStart(2, '0')}</p>
+                    <h4 class="font-bold text-ink-100 text-sm leading-tight">${s.title}</h4>
+                    <div class="flex items-center gap-3 mt-3 text-[10px] text-ink-500">
+                      ${s.hasVideo ? '<span class="flex items-center gap-1"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Video</span>' : ''}
+                      ${s.hasMaterial ? '<span class="flex items-center gap-1"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>Materials</span>' : ''}
+                    </div>
+                  </a>
+                `;
+              }).join('')}
+            </div>
+          </div>
+        `;
+        container.innerHTML += weekHtml;
+      });
+
+      // Update stats
+      document.getElementById('completedCount').textContent = completedCount;
+      document.getElementById('inProgressCount').textContent = inProgressCount;
+      const progress = Math.round((completedCount / 17) * 100);
+      document.getElementById('progressPercent').textContent = progress + '%';
+      document.getElementById('progressBar').style.width = progress + '%';
+      document.getElementById('progressText').textContent = `${completedCount} / 17 sessions`;
+    }
+
+    // Initialize
+    renderSessions();
+  </script>
+</body>
+</html>
