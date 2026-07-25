@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><link rel="stylesheet" href="../assets/theme.css"></head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid" data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1;"></div>
+  <div class="bg-glow-cyan" data-object="true" data-object-type="shape" style="position:absolute; left:-200px; top:-200px; z-index:1;"></div>
+
+  <div class="chrome-topbar" data-object="true" data-object-type="textbox" style="z-index:10;">
+    <span class="chrome-dot"></span>
+    <span>CONDITIONS // IF · ELSE</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:140px; width:1400px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#22d3ee; letter-spacing:0.25em; margin-bottom:14px;">// FAMILY 02 OF 03</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:88px; font-weight:700; color:#f8fafc; line-height:1; letter-spacing:-0.02em;"><span class="mono" style="color:#ec4899;">if</span> / <span class="mono" style="color:#facc15;">else</span></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:#cbd5e1; margin-top:14px;">Two paths — one for True, one for False.</div>
+  </div>
+
+  <!-- Left: if alone -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:870px; height:360px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:360px; width:810px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:20px; color:#ec4899; letter-spacing:0.2em; margin-bottom:12px;">// IF ALONE — ONE PATH</div>
+    <div class="code-window" style="width:810px; height:240px;">
+      <div class="code-window-header">
+        <span class="code-dot code-dot-r"></span>
+        <span class="code-dot code-dot-y"></span>
+        <span class="code-dot code-dot-g"></span>
+        <span class="code-window-title">if_only.py</span>
+      </div>
+      <div style="padding:20px 24px; font-family:'JetBrains Mono',monospace; font-size:22px; line-height:1.6;">
+        <div><span class="tok-kw">if</span> <span class="tok-var">rainy</span><span class="tok-op">:</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Take umbrella"</span>)</div>
+        <div style="height:12px;"></div>
+        <div style="color:#64748b; font-size:18px;"># Not rainy? → nothing happens</div>
+        <div style="color:#64748b; font-size:18px;"># No else needed</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right: if/else -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:970px; top:340px; width:870px; height:360px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1000px; top:360px; width:810px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:20px; color:#a3e635; letter-spacing:0.2em; margin-bottom:12px;">// IF / ELSE — TWO PATHS</div>
+    <div class="code-window" style="width:810px; height:240px;">
+      <div class="code-window-header">
+        <span class="code-dot code-dot-r"></span>
+        <span class="code-dot code-dot-y"></span>
+        <span class="code-dot code-dot-g"></span>
+        <span class="code-window-title">if_else.py</span>
+      </div>
+      <div style="padding:20px 24px; font-family:'JetBrains Mono',monospace; font-size:22px; line-height:1.6;">
+        <div><span class="tok-kw">if</span> <span class="tok-var">rainy</span><span class="tok-op">:</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Take umbrella"</span>)</div>
+        <div><span class="tok-kw">else</span><span class="tok-op">:</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Wear sunglasses"</span>)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom: real example -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:740px; width:1780px; height:280px; background:linear-gradient(90deg, rgba(163,230,53,0.10), rgba(34,211,238,0.06)); border:1px solid rgba(163,230,53,0.3); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:130px; top:760px; width:1710px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:20px; color:#a3e635; letter-spacing:0.2em; margin-bottom:10px;">// REAL EXAMPLE — AGE CHECK</div>
+    <div class="code-window" style="width:1710px; height:230px;">
+      <div class="code-window-header">
+        <span class="code-dot code-dot-r"></span>
+        <span class="code-dot code-dot-y"></span>
+        <span class="code-dot code-dot-g"></span>
+        <span class="code-window-title">age_check.py</span>
+      </div>
+      <div style="padding:16px 24px; font-family:'JetBrains Mono',monospace; font-size:18px; line-height:1.5;">
+        <div><span class="tok-var">age</span> <span class="tok-op">=</span> <span class="tok-num">15</span></div>
+        <div><span class="tok-kw">if</span> <span class="tok-var">age</span> <span class="tok-op">&gt;=</span> <span class="tok-num">18</span><span class="tok-op">:</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Adult"</span>)</div>
+        <div><span class="tok-kw">else</span><span class="tok-op">:</span></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Minor"</span>)</div>
+        <div style="height:6px;"></div>
+        <div><span class="tok-out">→ Minor</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S02</div>
+  <div class="chrome-pagenum">31 / 49</div>
+</div>
+
+<template data-slide-notes>
+Contrast "if alone" vs "if/else" — the key difference is: else gives you a fallback.
+
+Analogy: "لو مشطّح — خذ مظلّة. وإلا — خذ نظارات شمسية."
+
+Key point: `else` does NOT have a condition. It's the catch-all. One of the two blocks ALWAYS runs (when using if/else).
+
+Live demo: set `age = 15`, run. Output: "Minor". Change to `age = 20`, run. Output: "Adult". Every time one runs, the other doesn't. "مافيش طريقة يعملوا الاتنين — إما if أو else."
+
+Common mistake: students write `if else:` — WRONG. `else` is standalone, no condition. "الـ else مش محتاج سؤال — هو ببساطة يقول: لو مش الأول، يبقى التاني."
+</template>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><link rel="stylesheet" href="../assets/theme.css"></head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid" data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1;"></div>
+
+  <div class="chrome-topbar" data-object="true" data-object-type="textbox" style="z-index:10;">
+    <span class="chrome-dot"></span>
+    <span>SETUP // TERMINAL BASICS</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:150px; width:1500px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:82px; font-weight:700; color:#f8fafc; line-height:1.02; letter-spacing:-0.02em;">Meet the <span style="color:#a3e635;">terminal</span>.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:#94a3b8; direction:rtl; margin-top:20px;">الشاشة السودة اللي بتخلي أي حد يبان زي هاكر — طب هي إيه فعلاً؟</div>
+  </div>
+
+  <!-- Left: 4 commands -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:380px; width:900px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:#22d3ee; letter-spacing:0.2em; margin-bottom:14px;">// 4 COMMANDS YOU NEED TODAY</div>
+
+    <div style="margin-bottom:14px; padding:14px 18px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.3); border-radius:14px;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#a3e635; margin-bottom:2px;">pwd</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:20px; color:#cbd5e1;">"Where am I?" — prints your current folder.</div>
+      <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:16px; color:#22d3ee; direction:rtl; margin-top:2px;">فين أنا حالياً — في أنهي فولدر</div>
+    </div>
+
+    <div style="margin-bottom:14px; padding:14px 18px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.3); border-radius:14px;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#a3e635; margin-bottom:2px;">ls  <span style="color:#64748b; font-size:18px;">(Mac/Linux)</span>  ·  dir <span style="color:#64748b; font-size:18px;">(Windows)</span></div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:20px; color:#cbd5e1;">"What's here?" — lists files in current folder.</div>
+      <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:16px; color:#a3e635; direction:rtl; margin-top:2px;">أعرض كل الملفات اللي في الفولدر</div>
+    </div>
+
+    <div style="margin-bottom:14px; padding:14px 18px; background:rgba(250,204,21,0.06); border:1px solid rgba(250,204,21,0.3); border-radius:14px;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#a3e635; margin-bottom:2px;">cd folder-name</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:20px; color:#cbd5e1;">"Go into this folder." <span style="color:#64748b;">cd ..</span> to go back.</div>
+      <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:16px; color:#facc15; direction:rtl; margin-top:2px;">ادخل جوه فولدر معين</div>
+    </div>
+
+    <div style="padding:14px 18px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.3); border-radius:14px;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#a3e635; margin-bottom:2px;">python filename.py</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:20px; color:#cbd5e1;">"Run this Python file!" — the magic command.</div>
+      <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:16px; color:#ec4899; direction:rtl; margin-top:2px;">شغّل ملف Python — الأمر السحري</div>
+    </div>
+  </div>
+
+  <!-- Right: live example -->
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:1030px; top:400px; width:810px; height:580px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">Terminal — live session</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1060px; top:480px; width:750px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:22px; line-height:1.65;">
+    <div><span class="tok-out">$</span> <span style="color:#f8fafc;">pwd</span></div>
+    <div style="color:#a3e635;">/Users/ali/Desktop</div>
+    <div style="height:14px;"></div>
+    <div><span class="tok-out">$</span> <span style="color:#f8fafc;">ls</span></div>
+    <div style="color:#22d3ee;">my-python/    photo.jpg    notes.txt</div>
+    <div style="height:14px;"></div>
+    <div><span class="tok-out">$</span> <span style="color:#f8fafc;">cd my-python</span></div>
+    <div><span class="tok-out">$</span> <span style="color:#f8fafc;">ls</span></div>
+    <div style="color:#22d3ee;">hello.py</div>
+    <div style="height:14px;"></div>
+    <div><span class="tok-out">$</span> <span style="color:#f8fafc;">python hello.py</span></div>
+    <div style="color:#a3e635;">Hello, world!</div>
+    <div style="height:14px;"></div>
+    <div><span class="tok-out">$</span> <span style="color:#64748b;">_</span></div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S01</div>
+  <div class="chrome-pagenum">20 / 47</div>
+</div>
+
+<template data-slide-notes>
+De-mystify the terminal. Students find this scary at first.
+
+Open with a joke: "لما تشوف حد في فيلم بيعمل هاكينج بشاشة سودة — دي terminal. مش صعبة، بس شكلها بيخوف."
+
+Explain what it IS: "الـ Terminal = طريقة تكلم الكمبيوتر بالكتابة بدل الماوس. تكتبله أمر، هو ينفذه."
+
+Live demo (do it on your screen):
+
+1. Open terminal
+2. `pwd` → "شفتوا، عرفنا فين حنا"
+3. `ls` → "شوفنا اللي في الفولدر"
+4. `cd Desktop` → "دخلنا للـ Desktop"
+5. `python --version` → "بايثون شغال"
+
+Have them do it too. Walk around.
+
+Emphasize the Mac vs Windows split:
+- **Mac/Linux**: `ls`
+- **Windows**: `dir`
+
+If Windows student is stuck: "استخدم `dir` بدل `ls`. أو افتح PowerShell — بيقبل `ls` كمان."
+
+**Golden rule**: teach them to READ error messages, not fear them. "لو الأمر مش شغال، الـ Terminal بيقولك بالظبط ليه. اقرأ الرسالة."
+</template>
+</body>
+</html>

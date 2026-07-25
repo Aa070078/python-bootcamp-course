@@ -30,16 +30,65 @@
   <style>
     * { box-sizing: border-box; }
     body { font-family: 'Plus Jakarta Sans', 'Tajawal', sans-serif; }
+    
+    /* Dark theme (default) */
+    :root {
+      --bg-page: #060814;
+      --bg-surface: #0a0f1c;
+      --bg-surface-2: #0f1629;
+      --bg-surface-3: #141c33;
+      --text-primary: #f1f5f9;
+      --text-secondary: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-faint: #64748b;
+      --border-color: #1e293b;
+      --accent-blue: #3b82f6;
+      --accent-orange: #f97316;
+      --accent-green: #34d399;
+    }
+    
+    /* Light theme */
+    [data-theme="light"] {
+      --bg-page: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-surface-2: #f1f5f9;
+      --bg-surface-3: #e2e8f0;
+      --text-primary: #0f172a;
+      --text-secondary: #1e293b;
+      --text-muted: #475569;
+      --text-faint: #94a3b8;
+      --border-color: #e2e8f0;
+    }
+    
+    /* Tailwind overrides for light theme */
+    [data-theme="light"] body { background: #f8fafc; color: #1e293b; }
+    [data-theme="light"] .bg-surface-0 { background-color: #f8fafc; }
+    [data-theme="light"] .bg-surface-1 { background-color: #ffffff; }
+    [data-theme="light"] .bg-surface-2 { background-color: #f1f5f9; }
+    [data-theme="light"] .bg-surface-3 { background-color: #e2e8f0; }
+    [data-theme="light"] .text-ink-100 { color: #0f172a; }
+    [data-theme="light"] .text-ink-200 { color: #1e293b; }
+    [data-theme="light"] .text-ink-300 { color: #334155; }
+    [data-theme="light"] .text-ink-400 { color: #475569; }
+    [data-theme="light"] .text-ink-500 { color: #64748b; }
+    [data-theme="light"] .text-ink-600 { color: #94a3b8; }
+    [data-theme="light"] .border-ink-800 { border-color: #e2e8f0; }
+    
+    body { background: var(--bg-page); color: var(--text-secondary); }
     .gradient-text { background: linear-gradient(135deg, #3b82f6, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .glass { background: rgba(10, 15, 28, 0.8); backdrop-filter: blur(20px); border: 1px solid rgba(59, 130, 246, 0.15); }
+    [data-theme="light"] .glass { background: rgba(255, 255, 255, 0.9); border: 1px solid rgba(0, 0, 0, 0.1); }
     .glow { box-shadow: 0 0 40px rgba(59, 130, 246, 0.15), 0 0 80px rgba(59, 130, 246, 0.05); }
     @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
     .float { animation: float 6s ease-in-out infinite; }
     @keyframes pulse-ring { 0% { transform: scale(0.9); opacity: 1; } 100% { transform: scale(1.5); opacity: 0; } }
     .pulse-ring { animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite; }
     .grid-pattern { background-image: linear-gradient(rgba(59,130,246,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.03) 1px, transparent 1px); background-size: 50px 50px; }
+    [data-theme="light"] .grid-pattern { background-image: linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px); }
     input:focus { outline: none; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3); }
     .btn-press:active { transform: scale(0.97); }
+    [data-theme="light"] input { background: #f1f5f9 !important; border-color: #e2e8f0 !important; color: #0f172a !important; }
+    [data-theme="light"] input::placeholder { color: #94a3b8 !important; }
   </style>
 </head>
 <body class="bg-surface-0 text-ink-200 min-h-screen overflow-hidden">
@@ -111,6 +160,11 @@
       <p class="text-center text-xs text-ink-600 mt-6">
         Don't have access? Contact your instructor.
       </p>
+      <button onclick="toggleTheme()" class="mx-auto mt-4 p-2 rounded-lg bg-surface-2 border border-ink-800 text-ink-400 hover:text-ink-100 hover:border-accent-blue transition-all flex items-center gap-2" title="Toggle Theme">
+        <svg id="themeIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+        </svg>
+      </button>
     </div>
   </div>
 
@@ -164,6 +218,33 @@
       // Redirect to dashboard
       window.location.href = 'dashboard.html';
     });
+
+    // Theme toggle
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'light' ? null : 'light';
+      if (next) {
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        document.getElementById('themeIcon').innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>';
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'dark');
+        document.getElementById('themeIcon').innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>';
+      }
+    }
+
+    // Load saved theme
+    (function() {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        setTimeout(() => {
+          const icon = document.getElementById('themeIcon');
+          if (icon) icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>';
+        }, 100);
+      }
+    })();
   </script>
 </body>
 </html>

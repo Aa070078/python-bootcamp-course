@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><link rel="stylesheet" href="../assets/theme.css"></head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid" data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1;"></div>
+
+  <div class="chrome-topbar" data-object="true" data-object-type="textbox" style="z-index:10;">
+    <span class="chrome-dot"></span>
+    <span>OPERATORS // 04 · LOGICAL</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:140px; width:1400px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#facc15; letter-spacing:0.25em; margin-bottom:14px;">// FAMILY 04 OF 06</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:88px; font-weight:700; color:#f8fafc; line-height:1; letter-spacing:-0.02em;">Logical Operators.</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:#cbd5e1; margin-top:14px;">Combine truths. Answer big questions with tiny words.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:22px; color:#facc15; direction:rtl; margin-top:6px;">العمليات المنطقية — بتجمع أسئلة كتير في سؤال واحد</div>
+  </div>
+
+  <!-- 3 logical operators + truth tables -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:420px; width:580px; height:540px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:450px; width:520px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:48px; color:#a3e635; font-weight:700; margin-bottom:8px;">and</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#f8fafc; font-weight:600; margin-bottom:6px;">True only if BOTH are True</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:18px; color:#a3e635; direction:rtl; margin-bottom:20px;">صح لو الاتنين صح — أي واحد غلط، النتيجة غلط</div>
+
+    <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:#cbd5e1; background:#0b1020; padding:16px; border-radius:10px; border:1px solid #2a3352; line-height:1.9;">
+      <div><span style="color:#a3e635;">True</span>  and <span style="color:#a3e635;">True</span>   → <span style="color:#a3e635;">True</span></div>
+      <div><span style="color:#a3e635;">True</span>  and <span style="color:#ec4899;">False</span>  → <span style="color:#ec4899;">False</span></div>
+      <div><span style="color:#ec4899;">False</span> and <span style="color:#a3e635;">True</span>   → <span style="color:#ec4899;">False</span></div>
+      <div><span style="color:#ec4899;">False</span> and <span style="color:#ec4899;">False</span>  → <span style="color:#ec4899;">False</span></div>
+    </div>
+
+    <div style="margin-top:22px; padding:12px 16px; background:rgba(163,230,53,0.1); border-left:4px solid #a3e635; border-radius:8px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; color:#a3e635; font-weight:600;">Real: "must be adult AND have ticket"</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:16px; color:#f8fafc; margin-top:4px;">age &gt;= 18 and has_ticket</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:680px; top:420px; width:580px; height:540px; background:rgba(250,204,21,0.06); border:1px solid rgba(250,204,21,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:710px; top:450px; width:520px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:48px; color:#facc15; font-weight:700; margin-bottom:8px;">or</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#f8fafc; font-weight:600; margin-bottom:6px;">True if AT LEAST ONE is True</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:18px; color:#facc15; direction:rtl; margin-bottom:20px;">صح لو واحد على الأقل صح</div>
+
+    <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:#cbd5e1; background:#0b1020; padding:16px; border-radius:10px; border:1px solid #2a3352; line-height:1.9;">
+      <div><span style="color:#a3e635;">True</span>  or <span style="color:#a3e635;">True</span>   → <span style="color:#a3e635;">True</span></div>
+      <div><span style="color:#a3e635;">True</span>  or <span style="color:#ec4899;">False</span>  → <span style="color:#a3e635;">True</span></div>
+      <div><span style="color:#ec4899;">False</span> or <span style="color:#a3e635;">True</span>   → <span style="color:#a3e635;">True</span></div>
+      <div><span style="color:#ec4899;">False</span> or <span style="color:#ec4899;">False</span>  → <span style="color:#ec4899;">False</span></div>
+    </div>
+
+    <div style="margin-top:22px; padding:12px 16px; background:rgba(250,204,21,0.1); border-left:4px solid #facc15; border-radius:8px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; color:#facc15; font-weight:600;">Real: "weekend OR holiday → sleep in"</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:16px; color:#f8fafc; margin-top:4px;">is_weekend or is_holiday</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1280px; top:420px; width:580px; height:540px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1310px; top:450px; width:520px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:48px; color:#ec4899; font-weight:700; margin-bottom:8px;">not</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#f8fafc; font-weight:600; margin-bottom:6px;">Flip the value — True ↔ False</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:18px; color:#ec4899; direction:rtl; margin-bottom:20px;">اقلب القيمة — صح يبقى غلط، والعكس</div>
+
+    <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:#cbd5e1; background:#0b1020; padding:16px; border-radius:10px; border:1px solid #2a3352; line-height:1.9;">
+      <div>not <span style="color:#a3e635;">True</span>   → <span style="color:#ec4899;">False</span></div>
+      <div>not <span style="color:#ec4899;">False</span>  → <span style="color:#a3e635;">True</span></div>
+      <div style="height:8px;"></div>
+      <div style="color:#94a3b8; font-family:'Space Grotesk',sans-serif; font-size:16px;">Only 2 rows — it's a flipper.</div>
+    </div>
+
+    <div style="margin-top:22px; padding:12px 16px; background:rgba(236,72,153,0.1); border-left:4px solid #ec4899; border-radius:8px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; color:#ec4899; font-weight:600;">Real: "not logged in → show login"</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:16px; color:#f8fafc; margin-top:4px;">not is_logged_in</div>
+    </div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S02</div>
+  <div class="chrome-pagenum">17 / 49</div>
+</div>
+
+<template data-slide-notes>
+The 3 logical operators — think of them as "conjunctions" for truths.
+
+Arabic parallels:
+- `and` = "و" — both must be true
+- `or` = "أو" — one is enough
+- `not` = "مش" — flip
+
+Real-life analogies:
+- **and**: "علشان تدخل الملعب: عندك تذكرة AND عندك 18 سنة." كلاهما لازم.
+- **or**: "علشان تنام بدري: يوم أجازة OR يوم عطلة." أي واحد يكفي.
+- **not**: "لو مش عندك حساب، سجل حساب."
+
+Ask class after each: "لو True and False، النتيجة؟" (False.) "True or False؟" (True.) "not True؟" (False.)
+
+Show the truth tables — the DEFINITIVE reference.
+
+Preview: live coding with real login/permissions examples.
+</template>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><link rel="stylesheet" href="../assets/theme.css"></head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid" data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1;"></div>
+  <div class="bg-glow-cyan" data-object="true" data-object-type="shape" style="position:absolute; left:1220px; top:600px; z-index:1;"></div>
+
+  <div class="chrome-topbar" data-object="true" data-object-type="textbox" style="z-index:10;">
+    <span class="chrome-dot"></span>
+    <span>DEBUGGING // COMMON BEGINNER MISTAKES</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:140px; width:1400px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:#f8fafc; line-height:1.05; letter-spacing:-0.02em;">Common Mistakes.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:22px; color:#94a3b8; direction:rtl; margin-top:6px;">أخطاء شائعة — لو انت عملتها قبل كده، مش لوحدك!</div>
+  </div>
+
+  <!-- Mistake 1 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:580px; height:220px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:365px; width:520px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:#ec4899; letter-spacing:0.15em; margin-bottom:6px;">// MISTAKE 01</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#f8fafc; font-weight:700;">Missing colon</div>
+    <div style="margin-top:8px; padding:8px 12px; background:#0b1020; border-radius:8px; border:1px solid #2a3352;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:#ec4899; text-decoration:line-through;">if x > 5</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:#a3e635; margin-top:4px;">if x > 5<span style="color:#ec4899;">:</span></div>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:16px; color:#94a3b8; margin-top:6px;">Every if/elif/else line needs <span class="mono" style="color:#ec4899;">:</span></div>
+  </div>
+
+  <!-- Mistake 2 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:680px; top:340px; width:580px; height:220px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:710px; top:365px; width:520px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:#ec4899; letter-spacing:0.15em; margin-bottom:6px;">// MISTAKE 02</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#f8fafc; font-weight:700;">Wrong indentation</div>
+    <div style="margin-top:8px; padding:8px 12px; background:#0b1020; border-radius:8px; border:1px solid #2a3352;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:#ec4899; text-decoration:line-through;">if True:<br>print("hi")</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:#a3e635; margin-top:4px;">if True:<br>&nbsp;&nbsp;print("hi")</div>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:16px; color:#94a3b8; margin-top:6px;">Indented code = inside the if block</div>
+  </div>
+
+  <!-- Mistake 3 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:580px; width:580px; height:220px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:605px; width:520px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:#ec4899; letter-spacing:0.15em; margin-bottom:6px;">// MISTAKE 03</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#f8fafc; font-weight:700;"><span class="mono" style="color:#ec4899;">=</span> vs <span class="mono" style="color:#a3e635;">==</span> in conditions</div>
+    <div style="margin-top:8px; padding:8px 12px; background:#0b1020; border-radius:8px; border:1px solid #2a3352;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:#ec4899; text-decoration:line-through;">if x = 5:</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:#a3e635; margin-top:4px;">if x == 5:</div>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:16px; color:#94a3b8; margin-top:6px;"><span class="mono" style="color:#ec4899;">=</span> assigns. <span class="mono" style="color:#a3e635;">==</span> compares.</div>
+  </div>
+
+  <!-- Mistake 4 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:680px; top:580px; width:580px; height:220px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:710px; top:605px; width:520px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:#ec4899; letter-spacing:0.15em; margin-bottom:6px;">// MISTAKE 04</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#f8fafc; font-weight:700;">Condition always True</div>
+    <div style="margin-top:8px; padding:8px 12px; background:#0b1020; border-radius:8px; border:1px solid #2a3352;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:#ec4899; text-decoration:line-through;">if True:  # always runs!</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:#a3e635; margin-top:4px;">if age >= 18:  # real check</div>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:16px; color:#94a3b8; margin-top:6px;">Use a real comparison, not just True/False</div>
+  </div>
+
+  <!-- Mistake 5 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:820px; width:580px; height:180px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:845px; width:520px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:#ec4899; letter-spacing:0.15em; margin-bottom:6px;">// MISTAKE 05</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#f8fafc; font-weight:700;">elif after else</div>
+    <div style="margin-top:8px; padding:8px 12px; background:#0b1020; border-radius:8px; border:1px solid #2a3352;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:#ec4899; text-decoration:line-through;">if/else/elif</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:#a3e635; margin-top:4px;">if/elif/else</div>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:16px; color:#94a3b8; margin-top:6px;"><span class="mono" style="color:#facc15;">else</span> always comes LAST</div>
+  </div>
+
+  <!-- Mistake 6 -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:680px; top:820px; width:580px; height:180px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:710px; top:845px; width:520px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:#ec4899; letter-spacing:0.15em; margin-bottom:6px;">// MISTAKE 06</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#f8fafc; font-weight:700;">Multiple blocks run</div>
+    <div style="margin-top:8px; padding:8px 12px; background:#0b1020; border-radius:8px; border:1px solid #2a3352;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:#ec4899; text-decoration:line-through;">if/if/if (all run)</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:#a3e635; margin-top:4px;">if/elif/else (one runs)</div>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:16px; color:#94a3b8; margin-top:6px;">Use <span class="mono" style="color:#facc15;">elif</span> when only ONE should run</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S02</div>
+  <div class="chrome-pagenum">45 / 49</div>
+</div>
+
+<template data-slide-notes>
+Go through each mistake quickly — 30 seconds each. Ask the class "who made this mistake?" to normalize errors.
+
+Key points:
+1. Missing colon: most common syntax error for beginners
+2. Indentation: Python uses indentation for blocks (not braces like other languages)
+3. = vs ==: review from operators section
+4. Always True: pointless if statement
+5. elif after else: Python syntax requires else at the end
+6. Multiple if vs if/elif: if you want only ONE to run, use elif
+
+Golden rule to emphasize: "الخطا دي مش عيب — كل مبتدئ بيعملها. المهم إنك تعرف إصلاحها."
+</template>
+</body>
+</html>

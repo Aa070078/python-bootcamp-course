@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><link rel="stylesheet" href="../assets/theme.css"></head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid" data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1;"></div>
+
+  <div class="chrome-topbar" data-object="true" data-object-type="textbox" style="z-index:10;">
+    <span class="chrome-dot"></span>
+    <span>MINI PROJECT // FULL CODE — TYPE ALONG</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:120px; width:1400px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:56px; font-weight:700; color:#f8fafc; line-height:1.02; letter-spacing:-0.02em;">The full program — <span style="color:#a3e635;">student_card.py</span></div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:24px; color:#94a3b8; direction:rtl; margin-top:8px;">اكتب الكود ده سطر بسطر — كل واحد على جهازه</div>
+  </div>
+
+  <!-- LEFT BLOCK: Setup + inputs + logic (Parts 1–3) -->
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:280px; width:870px; height:700px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">student_card.py — part 1 of 2</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:340px; width:810px; height:620px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:20px; line-height:1.5; overflow:hidden;">
+    <div><span class="tok-com"># =============================</span></div>
+    <div><span class="tok-com"># Student Card Generator</span></div>
+    <div><span class="tok-com"># Session 1 project</span></div>
+    <div><span class="tok-com"># =============================</span></div>
+    <div style="height:10px;"></div>
+    <div><span class="tok-com"># 1. Ask the user for their info</span></div>
+    <div><span class="tok-var">name</span>    <span class="tok-op">=</span> <span class="tok-fn">input</span>(<span class="tok-str">"What is your name? "</span>)</div>
+    <div><span class="tok-var">age</span>     <span class="tok-op">=</span> <span class="tok-fn">int</span>(<span class="tok-fn">input</span>(<span class="tok-str">"How old are you? "</span>))</div>
+    <div><span class="tok-var">grade</span>   <span class="tok-op">=</span> <span class="tok-fn">int</span>(<span class="tok-fn">input</span>(<span class="tok-str">"What grade? "</span>))</div>
+    <div><span class="tok-var">subject</span> <span class="tok-op">=</span> <span class="tok-fn">input</span>(<span class="tok-str">"Favorite subject? "</span>)</div>
+    <div><span class="tok-var">city</span>    <span class="tok-op">=</span> <span class="tok-fn">input</span>(<span class="tok-str">"Which city? "</span>)</div>
+    <div style="height:10px;"></div>
+    <div><span class="tok-com"># 2. Auto-generate a student ID</span></div>
+    <div><span class="tok-var">student_id</span> <span class="tok-op">=</span> <span class="tok-str">"S2026-"</span> <span class="tok-op">+</span> <span class="tok-fn">str</span>(</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-num">1000</span> <span class="tok-op">+</span> <span class="tok-fn">len</span>(<span class="tok-var">name</span>) <span class="tok-op">*</span> <span class="tok-num">7</span></div>
+    <div>)</div>
+    <div style="height:10px;"></div>
+    <div><span class="tok-com"># 3. Compute next year's age</span></div>
+    <div><span class="tok-var">age_next_year</span> <span class="tok-op">=</span> <span class="tok-var">age</span> <span class="tok-op">+</span> <span class="tok-num">1</span></div>
+  </div>
+
+  <!-- RIGHT BLOCK: Print card (Part 4) -->
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:970px; top:280px; width:870px; height:700px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">student_card.py — part 2 of 2</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1000px; top:340px; width:810px; height:620px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:20px; line-height:1.5; overflow:hidden;">
+    <div><span class="tok-com"># 4. Print the card using f-strings</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">""</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"━━━━━━━━━━━━━━━━━━━━━━━━━━"</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"     🎓 STUDENT CARD 🎓"</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"━━━━━━━━━━━━━━━━━━━━━━━━━━"</span>)</div>
+    <div style="height:6px;"></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">f"Name      : {name}"</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">f"ID        : {student_id}"</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">f"Age       : {age}"</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">f"Grade     : {grade}"</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">f"Subject   : {subject}"</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">f"City      : {city}"</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">f"Next year : {age_next_year}"</span>)</div>
+    <div style="height:6px;"></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"━━━━━━━━━━━━━━━━━━━━━━━━━━"</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"✓ ENROLLED · 2026"</span>)</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S01</div>
+  <div class="chrome-pagenum">38 / 47</div>
+</div>
+
+<template data-slide-notes>
+Type this on your projector, LINE BY LINE. Explain each block:
+
+**Block 1** (inputs): "5 أسئلة، 5 متغيرات. لاحظ إن age و grade محاطة بـ int() — علشان بعد كده هنجمع عليهم."
+
+**Block 2** (auto ID): "دي حاجة صغيرة ذكية — بنعمل ID تلقائي. `str(1000 + len(name) * 7)` — بنجمع 1000 + طول الاسم × 7، وبنحول الناتج لـ string علشان نقدر نلصقه على "S2026-"."
+
+Ask: "ليه احتجت `str()` هنا؟" (Answer: because you can't add string + int directly.)
+
+**Block 3** (math): "أبسط جزء — `age + 1`. ده الجزء اللي بتستخدم فيه أفكار الدرس."
+
+**Block 4** (print card): "f-strings في كل سطر. `{name}` بيتحط في مكانه اسم المستخدم."
+
+Note: In the real file students should write, "S2026-" + str(1000 + len(name) * 7) sits on one line — we've broken it across 3 display lines here purely so the code fits the slide layout. Mention this to students.
+
+**Ratio bar** technique: after every 4-5 lines, pause and ask "شغال؟ عايزين نمشي؟" Don't leave anyone behind.
+
+If everyone succeeds — CELEBRATE. Full class high five. "أنتوا كتبتوا برنامج تفاعلي حقيقي في 3 ساعات."
+</template>
+</body>
+</html>

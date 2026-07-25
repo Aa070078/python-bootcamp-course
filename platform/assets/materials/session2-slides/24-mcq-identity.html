@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><link rel="stylesheet" href="../assets/theme.css"></head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid" data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1;"></div>
+
+  <div class="chrome-topbar" data-object="true" data-object-type="textbox" style="z-index:10;">
+    <span class="chrome-dot"></span>
+    <span>MCQ // IDENTITY vs EQUALITY</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:140px; width:1400px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#facc15; letter-spacing:0.25em; margin-bottom:14px;">// MCQ · PICK THE RIGHT OPERATOR</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:44px; font-weight:700; color:#f8fafc; line-height:1.15;">Which line is the <span style="color:#a3e635;">right way</span> to check if <span class="mono" style="color:#facc15;">result</span> is missing?</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:22px; color:#94a3b8; direction:rtl; margin-top:6px;">أي سطر هو الطريقة الصح للتحقق إن النتيجة غير موجودة؟</div>
+  </div>
+
+  <!-- 4 options -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:870px; height:190px; background:rgba(34,211,238,0.06); border:2px solid rgba(34,211,238,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:365px; width:790px; z-index:10;">
+    <div style="display:flex; align-items:center; gap:24px;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:44px; color:#22d3ee; font-weight:700;">A</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:#f8fafc;">if result == None:</div>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; color:#94a3b8; margin-top:10px; margin-left:76px;">works, but non-idiomatic</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:970px; top:340px; width:870px; height:190px; background:rgba(163,230,53,0.06); border:2px solid rgba(163,230,53,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1010px; top:365px; width:790px; z-index:10;">
+    <div style="display:flex; align-items:center; gap:24px;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:44px; color:#a3e635; font-weight:700;">B</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:#f8fafc;">if result is None:</div>
+      <div style="margin-left:auto; font-family:'JetBrains Mono',monospace; font-size:18px; color:#a3e635; padding:6px 14px; background:rgba(163,230,53,0.15); border:1px solid rgba(163,230,53,0.5); border-radius:999px;">CORRECT ✓</div>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; color:#94a3b8; margin-top:10px; margin-left:76px;">the standard, recommended way</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:560px; width:870px; height:190px; background:rgba(236,72,153,0.06); border:2px solid rgba(236,72,153,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:585px; width:790px; z-index:10;">
+    <div style="display:flex; align-items:center; gap:24px;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:44px; color:#ec4899; font-weight:700;">C</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:#f8fafc;">if result = None:</div>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; color:#94a3b8; margin-top:10px; margin-left:76px;">SyntaxError — <span class="mono">=</span> is assignment, not comparison</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:970px; top:560px; width:870px; height:190px; background:rgba(250,204,21,0.06); border:2px solid rgba(250,204,21,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1010px; top:585px; width:790px; z-index:10;">
+    <div style="display:flex; align-items:center; gap:24px;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:44px; color:#facc15; font-weight:700;">D</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:#f8fafc;">if result in None:</div>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; color:#94a3b8; margin-top:10px; margin-left:76px;">TypeError — None is not iterable</div>
+  </div>
+
+  <!-- Explanation -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:790px; width:1780px; height:170px; background:linear-gradient(90deg, rgba(163,230,53,0.10), rgba(34,211,238,0.06)); border-left:6px solid #a3e635; border-radius:14px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:130px; top:815px; width:1720px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:20px; color:#a3e635; letter-spacing:0.2em; margin-bottom:10px;">// WHY B — GOLDEN RULE</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:#f8fafc; line-height:1.35;"><span class="mono" style="color:#fb923c;">is None</span> is the standard Python way. A works but linters warn against it. Always <span class="mono">is</span> when comparing to <span class="mono" style="color:#a78bfa;">None</span>.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S02</div>
+  <div class="chrome-pagenum">24 / 49</div>
+</div>
+
+<template data-slide-notes>
+Silence, vote.
+
+Common wrong answers:
+- A (== None) — technically works, but not the Python way. Give half-credit intellectually.
+- C (= None) — SyntaxError, students who forgot assignment vs equality
+- D (in None) — students overgeneralizing "membership"
+
+Reveal B. Reinforce the golden rule from previous slide.
+
+Say: "Both A and B WORK, but B is what real Python programmers write. It's like — لغتنا العربية فيها كذا طريقة تقول جملة، بس فيه طريقة أفصح."
+
+This is the last MCQ before coding challenge. Energy check!
+</template>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><link rel="stylesheet" href="../assets/theme.css"></head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid" data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1;"></div>
+  <div class="bg-glow-lime" data-object="true" data-object-type="shape" style="position:absolute; right:-200px; top:-200px; left:1220px; z-index:1;"></div>
+
+  <div class="chrome-topbar" data-object="true" data-object-type="textbox" style="z-index:10;">
+    <span class="chrome-dot"></span>
+    <span>MAGIC // input() — TALK TO THE USER</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:150px; width:1400px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:140px; font-weight:700; color:#f8fafc; line-height:0.95; letter-spacing:-0.03em;"><span class="mono" style="color:#a3e635;">input()</span></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:#cbd5e1; margin-top:24px; line-height:1.3;">Ask the user a question. <span style="color:#a3e635;">Read their answer.</span></div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:#a3e635; direction:rtl; margin-top:16px;">اسأل المستخدم سؤال، وخد الإجابة في متغير</div>
+  </div>
+
+  <!-- Left: code -->
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:490px; width:1050px; height:470px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">ask.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:550px; width:990px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:24px; line-height:1.7;">
+    <div><span class="tok-com"># ask a question, store the answer</span></div>
+    <div><span class="tok-var">name</span> <span class="tok-op">=</span> <span class="tok-fn">input</span>(<span class="tok-str">"What is your name? "</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">f"Hello, {name}!"</span>)</div>
+    <div style="height:16px;"></div>
+    <div><span class="tok-com"># ⚠️ input() ALWAYS returns a string!</span></div>
+    <div><span class="tok-var">age</span> <span class="tok-op">=</span> <span class="tok-fn">input</span>(<span class="tok-str">"How old are you? "</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-fn">type</span>(<span class="tok-var">age</span>))  <span class="tok-com"># &lt;class 'str'&gt; even if user typed 17!</span></div>
+    <div style="height:16px;"></div>
+    <div><span class="tok-com"># so this WILL crash — can't add str + int</span></div>
+    <div><span class="tok-com"># print(age + 1)  → TypeError!</span></div>
+  </div>
+
+  <!-- Right: what user sees -->
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:1180px; top:490px; width:660px; height:470px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">Terminal — running it</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1210px; top:550px; width:600px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:22px; line-height:1.75;">
+    <div><span class="tok-out">$</span> <span style="color:#f8fafc;">python ask.py</span></div>
+    <div style="height:12px;"></div>
+    <div style="color:#cbd5e1;">What is your name? <span style="color:#a3e635;">Sara</span></div>
+    <div style="color:#22d3ee;">Hello, Sara!</div>
+    <div style="color:#cbd5e1;">How old are you? <span style="color:#a3e635;">17</span></div>
+    <div style="color:#22d3ee;">&lt;class 'str'&gt;</div>
+    <div style="height:12px;"></div>
+    <div><span class="tok-out">$</span> <span style="color:#64748b;">_</span></div>
+    <div style="height:24px;"></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:20px; color:#fb923c; line-height:1.4;">⚠️ Even though the user typed the digits <span class="mono">17</span>, Python received the <em>text</em> <span class="mono">"17"</span>.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S01</div>
+  <div class="chrome-pagenum">33 / 47</div>
+</div>
+
+<template data-slide-notes>
+This is where programs become INTERACTIVE. Big moment.
+
+Before this slide, programs were one-way (Python → screen). Now: user talks back.
+
+Live demo:
+```
+name = input("What is your name? ")
+print(f"Hello, {name}!")
+```
+Run it. Type your own name in the terminal. Watch it greet you.
+
+Have every student do this — with their real name. Walk around and encourage them.
+
+**THE BIG SURPRISE** — `input()` always returns a string:
+```
+age = input("Age? ")
+print(type(age))    # → str, always
+print(age + 1)      # → TypeError!
+```
+
+Show the crash live. Students freak out for a second. Then reveal:
+
+"عشان input() بيرجع string دايماً. لو أنت قلت للـ user اكتب 17، Python بيستقبلها كنص '17'. علشان تحسب بيها، لازم تحولها لـ int."
+
+**This is the "why" for the next slide — Type Casting.** Perfect setup.
+
+Encourage experimentation:
+"جربوا `input("سؤال: ")` وشوفوا حاجة بتظهر في الترمينال."
+</template>
+</body>
+</html>

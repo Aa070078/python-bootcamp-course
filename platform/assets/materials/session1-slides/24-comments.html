@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><link rel="stylesheet" href="../assets/theme.css"></head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid" data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1;"></div>
+
+  <div class="chrome-topbar" data-object="true" data-object-type="textbox" style="z-index:10;">
+    <span class="chrome-dot"></span>
+    <span>SYNTAX // COMMENTS</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:150px; width:1400px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:#facc15; letter-spacing:0.25em; margin-bottom:20px;">// NOTES FOR HUMANS</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:130px; font-weight:700; color:#f8fafc; line-height:0.9; letter-spacing:-0.03em;">Comments <span style="color:#facc15; font-family:'JetBrains Mono',monospace;">#</span></div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:32px; color:#94a3b8; direction:rtl; margin-top:20px;">التعليقات — ملاحظات ليك ولزمايلك، Python بيتجاهلها تماماً</div>
+  </div>
+
+  <!-- Left: explanation -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:490px; width:900px; height:470px; background:rgba(250,204,21,0.06); border:1px solid rgba(250,204,21,0.35); border-radius:24px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:530px; width:820px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; font-weight:600; color:#f8fafc; line-height:1.4; margin-bottom:24px;">Any line starting with <span class="mono" style="color:#facc15;">#</span> is <span style="color:#facc15;">ignored</span> by Python.</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#cbd5e1; line-height:1.7;">
+      <div style="margin-bottom:12px;">✓ Explain <em>what</em> your code does</div>
+      <div style="margin-bottom:12px;">✓ Explain <em>why</em> — the tricky reasoning</div>
+      <div style="margin-bottom:12px;">✓ Turn off a line without deleting it (debugging)</div>
+      <div>✓ Remind future-you what past-you was thinking</div>
+    </div>
+    <div style="margin-top:28px; padding:16px 20px; background:rgba(236,72,153,0.1); border-left:4px solid #ec4899; border-radius:8px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:20px; color:#ec4899; font-weight:600;">Pro tip:</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#f8fafc; margin-top:4px;">Good code needs few comments. Great comments explain <em>why</em>, not <em>what</em>.</div>
+    </div>
+  </div>
+
+  <!-- Right: code -->
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:1020px; top:410px; width:820px; height:550px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">comments_demo.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1050px; top:470px; width:760px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:24px; line-height:1.7;">
+    <div><span class="tok-com"># This is a comment. Python ignores me.</span></div>
+    <div><span class="tok-com"># You can write anything here — even Arabic!</span></div>
+    <div style="height:14px;"></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"Hi"</span>)  <span class="tok-com"># comment at end of line — also fine</span></div>
+    <div style="height:14px;"></div>
+    <div><span class="tok-com"># ---- greeting section ----</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"Welcome!"</span>)</div>
+    <div style="height:14px;"></div>
+    <div><span class="tok-com"># print("this line never runs")</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"only this runs"</span>)</div>
+    <div style="height:14px;"></div>
+    <div><span class="tok-com">"""</span></div>
+    <div><span class="tok-com">Multi-line comment — three quotes.</span></div>
+    <div><span class="tok-com">Useful for longer explanations.</span></div>
+    <div><span class="tok-com">"""</span></div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S01</div>
+  <div class="chrome-pagenum">24 / 47</div>
+</div>
+
+<template data-slide-notes>
+Frame comments as "رسايل من مبرمج لمبرمج تاني (أو لنفسه بعد شهر)."
+
+Show them practical uses:
+
+**1. To-do lists inside code**:
+```
+# TODO: fix this bug tomorrow
+# TODO: ask instructor about type()
+```
+
+**2. Turning off code temporarily** (super useful for debugging):
+```
+print("this runs")
+# print("this is commented out — Python skips it")
+print("this runs too")
+```
+
+Live demo: type the above, add a `#` in front of a line, watch it disappear from output.
+
+**3. Section headers** in long files:
+```
+# ==== USER INPUT ====
+# ==== CALCULATIONS ====
+# ==== PRINT RESULTS ====
+```
+
+Tell them: "لو كتبت كود صعب وسبته شهرين — رجعت له، مش هتفتكر ايه اللي كنت بتفكر فيه. الكومنت بيحل ده."
+
+Common student mistake: "بيكتبوا comments لكل سطر عادي." Anti-pattern:
+```
+x = 5  # set x to 5   ← useless comment
+```
+
+Better:
+```
+x = 5  # max attempts before showing error  ← useful, explains WHY
+```
+</template>
+</body>
+</html>

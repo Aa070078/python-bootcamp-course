@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><link rel="stylesheet" href="../assets/theme.css"></head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid" data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1;"></div>
+
+  <div class="chrome-topbar" data-object="true" data-object-type="textbox" style="z-index:10;">
+    <span class="chrome-dot"></span>
+    <span>LIVE CODING // print() — YOUR TURN</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:130px; width:1400px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:#f8fafc; line-height:1.02; letter-spacing:-0.02em;">Live coding — <span style="color:#a3e635;">everyone types</span>.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:#94a3b8; direction:rtl; margin-top:12px;">اكتبوا الكود ده معايا سطر بسطر — مش تنسخوا، اكتبوا بإيدكم</div>
+  </div>
+
+  <!-- Code -->
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:1050px; height:620px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">first_prints.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:400px; width:990px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.65;">
+    <div><span class="tok-com"># 1 — a simple greeting</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"Hello, world!"</span>)</div>
+    <div style="height:16px;"></div>
+    <div><span class="tok-com"># 2 — print numbers (no quotes for numbers)</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-num">42</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-num">2025</span>)</div>
+    <div style="height:16px;"></div>
+    <div><span class="tok-com"># 3 — Python is a calculator</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-num">5</span> <span class="tok-op">+</span> <span class="tok-num">3</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-num">10</span> <span class="tok-op">*</span> <span class="tok-num">7</span>)</div>
+    <div style="height:16px;"></div>
+    <div><span class="tok-com"># 4 — print multiple things separated by commas</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"I am"</span>, <span class="tok-num">17</span>, <span class="tok-str">"years old"</span>)</div>
+  </div>
+
+  <!-- Terminal output -->
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:1180px; top:340px; width:660px; height:620px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">Terminal — expected output</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1210px; top:400px; width:600px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.65;">
+    <div><span class="tok-out">$</span> <span style="color:#f8fafc;">python first_prints.py</span></div>
+    <div style="height:14px;"></div>
+    <div style="color:#a3e635;">Hello, world!</div>
+    <div style="color:#a3e635;">42</div>
+    <div style="color:#a3e635;">2025</div>
+    <div style="color:#a3e635;">8</div>
+    <div style="color:#a3e635;">70</div>
+    <div style="color:#a3e635;">I am 17 years old</div>
+    <div style="height:14px;"></div>
+    <div><span class="tok-out">$</span> <span style="color:#64748b;">_</span></div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S01</div>
+  <div class="chrome-pagenum">23 / 47</div>
+</div>
+
+<template data-slide-notes>
+**LIVE CODING** — this is not a lecture slide. Type on YOUR screen (projected). Say each character as you type. Have students type along.
+
+Rules for live coding today:
+1. Everyone types. No copy-paste.
+2. If you get an error, RAISE YOUR HAND — don't panic.
+3. We move at the SLOWEST student's pace.
+
+Type step by step:
+
+**Line 1**: `# 1 — a simple greeting` — say "الديز `#` بتخلي Python يتجاهل السطر ده. ده تعليق."
+
+**Line 2**: `print("Hello, world!")` — save, run in terminal. Everyone sees output.
+
+**Lines 3-4** (numbers): `print(42)` — point out: NO QUOTES around numbers. "لو حطيت quotes، هيبقى 'كلمة' مش رقم." — will explain later.
+
+**Lines 5-6** (math): `print(5 + 3)` — hit them with the wow. "Python هيحسب! جرب: print(2025 * 4)."
+
+**Line 7** (comma): `print("I am", 17, "years old")` — "الفاصلة بتخلي print يطبع أكتر من حاجة بمسافة بينهم."
+
+Ask experiment questions:
+- "لو كتبت print("5 + 3")، ايه هيطلع؟" (Answer: "5 + 3" not 8 — quotes make it a string!)
+- "لو كتبت print(5 + 3) بدون quotes؟" (Answer: 8)
+
+That's a teaching moment — the difference between text and numbers. Bridge to data types.
+</template>
+</body>
+</html>

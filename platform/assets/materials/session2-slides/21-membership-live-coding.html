@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><link rel="stylesheet" href="../assets/theme.css"></head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid" data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1;"></div>
+
+  <div class="chrome-topbar" data-object="true" data-object-type="textbox" style="z-index:10;">
+    <span class="chrome-dot"></span>
+    <span>LIVE CODING // MEMBERSHIP — LISTS + STRINGS</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:130px; width:1400px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:64px; font-weight:700; color:#f8fafc; line-height:1.02; letter-spacing:-0.02em;">Type this. <span style="color:#a78bfa;">Predict</span> each answer.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:24px; color:#94a3b8; direction:rtl; margin-top:8px;">اكتب معايا — قبل كل print، توقّع النتيجة</div>
+  </div>
+
+  <!-- Code -->
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:290px; width:1050px; height:670px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">membership.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:340px; width:990px; height:610px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:22px; line-height:1.5; overflow:hidden;">
+    <div><span class="tok-com"># === IN A LIST ===</span></div>
+    <div><span class="tok-var">fruits</span> <span class="tok-op">=</span> [<span class="tok-str">"apple"</span>, <span class="tok-str">"banana"</span>, <span class="tok-str">"cherry"</span>]</div>
+    <div style="height:6px;"></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"apple"</span>  <span class="tok-op">in</span> <span class="tok-var">fruits</span>)     <span class="tok-com"># True</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"mango"</span>  <span class="tok-op">in</span> <span class="tok-var">fruits</span>)     <span class="tok-com"># False</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"mango"</span>  <span class="tok-op">not in</span> <span class="tok-var">fruits</span>) <span class="tok-com"># True</span></div>
+    <div style="height:10px;"></div>
+    <div><span class="tok-com"># === IN A STRING (substring!) ===</span></div>
+    <div><span class="tok-var">email</span> <span class="tok-op">=</span> <span class="tok-str">"<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d8b9b4b198abbbb0b7b7b4f6bdbcad">[email&#160;protected]</a>"</span></div>
+    <div style="height:6px;"></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"@"</span>       <span class="tok-op">in</span> <span class="tok-var">email</span>)   <span class="tok-com"># True</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"school"</span>  <span class="tok-op">in</span> <span class="tok-var">email</span>)   <span class="tok-com"># True</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"XYZ"</span>     <span class="tok-op">not in</span> <span class="tok-var">email</span>) <span class="tok-com"># True</span></div>
+    <div style="height:10px;"></div>
+    <div><span class="tok-com"># === REAL USE — REGISTRATION FORM ===</span></div>
+    <div><span class="tok-var">taken_usernames</span> <span class="tok-op">=</span> [<span class="tok-str">"ali99"</span>, <span class="tok-str">"sara_02"</span>, <span class="tok-str">"omar"</span>]</div>
+    <div><span class="tok-var">new_user</span> <span class="tok-op">=</span> <span class="tok-str">"noor22"</span></div>
+    <div><span class="tok-var">available</span> <span class="tok-op">=</span> <span class="tok-var">new_user</span> <span class="tok-op">not in</span> <span class="tok-var">taken_usernames</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">available</span>)  <span class="tok-com"># True → sign up!</span></div>
+  </div>
+
+  <!-- Right: use cases -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1180px; top:290px; width:660px; height:670px; background:rgba(167,139,250,0.06); border:1px solid rgba(167,139,250,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1210px; top:320px; width:600px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:#a78bfa; letter-spacing:0.2em; margin-bottom:20px;">// WHERE YOU'LL USE THIS</div>
+
+    <div style="margin-bottom:18px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#facc15; font-weight:700; margin-bottom:2px;">Registration</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:17px; color:#cbd5e1;">Is this username taken?</div>
+    </div>
+
+    <div style="margin-bottom:18px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#facc15; font-weight:700; margin-bottom:2px;">Email validation</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:17px; color:#cbd5e1;">Does the string contain <span class="mono">"@"</span>?</div>
+    </div>
+
+    <div style="margin-bottom:18px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#facc15; font-weight:700; margin-bottom:2px;">Spam filter</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:17px; color:#cbd5e1;">Is any banned word in this message?</div>
+    </div>
+
+    <div style="margin-bottom:18px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#facc15; font-weight:700; margin-bottom:2px;">Password rules</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:17px; color:#cbd5e1;">Does password contain a digit?</div>
+    </div>
+
+    <div style="padding:12px 16px; background:rgba(34,211,238,0.08); border-left:4px solid #22d3ee; border-radius:8px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:16px; color:#22d3ee; font-weight:600;">Case-sensitive by default</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:14px; color:#f8fafc; margin-top:2px;">"A" in "apple" → False<br>"a" in "apple" → True</div>
+    </div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S02</div>
+  <div class="chrome-pagenum">21 / 49</div>
+</div>
+
+<template data-slide-notes>
+Live coding. Type each line. Ask class to predict before running.
+
+Highlight the substring behavior — `"Cai" in "Cairo"` → True. That's not "the letter C" or "just one character" — it's ANY substring.
+
+Real use case bombs to drop:
+- "@ in email" — that's LITERALLY how most sites check if an email is valid at first glance
+- "new_user not in taken_usernames" — that's how EVERY signup form works
+- "digit in password" — segue to password validator project later today
+
+Preview: identity operators, the trickiest of the six families.
+</template>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

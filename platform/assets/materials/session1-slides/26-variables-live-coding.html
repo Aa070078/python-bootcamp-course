@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><link rel="stylesheet" href="../assets/theme.css"></head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid" data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1;"></div>
+
+  <div class="chrome-topbar" data-object="true" data-object-type="textbox" style="z-index:10;">
+    <span class="chrome-dot"></span>
+    <span>LIVE CODING // VARIABLES</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:130px; width:1400px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:#f8fafc; line-height:1.02; letter-spacing:-0.02em;">Live coding — <span style="color:#ec4899;">variables in action</span>.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:#94a3b8; direction:rtl; margin-top:12px;">هنكتب كود بيستخدم متغيرات — كل واحد على جهازه</div>
+  </div>
+
+  <!-- Code -->
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:1050px; height:620px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">variables_demo.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:400px; width:990px; height:540px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:22px; line-height:1.5; overflow:hidden;">
+    <div><span class="tok-com"># store values in boxes</span></div>
+    <div><span class="tok-var">name</span> <span class="tok-op">=</span> <span class="tok-str">"Yousef"</span></div>
+    <div><span class="tok-var">age</span> <span class="tok-op">=</span> <span class="tok-num">17</span></div>
+    <div><span class="tok-var">city</span> <span class="tok-op">=</span> <span class="tok-str">"Cairo"</span></div>
+    <div style="height:10px;"></div>
+    <div><span class="tok-com"># use them</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">name</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"Age:"</span>, <span class="tok-var">age</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">name</span>, <span class="tok-str">"lives in"</span>, <span class="tok-var">city</span>)</div>
+    <div style="height:10px;"></div>
+    <div><span class="tok-com"># change the value inside</span></div>
+    <div><span class="tok-var">age</span> <span class="tok-op">=</span> <span class="tok-num">18</span>  <span class="tok-com"># happy birthday!</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"New age:"</span>, <span class="tok-var">age</span>)</div>
+    <div style="height:10px;"></div>
+    <div><span class="tok-com"># math with variables</span></div>
+    <div><span class="tok-var">next_year</span> <span class="tok-op">=</span> <span class="tok-var">age</span> <span class="tok-op">+</span> <span class="tok-num">1</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"Next year I'll be:"</span>, <span class="tok-var">next_year</span>)</div>
+  </div>
+
+  <!-- Output -->
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:1180px; top:340px; width:660px; height:620px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">output</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1210px; top:400px; width:600px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:24px; line-height:1.7;">
+    <div><span class="tok-out">$</span> <span style="color:#f8fafc;">python variables_demo.py</span></div>
+    <div style="height:14px;"></div>
+    <div style="color:#a3e635;">Yousef</div>
+    <div style="color:#a3e635;">Age: 17</div>
+    <div style="color:#a3e635;">Yousef lives in Cairo</div>
+    <div style="color:#a3e635;">New age: 18</div>
+    <div style="color:#a3e635;">Next year I'll be: 19</div>
+    <div style="height:14px;"></div>
+    <div><span class="tok-out">$</span> <span style="color:#64748b;">_</span></div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S01</div>
+  <div class="chrome-pagenum">26 / 47</div>
+</div>
+
+<template data-slide-notes>
+Live coding session. Everyone types.
+
+Type slowly. After each line, ask: "شغال؟"
+
+Key teaching moments:
+
+**Line 1-3** (creating variables):
+```
+name = "Yousef"
+age = 17
+city = "Cairo"
+```
+Note: quotes on strings, no quotes on numbers. Point this out.
+
+**Line 5-7** (using variables):
+```
+print(name)              # → Yousef (no quotes = show what's in the box)
+print("Age:", age)       # combines text and variable
+```
+
+Ask: "لو كتبت print("name") ايه هيطلع؟" (Answer: name — the literal text.) "طب print(name)؟" (Answer: Yousef.)
+
+**Line 9-10** (changing value):
+```
+age = 18
+```
+Say: "الـ 17 راحت. مسحناها. دلوقتي age = 18. هذا اسمها variable = متغير — لأنها تتغير."
+
+**Line 12-13** (math with variables):
+```
+next_year = age + 1
+```
+This is the "click" moment — variables can be used in calculations. That's their whole point.
+
+Challenge: "من غير ما تكتب رقم — احسب سنتك بعد 10 سنين، وحطها في متغير جديد اسمه ten_years_later. اطبعها."
+
+Wait 2 minutes. Let 2-3 students share screens.
+</template>
+</body>
+</html>

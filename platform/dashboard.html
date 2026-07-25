@@ -30,17 +30,70 @@
   <style>
     * { box-sizing: border-box; }
     body { font-family: 'Plus Jakarta Sans', 'Tajawal', sans-serif; }
+    
+    /* Dark theme (default) */
+    :root {
+      --bg-page: #060814;
+      --bg-surface: #0a0f1c;
+      --bg-surface-2: #0f1629;
+      --bg-surface-3: #141c33;
+      --text-primary: #f1f5f9;
+      --text-secondary: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-faint: #64748b;
+      --border-color: #1e293b;
+      --accent-blue: #3b82f6;
+      --accent-orange: #f97316;
+      --accent-green: #34d399;
+    }
+    
+    /* Light theme */
+    [data-theme="light"] {
+      --bg-page: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-surface-2: #f1f5f9;
+      --bg-surface-3: #e2e8f0;
+      --text-primary: #0f172a;
+      --text-secondary: #1e293b;
+      --text-muted: #475569;
+      --text-faint: #94a3b8;
+      --border-color: #e2e8f0;
+    }
+    
+    /* Tailwind overrides for light theme */
+    [data-theme="light"] body { background: #f8fafc; color: #1e293b; }
+    [data-theme="light"] .bg-surface-0 { background-color: #f8fafc; }
+    [data-theme="light"] .bg-surface-1 { background-color: #ffffff; }
+    [data-theme="light"] .bg-surface-2 { background-color: #f1f5f9; }
+    [data-theme="light"] .bg-surface-2\/50 { background-color: rgba(241, 245, 249, 0.5); }
+    [data-theme="light"] .bg-surface-3 { background-color: #e2e8f0; }
+    [data-theme="light"] .text-ink-100 { color: #0f172a; }
+    [data-theme="light"] .text-ink-200 { color: #1e293b; }
+    [data-theme="light"] .text-ink-300 { color: #334155; }
+    [data-theme="light"] .text-ink-400 { color: #475569; }
+    [data-theme="light"] .text-ink-500 { color: #64748b; }
+    [data-theme="light"] .text-ink-600 { color: #94a3b8; }
+    [data-theme="light"] .text-ink-800 { color: #1e293b; }
+    [data-theme="light"] .border-ink-800 { border-color: #e2e8f0; }
+    [data-theme="light"] .border-ink-800\/50 { border-color: rgba(226, 232, 240, 0.5); }
+    [data-theme="light"] .border-ink-800\/30 { border-color: rgba(226, 232, 240, 0.3); }
+    
+    body { background: var(--bg-page); color: var(--text-secondary); }
     .gradient-text { background: linear-gradient(135deg, #3b82f6, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .glass { background: rgba(10, 15, 28, 0.6); backdrop-filter: blur(20px); border: 1px solid rgba(59, 130, 246, 0.1); }
+    [data-theme="light"] .glass { background: rgba(255, 255, 255, 0.8); border: 1px solid rgba(0, 0, 0, 0.1); }
     .card-hover { transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
     .card-hover:hover { transform: translateY(-4px); border-color: #3b82f6; box-shadow: 0 20px 40px rgba(59, 130, 246, 0.1); }
     .grid-pattern { background-image: linear-gradient(rgba(59,130,246,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.03) 1px, transparent 1px); background-size: 50px 50px; }
+    [data-theme="light"] .grid-pattern { background-image: linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px); }
     .progress-ring { transform: rotate(-90deg); }
     .progress-ring-circle { transition: stroke-dashoffset 0.5s ease; }
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: transparent; }
     ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
     ::-webkit-scrollbar-thumb:hover { background: #334155; }
+    [data-theme="light"] ::-webkit-scrollbar-thumb { background: #cbd5e1; }
+    [data-theme="light"] ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
   </style>
 </head>
 <body class="bg-surface-0 text-ink-200 min-h-screen">
@@ -64,6 +117,11 @@
         </div>
         
         <div class="flex items-center gap-4">
+          <button onclick="toggleTheme()" class="p-2 rounded-lg bg-surface-2 border border-ink-800 text-ink-400 hover:text-ink-100 hover:border-accent-blue transition-all" title="Toggle Theme">
+            <svg id="themeIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+            </svg>
+          </button>
           <div class="hidden sm:block text-right">
             <p class="text-xs text-ink-400">Welcome back,</p>
             <p id="userName" class="text-sm font-bold text-ink-100">Student</p>
@@ -151,33 +209,33 @@
     // Session data
     const SESSIONS = [
       { week: 1, title: "Python Fundamentals", sessions: [
-        { num: 1, title: "Introduction to Programming & Python Basics", icon: "cpu", hasVideo: true, hasMaterial: true },
-        { num: 2, title: "Operators & Conditions", icon: "sliders", hasVideo: true, hasMaterial: true },
-        { num: 3, title: "Loops", icon: "terminal", hasVideo: false, hasMaterial: false }
+        { num: 1, title: "Introduction to Programming & Python Basics", icon: "cpu", status: "available" },
+        { num: 2, title: "Operators & Conditions", icon: "sliders", status: "available" },
+        { num: 3, title: "Loops", icon: "terminal", status: "coming-soon" }
       ]},
       { week: 2, title: "Working with Data", sessions: [
-        { num: 4, title: "Strings", icon: "type", hasVideo: false, hasMaterial: false },
-        { num: 5, title: "Lists & Tuples", icon: "list", hasVideo: false, hasMaterial: false },
-        { num: 6, title: "Sets & Dictionaries", icon: "layers", hasVideo: false, hasMaterial: false }
+        { num: 4, title: "Strings", icon: "type", status: "coming-soon" },
+        { num: 5, title: "Lists & Tuples", icon: "list", status: "coming-soon" },
+        { num: 6, title: "Sets & Dictionaries", icon: "layers", status: "coming-soon" }
       ]},
       { week: 3, title: "Building Real Programs", sessions: [
-        { num: 7, title: "Functions", icon: "code", hasVideo: false, hasMaterial: false },
-        { num: 8, title: "Files & JSON", icon: "file-text", hasVideo: false, hasMaterial: false },
-        { num: 9, title: "Exceptions, Modules & pip", icon: "settings", hasVideo: false, hasMaterial: false }
+        { num: 7, title: "Functions", icon: "code", status: "coming-soon" },
+        { num: 8, title: "Files & JSON", icon: "file-text", status: "coming-soon" },
+        { num: 9, title: "Exceptions, Modules & pip", icon: "settings", status: "coming-soon" }
       ]},
       { week: 4, title: "Developer Tools", sessions: [
-        { num: 10, title: "Git & GitHub", icon: "git-branch", hasVideo: false, hasMaterial: false },
-        { num: 11, title: "Object-Oriented Programming (OOP)", icon: "layers", hasVideo: false, hasMaterial: false },
-        { num: 12, title: "SQLite Databases", icon: "database", hasVideo: false, hasMaterial: false }
+        { num: 10, title: "Git & GitHub", icon: "git-branch", status: "coming-soon" },
+        { num: 11, title: "Object-Oriented Programming (OOP)", icon: "layers", status: "coming-soon" },
+        { num: 12, title: "SQLite Databases", icon: "database", status: "coming-soon" }
       ]},
       { week: 5, title: "Internet & Automation", sessions: [
-        { num: 13, title: "APIs", icon: "globe", hasVideo: false, hasMaterial: false },
-        { num: 14, title: "Web Scraping", icon: "codepen", hasVideo: false, hasMaterial: false }
+        { num: 13, title: "APIs", icon: "globe", status: "coming-soon" },
+        { num: 14, title: "Web Scraping", icon: "codepen", status: "coming-soon" }
       ]},
       { week: 6, title: "GUI Development with Flet", sessions: [
-        { num: 15, title: "Introduction to GUI Development with Flet", icon: "monitor", hasVideo: false, hasMaterial: false },
-        { num: 16, title: "Advanced Flet & Application Structure", icon: "sparkles", hasVideo: false, hasMaterial: false },
-        { num: 17, title: "Flet + SQLite + APIs — Capstone", icon: "award", hasVideo: false, hasMaterial: false }
+        { num: 15, title: "Introduction to GUI Development with Flet", icon: "monitor", status: "coming-soon" },
+        { num: 16, title: "Advanced Flet & Application Structure", icon: "sparkles", status: "coming-soon" },
+        { num: 17, title: "Flet + SQLite + APIs — Capstone", icon: "award", status: "coming-soon" }
       ]}
     ];
 
@@ -252,30 +310,44 @@
             <div class="p-5 grid grid-cols-1 md:grid-cols-3 gap-4">
               ${week.sessions.map(s => {
                 const isCompleted = user.completedSessions.includes(s.num);
-                const status = isCompleted ? 'completed' : 'available';
+                const isAvailable = s.status === 'available';
+                const isComingSoon = s.status === 'coming-soon';
+                
                 if (isCompleted) completedCount++;
-                else inProgressCount++;
+                else if (isAvailable) inProgressCount++;
+
+                const cardClass = isCompleted ? 'border-accent-green/30 bg-accent-green/5' : 
+                                  isComingSoon ? 'border-ink-800/50 bg-surface-2/50 opacity-60' : 
+                                  'border-ink-800 bg-surface-2';
+                
+                const href = isComingSoon ? '#' : `session.html?num=${s.num}`;
+                const onclick = isComingSoon ? 'event.preventDefault()' : '';
 
                 return `
-                  <a href="session.html?num=${s.num}" class="card-hover block p-4 rounded-xl border ${isCompleted ? 'border-accent-green/30 bg-accent-green/5' : 'border-ink-800 bg-surface-2'}">
+                  <a href="${href}" onclick="${onclick}" class="${isComingSoon ? '' : 'card-hover'} block p-4 rounded-xl border ${cardClass} ${isComingSoon ? 'cursor-not-allowed' : ''}">
                     <div class="flex items-start justify-between mb-3">
-                      <div class="w-10 h-10 rounded-lg ${isCompleted ? 'bg-accent-green/20' : 'bg-accent-blue/10'} flex items-center justify-center">
-                        <svg class="w-5 h-5 ${isCompleted ? 'text-accent-green' : 'text-accent-blue'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          ${ICONS[s.icon]}
-                        </svg>
+                      <div class="w-10 h-10 rounded-lg ${isCompleted ? 'bg-accent-green/20' : isComingSoon ? 'bg-ink-800/30' : 'bg-accent-blue/10'} flex items-center justify-center">
+                        ${isComingSoon ? `
+                          <svg class="w-5 h-5 text-ink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                          </svg>
+                        ` : `
+                          <svg class="w-5 h-5 ${isCompleted ? 'text-accent-green' : 'text-accent-blue'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            ${ICONS[s.icon]}
+                          </svg>
+                        `}
                       </div>
                       ${isCompleted ? `
                         <span class="px-2 py-1 rounded-full bg-accent-green/20 text-accent-green text-[10px] font-bold">DONE</span>
-                      ` : s.hasVideo ? `
-                        <span class="px-2 py-1 rounded-full bg-accent-blue/20 text-accent-blue text-[10px] font-bold">VIDEO</span>
-                      ` : ''}
+                      ` : isComingSoon ? `
+                        <span class="px-2 py-1 rounded-full bg-ink-800/50 text-ink-500 text-[10px] font-bold">SOON</span>
+                      ` : `
+                        <span class="px-2 py-1 rounded-full bg-accent-blue/20 text-accent-blue text-[10px] font-bold">START</span>
+                      `}
                     </div>
                     <p class="text-xs text-ink-500 font-mono mb-1">SESSION ${String(s.num).padStart(2, '0')}</p>
-                    <h4 class="font-bold text-ink-100 text-sm leading-tight">${s.title}</h4>
-                    <div class="flex items-center gap-3 mt-3 text-[10px] text-ink-500">
-                      ${s.hasVideo ? '<span class="flex items-center gap-1"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Video</span>' : ''}
-                      ${s.hasMaterial ? '<span class="flex items-center gap-1"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>Materials</span>' : ''}
-                    </div>
+                    <h4 class="font-bold ${isComingSoon ? 'text-ink-500' : 'text-ink-100'} text-sm leading-tight">${s.title}</h4>
+                    ${isComingSoon ? '<p class="text-[10px] text-ink-600 mt-2 italic">Content coming soon...</p>' : ''}
                   </a>
                 `;
               }).join('')}
@@ -293,6 +365,33 @@
       document.getElementById('progressBar').style.width = progress + '%';
       document.getElementById('progressText').textContent = `${completedCount} / 17 sessions`;
     }
+
+    // Theme toggle
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'light' ? null : 'light';
+      if (next) {
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        document.getElementById('themeIcon').innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>';
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'dark');
+        document.getElementById('themeIcon').innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>';
+      }
+    }
+
+    // Load saved theme
+    (function() {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        setTimeout(() => {
+          const icon = document.getElementById('themeIcon');
+          if (icon) icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>';
+        }, 100);
+      }
+    })();
 
     // Initialize
     renderSessions();

@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><link rel="stylesheet" href="../assets/theme.css"></head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid" data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1;"></div>
+  <div class="bg-glow-magenta" data-object="true" data-object-type="shape" style="position:absolute; left:-200px; top:-200px; z-index:1;"></div>
+
+  <div class="chrome-topbar" data-object="true" data-object-type="textbox" style="z-index:10;">
+    <span class="chrome-dot"></span>
+    <span>CONDITIONS // NESTED</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:140px; width:1400px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#ec4899; letter-spacing:0.25em; margin-bottom:14px;">// CONDITIONS INSIDE CONDITIONS</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:80px; font-weight:700; color:#f8fafc; line-height:1.05; letter-spacing:-0.02em;">Nested Conditions.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:22px; color:#ec4899; direction:rtl; margin-top:6px;">شروط جوه شروط — لما القرار ي depend على أكتر من حاجة</div>
+  </div>
+
+  <!-- Code example -->
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:360px; width:880px; height:580px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">nested.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:430px; width:820px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:22px; line-height:1.6;">
+    <div><span class="tok-com"># Real example: theme park entry</span></div>
+    <div><span class="tok-var">age</span> <span class="tok-op">=</span> <span class="tok-num">16</span></div>
+    <div><span class="tok-var">has_ticket</span> <span class="tok-op">=</span> <span style="color:#ec4899;">True</span></div>
+    <div style="height:6px;"></div>
+    <div><span class="tok-kw">if</span> <span class="tok-var">age</span> <span class="tok-op">&gt;=</span> <span class="tok-num">18</span><span class="tok-op">:</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"You can enter alone"</span>)</div>
+    <div><span class="tok-kw">else</span><span class="tok-op">:</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-com"># nested: check ticket</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">if</span> <span class="tok-var">has_ticket</span><span class="tok-op">:</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Enter with guardian"</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">else</span><span class="tok-op">:</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Buy a ticket first"</span>)</div>
+    <div style="height:6px;"></div>
+    <div><span class="tok-out">→ Enter with guardian</span></div>
+  </div>
+
+  <!-- Right: explanation -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:360px; width:860px; height:580px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1010px; top:390px; width:800px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:20px; color:#ec4899; letter-spacing:0.2em; margin-bottom:16px;">// THE FLOW</div>
+
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#f8fafc; line-height:1.8;">
+      <div><span style="color:#facc15;">1.</span> Is age >= 18? → <span style="color:#ec4899;">No</span> (16)</div>
+      <div>&nbsp;&nbsp;→ Go to <span style="color:#facc15;">else</span></div>
+      <div style="height:6px;"></div>
+      <div><span style="color:#facc15;">2.</span> Inside else: Is has_ticket True? → <span style="color:#a3e635;">Yes</span></div>
+      <div>&nbsp;&nbsp;→ Print "Enter with guardian"</div>
+      <div style="height:6px;"></div>
+      <div><span style="color:#facc15;">3.</span> Done — skips inner else</div>
+    </div>
+
+    <div style="height:20px; border-bottom:1px solid #2a3352; margin:16px 0;"></div>
+
+    <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:#facc15; letter-spacing:0.15em; margin-bottom:10px;">// ⚠️ WARNING</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:20px; color:#cbd5e1; line-height:1.5;">
+      Nested conditions work, but too many levels<br>
+      make code hard to read. If you have 3+ levels,<br>
+      consider using <span class="mono" style="color:#a3e635;">and/or</span> to combine conditions.
+    </div>
+
+    <div style="margin-top:16px; padding:12px 16px; background:rgba(163,230,53,0.1); border-left:4px solid #a3e635; border-radius:8px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; color:#a3e635; font-weight:600;">Better alternative:</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:#f8fafc; margin-top:4px;">if age >= 18 or has_ticket:</div>
+    </div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S02</div>
+  <div class="chrome-pagenum">34 / 49</div>
+</div>
+
+<template data-slide-notes>
+Nested conditions are real, but teach students to prefer `and/or` over deep nesting.
+
+Walk through the code: "age = 16, first if says 16 >= 18? No. So we go to else. Inside else — ANOTHER if. has_ticket? True. Print 'Enter with guardian'."
+
+Visual: draw the nesting on the board. Show the indentation levels.
+
+Warning: "لو عملت if جوه if جوه if — الكود بيبقى صعب أوي تقرأه. الحل: استخدم and/or عشان تدمج الشروط."
+
+Example of the alternative: `if age >= 18 or has_ticket:` — same logic, one line, cleaner.
+</template>
+</body>
+</html>

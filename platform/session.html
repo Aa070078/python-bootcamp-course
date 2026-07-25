@@ -32,15 +32,66 @@
   <style>
     * { box-sizing: border-box; }
     body { font-family: 'Plus Jakarta Sans', 'Tajawal', sans-serif; }
+    
+    /* Dark theme (default) */
+    :root {
+      --bg-page: #060814;
+      --bg-surface: #0a0f1c;
+      --bg-surface-2: #0f1629;
+      --bg-surface-3: #141c33;
+      --text-primary: #f1f5f9;
+      --text-secondary: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-faint: #64748b;
+      --border-color: #1e293b;
+      --accent-blue: #3b82f6;
+      --accent-orange: #f97316;
+      --accent-green: #34d399;
+    }
+    
+    /* Light theme */
+    [data-theme="light"] {
+      --bg-page: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-surface-2: #f1f5f9;
+      --bg-surface-3: #e2e8f0;
+      --text-primary: #0f172a;
+      --text-secondary: #1e293b;
+      --text-muted: #475569;
+      --text-faint: #94a3b8;
+      --border-color: #e2e8f0;
+    }
+    
+    /* Tailwind overrides for light theme */
+    [data-theme="light"] body { background: #f8fafc; color: #1e293b; }
+    [data-theme="light"] .bg-surface-0 { background-color: #f8fafc; }
+    [data-theme="light"] .bg-surface-1 { background-color: #ffffff; }
+    [data-theme="light"] .bg-surface-2 { background-color: #f1f5f9; }
+    [data-theme="light"] .bg-surface-3 { background-color: #e2e8f0; }
+    [data-theme="light"] .text-ink-100 { color: #0f172a; }
+    [data-theme="light"] .text-ink-200 { color: #1e293b; }
+    [data-theme="light"] .text-ink-300 { color: #334155; }
+    [data-theme="light"] .text-ink-400 { color: #475569; }
+    [data-theme="light"] .text-ink-500 { color: #64748b; }
+    [data-theme="light"] .text-ink-600 { color: #94a3b8; }
+    [data-theme="light"] .border-ink-800 { border-color: #e2e8f0; }
+    [data-theme="light"] .border-ink-800\/50 { border-color: rgba(226, 232, 240, 0.5); }
+    
+    body { background: var(--bg-page); color: var(--text-secondary); }
     .gradient-text { background: linear-gradient(135deg, #3b82f6, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .glass { background: rgba(10, 15, 28, 0.6); backdrop-filter: blur(20px); border: 1px solid rgba(59, 130, 246, 0.1); }
+    [data-theme="light"] .glass { background: rgba(255, 255, 255, 0.8); border: 1px solid rgba(0, 0, 0, 0.1); }
     .grid-pattern { background-image: linear-gradient(rgba(59,130,246,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.03) 1px, transparent 1px); background-size: 50px 50px; }
+    [data-theme="light"] .grid-pattern { background-image: linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px); }
     .CodeMirror { height: 300px; border-radius: 12px; font-size: 14px; }
     .cm-s-dracula .CodeMirror-gutters { background: #0f1629; border: none; }
     .cm-s-dracula .CodeMirror { background: #0a0f1c; }
+    [data-theme="light"] .cm-s-dracula .CodeMirror-gutters { background: #f1f5f9; }
+    [data-theme="light"] .cm-s-dracula .CodeMirror { background: #ffffff; }
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: transparent; }
     ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+    [data-theme="light"] ::-webkit-scrollbar-thumb { background: #cbd5e1; }
     .tab-active { background: rgba(59, 130, 246, 0.15); color: #3b82f6; border-color: rgba(59, 130, 246, 0.3); }
     .exercise-card { transition: all 0.3s ease; }
     .exercise-card:hover { border-color: #3b82f6; }
@@ -70,6 +121,11 @@
         </div>
         
         <div class="flex items-center gap-3">
+          <button onclick="toggleTheme()" class="p-2 rounded-lg bg-surface-2 border border-ink-800 text-ink-400 hover:text-ink-100 hover:border-accent-blue transition-all" title="Toggle Theme">
+            <svg id="themeIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+            </svg>
+          </button>
           <button onclick="prevSession()" class="p-2 rounded-lg bg-surface-2 border border-ink-800 text-ink-400 hover:text-ink-100 hover:border-accent-blue transition-all" id="prevBtn">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
@@ -347,16 +403,16 @@
       // Homework
       const homeworkContent = document.getElementById('homeworkContent');
       homeworkContent.innerHTML = `
-        <div class="p-4 rounded-xl border border-accent-orange/30 bg-accent-orange/5">
-          <div class="flex items-start gap-3">
-            <div class="w-10 h-10 rounded-lg bg-accent-orange/20 flex items-center justify-center flex-shrink-0">
-              <svg class="w-5 h-5 text-accent-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="p-6 rounded-xl border border-accent-orange/30 bg-accent-orange/5">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-accent-orange/20 flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-accent-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
               </svg>
             </div>
             <div>
-              <h4 class="font-bold text-ink-100 mb-1">Assignment</h4>
-              <p class="text-sm text-ink-300">${session.homework}</p>
+              <h4 class="font-bold text-ink-100 mb-2 text-lg">Assignment</h4>
+              <p class="text-base text-ink-300 leading-relaxed">${session.homework}</p>
             </div>
           </div>
         </div>
@@ -411,6 +467,10 @@
     function loadExercise(code) {
       editor.setValue(code);
       switchTab('code');
+      // Scroll to editor
+      document.getElementById('codeTab').scrollIntoView({ behavior: 'smooth' });
+      // Focus the editor
+      setTimeout(() => editor.refresh(), 100);
     }
 
     // Run code
@@ -463,6 +523,33 @@ sys.stdout = StringIO()
     function nextSession() {
       if (currentSession < 17) window.location.href = `session.html?num=${currentSession + 1}`;
     }
+
+    // Theme toggle
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'light' ? null : 'light';
+      if (next) {
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        document.getElementById('themeIcon').innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>';
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'dark');
+        document.getElementById('themeIcon').innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>';
+      }
+    }
+
+    // Load saved theme
+    (function() {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        setTimeout(() => {
+          const icon = document.getElementById('themeIcon');
+          if (icon) icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>';
+        }, 100);
+      }
+    })();
 
     // Initialize
     document.addEventListener('DOMContentLoaded', () => {

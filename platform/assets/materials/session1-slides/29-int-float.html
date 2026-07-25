@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><link rel="stylesheet" href="../assets/theme.css"></head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid" data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1;"></div>
+
+  <div class="chrome-topbar" data-object="true" data-object-type="textbox" style="z-index:10;">
+    <span class="chrome-dot"></span>
+    <span>LIVE CODING // NUMBERS — int & float</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:130px; width:1400px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:#f8fafc; line-height:1.02; letter-spacing:-0.02em;">Working with <span style="color:#22d3ee;">numbers</span>.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:#94a3b8; direction:rtl; margin-top:12px;">Python يبقى آلة حاسبة قوية جداً</div>
+  </div>
+
+  <!-- Code -->
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:1050px; height:620px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">numbers.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:400px; width:990px; height:540px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:20px; line-height:1.5; overflow:hidden;">
+    <div><span class="tok-com"># integers (int)</span></div>
+    <div><span class="tok-var">age</span> <span class="tok-op">=</span> <span class="tok-num">17</span></div>
+    <div><span class="tok-var">year</span> <span class="tok-op">=</span> <span class="tok-num">2026</span></div>
+    <div><span class="tok-var">temp</span> <span class="tok-op">=</span> <span class="tok-num">-5</span></div>
+    <div style="height:8px;"></div>
+    <div><span class="tok-com"># floats — decimals</span></div>
+    <div><span class="tok-var">price</span> <span class="tok-op">=</span> <span class="tok-num">15.99</span></div>
+    <div><span class="tok-var">pi</span> <span class="tok-op">=</span> <span class="tok-num">3.14</span></div>
+    <div><span class="tok-var">grade</span> <span class="tok-op">=</span> <span class="tok-num">92.5</span></div>
+    <div style="height:8px;"></div>
+    <div><span class="tok-com"># the 5 basic math operators</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-num">10</span> <span class="tok-op">+</span> <span class="tok-num">3</span>)   <span class="tok-com"># 13   addition</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-num">10</span> <span class="tok-op">-</span> <span class="tok-num">3</span>)   <span class="tok-com"># 7    subtraction</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-num">10</span> <span class="tok-op">*</span> <span class="tok-num">3</span>)   <span class="tok-com"># 30   multiplication</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-num">10</span> <span class="tok-op">/</span> <span class="tok-num">3</span>)   <span class="tok-com"># 3.333... (always float!)</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-num">10</span> <span class="tok-op">**</span> <span class="tok-num">2</span>)  <span class="tok-com"># 100  power (10²)</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-num">10</span> <span class="tok-op">%</span> <span class="tok-num">3</span>)   <span class="tok-com"># 1    remainder (modulo)</span></div>
+    <div style="height:8px;"></div>
+    <div><span class="tok-com"># mixing int + float = float</span></div>
+    <div><span class="tok-var">total</span> <span class="tok-op">=</span> <span class="tok-num">10</span> <span class="tok-op">+</span> <span class="tok-num">2.5</span>   <span class="tok-com"># 12.5</span></div>
+  </div>
+
+  <!-- Right: takeaways -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1180px; top:340px; width:660px; height:620px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.3); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1210px; top:370px; width:600px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:#22d3ee; letter-spacing:0.2em; margin-bottom:20px;">// KEY TAKEAWAYS</div>
+
+    <div style="margin-bottom:20px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:#facc15; font-weight:700;">int</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:20px; color:#cbd5e1; line-height:1.5;">Whole numbers — no decimal point.</div>
+    </div>
+
+    <div style="margin-bottom:20px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:#facc15; font-weight:700;">float</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:20px; color:#cbd5e1; line-height:1.5;">Has a decimal point — even <span class="mono" style="color:#a3e635;">5.0</span> is a float.</div>
+    </div>
+
+    <div style="margin-bottom:20px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:#facc15; font-weight:700;">/</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:20px; color:#cbd5e1; line-height:1.5;">Division always gives a float, even if the answer is whole.</div>
+    </div>
+
+    <div style="margin-bottom:20px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:#facc15; font-weight:700;">%</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:20px; color:#cbd5e1; line-height:1.5;">Modulo — remainder. Useful for "is it even?" checks.</div>
+    </div>
+
+    <div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:#facc15; font-weight:700;">**</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:20px; color:#cbd5e1; line-height:1.5;">Power — <span class="mono" style="color:#a3e635;">2 ** 10</span> is 2 to the 10th = 1024.</div>
+    </div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S01</div>
+  <div class="chrome-pagenum">29 / 47</div>
+</div>
+
+<template data-slide-notes>
+Live coding. Everyone types. Emphasize the operators — students often see `**` and `%` for the first time.
+
+Key surprises to point out:
+
+**1. Division always gives a float:**
+```
+print(10 / 2)  # → 5.0 (not 5!)
+```
+"حتى لو النتيجة رقم صحيح، Python بيرجعها float. علشان يبقى دايماً متسق."
+
+**2. `**` is power, not two multiplications:**
+```
+print(2 ** 3)  # → 8 (2 × 2 × 2)
+print(10 ** 6) # → 1000000 (million)
+```
+
+**3. `%` is remainder, not percentage:**
+```
+print(10 % 3)  # → 1 (10 ÷ 3 = 3 remainder 1)
+print(20 % 4)  # → 0 (20 is divisible by 4)
+```
+Ask: "لو `x % 2 == 0`، ايه معنى ده؟" (x is even.)
+
+**Challenge for the class**:
+"احسبوا:
+- عدد الأيام في 3 سنين
+- 2 أُس 20
+- الباقي لما تقسم 100 على 7"
+
+Wait 2 minutes. Ask 3 students to share.
+</template>
+</body>
+</html>

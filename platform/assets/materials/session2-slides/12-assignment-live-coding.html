@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><link rel="stylesheet" href="../assets/theme.css"></head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid" data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1;"></div>
+
+  <div class="chrome-topbar" data-object="true" data-object-type="textbox" style="z-index:10;">
+    <span class="chrome-dot"></span>
+    <span>LIVE CODING // ASSIGNMENT SHORTCUTS</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:130px; width:1400px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:64px; font-weight:700; color:#f8fafc; line-height:1.02; letter-spacing:-0.02em;">Game-score simulator.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:24px; color:#94a3b8; direction:rtl; margin-top:8px;">هنكتب محاكي لعبة صغيرة يستخدم كل الاختصارات</div>
+  </div>
+
+  <!-- Code -->
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:290px; width:1050px; height:670px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">game_score.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:350px; width:990px; height:600px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:22px; line-height:1.55; overflow:hidden;">
+    <div><span class="tok-com"># start of the game</span></div>
+    <div><span class="tok-var">score</span> <span class="tok-op">=</span> <span class="tok-num">0</span></div>
+    <div><span class="tok-var">lives</span> <span class="tok-op">=</span> <span class="tok-num">3</span></div>
+    <div><span class="tok-var">gold</span>  <span class="tok-op">=</span> <span class="tok-num">50</span></div>
+    <div style="height:10px;"></div>
+    <div><span class="tok-com"># player collected a coin</span></div>
+    <div><span class="tok-var">score</span> <span class="tok-op">+=</span> <span class="tok-num">10</span>   <span class="tok-com"># score is now 10</span></div>
+    <div style="height:10px;"></div>
+    <div><span class="tok-com"># player defeated a boss — bonus!</span></div>
+    <div><span class="tok-var">score</span> <span class="tok-op">+=</span> <span class="tok-num">100</span>  <span class="tok-com"># score is now 110</span></div>
+    <div><span class="tok-var">gold</span>  <span class="tok-op">*=</span> <span class="tok-num">2</span>    <span class="tok-com"># gold doubles → 100</span></div>
+    <div style="height:10px;"></div>
+    <div><span class="tok-com"># player got hit</span></div>
+    <div><span class="tok-var">lives</span> <span class="tok-op">-=</span> <span class="tok-num">1</span>   <span class="tok-com"># lives is now 2</span></div>
+    <div style="height:10px;"></div>
+    <div><span class="tok-com"># player wasted potion — half gold gone</span></div>
+    <div><span class="tok-var">gold</span>  <span class="tok-op">/=</span> <span class="tok-num">2</span>    <span class="tok-com"># gold is now 50.0</span></div>
+    <div style="height:10px;"></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">f"Score: {score}"</span>)   <span class="tok-com"># Score: 110</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">f"Lives: {lives}"</span>)   <span class="tok-com"># Lives: 2</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">f"Gold:  {gold}"</span>)    <span class="tok-com"># Gold:  50.0</span></div>
+  </div>
+
+  <!-- Right: trace table -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1180px; top:290px; width:660px; height:670px; background:rgba(250,204,21,0.05); border:1px solid rgba(250,204,21,0.3); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1210px; top:320px; width:600px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:#facc15; letter-spacing:0.2em; margin-bottom:20px;">// VALUE TRACE</div>
+
+    <table style="width:100%; border-collapse:collapse; font-family:'JetBrains Mono',monospace; font-size:19px;">
+      <tr style="border-bottom:2px solid #2a3352;">
+        <td style="padding:10px 6px; color:#94a3b8; font-family:'Space Grotesk',sans-serif; font-size:16px;">STEP</td>
+        <td style="padding:10px 6px; color:#22d3ee;">score</td>
+        <td style="padding:10px 6px; color:#ec4899;">lives</td>
+        <td style="padding:10px 6px; color:#facc15;">gold</td>
+      </tr>
+      <tr style="border-bottom:1px solid #1a2138;">
+        <td style="padding:10px 6px; color:#94a3b8; font-size:16px;">start</td>
+        <td style="padding:10px 6px; color:#f8fafc;">0</td>
+        <td style="padding:10px 6px; color:#f8fafc;">3</td>
+        <td style="padding:10px 6px; color:#f8fafc;">50</td>
+      </tr>
+      <tr style="border-bottom:1px solid #1a2138;">
+        <td style="padding:10px 6px; color:#94a3b8; font-size:16px;">coin</td>
+        <td style="padding:10px 6px; color:#a3e635;">10</td>
+        <td style="padding:10px 6px; color:#f8fafc;">3</td>
+        <td style="padding:10px 6px; color:#f8fafc;">50</td>
+      </tr>
+      <tr style="border-bottom:1px solid #1a2138;">
+        <td style="padding:10px 6px; color:#94a3b8; font-size:16px;">boss</td>
+        <td style="padding:10px 6px; color:#a3e635;">110</td>
+        <td style="padding:10px 6px; color:#f8fafc;">3</td>
+        <td style="padding:10px 6px; color:#a3e635;">100</td>
+      </tr>
+      <tr style="border-bottom:1px solid #1a2138;">
+        <td style="padding:10px 6px; color:#94a3b8; font-size:16px;">hit</td>
+        <td style="padding:10px 6px; color:#f8fafc;">110</td>
+        <td style="padding:10px 6px; color:#a3e635;">2</td>
+        <td style="padding:10px 6px; color:#f8fafc;">100</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 6px; color:#94a3b8; font-size:16px;">potion</td>
+        <td style="padding:10px 6px; color:#f8fafc;">110</td>
+        <td style="padding:10px 6px; color:#f8fafc;">2</td>
+        <td style="padding:10px 6px; color:#a3e635;">50.0</td>
+      </tr>
+    </table>
+
+    <div style="margin-top:24px; padding:14px 18px; background:rgba(236,72,153,0.1); border-left:4px solid #ec4899; border-radius:8px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; color:#ec4899; font-weight:600;">Notice: gold became 50.<em>0</em></div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:16px; color:#f8fafc; margin-top:4px;"><span class="mono">/=</span> uses <span class="mono">/</span> — always float!</div>
+    </div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S02</div>
+  <div class="chrome-pagenum">12 / 49</div>
+</div>
+
+<template data-slide-notes>
+Best example students remember. Play up the game narrative:
+
+"لعبتنا — الاعب عندو نقاط، أرواح، فلوس. كل حدث بيغيّر واحدة منهم."
+
+Trace ALONG with the right-side table. After each line, ASK: "score كام دلوقتي؟ lives كام؟ gold كام؟"
+
+Wait for shouted answers. Reveal the row on the table.
+
+Key surprise at the end: `gold /= 2` gives 50.0 (float), NOT 50 (int). This is because `/` always returns float — reminder from S1.
+
+If a student notices "ليه 50.0 مش 50؟" — CELEBRATE. That student is paying attention. Explain floating-point.
+
+Set up the MCQ next.
+</template>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

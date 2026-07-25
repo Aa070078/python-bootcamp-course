@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><link rel="stylesheet" href="../assets/theme.css"></head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid" data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1;"></div>
+
+  <div class="chrome-topbar" data-object="true" data-object-type="textbox" style="z-index:10;">
+    <span class="chrome-dot"></span>
+    <span>PREDICT // COMPARISON — SHOUT THE ANSWER</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:140px; width:1400px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#facc15; letter-spacing:0.25em; margin-bottom:14px;">// GAME — TRUE OR FALSE?</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:60px; font-weight:700; color:#f8fafc; line-height:1.1;">4 comparisons. Predict.<br>Then we run.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:24px; color:#94a3b8; direction:rtl; margin-top:8px;">اربع مقارنات — اضربوا توقّع، بعدين نشغّل</div>
+  </div>
+
+  <!-- 4 mini snippets in a 2×2 grid -->
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:420px; width:870px; height:260px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">Q1</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:490px; width:790px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.6;">
+    <div><span class="tok-fn">print</span>(<span class="tok-num">10</span> <span class="tok-op">&gt;=</span> <span class="tok-num">10</span>)</div>
+    <div style="height:14px;"></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#94a3b8;">Answer: <span style="color:#a3e635; font-family:'JetBrains Mono',monospace;">True</span></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; color:#64748b; margin-top:4px;">10 is not greater, but equal — <span class="mono" style="color:#facc15;">&gt;=</span> accepts equal.</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:970px; top:420px; width:870px; height:260px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">Q2</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1010px; top:490px; width:790px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.6;">
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"5"</span> <span class="tok-op">==</span> <span class="tok-num">5</span>)</div>
+    <div style="height:14px;"></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#94a3b8;">Answer: <span style="color:#ec4899; font-family:'JetBrains Mono',monospace;">False</span></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; color:#64748b; margin-top:4px;">Left is string, right is int — different types.</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:700px; width:870px; height:260px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">Q3</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:770px; width:790px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.6;">
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"apple"</span> <span class="tok-op">&lt;</span> <span class="tok-str">"banana"</span>)</div>
+    <div style="height:14px;"></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#94a3b8;">Answer: <span style="color:#a3e635; font-family:'JetBrains Mono',monospace;">True</span></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; color:#64748b; margin-top:4px;">Strings compare alphabetically — 'a' before 'b'.</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:970px; top:700px; width:870px; height:260px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">Q4</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1010px; top:770px; width:790px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.6;">
+    <div><span class="tok-fn">print</span>(<span class="tok-num">3</span> <span class="tok-op">!=</span> <span class="tok-num">3.0</span>)</div>
+    <div style="height:14px;"></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#94a3b8;">Answer: <span style="color:#ec4899; font-family:'JetBrains Mono',monospace;">False</span></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; color:#64748b; margin-top:4px;">int + float compare by value — 3 equals 3.0.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S02</div>
+  <div class="chrome-pagenum">16 / 49</div>
+</div>
+
+<template data-slide-notes>
+Cover the answers with your hand or the projector. Reveal ONE by ONE.
+
+For each snippet:
+1. Read the code
+2. Give 15 seconds
+3. On "3", students shout True or False
+4. Reveal answer + explanation
+
+Big learning moments:
+- Q1: `>=` includes equal — 30% of beginners miss this
+- Q2: type matters — string "5" ≠ int 5. This is the FAVORITE beginner trap
+- Q3: strings compare alphabetically — surprises everyone
+- Q4: 3 and 3.0 are numerically equal even though different types — the OPPOSITE lesson from Q2 (contrast!)
+
+Contrast Q2 and Q4 explicitly: "بين string و number → مختلف. بين int و float → متساوي بالقيمة."
+</template>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><link rel="stylesheet" href="../assets/theme.css"></head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid" data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1;"></div>
+
+  <div class="chrome-topbar" data-object="true" data-object-type="textbox" style="z-index:10;">
+    <span class="chrome-dot"></span>
+    <span>RULES // NAMING VARIABLES</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:150px; width:1500px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:78px; font-weight:700; color:#f8fafc; line-height:1.02; letter-spacing:-0.02em;">Naming your variables.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:#94a3b8; direction:rtl; margin-top:16px;">قواعد تسمية المتغيرات — Python صارم في ده</div>
+  </div>
+
+  <!-- Left: rules (allowed) -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:400px; width:870px; height:560px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.35); border-radius:24px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:430px; width:790px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:#a3e635; letter-spacing:0.2em; margin-bottom:20px;">// ✅ ALLOWED</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; line-height:2;">
+      <div><span style="color:#a3e635;">name</span> <span style="color:#64748b; font-family:'Space Grotesk',sans-serif; font-size:20px;">— simple letters</span></div>
+      <div><span style="color:#a3e635;">age</span> <span style="color:#64748b; font-family:'Space Grotesk',sans-serif; font-size:20px;">— short and clear</span></div>
+      <div><span style="color:#a3e635;">first_name</span> <span style="color:#64748b; font-family:'Space Grotesk',sans-serif; font-size:20px;">— underscore between words</span></div>
+      <div><span style="color:#a3e635;">score_2</span> <span style="color:#64748b; font-family:'Space Grotesk',sans-serif; font-size:20px;">— numbers OK (not at start)</span></div>
+      <div><span style="color:#a3e635;">is_student</span> <span style="color:#64748b; font-family:'Space Grotesk',sans-serif; font-size:20px;">— great for True/False</span></div>
+      <div><span style="color:#a3e635;">total_price</span> <span style="color:#64748b; font-family:'Space Grotesk',sans-serif; font-size:20px;">— describes what it holds</span></div>
+    </div>
+    <div style="margin-top:24px; padding:14px 18px; background:rgba(163,230,53,0.1); border-left:4px solid #a3e635; border-radius:8px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:20px; color:#a3e635; font-weight:600;">Convention: <span class="mono">snake_case</span> — all lowercase, words joined with _</div>
+    </div>
+  </div>
+
+  <!-- Right: forbidden -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:970px; top:400px; width:870px; height:560px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:24px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1010px; top:430px; width:790px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:#ec4899; letter-spacing:0.2em; margin-bottom:20px;">// ❌ NOT ALLOWED</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; line-height:2;">
+      <div><span style="color:#ec4899; text-decoration:line-through;">2name</span> <span style="color:#64748b; font-family:'Space Grotesk',sans-serif; font-size:20px;">— can't start with a number</span></div>
+      <div><span style="color:#ec4899; text-decoration:line-through;">first name</span> <span style="color:#64748b; font-family:'Space Grotesk',sans-serif; font-size:20px;">— no spaces (use _)</span></div>
+      <div><span style="color:#ec4899; text-decoration:line-through;">first-name</span> <span style="color:#64748b; font-family:'Space Grotesk',sans-serif; font-size:20px;">— dashes look like minus</span></div>
+      <div><span style="color:#ec4899; text-decoration:line-through;">my@name</span> <span style="color:#64748b; font-family:'Space Grotesk',sans-serif; font-size:20px;">— no special chars (@ # ! $)</span></div>
+      <div><span style="color:#ec4899; text-decoration:line-through;">print</span> <span style="color:#64748b; font-family:'Space Grotesk',sans-serif; font-size:20px;">— Python keyword (reserved)</span></div>
+      <div><span style="color:#ec4899; text-decoration:line-through;">class</span> <span style="color:#64748b; font-family:'Space Grotesk',sans-serif; font-size:20px;">— reserved word</span></div>
+    </div>
+    <div style="margin-top:24px; padding:14px 18px; background:rgba(236,72,153,0.1); border-left:4px solid #ec4899; border-radius:8px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:20px; color:#ec4899; font-weight:600;">Case-sensitive: <span class="mono">Name</span> ≠ <span class="mono">name</span> ≠ <span class="mono">NAME</span></div>
+    </div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S01</div>
+  <div class="chrome-pagenum">27 / 47</div>
+</div>
+
+<template data-slide-notes>
+Turn this into a quick game. Read each name, ask "allowed أو not allowed؟"
+
+- `name` → allowed
+- `2name` → NOT (starts with number)
+- `my_name` → allowed
+- `my name` → NOT (space)
+- `Name` → allowed (but different from `name`!)
+- `class` → NOT (reserved word)
+- `NAME_2` → allowed
+- `age!` → NOT (special char)
+
+**Key rules to hammer:**
+1. Start with letter or `_` — never a number
+2. Only letters, numbers, `_`
+3. No spaces — use `_` instead
+4. Case matters: `name` ≠ `Name`
+5. Don't use Python's own words (`print`, `if`, `class`, `for`, etc.)
+
+Ask: "ليه Python بيصعبها كده؟" Answer: "علشان مايكونش في لخبطة. مثلاً `first name` — هل ده متغير واحد ولا اتنين؟"
+
+**Convention** (not a rule, but STRONGLY recommended): `snake_case`. All lowercase, words joined with underscores. `total_price`, `is_valid`, `student_name`.
+
+Show what happens with a bad name — live demo:
+```
+2name = "test"
+# SyntaxError: invalid syntax
+```
+
+Read the error together: "Python بيقولك `SyntaxError` — يعني اسم غلط. تعلموا تقرأوا الأخطاء."
+</template>
+</body>
+</html>

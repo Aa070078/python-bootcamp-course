@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><link rel="stylesheet" href="../assets/theme.css"></head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid" data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1;"></div>
+  <div class="bg-glow-violet" data-object="true" data-object-type="shape" style="position:absolute; left:1220px; top:-200px; z-index:1;"></div>
+
+  <div class="chrome-topbar" data-object="true" data-object-type="textbox" style="z-index:10;">
+    <span class="chrome-dot"></span>
+    <span>CONDITIONS // IF · ELIF · ELSE</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:140px; width:1400px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#a78bfa; letter-spacing:0.25em; margin-bottom:14px;">// FAMILY 03 OF 03</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:88px; font-weight:700; color:#f8fafc; line-height:1; letter-spacing:-0.02em;"><span class="mono" style="color:#ec4899;">if</span> / <span class="mono" style="color:#a78bfa;">elif</span> / <span class="mono" style="color:#facc15;">else</span></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:#cbd5e1; margin-top:14px;">More than two options? Add <span class="mono" style="color:#a78bfa;">elif</span> in the middle.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:22px; color:#a78bfa; direction:rtl; margin-top:6px;">لو / لو كذا / وإلا — كل الأפשרيات</div>
+  </div>
+
+  <!-- Main code example -->
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:900px; height:660px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">grade_system.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:410px; width:840px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:24px; line-height:1.6;">
+    <div><span class="tok-var">score</span> <span class="tok-op">=</span> <span class="tok-num">85</span></div>
+    <div style="height:8px;"></div>
+    <div><span class="tok-kw">if</span> <span class="tok-var">score</span> <span class="tok-op">&gt;=</span> <span class="tok-num">90</span><span class="tok-op">:</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">grade</span> <span class="tok-op">=</span> <span class="tok-str">"A"</span></div>
+    <div><span class="tok-kw">elif</span> <span class="tok-var">score</span> <span class="tok-op">&gt;=</span> <span class="tok-num">80</span><span class="tok-op">:</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">grade</span> <span class="tok-op">=</span> <span class="tok-str">"B"</span></div>
+    <div><span class="tok-kw">elif</span> <span class="tok-var">score</span> <span class="tok-op">&gt;=</span> <span class="tok-num">70</span><span class="tok-op">:</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">grade</span> <span class="tok-op">=</span> <span class="tok-str">"C"</span></div>
+    <div><span class="tok-kw">elif</span> <span class="tok-var">score</span> <span class="tok-op">&gt;=</span> <span class="tok-num">60</span><span class="tok-op">:</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">grade</span> <span class="tok-op">=</span> <span class="tok-str">"D"</span></div>
+    <div><span class="tok-kw">else</span><span class="tok-op">:</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">grade</span> <span class="tok-op">=</span> <span class="tok-str">"F"</span></div>
+    <div style="height:8px;"></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">grade</span>)  <span class="tok-out"># → B</span></div>
+  </div>
+
+  <!-- Right: flow explanation -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1010px; top:340px; width:830px; height:660px; background:rgba(167,139,250,0.06); border:1px solid rgba(167,139,250,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1040px; top:370px; width:770px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:20px; color:#a78bfa; letter-spacing:0.2em; margin-bottom:16px;">// HOW IT FLOWS</div>
+
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#f8fafc; line-height:1.8;">
+      <div><span style="color:#ec4899;">1.</span> Check <span class="mono" style="color:#ec4899;">if</span> score >= 90 → <span style="color:#ec4899;">False</span></div>
+      <div><span style="color:#a78bfa;">2.</span> Check <span class="mono" style="color:#a78bfa;">elif</span> score >= 80 → <span style="color:#a3e635;">True ✓</span></div>
+      <div style="padding-left:28px; color:#a3e635;">→ grade = "B" → DONE!</div>
+      <div style="height:12px;"></div>
+      <div style="color:#64748b; font-size:20px;">Stops checking after the first True.</div>
+      <div style="color:#64748b; font-size:20px;">skips remaining elif + else.</div>
+    </div>
+
+    <div style="height:20px; border-bottom:1px solid #2a3352; margin:16px 0;"></div>
+
+    <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:#facc15; letter-spacing:0.15em; margin-bottom:10px;">// KEY RULE</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#f8fafc; line-height:1.5;">
+      <span style="color:#a3e635;">Only ONE block runs.</span><br>
+      Python checks from top to bottom.<br>
+      Stops at the <span style="color:#a3e635;">first True</span>.
+    </div>
+
+    <div style="height:16px;"></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:20px; color:#94a3b8; line-height:1.4;">
+      <span class="mono" style="color:#a78bfa;">elif</span> = "else if" — combines two steps.
+    </div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S02</div>
+  <div class="chrome-pagenum">32 / 49</div>
+</div>
+
+<template data-slide-notes>
+This is the most powerful conditions pattern. Students will use this in 3 of the 4 mini projects.
+
+Walk through the flow step by step:
+"score = 85. Python يبدأ من الأول: 85 >= 90؟ لأ. يروح التاني: 85 >= 80؟ أيوه! يحط grade = "B" وبعدها يوقف. ما يكملش الباقي."
+
+Key insight: "Python مش بيكمّل بعد ما يلاقي True. بيقول 'خلاص لقيت' وبيقفز للنهاية."
+
+This is WHY we order from highest to lowest. If we wrote elif score >= 60 first, a score of 85 would match that and get "D"!
+
+Common mistake: "elif" NOT "else if". Two separate words in Python: `elif`.
+
+Demo: change score to 55, trace through → lands on else → "F". Students see the full flow.
+</template>
+</body>
+</html>

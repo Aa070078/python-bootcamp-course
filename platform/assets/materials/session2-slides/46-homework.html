@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><link rel="stylesheet" href="../assets/theme.css"></head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid" data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1;"></div>
+  <div class="bg-glow-cyan" data-object="true" data-object-type="shape" style="position:absolute; left:-200px; top:-200px; z-index:1;"></div>
+
+  <div class="chrome-topbar" data-object="true" data-object-type="textbox" style="z-index:10;">
+    <span class="chrome-dot"></span>
+    <span>HOMEWORK // BEFORE NEXT SESSION</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:140px; width:800px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#22d3ee; letter-spacing:0.25em; margin-bottom:20px;">// HOMEWORK</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:120px; font-weight:700; color:#f8fafc; line-height:0.95; letter-spacing:-0.03em;">Homework.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:#94a3b8; direction:rtl; margin-top:20px;">واجب البيت — عشان تثبّت اللي اتعلمت النهارده</div>
+  </div>
+
+  <!-- Main task -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:440px; width:1100px; height:520px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:470px; width:1040px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:20px; color:#22d3ee; letter-spacing:0.2em; margin-bottom:16px;">// MAIN TASK</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:#f8fafc; font-weight:600; margin-bottom:16px;">Build a <span style="color:#a3e635;">University Eligibility Checker</span></div>
+
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#cbd5e1; line-height:1.7;">
+      <div><span style="color:#a3e635;">1.</span> Ask the user for their age.</div>
+      <div><span style="color:#a3e635;">2.</span> Ask for their Math score.</div>
+      <div><span style="color:#a3e635;">3.</span> Ask for their English score.</div>
+      <div><span style="color:#a3e635;">4.</span> Check eligibility using <span class="mono" style="color:#ec4899;">if/elif/else</span>:</div>
+      <div style="padding-left:32px; font-family:'JetBrains Mono',monospace; font-size:20px; color:#facc15; margin-top:4px;">Age >= 18 AND Math >= 85 AND English >= 70</div>
+      <div><span style="color:#a3e635;">5.</span> Print the result:</div>
+      <div style="padding-left:32px; font-family:'JetBrains Mono',monospace; font-size:20px; color:#a3e635; margin-top:4px;">"Congratulations! You are eligible."</div>
+      <div style="padding-left:32px; font-family:'JetBrains Mono',monospace; font-size:20px; color:#ec4899;">"Sorry, you do not meet the criteria."</div>
+    </div>
+  </div>
+
+  <!-- Bonus tasks -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1200px; top:440px; width:660px; height:240px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.35); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1230px; top:465px; width:600px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:#a3e635; letter-spacing:0.15em; margin-bottom:8px;">// BONUS 01</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:20px; color:#f8fafc; font-weight:600;">Tell the Reason</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; color:#94a3b8; margin-top:4px; line-height:1.5;">If not eligible, tell them which<br>criteria they failed:<br>"Your Math score is too low."</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1200px; top:700px; width:660px; height:240px; background:rgba(167,139,250,0.06); border:1px solid rgba(167,139,250,0.35); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1230px; top:725px; width:600px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:#a78bfa; letter-spacing:0.15em; margin-bottom:8px;">// BONUS 02</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:20px; color:#f8fafc; font-weight:600;">Multiple Students</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; color:#94a3b8; margin-top:4px; line-height:1.5;">Check 3 students in a row.<br>Count how many are eligible.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S02</div>
+  <div class="chrome-pagenum">46 / 49</div>
+</div>
+
+<template data-slide-notes>
+Read through the homework requirements clearly. Give 2 minutes for questions.
+
+Main task practices: input, multiple conditions with AND, if/else, comparison operators.
+
+Difficulty: easy-medium. Should take 10-15 minutes.
+
+Bonus 1: teaches nested if/else — check each condition separately.
+Bonus 2: introduces loops — preview of Session 3.
+
+Say: "الواجب ده مهم عشان Session 3 هنعمل فيه loops. لو حليته، هيبقى أسهل بكتير."
+</template>
+</body>
+</html>

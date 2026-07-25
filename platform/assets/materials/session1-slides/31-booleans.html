@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><link rel="stylesheet" href="../assets/theme.css"></head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid" data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1;"></div>
+
+  <div class="chrome-topbar" data-object="true" data-object-type="textbox" style="z-index:10;">
+    <span class="chrome-dot"></span>
+    <span>LIVE CODING // BOOLEANS (bool)</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:130px; width:1400px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:#f8fafc; line-height:1.02; letter-spacing:-0.02em;">The <span style="color:#facc15;">yes-or-no</span> type.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:#94a3b8; direction:rtl; margin-top:12px;">في الحياة، كل قرار في الآخر إجابته "أيوة" أو "لأ" — Python بيحكيها بـ True و False</div>
+  </div>
+
+  <!-- Code -->
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:1050px; height:620px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">booleans.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:400px; width:990px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:22px; line-height:1.7;">
+    <div><span class="tok-com"># booleans — only 2 possible values</span></div>
+    <div><span class="tok-var">is_student</span> <span class="tok-op">=</span> <span style="color:#ec4899;">True</span></div>
+    <div><span class="tok-var">is_teacher</span> <span class="tok-op">=</span> <span style="color:#ec4899;">False</span></div>
+    <div style="height:12px;"></div>
+    <div><span class="tok-com"># capital T and F! true/false won't work</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">is_student</span>)   <span class="tok-com"># True</span></div>
+    <div style="height:12px;"></div>
+    <div><span class="tok-com"># comparisons return booleans</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-num">10</span> <span class="tok-op">></span> <span class="tok-num">5</span>)      <span class="tok-com"># True</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-num">3</span> <span class="tok-op">==</span> <span class="tok-num">4</span>)     <span class="tok-com"># False</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-num">3</span> <span class="tok-op">!=</span> <span class="tok-num">4</span>)     <span class="tok-com"># True (not equal)</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"Ali"</span> <span class="tok-op">==</span> <span class="tok-str">"ali"</span>)  <span class="tok-com"># False (case matters!)</span></div>
+    <div style="height:12px;"></div>
+    <div><span class="tok-com"># store the result of a comparison</span></div>
+    <div><span class="tok-var">age</span> <span class="tok-op">=</span> <span class="tok-num">17</span></div>
+    <div><span class="tok-var">is_adult</span> <span class="tok-op">=</span> <span class="tok-var">age</span> <span class="tok-op">>=</span> <span class="tok-num">18</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">is_adult</span>)  <span class="tok-com"># False</span></div>
+  </div>
+
+  <!-- Right: table -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1180px; top:340px; width:660px; height:620px; background:rgba(250,204,21,0.05); border:1px solid rgba(250,204,21,0.3); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1210px; top:370px; width:600px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:#facc15; letter-spacing:0.2em; margin-bottom:20px;">// COMPARISON OPERATORS</div>
+
+    <table style="width:100%; border-collapse:collapse; font-family:'JetBrains Mono',monospace; font-size:22px;">
+      <tr>
+        <td style="padding:12px 8px; color:#a3e635; border-bottom:1px solid #2a3352; width:100px;">==</td>
+        <td style="padding:12px 8px; color:#cbd5e1; border-bottom:1px solid #2a3352; font-family:'Space Grotesk',sans-serif; font-size:20px;">equal to</td>
+      </tr>
+      <tr>
+        <td style="padding:12px 8px; color:#a3e635; border-bottom:1px solid #2a3352;">!=</td>
+        <td style="padding:12px 8px; color:#cbd5e1; border-bottom:1px solid #2a3352; font-family:'Space Grotesk',sans-serif; font-size:20px;">not equal</td>
+      </tr>
+      <tr>
+        <td style="padding:12px 8px; color:#a3e635; border-bottom:1px solid #2a3352;">&gt;</td>
+        <td style="padding:12px 8px; color:#cbd5e1; border-bottom:1px solid #2a3352; font-family:'Space Grotesk',sans-serif; font-size:20px;">greater than</td>
+      </tr>
+      <tr>
+        <td style="padding:12px 8px; color:#a3e635; border-bottom:1px solid #2a3352;">&lt;</td>
+        <td style="padding:12px 8px; color:#cbd5e1; border-bottom:1px solid #2a3352; font-family:'Space Grotesk',sans-serif; font-size:20px;">less than</td>
+      </tr>
+      <tr>
+        <td style="padding:12px 8px; color:#a3e635; border-bottom:1px solid #2a3352;">&gt;=</td>
+        <td style="padding:12px 8px; color:#cbd5e1; border-bottom:1px solid #2a3352; font-family:'Space Grotesk',sans-serif; font-size:20px;">greater or equal</td>
+      </tr>
+      <tr>
+        <td style="padding:12px 8px; color:#a3e635;">&lt;=</td>
+        <td style="padding:12px 8px; color:#cbd5e1; font-family:'Space Grotesk',sans-serif; font-size:20px;">less or equal</td>
+      </tr>
+    </table>
+
+    <div style="margin-top:24px; padding:14px 18px; background:rgba(236,72,153,0.1); border-left:4px solid #ec4899; border-radius:8px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:20px; color:#ec4899; font-weight:600;">The biggest beginner trap:</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:#f8fafc; margin-top:6px; line-height:1.5;">
+        <div><span style="color:#a78bfa;">=</span> assigns a value</div>
+        <div><span style="color:#a78bfa;">==</span> compares equality</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S01</div>
+  <div class="chrome-pagenum">31 / 47</div>
+</div>
+
+<template data-slide-notes>
+Booleans confuse students. Slow down.
+
+**Concept**: booleans answer yes/no questions.
+
+Real-life examples:
+- Are you logged in? True/False
+- Is the door locked? True/False  
+- Did you pass the exam? True/False
+- Is 10 > 5? True
+
+Show that comparisons RETURN booleans:
+```
+print(10 > 5)   # → True
+print(5 > 10)   # → False
+```
+
+**Critical distinction** — write both on the board:
+- `=`  → assignment (put a value in a box)
+- `==` → comparison (are these equal?)
+
+Do a live experiment:
+```
+age = 17          # assignment
+print(age == 17)  # → True (comparison)
+print(age == 18)  # → False
+```
+
+Ask class: "لو كتبت `if age = 18:` بدل `if age == 18:` هيحصل ايه؟" (SyntaxError.)
+
+**Fun boolean logic** (preview for next session):
+```
+True and True   # → True
+True and False  # → False
+True or False   # → True
+not True        # → False
+```
+Just show one line. "هنشرحها المرة الجاية."
+
+Common student question: "ليه Python بيكتب True بـ T كبيرة؟" Answer: "علشان يميزها عن اسم متغير `true`. `True` و `False` كلمات خاصة."
+</template>
+</body>
+</html>

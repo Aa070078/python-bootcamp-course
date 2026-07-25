@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><link rel="stylesheet" href="../assets/theme.css"></head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid" data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1;"></div>
+
+  <div class="chrome-topbar" data-object="true" data-object-type="textbox" style="z-index:10;">
+    <span class="chrome-dot"></span>
+    <span>LIVE CODING // STRINGS (str)</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:130px; width:1400px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:#f8fafc; line-height:1.02; letter-spacing:-0.02em;">Working with <span style="color:#ec4899;">text</span>.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:#94a3b8; direction:rtl; margin-top:12px;">أي كلام لازم يبقى بين علامتي اقتباس</div>
+  </div>
+
+  <!-- Code -->
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:1050px; height:620px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">strings.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:400px; width:990px; height:540px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:20px; line-height:1.5; overflow:hidden;">
+    <div><span class="tok-com"># both quote styles work — pick one and stay consistent</span></div>
+    <div><span class="tok-var">name</span> <span class="tok-op">=</span> <span class="tok-str">"Yousef"</span></div>
+    <div><span class="tok-var">city</span> <span class="tok-op">=</span> <span class="tok-str">'Cairo'</span></div>
+    <div style="height:6px;"></div>
+    <div><span class="tok-com"># joining strings — the + operator concatenates</span></div>
+    <div><span class="tok-var">full</span> <span class="tok-op">=</span> <span class="tok-var">name</span> <span class="tok-op">+</span> <span class="tok-str">" from "</span> <span class="tok-op">+</span> <span class="tok-var">city</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">full</span>)  <span class="tok-com"># Yousef from Cairo</span></div>
+    <div style="height:6px;"></div>
+    <div><span class="tok-com"># repeat with *</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"ha"</span> <span class="tok-op">*</span> <span class="tok-num">5</span>)  <span class="tok-com"># hahahahaha</span></div>
+    <div style="height:6px;"></div>
+    <div><span class="tok-com"># f-strings — mix text + variables</span></div>
+    <div><span class="tok-var">age</span> <span class="tok-op">=</span> <span class="tok-num">17</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">f"My name is {name} and I am {age}"</span>)</div>
+    <div style="height:6px;"></div>
+    <div><span class="tok-com"># useful string things</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-fn">len</span>(<span class="tok-var">name</span>))       <span class="tok-com"># 6 (letters count)</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">name</span>.<span class="tok-fn">upper</span>())    <span class="tok-com"># YOUSEF</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">name</span>.<span class="tok-fn">lower</span>())    <span class="tok-com"># yousef</span></div>
+  </div>
+
+  <!-- Right: watch out -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1180px; top:340px; width:660px; height:620px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.3); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1210px; top:370px; width:600px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:#ec4899; letter-spacing:0.2em; margin-bottom:20px;">// WATCH OUT</div>
+
+    <div style="margin-bottom:24px; padding:14px 18px; background:rgba(236,72,153,0.08); border-radius:10px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:20px; color:#ec4899; font-weight:600; margin-bottom:8px;">Numbers in quotes are text!</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:20px; color:#f8fafc; line-height:1.6;">
+        <div><span class="tok-str">"5"</span> <span class="tok-op">+</span> <span class="tok-str">"3"</span> → <span class="tok-str">"53"</span></div>
+        <div><span class="tok-num">5</span> <span class="tok-op">+</span> <span class="tok-num">3</span> → <span class="tok-num">8</span></div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:24px; padding:14px 18px; background:rgba(250,204,21,0.08); border-radius:10px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:20px; color:#facc15; font-weight:600; margin-bottom:8px;">Match your quotes!</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:20px; color:#f8fafc; line-height:1.6;">
+        <div style="color:#a3e635;">✓ "hello"    'hi'</div>
+        <div style="color:#ec4899;">✗ "hello'    'hi"</div>
+      </div>
+    </div>
+
+    <div style="padding:14px 18px; background:rgba(34,211,238,0.08); border-radius:10px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:20px; color:#22d3ee; font-weight:600; margin-bottom:8px;">f-string tip</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; color:#cbd5e1; line-height:1.5;">The <span class="mono" style="color:#a3e635;">f</span> before the quote lets you drop variables in <span class="mono" style="color:#a3e635;">{ }</span>. Learn it — you'll use it forever.</div>
+    </div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S01</div>
+  <div class="chrome-pagenum">30 / 47</div>
+</div>
+
+<template data-slide-notes>
+Live coding. Focus on THREE big ideas:
+
+**1. Concatenation with `+`:**
+```
+"Hello" + " " + "World"  # → "Hello World"
+```
+Point out: needs a SPACE inside a string, `+` doesn't add spaces automatically.
+
+**2. Repetition with `*`:**
+```
+"-" * 30  # → "------------------------------"
+```
+Fun for making separator lines.
+
+**3. f-strings — the game changer:**
+```
+name = "Ali"
+age = 17
+print(f"{name} is {age} years old")
+```
+Say: "الحرف f قبل علامة الاقتباس معناها 'formatted string'. أي متغير جوه { } بيتحط في مكانه."
+
+Compare with ugly old way:
+```
+print(name + " is " + str(age) + " years old")   # ugly
+print(f"{name} is {age} years old")              # beautiful
+```
+
+Common misconception moment: 
+```
+x = "5"
+y = "3"
+print(x + y)     # → "53"  (concatenation, not math!)
+```
+Then:
+```
+x = 5
+y = 3
+print(x + y)     # → 8
+```
+"نفس الرمز `+`، بس لما يبقى بين strings معناه 'ألصق'، ولما يبقى بين numbers معناه 'اجمع'."
+
+Preview `type()` and casting slides.
+</template>
+</body>
+</html>

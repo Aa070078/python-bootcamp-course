@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Python Bootcamp — Session 2 Viewer</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&family=Cairo:wght@400;600;700&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    width: 100%; height: 100%;
+    overflow: hidden;
+    background: #0a0e1a;
+    font-family: 'JetBrains Mono', monospace;
+    color: #f8fafc;
+    user-select: none;
+  }
+
+  #viewport {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0a0e1a;
+    overflow: hidden;
+  }
+
+  #slide-frame {
+    border: none;
+    background: #0a0e1a;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1920px;
+    height: 1080px;
+    transform-origin: top left;
+  }
+
+  #bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    background: rgba(10,14,26,0.95);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(34,211,238,0.15);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  #viewport:hover ~ #bar, #bar:hover { opacity: 1; }
+
+  #bar button {
+    background: none;
+    border: 1px solid rgba(34,211,238,0.3);
+    color: #22d3ee;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    padding: 6px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  #bar button:hover { background: rgba(34,211,238,0.12); border-color: #22d3ee; }
+  #bar button:active { transform: scale(0.96); }
+
+  #page-info {
+    font-size: 15px;
+    color: #94a3b8;
+    letter-spacing: 0.12em;
+  }
+  #page-info .current { color: #22d3ee; font-weight: 700; }
+
+  #hint {
+    position: fixed;
+    top: 16px; left: 50%;
+    transform: translateX(-50%);
+    font-size: 13px;
+    color: #64748b;
+    letter-spacing: 0.08em;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.4s;
+    pointer-events: none;
+  }
+  #viewport:hover ~ #hint, #hint.show { opacity: 1; }
+
+  #thumbs-toggle {
+    position: fixed;
+    top: 16px; right: 20px;
+    background: rgba(10,14,26,0.85);
+    border: 1px solid rgba(34,211,238,0.25);
+    color: #22d3ee;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 1001;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  #viewport:hover ~ #thumbs-toggle, #thumbs-toggle:hover { opacity: 1; }
+
+  #thumbs-panel {
+    position: fixed;
+    top: 0; right: 0;
+    width: 320px;
+    height: 100vh;
+    background: rgba(10,14,26,0.98);
+    border-left: 1px solid rgba(34,211,238,0.15);
+    z-index: 1100;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    padding: 60px 16px 20px;
+  }
+  #thumbs-panel.open { transform: translateX(0); }
+
+  .thumb {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s;
+    margin-bottom: 4px;
+  }
+  .thumb:hover { background: rgba(34,211,238,0.08); }
+  .thumb.active { background: rgba(34,211,238,0.15); border: 1px solid rgba(34,211,238,0.3); }
+  .thumb-num { font-size: 13px; color: #64748b; min-width: 28px; text-align: right; }
+  .thumb.active .thumb-num { color: #22d3ee; }
+  .thumb-title { font-size: 13px; color: #94a3b8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .thumb.active .thumb-title { color: #f8fafc; }
+
+  #thumbs-panel::-webkit-scrollbar { width: 6px; }
+  #thumbs-panel::-webkit-scrollbar-track { background: transparent; }
+  #thumbs-panel::-webkit-scrollbar-thumb { background: rgba(34,211,238,0.2); border-radius: 3px; }
+
+  #loading {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0a0e1a;
+    z-index: 2000;
+    font-size: 18px;
+    color: #22d3ee;
+    letter-spacing: 0.1em;
+  }
+  #loading.hidden { display: none; }
+</style>
+</head>
+<body>
+
+<div id="loading">Loading slides...</div>
+
+<div id="viewport">
+  <iframe id="slide-frame" scrolling="no" frameborder="0"></iframe>
+</div>
+
+<div id="bar">
+  <button id="btn-prev">◀ Prev</button>
+  <span id="page-info"><span class="current" id="page-num">01</span> / <span id="page-total">50</span></span>
+  <button id="btn-next">Next ▶</button>
+</div>
+
+<div id="hint">← → arrows &nbsp;|&nbsp; click left/right &nbsp;|&nbsp; Esc thumbnails</div>
+
+<button id="thumbs-toggle">☰ Slides</button>
+<div id="thumbs-panel"></div>
+
+<script>
+const SLIDES = [
+  "01-cover.html","02-hook.html","03-review-mcq-1.html","04-review-mcq-2.html",
+  "05-review-mcq-3.html","06-timeline.html","07-operators-intro.html",
+  "08-arithmetic-operators.html","09-arithmetic-live-coding.html","10-mcq-arithmetic.html",
+  "11-assignment-operators.html","12-assignment-live-coding.html","13-mcq-assignment.html",
+  "14-comparison-operators.html","15-comparison-live-coding.html","16-predict-comparison.html",
+  "17-logical-operators.html","18-logical-live-coding.html","19-mcq-logical.html",
+  "20-membership-operators.html","21-membership-live-coding.html","22-identity-operators.html",
+  "23-identity-vs-equality.html","24-mcq-identity.html","25-coding-challenge-operators.html",
+  "26-break.html","27-conditions-intro.html","28-real-life-conditions.html",
+  "29-boolean-logic.html","30-if-statement.html","31-if-else.html",
+  "32-if-elif-else.html","33-if-live-coding.html","34-nested-conditions.html",
+  "35-mcq-conditions-1.html","36-mcq-conditions-2.html","37-coding-challenge-conditions.html",
+  "38-project-calculator.html","39-project-bmi.html","40-project-grade.html",
+  "41-project-password.html","42-exercises-easy.html","43-exercises-medium.html",
+  "44-exercises-challenge.html","45-common-mistakes.html","46-homework.html",
+  "47-final-quiz.html","48-recap.html","49-closing.html"
+];
+
+const TITLES = [
+  "Cover","Hook","Review MCQ 1","Review MCQ 2","Review MCQ 3","Timeline",
+  "Operators Intro","Arithmetic Operators","Arithmetic Live Coding","MCQ Arithmetic",
+  "Assignment Operators","Assignment Live Coding","MCQ Assignment",
+  "Comparison Operators","Comparison Live Coding","Predict Comparison",
+  "Logical Operators","Logical Live Coding","MCQ Logical",
+  "Membership Operators","Membership Live Coding",
+  "Identity Operators","Identity vs Equality","MCQ Identity",
+  "Coding Challenge — Operators","Break",
+  "Conditions Intro","Real-Life Conditions","Boolean Logic",
+  "If Statement","If/Else","If/Elif/Else",
+  "If Live Coding","Nested Conditions",
+  "MCQ Conditions 1","MCQ Conditions 2","Coding Challenge — Conditions",
+  "Project: Calculator","Project: BMI","Project: Grade","Project: Password",
+  "Exercises: Easy","Exercises: Medium","Exercises: Challenge",
+  "Common Mistakes","Homework","Final Quiz","Recap","Closing"
+];
+
+let current = 0;
+const frame = document.getElementById("slide-frame");
+const pageNum = document.getElementById("page-num");
+const pageTotal = document.getElementById("page-total");
+const thumbsPanel = document.getElementById("thumbs-panel");
+const loading = document.getElementById("loading");
+
+pageTotal.textContent = SLIDES.length;
+
+// Build thumbnails
+SLIDES.forEach((f, i) => {
+  const d = document.createElement("div");
+  d.className = "thumb" + (i === 0 ? " active" : "");
+  d.innerHTML = `<span class="thumb-num">${String(i+1).padStart(2,"0")}</span><span class="thumb-title">${TITLES[i]}</span>`;
+  d.onclick = () => { goTo(i); toggleThumbs(false); };
+  thumbsPanel.appendChild(d);
+});
+
+// Scale iframe to fit viewport
+function resize() {
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  const scale = Math.min(vw / 1920, vh / 1080);
+  const left = (vw - 1920 * scale) / 2;
+  const top = (vh - 1080 * scale) / 2;
+  frame.style.transform = `translate(${left}px, ${top}px) scale(${scale})`;
+}
+
+function loadSlide(index) {
+  const file = SLIDES[index];
+  frame.src = "session2-slides/" + file + "?v=" + Date.now();
+  pageNum.textContent = String(index + 1).padStart(2, "0");
+  document.querySelectorAll(".thumb").forEach((t, i) => {
+    t.classList.toggle("active", i === index);
+  });
+}
+
+function goTo(index) {
+  if (index < 0 || index >= SLIDES.length) return;
+  current = index;
+  loadSlide(current);
+}
+
+function next() { goTo(current + 1); }
+function prev() { goTo(current - 1); }
+
+// Keyboard
+document.addEventListener("keydown", e => {
+  if (e.key === "ArrowRight" || e.key === " ") { e.preventDefault(); next(); }
+  else if (e.key === "ArrowLeft") { e.preventDefault(); prev(); }
+  else if (e.key === "Home") { e.preventDefault(); goTo(0); }
+  else if (e.key === "End") { e.preventDefault(); goTo(SLIDES.length - 1); }
+  else if (e.key === "Escape") { toggleThumbs(); }
+});
+
+// Click
+document.getElementById("viewport").addEventListener("click", e => {
+  if (e.target.closest("button")) return;
+  const x = e.clientX;
+  if (x < window.innerWidth * 0.35) prev();
+  else if (x > window.innerWidth * 0.65) next();
+});
+
+// Buttons
+document.getElementById("btn-prev").onclick = prev;
+document.getElementById("btn-next").onclick = next;
+
+// Thumbnails
+function toggleThumbs(force) {
+  const open = force !== undefined ? force : !thumbsPanel.classList.contains("open");
+  thumbsPanel.classList.toggle("open", open);
+}
+document.getElementById("thumbs-toggle").onclick = () => toggleThumbs();
+
+// Iframe load
+frame.onload = () => { loading.classList.add("hidden"); };
+
+// Init
+window.addEventListener("resize", resize);
+resize();
+loadSlide(0);
+
+const hint = document.getElementById("hint");
+hint.classList.add("show");
+setTimeout(() => hint.classList.remove("show"), 3500);
+</script>
+</body>
+</html>
