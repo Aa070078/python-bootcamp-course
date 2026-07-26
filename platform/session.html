@@ -101,7 +101,7 @@
     .animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
   </style>
 </head>
-<body class="bg-surface-0 text-ink-200 min-h-screen">
+<body class="bg-surface-0 text-ink-200 min-h-screen grid-pattern">
   <!-- Grid glow canvas injected by cursor-follower.js -->
 
   <!-- Navigation -->
@@ -368,7 +368,8 @@
       // Video
       if (session.hasVideo) {
         document.getElementById('videoPlaceholder').classList.add('hidden');
-        document.getElementById('videoSource').src = `https://github.com/Aa070078/python-bootcamp-course/releases/download/video-assets/session${currentSession}-compressed.mp4`;
+        const videoUrls = { 1: 'https://files.catbox.moe/1kbsag.mp4', 2: 'https://files.catbox.moe/35j3x8.mp4' };
+        document.getElementById('videoSource').src = videoUrls[currentSession] || '';
         document.getElementById('videoPlayer').load();
       }
 
