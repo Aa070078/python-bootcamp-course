@@ -46,11 +46,11 @@
   function tick() {
     /* --- fade layer (creates trailing decay) --- */
     ctx.globalCompositeOperation = 'source-over';
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.04)';
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
     ctx.fillRect(0, 0, W, H);
 
     /* --- draw grid --- */
-    ctx.strokeStyle = 'rgba(59, 130, 246, 0.035)';
+    ctx.strokeStyle = 'rgba(59, 130, 246, 0.025)';
     ctx.lineWidth = 1;
     ctx.globalCompositeOperation = 'source-over';
 
@@ -79,13 +79,13 @@
       const p = trail[i];
       const t = i / trail.length; // 0 = oldest, 1 = newest
 
-      const radius = 60 + t * 160;        // 60px → 220px
-      const alpha  = 0.01 + t * 0.08;     // 0.01 → 0.09
+      const radius = 50 + t * 120;        // 50px → 170px
+      const alpha  = 0.006 + t * 0.04;    // 0.006 → 0.046
 
       const grad = glowCtx.createRadialGradient(p.x, p.y, 0, p.x, p.y, radius);
-      grad.addColorStop(0, `rgba(200, 30, 30, ${alpha})`);
-      grad.addColorStop(0.3, `rgba(150, 22, 22, ${alpha * 0.6})`);
-      grad.addColorStop(0.6, `rgba(100, 15, 15, ${alpha * 0.25})`);
+      grad.addColorStop(0, `rgba(180, 25, 25, ${alpha})`);
+      grad.addColorStop(0.35, `rgba(130, 18, 18, ${alpha * 0.5})`);
+      grad.addColorStop(0.65, `rgba(80, 12, 12, ${alpha * 0.2})`);
       grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
 
       glowCtx.fillStyle = grad;
