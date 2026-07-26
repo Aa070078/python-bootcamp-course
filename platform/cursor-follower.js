@@ -51,10 +51,14 @@
       this.y = Math.floor(Math.random() * (H / CELL)) * CELL;
       this.targetX = this.x;
       this.targetY = this.y;
+      this.vx = 0;
+      this.vy = 0;
       this.radius = Math.random() * 80 + 40;
+      this.baseRadius = this.radius;
       this.speed = Math.random() * 0.012 + 0.008;
       this.color = GLOW_COLORS[Math.floor(Math.random() * GLOW_COLORS.length)];
       this.alpha = 0;
+      this.fleeing = false;
       this.setNewTarget();
     }
 
@@ -64,11 +68,40 @@
     }
 
     update() {
-      this.x += (this.targetX - this.x) * this.speed;
-      this.y += (this.targetY - this.y) * this.speed;
-      if (Math.abs(this.targetX - this.x) < 1 && Math.abs(this.targetY - this.y) < 1) {
-        this.setNewTarget();
+      var dx = this.x - mouseX;
+      var dy = this.y - mouseY;
+      var dist = Math.sqrt(dx * dx + dy * dy);
+      var fleeRadius = 220;
+
+      if (mouseActive && dist < fleeRadius && dist > 0) {
+        this.fleeing = true;
+        var force = (1 - dist / fleeRadius) * 8;
+        this.vx += (dx / dist) * force;
+        this.vy += (dy / dist) * force;
+        this.radius = this.baseRadius + (1 - dist / fleeRadius) * 40;
+      } else {
+        this.fleeing = false;
+        this.radius += (this.baseRadius - this.radius) * 0.03;
       }
+
+      if (!this.fleeing) {
+        this.vx += (this.targetX - this.x) * this.speed * 0.1;
+        this.vy += (this.targetY - this.y) * this.speed * 0.1;
+        if (Math.abs(this.targetX - this.x) < 1 && Math.abs(this.targetY - this.y) < 1) {
+          this.setNewTarget();
+        }
+      }
+
+      this.vx *= 0.92;
+      this.vy *= 0.92;
+      this.x += this.vx;
+      this.y += this.vy;
+
+      if (this.x < -200) this.x = W + 100;
+      if (this.x > W + 200) this.x = -100;
+      if (this.y < -200) this.y = H + 100;
+      if (this.y > H + 200) this.y = -100;
+
       if (this.alpha < 1) this.alpha += 0.008;
     }
 
