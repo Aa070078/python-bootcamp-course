@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth" dir="ltr">
 <head>
+  <script>document.documentElement.dataset.theme = localStorage.getItem('theme') || 'dark';</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Python Bootcamp - Dashboard</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -27,74 +29,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; }
-    body { font-family: 'Plus Jakarta Sans', 'Tajawal', sans-serif; }
-    
-    /* Dark theme (default) */
-    :root {
-      --bg-page: #060814;
-      --bg-surface: #0a0f1c;
-      --bg-surface-2: #0f1629;
-      --bg-surface-3: #141c33;
-      --text-primary: #f1f5f9;
-      --text-secondary: #e2e8f0;
-      --text-muted: #94a3b8;
-      --text-faint: #64748b;
-      --border-color: #1e293b;
-      --accent-blue: #3b82f6;
-      --accent-orange: #f97316;
-      --accent-green: #34d399;
-    }
-    
-    /* Light theme */
-    [data-theme="light"] {
-      --bg-page: #f8fafc;
-      --bg-surface: #ffffff;
-      --bg-surface-2: #f1f5f9;
-      --bg-surface-3: #e2e8f0;
-      --text-primary: #0f172a;
-      --text-secondary: #1e293b;
-      --text-muted: #475569;
-      --text-faint: #94a3b8;
-      --border-color: #e2e8f0;
-    }
-    
-    /* Tailwind overrides for light theme */
-    [data-theme="light"] body { background: #f8fafc; color: #1e293b; }
-    [data-theme="light"] .bg-surface-0 { background-color: #f8fafc; }
-    [data-theme="light"] .bg-surface-1 { background-color: #ffffff; }
-    [data-theme="light"] .bg-surface-2 { background-color: #f1f5f9; }
-    [data-theme="light"] .bg-surface-2\/50 { background-color: rgba(241, 245, 249, 0.5); }
-    [data-theme="light"] .bg-surface-3 { background-color: #e2e8f0; }
-    [data-theme="light"] .text-ink-100 { color: #0f172a; }
-    [data-theme="light"] .text-ink-200 { color: #1e293b; }
-    [data-theme="light"] .text-ink-300 { color: #334155; }
-    [data-theme="light"] .text-ink-400 { color: #475569; }
-    [data-theme="light"] .text-ink-500 { color: #64748b; }
-    [data-theme="light"] .text-ink-600 { color: #94a3b8; }
-    [data-theme="light"] .text-ink-800 { color: #1e293b; }
-    [data-theme="light"] .border-ink-800 { border-color: #e2e8f0; }
-    [data-theme="light"] .border-ink-800\/50 { border-color: rgba(226, 232, 240, 0.5); }
-    [data-theme="light"] .border-ink-800\/30 { border-color: rgba(226, 232, 240, 0.3); }
-    
-    body { background: var(--bg-page); color: var(--text-secondary); }
-    .gradient-text { background: linear-gradient(135deg, #3b82f6, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .glass { background: rgba(10, 15, 28, 0.6); backdrop-filter: blur(20px); border: 1px solid rgba(59, 130, 246, 0.1); }
-    [data-theme="light"] .glass { background: rgba(255, 255, 255, 0.8); border: 1px solid rgba(0, 0, 0, 0.1); }
-    .card-hover { transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
-    .card-hover:hover { transform: translateY(-4px); border-color: #3b82f6; box-shadow: 0 20px 40px rgba(59, 130, 246, 0.1); }
-    .grid-pattern { background-image: linear-gradient(rgba(59,130,246,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.03) 1px, transparent 1px); background-size: 50px 50px; }
-    [data-theme="light"] .grid-pattern { background-image: linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px); }
-    .progress-ring { transform: rotate(-90deg); }
-    .progress-ring-circle { transition: stroke-dashoffset 0.5s ease; }
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: transparent; }
-    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
-    ::-webkit-scrollbar-thumb:hover { background: #334155; }
-    [data-theme="light"] ::-webkit-scrollbar-thumb { background: #cbd5e1; }
-    [data-theme="light"] ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-  </style>
+  <link rel="stylesheet" href="platform-theme.css">
 </head>
 <body class="bg-surface-0 text-ink-200 min-h-screen grid-pattern">
   <!-- Grid glow canvas injected by cursor-follower.js -->
@@ -204,8 +139,19 @@
     <div id="sessionsContainer" class="space-y-8"></div>
   </main>
 
+  <!-- Sponsor Footer -->
+  <footer class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-8 border-t border-ink-800/50">
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+      <span class="text-[9px] font-mono text-ink-600 uppercase tracking-widest hidden sm:block">Under the sponsorship of</span>
+      <div class="flex items-center gap-5">
+        <img src="assets/images/logo-association.svg" alt="Industrial Association" class="h-10 w-auto opacity-60 hover:opacity-100 transition-opacity" onerror="this.style.display='none'">
+        <div class="w-px h-6 bg-ink-800/50"></div>
+        <img src="assets/images/logo-ministry.svg" alt="Ministry of Industry" class="h-10 w-auto opacity-60 hover:opacity-100 transition-opacity" onerror="this.style.display='none'">
+      </div>
+    </div>
+  </footer>
+
   <script>
-    // Session data
     const SESSIONS = [
       { week: 1, title: "Python Fundamentals", sessions: [
         { num: 1, title: "Introduction to Programming & Python Basics", icon: "cpu", status: "available" },
@@ -238,7 +184,6 @@
       ]}
     ];
 
-    // Icon SVGs
     const ICONS = {
       cpu: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>',
       sliders: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>',
@@ -258,37 +203,28 @@
       award: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>'
     };
 
-    // Get user data
     function getUserData() {
       const data = localStorage.getItem('python_bootcamp_user');
-      if (!data) {
-        window.location.href = 'login.html';
-        return null;
-      }
+      if (!data) { window.location.href = 'login.html'; return null; }
       return JSON.parse(data);
     }
 
-    // Save user data
     function saveUserData(data) {
       localStorage.setItem('python_bootcamp_user', JSON.stringify(data));
     }
 
-    // Logout
     function logout() {
       localStorage.removeItem('python_bootcamp_user');
       window.location.href = 'login.html';
     }
 
-    // Render sessions
     function renderSessions() {
       const user = getUserData();
       if (!user) return;
 
       document.getElementById('userName').textContent = user.name;
-
       const container = document.getElementById('sessionsContainer');
       container.innerHTML = '';
-
       let completedCount = 0;
       let inProgressCount = 0;
 
@@ -311,38 +247,20 @@
                 const isCompleted = user.completedSessions.includes(s.num);
                 const isAvailable = s.status === 'available';
                 const isComingSoon = s.status === 'coming-soon';
-                
                 if (isCompleted) completedCount++;
                 else if (isAvailable) inProgressCount++;
-
                 const cardClass = isCompleted ? 'border-accent-green/30 bg-accent-green/5' : 
                                   isComingSoon ? 'border-ink-800/50 bg-surface-2/50 opacity-60' : 
                                   'border-ink-800 bg-surface-2';
-                
                 const href = isComingSoon ? '#' : `session.html?num=${s.num}`;
                 const onclick = isComingSoon ? 'event.preventDefault()' : '';
-
                 return `
                   <a href="${href}" onclick="${onclick}" class="${isComingSoon ? '' : 'card-hover'} block p-4 rounded-xl border ${cardClass} ${isComingSoon ? 'cursor-not-allowed' : ''}">
                     <div class="flex items-start justify-between mb-3">
                       <div class="w-10 h-10 rounded-lg ${isCompleted ? 'bg-accent-green/20' : isComingSoon ? 'bg-ink-800/30' : 'bg-accent-blue/10'} flex items-center justify-center">
-                        ${isComingSoon ? `
-                          <svg class="w-5 h-5 text-ink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-                          </svg>
-                        ` : `
-                          <svg class="w-5 h-5 ${isCompleted ? 'text-accent-green' : 'text-accent-blue'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            ${ICONS[s.icon]}
-                          </svg>
-                        `}
+                        ${isComingSoon ? '<svg class="w-5 h-5 text-ink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>' : `<svg class="w-5 h-5 ${isCompleted ? 'text-accent-green' : 'text-accent-blue'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">${ICONS[s.icon]}</svg>`}
                       </div>
-                      ${isCompleted ? `
-                        <span class="px-2 py-1 rounded-full bg-accent-green/20 text-accent-green text-[10px] font-bold">DONE</span>
-                      ` : isComingSoon ? `
-                        <span class="px-2 py-1 rounded-full bg-ink-800/50 text-ink-500 text-[10px] font-bold">SOON</span>
-                      ` : `
-                        <span class="px-2 py-1 rounded-full bg-accent-blue/20 text-accent-blue text-[10px] font-bold">START</span>
-                      `}
+                      ${isCompleted ? '<span class="px-2 py-1 rounded-full bg-accent-green/20 text-accent-green text-[10px] font-bold">DONE</span>' : isComingSoon ? '<span class="px-2 py-1 rounded-full bg-ink-800/50 text-ink-500 text-[10px] font-bold">SOON</span>' : '<span class="px-2 py-1 rounded-full bg-accent-blue/20 text-accent-blue text-[10px] font-bold">START</span>'}
                     </div>
                     <p class="text-xs text-ink-500 font-mono mb-1">SESSION ${String(s.num).padStart(2, '0')}</p>
                     <h4 class="font-bold ${isComingSoon ? 'text-ink-500' : 'text-ink-100'} text-sm leading-tight">${s.title}</h4>
@@ -356,7 +274,6 @@
         container.innerHTML += weekHtml;
       });
 
-      // Update stats
       document.getElementById('completedCount').textContent = completedCount;
       document.getElementById('inProgressCount').textContent = inProgressCount;
       const progress = Math.round((completedCount / 17) * 100);
@@ -365,7 +282,6 @@
       document.getElementById('progressText').textContent = `${completedCount} / 17 sessions`;
     }
 
-    // Theme toggle
     function toggleTheme() {
       const current = document.documentElement.getAttribute('data-theme');
       const next = current === 'light' ? null : 'light';
@@ -380,19 +296,13 @@
       }
     }
 
-    // Load saved theme
     (function() {
-      const saved = localStorage.getItem('theme');
-      if (saved === 'light') {
-        document.documentElement.setAttribute('data-theme', 'light');
-        setTimeout(() => {
-          const icon = document.getElementById('themeIcon');
-          if (icon) icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>';
-        }, 100);
+      const icon = document.getElementById('themeIcon');
+      if (document.documentElement.getAttribute('data-theme') === 'light' && icon) {
+        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>';
       }
     })();
 
-    // Initialize
     renderSessions();
   </script>
   <script src="cursor-follower.js" defer></script>

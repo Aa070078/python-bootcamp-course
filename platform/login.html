@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth" dir="ltr">
 <head>
+  <script>document.documentElement.dataset.theme = localStorage.getItem('theme') || 'dark';</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Python Bootcamp - Student Login</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -27,69 +29,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; }
-    body { font-family: 'Plus Jakarta Sans', 'Tajawal', sans-serif; }
-    
-    /* Dark theme (default) */
-    :root {
-      --bg-page: #060814;
-      --bg-surface: #0a0f1c;
-      --bg-surface-2: #0f1629;
-      --bg-surface-3: #141c33;
-      --text-primary: #f1f5f9;
-      --text-secondary: #e2e8f0;
-      --text-muted: #94a3b8;
-      --text-faint: #64748b;
-      --border-color: #1e293b;
-      --accent-blue: #3b82f6;
-      --accent-orange: #f97316;
-      --accent-green: #34d399;
-    }
-    
-    /* Light theme */
-    [data-theme="light"] {
-      --bg-page: #f8fafc;
-      --bg-surface: #ffffff;
-      --bg-surface-2: #f1f5f9;
-      --bg-surface-3: #e2e8f0;
-      --text-primary: #0f172a;
-      --text-secondary: #1e293b;
-      --text-muted: #475569;
-      --text-faint: #94a3b8;
-      --border-color: #e2e8f0;
-    }
-    
-    /* Tailwind overrides for light theme */
-    [data-theme="light"] body { background: #f8fafc; color: #1e293b; }
-    [data-theme="light"] .bg-surface-0 { background-color: #f8fafc; }
-    [data-theme="light"] .bg-surface-1 { background-color: #ffffff; }
-    [data-theme="light"] .bg-surface-2 { background-color: #f1f5f9; }
-    [data-theme="light"] .bg-surface-3 { background-color: #e2e8f0; }
-    [data-theme="light"] .text-ink-100 { color: #0f172a; }
-    [data-theme="light"] .text-ink-200 { color: #1e293b; }
-    [data-theme="light"] .text-ink-300 { color: #334155; }
-    [data-theme="light"] .text-ink-400 { color: #475569; }
-    [data-theme="light"] .text-ink-500 { color: #64748b; }
-    [data-theme="light"] .text-ink-600 { color: #94a3b8; }
-    [data-theme="light"] .border-ink-800 { border-color: #e2e8f0; }
-    
-    body { background: var(--bg-page); color: var(--text-secondary); }
-    .gradient-text { background: linear-gradient(135deg, #3b82f6, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .glass { background: rgba(10, 15, 28, 0.8); backdrop-filter: blur(20px); border: 1px solid rgba(59, 130, 246, 0.15); }
-    [data-theme="light"] .glass { background: rgba(255, 255, 255, 0.9); border: 1px solid rgba(0, 0, 0, 0.1); }
-    .glow { box-shadow: 0 0 40px rgba(59, 130, 246, 0.15), 0 0 80px rgba(59, 130, 246, 0.05); }
-    @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
-    .float { animation: float 6s ease-in-out infinite; }
-    @keyframes pulse-ring { 0% { transform: scale(0.9); opacity: 1; } 100% { transform: scale(1.5); opacity: 0; } }
-    .pulse-ring { animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite; }
-    .grid-pattern { background-image: linear-gradient(rgba(59,130,246,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.03) 1px, transparent 1px); background-size: 50px 50px; }
-    [data-theme="light"] .grid-pattern { background-image: linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px); }
-    input:focus { outline: none; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3); }
-    .btn-press:active { transform: scale(0.97); }
-    [data-theme="light"] input { background: #f1f5f9 !important; border-color: #e2e8f0 !important; color: #0f172a !important; }
-    [data-theme="light"] input::placeholder { color: #94a3b8 !important; }
-  </style>
+  <link rel="stylesheet" href="platform-theme.css">
 </head>
 <body class="bg-surface-0 text-ink-200 min-h-screen overflow-hidden grid-pattern">
   <!-- Grid glow canvas injected by cursor-follower.js -->
@@ -169,6 +109,13 @@
       <p class="text-center text-xs text-ink-600 mt-6">
         Don't have access? Contact your instructor.
       </p>
+
+      <!-- Sponsor Logos -->
+      <div class="flex items-center justify-center gap-5 mt-6 pt-5 border-t border-ink-800/50">
+        <img src="assets/images/logo-association.svg" alt="Industrial Association" class="h-10 w-auto opacity-60 hover:opacity-100 transition-opacity" onerror="this.style.display='none'">
+        <div class="w-px h-6 bg-ink-800/50"></div>
+        <img src="assets/images/logo-ministry.svg" alt="Ministry of Industry" class="h-10 w-auto opacity-60 hover:opacity-100 transition-opacity" onerror="this.style.display='none'">
+      </div>
       <button onclick="toggleTheme()" class="mx-auto mt-4 p-2 rounded-lg bg-surface-2 border border-ink-800 text-ink-400 hover:text-ink-100 hover:border-accent-blue transition-all flex items-center gap-2" title="Toggle Theme">
         <svg id="themeIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
@@ -178,22 +125,15 @@
   </div>
 
   <script>
-    // Admin credentials
     const ADMIN_EMAIL = 'admin@admin.com';
     const ADMIN_PASSWORD = 'admin';
+    const ALLOWED_EMAILS = [];
 
-    // Allowed student emails
-    const ALLOWED_EMAILS = [
-      // Add student emails here
-    ];
-
-    // Check if already logged in
     const currentUser = localStorage.getItem('python_bootcamp_user');
     if (currentUser) {
       window.location.href = 'dashboard.html';
     }
 
-    // Show/hide name field based on email
     document.getElementById('emailInput').addEventListener('input', function() {
       const email = this.value.toLowerCase().trim();
       const nameField = document.getElementById('nameField');
@@ -212,17 +152,14 @@
       const nameInput = document.getElementById('nameInput');
       const errorDiv = document.getElementById('errorMessage');
       
-      // Hide previous errors
       errorDiv.classList.add('hidden');
       
-      // Validate
       if (!email || !password) {
         errorDiv.textContent = 'Please fill in all fields';
         errorDiv.classList.remove('hidden');
         return;
       }
 
-      // Admin login
       if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
         const userData = {
           email: email,
@@ -237,7 +174,6 @@
         return;
       }
 
-      // Student login — require name
       const name = nameInput.value.trim();
       if (!name) {
         errorDiv.textContent = 'Please enter your name';
@@ -245,14 +181,12 @@
         return;
       }
 
-      // Check if email is in allowed list (if list is not empty)
       if (ALLOWED_EMAILS.length > 0 && !ALLOWED_EMAILS.includes(email)) {
         errorDiv.textContent = 'This email is not authorized. Contact your instructor.';
         errorDiv.classList.remove('hidden');
         return;
       }
       
-      // Save user data
       const userData = {
         email: email,
         name: name,
@@ -263,12 +197,9 @@
       };
       
       localStorage.setItem('python_bootcamp_user', JSON.stringify(userData));
-      
-      // Redirect to dashboard
       window.location.href = 'dashboard.html';
     });
 
-    // Theme toggle
     function toggleTheme() {
       const current = document.documentElement.getAttribute('data-theme');
       const next = current === 'light' ? null : 'light';
@@ -283,15 +214,10 @@
       }
     }
 
-    // Load saved theme
     (function() {
-      const saved = localStorage.getItem('theme');
-      if (saved === 'light') {
-        document.documentElement.setAttribute('data-theme', 'light');
-        setTimeout(() => {
-          const icon = document.getElementById('themeIcon');
-          if (icon) icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>';
-        }, 100);
+      const icon = document.getElementById('themeIcon');
+      if (document.documentElement.getAttribute('data-theme') === 'light' && icon) {
+        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>';
       }
     })();
   </script>

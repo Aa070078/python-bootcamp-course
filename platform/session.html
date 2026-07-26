@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth" dir="ltr">
 <head>
+  <script>document.documentElement.dataset.theme = localStorage.getItem('theme') || 'dark';</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Python Bootcamp - Session</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -29,77 +31,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/dracula.min.css">
-  <style>
-    * { box-sizing: border-box; }
-    body { font-family: 'Plus Jakarta Sans', 'Tajawal', sans-serif; }
-    
-    /* Dark theme (default) */
-    :root {
-      --bg-page: #060814;
-      --bg-surface: #0a0f1c;
-      --bg-surface-2: #0f1629;
-      --bg-surface-3: #141c33;
-      --text-primary: #f1f5f9;
-      --text-secondary: #e2e8f0;
-      --text-muted: #94a3b8;
-      --text-faint: #64748b;
-      --border-color: #1e293b;
-      --accent-blue: #3b82f6;
-      --accent-orange: #f97316;
-      --accent-green: #34d399;
-    }
-    
-    /* Light theme */
-    [data-theme="light"] {
-      --bg-page: #f8fafc;
-      --bg-surface: #ffffff;
-      --bg-surface-2: #f1f5f9;
-      --bg-surface-3: #e2e8f0;
-      --text-primary: #0f172a;
-      --text-secondary: #1e293b;
-      --text-muted: #475569;
-      --text-faint: #94a3b8;
-      --border-color: #e2e8f0;
-    }
-    
-    /* Tailwind overrides for light theme */
-    [data-theme="light"] body { background: #f8fafc; color: #1e293b; }
-    [data-theme="light"] .bg-surface-0 { background-color: #f8fafc; }
-    [data-theme="light"] .bg-surface-1 { background-color: #ffffff; }
-    [data-theme="light"] .bg-surface-2 { background-color: #f1f5f9; }
-    [data-theme="light"] .bg-surface-3 { background-color: #e2e8f0; }
-    [data-theme="light"] .text-ink-100 { color: #0f172a; }
-    [data-theme="light"] .text-ink-200 { color: #1e293b; }
-    [data-theme="light"] .text-ink-300 { color: #334155; }
-    [data-theme="light"] .text-ink-400 { color: #475569; }
-    [data-theme="light"] .text-ink-500 { color: #64748b; }
-    [data-theme="light"] .text-ink-600 { color: #94a3b8; }
-    [data-theme="light"] .border-ink-800 { border-color: #e2e8f0; }
-    [data-theme="light"] .border-ink-800\/50 { border-color: rgba(226, 232, 240, 0.5); }
-    
-    body { background: var(--bg-page); color: var(--text-secondary); }
-    .gradient-text { background: linear-gradient(135deg, #3b82f6, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .glass { background: rgba(10, 15, 28, 0.6); backdrop-filter: blur(20px); border: 1px solid rgba(59, 130, 246, 0.1); }
-    [data-theme="light"] .glass { background: rgba(255, 255, 255, 0.8); border: 1px solid rgba(0, 0, 0, 0.1); }
-    .grid-pattern { background-image: linear-gradient(rgba(59,130,246,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.03) 1px, transparent 1px); background-size: 50px 50px; }
-    [data-theme="light"] .grid-pattern { background-image: linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px); }
-    .CodeMirror { height: 300px; border-radius: 12px; font-size: 14px; }
-    .cm-s-dracula .CodeMirror-gutters { background: #0f1629; border: none; }
-    .cm-s-dracula .CodeMirror { background: #0a0f1c; }
-    [data-theme="light"] .cm-s-dracula .CodeMirror-gutters { background: #f1f5f9; }
-    [data-theme="light"] .cm-s-dracula .CodeMirror { background: #ffffff; }
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: transparent; }
-    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
-    [data-theme="light"] ::-webkit-scrollbar-thumb { background: #cbd5e1; }
-    .tab-active { background: rgba(59, 130, 246, 0.15); color: #3b82f6; border-color: rgba(59, 130, 246, 0.3); }
-    .exercise-card { transition: all 0.3s ease; }
-    .exercise-card:hover { border-color: #3b82f6; }
-    .exercise-card.completed { border-color: #34d399; background: rgba(52, 211, 153, 0.05); }
-    .btn-press:active { transform: scale(0.97); }
-    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
-    .animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
-  </style>
+  <link rel="stylesheet" href="platform-theme.css">
 </head>
 <body class="bg-surface-0 text-ink-200 min-h-screen grid-pattern">
   <!-- Grid glow canvas injected by cursor-follower.js -->
@@ -193,7 +125,7 @@
           <!-- Materials Tab -->
           <div id="materialsTab" class="tab-content p-6">
             <div class="space-y-4">
-              <div class="flex items-center justify-between">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div class="flex items-center gap-2">
                   <h3 class="font-bold text-ink-100">Session Slides</h3>
                   <div id="slideViewToggle" class="flex bg-surface-1 rounded-lg p-0.5 border border-ink-800">
@@ -229,7 +161,7 @@
           <!-- Code Editor Tab -->
           <div id="codeTab" class="tab-content p-6 hidden">
             <div class="space-y-4">
-              <div class="flex items-center justify-between">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <h3 class="font-bold text-ink-100">Interactive Code Editor</h3>
                 <div class="flex items-center gap-2">
                   <span id="pyodideStatus" class="text-xs font-mono text-ink-500">Loading Python...</span>
@@ -272,14 +204,13 @@
                 <h3 class="font-bold text-ink-100">Admin Panel</h3>
               </div>
 
-              <!-- Video URL -->
               <div class="p-5 rounded-xl border border-accent-blue/20 bg-accent-blue/5">
                 <h4 class="font-bold text-ink-100 mb-3 flex items-center gap-2">
                   <svg class="w-4 h-4 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
                   Video URL (MP4)
                 </h4>
                 <p class="text-xs text-ink-400 mb-3">Paste a direct link to an MP4 video (e.g. from catbox.moe).</p>
-                <div class="flex items-center gap-3">
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                   <input type="url" id="videoUrlInput" placeholder="https://files.catbox.moe/xxxxx.mp4" class="flex-1 px-4 py-3 rounded-xl bg-surface-2 border border-ink-800 text-sm text-ink-100 placeholder-ink-500 focus:border-accent-blue focus:outline-none">
                   <button onclick="saveVideoUrl()" class="px-5 py-3 rounded-xl font-bold text-sm bg-accent-blue text-white hover:shadow-lg transition-all btn-press">
                     Save
@@ -288,7 +219,6 @@
                 <div id="videoUrlResult" class="hidden mt-3 p-3 rounded-lg text-xs font-mono break-all"></div>
               </div>
 
-              <!-- PPTX Local File -->
               <div class="p-5 rounded-xl border border-accent-orange/20 bg-accent-orange/5">
                 <h4 class="font-bold text-ink-100 mb-3 flex items-center gap-2">
                   <svg class="w-4 h-4 text-accent-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
@@ -305,7 +235,6 @@
                 <div id="pptxUploadResult" class="hidden mt-3 p-3 rounded-lg text-xs font-mono break-all"></div>
               </div>
 
-              <!-- Current Assets -->
               <div class="p-5 rounded-xl border border-ink-800 bg-surface-2">
                 <h4 class="font-bold text-ink-100 mb-3">Current Assets</h4>
                 <div id="currentAssets" class="space-y-2 text-sm"></div>
@@ -320,7 +249,6 @@
 
       <!-- Sidebar -->
       <div class="space-y-6">
-        <!-- Session Info -->
         <div class="glass rounded-2xl p-6">
           <h3 class="font-bold text-ink-100 mb-4">Session Info</h3>
           <div class="space-y-3">
@@ -348,13 +276,11 @@
           </div>
         </div>
 
-        <!-- Topics -->
         <div class="glass rounded-2xl p-6">
           <h3 class="font-bold text-ink-100 mb-4">Topics Covered</h3>
           <ul id="topicsList" class="space-y-2 text-sm"></ul>
         </div>
 
-        <!-- Quick Navigation -->
         <div class="glass rounded-2xl p-6">
           <h3 class="font-bold text-ink-100 mb-4">Quick Navigation</h3>
           <div id="quickNav" class="grid grid-cols-4 gap-2"></div>
@@ -367,7 +293,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/python/python.min.js"></script>
   <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
   <script>
-    // Session data
     const SESSIONS = {
       1: { title: "Introduction to Programming & Python Basics", duration: "3 Hours", difficulty: "Beginner", project: "Student Card Generator", hasVideo: true, hasMaterial: true, topics: ["What is programming?", "Hardware vs Software", "CPU, RAM, Storage", "Compiler vs Interpreter", "Install Python & VS Code", "Terminal basics", "print(), comments, variables", "Data types: int, float, str, bool", "input(), type(), type casting"], exercises: [{ title: "Hello World", desc: "Write a program that prints 'Hello, World!'", starter: "print('Hello, World!')", solution: "print('Hello, World!')" }, { title: "Variables", desc: "Create variables and print them", starter: "# Create your variables here\nname = 'Your Name'\nage = 25\nprint(f'My name is {name} and I am {age} years old')", solution: "" }], homework: "Create a Student Card Generator that takes user input for name, age, grade, and student ID, then displays a formatted student card." },
       2: { title: "Operators & Conditions", duration: "3 Hours", difficulty: "Beginner", project: "Calculator, BMI Calculator", hasVideo: true, hasMaterial: true, topics: ["Arithmetic operators", "Comparison operators", "Logical operators", "if / elif / else", "Nested conditions"], exercises: [{ title: "Calculator", desc: "Build a simple calculator", starter: "# Simple Calculator\nnum1 = float(input('Enter first number: '))\nop = input('Enter operator: ')\nnum2 = float(input('Enter second number: '))\n\nif op == '+':\n    print(f'Result: {num1 + num2}')", solution: "" }], homework: "Build a BMI Calculator that takes weight (kg) and height (m), calculates BMI, and categorizes the result." },
@@ -392,27 +317,22 @@
     let editor = null;
     let pyodide = null;
 
-    // Get session number from URL
     const urlParams = new URLSearchParams(window.location.search);
     currentSession = parseInt(urlParams.get('num')) || 1;
 
-    // Load user data
     function getUserData() {
       const data = localStorage.getItem('python_bootcamp_user');
       if (!data) { window.location.href = 'login.html'; return null; }
       return JSON.parse(data);
     }
 
-    // Save user data
     function saveUserData(data) {
       localStorage.setItem('python_bootcamp_user', JSON.stringify(data));
     }
 
-    // Initialize page
     function initPage() {
       const user = getUserData();
       if (!user) return;
-
       const session = SESSIONS[currentSession];
       if (!session) { window.location.href = 'dashboard.html'; return; }
 
@@ -423,7 +343,6 @@
       document.getElementById('sessionDifficulty').textContent = session.difficulty;
       document.getElementById('sessionProject').textContent = session.project;
 
-      // Topics
       const topicsList = document.getElementById('topicsList');
       topicsList.innerHTML = session.topics.map(t => `
         <li class="flex items-start gap-2">
@@ -434,7 +353,6 @@
         </li>
       `).join('');
 
-      // Video
       if (session.hasVideo) {
         document.getElementById('videoPlaceholder').classList.add('hidden');
         const videoUrls = {
@@ -443,34 +361,29 @@
         };
         const url = videoUrls[currentSession] || '';
         if (url.includes('youtu')) {
-          // YouTube embed
           const ytId = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([^&?#]+)/);
           if (ytId) {
             document.getElementById('youtubePlayer').src = 'https://www.youtube.com/embed/' + ytId[1];
             document.getElementById('youtubePlayer').classList.remove('hidden');
           }
         } else if (url) {
-          // Direct MP4
           document.getElementById('videoSource').src = url;
           document.getElementById('videoPlayer').classList.remove('hidden');
           document.getElementById('videoPlayer').load();
         }
       }
 
-      // Materials
       if (session.hasMaterial) {
         document.getElementById('slidesIframe').src = `assets/materials/viewer.html?num=${currentSession}`;
-        // Set up PPTX viewer via Google Docs Viewer
         var pptxUrl = `${window.location.origin}${window.location.pathname.replace(/session\.html$/, '')}assets/materials/session${currentSession}.pptx`;
         document.getElementById('pptxIframe').src = `https://docs.google.com/gview?url=${encodeURIComponent(pptxUrl)}&embedded=true`;
-        // Check for uploaded PPTX in IndexedDB first, fallback to local file
         getPptxBlob(currentSession).then(file => {
           if (file) {
             const blob = new Blob([file.data], { type: file.type || 'application/vnd.openxmlformats-officedocument.presentationml.presentation' });
             const url = URL.createObjectURL(blob);
             document.getElementById('slidesDownload').href = url;
             document.getElementById('slidesDownload').download = file.name;
-            document.getElementById('pptxLocalStatus').innerHTML = `<span class="text-accent-green">✓ Uploaded:</span> ${file.name}`;
+            document.getElementById('pptxLocalStatus').innerHTML = `<span class="text-accent-green">Uploaded:</span> ${file.name}`;
           } else {
             document.getElementById('slidesDownload').href = `assets/materials/session${currentSession}.pptx`;
             document.getElementById('pptxLocalStatus').innerHTML = `<span class="text-ink-500">Using local file</span>`;
@@ -481,7 +394,6 @@
         document.getElementById('noSlides').classList.remove('hidden');
       }
 
-      // Exercises
       const exercisesList = document.getElementById('exercisesList');
       if (session.exercises.length > 0) {
         exercisesList.innerHTML = session.exercises.map((ex, i) => `
@@ -500,9 +412,7 @@
         exercisesList.innerHTML = '<p class="text-ink-500 text-center py-8">Exercises coming soon</p>';
       }
 
-      // Homework
-      const homeworkContent = document.getElementById('homeworkContent');
-      homeworkContent.innerHTML = `
+      document.getElementById('homeworkContent').innerHTML = `
         <div class="p-6 rounded-xl border border-accent-orange/30 bg-accent-orange/5">
           <div class="flex items-start gap-4">
             <div class="w-12 h-12 rounded-xl bg-accent-orange/20 flex items-center justify-center flex-shrink-0">
@@ -518,7 +428,6 @@
         </div>
       `;
 
-      // Quick navigation
       const quickNav = document.getElementById('quickNav');
       quickNav.innerHTML = Object.keys(SESSIONS).map(num => `
         <a href="session.html?num=${num}" class="p-2 rounded-lg text-center text-xs font-bold ${parseInt(num) === currentSession ? 'bg-accent-blue text-white' : 'bg-surface-2 border border-ink-800 text-ink-400 hover:border-accent-blue hover:text-accent-blue'} transition-all">
@@ -526,19 +435,16 @@
         </a>
       `).join('');
 
-      // Navigation buttons
       document.getElementById('prevBtn').style.visibility = currentSession > 1 ? 'visible' : 'hidden';
       document.getElementById('nextBtn').style.visibility = currentSession < 17 ? 'visible' : 'hidden';
 
-      // Complete button
       if (user.completedSessions.includes(currentSession)) {
-        document.getElementById('completeBtn').textContent = 'Completed ✓';
+        document.getElementById('completeBtn').textContent = 'Completed';
         document.getElementById('completeBtn').classList.remove('from-accent-green', 'to-green-500');
         document.getElementById('completeBtn').classList.add('from-accent-blue', 'to-blue-600');
       }
     }
 
-    // Tab switching
     function switchTab(tab) {
       document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
       document.querySelectorAll('.tab-btn').forEach(el => {
@@ -550,7 +456,6 @@
       document.querySelector(`[data-tab="${tab}"]`).classList.remove('text-ink-400');
     }
 
-    // Slide view switching (HTML vs PPTX)
     function switchSlideView(mode) {
       const htmlBtn = document.getElementById('slideViewHtml');
       const pptxBtn = document.getElementById('slideViewPptx');
@@ -573,7 +478,6 @@
       }
     }
 
-    // Initialize CodeMirror
     function initEditor() {
       editor = CodeMirror.fromTextArea(document.getElementById('codeEditor'), {
         mode: 'python',
@@ -586,35 +490,27 @@
       editor.setValue("# Write your Python code here\nprint('Hello, Python!')");
     }
 
-    // Load exercise into editor
     function loadExercise(code) {
       editor.setValue(code);
       switchTab('code');
-      // Scroll to editor
       document.getElementById('codeTab').scrollIntoView({ behavior: 'smooth' });
-      // Focus the editor
       setTimeout(() => editor.refresh(), 100);
     }
 
-    // Run code
     async function runCode() {
       if (!pyodide) {
         document.getElementById('codeOutput').textContent = 'Loading Python... Please wait.';
         return;
       }
-      
       const code = editor.getValue();
       document.getElementById('codeOutput').textContent = 'Running...';
-      
       try {
         pyodide.runPython(`
 import sys
 from io import StringIO
 sys.stdout = StringIO()
         `);
-        
         pyodide.runPython(code);
-        
         const output = pyodide.runPython('sys.stdout.getvalue()');
         document.getElementById('codeOutput').textContent = output || 'No output';
       } catch (err) {
@@ -622,23 +518,19 @@ sys.stdout = StringIO()
       }
     }
 
-    // Mark session complete
     function markComplete() {
       const user = getUserData();
       if (!user) return;
-      
       if (!user.completedSessions.includes(currentSession)) {
         user.completedSessions.push(currentSession);
         user.progress = Math.round((user.completedSessions.length / 17) * 100);
         saveUserData(user);
-        
-        document.getElementById('completeBtn').textContent = 'Completed ✓';
+        document.getElementById('completeBtn').textContent = 'Completed';
         document.getElementById('completeBtn').classList.remove('from-accent-green', 'to-green-500');
         document.getElementById('completeBtn').classList.add('from-accent-blue', 'to-blue-600');
       }
     }
 
-    // Navigation
     function prevSession() {
       if (currentSession > 1) window.location.href = `session.html?num=${currentSession - 1}`;
     }
@@ -647,7 +539,6 @@ sys.stdout = StringIO()
       if (currentSession < 17) window.location.href = `session.html?num=${currentSession + 1}`;
     }
 
-    // Theme toggle
     function toggleTheme() {
       const current = document.documentElement.getAttribute('data-theme');
       const next = current === 'light' ? null : 'light';
@@ -662,25 +553,17 @@ sys.stdout = StringIO()
       }
     }
 
-    // Load saved theme
     (function() {
-      const saved = localStorage.getItem('theme');
-      if (saved === 'light') {
-        document.documentElement.setAttribute('data-theme', 'light');
-        setTimeout(() => {
-          const icon = document.getElementById('themeIcon');
-          if (icon) icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>';
-        }, 100);
+      const icon = document.getElementById('themeIcon');
+      if (document.documentElement.getAttribute('data-theme') === 'light' && icon) {
+        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>';
       }
     })();
 
-    // Initialize
     document.addEventListener('DOMContentLoaded', () => {
       initPage();
       initEditor();
       initAdmin();
-      
-      // Load Pyodide
       loadPyodide().then(p => {
         pyodide = p;
         document.getElementById('pyodideStatus').textContent = 'Python ready';
@@ -688,19 +571,12 @@ sys.stdout = StringIO()
       });
     });
 
-    // ============================
-    // ADMIN FUNCTIONS
-    // ============================
-
-
     function isAdmin() {
       const user = getUserData();
       return user && user.isAdmin === true;
     }
 
-    function getAssetKey() {
-      return `session_asset_${currentSession}`;
-    }
+    function getAssetKey() { return `session_asset_${currentSession}`; }
 
     function getStoredAssets() {
       const data = localStorage.getItem(getAssetKey());
@@ -740,7 +616,6 @@ sys.stdout = StringIO()
       renderCurrentAssets();
     }
 
-    // Save video URL
     function saveVideoUrl() {
       const url = document.getElementById('videoUrlInput').value.trim();
       const result = document.getElementById('videoUrlResult');
@@ -748,23 +623,20 @@ sys.stdout = StringIO()
       if (!url.startsWith('http')) {
         result.classList.remove('hidden');
         result.className = 'hidden mt-3 p-3 rounded-lg text-xs font-mono break-all bg-red-500/10 border border-red-500/20 text-red-400';
-        result.textContent = '✗ Enter a valid URL starting with http:// or https://';
+        result.textContent = 'Enter a valid URL starting with http:// or https://';
         return;
       }
       storeAsset('video_url', url);
       result.classList.remove('hidden');
       result.className = 'hidden mt-3 p-3 rounded-lg text-xs font-mono break-all bg-accent-green/10 border border-accent-green/20 text-accent-green';
-      result.textContent = `✓ Saved: ${url}`;
+      result.textContent = `Saved: ${url}`;
       renderCurrentAssets();
     }
 
-    // PPTX upload to IndexedDB
     function openPptxDb() {
       return new Promise((resolve, reject) => {
         const req = indexedDB.open('PptxStorage', 1);
-        req.onupgradeneeded = (e) => {
-          e.target.result.createObjectStore('files');
-        };
+        req.onupgradeneeded = (e) => { e.target.result.createObjectStore('files'); };
         req.onsuccess = (e) => resolve(e.target.result);
         req.onerror = (e) => reject(e.target.error);
       });
@@ -785,12 +657,12 @@ sys.stdout = StringIO()
         fileName.textContent = file.name;
         result.classList.remove('hidden');
         result.className = 'hidden mt-3 p-3 rounded-lg text-xs font-mono break-all bg-accent-green/10 border border-accent-green/20 text-accent-green';
-        result.textContent = `✓ Uploaded: ${file.name} (${(file.size/1024).toFixed(0)} KB)`;
+        result.textContent = `Uploaded: ${file.name} (${(file.size/1024).toFixed(0)} KB)`;
         renderCurrentAssets();
       } catch (err) {
         result.classList.remove('hidden');
         result.className = 'hidden mt-3 p-3 rounded-lg text-xs font-mono break-all bg-red-500/10 border border-red-500/20 text-red-400';
-        result.textContent = `✗ Error: ${err.message}`;
+        result.textContent = `Error: ${err.message}`;
       }
     }
 
@@ -807,13 +679,11 @@ sys.stdout = StringIO()
       } catch { return null; }
     }
 
-    // Override initPage to use stored assets
     const _origInitPage = initPage;
     initPage = function() {
       _origInitPage();
-      // Check for stored admin-uploaded assets
       const assets = getStoredAssets();
-      if (assets.video_url && session.hasVideo) {
+      if (assets.video_url && SESSIONS[currentSession].hasVideo) {
         document.getElementById('videoPlaceholder').classList.add('hidden');
         if (assets.video_url.includes('youtu')) {
           const ytId = assets.video_url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([^&?#]+)/);

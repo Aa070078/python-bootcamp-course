@@ -1,0 +1,186 @@
+/* ============================================================
+   PLATFORM THEME — Shared tokens, Tailwind overrides,
+   component classes, scrollbar, light/dark mode
+   ============================================================ */
+
+/* ===== RESET ===== */
+* { box-sizing: border-box; }
+body { font-family: 'Plus Jakarta Sans', 'Tajawal', sans-serif; }
+
+/* ===== TOKENS — Dark (default) ===== */
+:root {
+  --bg-page: #060814;
+  --bg-surface: #0a0f1c;
+  --bg-surface-2: #0f1629;
+  --bg-surface-3: #141c33;
+  --text-primary: #f1f5f9;
+  --text-secondary: #e2e8f0;
+  --text-muted: #94a3b8;
+  --text-faint: #64748b;
+  --border-color: #1e293b;
+  --accent-blue: #3b82f6;
+  --accent-orange: #f97316;
+  --accent-green: #34d399;
+}
+
+/* ===== TOKENS — Light ===== */
+[data-theme="light"] {
+  --bg-page: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-2: #f1f5f9;
+  --bg-surface-3: #e2e8f0;
+  --text-primary: #0f172a;
+  --text-secondary: #1e293b;
+  --text-muted: #475569;
+  --text-faint: #94a3b8;
+  --border-color: #e2e8f0;
+  --accent-blue: #3b82f6;
+  --accent-orange: #f97316;
+  --accent-green: #34d399;
+}
+
+/* ===== TAILWIND OVERRIDES ===== */
+[data-theme="light"] body { background: #f8fafc; color: #1e293b; }
+[data-theme="light"] .bg-surface-0 { background-color: #f8fafc; }
+[data-theme="light"] .bg-surface-1 { background-color: #ffffff; }
+[data-theme="light"] .bg-surface-2 { background-color: #f1f5f9; }
+[data-theme="light"] .bg-surface-2\/50 { background-color: rgba(241, 245, 249, 0.5); }
+[data-theme="light"] .bg-surface-3 { background-color: #e2e8f0; }
+[data-theme="light"] .text-ink-100 { color: #0f172a; }
+[data-theme="light"] .text-ink-200 { color: #1e293b; }
+[data-theme="light"] .text-ink-300 { color: #334155; }
+[data-theme="light"] .text-ink-400 { color: #475569; }
+[data-theme="light"] .text-ink-500 { color: #64748b; }
+[data-theme="light"] .text-ink-600 { color: #94a3b8; }
+[data-theme="light"] .text-ink-800 { color: #1e293b; }
+[data-theme="light"] .border-ink-800 { border-color: #e2e8f0; }
+[data-theme="light"] .border-ink-800\/50 { border-color: rgba(226, 232, 240, 0.5); }
+[data-theme="light"] .border-ink-800\/30 { border-color: rgba(226, 232, 240, 0.3); }
+
+/* ===== BASE ===== */
+body { background: var(--bg-page); color: var(--text-secondary); }
+
+/* ===== GRADIENT TEXT ===== */
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6, #f97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== GLASS MORPHISM ===== */
+.glass {
+  background: rgba(10, 15, 28, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+}
+[data-theme="light"] .glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* ===== GRID PATTERN ===== */
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(59,130,246,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59,130,246,0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+[data-theme="light"] .grid-pattern {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #334155; }
+[data-theme="light"] ::-webkit-scrollbar-thumb { background: #cbd5e1; }
+[data-theme="light"] ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* ===== BUTTON PRESS ===== */
+.btn-press:active { transform: scale(0.97); }
+
+/* ===== PULSE ANIMATION ===== */
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+.animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+
+/* ===== GLOW (login card) ===== */
+.glow {
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.15), 0 0 80px rgba(59, 130, 246, 0.05);
+}
+[data-theme="light"] .glow {
+  box-shadow: 0 4px 24px rgba(59, 130, 246, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* ===== CARD HOVER (dashboard) ===== */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  border-color: #3b82f6;
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.1);
+}
+[data-theme="light"] .card-hover:hover {
+  box-shadow: 0 12px 32px rgba(59, 130, 246, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* ===== TAB ACTIVE (session) ===== */
+.tab-active {
+  background: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
+  border-color: rgba(59, 130, 246, 0.3);
+}
+[data-theme="light"] .tab-active {
+  background: rgba(59, 130, 246, 0.1);
+  color: #2563eb;
+  border-color: rgba(59, 130, 246, 0.25);
+}
+
+/* ===== EXERCISE CARD (session) ===== */
+.exercise-card { transition: all 0.3s ease; }
+.exercise-card:hover { border-color: #3b82f6; }
+.exercise-card.completed {
+  border-color: #34d399;
+  background: rgba(52, 211, 153, 0.05);
+}
+[data-theme="light"] .exercise-card.completed {
+  background: rgba(52, 211, 153, 0.06);
+}
+
+/* ===== PROGRESS RING (dashboard) ===== */
+.progress-ring { transform: rotate(-90deg); }
+.progress-ring-circle { transition: stroke-dashoffset 0.5s ease; }
+
+/* ===== CODEMIRROR ===== */
+.CodeMirror { height: 300px; border-radius: 12px; font-size: 14px; }
+.cm-s-dracula .CodeMirror-gutters { background: #0f1629; border: none; }
+.cm-s-dracula .CodeMirror { background: #0a0f1c; }
+[data-theme="light"] .cm-s-dracula .CodeMirror-gutters { background: #f1f5f9; border: none; }
+[data-theme="light"] .cm-s-dracula .CodeMirror { background: #ffffff; }
+
+/* ===== INPUT OVERRIDES (login) ===== */
+input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+[data-theme="light"] input {
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+  color: #0f172a;
+}
+[data-theme="light"] input::placeholder {
+  color: #94a3b8;
+}
+
+/* ===== FLOAT ANIMATION (login orbs) ===== */
+@keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+.float { animation: float 6s ease-in-out infinite; }
+
+/* ===== PULSE RING (login) ===== */
+@keyframes pulse-ring { 0% { transform: scale(0.9); opacity: 1; } 100% { transform: scale(1.5); opacity: 0; } }
+.pulse-ring { animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite; }

@@ -1,6 +1,7 @@
 /* ============================================================
    GRID GLOW BACKGROUND — canvas-rendered 50px grid with
    mouse-interactive glow + drifting ambient blobs
+   Theme-reactive: adapts colors to dark/light mode
    ============================================================ */
 
 (function () {
@@ -9,6 +10,28 @@
   const CELL = 50;
   const GLOW_COUNT = 6;
   const GLOW_COLORS = ['#3b82f6', '#f97316', '#6366f1', '#22d3ee'];
+
+  function getThemeColors() {
+    const isLight = document.documentElement.dataset.theme === 'light';
+    return {
+      gridBase: isLight ? 'rgba(0, 0, 0, 0.04)' : 'rgba(255, 255, 255, 0.04)',
+      gridActive: isLight ? 'rgba(59, 130, 246, 0.3)' : 'rgba(59, 130, 246, 0.5)',
+      mouseGlowInner: isLight ? 'rgba(59, 130, 246, 0.12)' : 'rgba(59, 130, 246, 0.25)',
+      mouseGlowMid: isLight ? 'rgba(99, 102, 241, 0.04)' : 'rgba(99, 102, 241, 0.08)',
+      mouseWhiteGlow: isLight ? 'rgba(255, 255, 255, 0.05)' : 'rgba(255, 255, 255, 0.12)',
+      blobAlpha: isLight ? 0.3 : 0.7,
+    };
+  }
+
+  let colors = getThemeColors();
+
+  const observer = new MutationObserver(function() {
+    colors = getThemeColors();
+  });
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['data-theme']
+  });
 
   const canvas = document.createElement('canvas');
   canvas.id = 'grid-glow-canvas';
@@ -106,7 +129,7 @@
     }
 
     draw() {
-      ctx.globalAlpha = this.alpha;
+      ctx.globalAlpha = this.alpha * colors.blobAlpha;
       const grad = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius);
       grad.addColorStop(0, this.color);
       grad.addColorStop(1, 'transparent');
@@ -126,12 +149,10 @@
         const dist = Math.sqrt(dx * dx + dy * dy);
         const maxDist = 250;
         const intensity = mouseActive ? Math.max(0, 1 - dist / maxDist) : 0;
-        const baseAlpha = 0.04;
-        const alpha = baseAlpha + intensity * 0.35;
 
         if (intensity > 0.01) {
           const glowIntensity = intensity * 0.5;
-          ctx.strokeStyle = 'rgba(59, 130, 246, ' + glowIntensity + ')';
+          ctx.strokeStyle = colors.gridActive.replace(/[\d.]+\)$/, glowIntensity + ')');
           ctx.lineWidth = 1 + intensity * 1.5;
           ctx.beginPath();
           ctx.moveTo(x, y);
@@ -142,7 +163,7 @@
           ctx.lineTo(x, y + CELL);
           ctx.stroke();
         } else {
-          ctx.strokeStyle = 'rgba(255, 255, 255, ' + baseAlpha + ')';
+          ctx.strokeStyle = colors.gridBase;
           ctx.lineWidth = 1;
           ctx.beginPath();
           ctx.moveTo(x, y);
@@ -168,8 +189,8 @@
     ctx.globalAlpha = mouseAlpha;
 
     const grad1 = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, 180);
-    grad1.addColorStop(0, 'rgba(59, 130, 246, 0.25)');
-    grad1.addColorStop(0.5, 'rgba(99, 102, 241, 0.08)');
+    grad1.addColorStop(0, colors.mouseGlowInner);
+    grad1.addColorStop(0.5, colors.mouseGlowMid);
     grad1.addColorStop(1, 'transparent');
     ctx.fillStyle = grad1;
     ctx.beginPath();
@@ -177,7 +198,7 @@
     ctx.fill();
 
     const grad2 = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, 60);
-    grad2.addColorStop(0, 'rgba(255, 255, 255, 0.12)');
+    grad2.addColorStop(0, colors.mouseWhiteGlow);
     grad2.addColorStop(1, 'transparent');
     ctx.fillStyle = grad2;
     ctx.beginPath();

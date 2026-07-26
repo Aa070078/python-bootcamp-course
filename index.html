@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Python Bootcamp - Beginner Course</title>
+  <link rel="icon" type="image/svg+xml" href="platform/assets/images/favicon.svg">
 
+  <script>document.documentElement.dataset.theme = localStorage.getItem('theme') || 'dark';</script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -650,6 +652,15 @@
 
   <!-- ============ FOOTER ============ -->
   <footer class="border-t py-10 px-5 md:px-8 relative z-10" style="border-color: var(--border-main);">
+    <!-- Sponsor Logos -->
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 pb-8 border-b" style="border-color: var(--border-subtle);">
+      <span class="text-[9px] font-mono-code uppercase tracking-widest hidden sm:block" style="color: var(--text-faint);">Under the sponsorship of</span>
+      <div class="flex items-center gap-6">
+        <img src="platform/assets/images/logo-association.svg" alt="Industrial Association" class="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity" onerror="this.style.display='none'">
+        <div class="w-px h-8" style="background: var(--border-main);"></div>
+        <img src="platform/assets/images/logo-ministry.svg" alt="Ministry of Industry" class="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity" onerror="this.style.display='none'">
+      </div>
+    </div>
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
       <div class="flex items-center gap-3">
         <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background: var(--bg-surface-raised); border: 1px solid var(--border-main);">
@@ -668,6 +679,7 @@
 
   <!-- Lucide icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="platform/cursor-follower.js"></script>
 
   <!-- ============ JAVASCRIPT ============ -->
   <script>

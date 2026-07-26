@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a5f"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+  </defs>
+  <!-- Gear icon -->
+  <circle cx="40" cy="40" r="22" fill="none" stroke="url(#g1)" stroke-width="3"/>
+  <circle cx="40" cy="40" r="10" fill="url(#g1)"/>
+  <!-- Gear teeth -->
+  <rect x="36" y="14" width="8" height="10" rx="2" fill="#1e3a5f"/>
+  <rect x="36" y="56" width="8" height="10" rx="2" fill="#1e3a5f"/>
+  <rect x="14" y="36" width="10" height="8" rx="2" fill="#1e3a5f"/>
+  <rect x="56" y="36" width="10" height="8" rx="2" fill="#1e3a5f"/>
+  <!-- Arabic text -->
+  <text x="80" y="34" direction="rtl" font-family="Cairo, sans-serif" font-size="18" font-weight="700" fill="#1e3a5f">الجمعية الصناعية</text>
+  <text x="80" y="58" direction="rtl" font-family="Cairo, sans-serif" font-size="13" fill="#64748b">Industrial Association</text>
+</svg>
