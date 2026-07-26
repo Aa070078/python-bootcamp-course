@@ -1,18 +1,19 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
-<head><meta charset="utf-8"><link rel="stylesheet" href="../assets/theme.css"></head>
+<head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css"></head>
 <body>
 <div class="slide-container">
   <div class="bg-grid" data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1;"></div>
 
   <div class="chrome-topbar" data-object="true" data-object-type="textbox" style="z-index:10;">
     <span class="chrome-dot"></span>
-    <span>LIVE CODING // LOGICAL — REAL SCENARIOS</span>
+    <span>LIVE CODING // LOGICAL Ã¢â‚¬â€ REAL SCENARIOS</span>
   </div>
 
   <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:130px; width:1400px; z-index:10;">
-    <div style="font-family:'Space Grotesk',sans-serif; font-size:64px; font-weight:700; color:#f8fafc; line-height:1.02; letter-spacing:-0.02em;">Age check · login · permissions.</div>
-    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:24px; color:#94a3b8; direction:rtl; margin-top:8px;">3 سيناريوهات من الواقع — نفس الأدوات</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:64px; font-weight:700; color:#f8fafc; line-height:1.02; letter-spacing:-0.02em;">Age check Ã‚Â· login Ã‚Â· permissions.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:24px; color:#94a3b8; direction:rtl; margin-top:8px;">3 Ã˜Â³Ã™Å Ã™â€ Ã˜Â§Ã˜Â±Ã™Å Ã™Ë†Ã™â€¡Ã˜Â§Ã˜Âª Ã™â€¦Ã™â€  Ã˜Â§Ã™â€žÃ™Ë†Ã˜Â§Ã™â€šÃ˜Â¹ Ã¢â‚¬â€ Ã™â€ Ã™ÂÃ˜Â³ Ã˜Â§Ã™â€žÃ˜Â£Ã˜Â¯Ã™Ë†Ã˜Â§Ã˜Âª</div>
   </div>
 
   <!-- Code -->
@@ -25,18 +26,18 @@
     </div>
   </div>
   <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:340px; width:990px; height:610px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:18px; line-height:1.42; overflow:hidden;">
-    <div><span class="tok-com"># ===== SCENARIO 1 · AGE CHECK =====</span></div>
+    <div><span class="tok-com"># ===== SCENARIO 1 Ã‚Â· AGE CHECK =====</span></div>
     <div><span class="tok-var">age</span> <span class="tok-op">=</span> <span class="tok-num">20</span></div>
     <div><span class="tok-var">has_id</span> <span class="tok-op">=</span> <span style="color:#ec4899;">True</span></div>
     <div><span class="tok-fn">print</span>(<span class="tok-var">age</span> <span class="tok-op">&gt;=</span> <span class="tok-num">18</span> <span class="tok-op">and</span> <span class="tok-var">has_id</span>)   <span class="tok-com"># True</span></div>
     <div style="height:4px;"></div>
-    <div><span class="tok-com"># ===== SCENARIO 2 · LOGIN =====</span></div>
+    <div><span class="tok-com"># ===== SCENARIO 2 Ã‚Â· LOGIN =====</span></div>
     <div><span class="tok-var">username</span> <span class="tok-op">=</span> <span class="tok-str">"ali"</span></div>
     <div><span class="tok-var">password</span> <span class="tok-op">=</span> <span class="tok-str">"1234"</span></div>
     <div><span class="tok-var">ok</span> <span class="tok-op">=</span> <span class="tok-var">username</span> <span class="tok-op">==</span> <span class="tok-str">"ali"</span> <span class="tok-op">and</span> <span class="tok-var">password</span> <span class="tok-op">==</span> <span class="tok-str">"1234"</span></div>
     <div><span class="tok-fn">print</span>(<span class="tok-var">ok</span>)                            <span class="tok-com"># True</span></div>
     <div style="height:4px;"></div>
-    <div><span class="tok-com"># ===== SCENARIO 3 · PERMISSIONS =====</span></div>
+    <div><span class="tok-com"># ===== SCENARIO 3 Ã‚Â· PERMISSIONS =====</span></div>
     <div><span class="tok-var">is_admin</span> <span class="tok-op">=</span> <span style="color:#ec4899;">False</span></div>
     <div><span class="tok-var">is_owner</span> <span class="tok-op">=</span> <span style="color:#ec4899;">True</span></div>
     <div><span class="tok-var">can_edit</span> <span class="tok-op">=</span> <span class="tok-var">is_admin</span> <span class="tok-op">or</span> <span class="tok-var">is_owner</span></div>
@@ -44,7 +45,7 @@
     <div style="height:4px;"></div>
     <div><span class="tok-com"># flip with not</span></div>
     <div><span class="tok-var">is_logged_in</span> <span class="tok-op">=</span> <span style="color:#ec4899;">False</span></div>
-    <div><span class="tok-fn">print</span>(<span class="tok-op">not</span> <span class="tok-var">is_logged_in</span>)              <span class="tok-com"># True → show login</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-op">not</span> <span class="tok-var">is_logged_in</span>)              <span class="tok-com"># True Ã¢â€ â€™ show login</span></div>
     <div style="height:4px;"></div>
     <div><span class="tok-com"># combine everything</span></div>
     <div><span class="tok-fn">print</span>(<span class="tok-var">age</span> <span class="tok-op">&gt;=</span> <span class="tok-num">18</span> <span class="tok-op">and</span> (<span class="tok-var">is_admin</span> <span class="tok-op">or</span> <span class="tok-var">is_owner</span>))   <span class="tok-com"># True</span></div>
@@ -71,7 +72,7 @@
     </div>
 
     <div style="padding:14px 18px; background:rgba(236,72,153,0.1); border-left:4px solid #ec4899; border-radius:8px;">
-      <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; color:#ec4899; font-weight:600; margin-bottom:4px;">Watch out — order of operations</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; color:#ec4899; font-weight:600; margin-bottom:4px;">Watch out Ã¢â‚¬â€ order of operations</div>
       <div style="font-family:'Space Grotesk',sans-serif; font-size:16px; color:#f8fafc; line-height:1.4;"><span class="mono" style="color:#a3e635;">not</span> runs first, then <span class="mono" style="color:#a3e635;">and</span>, then <span class="mono" style="color:#a3e635;">or</span>. Use <span class="mono" style="color:#facc15;">( )</span> when unsure.</div>
     </div>
   </div>
@@ -83,18 +84,19 @@
 <template data-slide-notes>
 Three real scenarios. All students recognize these.
 
-Scenario 1 (age check): "لدخول موقع محتوى للكبار — لازم عمرك 18 AND معاك ID رسمي."
+Scenario 1 (age check): "Ã™â€žÃ˜Â¯Ã˜Â®Ã™Ë†Ã™â€ž Ã™â€¦Ã™Ë†Ã™â€šÃ˜Â¹ Ã™â€¦Ã˜Â­Ã˜ÂªÃ™Ë†Ã™â€° Ã™â€žÃ™â€žÃ™Æ’Ã˜Â¨Ã˜Â§Ã˜Â± Ã¢â‚¬â€ Ã™â€žÃ˜Â§Ã˜Â²Ã™â€¦ Ã˜Â¹Ã™â€¦Ã˜Â±Ã™Æ’ 18 AND Ã™â€¦Ã˜Â¹Ã˜Â§Ã™Æ’ ID Ã˜Â±Ã˜Â³Ã™â€¦Ã™Å ."
 
-Scenario 2 (login): "علشان تسجل دخول — لازم اسم المستخدم صحيح AND كلمة السر صحيحة."
+Scenario 2 (login): "Ã˜Â¹Ã™â€žÃ˜Â´Ã˜Â§Ã™â€  Ã˜ÂªÃ˜Â³Ã˜Â¬Ã™â€ž Ã˜Â¯Ã˜Â®Ã™Ë†Ã™â€ž Ã¢â‚¬â€ Ã™â€žÃ˜Â§Ã˜Â²Ã™â€¦ Ã˜Â§Ã˜Â³Ã™â€¦ Ã˜Â§Ã™â€žÃ™â€¦Ã˜Â³Ã˜ÂªÃ˜Â®Ã˜Â¯Ã™â€¦ Ã˜ÂµÃ˜Â­Ã™Å Ã˜Â­ AND Ã™Æ’Ã™â€žÃ™â€¦Ã˜Â© Ã˜Â§Ã™â€žÃ˜Â³Ã˜Â± Ã˜ÂµÃ˜Â­Ã™Å Ã˜Â­Ã˜Â©."
 
-Scenario 3 (permissions): "علشان تعدل ملف — لازم تكون Admin OR صاحب الملف." تكفي واحدة.
+Scenario 3 (permissions): "Ã˜Â¹Ã™â€žÃ˜Â´Ã˜Â§Ã™â€  Ã˜ÂªÃ˜Â¹Ã˜Â¯Ã™â€ž Ã™â€¦Ã™â€žÃ™Â Ã¢â‚¬â€ Ã™â€žÃ˜Â§Ã˜Â²Ã™â€¦ Ã˜ÂªÃ™Æ’Ã™Ë†Ã™â€  Admin OR Ã˜ÂµÃ˜Â§Ã˜Â­Ã˜Â¨ Ã˜Â§Ã™â€žÃ™â€¦Ã™â€žÃ™Â." Ã˜ÂªÃ™Æ’Ã™ÂÃ™Å  Ã™Ë†Ã˜Â§Ã˜Â­Ã˜Â¯Ã˜Â©.
 
-Bonus: the not example — "لو مش مسجل دخول، اعرضله شاشة تسجيل الدخول."
+Bonus: the not example Ã¢â‚¬â€ "Ã™â€žÃ™Ë† Ã™â€¦Ã˜Â´ Ã™â€¦Ã˜Â³Ã˜Â¬Ã™â€ž Ã˜Â¯Ã˜Â®Ã™Ë†Ã™â€žÃ˜Å’ Ã˜Â§Ã˜Â¹Ã˜Â±Ã˜Â¶Ã™â€žÃ™â€¡ Ã˜Â´Ã˜Â§Ã˜Â´Ã˜Â© Ã˜ÂªÃ˜Â³Ã˜Â¬Ã™Å Ã™â€ž Ã˜Â§Ã™â€žÃ˜Â¯Ã˜Â®Ã™Ë†Ã™â€ž."
 
-Combine all: `age >= 18 and (is_admin or is_owner)` — read as: "بالغ AND (أدمن OR صاحبها)".
+Combine all: `age >= 18 and (is_admin or is_owner)` Ã¢â‚¬â€ read as: "Ã˜Â¨Ã˜Â§Ã™â€žÃ˜Âº AND (Ã˜Â£Ã˜Â¯Ã™â€¦Ã™â€  OR Ã˜ÂµÃ˜Â§Ã˜Â­Ã˜Â¨Ã™â€¡Ã˜Â§)".
 
 **Critical concept**: use parentheses when combining. Otherwise Python follows precedence: not > and > or. Show what happens WITHOUT parens as an experiment.
 </template>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
+

@@ -1,6 +1,7 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
-<head><meta charset="utf-8"><link rel="stylesheet" href="../assets/theme.css"></head>
+<head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css"></head>
 <body>
 <div class="slide-container">
   <div class="bg-grid" data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1;"></div>
@@ -13,7 +14,7 @@
   <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:140px; width:1400px; z-index:10;">
     <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#fb923c; letter-spacing:0.25em; margin-bottom:14px;">// ADVANCED</div>
     <div style="font-family:'Space Grotesk',sans-serif; font-size:64px; font-weight:700; color:#f8fafc; line-height:1.02; letter-spacing:-0.02em;">Conditions <span style="color:#fb923c;">inside</span> conditions.</div>
-    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:24px; color:#94a3b8; direction:rtl; margin-top:8px;">شروط جوا شروط — شرط متشعب</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:24px; color:#94a3b8; direction:rtl; margin-top:8px;">Ã˜Â´Ã˜Â±Ã™Ë†Ã˜Â· Ã˜Â¬Ã™Ë†Ã˜Â§ Ã˜Â´Ã˜Â±Ã™Ë†Ã˜Â· Ã¢â‚¬â€ Ã˜Â´Ã˜Â±Ã˜Â· Ã™â€¦Ã˜ÂªÃ˜Â´Ã˜Â¹Ã˜Â¨</div>
   </div>
 
   <!-- Code window -->
@@ -38,7 +39,7 @@
     <div style="padding-left:40px;"><span class="tok-fn">print</span>(<span class="tok-str">"Too young for this concert."</span>)</div>
     <div style="height:20px;"></div>
     <div><span class="tok-com"># Each level = 4 more spaces</span></div>
-    <div><span class="tok-com"># Outer if → inner if → action</span></div>
+    <div><span class="tok-com"># Outer if Ã¢â€ â€™ inner if Ã¢â€ â€™ action</span></div>
   </div>
 
   <!-- Right: visual diagram -->
@@ -50,15 +51,15 @@
       <div style="display:inline-block; padding:10px 20px; background:rgba(251,146,60,0.15); border:2px solid #fb923c; border-radius:10px; font-family:'JetBrains Mono',monospace; font-size:18px; color:#fb923c;">age >= 18?</div>
     </div>
     <div style="display:flex; justify-content:space-between; padding:0 20px; margin-bottom:8px;">
-      <div style="font-family:'JetBrains Mono',monospace; font-size:16px; color:#a3e635;">True ↙</div>
-      <div style="font-family:'JetBrains Mono',monospace; font-size:16px; color:#ec4899;">↘ False</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:16px; color:#a3e635;">True Ã¢â€ â„¢</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:16px; color:#ec4899;">Ã¢â€ Ëœ False</div>
     </div>
     <div style="display:flex; justify-content:space-between; padding:0 10px;">
       <div style="text-align:center;">
         <div style="padding:8px 16px; background:rgba(251,146,60,0.15); border:2px solid #fb923c; border-radius:8px; font-family:'JetBrains Mono',monospace; font-size:16px; color:#fb923c;">has_ticket?</div>
         <div style="display:flex; justify-content:space-between; padding:0 5px; margin-top:6px;">
-          <div style="font-size:14px; color:#a3e635;">T ↙</div>
-          <div style="font-size:14px; color:#ec4899;">↘ F</div>
+          <div style="font-size:14px; color:#a3e635;">T Ã¢â€ â„¢</div>
+          <div style="font-size:14px; color:#ec4899;">Ã¢â€ Ëœ F</div>
         </div>
         <div style="display:flex; gap:12px; margin-top:6px;">
           <div style="padding:6px 10px; background:rgba(163,230,53,0.15); border:1px solid #a3e635; border-radius:6px; font-family:'JetBrains Mono',monospace; font-size:14px; color:#a3e635;">Welcome!</div>
@@ -82,17 +83,18 @@ This is the hardest concept in conditions. Go slow.
 
 Build the tree on the board step by step:
 1. "First question: are you 18+?"
-2. "If YES → second question: do you have a ticket?"
-3. "If YES to both → Welcome!"
-4. "If 18+ but no ticket → Buy a ticket."
-5. "If under 18 → Too young (don't even ask about ticket)."
+2. "If YES Ã¢â€ â€™ second question: do you have a ticket?"
+3. "If YES to both Ã¢â€ â€™ Welcome!"
+4. "If 18+ but no ticket Ã¢â€ â€™ Buy a ticket."
+5. "If under 18 Ã¢â€ â€™ Too young (don't even ask about ticket)."
 
-Key insight: "الشرط الجواه مش هيشتغل غير لو الشرط البراني True."
+Key insight: "Ã˜Â§Ã™â€žÃ˜Â´Ã˜Â±Ã˜Â· Ã˜Â§Ã™â€žÃ˜Â¬Ã™Ë†Ã˜Â§Ã™â€¡ Ã™â€¦Ã˜Â´ Ã™â€¡Ã™Å Ã˜Â´Ã˜ÂªÃ˜ÂºÃ™â€ž Ã˜ÂºÃ™Å Ã˜Â± Ã™â€žÃ™Ë† Ã˜Â§Ã™â€žÃ˜Â´Ã˜Â±Ã˜Â· Ã˜Â§Ã™â€žÃ˜Â¨Ã˜Â±Ã˜Â§Ã™â€ Ã™Å  True."
 
-Rule of thumb: "Nested if مقبول لمستويين بس. لو أكتر من كده → استخدم and/or بدل ما تعمّق."
+Rule of thumb: "Nested if Ã™â€¦Ã™â€šÃ˜Â¨Ã™Ë†Ã™â€ž Ã™â€žÃ™â€¦Ã˜Â³Ã˜ÂªÃ™Ë†Ã™Å Ã™Å Ã™â€  Ã˜Â¨Ã˜Â³. Ã™â€žÃ™Ë† Ã˜Â£Ã™Æ’Ã˜ÂªÃ˜Â± Ã™â€¦Ã™â€  Ã™Æ’Ã˜Â¯Ã™â€¡ Ã¢â€ â€™ Ã˜Â§Ã˜Â³Ã˜ÂªÃ˜Â®Ã˜Â¯Ã™â€¦ and/or Ã˜Â¨Ã˜Â¯Ã™â€ž Ã™â€¦Ã˜Â§ Ã˜ÂªÃ˜Â¹Ã™â€¦Ã™â€˜Ã™â€š."
 
-Common mistake: indentation errors. "الـ if التاني لازم يكون داخل الـ if الأولاني بالظبط — 8 spaces مش 4."
+Common mistake: indentation errors. "Ã˜Â§Ã™â€žÃ™â‚¬ if Ã˜Â§Ã™â€žÃ˜ÂªÃ˜Â§Ã™â€ Ã™Å  Ã™â€žÃ˜Â§Ã˜Â²Ã™â€¦ Ã™Å Ã™Æ’Ã™Ë†Ã™â€  Ã˜Â¯Ã˜Â§Ã˜Â®Ã™â€ž Ã˜Â§Ã™â€žÃ™â‚¬ if Ã˜Â§Ã™â€žÃ˜Â£Ã™Ë†Ã™â€žÃ˜Â§Ã™â€ Ã™Å  Ã˜Â¨Ã˜Â§Ã™â€žÃ˜Â¸Ã˜Â¨Ã˜Â· Ã¢â‚¬â€ 8 spaces Ã™â€¦Ã˜Â´ 4."
 </template>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
+
