@@ -14,7 +14,7 @@
   <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:120px; width:1400px; z-index:10;">
     <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:#a78bfa; letter-spacing:0.25em; margin-bottom:10px;">// MULTIPLE CHOICES</div>
     <div style="font-family:'Space Grotesk',sans-serif; font-size:60px; font-weight:700; color:#f8fafc; line-height:1.02; letter-spacing:-0.02em;">More than two options? Use <span class="mono" style="color:#a78bfa;">elif</span>.</div>
-    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:22px; color:#94a3b8; direction:rtl; margin-top:6px;">Ã˜Â£Ã™Æ’Ã˜ÂªÃ˜Â± Ã™â€¦Ã™â€  Ã˜Â§Ã˜Â®Ã˜ÂªÃ™Å Ã˜Â§Ã˜Â±Ã™Å Ã™â€ Ã˜Å¸ Ã˜Â§Ã˜Â³Ã˜ÂªÃ˜Â®Ã˜Â¯Ã™â€¦ elif</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:22px; color:#94a3b8; direction:rtl; margin-top:6px;">أكتر من اختيارين؟ استخدم elif</div>
   </div>
 
   <!-- Two-column: code left, flow right -->
@@ -40,8 +40,8 @@
     <div><span class="tok-kw">else</span><span class="tok-op">:</span></div>
     <div style="padding-left:36px;"><span class="tok-fn">print</span>(<span class="tok-str">"Grade: F"</span>)</div>
     <div style="height:6px;"></div>
-    <div><span class="tok-com"># score = 85 Ã¢â€ â€™ 85 >= 90? No Ã¢â€ â€™ 85 >= 80? Yes Ã¢â€ â€™ print "B"</span></div>
-    <div><span class="tok-com"># STOP Ã¢â‚¬â€ Python doesn't check the rest</span></div>
+    <div><span class="tok-com"># score = 85 → 85 >= 90? No → 85 >= 80? Yes → print "B"</span></div>
+    <div><span class="tok-com"># STOP — Python doesn't check the rest</span></div>
   </div>
 
   <!-- Flow diagram right -->
@@ -52,25 +52,25 @@
     <div style="text-align:center; margin-bottom:8px;">
       <div style="display:inline-block; padding:8px 20px; background:rgba(34,211,238,0.15); border:2px solid #22d3ee; border-radius:8px; font-family:'JetBrains Mono',monospace; font-size:16px; color:#22d3ee;">score >= 90?</div>
     </div>
-    <div style="text-align:center; font-size:18px; color:#64748b;">Ã¢â€ â€œ No</div>
+    <div style="text-align:center; font-size:18px; color:#64748b;">↓ No</div>
     <div style="text-align:center; margin-bottom:8px;">
       <div style="display:inline-block; padding:8px 20px; background:rgba(167,139,250,0.15); border:2px solid #a78bfa; border-radius:8px; font-family:'JetBrains Mono',monospace; font-size:16px; color:#a78bfa;">score >= 80?</div>
     </div>
-    <div style="text-align:center; font-size:18px; color:#64748b;">Ã¢â€ â€œ No</div>
+    <div style="text-align:center; font-size:18px; color:#64748b;">↓ No</div>
     <div style="text-align:center; margin-bottom:8px;">
       <div style="display:inline-block; padding:8px 20px; background:rgba(167,139,250,0.15); border:2px solid #a78bfa; border-radius:8px; font-family:'JetBrains Mono',monospace; font-size:16px; color:#a78bfa;">score >= 70?</div>
     </div>
-    <div style="text-align:center; font-size:18px; color:#64748b;">Ã¢â€ â€œ No</div>
+    <div style="text-align:center; font-size:18px; color:#64748b;">↓ No</div>
     <div style="text-align:center; margin-bottom:8px;">
       <div style="display:inline-block; padding:8px 20px; background:rgba(167,139,250,0.15); border:2px solid #a78bfa; border-radius:8px; font-family:'JetBrains Mono',monospace; font-size:16px; color:#a78bfa;">score >= 60?</div>
     </div>
-    <div style="text-align:center; font-size:18px; color:#64748b;">Ã¢â€ â€œ No</div>
+    <div style="text-align:center; font-size:18px; color:#64748b;">↓ No</div>
     <div style="text-align:center;">
-      <div style="display:inline-block; padding:8px 20px; background:rgba(236,72,153,0.15); border:2px solid #ec4899; border-radius:8px; font-family:'JetBrains Mono',monospace; font-size:16px; color:#ec4899;">else Ã¢â€ â€™ F</div>
+      <div style="display:inline-block; padding:8px 20px; background:rgba(236,72,153,0.15); border:2px solid #ec4899; border-radius:8px; font-family:'JetBrains Mono',monospace; font-size:16px; color:#ec4899;">else → F</div>
     </div>
 
     <div style="margin-top:16px; padding:10px 14px; background:rgba(250,204,21,0.1); border-left:4px solid #facc15; border-radius:8px;">
-      <div style="font-family:'Space Grotesk',sans-serif; font-size:15px; color:#f8fafc; line-height:1.4;">Python checks TOP Ã¢â€ â€™ DOWN. Stops at the <span style="color:#a3e635;">first True</span>.</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:15px; color:#f8fafc; line-height:1.4;">Python checks TOP → DOWN. Stops at the <span style="color:#a3e635;">first True</span>.</div>
     </div>
   </div>
 
@@ -81,18 +81,18 @@
 <template data-slide-notes>
 Multiple paths. Build up from the if/else slide.
 
-Key concept: "elif = else if. Ã˜Â¨Ã˜Â§Ã™Å Ã˜Â«Ã™Ë†Ã™â€  Ã˜Â§Ã˜Â®Ã˜ÂªÃ˜ÂµÃ˜Â±Ã™â€¡Ã˜Â§."
+Key concept: "elif = else if. بايثون اختصرها."
 
 Walk through score = 85:
-- "85 >= 90Ã˜Å¸ Ã™â€žÃ˜Â£. Ã™â€ Ã˜Â²Ã™â€˜Ã™â€ž."
-- "85 >= 80Ã˜Å¸ Ã˜Â£Ã™Å Ã™Ë†Ã™â€¡. Ã˜Â§Ã˜Â·Ã˜Â¨Ã˜Â¹ B Ã™Ë†Ã™Ë†Ã™â€šÃ™Â."
-- "Ã™â€¦Ã™ÂÃ™Å Ã˜Â´ Ã˜Â¯Ã˜Â§Ã˜Â¹Ã™Å  Ã™â€ Ã˜Â´Ã™Ë†Ã™Â 70 Ã˜Â£Ã™Ë† 60 Ã¢â‚¬â€ Ã˜Â®Ã™â€žÃ˜Â§Ã˜Âµ Ã™â€žÃ™â€šÃ™Å Ã™â€ Ã˜Â§ Ã˜Â§Ã™â€žÃ˜Â¥Ã˜Â¬Ã˜Â§Ã˜Â¨Ã˜Â©."
+- "85 >= 90؟ لأ. نزّل."
+- "85 >= 80؟ أيوه. اطبع B ووقف."
+- "مفيش داعي نشوف 70 أو 60 — خلاص لقينا الإجابة."
 
-Critical rule: "Python Ã˜Â¨Ã™Å Ã™â€šÃ™Â Ã˜Â¹Ã™â€ Ã˜Â¯ Ã˜Â£Ã™Ë†Ã™â€ž True. Ã™â€¦Ã˜Â´ Ã˜Â¨Ã™Å Ã™Æ’Ã™â€¦Ã™â€˜Ã™â€ž."
+Critical rule: "Python بيقف عند أول True. مش بيكمّل."
 
-Draw the waterfall on the board. "Ã˜Â§Ã™â€žÃ˜Â´Ã™â€žÃ™â€˜Ã˜Â© Ã™â€ Ã˜Â§Ã˜Â²Ã™â€žÃ˜Â© Ã™â€¦Ã™â€  Ã™ÂÃ™Ë†Ã™â€š Ã™â€žÃ˜ÂªÃ˜Â­Ã˜Âª. Ã˜Â£Ã™Ë†Ã™â€ž Ã™â€¦Ã˜Â§ Ã˜ÂªÃ™â€žÃ˜Â§Ã™â€šÃ™Å  True Ã¢â‚¬â€ Ã˜ÂªÃ™â€¦Ã˜Â³Ã™Æ’ Ã™Ë†Ã˜ÂªÃ™â€šÃ™Â."
+Draw the waterfall on the board. "الشلّة نازلة من فوق لتحت. أول ما تلاقي True — تمسك وتقف."
 
-Common error: "students write elif without else. It works but it's bad practice Ã¢â‚¬â€ always end with else as a safety net."
+Common error: "students write elif without else. It works but it's bad practice — always end with else as a safety net."
 </template>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>

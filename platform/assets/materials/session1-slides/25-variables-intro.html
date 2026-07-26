@@ -15,7 +15,7 @@
   <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:150px; width:1200px; z-index:10;">
     <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:#ec4899; letter-spacing:0.25em; margin-bottom:20px;">// STORING VALUES</div>
     <div style="font-family:'Space Grotesk',sans-serif; font-size:150px; font-weight:700; color:#f8fafc; line-height:0.95; letter-spacing:-0.03em;">Variables.</div>
-    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:34px; color:#94a3b8; direction:rtl; margin-top:24px;">Ã˜Â§Ã™â€žÃ™â€¦Ã˜ÂªÃ˜ÂºÃ™Å Ã˜Â±Ã˜Â§Ã˜Âª Ã¢â‚¬â€ Ã˜Â¹Ã™â€žÃ˜Â¨ Ã™â€žÃ˜ÂªÃ˜Â®Ã˜Â²Ã™Å Ã™â€  Ã˜Â§Ã™â€žÃ™â€¦Ã˜Â¹Ã™â€žÃ™Ë†Ã™â€¦Ã˜Â§Ã˜ÂªÃ˜Å’ Ã˜ÂªÃ˜Â³Ã™â€¦Ã™Å Ã™â€¡Ã˜Â§ Ã™Ë†Ã˜ÂªÃ˜Â³Ã˜ÂªÃ˜Â®Ã˜Â¯Ã™â€¦Ã™â€¡Ã˜Â§ Ã™â€žÃ™â€¦Ã˜Â§ Ã˜ÂªÃ˜Â­Ã˜ÂªÃ˜Â§Ã˜Â¬</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:34px; color:#94a3b8; direction:rtl; margin-top:24px;">المتغيرات — علب لتخزين المعلومات، تسميها وتستخدمها لما تحتاج</div>
   </div>
 
   <!-- Right: box analogy -->
@@ -62,28 +62,28 @@
 <template data-slide-notes>
 **Big concept incoming.** Slow down here.
 
-Analogy: "Ã™â€¦Ã˜ÂªÃ˜ÂºÃ™Å Ã˜Â± = Ã˜Â¹Ã™â€žÃ˜Â¨Ã˜Â© Ã˜Â¹Ã™â€žÃ™Å Ã™â€¡Ã˜Â§ Ã˜Â§Ã˜Â³Ã™â€¦. Ã˜Â¬Ã™Ë†Ã˜Â§Ã™â€¡Ã˜Â§ Ã˜Â­Ã˜Â§Ã˜Â¬Ã˜Â©."
+Analogy: "متغير = علبة عليها اسم. جواها حاجة."
 
 Physical demo (if possible): grab a box, write "name" on it, put a paper "Yousef" inside. Grab another box, write "age", put "17".
 
-Now Ã¢â‚¬â€ the syntax reveal:
+Now — the syntax reveal:
 ```
 name = "Yousef"
 ```
 
-Read this ARABIC-STYLE (right-to-left logic): "Ã˜Â®Ã˜Â¯ Ã˜Â§Ã™â€žÃ™Æ’Ã™â€žÃ™â€¦Ã˜Â© YousefÃ˜Å’ Ã˜Â­Ã˜Â·Ã™â€¡Ã˜Â§ Ã™ÂÃ™Å  Ã˜Â¹Ã™â€žÃ˜Â¨Ã˜Â© Ã˜Â§Ã˜Â³Ã™â€¦Ã™â€¡Ã˜Â§ name."
+Read this ARABIC-STYLE (right-to-left logic): "خد الكلمة Yousef، حطها في علبة اسمها name."
 
 **CRITICAL misconception to fix now**: The `=` sign in Python is NOT the equals sign from math!
-- Math: `x = 5` means "x Ã™Å Ã˜Â³Ã˜Â§Ã™Ë†Ã™Å  5" (a statement of truth)
-- Python: `x = 5` means "Ã˜Â­Ã˜Â· 5 Ã™ÂÃ™Å  Ã˜Â¹Ã™â€žÃ˜Â¨Ã˜Â© Ã˜Â§Ã˜Â³Ã™â€¦Ã™â€¡Ã˜Â§ x" (a command)
+- Math: `x = 5` means "x يساوي 5" (a statement of truth)
+- Python: `x = 5` means "حط 5 في علبة اسمها x" (a command)
 
 Prove it: `x = 5` then `x = 10`. In math, x can't be 5 AND 10. In Python, we just replaced what's in the box.
 
 Use variables live:
 ```
 name = "Yousef"
-print(name)     # Ã¢â€ â€™ Yousef (no quotes because we want what's INSIDE the box)
-print("name")   # Ã¢â€ â€™ name  (WITH quotes = literal text)
+print(name)     # → Yousef (no quotes because we want what's INSIDE the box)
+print("name")   # → name  (WITH quotes = literal text)
 ```
 
 That's the "aha!" moment. Wait for hands to shoot up when they get it.

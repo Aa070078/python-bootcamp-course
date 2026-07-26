@@ -194,7 +194,13 @@
           <div id="materialsTab" class="tab-content p-6">
             <div class="space-y-4">
               <div class="flex items-center justify-between">
-                <h3 class="font-bold text-ink-100">Session Slides</h3>
+                <div class="flex items-center gap-2">
+                  <h3 class="font-bold text-ink-100">Session Slides</h3>
+                  <div id="slideViewToggle" class="flex bg-surface-1 rounded-lg p-0.5 border border-ink-800">
+                    <button onclick="switchSlideView('html')" id="slideViewHtml" class="px-3 py-1 text-xs font-bold rounded-md bg-accent-blue text-white transition-all">HTML</button>
+                    <button onclick="switchSlideView('pptx')" id="slideViewPptx" class="px-3 py-1 text-xs font-bold rounded-md text-ink-400 hover:text-ink-100 transition-all">PPTX</button>
+                  </div>
+                </div>
                 <a id="slidesDownload" href="#" download class="px-4 py-2 rounded-xl text-sm font-bold bg-surface-2 border border-ink-800 text-ink-300 hover:border-accent-blue hover:text-accent-blue transition-all flex items-center gap-2">
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
@@ -205,6 +211,10 @@
               
               <div id="slidesViewer" class="rounded-xl overflow-hidden border border-ink-800 bg-surface-2" style="height: 500px;">
                 <iframe id="slidesIframe" src="" class="w-full h-full" frameborder="0"></iframe>
+              </div>
+
+              <div id="pptxViewer" class="hidden rounded-xl overflow-hidden border border-ink-800 bg-surface-2" style="height: 500px;">
+                <iframe id="pptxIframe" src="" class="w-full h-full" frameborder="0"></iframe>
               </div>
 
               <div id="noSlides" class="hidden text-center py-12 text-ink-500">
@@ -450,6 +460,9 @@
       // Materials
       if (session.hasMaterial) {
         document.getElementById('slidesIframe').src = `assets/materials/viewer.html?num=${currentSession}`;
+        // Set up PPTX viewer via Google Docs Viewer
+        var pptxUrl = `${window.location.origin}${window.location.pathname.replace(/session\.html$/, '')}assets/materials/session${currentSession}.pptx`;
+        document.getElementById('pptxIframe').src = `https://docs.google.com/gview?url=${encodeURIComponent(pptxUrl)}&embedded=true`;
         // Check for uploaded PPTX in IndexedDB first, fallback to local file
         getPptxBlob(currentSession).then(file => {
           if (file) {
@@ -535,6 +548,29 @@
       document.getElementById(tab + 'Tab').classList.remove('hidden');
       document.querySelector(`[data-tab="${tab}"]`).classList.add('tab-active');
       document.querySelector(`[data-tab="${tab}"]`).classList.remove('text-ink-400');
+    }
+
+    // Slide view switching (HTML vs PPTX)
+    function switchSlideView(mode) {
+      const htmlBtn = document.getElementById('slideViewHtml');
+      const pptxBtn = document.getElementById('slideViewPptx');
+      const htmlViewer = document.getElementById('slidesViewer');
+      const pptxViewer = document.getElementById('pptxViewer');
+      if (mode === 'pptx') {
+        htmlBtn.classList.remove('bg-accent-blue', 'text-white');
+        htmlBtn.classList.add('text-ink-400');
+        pptxBtn.classList.add('bg-accent-blue', 'text-white');
+        pptxBtn.classList.remove('text-ink-400');
+        htmlViewer.classList.add('hidden');
+        pptxViewer.classList.remove('hidden');
+      } else {
+        pptxBtn.classList.remove('bg-accent-blue', 'text-white');
+        pptxBtn.classList.add('text-ink-400');
+        htmlBtn.classList.add('bg-accent-blue', 'text-white');
+        htmlBtn.classList.remove('text-ink-400');
+        pptxViewer.classList.add('hidden');
+        htmlViewer.classList.remove('hidden');
+      }
     }
 
     // Initialize CodeMirror

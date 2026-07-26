@@ -14,7 +14,7 @@
   <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:120px; width:1400px; z-index:10;">
     <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:#22d3ee; letter-spacing:0.25em; margin-bottom:10px;">// TWO PATHS</div>
     <div style="font-family:'Space Grotesk',sans-serif; font-size:64px; font-weight:700; color:#f8fafc; line-height:1.02; letter-spacing:-0.02em;">If <span style="color:#a3e635;">this</span>, else <span style="color:#ec4899;">that</span>.</div>
-    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:22px; color:#94a3b8; direction:rtl; margin-top:6px;">Ã™â€žÃ™Ë† Ã˜Â¯Ã™â€¡ Ã¢â‚¬â€ Ã˜ÂºÃ™Å Ã˜Â± Ã™Æ’Ã˜Â¯Ã™â€¡ Ã¢â‚¬â€ Ã˜Â¹Ã™â€¦Ã™â€ž Ã˜ÂªÃ˜Â§Ã™â€ Ã™Å </div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:22px; color:#94a3b8; direction:rtl; margin-top:6px;">لو ده — غير كده — عمل تاني</div>
   </div>
 
   <!-- Full-width code window -->
@@ -32,7 +32,7 @@
     <div style="padding-left:36px;"><span class="tok-fn">print</span>(<span class="tok-str">"You can vote!"</span>)</div>
     <div><span class="tok-kw">else</span><span class="tok-op">:</span></div>
     <div style="padding-left:36px;"><span class="tok-fn">print</span>(<span class="tok-str">"Too young to vote."</span>)</div>
-    <div><span class="tok-com"># age = 15 Ã¢â€ â€™ condition is False Ã¢â€ â€™ else block runs</span></div>
+    <div><span class="tok-com"># age = 15 → condition is False → else block runs</span></div>
     <div style="height:6px;"></div>
     <div><span class="tok-com"># --- another example ---</span></div>
     <div><span class="tok-var">password</span> <span class="tok-op">=</span> <span class="tok-str">"secret123"</span></div>
@@ -50,10 +50,10 @@
         <div style="font-family:'JetBrains Mono',monospace; font-size:16px; color:#22d3ee; letter-spacing:0.15em; margin-bottom:10px;">// HOW IT FLOWS</div>
         <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
           <div style="padding:8px 20px; background:rgba(34,211,238,0.15); border:2px solid #22d3ee; border-radius:8px; font-family:'JetBrains Mono',monospace; font-size:17px; color:#22d3ee;">condition?</div>
-          <div style="font-size:20px; color:#64748b;">Ã¢â€ â€™</div>
-          <div style="padding:8px 16px; background:rgba(163,230,53,0.15); border:2px solid #a3e635; border-radius:8px; font-family:'JetBrains Mono',monospace; font-size:16px; color:#a3e635;">True Ã¢â€ â€™ run if-block</div>
+          <div style="font-size:20px; color:#64748b;">→</div>
+          <div style="padding:8px 16px; background:rgba(163,230,53,0.15); border:2px solid #a3e635; border-radius:8px; font-family:'JetBrains Mono',monospace; font-size:16px; color:#a3e635;">True → run if-block</div>
           <div style="font-size:20px; color:#64748b;">|</div>
-          <div style="padding:8px 16px; background:rgba(236,72,153,0.15); border:2px solid #ec4899; border-radius:8px; font-family:'JetBrains Mono',monospace; font-size:16px; color:#ec4899;">False Ã¢â€ â€™ run else-block</div>
+          <div style="padding:8px 16px; background:rgba(236,72,153,0.15); border:2px solid #ec4899; border-radius:8px; font-family:'JetBrains Mono',monospace; font-size:16px; color:#ec4899;">False → run else-block</div>
         </div>
       </div>
       <div style="padding:10px 16px; background:rgba(250,204,21,0.1); border-left:4px solid #facc15; border-radius:8px;">
@@ -71,21 +71,21 @@ Two-path decision. Draw the flow on the board:
 
 ```
 condition?
-Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ True  Ã¢â€ â€™ run if-block
-Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ False Ã¢â€ â€™ run else-block
+├── True  → run if-block
+└── False → run else-block
 ```
 
 Walk through the age example:
-- "age = 15. Ã˜Â§Ã™â€žÃ˜Â´Ã˜Â±Ã˜Â·: 15 >= 18Ã˜Å¸ Ã™â€žÃ˜Â£. False. Ã™Å Ã˜Â¨Ã™â€šÃ™â€° Ã™â€ Ã˜Â±Ã™Ë†Ã˜Â­ Ã™â€žÃ™â€žÃ™â‚¬ else."
+- "age = 15. الشرط: 15 >= 18؟ لأ. False. يبقى نروح للـ else."
 
-Key rule: "else Ã™â€¦Ã˜Â´ Ã˜Â¨Ã™Å Ã˜Â­Ã˜ÂªÃ˜Â§Ã˜Â¬ Ã˜Â´Ã˜Â±Ã˜Â·. Ã™â€¡Ã™Ë† 'Ã˜ÂºÃ™Å Ã˜Â± Ã™Æ’Ã˜Â¯Ã™â€¡' Ã˜Â¨Ã˜Â³."
+Key rule: "else مش بيحتاج شرط. هو 'غير كده' بس."
 
-Common error: students write `else:` with a condition. "else Ã™â€¦Ã˜Â§ Ã˜Â¨Ã™Å Ã˜ÂªÃ˜Â­Ã˜Â·Ã˜Â´ Ã˜Â´Ã˜Â±Ã˜Â· Ã˜Â¬Ã™Ë†Ã˜Â§Ã™â€¡. Ã™â€žÃ™Ë† Ã˜Â¹Ã˜Â§Ã™Å Ã˜Â² Ã˜Â´Ã˜Â±Ã˜Â· Ã˜ÂªÃ˜Â§Ã™â€ Ã™Å  Ã¢â€ â€™ Ã˜Â§Ã˜Â³Ã˜ÂªÃ˜Â®Ã˜Â¯Ã™â€¦ elif."
+Common error: students write `else:` with a condition. "else ما بيتحطش شرط جواه. لو عايز شرط تاني → استخدم elif."
 
 Quick quiz: ask 3 students:
-- "age = 20 Ã¢â€ â€™ output?" Ã¢â€ â€™ "You can vote!"
-- "age = 10 Ã¢â€ â€™ output?" Ã¢â€ â€™ "Too young to vote."
-- "age = 18 Ã¢â€ â€™ output?" Ã¢â€ â€™ "You can vote!" (>= includes 18)
+- "age = 20 → output?" → "You can vote!"
+- "age = 10 → output?" → "Too young to vote."
+- "age = 18 → output?" → "You can vote!" (>= includes 18)
 </template>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>

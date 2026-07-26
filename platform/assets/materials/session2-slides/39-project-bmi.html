@@ -13,9 +13,9 @@
   </div>
 
   <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:140px; width:1400px; z-index:10;">
-    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#a3e635; letter-spacing:0.25em; margin-bottom:14px;">// MINI PROJECT Ã‚Â· 8 MINUTES</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#a3e635; letter-spacing:0.25em; margin-bottom:14px;">// MINI PROJECT · 8 MINUTES</div>
     <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:#f8fafc; line-height:1.02; letter-spacing:-0.02em;">BMI Calculator.</div>
-    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:24px; color:#94a3b8; direction:rtl; margin-top:8px;">Ã˜Â­Ã˜Â§Ã˜Â³Ã˜Â¨Ã˜Â© Ã™â€¦Ã˜Â¤Ã˜Â´Ã˜Â± Ã™Æ’Ã˜ÂªÃ™â€žÃ˜Â© Ã˜Â§Ã™â€žÃ˜Â¬Ã˜Â³Ã™â€¦</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:24px; color:#94a3b8; direction:rtl; margin-top:8px;">حاسبة مؤشر كتلة الجسم</div>
   </div>
 
   <!-- Requirements -->
@@ -32,7 +32,7 @@
     <div style="margin-bottom:18px;">
       <div style="display:flex; gap:16px; align-items:baseline;">
         <div style="font-family:'JetBrains Mono',monospace; font-size:28px; color:#a3e635; font-weight:700;">02</div>
-        <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#f8fafc;">Calculate: <span class="mono" style="color:#facc15;">BMI = weight / heightÃ‚Â²</span></div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#f8fafc;">Calculate: <span class="mono" style="color:#facc15;">BMI = weight / height²</span></div>
       </div>
     </div>
     <div style="margin-bottom:18px;">
@@ -43,10 +43,10 @@
     </div>
     <div style="padding-left:52px; margin-bottom:18px;">
       <div style="font-family:'JetBrains Mono',monospace; font-size:20px; color:#cbd5e1; line-height:1.6;">
-        <div><span style="color:#22d3ee;">Under 18.5</span> Ã¢â€ â€™ "Underweight"</div>
-        <div><span style="color:#a3e635;">18.5 Ã¢â‚¬â€œ 24.9</span> Ã¢â€ â€™ "Normal"</div>
-        <div><span style="color:#facc15;">25 Ã¢â‚¬â€œ 29.9</span> Ã¢â€ â€™ "Overweight"</div>
-        <div><span style="color:#ec4899;">30+</span> Ã¢â€ â€™ "Obese"</div>
+        <div><span style="color:#22d3ee;">Under 18.5</span> → "Underweight"</div>
+        <div><span style="color:#a3e635;">18.5 – 24.9</span> → "Normal"</div>
+        <div><span style="color:#facc15;">25 – 29.9</span> → "Overweight"</div>
+        <div><span style="color:#ec4899;">30+</span> → "Obese"</div>
       </div>
     </div>
     <div style="margin-bottom:18px;">
@@ -93,16 +93,16 @@ Real-world project. BMI is something everyone understands.
 Walk through requirements, then code it live.
 
 Key teaching moments:
-- "BMI = weight / heightÃ‚Â². Ã™ÂÃ™Å  Ã˜Â¨Ã˜Â§Ã™Å Ã˜Â«Ã™Ë†Ã™â€ : `weight / height ** 2`."
-- "Ã™â€¦Ã™â€žÃ˜Â§Ã˜Â­Ã˜Â¸Ã˜Â©: Ã˜Â§Ã™â€žÃ™â‚¬ elif conditions Ã˜Â¨Ã˜ÂªÃ˜Â¨Ã™â€ Ã™Å  Ã˜Â¹Ã™â€žÃ™â€° Ã˜Â¨Ã˜Â¹Ã˜Â¶. Ã™â€žÃ™Ë† bmi < 18.5 Ã™Æ’Ã˜Â§Ã™â€  FalseÃ˜Å’ Ã™Å Ã˜Â¨Ã™â€šÃ™â€° bmi >= 18.5 Ã˜Â¨Ã˜Â§Ã™â€žÃ™ÂÃ˜Â¹Ã™â€ž. Ã˜Â¹Ã˜Â´Ã˜Â§Ã™â€  Ã™Æ’Ã˜Â¯Ã™â€¡ Ã™â€ Ã™Æ’Ã˜ÂªÃ˜Â¨ < 25 Ã™â€¦Ã˜Â´ >= 18.5 AND < 25."
-- "f-string: `f\"BMI: {bmi:.1f}\"` Ã¢â‚¬â€ Ã˜Â¯Ã™â€¡ Ã˜Â¨Ã™Å Ã˜Â·Ã˜Â¨Ã˜Â¹ Ã˜Â§Ã™â€žÃ˜Â±Ã™â€šÃ™â€¦ Ã˜Â¨Ã™â‚¬ decimal Ã™Ë†Ã˜Â§Ã˜Â­Ã˜Â¯ Ã˜Â¨Ã˜Â³."
+- "BMI = weight / height². في بايثون: `weight / height ** 2`."
+- "ملاحظة: الـ elif conditions بتبني على بعض. لو bmi < 18.5 كان False، يبقى bmi >= 18.5 بالفعل. عشان كده نكتب < 25 مش >= 18.5 AND < 25."
+- "f-string: `f\"BMI: {bmi:.1f}\"` — ده بيطبع الرقم بـ decimal واحد بس."
 
 Let them code for 5 minutes. Walk around. Then show the solution.
 
 Test cases to share:
-- Weight: 70, Height: 1.75 Ã¢â€ â€™ BMI: 22.9 Ã¢â€ â€™ Normal
-- Weight: 90, Height: 1.75 Ã¢â€ â€™ BMI: 29.4 Ã¢â€ â€™ Overweight
-- Weight: 50, Height: 1.80 Ã¢â€ â€™ BMI: 15.4 Ã¢â€ â€™ Underweight
+- Weight: 70, Height: 1.75 → BMI: 22.9 → Normal
+- Weight: 90, Height: 1.75 → BMI: 29.4 → Overweight
+- Weight: 50, Height: 1.80 → BMI: 15.4 → Underweight
 </template>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
