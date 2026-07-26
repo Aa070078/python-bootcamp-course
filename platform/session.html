@@ -151,7 +151,8 @@
         <!-- Video Player -->
         <div id="videoSection" class="glass rounded-2xl overflow-hidden">
           <div class="aspect-video bg-surface-2 flex items-center justify-center relative">
-            <video id="videoPlayer" class="w-full h-full" controls>
+            <iframe id="youtubePlayer" class="w-full h-full hidden" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <video id="videoPlayer" class="w-full h-full hidden" controls>
               <source id="videoSource" src="" type="video/mp4">
               Your browser does not support the video tag.
             </video>
@@ -426,9 +427,24 @@
       // Video
       if (session.hasVideo) {
         document.getElementById('videoPlaceholder').classList.add('hidden');
-        const videoUrls = { 1: 'https://files.catbox.moe/1kbsag.mp4', 2: 'https://files.catbox.moe/35j3x8.mp4' };
-        document.getElementById('videoSource').src = videoUrls[currentSession] || '';
-        document.getElementById('videoPlayer').load();
+        const videoUrls = {
+          1: 'https://youtu.be/ulme7RXZrZE?si=U3sEn0ZZoV89BGAv',
+          2: 'https://files.catbox.moe/35j3x8.mp4'
+        };
+        const url = videoUrls[currentSession] || '';
+        if (url.includes('youtu')) {
+          // YouTube embed
+          const ytId = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([^&?#]+)/);
+          if (ytId) {
+            document.getElementById('youtubePlayer').src = 'https://www.youtube.com/embed/' + ytId[1];
+            document.getElementById('youtubePlayer').classList.remove('hidden');
+          }
+        } else if (url) {
+          // Direct MP4
+          document.getElementById('videoSource').src = url;
+          document.getElementById('videoPlayer').classList.remove('hidden');
+          document.getElementById('videoPlayer').load();
+        }
       }
 
       // Materials
@@ -763,8 +779,17 @@ sys.stdout = StringIO()
       const assets = getStoredAssets();
       if (assets.video_url && session.hasVideo) {
         document.getElementById('videoPlaceholder').classList.add('hidden');
-        document.getElementById('videoSource').src = assets.video_url;
-        document.getElementById('videoPlayer').load();
+        if (assets.video_url.includes('youtu')) {
+          const ytId = assets.video_url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([^&?#]+)/);
+          if (ytId) {
+            document.getElementById('youtubePlayer').src = 'https://www.youtube.com/embed/' + ytId[1];
+            document.getElementById('youtubePlayer').classList.remove('hidden');
+          }
+        } else {
+          document.getElementById('videoSource').src = assets.video_url;
+          document.getElementById('videoPlayer').classList.remove('hidden');
+          document.getElementById('videoPlayer').load();
+        }
       }
       if (assets.pptx_url) {
         document.getElementById('slidesDownload').href = assets.pptx_url;
