@@ -42,8 +42,8 @@
 
   function tick() {
     // smooth follow for the glow
-    smoothX += (mx - smoothX) * 0.10;
-    smoothY += (my - smoothY) * 0.10;
+    smoothX += (mx - smoothX) * 0.06;
+    smoothY += (my - smoothY) * 0.06;
 
     /* --- draw grid --- */
     ctx.clearRect(0, 0, W, H);
@@ -73,11 +73,12 @@
     glowCanvas.height = H;
 
     if (smoothX > -100) {
-      const R = 100; // glow radius
+      const R = 220; // glow radius — big
       const grad = glowCtx.createRadialGradient(smoothX, smoothY, 0, smoothX, smoothY, R);
-      grad.addColorStop(0, 'rgba(180, 30, 30, 0.055)');
-      grad.addColorStop(0.35, 'rgba(140, 20, 20, 0.035)');
-      grad.addColorStop(0.7, 'rgba(100, 15, 15, 0.015)');
+      grad.addColorStop(0, 'rgba(200, 30, 30, 0.10)');
+      grad.addColorStop(0.25, 'rgba(160, 25, 25, 0.07)');
+      grad.addColorStop(0.5, 'rgba(120, 20, 20, 0.035)');
+      grad.addColorStop(0.75, 'rgba(80, 12, 12, 0.015)');
       grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
 
       glowCtx.fillStyle = grad;
@@ -85,10 +86,11 @@
       glowCtx.arc(smoothX, smoothY, R, 0, Math.PI * 2);
       glowCtx.fill();
 
-      // smaller brighter core
-      const coreR = 35;
+      // inner brighter core
+      const coreR = 80;
       const core = glowCtx.createRadialGradient(smoothX, smoothY, 0, smoothX, smoothY, coreR);
-      core.addColorStop(0, 'rgba(220, 50, 50, 0.04)');
+      core.addColorStop(0, 'rgba(220, 40, 40, 0.08)');
+      core.addColorStop(0.5, 'rgba(180, 30, 30, 0.03)');
       core.addColorStop(1, 'rgba(0, 0, 0, 0)');
       glowCtx.fillStyle = core;
       glowCtx.beginPath();
