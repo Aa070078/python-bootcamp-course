@@ -376,8 +376,8 @@
 
       if (session.hasMaterial) {
         document.getElementById('slidesIframe').src = `assets/materials/viewer.html?num=${currentSession}`;
-        var pptxUrl = `${window.location.origin}${window.location.pathname.replace(/session\.html$/, '')}assets/materials/session${currentSession}.pptx`;
-        document.getElementById('pptxIframe').src = `https://docs.google.com/gview?url=${encodeURIComponent(pptxUrl)}&embedded=true`;
+        var pptxFilename = currentSession === 2 ? 'session2-full.pptx' : `session${currentSession}.pptx`;
+        var pptxUrl = `assets/materials/${pptxFilename}`;
         getPptxBlob(currentSession).then(file => {
           if (file) {
             const blob = new Blob([file.data], { type: file.type || 'application/vnd.openxmlformats-officedocument.presentationml.presentation' });
@@ -385,9 +385,11 @@
             document.getElementById('slidesDownload').href = url;
             document.getElementById('slidesDownload').download = file.name;
             document.getElementById('pptxLocalStatus').innerHTML = `<span class="text-accent-green">Uploaded:</span> ${file.name}`;
+            document.getElementById('pptxIframe').srcdoc = '<html><body style="display:flex;align-items:center;justify-content:center;height:100%;margin:0;background:#0f1729;color:#94a3b8;font-family:system-ui;text-align:center;padding:20px;"><div><p style="font-size:14px;">File uploaded successfully. Use the download button below to view it.</p></div></body></html>';
           } else {
-            document.getElementById('slidesDownload').href = `assets/materials/session${currentSession}.pptx`;
-            document.getElementById('pptxLocalStatus').innerHTML = `<span class="text-ink-500">Using local file</span>`;
+            document.getElementById('slidesDownload').href = pptxUrl;
+            document.getElementById('pptxLocalStatus').innerHTML = `<span class="text-ink-500">Download to view</span>`;
+            document.getElementById('pptxIframe').srcdoc = '<html><body style="display:flex;align-items:center;justify-content:center;height:100%;margin:0;background:#0f1729;color:#94a3b8;font-family:system-ui;text-align:center;padding:20px;"><div><p style="font-size:14px;margin-bottom:8px;">PPTX preview not available in browser.</p><p style="font-size:12px;color:#64748b;">Click the download button below to open the file.</p></div></body></html>';
           }
         });
       } else {
