@@ -4,7 +4,7 @@
 <body>
 <div class="slide-container">
   <div class="bg-grid" data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1;"></div>
-  <div class="bg-glow-magenta" data-object="true" data-object-type="shape" style="position:absolute; left:-200px; top:-200px; z-index:1;"></div>
+  <div class="bg-glow-lime" data-object="true" data-object-type="shape" style="position:absolute; left:-200px; top:-200px; z-index:1;"></div>
 
   <div class="chrome-topbar" data-object="true" data-object-type="textbox" style="z-index:10;">
     <span class="chrome-dot"></span>
@@ -12,119 +12,123 @@
   </div>
 
   <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:140px; width:1400px; z-index:10;">
-    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#ec4899; letter-spacing:0.25em; margin-bottom:14px;">// CHALLENGE · 10 MINUTES</div>
-    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:#f8fafc; line-height:1.02; letter-spacing:-0.02em;">Pass or Fail?</div>
-    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:24px; color:#94a3b8; direction:rtl; margin-top:8px;">اكتب برنامج ياخذ درجة الطالب ويقوله: ناجح / راسب / ممتاز</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#a3e635; letter-spacing:0.25em; margin-bottom:14px;">// CHALLENGE · 10 MINUTES</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:#f8fafc; line-height:1.02; letter-spacing:-0.02em;">Number classifier.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:24px; color:#94a3b8; direction:rtl; margin-top:8px;">اكتب برنامج يصنف الرقم: موجب، سالب، أو صفر</div>
   </div>
 
   <!-- Requirements -->
-  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:400px; width:900px; height:560px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.3); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:400px; width:900px; height:520px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.3); border-radius:20px; z-index:5;"></div>
   <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:430px; width:840px; z-index:10;">
     <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:#22d3ee; letter-spacing:0.2em; margin-bottom:20px;">// REQUIREMENTS</div>
 
     <div style="margin-bottom:20px;">
       <div style="display:flex; gap:16px; align-items:baseline;">
         <div style="font-family:'JetBrains Mono',monospace; font-size:28px; color:#22d3ee; font-weight:700;">01</div>
-        <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#f8fafc; line-height:1.4;">Ask the user for their score (0–100).</div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#f8fafc; line-height:1.4;">Ask the user for a number.</div>
       </div>
     </div>
 
     <div style="margin-bottom:20px;">
       <div style="display:flex; gap:16px; align-items:baseline;">
         <div style="font-family:'JetBrains Mono',monospace; font-size:28px; color:#22d3ee; font-weight:700;">02</div>
-        <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#f8fafc; line-height:1.4;">If score >= 90 → print <span class="mono" style="color:#a3e635;">"Excellent"</span></div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#f8fafc; line-height:1.4;">If positive → print <span class="mono" style="color:#a3e635;">"Positive"</span></div>
       </div>
     </div>
 
     <div style="margin-bottom:20px;">
       <div style="display:flex; gap:16px; align-items:baseline;">
         <div style="font-family:'JetBrains Mono',monospace; font-size:28px; color:#22d3ee; font-weight:700;">03</div>
-        <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#f8fafc; line-height:1.4;">If score >= 60 → print <span class="mono" style="color:#a3e635;">"Pass"</span></div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#f8fafc; line-height:1.4;">If negative → print <span class="mono" style="color:#ec4899;">"Negative"</span></div>
       </div>
     </div>
 
     <div style="margin-bottom:20px;">
       <div style="display:flex; gap:16px; align-items:baseline;">
         <div style="font-family:'JetBrains Mono',monospace; font-size:28px; color:#22d3ee; font-weight:700;">04</div>
-        <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#f8fafc; line-height:1.4;">Otherwise → print <span class="mono" style="color:#ec4899;">"Fail"</span></div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#f8fafc; line-height:1.4;">If zero → print <span class="mono" style="color:#facc15;">"Zero"</span></div>
       </div>
     </div>
 
     <div style="margin-top:24px; padding:14px 18px; background:rgba(163,230,53,0.1); border-left:4px solid #a3e635; border-radius:8px;">
       <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; color:#a3e635; font-weight:600;">Bonus:</div>
-      <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; color:#f8fafc; margin-top:2px;">Add a grade (A/B/C/D/F) using elif. Think about the ORDER.</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; color:#f8fafc; margin-top:2px;">Also check if the number is even or odd.</div>
     </div>
   </div>
 
   <!-- Right: hint code -->
-  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:1010px; top:400px; width:830px; height:560px; z-index:5;">
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:1010px; top:400px; width:830px; height:520px; z-index:5;">
     <div class="code-window-header">
       <span class="code-dot code-dot-r"></span>
       <span class="code-dot code-dot-y"></span>
       <span class="code-dot code-dot-g"></span>
-      <span class="code-window-title">hint_starter.py</span>
+      <span class="code-window-title">classifier.py</span>
     </div>
   </div>
-  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1040px; top:470px; width:770px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:22px; line-height:1.6;">
-    <div><span class="tok-com"># fill in the logic</span></div>
-    <div style="height:10px;"></div>
-    <div><span class="tok-var">score</span> <span class="tok-op">=</span> <span class="tok-fn">int</span>(<span class="tok-fn">input</span>(<span class="tok-str">"Score: "</span>))</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1040px; top:470px; width:770px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:19px; line-height:1.45;">
+    <div><span class="tok-com"># fill in the blanks</span></div>
     <div style="height:6px;"></div>
-    <div><span class="tok-kw">if</span> <span class="tok-var">score</span> <span class="tok-op">___</span> <span class="tok-num">90</span><span class="tok-op">:</span></div>
-    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"___"</span>)</div>
-    <div><span class="tok-kw">elif</span> <span class="tok-var">score</span> <span class="tok-op">___</span> <span class="tok-num">60</span><span class="tok-op">:</span></div>
-    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"___"</span>)</div>
+    <div><span class="tok-var">num</span> <span class="tok-op">=</span> <span class="tok-fn">int</span>(<span class="tok-fn">input</span>(<span class="tok-str">"Number: "</span>))</div>
+    <div style="height:6px;"></div>
+    <div><span class="tok-kw">if</span> <span class="tok-var">num</span> <span class="tok-op">___</span> <span class="tok-num">0</span><span class="tok-op">:</span></div>
+    <div style="padding-left:40px;"><span class="tok-fn">print</span>(<span class="tok-str">"___"</span>)</div>
+    <div><span class="tok-kw">elif</span> <span class="tok-var">num</span> <span class="tok-op">___</span> <span class="tok-num">0</span><span class="tok-op">:</span></div>
+    <div style="padding-left:40px;"><span class="tok-fn">print</span>(<span class="tok-str">"___"</span>)</div>
     <div><span class="tok-kw">else</span><span class="tok-op">:</span></div>
-    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"___"</span>)</div>
-    <div style="height:20px;"></div>
+    <div style="padding-left:40px;"><span class="tok-fn">print</span>(<span class="tok-str">"___"</span>)</div>
+    <div style="height:12px;"></div>
     <div style="color:#facc15;">━━━━━━━━━━━━━━━━━━━━━━━</div>
     <div><span class="tok-com"># expected runs:</span></div>
-    <div><span class="tok-com"># Score: 95 → Excellent</span></div>
-    <div><span class="tok-com"># Score: 72 → Pass</span></div>
-    <div><span class="tok-com"># Score: 45 → Fail</span></div>
+    <div><span class="tok-com"># Number: 5   → Positive</span></div>
+    <div><span class="tok-com"># Number: -3  → Negative</span></div>
+    <div><span class="tok-com"># Number: 0   → Zero</span></div>
   </div>
 
   <div class="chrome-brand">PY_BOOTCAMP // S02</div>
-  <div class="chrome-pagenum">37 / 49</div>
+  <div class="chrome-pagenum">37 / 50</div>
 </div>
 
 <template data-slide-notes>
-10-minute solo challenge. This is the FIRST time students write conditions from scratch.
+10-minute solo challenge. Use if/elif/else — they now have all the tools.
 
-Walk around while they code. Common issues:
-- Forgetting the colon `:` at end of if/elif/else lines
-- Wrong indentation
-- Using `=` instead of `>=` (assignment vs comparison)
-- Wrong order (putting else before elif)
+Walk around while they code. Common needs:
+- First condition: `num > 0` (not `num >= 0` — because 0 is separate)
+- elif condition: `num < 0`
+- else handles 0
 
 Solution:
 ```python
-score = int(input("Score: "))
-if score >= 90:
-    print("Excellent")
-elif score >= 60:
-    print("Pass")
+num = int(input("Number: "))
+
+if num > 0:
+    print("Positive")
+elif num < 0:
+    print("Negative")
 else:
-    print("Fail")
+    print("Zero")
 ```
 
-Bonus solution (grade system):
+Bonus solution:
 ```python
-if score >= 90:
-    print("A")
-elif score >= 80:
-    print("B")
-elif score >= 70:
-    print("C")
-elif score >= 60:
-    print("D")
+num = int(input("Number: "))
+
+if num > 0:
+    print("Positive")
+elif num < 0:
+    print("Negative")
 else:
-    print("F")
+    print("Zero")
+
+if num % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
 ```
 
 Wait until 80% finish. Ask 2-3 students to project their code. Applaud each.
 
-Then → transition to mini projects.
+Then → next slide: mini projects.
 </template>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>

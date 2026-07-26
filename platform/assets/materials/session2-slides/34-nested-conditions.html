@@ -4,21 +4,20 @@
 <body>
 <div class="slide-container">
   <div class="bg-grid" data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1;"></div>
-  <div class="bg-glow-magenta" data-object="true" data-object-type="shape" style="position:absolute; left:-200px; top:-200px; z-index:1;"></div>
 
   <div class="chrome-topbar" data-object="true" data-object-type="textbox" style="z-index:10;">
     <span class="chrome-dot"></span>
-    <span>CONDITIONS // NESTED</span>
+    <span>CONDITIONS // NESTED CONDITIONS</span>
   </div>
 
   <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:140px; width:1400px; z-index:10;">
-    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#ec4899; letter-spacing:0.25em; margin-bottom:14px;">// CONDITIONS INSIDE CONDITIONS</div>
-    <div style="font-family:'Space Grotesk',sans-serif; font-size:80px; font-weight:700; color:#f8fafc; line-height:1.05; letter-spacing:-0.02em;">Nested Conditions.</div>
-    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:22px; color:#ec4899; direction:rtl; margin-top:6px;">شروط جوه شروط — لما القرار ي depend على أكتر من حاجة</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#fb923c; letter-spacing:0.25em; margin-bottom:14px;">// ADVANCED</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:64px; font-weight:700; color:#f8fafc; line-height:1.02; letter-spacing:-0.02em;">Conditions <span style="color:#fb923c;">inside</span> conditions.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:24px; color:#94a3b8; direction:rtl; margin-top:8px;">شروط جوا شروط — شرط متشعب</div>
   </div>
 
-  <!-- Code example -->
-  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:360px; width:880px; height:580px; z-index:5;">
+  <!-- Code window -->
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:1050px; height:540px; z-index:5;">
     <div class="code-window-header">
       <span class="code-dot code-dot-r"></span>
       <span class="code-dot code-dot-y"></span>
@@ -26,67 +25,74 @@
       <span class="code-window-title">nested.py</span>
     </div>
   </div>
-  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:430px; width:820px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:22px; line-height:1.6;">
-    <div><span class="tok-com"># Real example: theme park entry</span></div>
-    <div><span class="tok-var">age</span> <span class="tok-op">=</span> <span class="tok-num">16</span></div>
-    <div><span class="tok-var">has_ticket</span> <span class="tok-op">=</span> <span style="color:#ec4899;">True</span></div>
-    <div style="height:6px;"></div>
-    <div><span class="tok-kw">if</span> <span class="tok-var">age</span> <span class="tok-op">&gt;=</span> <span class="tok-num">18</span><span class="tok-op">:</span></div>
-    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"You can enter alone"</span>)</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:400px; width:990px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:24px; line-height:1.6;">
+    <div><span class="tok-var">age</span> <span class="tok-op">=</span> <span class="tok-num">25</span></div>
+    <div><span class="tok-var">has_ticket</span> <span class="tok-op">=</span> <span class="tok-kw">True</span></div>
+    <div style="height:10px;"></div>
+    <div><span class="tok-kw">if</span> <span class="tok-var">age</span> <span class="tok-op">>=</span> <span class="tok-num">18</span><span class="tok-op">:</span></div>
+    <div style="padding-left:40px;"><span class="tok-kw">if</span> <span class="tok-var">has_ticket</span><span class="tok-op">:</span></div>
+    <div style="padding-left:80px;"><span class="tok-fn">print</span>(<span class="tok-str">"Welcome to the concert!"</span>)</div>
+    <div style="padding-left:40px;"><span class="tok-kw">else</span><span class="tok-op">:</span></div>
+    <div style="padding-left:80px;"><span class="tok-fn">print</span>(<span class="tok-str">"Buy a ticket first."</span>)</div>
     <div><span class="tok-kw">else</span><span class="tok-op">:</span></div>
-    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-com"># nested: check ticket</span></div>
-    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">if</span> <span class="tok-var">has_ticket</span><span class="tok-op">:</span></div>
-    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Enter with guardian"</span>)</div>
-    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">else</span><span class="tok-op">:</span></div>
-    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Buy a ticket first"</span>)</div>
-    <div style="height:6px;"></div>
-    <div><span class="tok-out">→ Enter with guardian</span></div>
+    <div style="padding-left:40px;"><span class="tok-fn">print</span>(<span class="tok-str">"Too young for this concert."</span>)</div>
+    <div style="height:20px;"></div>
+    <div><span class="tok-com"># Each level = 4 more spaces</span></div>
+    <div><span class="tok-com"># Outer if → inner if → action</span></div>
   </div>
 
-  <!-- Right: explanation -->
-  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:360px; width:860px; height:580px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:20px; z-index:5;"></div>
-  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1010px; top:390px; width:800px; z-index:10;">
-    <div style="font-family:'JetBrains Mono',monospace; font-size:20px; color:#ec4899; letter-spacing:0.2em; margin-bottom:16px;">// THE FLOW</div>
+  <!-- Right: visual diagram -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1180px; top:340px; width:660px; height:540px; background:rgba(251,146,60,0.06); border:1px solid rgba(251,146,60,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1210px; top:370px; width:600px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:20px; color:#fb923c; letter-spacing:0.2em; margin-bottom:20px;">// THE TREE</div>
 
-    <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#f8fafc; line-height:1.8;">
-      <div><span style="color:#facc15;">1.</span> Is age >= 18? → <span style="color:#ec4899;">No</span> (16)</div>
-      <div>&nbsp;&nbsp;→ Go to <span style="color:#facc15;">else</span></div>
-      <div style="height:6px;"></div>
-      <div><span style="color:#facc15;">2.</span> Inside else: Is has_ticket True? → <span style="color:#a3e635;">Yes</span></div>
-      <div>&nbsp;&nbsp;→ Print "Enter with guardian"</div>
-      <div style="height:6px;"></div>
-      <div><span style="color:#facc15;">3.</span> Done — skips inner else</div>
+    <div style="text-align:center; margin-bottom:12px;">
+      <div style="display:inline-block; padding:10px 20px; background:rgba(251,146,60,0.15); border:2px solid #fb923c; border-radius:10px; font-family:'JetBrains Mono',monospace; font-size:18px; color:#fb923c;">age >= 18?</div>
+    </div>
+    <div style="display:flex; justify-content:space-between; padding:0 20px; margin-bottom:8px;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:16px; color:#a3e635;">True ↙</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:16px; color:#ec4899;">↘ False</div>
+    </div>
+    <div style="display:flex; justify-content:space-between; padding:0 10px;">
+      <div style="text-align:center;">
+        <div style="padding:8px 16px; background:rgba(251,146,60,0.15); border:2px solid #fb923c; border-radius:8px; font-family:'JetBrains Mono',monospace; font-size:16px; color:#fb923c;">has_ticket?</div>
+        <div style="display:flex; justify-content:space-between; padding:0 5px; margin-top:6px;">
+          <div style="font-size:14px; color:#a3e635;">T ↙</div>
+          <div style="font-size:14px; color:#ec4899;">↘ F</div>
+        </div>
+        <div style="display:flex; gap:12px; margin-top:6px;">
+          <div style="padding:6px 10px; background:rgba(163,230,53,0.15); border:1px solid #a3e635; border-radius:6px; font-family:'JetBrains Mono',monospace; font-size:14px; color:#a3e635;">Welcome!</div>
+          <div style="padding:6px 10px; background:rgba(236,72,153,0.15); border:1px solid #ec4899; border-radius:6px; font-family:'JetBrains Mono',monospace; font-size:14px; color:#ec4899;">Buy ticket</div>
+        </div>
+      </div>
+      <div style="padding:8px 14px; background:rgba(236,72,153,0.15); border:1px solid #ec4899; border-radius:8px; font-family:'JetBrains Mono',monospace; font-size:14px; color:#ec4899; align-self:flex-start;">Too young</div>
     </div>
 
-    <div style="height:20px; border-bottom:1px solid #2a3352; margin:16px 0;"></div>
-
-    <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:#facc15; letter-spacing:0.15em; margin-bottom:10px;">// ⚠️ WARNING</div>
-    <div style="font-family:'Space Grotesk',sans-serif; font-size:20px; color:#cbd5e1; line-height:1.5;">
-      Nested conditions work, but too many levels<br>
-      make code hard to read. If you have 3+ levels,<br>
-      consider using <span class="mono" style="color:#a3e635;">and/or</span> to combine conditions.
-    </div>
-
-    <div style="margin-top:16px; padding:12px 16px; background:rgba(163,230,53,0.1); border-left:4px solid #a3e635; border-radius:8px;">
-      <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; color:#a3e635; font-weight:600;">Better alternative:</div>
-      <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:#f8fafc; margin-top:4px;">if age >= 18 or has_ticket:</div>
+    <div style="margin-top:24px; padding:12px 16px; background:rgba(250,204,21,0.1); border-left:4px solid #facc15; border-radius:8px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:16px; color:#f8fafc; line-height:1.4;">Keep nesting to <span style="color:#ec4899;">max 2 levels</span>. Deeper = hard to read. Use <span class="mono" style="color:#a3e635;">and</span> instead when possible.</div>
     </div>
   </div>
 
   <div class="chrome-brand">PY_BOOTCAMP // S02</div>
-  <div class="chrome-pagenum">34 / 49</div>
+  <div class="chrome-pagenum">34 / 50</div>
 </div>
 
 <template data-slide-notes>
-Nested conditions are real, but teach students to prefer `and/or` over deep nesting.
+This is the hardest concept in conditions. Go slow.
 
-Walk through the code: "age = 16, first if says 16 >= 18? No. So we go to else. Inside else — ANOTHER if. has_ticket? True. Print 'Enter with guardian'."
+Build the tree on the board step by step:
+1. "First question: are you 18+?"
+2. "If YES → second question: do you have a ticket?"
+3. "If YES to both → Welcome!"
+4. "If 18+ but no ticket → Buy a ticket."
+5. "If under 18 → Too young (don't even ask about ticket)."
 
-Visual: draw the nesting on the board. Show the indentation levels.
+Key insight: "الشرط الجواه مش هيشتغل غير لو الشرط البراني True."
 
-Warning: "لو عملت if جوه if جوه if — الكود بيبقى صعب أوي تقرأه. الحل: استخدم and/or عشان تدمج الشروط."
+Rule of thumb: "Nested if مقبول لمستويين بس. لو أكتر من كده → استخدم and/or بدل ما تعمّق."
 
-Example of the alternative: `if age >= 18 or has_ticket:` — same logic, one line, cleaner.
+Common mistake: indentation errors. "الـ if التاني لازم يكون داخل الـ if الأولاني بالظبط — 8 spaces مش 4."
 </template>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,306 +1,98 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Python Bootcamp — Session 2 Viewer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python Bootcamp - Slides</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&family=Cairo:wght@400;600;700&display=swap');
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html, body {
-    width: 100%; height: 100%;
-    overflow: hidden;
-    background: #0a0e1a;
-    font-family: 'JetBrains Mono', monospace;
-    color: #f8fafc;
-    user-select: none;
-  }
-
-  #viewport {
-    position: fixed;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #0a0e1a;
-    overflow: hidden;
-  }
-
-  #slide-frame {
-    border: none;
-    background: #0a0e1a;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 1920px;
-    height: 1080px;
-    transform-origin: top left;
-  }
-
-  #bar {
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 24px;
-    background: rgba(10,14,26,0.95);
-    backdrop-filter: blur(12px);
-    border-top: 1px solid rgba(34,211,238,0.15);
-    z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  #viewport:hover ~ #bar, #bar:hover { opacity: 1; }
-
-  #bar button {
-    background: none;
-    border: 1px solid rgba(34,211,238,0.3);
-    color: #22d3ee;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 14px;
-    padding: 6px 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  #bar button:hover { background: rgba(34,211,238,0.12); border-color: #22d3ee; }
-  #bar button:active { transform: scale(0.96); }
-
-  #page-info {
-    font-size: 15px;
-    color: #94a3b8;
-    letter-spacing: 0.12em;
-  }
-  #page-info .current { color: #22d3ee; font-weight: 700; }
-
-  #hint {
-    position: fixed;
-    top: 16px; left: 50%;
-    transform: translateX(-50%);
-    font-size: 13px;
-    color: #64748b;
-    letter-spacing: 0.08em;
-    z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.4s;
-    pointer-events: none;
-  }
-  #viewport:hover ~ #hint, #hint.show { opacity: 1; }
-
-  #thumbs-toggle {
-    position: fixed;
-    top: 16px; right: 20px;
-    background: rgba(10,14,26,0.85);
-    border: 1px solid rgba(34,211,238,0.25);
-    color: #22d3ee;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    padding: 6px 14px;
-    border-radius: 6px;
-    cursor: pointer;
-    z-index: 1001;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  #viewport:hover ~ #thumbs-toggle, #thumbs-toggle:hover { opacity: 1; }
-
-  #thumbs-panel {
-    position: fixed;
-    top: 0; right: 0;
-    width: 320px;
-    height: 100vh;
-    background: rgba(10,14,26,0.98);
-    border-left: 1px solid rgba(34,211,238,0.15);
-    z-index: 1100;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    overflow-y: auto;
-    padding: 60px 16px 20px;
-  }
-  #thumbs-panel.open { transform: translateX(0); }
-
-  .thumb {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 10px 12px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.15s;
-    margin-bottom: 4px;
-  }
-  .thumb:hover { background: rgba(34,211,238,0.08); }
-  .thumb.active { background: rgba(34,211,238,0.15); border: 1px solid rgba(34,211,238,0.3); }
-  .thumb-num { font-size: 13px; color: #64748b; min-width: 28px; text-align: right; }
-  .thumb.active .thumb-num { color: #22d3ee; }
-  .thumb-title { font-size: 13px; color: #94a3b8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .thumb.active .thumb-title { color: #f8fafc; }
-
-  #thumbs-panel::-webkit-scrollbar { width: 6px; }
-  #thumbs-panel::-webkit-scrollbar-track { background: transparent; }
-  #thumbs-panel::-webkit-scrollbar-thumb { background: rgba(34,211,238,0.2); border-radius: 3px; }
-
-  #loading {
-    position: fixed;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #0a0e1a;
-    z-index: 2000;
-    font-size: 18px;
-    color: #22d3ee;
-    letter-spacing: 0.1em;
-  }
-  #loading.hidden { display: none; }
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;background:#0a0e1a;color:#f8fafc;font-family:'Space Grotesk',system-ui,sans-serif}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:center;gap:12px;padding:0 20px;height:52px;background:rgba(10,14,26,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav .brand{font-family:'JetBrains Mono',monospace;font-size:13px;color:#22d3ee;letter-spacing:.12em;position:absolute;left:20px;font-weight:600}
+.nav .brand em{font-style:normal;color:#64748b}
+.nav button{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#f8fafc;font-size:13px;padding:5px 16px;border-radius:6px;cursor:pointer;transition:all .12s;font-family:'Space Grotesk',sans-serif;font-weight:500}
+.nav button:hover{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.2)}
+.nav button:active{transform:scale(.97)}
+.nav button:disabled{opacity:.2;cursor:default;transform:none}
+.nav .counter{font-family:'JetBrains Mono',monospace;font-size:13px;color:#94a3b8;min-width:90px;text-align:center;font-variant-numeric:tabular-nums;background:rgba(255,255,255,.04);padding:4px 12px;border-radius:5px}
+.nav .kbd{font-size:11px;color:#334155;position:absolute;right:20px}
+.nav .kbd kbd{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);padding:1px 6px;border-radius:3px;font-family:'JetBrains Mono',monospace;font-size:10px}
+.frame-wrap{position:absolute;top:52px;left:0;right:0;bottom:48px;display:flex;align-items:flex-start;justify-content:center;background:#000;overflow:hidden}
+.frame-wrap iframe{border:none;background:#0a0e1a;transform-origin:top center;display:block;flex-shrink:0}
+.bottom{position:fixed;bottom:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:48px;background:rgba(10,14,26,.97);backdrop-filter:blur(14px);border-top:1px solid rgba(255,255,255,.08)}
+.bottom .progress-wrap{flex:1;max-width:500px;margin:0 auto}
+.bottom .progress-track{width:100%;height:3px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden;cursor:pointer;position:relative}
+.bottom .progress-fill{height:100%;background:linear-gradient(90deg,#22d3ee,#a3e635);border-radius:2px;transition:width .2s}
+.bottom .progress-track:hover{height:5px}
+.bottom .notes-toggle{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#94a3b8;font-size:12px;padding:4px 12px;border-radius:5px;cursor:pointer;font-family:'JetBrains Mono',monospace;transition:all .12s}
+.bottom .notes-toggle:hover{color:#f8fafc;background:rgba(255,255,255,.1)}
+.bottom .notes-toggle.active{color:#22d3ee;border-color:#22d3ee}
+.index-btn{position:fixed;bottom:56px;right:20px;z-index:1002;width:42px;height:42px;border-radius:50%;background:rgba(34,211,238,.15);border:1px solid rgba(34,211,238,.3);color:#22d3ee;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.index-btn:hover{background:rgba(34,211,238,.25);transform:scale(1.1)}
+.index-panel{position:fixed;top:52px;right:0;bottom:48px;width:320px;background:rgba(10,14,26,.98);border-left:1px solid rgba(255,255,255,.1);z-index:1001;overflow-y:auto;padding:16px 12px;transform:translateX(100%);transition:transform .2s ease;backdrop-filter:blur(20px)}
+.index-panel.open{transform:translateX(0)}
+.index-panel .idx-title{font-family:'JetBrains Mono',monospace;font-size:12px;color:#64748b;letter-spacing:.15em;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.06)}
+.index-item{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:6px;cursor:pointer;transition:background .12s;margin-bottom:2px}
+.index-item:hover{background:rgba(255,255,255,.06)}
+.index-item.active{background:rgba(34,211,238,.1)}
+.index-item .idx-num{font-family:'JetBrains Mono',monospace;font-size:11px;color:#64748b;min-width:26px;text-align:right}
+.index-item.active .idx-num{color:#22d3ee}
+.index-item .idx-name{font-size:13px;color:#cbd5e1}
+.index-item.active .idx-name{color:#f8fafc}
+.notes-panel{position:fixed;left:0;right:0;bottom:48px;height:200px;background:rgba(10,14,26,.98);border-top:1px solid rgba(255,255,255,.1);backdrop-filter:blur(20px);z-index:1001;transform:translateY(100%);transition:transform .2s ease;padding:16px 24px;overflow-y:auto}
+.notes-panel.open{transform:translateY(0)}
+.notes-panel .notes-header{font-family:'JetBrains Mono',monospace;font-size:11px;color:#64748b;letter-spacing:.15em;margin-bottom:10px}
+.notes-panel .notes-body{font-size:14px;color:#cbd5e1;line-height:1.7}
+.loading{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#0a0e1a;z-index:2000;flex-direction:column;gap:12px}
+.loading .spinner{width:32px;height:32px;border:3px solid rgba(34,211,238,.2);border-top-color:#22d3ee;border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading .text{font-family:'JetBrains Mono',monospace;font-size:13px;color:#22d3ee;letter-spacing:.1em}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:rgba(255,255,255,.12);border-radius:3px}
 </style>
 </head>
 <body>
-
-<div id="loading">Loading slides...</div>
-
-<div id="viewport">
-  <iframe id="slide-frame" scrolling="no" frameborder="0"></iframe>
+<div class="loading" id="loading"><div class="spinner"></div><div class="text">Loading slides...</div></div>
+<div class="nav">
+  <span class="brand" id="brand">PY <em>_BOOTCAMP</em></span>
+  <button id="prevBtn" onclick="go(-1)">&#9664; Prev</button>
+  <span class="counter" id="counter"></span>
+  <button id="nextBtn" onclick="go(1)">Next &#9654;</button>
+  <span class="kbd"><kbd>&#8592;</kbd> <kbd>&#8594;</kbd> nav &nbsp; <kbd>F</kbd> fullscreen &nbsp; <kbd>G</kbd> grid</span>
 </div>
-
-<div id="bar">
-  <button id="btn-prev">◀ Prev</button>
-  <span id="page-info"><span class="current" id="page-num">01</span> / <span id="page-total">50</span></span>
-  <button id="btn-next">Next ▶</button>
+<div class="frame-wrap" id="wrap"><iframe id="frame" src="" allowfullscreen></iframe></div>
+<div class="bottom">
+  <button class="notes-toggle" id="notesBtn" onclick="toggleNotes()">Notes</button>
+  <div class="progress-wrap"><div class="progress-track" id="progressTrack" onclick="seek(event)"><div class="progress-fill" id="progressFill"></div></div></div>
+  <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#334155" id="sectionLabel"></span>
 </div>
-
-<div id="hint">← → arrows &nbsp;|&nbsp; click left/right &nbsp;|&nbsp; Esc thumbnails</div>
-
-<button id="thumbs-toggle">☰ Slides</button>
-<div id="thumbs-panel"></div>
-
+<button class="index-btn" id="indexBtn" onclick="toggleIndex()" title="Slide index">&#9776;</button>
+<div class="index-panel" id="indexPanel"></div>
+<div class="notes-panel" id="notesPanel"><div class="notes-header">// INSTRUCTOR SCRIPT</div><div class="notes-body" id="notesBody"></div></div>
 <script>
-const SLIDES = [
-  "01-cover.html","02-hook.html","03-review-mcq-1.html","04-review-mcq-2.html",
-  "05-review-mcq-3.html","06-timeline.html","07-operators-intro.html",
-  "08-arithmetic-operators.html","09-arithmetic-live-coding.html","10-mcq-arithmetic.html",
-  "11-assignment-operators.html","12-assignment-live-coding.html","13-mcq-assignment.html",
-  "14-comparison-operators.html","15-comparison-live-coding.html","16-predict-comparison.html",
-  "17-logical-operators.html","18-logical-live-coding.html","19-mcq-logical.html",
-  "20-membership-operators.html","21-membership-live-coding.html","22-identity-operators.html",
-  "23-identity-vs-equality.html","24-mcq-identity.html","25-coding-challenge-operators.html",
-  "26-break.html","27-conditions-intro.html","28-real-life-conditions.html",
-  "29-boolean-logic.html","30-if-statement.html","31-if-else.html",
-  "32-if-elif-else.html","33-if-live-coding.html","34-nested-conditions.html",
-  "35-mcq-conditions-1.html","36-mcq-conditions-2.html","37-coding-challenge-conditions.html",
-  "38-project-calculator.html","39-project-bmi.html","40-project-grade.html",
-  "41-project-password.html","42-exercises-easy.html","43-exercises-medium.html",
-  "44-exercises-challenge.html","45-common-mistakes.html","46-homework.html",
-  "47-final-quiz.html","48-recap.html","49-closing.html"
-];
-
-const TITLES = [
-  "Cover","Hook","Review MCQ 1","Review MCQ 2","Review MCQ 3","Timeline",
-  "Operators Intro","Arithmetic Operators","Arithmetic Live Coding","MCQ Arithmetic",
-  "Assignment Operators","Assignment Live Coding","MCQ Assignment",
-  "Comparison Operators","Comparison Live Coding","Predict Comparison",
-  "Logical Operators","Logical Live Coding","MCQ Logical",
-  "Membership Operators","Membership Live Coding",
-  "Identity Operators","Identity vs Equality","MCQ Identity",
-  "Coding Challenge — Operators","Break",
-  "Conditions Intro","Real-Life Conditions","Boolean Logic",
-  "If Statement","If/Else","If/Elif/Else",
-  "If Live Coding","Nested Conditions",
-  "MCQ Conditions 1","MCQ Conditions 2","Coding Challenge — Conditions",
-  "Project: Calculator","Project: BMI","Project: Grade","Project: Password",
-  "Exercises: Easy","Exercises: Medium","Exercises: Challenge",
-  "Common Mistakes","Homework","Final Quiz","Recap","Closing"
-];
-
-let current = 0;
-const frame = document.getElementById("slide-frame");
-const pageNum = document.getElementById("page-num");
-const pageTotal = document.getElementById("page-total");
-const thumbsPanel = document.getElementById("thumbs-panel");
-const loading = document.getElementById("loading");
-
-pageTotal.textContent = SLIDES.length;
-
-// Build thumbnails
-SLIDES.forEach((f, i) => {
-  const d = document.createElement("div");
-  d.className = "thumb" + (i === 0 ? " active" : "");
-  d.innerHTML = `<span class="thumb-num">${String(i+1).padStart(2,"0")}</span><span class="thumb-title">${TITLES[i]}</span>`;
-  d.onclick = () => { goTo(i); toggleThumbs(false); };
-  thumbsPanel.appendChild(d);
-});
-
-// Scale iframe to fit viewport
-function resize() {
-  const vw = window.innerWidth;
-  const vh = window.innerHeight;
-  const scale = Math.min(vw / 1920, vh / 1080);
-  const left = (vw - 1920 * scale) / 2;
-  const top = (vh - 1080 * scale) / 2;
-  frame.style.transform = `translate(${left}px, ${top}px) scale(${scale})`;
-}
-
-function loadSlide(index) {
-  const file = SLIDES[index];
-  frame.src = "session2-slides/" + file + "?v=" + Date.now();
-  pageNum.textContent = String(index + 1).padStart(2, "0");
-  document.querySelectorAll(".thumb").forEach((t, i) => {
-    t.classList.toggle("active", i === index);
-  });
-}
-
-function goTo(index) {
-  if (index < 0 || index >= SLIDES.length) return;
-  current = index;
-  loadSlide(current);
-}
-
-function next() { goTo(current + 1); }
-function prev() { goTo(current - 1); }
-
-// Keyboard
-document.addEventListener("keydown", e => {
-  if (e.key === "ArrowRight" || e.key === " ") { e.preventDefault(); next(); }
-  else if (e.key === "ArrowLeft") { e.preventDefault(); prev(); }
-  else if (e.key === "Home") { e.preventDefault(); goTo(0); }
-  else if (e.key === "End") { e.preventDefault(); goTo(SLIDES.length - 1); }
-  else if (e.key === "Escape") { toggleThumbs(); }
-});
-
-// Click
-document.getElementById("viewport").addEventListener("click", e => {
-  if (e.target.closest("button")) return;
-  const x = e.clientX;
-  if (x < window.innerWidth * 0.35) prev();
-  else if (x > window.innerWidth * 0.65) next();
-});
-
-// Buttons
-document.getElementById("btn-prev").onclick = prev;
-document.getElementById("btn-next").onclick = next;
-
-// Thumbnails
-function toggleThumbs(force) {
-  const open = force !== undefined ? force : !thumbsPanel.classList.contains("open");
-  thumbsPanel.classList.toggle("open", open);
-}
-document.getElementById("thumbs-toggle").onclick = () => toggleThumbs();
-
-// Iframe load
-frame.onload = () => { loading.classList.add("hidden"); };
-
-// Init
-window.addEventListener("resize", resize);
-resize();
-loadSlide(0);
-
-const hint = document.getElementById("hint");
-hint.classList.add("show");
-setTimeout(() => hint.classList.remove("show"), 3500);
+const params=new URLSearchParams(window.location.search);
+const SESSION_NUM=parseInt(params.get('num'))||1;
+const SLIDES_DIR='session'+SESSION_NUM+'-slides/';
+let SLIDES=[],cur=0,total=0;
+const SLIDE_W=1920,SLIDE_H=1080;
+const frame=document.getElementById('frame'),counter=document.getElementById('counter'),prevBtn=document.getElementById('prevBtn'),nextBtn=document.getElementById('nextBtn'),wrap=document.getElementById('wrap'),progressFill=document.getElementById('progressFill'),sectionLabel=document.getElementById('sectionLabel'),indexPanel=document.getElementById('indexPanel'),notesPanel=document.getElementById('notesPanel'),notesBody=document.getElementById('notesBody'),loading=document.getElementById('loading'),brand=document.getElementById('brand');
+brand.innerHTML='PY <em>_BOOTCAMP</em> // S'+String(SESSION_NUM).padStart(2,'0');
+document.title='Python Bootcamp - Session '+SESSION_NUM;
+async function init(){try{const r=await fetch(SLIDES_DIR+'manifest.json');if(!r.ok)throw new Error('Manifest not found');const d=await r.json();if(Array.isArray(d)){SLIDES=d.map(i=>({f:i.file,n:i.title||i.file.replace('.html',''),s:i.section||''}))}else if(d.playlist){SLIDES=d.playlist.map(f=>({f:f,n:f.replace('.html','').replace(/^\d+-/,'').replace(/-/g,' '),s:''}))}if(!SLIDES.length){loading.innerHTML='<div class="text" style="color:#f87171">No slides found for Session '+SESSION_NUM+'</div>';return}total=SLIDES.length;buildIndex();loadSlide(0);loading.classList.add('hidden')}catch(e){loading.innerHTML='<div class="text" style="color:#f87171">Failed to load Session '+SESSION_NUM+'<br><small>'+e.message+'</small></div>'}}
+function loadSlide(){frame.src=SLIDES_DIR+SLIDES[cur].f;counter.textContent=(cur+1)+' / '+total;prevBtn.disabled=cur===0;nextBtn.disabled=cur===total-1;progressFill.style.width=((cur/(total-1))*100)+'%';sectionLabel.textContent=SLIDES[cur].s||'';updateIndex();loadNotes()}
+function scaleFrame(){const ww=wrap.clientWidth,wh=wrap.clientHeight;const s=Math.min(ww/SLIDE_W,wh/SLIDE_H,1);frame.style.width=SLIDE_W+'px';frame.style.height=SLIDE_H+'px';frame.style.transform='scale('+s+')'}
+function go(d){const n=cur+d;if(n<0||n>=total)return;cur=n;loadSlide()}
+function seek(e){const r=e.currentTarget.getBoundingClientRect();cur=Math.round(((e.clientX-r.left)/r.width)*(total-1));loadSlide()}
+function toggleNotes(){notesPanel.classList.toggle('open');document.getElementById('notesBtn').classList.toggle('active')}
+function toggleIndex(){indexPanel.classList.toggle('open')}
+function loadNotes(){try{fetch(SLIDES_DIR+SLIDES[cur].f).then(r=>r.text()).then(html=>{const m=html.match(/<template data-slide-notes>([\s\S]*?)<\/template>/i);if(m){notesBody.innerHTML='<div style="white-space:pre-wrap">'+m[1].trim().replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\n/g,'<br>')+'</div>'}else{notesBody.innerHTML='<em style="color:#475569">No notes for this slide.</em>'}})}catch(e){notesBody.innerHTML=''}}
+function buildIndex(){let h='<div class="idx-title">SLIDE INDEX ('+total+')</div>';SLIDES.forEach((sl,i)=>{h+='<div class="index-item'+(i===cur?' active':'')+'" onclick="jumpTo('+i+')"><span class="idx-num">'+(i+1)+'</span><span class="idx-name">'+sl.n+'</span></div>'});indexPanel.innerHTML=h}
+function updateIndex(){indexPanel.querySelectorAll('.index-item').forEach((el,i)=>el.classList.toggle('active',i===cur));const a=indexPanel.querySelector('.index-item.active');if(a)a.scrollIntoView({block:'nearest',behavior:'smooth'})}
+function jumpTo(i){cur=i;loadSlide()}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();go(1)}if(e.key==='ArrowLeft'){e.preventDefault();go(-1)}if(e.key==='Home'){cur=0;loadSlide()}if(e.key==='End'){cur=total-1;loadSlide()}if(e.key==='f'||e.key==='F'){if(!document.fullscreenElement)document.documentElement.requestFullscreen();else document.exitFullscreen()}if(e.key==='g'||e.key==='G')toggleIndex();if(e.key==='Escape'){indexPanel.classList.remove('open');notesPanel.classList.remove('open');document.getElementById('notesBtn').classList.remove('active')}});
+let touchX=0;frame.addEventListener('touchstart',e=>{touchX=e.changedTouches[0].screenX});frame.addEventListener('touchend',e=>{const dx=e.changedTouches[0].screenX-touchX;if(Math.abs(dx)>50)go(dx<0?1:-1)});
+frame.onload=scaleFrame;window.addEventListener('resize',scaleFrame);init();
 </script>
 </body>
 </html>

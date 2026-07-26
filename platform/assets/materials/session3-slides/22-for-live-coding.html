@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="stylesheet" href="../assets/theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-cyan"></div>
+
+<div class="kicker" style="position:absolute;top:100px;left:80px;">LIVE CODING // FOR LOOP — TYPE ALONG</div>
+<div class="arabic" style="position:absolute;top:140px;left:80px;font-size:24px;color:var(--text-lo);">برمجة مباشرة — الحلقة التكرارية</div>
+<div class="code-window" style="position:absolute;left:80px;top:220px;width:760px;">
+<div class="code-window-header">
+<div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+<span class="code-window-title">for-basics.py</span>
+</div>
+<pre style="padding:24px 28px;margin:0;font-size:20px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span class="tok-com"># Basic for loop</span>
+<span class="tok-kw">for</span> <span class="tok-var">i</span> <span class="tok-kw">in</span> <span class="tok-fn">range</span>(<span class="tok-num">5</span>):
+    <span class="tok-kw">print</span>(<span class="tok-str">f"Iteration {i}"</span>)
+
+<span class="tok-com"># Count 1 to 10</span>
+<span class="tok-kw">for</span> <span class="tok-var">num</span> <span class="tok-kw">in</span> <span class="tok-fn">range</span>(<span class="tok-num">1</span>, <span class="tok-num">11</span>):
+    <span class="tok-kw">print</span>(<span class="tok-var">num</span>)</pre>
+</div><div class="code-window" style="position:absolute;left:calc(80px + 760px + 40px);top:220px;width:760px;">
+<div class="code-window-header">
+<div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+<span class="code-window-title">for-step.py</span>
+</div>
+<pre style="padding:24px 28px;margin:0;font-size:20px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span class="tok-com"># Count by 2s</span>
+<span class="tok-kw">for</span> <span class="tok-var">i</span> <span class="tok-kw">in</span> <span class="tok-fn">range</span>(<span class="tok-num">0</span>, <span class="tok-num">20</span>, <span class="tok-num">2</span>):
+    <span class="tok-kw">print</span>(<span class="tok-var">i</span>, <span class="tok-var">end</span>=<span class="tok-str">" "</span>)
+<span class="tok-com"># 0 2 4 6 8 10 12 14 16 18</span>
+
+<span class="tok-com"># Countdown</span>
+<span class="tok-kw">for</span> <span class="tok-var">i</span> <span class="tok-kw">in</span> <span class="tok-fn">range</span>(<span class="tok-num">5</span>, <span class="tok-num">0</span>, <span class="tok-num">-1</span>):
+    <span class="tok-kw">print</span>(<span class="tok-var">i</span>, <span class="tok-str">"..."</span>)
+<span class="tok-kw">print</span>(<span class="tok-str">"Launch!"</span>)</pre>
+</div>
+<div style="position:absolute;bottom:80px;left:80px;right:80px;padding:20px 28px;border-radius:14px;background:rgba(34,211,238,0.06);border:1px solid rgba(34,211,238,0.2);">
+<span style="font-size:22px;color:var(--text-mid);">💡 <strong style="color:var(--neon-cyan);">Challenge:</strong> Print all even numbers from 1 to 50. Then odd numbers from 100 to 80.</span>
+</div>
+<div class="chrome-brand">PY_BOOTCAMP // S03</div>
+<div class="chrome-pagenum">22 / 68</div>
+<template data-slide-notes>Students type along. Basic for, counting, step, countdown.</template>
+</div>
+</body>
+</html>

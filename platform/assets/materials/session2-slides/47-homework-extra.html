@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><link rel="stylesheet" href="../assets/theme.css"></head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid" data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1;"></div>
+
+  <div class="chrome-topbar" data-object="true" data-object-type="textbox" style="z-index:10;">
+    <span class="chrome-dot"></span>
+    <span>HOMEWORK // UNIVERSITY + LOGIN</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:130px; width:1400px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#facc15; letter-spacing:0.25em; margin-bottom:14px;">// HOMEWORK · 2 MORE TASKS</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:60px; font-weight:700; color:#f8fafc; line-height:1.02; letter-spacing:-0.02em;">More practice.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:24px; color:#94a3b8; direction:rtl; margin-top:8px;">واجب إضافي — تأكد إنك متقن الـ conditions</div>
+  </div>
+
+  <!-- Task: University Eligibility -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:1760px; height:310px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:350px; width:1700px; z-index:10;">
+    <div style="display:flex; align-items:center; gap:16px; margin-bottom:10px;">
+      <span class="chip chip-cyan">TASK 4</span>
+      <span style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:#f8fafc; font-weight:600;">University Eligibility Checker</span>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:20px; color:#cbd5e1; line-height:1.5;">Write a script to check if a student can be admitted. All three criteria must pass:</div>
+    <div style="display:flex; gap:60px; margin-top:12px;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:19px; color:#a3e635; line-height:1.8;">
+        <div>age &gt;= <span style="color:#facc15;">18</span></div>
+        <div>math_score &gt;= <span style="color:#facc15;">85</span></div>
+        <div>english_score &gt;= <span style="color:#facc15;">70</span></div>
+      </div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; color:#94a3b8; line-height:1.8;">
+        <div>Age must be at least 18</div>
+        <div>Math score must be 85 or above</div>
+        <div>English score must be 70 or above</div>
+      </div>
+    </div>
+    <div style="margin-top:14px; padding:12px 18px; background:rgba(255,255,255,0.03); border-radius:10px; font-family:'JetBrains Mono',monospace; font-size:17px; line-height:1.7;">
+      <div><span style="color:#22d3ee;">"Congratulations! You are eligible."</span> <span style="color:#64748b;"># when all three are True</span></div>
+      <div><span style="color:#ec4899;">"Sorry, you do not meet the criteria."</span> <span style="color:#64748b;"># when any one is False</span></div>
+    </div>
+  </div>
+
+  <!-- Bonus: Secure Login -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:680px; width:1760px; height:320px; background:rgba(250,204,21,0.06); border:1px dashed rgba(250,204,21,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:700px; width:1700px; z-index:10;">
+    <div style="display:flex; align-items:center; gap:16px; margin-bottom:10px;">
+      <span class="chip chip-yellow">BONUS CHALLENGE</span>
+      <span style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:#f8fafc; font-weight:600;">Secure Login System</span>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:20px; color:#cbd5e1; line-height:1.5;">Simulate a backend login. Hardcode these values:</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:19px; color:#a3e635; margin:8px 0 16px 20px;">user = <span style="color:#facc15;">"admin"</span> &nbsp;&nbsp;|&nbsp;&nbsp; pass = <span style="color:#facc15;">"123456"</span></div>
+
+    <div style="display:flex; gap:40px;">
+      <!-- Left: condition column -->
+      <div style="flex:1; padding:14px 18px; background:rgba(255,255,255,0.03); border-radius:10px;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:16px; color:#facc15; letter-spacing:0.12em; margin-bottom:10px;">CONDITION</div>
+        <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:#cbd5e1; line-height:2;">
+          <div>user == "admin" <span style="color:#a3e635;">and</span> pass == "123456"</div>
+          <div>user != "admin"</div>
+          <div>pass != "123456"</div>
+        </div>
+      </div>
+      <!-- Right: output column -->
+      <div style="flex:1; padding:14px 18px; background:rgba(255,255,255,0.03); border-radius:10px;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:16px; color:#facc15; letter-spacing:0.12em; margin-bottom:10px;">OUTPUT</div>
+        <div style="font-family:'JetBrains Mono',monospace; font-size:18px; line-height:2;">
+          <div><span style="color:#a3e635;">"Welcome Admin"</span></div>
+          <div><span style="color:#ec4899;">"User Not Found"</span></div>
+          <div><span style="color:#ec4899;">"Wrong Password"</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S02</div>
+  <div class="chrome-pagenum">47 / 50</div>
+</div>
+
+<template data-slide-notes>
+Two more homework tasks to reinforce conditions.
+
+Task 4 — University Eligibility Checker:
+- Three inputs: age, math_score, english_score
+- All three conditions must be True using `and`
+- "الواجب ده محاكاة لتسجيل جامعي. لازم الثلاث شروط تبقى صحيحة."
+- Expected: `if age >= 18 and math_score >= 85 and english_score >= 70:`
+- Single `if/else` — no elif needed
+
+Bonus — Secure Login System:
+- Hardcode user = "admin", pass = "123456"
+- Three cases: both correct, wrong user, wrong pass
+- Needs nested `if/else` or `and` combinations
+- "ده تحدٍّي إضافي. بيعلّمك إزاي تدمج شروط متداخلة."
+- Good bridge to more complex condition logic
+</template>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

@@ -4,97 +4,88 @@
 <body>
 <div class="slide-container">
   <div class="bg-grid" data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1;"></div>
-  <div class="bg-glow-cyan" data-object="true" data-object-type="shape" style="position:absolute; left:-200px; top:-200px; z-index:1;"></div>
 
   <div class="chrome-topbar" data-object="true" data-object-type="textbox" style="z-index:10;">
     <span class="chrome-dot"></span>
-    <span>CONDITIONS // IF · ELSE</span>
+    <span>CONDITIONS // IF / ELSE</span>
   </div>
 
-  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:140px; width:1400px; z-index:10;">
-    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#22d3ee; letter-spacing:0.25em; margin-bottom:14px;">// FAMILY 02 OF 03</div>
-    <div style="font-family:'Space Grotesk',sans-serif; font-size:88px; font-weight:700; color:#f8fafc; line-height:1; letter-spacing:-0.02em;"><span class="mono" style="color:#ec4899;">if</span> / <span class="mono" style="color:#facc15;">else</span></div>
-    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:#cbd5e1; margin-top:14px;">Two paths — one for True, one for False.</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:120px; width:1400px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:#22d3ee; letter-spacing:0.25em; margin-bottom:10px;">// TWO PATHS</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:64px; font-weight:700; color:#f8fafc; line-height:1.02; letter-spacing:-0.02em;">If <span style="color:#a3e635;">this</span>, else <span style="color:#ec4899;">that</span>.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:22px; color:#94a3b8; direction:rtl; margin-top:6px;">لو ده — غير كده — عمل تاني</div>
   </div>
 
-  <!-- Left: if alone -->
-  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:870px; height:360px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:20px; z-index:5;"></div>
-  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:360px; width:810px; z-index:10;">
-    <div style="font-family:'JetBrains Mono',monospace; font-size:20px; color:#ec4899; letter-spacing:0.2em; margin-bottom:12px;">// IF ALONE — ONE PATH</div>
-    <div class="code-window" style="width:810px; height:240px;">
-      <div class="code-window-header">
-        <span class="code-dot code-dot-r"></span>
-        <span class="code-dot code-dot-y"></span>
-        <span class="code-dot code-dot-g"></span>
-        <span class="code-window-title">if_only.py</span>
-      </div>
-      <div style="padding:20px 24px; font-family:'JetBrains Mono',monospace; font-size:22px; line-height:1.6;">
-        <div><span class="tok-kw">if</span> <span class="tok-var">rainy</span><span class="tok-op">:</span></div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Take umbrella"</span>)</div>
-        <div style="height:12px;"></div>
-        <div style="color:#64748b; font-size:18px;"># Not rainy? → nothing happens</div>
-        <div style="color:#64748b; font-size:18px;"># No else needed</div>
-      </div>
+  <!-- Full-width code window -->
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:300px; width:1760px; height:480px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">if_else.py</span>
     </div>
   </div>
-
-  <!-- Right: if/else -->
-  <div data-object="true" data-object-type="shape" style="position:absolute; left:970px; top:340px; width:870px; height:360px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.35); border-radius:20px; z-index:5;"></div>
-  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1000px; top:360px; width:810px; z-index:10;">
-    <div style="font-family:'JetBrains Mono',monospace; font-size:20px; color:#a3e635; letter-spacing:0.2em; margin-bottom:12px;">// IF / ELSE — TWO PATHS</div>
-    <div class="code-window" style="width:810px; height:240px;">
-      <div class="code-window-header">
-        <span class="code-dot code-dot-r"></span>
-        <span class="code-dot code-dot-y"></span>
-        <span class="code-dot code-dot-g"></span>
-        <span class="code-window-title">if_else.py</span>
-      </div>
-      <div style="padding:20px 24px; font-family:'JetBrains Mono',monospace; font-size:22px; line-height:1.6;">
-        <div><span class="tok-kw">if</span> <span class="tok-var">rainy</span><span class="tok-op">:</span></div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Take umbrella"</span>)</div>
-        <div><span class="tok-kw">else</span><span class="tok-op">:</span></div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Wear sunglasses"</span>)</div>
-      </div>
-    </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:356px; width:1700px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:20px; line-height:1.48;">
+    <div><span class="tok-var">age</span> <span class="tok-op">=</span> <span class="tok-num">15</span></div>
+    <div><span class="tok-kw">if</span> <span class="tok-var">age</span> <span class="tok-op">>=</span> <span class="tok-num">18</span><span class="tok-op">:</span></div>
+    <div style="padding-left:36px;"><span class="tok-fn">print</span>(<span class="tok-str">"You can vote!"</span>)</div>
+    <div><span class="tok-kw">else</span><span class="tok-op">:</span></div>
+    <div style="padding-left:36px;"><span class="tok-fn">print</span>(<span class="tok-str">"Too young to vote."</span>)</div>
+    <div><span class="tok-com"># age = 15 → condition is False → else block runs</span></div>
+    <div style="height:6px;"></div>
+    <div><span class="tok-com"># --- another example ---</span></div>
+    <div><span class="tok-var">password</span> <span class="tok-op">=</span> <span class="tok-str">"secret123"</span></div>
+    <div><span class="tok-kw">if</span> <span class="tok-var">password</span> <span class="tok-op">==</span> <span class="tok-str">"secret123"</span><span class="tok-op">:</span></div>
+    <div style="padding-left:36px;"><span class="tok-fn">print</span>(<span class="tok-str">"Welcome back!"</span>)</div>
+    <div><span class="tok-kw">else</span><span class="tok-op">:</span></div>
+    <div style="padding-left:36px;"><span class="tok-fn">print</span>(<span class="tok-str">"Wrong password."</span>)</div>
   </div>
 
-  <!-- Bottom: real example -->
-  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:740px; width:1780px; height:280px; background:linear-gradient(90deg, rgba(163,230,53,0.10), rgba(34,211,238,0.06)); border:1px solid rgba(163,230,53,0.3); border-radius:20px; z-index:5;"></div>
-  <div data-object="true" data-object-type="textbox" style="position:absolute; left:130px; top:760px; width:1710px; z-index:10;">
-    <div style="font-family:'JetBrains Mono',monospace; font-size:20px; color:#a3e635; letter-spacing:0.2em; margin-bottom:10px;">// REAL EXAMPLE — AGE CHECK</div>
-    <div class="code-window" style="width:1710px; height:230px;">
-      <div class="code-window-header">
-        <span class="code-dot code-dot-r"></span>
-        <span class="code-dot code-dot-y"></span>
-        <span class="code-dot code-dot-g"></span>
-        <span class="code-window-title">age_check.py</span>
+  <!-- Flow bar at bottom -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:820px; width:1760px; height:170px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:836px; width:1700px; z-index:10;">
+    <div style="display:flex; align-items:center; gap:40px;">
+      <div style="flex:1;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:16px; color:#22d3ee; letter-spacing:0.15em; margin-bottom:10px;">// HOW IT FLOWS</div>
+        <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+          <div style="padding:8px 20px; background:rgba(34,211,238,0.15); border:2px solid #22d3ee; border-radius:8px; font-family:'JetBrains Mono',monospace; font-size:17px; color:#22d3ee;">condition?</div>
+          <div style="font-size:20px; color:#64748b;">→</div>
+          <div style="padding:8px 16px; background:rgba(163,230,53,0.15); border:2px solid #a3e635; border-radius:8px; font-family:'JetBrains Mono',monospace; font-size:16px; color:#a3e635;">True → run if-block</div>
+          <div style="font-size:20px; color:#64748b;">|</div>
+          <div style="padding:8px 16px; background:rgba(236,72,153,0.15); border:2px solid #ec4899; border-radius:8px; font-family:'JetBrains Mono',monospace; font-size:16px; color:#ec4899;">False → run else-block</div>
+        </div>
       </div>
-      <div style="padding:16px 24px; font-family:'JetBrains Mono',monospace; font-size:18px; line-height:1.5;">
-        <div><span class="tok-var">age</span> <span class="tok-op">=</span> <span class="tok-num">15</span></div>
-        <div><span class="tok-kw">if</span> <span class="tok-var">age</span> <span class="tok-op">&gt;=</span> <span class="tok-num">18</span><span class="tok-op">:</span></div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Adult"</span>)</div>
-        <div><span class="tok-kw">else</span><span class="tok-op">:</span></div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Minor"</span>)</div>
-        <div style="height:6px;"></div>
-        <div><span class="tok-out">→ Minor</span></div>
+      <div style="padding:10px 16px; background:rgba(250,204,21,0.1); border-left:4px solid #facc15; border-radius:8px;">
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:16px; color:#f8fafc;">One path <span style="color:#a3e635;">OR</span> the other. Never both. Never neither.</div>
       </div>
     </div>
   </div>
 
   <div class="chrome-brand">PY_BOOTCAMP // S02</div>
-  <div class="chrome-pagenum">31 / 49</div>
+  <div class="chrome-pagenum">31 / 50</div>
 </div>
 
 <template data-slide-notes>
-Contrast "if alone" vs "if/else" — the key difference is: else gives you a fallback.
+Two-path decision. Draw the flow on the board:
 
-Analogy: "لو مشطّح — خذ مظلّة. وإلا — خذ نظارات شمسية."
+```
+condition?
+├── True  → run if-block
+└── False → run else-block
+```
 
-Key point: `else` does NOT have a condition. It's the catch-all. One of the two blocks ALWAYS runs (when using if/else).
+Walk through the age example:
+- "age = 15. الشرط: 15 >= 18؟ لأ. False. يبقى نروح للـ else."
 
-Live demo: set `age = 15`, run. Output: "Minor". Change to `age = 20`, run. Output: "Adult". Every time one runs, the other doesn't. "مافيش طريقة يعملوا الاتنين — إما if أو else."
+Key rule: "else مش بيحتاج شرط. هو 'غير كده' بس."
 
-Common mistake: students write `if else:` — WRONG. `else` is standalone, no condition. "الـ else مش محتاج سؤال — هو ببساطة يقول: لو مش الأول، يبقى التاني."
+Common error: students write `else:` with a condition. "else ما بيتحطش شرط جواه. لو عايز شرط تاني → استخدم elif."
+
+Quick quiz: ask 3 students:
+- "age = 20 → output?" → "You can vote!"
+- "age = 10 → output?" → "Too young to vote."
+- "age = 18 → output?" → "You can vote!" (>= includes 18)
 </template>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>

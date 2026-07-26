@@ -4,88 +4,86 @@
 <body>
 <div class="slide-container">
   <div class="bg-grid" data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1;"></div>
-  <div class="bg-glow-magenta" data-object="true" data-object-type="shape" style="position:absolute; left:1220px; top:-200px; z-index:1;"></div>
 
   <div class="chrome-topbar" data-object="true" data-object-type="textbox" style="z-index:10;">
     <span class="chrome-dot"></span>
     <span>CONDITIONS // THE IF STATEMENT</span>
   </div>
 
-  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:140px; width:1400px; z-index:10;">
-    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#ec4899; letter-spacing:0.25em; margin-bottom:14px;">// FAMILY 01 OF 03</div>
-    <div style="font-family:'Space Grotesk',sans-serif; font-size:88px; font-weight:700; color:#f8fafc; line-height:1; letter-spacing:-0.02em;"><span class="mono" style="color:#ec4899;">if</span></div>
-    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:#cbd5e1; margin-top:14px;">Run code <span style="color:#facc15;">only when</span> a condition is true.</div>
-    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:22px; color:#ec4899; direction:rtl; margin-top:6px;">لو — شغّل الكود بس لما الشرط يبقى صحيح</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:120px; width:1400px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:#facc15; letter-spacing:0.25em; margin-bottom:10px;">// SYNTAX</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:64px; font-weight:700; color:#f8fafc; line-height:1.02; letter-spacing:-0.02em;">The <span class="mono" style="color:#facc15;">if</span> statement.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:22px; color:#94a3b8; direction:rtl; margin-top:6px;">جملة if — أول أمر شرطي في حياتك</div>
   </div>
 
-  <!-- Syntax panel -->
-  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:380px; width:870px; height:340px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:20px; z-index:5;"></div>
-  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:410px; width:810px; z-index:10;">
-    <div style="font-family:'JetBrains Mono',monospace; font-size:20px; color:#ec4899; letter-spacing:0.2em; margin-bottom:16px;">// SYNTAX</div>
-    <div class="code-window" style="width:780px; height:240px;">
-      <div class="code-window-header">
-        <span class="code-dot code-dot-r"></span>
-        <span class="code-dot code-dot-y"></span>
-        <span class="code-dot code-dot-g"></span>
-        <span class="code-window-title">syntax.py</span>
-      </div>
-      <div style="padding:18px 22px; font-family:'JetBrains Mono',monospace; font-size:24px; line-height:1.65;">
-        <div><span class="tok-kw">if</span> <span class="tok-var">condition</span><span class="tok-op">:</span></div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">do_something</span>()</div>
-        <div style="height:12px;"></div>
-        <div><span class="tok-com"># condition is True → runs</span></div>
-        <div><span class="tok-com"># condition is False → skips</span></div>
-      </div>
+  <!-- Full-width code window -->
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:310px; width:1760px; height:520px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">if_example.py</span>
     </div>
   </div>
-
-  <!-- Example panel -->
-  <div data-object="true" data-object-type="shape" style="position:absolute; left:970px; top:380px; width:870px; height:340px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:20px; z-index:5;"></div>
-  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1000px; top:410px; width:810px; z-index:10;">
-    <div style="font-family:'JetBrains Mono',monospace; font-size:20px; color:#22d3ee; letter-spacing:0.2em; margin-bottom:16px;">// EXAMPLE</div>
-    <div class="code-window" style="width:780px; height:240px;">
-      <div class="code-window-header">
-        <span class="code-dot code-dot-r"></span>
-        <span class="code-dot code-dot-y"></span>
-        <span class="code-dot code-dot-g"></span>
-        <span class="code-window-title">example.py</span>
-      </div>
-      <div style="padding:18px 22px; font-family:'JetBrains Mono',monospace; font-size:24px; line-height:1.65;">
-        <div><span class="tok-var">age</span> <span class="tok-op">=</span> <span class="tok-num">20</span></div>
-        <div style="height:6px;"></div>
-        <div><span class="tok-kw">if</span> <span class="tok-var">age</span> <span class="tok-op">&gt;=</span> <span class="tok-num">18</span><span class="tok-op">:</span></div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"You can vote!"</span>)</div>
-        <div style="height:6px;"></div>
-        <div><span class="tok-out">→ You can vote!</span></div>
-      </div>
-    </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:366px; width:1700px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:20px; line-height:1.48;">
+    <div><span class="tok-com"># Basic if statement</span></div>
+    <div><span class="tok-var">age</span> <span class="tok-op">=</span> <span class="tok-num">20</span></div>
+    <div><span class="tok-kw">if</span> <span class="tok-var">age</span> <span class="tok-op">>=</span> <span class="tok-num">18</span><span class="tok-op">:</span></div>
+    <div style="padding-left:36px;"><span class="tok-fn">print</span>(<span class="tok-str">"You can vote!"</span>)</div>
+    <div><span class="tok-com"># Python checks: age >= 18 → True → runs indented code</span></div>
+    <div style="height:6px;"></div>
+    <div><span class="tok-com"># --- another example ---</span></div>
+    <div><span class="tok-var">temperature</span> <span class="tok-op">=</span> <span class="tok-num">35</span></div>
+    <div><span class="tok-kw">if</span> <span class="tok-var">temperature</span> <span class="tok-op">></span> <span class="tok-num">30</span><span class="tok-op">:</span></div>
+    <div style="padding-left:36px;"><span class="tok-fn">print</span>(<span class="tok-str">"It's hot outside!"</span>)</div>
+    <div style="padding-left:36px;"><span class="tok-fn">print</span>(<span class="tok-str">"Drink water."</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"This runs no matter what."</span>)</div>
   </div>
 
-  <!-- Key rules -->
-  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:760px; width:1780px; height:170px; background:linear-gradient(90deg, rgba(236,72,153,0.10), rgba(34,211,238,0.06)); border:1px solid rgba(236,72,153,0.3); border-radius:20px; z-index:5;"></div>
-  <div data-object="true" data-object-type="textbox" style="position:absolute; left:130px; top:785px; width:1710px; z-index:10;">
-    <div style="font-family:'JetBrains Mono',monospace; font-size:20px; color:#ec4899; letter-spacing:0.2em; margin-bottom:12px;">// 3 RULES TO REMEMBER</div>
-    <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:#f8fafc; line-height:1.6;">
-      <span style="color:#a3e635;">1.</span> Always ends with <span class="mono" style="color:#ec4899;">:</span> (colon) &nbsp;&nbsp;&nbsp;
-      <span style="color:#a3e635;">2.</span> Indented code runs when True &nbsp;&nbsp;&nbsp;
-      <span style="color:#a3e635;">3.</span> No indentation = runs always
+  <!-- Rules bar at bottom -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:870px; width:1760px; height:120px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:884px; width:1700px; z-index:10;">
+    <div style="display:flex; gap:40px; align-items:flex-start;">
+      <div style="flex:1;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:16px; color:#ec4899; letter-spacing:0.15em; margin-bottom:6px;">// 3 RULES</div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:17px; color:#f8fafc; line-height:1.5;">
+          <span style="color:#facc15;">1.</span> Colon after condition <span class="mono" style="color:#a3e635;">if age >= 18:</span> &nbsp;
+          <span style="color:#facc15;">2.</span> Indentation = block (4 spaces) &nbsp;
+          <span style="color:#facc15;">3.</span> Only indented code runs inside the if
+        </div>
+      </div>
+      <div style="padding:10px 16px; background:rgba(250,204,21,0.1); border-left:4px solid #facc15; border-radius:8px; min-width:340px;">
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:16px; color:#f8fafc; line-height:1.4;">Indentation is NOT optional in Python.<br>It's how Python knows what's inside the if.</div>
+      </div>
     </div>
   </div>
 
   <div class="chrome-brand">PY_BOOTCAMP // S02</div>
-  <div class="chrome-pagenum">30 / 49</div>
+  <div class="chrome-pagenum">30 / 50</div>
 </div>
 
 <template data-slide-notes>
-First time students see the `if` keyword. Build it up step by step.
+THE most important syntax slide. Go painfully slow.
 
-Say: "الجملة الأولى: `if` — ده أمر Python يقوله: 'اسأل سؤال'. الشرط هو السؤال. النقطتين `:` يعني 'خلّص سؤال'. والكود المنسوب بعده — ده اللي يتنفذ لو الجواب True."
+Step 1: Read the code out loud. "age = 20. if age >= 18: print..."
 
-Common mistake #1: Students forget the colon. Repeat: "كل سطر بـ if لازم ينتهي بـ `:`."
+Step 2: Explain each part:
+- "if" = the keyword
+- "age >= 18" = the condition (True or False?)
+- ":" = required — Python will error without it
+- Indented code = what runs IF True
 
-Common mistake #2: Students don't indent. Show what happens: "لو الكود مش منسوب، Python مش هيفهمه. indentation مش اختياري — هو جزء من القاعدة."
+Step 3: The indentation rule. "في بايثون، المسافة البادئة مش اختيارية. هي اللي بتقول بايثون أنه الكود ده جوه الـ if."
 
-Live demo: type `age = 20` then `if age >= 18:` then `print("You can vote!")`. Run it. Then change age to 15. Run again. Nothing prints. "البرنامج مش غلط — هو ببساطة ما نفذش."
+Draw on the board:
+```
+if True:
+    print("this runs")    ← indented = inside if
+print("this always runs") ← not indented = outside if
+```
+
+Common error: "students forget the colon. Every time. Prepare them: `if condition:` — the colon."
 </template>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,4 +1,186 @@
-{
-  "slides": [],
-  "total": 0
-}
+[
+    {
+        "file":  "01-cover.html",
+        "title":  "01-cover"
+    },
+    {
+        "file":  "02-hook-instagram.html",
+        "title":  "02-hook-instagram"
+    },
+    {
+        "file":  "03-hook-more.html",
+        "title":  "03-hook-more"
+    },
+    {
+        "file":  "04-what-you-will-build.html",
+        "title":  "04-what-you-will-build"
+    },
+    {
+        "file":  "05-timeline.html",
+        "title":  "05-timeline"
+    },
+    {
+        "file":  "06-what-is-programming.html",
+        "title":  "06-what-is-programming"
+    },
+    {
+        "file":  "07-why-programming-exists.html",
+        "title":  "07-why-programming-exists"
+    },
+    {
+        "file":  "08-software-everywhere.html",
+        "title":  "08-software-everywhere"
+    },
+    {
+        "file":  "09-hardware-vs-software.html",
+        "title":  "09-hardware-vs-software"
+    },
+    {
+        "file":  "10-cpu-brain.html",
+        "title":  "10-cpu-brain"
+    },
+    {
+        "file":  "11-ram-desk.html",
+        "title":  "11-ram-desk"
+    },
+    {
+        "file":  "12-storage-library.html",
+        "title":  "12-storage-library"
+    },
+    {
+        "file":  "13-how-computer-understands.html",
+        "title":  "13-how-computer-understands"
+    },
+    {
+        "file":  "14-binary-basics.html",
+        "title":  "14-binary-basics"
+    },
+    {
+        "file":  "15-programming-languages.html",
+        "title":  "15-programming-languages"
+    },
+    {
+        "file":  "16-compiler-vs-interpreter.html",
+        "title":  "16-compiler-vs-interpreter"
+    },
+    {
+        "file":  "17-why-python.html",
+        "title":  "17-why-python"
+    },
+    {
+        "file":  "18-install-python.html",
+        "title":  "18-install-python"
+    },
+    {
+        "file":  "19-install-vscode.html",
+        "title":  "19-install-vscode"
+    },
+    {
+        "file":  "20-terminal-basics.html",
+        "title":  "20-terminal-basics"
+    },
+    {
+        "file":  "21-running-python.html",
+        "title":  "21-running-python"
+    },
+    {
+        "file":  "22-first-print.html",
+        "title":  "22-first-print"
+    },
+    {
+        "file":  "23-print-live-coding.html",
+        "title":  "23-print-live-coding"
+    },
+    {
+        "file":  "24-comments.html",
+        "title":  "24-comments"
+    },
+    {
+        "file":  "25-variables-intro.html",
+        "title":  "25-variables-intro"
+    },
+    {
+        "file":  "26-variables-live-coding.html",
+        "title":  "26-variables-live-coding"
+    },
+    {
+        "file":  "27-variable-naming-rules.html",
+        "title":  "27-variable-naming-rules"
+    },
+    {
+        "file":  "28-data-types-overview.html",
+        "title":  "28-data-types-overview"
+    },
+    {
+        "file":  "29-int-float.html",
+        "title":  "29-int-float"
+    },
+    {
+        "file":  "30-strings.html",
+        "title":  "30-strings"
+    },
+    {
+        "file":  "31-booleans.html",
+        "title":  "31-booleans"
+    },
+    {
+        "file":  "32-type-function.html",
+        "title":  "32-type-function"
+    },
+    {
+        "file":  "33-input-function.html",
+        "title":  "33-input-function"
+    },
+    {
+        "file":  "34-type-casting.html",
+        "title":  "34-type-casting"
+    },
+    {
+        "file":  "35-activity-quiz.html",
+        "title":  "35-activity-quiz"
+    },
+    {
+        "file":  "36-break.html",
+        "title":  "36-break"
+    },
+    {
+        "file":  "37-mini-project-intro.html",
+        "title":  "37-mini-project-intro"
+    },
+    {
+        "file":  "38-mini-project-code.html",
+        "title":  "38-mini-project-code"
+    },
+    {
+        "file":  "39-mini-project-output.html",
+        "title":  "39-mini-project-output"
+    },
+    {
+        "file":  "40-exercises-easy.html",
+        "title":  "40-exercises-easy"
+    },
+    {
+        "file":  "41-exercises-medium.html",
+        "title":  "41-exercises-medium"
+    },
+    {
+        "file":  "42-exercises-challenge.html",
+        "title":  "42-exercises-challenge"
+    },
+    {
+        "file":  "43-common-mistakes.html",
+        "title":  "43-common-mistakes"
+    },
+    {
+        "file":  "44-homework.html",
+        "title":  "44-homework"
+    },
+    {
+        "file":  "45-recap.html",
+        "title":  "45-recap"
+    },
+    {
+        "file":  "47-closing.html",
+        "title":  "47-closing"
+    }
+]

@@ -4,7 +4,6 @@
 <body>
 <div class="slide-container">
   <div class="bg-grid" data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1;"></div>
-  <div class="bg-glow-lime" data-object="true" data-object-type="shape" style="position:absolute; left:-200px; top:600px; z-index:1;"></div>
 
   <div class="chrome-topbar" data-object="true" data-object-type="textbox" style="z-index:10;">
     <span class="chrome-dot"></span>
@@ -12,64 +11,88 @@
   </div>
 
   <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:140px; width:1400px; z-index:10;">
-    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#a3e635; letter-spacing:0.25em; margin-bottom:14px;">// TRUE OR FALSE — NOTHING ELSE</div>
-    <div style="font-family:'Space Grotesk',sans-serif; font-size:80px; font-weight:700; color:#f8fafc; line-height:1.05; letter-spacing:-0.02em;">Everything is <span style="color:#a3e635;">True</span> or <span style="color:#ec4899;">False</span>.</div>
-    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:22px; color:#a3e635; direction:rtl; margin-top:6px;">كل حاجة في الشروط إما True أو False — مافيش حاجة في النص</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#a3e635; letter-spacing:0.25em; margin-bottom:14px;">// FOUNDATION</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:#f8fafc; line-height:1.02; letter-spacing:-0.02em;">Everything is <span style="color:#a3e635;">True</span> or <span style="color:#ec4899;">False</span>.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:24px; color:#94a3b8; direction:rtl; margin-top:8px;">كل حاجة في بايثون True أو False</div>
   </div>
 
-  <!-- Left: What is True / What is False -->
-  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:360px; width:870px; height:480px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.35); border-radius:20px; z-index:5;"></div>
-  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:390px; width:810px; z-index:10;">
-    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:#a3e635; letter-spacing:0.2em; margin-bottom:20px;">// IN PYTHON, THESE ARE TRUTHY</div>
+  <!-- Two columns -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:360px; width:860px; height:500px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.35); border-radius:24px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:390px; width:780px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:#a3e635; letter-spacing:0.2em; margin-bottom:20px;">// TRUE — YES / ON / 1</div>
 
-    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:#cbd5e1; line-height:1.8;">
-      <div><span style="color:#facc15;">True</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#64748b;">→ obviously True</span></div>
-      <div><span style="color:#facc15;">1</span>, <span style="color:#facc15;">42</span>, <span style="color:#facc15;">-7</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#64748b;">→ any non-zero number</span></div>
-      <div><span style="color:#a3e635;">"hello"</span>, <span style="color:#a3e635;">"ali"</span>&nbsp;&nbsp;&nbsp;<span style="color:#64748b;">→ any non-empty string</span></div>
-      <div><span style="color:#f8fafc;">[1, 2, 3]</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#64748b;">→ any non-empty list</span></div>
-      <div style="height:16px;"></div>
-      <div style="color:#a3e635; font-weight:700;">Rule: non-empty = True</div>
+    <div style="margin-bottom:16px;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#f8fafc; margin-bottom:4px;"><span style="color:#a3e635;">10 > 5</span>  →  True</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; color:#94a3b8;">10 IS greater than 5</div>
+    </div>
+    <div style="margin-bottom:16px;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#f8fafc; margin-bottom:4px;"><span style="color:#a3e635;">5 == 5</span>  →  True</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; color:#94a3b8;">5 IS equal to 5</div>
+    </div>
+    <div style="margin-bottom:16px;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#f8fafc; margin-bottom:4px;"><span style="color:#a3e635;">"hello"</span>  →  True</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; color:#94a3b8;">Non-empty string = truthy</div>
+    </div>
+    <div style="margin-bottom:16px;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#f8fafc; margin-bottom:4px;"><span style="color:#a3e635;">1</span>  →  True</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; color:#94a3b8;">Non-zero number = truthy</div>
     </div>
   </div>
 
-  <div data-object="true" data-object-type="shape" style="position:absolute; left:970px; top:360px; width:870px; height:480px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:20px; z-index:5;"></div>
-  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1000px; top:390px; width:810px; z-index:10;">
-    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:#ec4899; letter-spacing:0.2em; margin-bottom:20px;">// IN PYTHON, THESE ARE FALSY</div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:360px; width:860px; height:500px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:24px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1020px; top:390px; width:780px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:#ec4899; letter-spacing:0.2em; margin-bottom:20px;">// FALSE — NO / OFF / 0</div>
 
-    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:#cbd5e1; line-height:1.8;">
-      <div><span style="color:#ec4899;">False</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#64748b;">→ obviously False</span></div>
-      <div><span style="color:#ec4899;">0</span>, <span style="color:#ec4899;">0.0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#64748b;">→ zero is False</span></div>
-      <div><span style="color:#ec4899;">""</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#64748b;">→ empty string is False</span></div>
-      <div><span style="color:#ec4899;">None</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#64748b;">→ nothing = False</span></div>
-      <div><span style="color:#ec4899;">[]</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#64748b;">→ empty list is False</span></div>
-      <div style="height:16px;"></div>
-      <div style="color:#ec4899; font-weight:700;">Rule: empty / zero / None = False</div>
+    <div style="margin-bottom:16px;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#f8fafc; margin-bottom:4px;"><span style="color:#ec4899;">10 < 5</span>  →  False</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; color:#94a3b8;">10 is NOT less than 5</div>
+    </div>
+    <div style="margin-bottom:16px;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#f8fafc; margin-bottom:4px;"><span style="color:#ec4899;">3 != 3</span>  →  False</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; color:#94a3b8;">3 IS equal to 3, so "not equal" is False</div>
+    </div>
+    <div style="margin-bottom:16px;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#f8fafc; margin-bottom:4px;"><span style="color:#ec4899;">""</span>  →  False</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; color:#94a3b8;">Empty string = falsy</div>
+    </div>
+    <div style="margin-bottom:16px;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:#f8fafc; margin-bottom:4px;"><span style="color:#ec4899;">0</span>  →  False</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:18px; color:#94a3b8;">Zero = falsy</div>
     </div>
   </div>
 
-  <!-- Bottom insight -->
-  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:880px; width:1780px; height:100px; background:linear-gradient(90deg, rgba(163,230,53,0.10), rgba(236,72,153,0.06)); border:1px solid rgba(163,230,53,0.3); border-radius:20px; z-index:5;"></div>
-  <div data-object="true" data-object-type="textbox" style="position:absolute; left:130px; top:900px; width:1710px; z-index:10;">
-    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:#f8fafc; font-weight:500; line-height:1.3;">💡 <span style="color:#facc15;">if</span> only cares about True/False. If you write <span class="mono" style="color:#22d3ee;">if "ali":</span> — it runs because <span class="mono" style="color:#a3e635;">"ali"</span> is truthy (non-empty string).</div>
+  <!-- Bottom note -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:900px; width:1760px; height:100px; background:rgba(250,204,21,0.06); border-left:6px solid #facc15; border-radius:12px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:130px; top:920px; width:1680px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:#f8fafc;">In Python, <span class="mono" style="color:#facc15;">True</span> and <span class="mono" style="color:#facc15;">False</span> are CAPITALIZED — not <span style="color:#ec4899;">true</span>/<span style="color:#ec4899;">false</span> like other languages.</div>
   </div>
 
   <div class="chrome-brand">PY_BOOTCAMP // S02</div>
-  <div class="chrome-pagenum">29 / 49</div>
+  <div class="chrome-pagenum">29 / 50</div>
 </div>
 
 <template data-slide-notes>
-This slide is foundational. Students MUST understand truthy/falsy before writing if statements.
+This is the foundation slide. Go slow here.
 
-Key teaching moments:
-- "Python مش بيسأل: هل القيمة True بالظبط؟ بيسأل: هل القيمة 'فيها محتوى'؟"
-- Empty string "" = False (no characters = nothing = false)
-- "0" (string with one char) = True! (it's a non-empty string)
-- None = False (represents "nothing")
-- Empty list [] = False
+Key rule: "كل نتيجة في بايثون ليها قيمة حقيقية — True أو False. مافيش حاجة اسمها 'يمكن' أو 'ربما'."
 
-Demo: ask class "if '0':" — does it run? YES! Because "0" is a non-empty string. This surprises everyone.
+Walk through the True column:
+- "10 > 5 — صحيح؟ أيوه. يبقى True."
+- "5 == 5 — متساويين؟ أيوه. True."
+- "hello — نص فاضي؟ لأ. يبقى True."
 
-Golden rule: "لو القيمة فاضية أو صفر أو None → False. أي حاجة تانية → True."
+Walk through the False column:
+- "10 < 5 — 10 أقل من 5؟ لأ. False."
+- "" — نص فاضي. False."
+
+Common mistake alert: "Python بيحترم الكابيلال. `true` مش `True`. ده غلطة شائعة جداً."
+
+Quick check: ask 3 students to predict:
+- "10 == 10" → True
+- "10 != 10" → False
+- "" → False
+- "0" → False
 </template>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>

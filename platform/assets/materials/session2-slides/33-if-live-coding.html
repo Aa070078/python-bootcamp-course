@@ -4,111 +4,116 @@
 <body>
 <div class="slide-container">
   <div class="bg-grid" data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:1080px; z-index:1;"></div>
-  <div class="bg-glow-lime" data-object="true" data-object-type="shape" style="position:absolute; left:-200px; top:600px; z-index:1;"></div>
 
   <div class="chrome-topbar" data-object="true" data-object-type="textbox" style="z-index:10;">
     <span class="chrome-dot"></span>
     <span>LIVE CODING // CONDITIONS — TYPE ALONG</span>
   </div>
 
-  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:140px; width:1400px; z-index:10;">
-    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:#f8fafc; line-height:1.05; letter-spacing:-0.02em;">Type this. Run it.</div>
-    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:22px; color:#94a3b8; direction:rtl; margin-top:6px;">اكتب معايا — كل مثال، شغّله، شوف النتيجة</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1400px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:56px; font-weight:700; color:#f8fafc; line-height:1.02; letter-spacing:-0.02em;">Type this. <span style="color:#facc15;">Predict</span> each output first.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:22px; color:#94a3b8; direction:rtl; margin-top:6px;">اكتب معايا — قبل ما تشغل، توقّع النتيجة</div>
   </div>
 
-  <!-- Left code window: basic if + if/else -->
-  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:280px; width:500px; height:420px; z-index:5;">
+  <!-- Left code window: Examples 1 & 2 -->
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:270px; width:860px; height:620px; z-index:5;">
     <div class="code-window-header">
       <span class="code-dot code-dot-r"></span>
       <span class="code-dot code-dot-y"></span>
       <span class="code-dot code-dot-g"></span>
-      <span class="code-window-title">if_and_if_else.py</span>
+      <span class="code-window-title">conditions_live.py</span>
     </div>
   </div>
-  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:340px; width:440px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:22px; line-height:1.6;">
-    <div><span class="tok-com"># --- Basic if ---</span></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:326px; width:800px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:20px; line-height:1.48;">
+    <div><span class="tok-com"># Example 1: basic if</span></div>
     <div><span class="tok-var">age</span> <span class="tok-op">=</span> <span class="tok-num">20</span></div>
-    <div><span class="tok-kw">if</span> <span class="tok-var">age</span> <span class="tok-op">&gt;=</span> <span class="tok-num">18</span><span class="tok-op">:</span></div>
-    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Adult"</span>)</div>
-    <div style="height:8px;"></div>
-    <div><span class="tok-com"># --- if / else ---</span></div>
-    <div><span class="tok-var">score</span> <span class="tok-op">=</span> <span class="tok-num">55</span></div>
-    <div><span class="tok-kw">if</span> <span class="tok-var">score</span> <span class="tok-op">&gt;=</span> <span class="tok-num">60</span><span class="tok-op">:</span></div>
-    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Pass"</span>)</div>
+    <div><span class="tok-kw">if</span> <span class="tok-var">age</span> <span class="tok-op">>=</span> <span class="tok-num">18</span><span class="tok-op">:</span></div>
+    <div style="padding-left:36px;"><span class="tok-fn">print</span>(<span class="tok-str">"Adult"</span>)</div>
+    <div style="height:6px;"></div>
+    <div><span class="tok-com"># Example 2: if/else</span></div>
+    <div><span class="tok-var">num</span> <span class="tok-op">=</span> <span class="tok-num">7</span></div>
+    <div><span class="tok-kw">if</span> <span class="tok-var">num</span> <span class="tok-op">%</span> <span class="tok-num">2</span> <span class="tok-op">==</span> <span class="tok-num">0</span><span class="tok-op">:</span></div>
+    <div style="padding-left:36px;"><span class="tok-fn">print</span>(<span class="tok-str">"Even"</span>)</div>
     <div><span class="tok-kw">else</span><span class="tok-op">:</span></div>
-    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Fail"</span>)</div>
-    <div style="height:10px;"></div>
-    <div><span class="tok-out">→ Adult</span></div>
-    <div><span class="tok-out">→ Fail</span></div>
+    <div style="padding-left:36px;"><span class="tok-fn">print</span>(<span class="tok-str">"Odd"</span>)</div>
+    <div style="height:6px;"></div>
+    <div><span class="tok-com"># Example 3: if/elif/else</span></div>
+    <div><span class="tok-var">temp</span> <span class="tok-op">=</span> <span class="tok-num">35</span></div>
+    <div><span class="tok-kw">if</span> <span class="tok-var">temp</span> <span class="tok-op">></span> <span class="tok-num">30</span><span class="tok-op">:</span></div>
+    <div style="padding-left:36px;"><span class="tok-fn">print</span>(<span class="tok-str">"Hot"</span>)</div>
+    <div><span class="tok-kw">elif</span> <span class="tok-var">temp</span> <span class="tok-op">></span> <span class="tok-num">20</span><span class="tok-op">:</span></div>
+    <div style="padding-left:36px;"><span class="tok-fn">print</span>(<span class="tok-str">"Warm"</span>)</div>
+    <div><span class="tok-kw">else</span><span class="tok-op">:</span></div>
+    <div style="padding-left:36px;"><span class="tok-fn">print</span>(<span class="tok-str">"Cold"</span>)</div>
   </div>
 
-  <!-- Right code window: if/elif/else -->
-  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:600px; top:280px; width:460px; height:420px; z-index:5;">
+  <!-- Right code window: Example 4 + predict panel -->
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:270px; width:860px; height:340px; z-index:5;">
     <div class="code-window-header">
       <span class="code-dot code-dot-r"></span>
       <span class="code-dot code-dot-y"></span>
       <span class="code-dot code-dot-g"></span>
-      <span class="code-window-title">if_elif_else.py</span>
+      <span class="code-window-title">conditions_live.py (cont.)</span>
     </div>
   </div>
-  <div data-object="true" data-object-type="textbox" style="position:absolute; left:630px; top:340px; width:400px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:22px; line-height:1.6;">
-    <div><span class="tok-com"># --- if / elif / else ---</span></div>
-    <div><span class="tok-var">temp</span> <span class="tok-op">=</span> <span class="tok-num">32</span></div>
-    <div><span class="tok-kw">if</span> <span class="tok-var">temp</span> <span class="tok-op">&gt;</span> <span class="tok-num">30</span><span class="tok-op">:</span></div>
-    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Hot"</span>)</div>
-    <div><span class="tok-kw">elif</span> <span class="tok-var">temp</span> <span class="tok-op">&gt;</span> <span class="tok-num">20</span><span class="tok-op">:</span></div>
-    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Warm"</span>)</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1010px; top:326px; width:800px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:20px; line-height:1.48;">
+    <div><span class="tok-com"># Example 4: combined with operators</span></div>
+    <div><span class="tok-var">age</span> <span class="tok-op">=</span> <span class="tok-num">25</span></div>
+    <div><span class="tok-var">has_id</span> <span class="tok-op">=</span> <span class="tok-kw">True</span></div>
+    <div><span class="tok-kw">if</span> <span class="tok-var">age</span> <span class="tok-op">>=</span> <span class="tok-num">18</span> <span class="tok-kw">and</span> <span class="tok-var">has_id</span><span class="tok-op">:</span></div>
+    <div style="padding-left:36px;"><span class="tok-fn">print</span>(<span class="tok-str">"Entry allowed"</span>)</div>
     <div><span class="tok-kw">else</span><span class="tok-op">:</span></div>
-    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Cold"</span>)</div>
-    <div style="height:10px;"></div>
-    <div><span class="tok-out">→ Hot</span></div>
+    <div style="padding-left:36px;"><span class="tok-fn">print</span>(<span class="tok-str">"Entry denied"</span>)</div>
   </div>
 
-  <!-- Right panel: trace -->
-  <div data-object="true" data-object-type="shape" style="position:absolute; left:1080px; top:280px; width:760px; height:760px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:20px; z-index:5;"></div>
-  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1110px; top:310px; width:700px; z-index:10;">
-    <div style="font-family:'JetBrains Mono',monospace; font-size:20px; color:#22d3ee; letter-spacing:0.2em; margin-bottom:16px;">// TRACE EACH ONE</div>
-
-    <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:#f8fafc; line-height:1.8;">
-      <div><span style="color:#facc15;">age = 20</span></div>
-      <div>&nbsp;&nbsp;20 >= 18 → <span style="color:#a3e635;">True</span> → prints "Adult"</div>
-      <div style="height:12px;"></div>
-
-      <div><span style="color:#facc15;">score = 55</span></div>
-      <div>&nbsp;&nbsp;55 >= 60 → <span style="color:#ec4899;">False</span> → goes to <span style="color:#facc15;">else</span></div>
-      <div>&nbsp;&nbsp;→ prints "Fail"</div>
-      <div style="height:12px;"></div>
-
-      <div><span style="color:#facc15;">temp = 32</span></div>
-      <div>&nbsp;&nbsp;32 > 30 → <span style="color:#a3e635;">True</span> → prints "Hot"</div>
-      <div>&nbsp;&nbsp;STOPS here — skips elif + else</div>
-      <div style="height:16px;"></div>
-
-      <div style="border-top:1px solid #2a3352; padding-top:14px;">
-        <div style="font-family:'JetBrains Mono',monospace; font-size:18px; color:#a3e635; letter-spacing:0.15em; margin-bottom:6px;">// KEY OBSERVATION</div>
-        <div style="font-size:20px; color:#94a3b8;">Change <span class="mono" style="color:#facc15;">temp</span> to <span class="mono" style="color:#facc15;">22</span> → "Warm"</div>
-        <div style="font-size:20px; color:#94a3b8;">Change <span class="mono" style="color:#facc15;">temp</span> to <span class="mono" style="color:#facc15;">10</span> → "Cold"</div>
+  <!-- Predict panel below right code -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:640px; width:860px; height:250px; background:rgba(250,204,21,0.06); border:1px solid rgba(250,204,21,0.35); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1010px; top:660px; width:800px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:16px; color:#facc15; letter-spacing:0.15em; margin-bottom:10px;">// PREDICT — THEN RUN</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px 24px;">
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:16px; color:#22d3ee; font-weight:600;">Ex 1: age=20</div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:15px; color:#cbd5e1;">→ <span style="color:#a3e635;">"Adult"</span></div>
       </div>
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:16px; color:#22d3ee; font-weight:600;">Ex 2: num=7</div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:15px; color:#cbd5e1;">→ <span style="color:#ec4899;">"Odd"</span></div>
+      </div>
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:16px; color:#22d3ee; font-weight:600;">Ex 3: temp=35</div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:15px; color:#cbd5e1;">→ <span style="color:#a3e635;">"Hot"</span> (stops at first True)</div>
+      </div>
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:16px; color:#22d3ee; font-weight:600;">Ex 4: age=25, has_id=T</div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:15px; color:#cbd5e1;">→ <span style="color:#a3e635;">"Entry allowed"</span></div>
+      </div>
+    </div>
+    <div style="margin-top:10px; padding:8px 12px; background:rgba(34,211,238,0.08); border-left:4px solid #22d3ee; border-radius:6px;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:15px; color:#22d3ee; font-weight:600;">Your turn:</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:15px; color:#f8fafc;">Change <span class="mono">age=15</span> in Ex 1. Change <span class="mono">num=8</span> in Ex 2.</div>
     </div>
   </div>
 
   <div class="chrome-brand">PY_BOOTCAMP // S02</div>
-  <div class="chrome-pagenum">33 / 49</div>
+  <div class="chrome-pagenum">33 / 50</div>
 </div>
 
 <template data-slide-notes>
-Type each line on YOUR screen. Before hitting ENTER, ask the class to predict.
+Interactive live-code. Type each example on YOUR screen. Before hitting ENTER, ask the class: "توقعوا الناتج."
 
-Milestones:
-- First `if`: "Who thinks it prints?" (most hands) → "Adult" appears
-- `if/else` with score=55: "55 >= 60? No → else → Fail"
-- `elif` with temp=32: "32 > 30? Yes → Hot → STOPS. doesn't check rest"
+Take 3-5 guesses, then run.
 
-After all 3, ask: "What if temp is 22?" → "Warm". "What if temp is 10?" → "Cold".
+Especially focus on:
+- Example 2: connecting operators (%) to conditions (if/else). This bridges the two halves of the session.
+- Example 3: emphasizing that Python STOPS at the first True. "لو الـ if اشتغل، الـ elif والـ else مش هيشتغلو."
+- Example 4: combining `and` with conditions — shows the power of operators + conditions together.
 
-Let 2-3 students come up and change the values. Let them experiment.
+After all examples, challenge the class:
+- "غيّروا age = 15 في Example 1 — إيه اللي هيحصل؟" → nothing prints (condition False, no else)
+- "غيّروا num = 8 في Example 2" → prints "Even"
 
-Key phrase to repeat: "Python reads top to bottom. First True wins."
+Wait for 3-4 students to shout answers before moving on.
 </template>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>

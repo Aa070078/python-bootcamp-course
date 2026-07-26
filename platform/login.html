@@ -131,13 +131,23 @@
           </div>
 
           <div>
+            <label class="block text-xs font-bold text-ink-400 uppercase tracking-wider mb-2">Password</label>
+            <input 
+              type="password" 
+              id="passwordInput"
+              placeholder="Enter your password"
+              class="w-full px-4 py-3 rounded-xl bg-surface-2 border border-ink-800 text-ink-100 placeholder-ink-600 font-medium transition-all focus:border-accent-blue"
+              required
+            >
+          </div>
+
+          <div id="nameField" class="hidden">
             <label class="block text-xs font-bold text-ink-400 uppercase tracking-wider mb-2">Full Name</label>
             <input 
               type="text" 
               id="nameInput"
               placeholder="Your name"
               class="w-full px-4 py-3 rounded-xl bg-surface-2 border border-ink-800 text-ink-100 placeholder-ink-600 font-medium transition-all focus:border-accent-blue"
-              required
             >
           </div>
 
@@ -168,6 +178,10 @@
   </div>
 
   <script>
+    // Admin credentials
+    const ADMIN_EMAIL = 'admin@admin.com';
+    const ADMIN_PASSWORD = 'admin';
+
     // Allowed student emails
     const ALLOWED_EMAILS = [
       // Add student emails here
@@ -179,19 +193,54 @@
       window.location.href = 'dashboard.html';
     }
 
+    // Show/hide name field based on email
+    document.getElementById('emailInput').addEventListener('input', function() {
+      const email = this.value.toLowerCase().trim();
+      const nameField = document.getElementById('nameField');
+      if (email === ADMIN_EMAIL) {
+        nameField.classList.add('hidden');
+      } else {
+        nameField.classList.remove('hidden');
+      }
+    });
+
     document.getElementById('loginForm').addEventListener('submit', function(e) {
       e.preventDefault();
       
       const email = document.getElementById('emailInput').value.toLowerCase().trim();
-      const name = document.getElementById('nameInput').value.trim();
+      const password = document.getElementById('passwordInput').value;
+      const nameInput = document.getElementById('nameInput');
       const errorDiv = document.getElementById('errorMessage');
       
       // Hide previous errors
       errorDiv.classList.add('hidden');
       
-      // Validate email
-      if (!email || !name) {
+      // Validate
+      if (!email || !password) {
         errorDiv.textContent = 'Please fill in all fields';
+        errorDiv.classList.remove('hidden');
+        return;
+      }
+
+      // Admin login
+      if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
+        const userData = {
+          email: email,
+          name: 'Admin',
+          isAdmin: true,
+          loginTime: new Date().toISOString(),
+          completedSessions: [],
+          progress: 0
+        };
+        localStorage.setItem('python_bootcamp_user', JSON.stringify(userData));
+        window.location.href = 'dashboard.html';
+        return;
+      }
+
+      // Student login — require name
+      const name = nameInput.value.trim();
+      if (!name) {
+        errorDiv.textContent = 'Please enter your name';
         errorDiv.classList.remove('hidden');
         return;
       }
@@ -207,6 +256,7 @@
       const userData = {
         email: email,
         name: name,
+        isAdmin: false,
         loginTime: new Date().toISOString(),
         completedSessions: [],
         progress: 0
