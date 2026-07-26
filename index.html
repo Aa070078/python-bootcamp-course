@@ -306,18 +306,18 @@
 
   <!-- ============ NAVIGATION ============ -->
   <header id="site-header" class="sticky top-0 z-50 border-b backdrop-blur-xl transition-all" style="background: var(--bg-header); border-color: var(--header-border);">
-    <div class="max-w-7xl mx-auto px-5 md:px-8 py-3.5 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-accent-blue to-accent-orange flex items-center justify-center">
-          <i data-lucide="terminal" class="w-4.5 h-4.5 text-white"></i>
+    <div class="max-w-7xl mx-auto px-3 sm:px-5 md:px-8 py-3 sm:py-3.5 flex items-center justify-between">
+      <div class="flex items-center gap-2 sm:gap-3">
+        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-gradient-to-br from-accent-blue to-accent-orange flex items-center justify-center">
+          <i data-lucide="terminal" class="w-4 h-4 text-white"></i>
         </div>
         <div>
-          <span id="logo-text" class="font-extrabold text-sm md:text-base tracking-tight block leading-none font-display" style="color: var(--text-heading);">Python Bootcamp</span>
-          <span id="sub-logo" class="font-mono-code text-[9px] tracking-[0.15em] uppercase block mt-0.5" style="color: var(--accent-orange);">Beginner Course Syllabus</span>
+          <span id="logo-text" class="font-extrabold text-xs sm:text-sm md:text-base tracking-tight block leading-none font-display" style="color: var(--text-heading);">Python Bootcamp</span>
+          <span id="sub-logo" class="font-mono-code text-[8px] sm:text-[9px] tracking-[0.15em] uppercase block mt-0.5" style="color: var(--accent-orange);">Beginner Course Syllabus</span>
         </div>
       </div>
 
-      <div class="flex items-center gap-2.5">
+      <div class="flex items-center gap-1.5 sm:gap-2.5">
         <div class="hidden lg:flex items-center gap-5 text-[10px] ps-5 ms-1" style="border-left: 1px solid var(--border-main);">
           <div class="text-start">
             <span id="metric-hrs-lbl" class="block text-[8px] uppercase tracking-wider leading-none" style="color: var(--text-faint);">Course Duration</span>
@@ -329,17 +329,18 @@
           </div>
         </div>
 
-        <a href="platform/login.html" class="px-4 py-2 rounded-lg transition-all font-bold text-[10px] uppercase flex items-center gap-1.5 btn-press bg-gradient-to-r from-accent-blue to-blue-600 text-white hover:shadow-lg hover:shadow-accent-blue/20">
+        <a href="platform/login.html" class="px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-lg transition-all font-bold text-[9px] sm:text-[10px] uppercase flex items-center gap-1 sm:gap-1.5 btn-press bg-gradient-to-r from-accent-blue to-blue-600 text-white hover:shadow-lg hover:shadow-accent-blue/20">
           <i data-lucide="log-in" class="w-3.5 h-3.5"></i>
-          <span>Student Login</span>
+          <span class="hidden xs:inline sm:inline">Student</span>
+          <span>Login</span>
         </a>
 
-        <button onclick="toggleGlobalLanguage()" class="px-3.5 py-2 rounded-lg transition-all font-bold text-[10px] uppercase flex items-center gap-1.5 btn-press" style="border: 1px solid var(--border-main); color: var(--text-body);">
+        <button onclick="toggleGlobalLanguage()" class="px-2 sm:px-3.5 py-1.5 sm:py-2 rounded-lg transition-all font-bold text-[9px] sm:text-[10px] uppercase flex items-center gap-1 sm:gap-1.5 btn-press" style="border: 1px solid var(--border-main); color: var(--text-body);">
           <i data-lucide="globe" class="w-3.5 h-3.5" style="color: var(--accent-blue);"></i>
-          <span id="lang-toggle-text">العربية</span>
+          <span id="lang-toggle-text" class="hidden sm:inline">العربية</span>
         </button>
 
-        <button onclick="toggleThemeColor()" class="p-2 rounded-lg transition-all btn-press" style="border: 1px solid var(--border-main);">
+        <button onclick="toggleThemeColor()" class="p-1.5 sm:p-2 rounded-lg transition-all btn-press" style="border: 1px solid var(--border-main);">
           <i id="theme-icon" data-lucide="moon" class="w-4 h-4" style="color: var(--text-faint);"></i>
         </button>
       </div>
@@ -656,9 +657,9 @@
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 pb-8 border-b" style="border-color: var(--border-subtle);">
       <span class="text-[9px] font-mono-code uppercase tracking-widest hidden sm:block" style="color: var(--text-faint);">Under the sponsorship of</span>
       <div class="flex items-center gap-6">
-        <img src="platform/assets/images/logo-association.svg" alt="Industrial Association" class="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity" onerror="this.style.display='none'">
+        <img src="platform/assets/images/logo-association.png" alt="الجمعية الصناعية" class="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity" onerror="this.style.display='none'">
         <div class="w-px h-8" style="background: var(--border-main);"></div>
-        <img src="platform/assets/images/logo-ministry.svg" alt="Ministry of Industry" class="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity" onerror="this.style.display='none'">
+        <img src="platform/assets/images/logo-ministry.png" alt="وزارة الصناعة" class="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity" onerror="this.style.display='none'">
       </div>
     </div>
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
@@ -1648,6 +1649,7 @@ print(process_custom_pipeline("{}"))</pre>
 
       const total = 60;
       const nodes = [];
+      const nodeColors = ['rgba(59, 130, 246, 0.25)', 'rgba(249, 115, 22, 0.25)', 'rgba(99, 102, 241, 0.25)', 'rgba(249, 115, 22, 0.2)', 'rgba(34, 211, 238, 0.2)'];
       for (let i = 0; i < total; i++) {
         const theta = Math.acos(Math.random() * 2 - 1);
         const phi = Math.random() * Math.PI * 2;
@@ -1658,7 +1660,8 @@ print(process_custom_pipeline("{}"))</pre>
           z: radius * Math.cos(theta),
           originX: radius * Math.sin(theta) * Math.cos(phi),
           originY: radius * Math.sin(theta) * Math.sin(phi),
-          originZ: radius * Math.cos(theta)
+          originZ: radius * Math.cos(theta),
+          color: nodeColors[Math.floor(Math.random() * nodeColors.length)]
         });
       }
 
@@ -1688,17 +1691,20 @@ print(process_custom_pipeline("{}"))</pre>
               ctx.beginPath();
               ctx.moveTo(proj[i].x, proj[i].y);
               ctx.lineTo(proj[j].x, proj[j].y);
-              ctx.strokeStyle = `rgba(59, 130, 246, ${(1 - dist / 100) * 0.08})`;
+              const isOrange = (i % 3 === 0);
+              ctx.strokeStyle = isOrange
+                ? `rgba(249, 115, 22, ${(1 - dist / 100) * 0.06})`
+                : `rgba(59, 130, 246, ${(1 - dist / 100) * 0.08})`;
               ctx.lineWidth = 0.8;
               ctx.stroke();
             }
           }
         }
 
-        proj.forEach(p => {
+        proj.forEach((p, i) => {
           ctx.beginPath();
           ctx.arc(p.x, p.y, Math.max(1, p.scale * 3), 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(59, 130, 246, 0.25)';
+          ctx.fillStyle = nodes[i].color;
           ctx.fill();
         });
 

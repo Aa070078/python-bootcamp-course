@@ -8,16 +8,16 @@
   if (window.matchMedia('(pointer: coarse)').matches) return;
 
   const CELL = 50;
-  const GLOW_COUNT = 6;
-  const GLOW_COLORS = ['#3b82f6', '#f97316', '#6366f1', '#22d3ee'];
+  const GLOW_COUNT = 8;
+  const GLOW_COLORS = ['#3b82f6', '#f97316', '#6366f1', '#f97316', '#22d3ee', '#fb923c', '#3b82f6', '#f97316'];
 
   function getThemeColors() {
     const isLight = document.documentElement.dataset.theme === 'light';
     return {
       gridBase: isLight ? 'rgba(0, 0, 0, 0.04)' : 'rgba(255, 255, 255, 0.04)',
-      gridActive: isLight ? 'rgba(59, 130, 246, 0.3)' : 'rgba(59, 130, 246, 0.5)',
-      mouseGlowInner: isLight ? 'rgba(59, 130, 246, 0.12)' : 'rgba(59, 130, 246, 0.25)',
-      mouseGlowMid: isLight ? 'rgba(99, 102, 241, 0.04)' : 'rgba(99, 102, 241, 0.08)',
+      gridActive: isLight ? 'rgba(249, 115, 22, 0.3)' : 'rgba(249, 115, 22, 0.5)',
+      mouseGlowInner: isLight ? 'rgba(249, 115, 22, 0.12)' : 'rgba(249, 115, 22, 0.25)',
+      mouseGlowMid: isLight ? 'rgba(251, 146, 60, 0.04)' : 'rgba(251, 146, 60, 0.08)',
       mouseWhiteGlow: isLight ? 'rgba(255, 255, 255, 0.05)' : 'rgba(255, 255, 255, 0.12)',
       blobAlpha: isLight ? 0.3 : 0.7,
     };
