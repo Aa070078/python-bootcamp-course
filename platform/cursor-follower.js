@@ -1,13 +1,14 @@
 /* ============================================================
-   BACKGROUND MOUSE GLOW — soft dark-red light follows the cursor
-   Canvas-based, no custom cursor, pure ambient background effect
+   GRID MOUSE GLOW — canvas-rendered 50px grid with soft
+   dark-red radial glow that follows the cursor
    ============================================================ */
 
 (function () {
   if (window.matchMedia('(pointer: coarse)').matches) return;
 
+  const CELL = 50;
   const canvas = document.createElement('canvas');
-  canvas.id = 'mouse-glow-canvas';
+  canvas.id = 'grid-glow-canvas';
   Object.assign(canvas.style, {
     position: 'fixed',
     inset: '0',
@@ -28,51 +29,76 @@
   resize();
   window.addEventListener('resize', resize);
 
-  /* trail points — ring buffer of recent positions */
-  const TRAIL_LEN = 28;
-  const trail = [];
-  let mx = -200, my = -200;
+  /* mouse tracking */
+  let mx = -300, my = -300;
+  let smoothX = -300, smoothY = -300;
 
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX;
-    my = e.clientY;
-  });
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  document.addEventListener('mouseleave', () => { mx = -300; my = -300; });
 
-  document.addEventListener('mouseleave', () => {
-    mx = -200;
-    my = -200;
-  });
+  /* glow layer — rendered once per frame */
+  const glowCanvas = document.createElement('canvas');
+  const glowCtx = glowCanvas.getContext('2d');
 
-  /* animation loop */
   function tick() {
-    // fade canvas slightly each frame (creates the fade-out trail)
-    ctx.globalCompositeOperation = 'source-over';
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.08)';
-    ctx.fillRect(0, 0, W, H);
+    // smooth follow for the glow
+    smoothX += (mx - smoothX) * 0.10;
+    smoothY += (my - smoothY) * 0.10;
 
-    // add current position to trail
-    trail.push({ x: mx, y: my, life: 1 });
-    if (trail.length > TRAIL_LEN) trail.shift();
+    /* --- draw grid --- */
+    ctx.clearRect(0, 0, W, H);
 
-    // draw each trail point as a soft radial gradient
-    ctx.globalCompositeOperation = 'lighter';
+    // grid line color (matches original CSS: rgba(59,130,246,0.03))
+    const gridColor = 'rgba(59, 130, 246, 0.035)';
+    ctx.strokeStyle = gridColor;
+    ctx.lineWidth = 1;
 
-    for (let i = 0; i < trail.length; i++) {
-      const p = trail[i];
-      // older points fade more
-      const progress = i / trail.length;
-      const radius = 120 + progress * 140;
-      const alpha = progress * 0.06;
+    // vertical lines
+    for (let x = 0; x <= W; x += CELL) {
+      ctx.beginPath();
+      ctx.moveTo(x + 0.5, 0);
+      ctx.lineTo(x + 0.5, H);
+      ctx.stroke();
+    }
+    // horizontal lines
+    for (let y = 0; y <= H; y += CELL) {
+      ctx.beginPath();
+      ctx.moveTo(0, y + 0.5);
+      ctx.lineTo(W, y + 0.5);
+      ctx.stroke();
+    }
 
-      const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, radius);
-      grad.addColorStop(0, `rgba(180, 30, 30, ${alpha})`);
-      grad.addColorStop(0.4, `rgba(140, 20, 20, ${alpha * 0.5})`);
+    /* --- draw mouse glow on separate canvas --- */
+    glowCanvas.width = W;
+    glowCanvas.height = H;
+
+    if (smoothX > -100) {
+      const R = 100; // glow radius
+      const grad = glowCtx.createRadialGradient(smoothX, smoothY, 0, smoothX, smoothY, R);
+      grad.addColorStop(0, 'rgba(180, 30, 30, 0.055)');
+      grad.addColorStop(0.35, 'rgba(140, 20, 20, 0.035)');
+      grad.addColorStop(0.7, 'rgba(100, 15, 15, 0.015)');
       grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
 
-      ctx.fillStyle = grad;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
-      ctx.fill();
+      glowCtx.fillStyle = grad;
+      glowCtx.beginPath();
+      glowCtx.arc(smoothX, smoothY, R, 0, Math.PI * 2);
+      glowCtx.fill();
+
+      // smaller brighter core
+      const coreR = 35;
+      const core = glowCtx.createRadialGradient(smoothX, smoothY, 0, smoothX, smoothY, coreR);
+      core.addColorStop(0, 'rgba(220, 50, 50, 0.04)');
+      core.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      glowCtx.fillStyle = core;
+      glowCtx.beginPath();
+      glowCtx.arc(smoothX, smoothY, coreR, 0, Math.PI * 2);
+      glowCtx.fill();
+
+      // composite glow onto grid (lighter = additive)
+      ctx.globalCompositeOperation = 'lighter';
+      ctx.drawImage(glowCanvas, 0, 0);
+      ctx.globalCompositeOperation = 'source-over';
     }
 
     requestAnimationFrame(tick);
