@@ -9,6 +9,7 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;overflow:hidden;background:#0a0e1a;color:#f8fafc;font-family:'Space Grotesk',system-ui,sans-serif}
+.hidden{display:none!important}
 .nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:center;gap:12px;padding:0 20px;height:52px;background:rgba(10,14,26,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
 .nav .brand{font-family:'JetBrains Mono',monospace;font-size:13px;color:#22d3ee;letter-spacing:.12em;position:absolute;left:20px;font-weight:600}
 .nav .brand em{font-style:normal;color:#64748b}
@@ -39,7 +40,7 @@ html,body{height:100%;overflow:hidden;background:#0a0e1a;color:#f8fafc;font-fami
 .index-item.active{background:rgba(34,211,238,.1)}
 .index-item .idx-num{font-family:'JetBrains Mono',monospace;font-size:11px;color:#64748b;min-width:26px;text-align:right}
 .index-item.active .idx-num{color:#22d3ee}
-.index-item .idx-name{font-size:13px;color:#cbd5e1}
+.index-item .idx-name{font-size:13px;color:#cbd5e1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .index-item.active .idx-name{color:#f8fafc}
 .notes-panel{position:fixed;left:0;right:0;bottom:48px;height:200px;background:rgba(10,14,26,.98);border-top:1px solid rgba(255,255,255,.1);backdrop-filter:blur(20px);z-index:1001;transform:translateY(100%);transition:transform .2s ease;padding:16px 24px;overflow-y:auto}
 .notes-panel.open{transform:translateY(0)}
@@ -53,7 +54,7 @@ html,body{height:100%;overflow:hidden;background:#0a0e1a;color:#f8fafc;font-fami
 </style>
 </head>
 <body>
-<div class="loading" id="loading"><div class="spinner"></div><div class="text">Loading slides...</div></div>
+<div class="loading" id="loading"><div class="spinner"></div><div class="text" id="loadingText">Loading slides...</div></div>
 <div class="nav">
   <span class="brand" id="brand">PY <em>_BOOTCAMP</em></span>
   <button id="prevBtn" onclick="go(-1)">&#9664; Prev</button>
@@ -61,7 +62,7 @@ html,body{height:100%;overflow:hidden;background:#0a0e1a;color:#f8fafc;font-fami
   <button id="nextBtn" onclick="go(1)">Next &#9654;</button>
   <span class="kbd"><kbd>&#8592;</kbd> <kbd>&#8594;</kbd> nav &nbsp; <kbd>F</kbd> fullscreen &nbsp; <kbd>G</kbd> grid</span>
 </div>
-<div class="frame-wrap" id="wrap"><iframe id="frame" src="" allowfullscreen></iframe></div>
+<div class="frame-wrap" id="wrap"><iframe id="frame" src="about:blank" allowfullscreen></iframe></div>
 <div class="bottom">
   <button class="notes-toggle" id="notesBtn" onclick="toggleNotes()">Notes</button>
   <div class="progress-wrap"><div class="progress-track" id="progressTrack" onclick="seek(event)"><div class="progress-fill" id="progressFill"></div></div></div>
@@ -71,28 +72,167 @@ html,body{height:100%;overflow:hidden;background:#0a0e1a;color:#f8fafc;font-fami
 <div class="index-panel" id="indexPanel"></div>
 <div class="notes-panel" id="notesPanel"><div class="notes-header">// INSTRUCTOR SCRIPT</div><div class="notes-body" id="notesBody"></div></div>
 <script>
-const params=new URLSearchParams(window.location.search);
-const SESSION_NUM=parseInt(params.get('num'))||1;
-const SLIDES_DIR='session'+SESSION_NUM+'-slides/';
-let SLIDES=[],cur=0,total=0;
-const SLIDE_W=1920,SLIDE_H=1080;
-const frame=document.getElementById('frame'),counter=document.getElementById('counter'),prevBtn=document.getElementById('prevBtn'),nextBtn=document.getElementById('nextBtn'),wrap=document.getElementById('wrap'),progressFill=document.getElementById('progressFill'),sectionLabel=document.getElementById('sectionLabel'),indexPanel=document.getElementById('indexPanel'),notesPanel=document.getElementById('notesPanel'),notesBody=document.getElementById('notesBody'),loading=document.getElementById('loading'),brand=document.getElementById('brand');
-brand.innerHTML='PY <em>_BOOTCAMP</em> // S'+String(SESSION_NUM).padStart(2,'0');
-document.title='Python Bootcamp - Session '+SESSION_NUM;
-async function init(){try{const r=await fetch(SLIDES_DIR+'manifest.json');if(!r.ok)throw new Error('Manifest not found');const d=await r.json();if(Array.isArray(d)){SLIDES=d.map(i=>({f:i.file,n:i.title||i.file.replace('.html',''),s:i.section||''}))}else if(d.playlist){SLIDES=d.playlist.map(f=>({f:f,n:f.replace('.html','').replace(/^\d+-/,'').replace(/-/g,' '),s:''}))}if(!SLIDES.length){loading.innerHTML='<div class="text" style="color:#f87171">No slides found for Session '+SESSION_NUM+'</div>';return}total=SLIDES.length;buildIndex();loadSlide(0);loading.classList.add('hidden')}catch(e){loading.innerHTML='<div class="text" style="color:#f87171">Failed to load Session '+SESSION_NUM+'<br><small>'+e.message+'</small></div>'}}
-function loadSlide(){frame.src=SLIDES_DIR+SLIDES[cur].f;counter.textContent=(cur+1)+' / '+total;prevBtn.disabled=cur===0;nextBtn.disabled=cur===total-1;progressFill.style.width=((cur/(total-1))*100)+'%';sectionLabel.textContent=SLIDES[cur].s||'';updateIndex();loadNotes()}
-function scaleFrame(){const ww=wrap.clientWidth,wh=wrap.clientHeight;const s=Math.min(ww/SLIDE_W,wh/SLIDE_H,1);frame.style.width=SLIDE_W+'px';frame.style.height=SLIDE_H+'px';frame.style.transform='scale('+s+')'}
-function go(d){const n=cur+d;if(n<0||n>=total)return;cur=n;loadSlide()}
-function seek(e){const r=e.currentTarget.getBoundingClientRect();cur=Math.round(((e.clientX-r.left)/r.width)*(total-1));loadSlide()}
-function toggleNotes(){notesPanel.classList.toggle('open');document.getElementById('notesBtn').classList.toggle('active')}
-function toggleIndex(){indexPanel.classList.toggle('open')}
-function loadNotes(){try{fetch(SLIDES_DIR+SLIDES[cur].f).then(r=>r.text()).then(html=>{const m=html.match(/<template data-slide-notes>([\s\S]*?)<\/template>/i);if(m){notesBody.innerHTML='<div style="white-space:pre-wrap">'+m[1].trim().replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\n/g,'<br>')+'</div>'}else{notesBody.innerHTML='<em style="color:#475569">No notes for this slide.</em>'}})}catch(e){notesBody.innerHTML=''}}
-function buildIndex(){let h='<div class="idx-title">SLIDE INDEX ('+total+')</div>';SLIDES.forEach((sl,i)=>{h+='<div class="index-item'+(i===cur?' active':'')+'" onclick="jumpTo('+i+')"><span class="idx-num">'+(i+1)+'</span><span class="idx-name">'+sl.n+'</span></div>'});indexPanel.innerHTML=h}
-function updateIndex(){indexPanel.querySelectorAll('.index-item').forEach((el,i)=>el.classList.toggle('active',i===cur));const a=indexPanel.querySelector('.index-item.active');if(a)a.scrollIntoView({block:'nearest',behavior:'smooth'})}
-function jumpTo(i){cur=i;loadSlide()}
-document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();go(1)}if(e.key==='ArrowLeft'){e.preventDefault();go(-1)}if(e.key==='Home'){cur=0;loadSlide()}if(e.key==='End'){cur=total-1;loadSlide()}if(e.key==='f'||e.key==='F'){if(!document.fullscreenElement)document.documentElement.requestFullscreen();else document.exitFullscreen()}if(e.key==='g'||e.key==='G')toggleIndex();if(e.key==='Escape'){indexPanel.classList.remove('open');notesPanel.classList.remove('open');document.getElementById('notesBtn').classList.remove('active')}});
-let touchX=0;frame.addEventListener('touchstart',e=>{touchX=e.changedTouches[0].screenX});frame.addEventListener('touchend',e=>{const dx=e.changedTouches[0].screenX-touchX;if(Math.abs(dx)>50)go(dx<0?1:-1)});
-frame.onload=scaleFrame;window.addEventListener('resize',scaleFrame);init();
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var SESSION_NUM = parseInt(params.get('num')) || 1;
+  var SLIDES_DIR = 'session' + SESSION_NUM + '-slides/';
+  var SLIDES = [], cur = 0, total = 0;
+  var SLIDE_W = 1920, SLIDE_H = 1080;
+
+  var frame = document.getElementById('frame');
+  var counter = document.getElementById('counter');
+  var prevBtn = document.getElementById('prevBtn');
+  var nextBtn = document.getElementById('nextBtn');
+  var wrap = document.getElementById('wrap');
+  var progressFill = document.getElementById('progressFill');
+  var sectionLabel = document.getElementById('sectionLabel');
+  var indexPanel = document.getElementById('indexPanel');
+  var notesPanel = document.getElementById('notesPanel');
+  var notesBody = document.getElementById('notesBody');
+  var loading = document.getElementById('loading');
+  var loadingText = document.getElementById('loadingText');
+  var brand = document.getElementById('brand');
+
+  brand.innerHTML = 'PY <em>_BOOTCAMP</em> // S' + String(SESSION_NUM).padStart(2, '0');
+  document.title = 'Python Bootcamp - Session ' + SESSION_NUM;
+
+  function showError(msg) {
+    loadingText.textContent = msg;
+    loadingText.style.color = '#f87171';
+    document.querySelector('.spinner').style.display = 'none';
+  }
+
+  function hideLoading() {
+    loading.style.display = 'none';
+  }
+
+  function init() {
+    loadingText.textContent = 'Loading manifest...';
+    fetch(SLIDES_DIR + 'manifest.json')
+      .then(function(r) {
+        if (!r.ok) throw new Error('Manifest not found (' + r.status + ')');
+        return r.json();
+      })
+      .then(function(d) {
+        if (Array.isArray(d)) {
+          SLIDES = d.map(function(i) { return { f: i.file, n: i.title || i.file.replace('.html', ''), s: i.section || '' }; });
+        } else if (d.playlist) {
+          SLIDES = d.playlist.map(function(f) { return { f: f, n: f.replace('.html', '').replace(/^\d+-/, '').replace(/-/g, ' '), s: '' }; });
+        }
+        if (!SLIDES.length) {
+          showError('No slides found for Session ' + SESSION_NUM);
+          return;
+        }
+        total = SLIDES.length;
+        buildIndex();
+        loadSlide(0);
+        hideLoading();
+      })
+      .catch(function(e) {
+        showError('Failed to load Session ' + SESSION_NUM + ': ' + e.message);
+      });
+  }
+
+  function loadSlide() {
+    frame.onload = function() { scaleFrame(); };
+    frame.src = SLIDES_DIR + SLIDES[cur].f;
+    counter.textContent = (cur + 1) + ' / ' + total;
+    prevBtn.disabled = cur === 0;
+    nextBtn.disabled = cur === total - 1;
+    progressFill.style.width = (total > 1 ? (cur / (total - 1)) * 100 : 0) + '%';
+    sectionLabel.textContent = SLIDES[cur].s || '';
+    updateIndex();
+    loadNotes();
+  }
+
+  function scaleFrame() {
+    var ww = wrap.clientWidth, wh = wrap.clientHeight;
+    var s = Math.min(ww / SLIDE_W, wh / SLIDE_H, 1);
+    frame.style.width = SLIDE_W + 'px';
+    frame.style.height = SLIDE_H + 'px';
+    frame.style.transform = 'scale(' + s + ')';
+  }
+
+  function go(d) {
+    var n = cur + d;
+    if (n < 0 || n >= total) return;
+    cur = n;
+    loadSlide();
+  }
+
+  function seek(e) {
+    var r = e.currentTarget.getBoundingClientRect();
+    cur = Math.round(((e.clientX - r.left) / r.width) * (total - 1));
+    loadSlide();
+  }
+
+  function toggleNotes() {
+    notesPanel.classList.toggle('open');
+    document.getElementById('notesBtn').classList.toggle('active');
+  }
+
+  function toggleIndex() {
+    indexPanel.classList.toggle('open');
+  }
+
+  function loadNotes() {
+    fetch(SLIDES_DIR + SLIDES[cur].f)
+      .then(function(r) { return r.text(); })
+      .then(function(html) {
+        var m = html.match(/<template data-slide-notes>([\s\S]*?)<\/template>/i);
+        if (m) {
+          notesBody.innerHTML = '<div style="white-space:pre-wrap">' + m[1].trim().replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>') + '</div>';
+        } else {
+          notesBody.innerHTML = '<em style="color:#475569">No notes for this slide.</em>';
+        }
+      })
+      .catch(function() { notesBody.innerHTML = ''; });
+  }
+
+  function buildIndex() {
+    var h = '<div class="idx-title">SLIDE INDEX (' + total + ')</div>';
+    SLIDES.forEach(function(sl, i) {
+      h += '<div class="index-item' + (i === cur ? ' active' : '') + '" onclick="window._jumpTo(' + i + ')"><span class="idx-num">' + (i + 1) + '</span><span class="idx-name">' + sl.n + '</span></div>';
+    });
+    indexPanel.innerHTML = h;
+  }
+
+  function updateIndex() {
+    var items = indexPanel.querySelectorAll('.index-item');
+    items.forEach(function(el, i) { el.classList.toggle('active', i === cur); });
+    var a = indexPanel.querySelector('.index-item.active');
+    if (a) a.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }
+
+  window._jumpTo = function(i) { cur = i; loadSlide(); };
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); go(1); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
+    if (e.key === 'Home') { cur = 0; loadSlide(); }
+    if (e.key === 'End') { cur = total - 1; loadSlide(); }
+    if (e.key === 'f' || e.key === 'F') {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+      else document.exitFullscreen();
+    }
+    if (e.key === 'g' || e.key === 'G') toggleIndex();
+    if (e.key === 'Escape') {
+      indexPanel.classList.remove('open');
+      notesPanel.classList.remove('open');
+      document.getElementById('notesBtn').classList.remove('active');
+    }
+  });
+
+  var touchX = 0;
+  frame.addEventListener('touchstart', function(e) { touchX = e.changedTouches[0].screenX; });
+  frame.addEventListener('touchend', function(e) {
+    var dx = e.changedTouches[0].screenX - touchX;
+    if (Math.abs(dx) > 50) go(dx < 0 ? 1 : -1);
+  });
+
+  window.addEventListener('resize', scaleFrame);
+  init();
+})();
 </script>
 </body>
 </html>

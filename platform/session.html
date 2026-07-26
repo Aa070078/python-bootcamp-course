@@ -277,20 +277,21 @@
                 <div id="videoUrlResult" class="hidden mt-3 p-3 rounded-lg text-xs font-mono break-all"></div>
               </div>
 
-              <!-- PPTX URL -->
+              <!-- PPTX Local File -->
               <div class="p-5 rounded-xl border border-accent-orange/20 bg-accent-orange/5">
                 <h4 class="font-bold text-ink-100 mb-3 flex items-center gap-2">
                   <svg class="w-4 h-4 text-accent-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                  Slides URL (PPTX)
+                  Slides (PPTX)
                 </h4>
-                <p class="text-xs text-ink-400 mb-3">Paste a direct link to a PPTX file (e.g. from catbox.moe).</p>
+                <p class="text-xs text-ink-400 mb-3">Local file served from project. Upload replaces it in browser storage.</p>
+                <div id="pptxLocalStatus" class="text-sm text-ink-300 mb-3 font-mono"></div>
                 <div class="flex items-center gap-3">
-                  <input type="url" id="pptxUrlInput" placeholder="https://files.catbox.moe/xxxxx.pptx" class="flex-1 px-4 py-3 rounded-xl bg-surface-2 border border-ink-800 text-sm text-ink-100 placeholder-ink-500 focus:border-accent-orange focus:outline-none">
-                  <button onclick="savePptxUrl()" class="px-5 py-3 rounded-xl font-bold text-sm bg-accent-orange text-white hover:shadow-lg transition-all btn-press">
-                    Save
-                  </button>
+                  <label class="flex-1 px-4 py-3 rounded-xl bg-surface-2 border border-ink-800 border-dashed text-center cursor-pointer hover:border-accent-orange transition-all">
+                    <input type="file" accept=".pptx" class="hidden" id="pptxFileInput" onchange="handlePptxUpload(this)">
+                    <span id="pptxFileName" class="text-sm text-ink-400">Click to upload new PPTX</span>
+                  </label>
                 </div>
-                <div id="pptxUrlResult" class="hidden mt-3 p-3 rounded-lg text-xs font-mono break-all"></div>
+                <div id="pptxUploadResult" class="hidden mt-3 p-3 rounded-lg text-xs font-mono break-all"></div>
               </div>
 
               <!-- Current Assets -->
@@ -433,7 +434,19 @@
       // Materials
       if (session.hasMaterial) {
         document.getElementById('slidesIframe').src = `assets/materials/viewer.html?num=${currentSession}`;
-        document.getElementById('slidesDownload').href = `assets/materials/session${currentSession}.pptx`;
+        // Check for uploaded PPTX in IndexedDB first, fallback to local file
+        getPptxBlob(currentSession).then(file => {
+          if (file) {
+            const blob = new Blob([file.data], { type: file.type || 'application/vnd.openxmlformats-officedocument.presentationml.presentation' });
+            const url = URL.createObjectURL(blob);
+            document.getElementById('slidesDownload').href = url;
+            document.getElementById('slidesDownload').download = file.name;
+            document.getElementById('pptxLocalStatus').innerHTML = `<span class="text-accent-green">✓ Uploaded:</span> ${file.name}`;
+          } else {
+            document.getElementById('slidesDownload').href = `assets/materials/session${currentSession}.pptx`;
+            document.getElementById('pptxLocalStatus').innerHTML = `<span class="text-ink-500">Using local file</span>`;
+          }
+        });
       } else {
         document.getElementById('slidesViewer').classList.add('hidden');
         document.getElementById('noSlides').classList.remove('hidden');
@@ -693,22 +706,53 @@ sys.stdout = StringIO()
       renderCurrentAssets();
     }
 
-    // Save PPTX URL
-    function savePptxUrl() {
-      const url = document.getElementById('pptxUrlInput').value.trim();
-      const result = document.getElementById('pptxUrlResult');
-      if (!url) { result.classList.add('hidden'); return; }
-      if (!url.startsWith('http')) {
+    // PPTX upload to IndexedDB
+    function openPptxDb() {
+      return new Promise((resolve, reject) => {
+        const req = indexedDB.open('PptxStorage', 1);
+        req.onupgradeneeded = (e) => {
+          e.target.result.createObjectStore('files');
+        };
+        req.onsuccess = (e) => resolve(e.target.result);
+        req.onerror = (e) => reject(e.target.error);
+      });
+    }
+
+    async function handlePptxUpload(input) {
+      const file = input.files[0];
+      if (!file) return;
+      const result = document.getElementById('pptxUploadResult');
+      const fileName = document.getElementById('pptxFileName');
+      try {
+        const db = await openPptxDb();
+        const tx = db.transaction('files', 'readwrite');
+        const store = tx.objectStore('files');
+        const arrayBuffer = await file.arrayBuffer();
+        store.put({ data: arrayBuffer, name: file.name, size: file.size, type: file.type }, 'pptx_' + currentSession);
+        await new Promise((resolve, reject) => { tx.oncomplete = resolve; tx.onerror = reject; });
+        fileName.textContent = file.name;
+        result.classList.remove('hidden');
+        result.className = 'hidden mt-3 p-3 rounded-lg text-xs font-mono break-all bg-accent-green/10 border border-accent-green/20 text-accent-green';
+        result.textContent = `✓ Uploaded: ${file.name} (${(file.size/1024).toFixed(0)} KB)`;
+        renderCurrentAssets();
+      } catch (err) {
         result.classList.remove('hidden');
         result.className = 'hidden mt-3 p-3 rounded-lg text-xs font-mono break-all bg-red-500/10 border border-red-500/20 text-red-400';
-        result.textContent = '✗ Enter a valid URL starting with http:// or https://';
-        return;
+        result.textContent = `✗ Error: ${err.message}`;
       }
-      storeAsset('pptx_url', url);
-      result.classList.remove('hidden');
-      result.className = 'hidden mt-3 p-3 rounded-lg text-xs font-mono break-all bg-accent-green/10 border border-accent-green/20 text-accent-green';
-      result.textContent = `✓ Saved: ${url}`;
-      renderCurrentAssets();
+    }
+
+    async function getPptxBlob(session) {
+      try {
+        const db = await openPptxDb();
+        const tx = db.transaction('files', 'readonly');
+        const store = tx.objectStore('files');
+        const req = store.get('pptx_' + session);
+        return new Promise((resolve) => {
+          req.onsuccess = () => resolve(req.result ? req.result : null);
+          req.onerror = () => resolve(null);
+        });
+      } catch { return null; }
     }
 
     // Override initPage to use stored assets

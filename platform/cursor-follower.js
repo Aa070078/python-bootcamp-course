@@ -1,14 +1,14 @@
 /* ============================================================
    GRID GLOW BACKGROUND — canvas-rendered 50px grid with
-   drifting radial glow blobs (inspired by 21st.dev GridGlowBackground)
+   mouse-interactive glow + drifting ambient blobs
    ============================================================ */
 
 (function () {
   if (window.matchMedia('(pointer: coarse)').matches) return;
 
   const CELL = 50;
-  const GLOW_COUNT = 8;
-  const GLOW_COLORS = ['#3b82f6', '#f97316', '#3b82f6', '#6366f1'];
+  const GLOW_COUNT = 6;
+  const GLOW_COLORS = ['#3b82f6', '#f97316', '#6366f1', '#22d3ee'];
 
   const canvas = document.createElement('canvas');
   canvas.id = 'grid-glow-canvas';
@@ -25,12 +25,25 @@
   const ctx = canvas.getContext('2d');
   let W, H;
   let glows = [];
+  let mouseX = -1000, mouseY = -1000;
+  let mouseActive = false;
+  let mouseAlpha = 0;
 
   function resize() {
     W = canvas.width = window.innerWidth;
     H = canvas.height = window.innerHeight;
     glows = Array.from({ length: GLOW_COUNT }, () => new Glow());
   }
+
+  document.addEventListener('mousemove', function (e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    mouseActive = true;
+  });
+
+  document.addEventListener('mouseleave', function () {
+    mouseActive = false;
+  });
 
   class Glow {
     constructor() {
@@ -39,7 +52,7 @@
       this.targetX = this.x;
       this.targetY = this.y;
       this.radius = Math.random() * 80 + 40;
-      this.speed = Math.random() * 0.015 + 0.01;
+      this.speed = Math.random() * 0.012 + 0.008;
       this.color = GLOW_COLORS[Math.floor(Math.random() * GLOW_COLORS.length)];
       this.alpha = 0;
       this.setNewTarget();
@@ -56,7 +69,7 @@
       if (Math.abs(this.targetX - this.x) < 1 && Math.abs(this.targetY - this.y) < 1) {
         this.setNewTarget();
       }
-      if (this.alpha < 1) this.alpha += 0.01;
+      if (this.alpha < 1) this.alpha += 0.008;
     }
 
     draw() {
@@ -73,26 +86,79 @@
   }
 
   function drawGrid() {
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.04)';
-    ctx.lineWidth = 1;
     for (let x = 0; x <= W; x += CELL) {
-      ctx.beginPath();
-      ctx.moveTo(x, 0);
-      ctx.lineTo(x, H);
-      ctx.stroke();
+      for (let y = 0; y <= H; y += CELL) {
+        const dx = x - mouseX;
+        const dy = y - mouseY;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const maxDist = 250;
+        const intensity = mouseActive ? Math.max(0, 1 - dist / maxDist) : 0;
+        const baseAlpha = 0.04;
+        const alpha = baseAlpha + intensity * 0.35;
+
+        if (intensity > 0.01) {
+          const glowIntensity = intensity * 0.5;
+          ctx.strokeStyle = 'rgba(59, 130, 246, ' + glowIntensity + ')';
+          ctx.lineWidth = 1 + intensity * 1.5;
+          ctx.beginPath();
+          ctx.moveTo(x, y);
+          ctx.lineTo(x + CELL, y);
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.moveTo(x, y);
+          ctx.lineTo(x, y + CELL);
+          ctx.stroke();
+        } else {
+          ctx.strokeStyle = 'rgba(255, 255, 255, ' + baseAlpha + ')';
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(x, y);
+          ctx.lineTo(x + CELL, y);
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.moveTo(x, y);
+          ctx.lineTo(x, y + CELL);
+          ctx.stroke();
+        }
+      }
     }
-    for (let y = 0; y <= H; y += CELL) {
-      ctx.beginPath();
-      ctx.moveTo(0, y);
-      ctx.lineTo(W, y);
-      ctx.stroke();
+  }
+
+  function drawMouseGlow() {
+    if (!mouseActive) {
+      mouseAlpha = Math.max(0, mouseAlpha - 0.05);
+    } else {
+      mouseAlpha = Math.min(1, mouseAlpha + 0.08);
     }
+    if (mouseAlpha <= 0) return;
+
+    ctx.globalAlpha = mouseAlpha;
+
+    const grad1 = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, 180);
+    grad1.addColorStop(0, 'rgba(59, 130, 246, 0.25)');
+    grad1.addColorStop(0.5, 'rgba(99, 102, 241, 0.08)');
+    grad1.addColorStop(1, 'transparent');
+    ctx.fillStyle = grad1;
+    ctx.beginPath();
+    ctx.arc(mouseX, mouseY, 180, 0, Math.PI * 2);
+    ctx.fill();
+
+    const grad2 = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, 60);
+    grad2.addColorStop(0, 'rgba(255, 255, 255, 0.12)');
+    grad2.addColorStop(1, 'transparent');
+    ctx.fillStyle = grad2;
+    ctx.beginPath();
+    ctx.arc(mouseX, mouseY, 60, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.globalAlpha = 1;
   }
 
   function animate() {
     ctx.clearRect(0, 0, W, H);
     drawGrid();
-    glows.forEach(g => { g.update(); g.draw(); });
+    drawMouseGlow();
+    glows.forEach(function (g) { g.update(); g.draw(); });
     requestAnimationFrame(animate);
   }
 
