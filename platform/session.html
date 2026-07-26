@@ -261,54 +261,36 @@
                 <h3 class="font-bold text-ink-100">Admin Panel</h3>
               </div>
 
-              <!-- Video Upload -->
+              <!-- Video URL -->
               <div class="p-5 rounded-xl border border-accent-blue/20 bg-accent-blue/5">
                 <h4 class="font-bold text-ink-100 mb-3 flex items-center gap-2">
                   <svg class="w-4 h-4 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
-                  Upload Video (MP4)
+                  Video URL (MP4)
                 </h4>
-                <p class="text-xs text-ink-400 mb-3">Upload a web-optimized MP4 video for this session. File will be hosted on catbox.moe.</p>
+                <p class="text-xs text-ink-400 mb-3">Paste a direct link to an MP4 video (e.g. from catbox.moe).</p>
                 <div class="flex items-center gap-3">
-                  <label class="flex-1 px-4 py-3 rounded-xl bg-surface-2 border border-ink-800 border-dashed text-center cursor-pointer hover:border-accent-blue transition-all">
-                    <input type="file" accept="video/mp4" class="hidden" id="videoFileInput" onchange="handleVideoSelect(this)">
-                    <span id="videoFileName" class="text-sm text-ink-400">Click to select video file</span>
-                  </label>
-                  <button onclick="uploadVideo()" id="videoUploadBtn" class="px-5 py-3 rounded-xl font-bold text-sm bg-accent-blue text-white hover:shadow-lg transition-all btn-press disabled:opacity-40 disabled:cursor-not-allowed" disabled>
-                    Upload
+                  <input type="url" id="videoUrlInput" placeholder="https://files.catbox.moe/xxxxx.mp4" class="flex-1 px-4 py-3 rounded-xl bg-surface-2 border border-ink-800 text-sm text-ink-100 placeholder-ink-500 focus:border-accent-blue focus:outline-none">
+                  <button onclick="saveVideoUrl()" class="px-5 py-3 rounded-xl font-bold text-sm bg-accent-blue text-white hover:shadow-lg transition-all btn-press">
+                    Save
                   </button>
                 </div>
-                <div id="videoUploadProgress" class="hidden mt-3">
-                  <div class="h-2 bg-surface-3 rounded-full overflow-hidden">
-                    <div id="videoProgressBar" class="h-full bg-accent-blue rounded-full transition-all" style="width: 0%"></div>
-                  </div>
-                  <p id="videoUploadStatus" class="text-xs text-ink-400 mt-1 text-center">Uploading...</p>
-                </div>
-                <div id="videoUploadResult" class="hidden mt-3 p-3 rounded-lg text-xs font-mono break-all"></div>
+                <div id="videoUrlResult" class="hidden mt-3 p-3 rounded-lg text-xs font-mono break-all"></div>
               </div>
 
-              <!-- PPTX Upload -->
+              <!-- PPTX URL -->
               <div class="p-5 rounded-xl border border-accent-orange/20 bg-accent-orange/5">
                 <h4 class="font-bold text-ink-100 mb-3 flex items-center gap-2">
                   <svg class="w-4 h-4 text-accent-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                  Upload Slides (PPTX)
+                  Slides URL (PPTX)
                 </h4>
-                <p class="text-xs text-ink-400 mb-3">Upload a PPTX presentation for this session. File will be hosted on catbox.moe.</p>
+                <p class="text-xs text-ink-400 mb-3">Paste a direct link to a PPTX file (e.g. from catbox.moe).</p>
                 <div class="flex items-center gap-3">
-                  <label class="flex-1 px-4 py-3 rounded-xl bg-surface-2 border border-ink-800 border-dashed text-center cursor-pointer hover:border-accent-orange transition-all">
-                    <input type="file" accept=".pptx" class="hidden" id="pptxFileInput" onchange="handlePptxSelect(this)">
-                    <span id="pptxFileName" class="text-sm text-ink-400">Click to select PPTX file</span>
-                  </label>
-                  <button onclick="uploadPptx()" id="pptxUploadBtn" class="px-5 py-3 rounded-xl font-bold text-sm bg-accent-orange text-white hover:shadow-lg transition-all btn-press disabled:opacity-40 disabled:cursor-not-allowed" disabled>
-                    Upload
+                  <input type="url" id="pptxUrlInput" placeholder="https://files.catbox.moe/xxxxx.pptx" class="flex-1 px-4 py-3 rounded-xl bg-surface-2 border border-ink-800 text-sm text-ink-100 placeholder-ink-500 focus:border-accent-orange focus:outline-none">
+                  <button onclick="savePptxUrl()" class="px-5 py-3 rounded-xl font-bold text-sm bg-accent-orange text-white hover:shadow-lg transition-all btn-press">
+                    Save
                   </button>
                 </div>
-                <div id="pptxUploadProgress" class="hidden mt-3">
-                  <div class="h-2 bg-surface-3 rounded-full overflow-hidden">
-                    <div id="pptxProgressBar" class="h-full bg-accent-orange rounded-full transition-all" style="width: 0%"></div>
-                  </div>
-                  <p id="pptxUploadStatus" class="text-xs text-ink-400 mt-1 text-center">Uploading...</p>
-                </div>
-                <div id="pptxUploadResult" class="hidden mt-3 p-3 rounded-lg text-xs font-mono break-all"></div>
+                <div id="pptxUrlResult" class="hidden mt-3 p-3 rounded-lg text-xs font-mono break-all"></div>
               </div>
 
               <!-- Current Assets -->
@@ -644,8 +626,7 @@ sys.stdout = StringIO()
     // ============================
     // ADMIN FUNCTIONS
     // ============================
-    let selectedVideoFile = null;
-    let selectedPptxFile = null;
+
 
     function isAdmin() {
       const user = getUserData();
@@ -694,132 +675,40 @@ sys.stdout = StringIO()
       renderCurrentAssets();
     }
 
-    // Video upload
-    function handleVideoSelect(input) {
-      selectedVideoFile = input.files[0];
-      if (selectedVideoFile) {
-        document.getElementById('videoFileName').textContent = selectedVideoFile.name;
-        document.getElementById('videoUploadBtn').disabled = false;
-      }
-    }
-
-    async function uploadVideo() {
-      if (!selectedVideoFile) return;
-      const btn = document.getElementById('videoUploadBtn');
-      const progress = document.getElementById('videoUploadProgress');
-      const bar = document.getElementById('videoProgressBar');
-      const status = document.getElementById('videoUploadStatus');
-      const result = document.getElementById('videoUploadResult');
-
-      btn.disabled = true;
-      progress.classList.remove('hidden');
-      result.classList.add('hidden');
-      status.textContent = 'Uploading to catbox.moe...';
-      bar.style.width = '30%';
-
-      try {
-        const formData = new FormData();
-        formData.append('reqtype', 'fileupload');
-        formData.append('fileToUpload', selectedVideoFile);
-
-        const xhr = new XMLHttpRequest();
-        const url = await new Promise((resolve, reject) => {
-          xhr.open('POST', 'https://catbox.moe/user/api.php');
-          xhr.upload.onprogress = (e) => {
-            if (e.lengthComputable) {
-              const pct = Math.round((e.loaded / e.total) * 80) + 10;
-              bar.style.width = pct + '%';
-            }
-          };
-          xhr.onload = () => {
-            if (xhr.status === 200 && xhr.responseText.startsWith('https://')) {
-              bar.style.width = '100%';
-              resolve(xhr.responseText.trim());
-            } else {
-              reject(new Error('Upload failed: ' + xhr.responseText));
-            }
-          };
-          xhr.onerror = () => reject(new Error('Network error'));
-          xhr.send(formData);
-        });
-
-        storeAsset('video_url', url);
-        status.textContent = 'Upload complete!';
-        result.classList.remove('hidden');
-        result.className = 'hidden mt-3 p-3 rounded-lg text-xs font-mono break-all bg-accent-green/10 border border-accent-green/20 text-accent-green';
-        result.textContent = `✓ Uploaded: ${url}`;
-        renderCurrentAssets();
-      } catch (err) {
-        status.textContent = 'Upload failed';
+    // Save video URL
+    function saveVideoUrl() {
+      const url = document.getElementById('videoUrlInput').value.trim();
+      const result = document.getElementById('videoUrlResult');
+      if (!url) { result.classList.add('hidden'); return; }
+      if (!url.startsWith('http')) {
         result.classList.remove('hidden');
         result.className = 'hidden mt-3 p-3 rounded-lg text-xs font-mono break-all bg-red-500/10 border border-red-500/20 text-red-400';
-        result.textContent = `✗ Error: ${err.message}`;
+        result.textContent = '✗ Enter a valid URL starting with http:// or https://';
+        return;
       }
-      btn.disabled = false;
+      storeAsset('video_url', url);
+      result.classList.remove('hidden');
+      result.className = 'hidden mt-3 p-3 rounded-lg text-xs font-mono break-all bg-accent-green/10 border border-accent-green/20 text-accent-green';
+      result.textContent = `✓ Saved: ${url}`;
+      renderCurrentAssets();
     }
 
-    // PPTX upload
-    function handlePptxSelect(input) {
-      selectedPptxFile = input.files[0];
-      if (selectedPptxFile) {
-        document.getElementById('pptxFileName').textContent = selectedPptxFile.name;
-        document.getElementById('pptxUploadBtn').disabled = false;
-      }
-    }
-
-    async function uploadPptx() {
-      if (!selectedPptxFile) return;
-      const btn = document.getElementById('pptxUploadBtn');
-      const progress = document.getElementById('pptxUploadProgress');
-      const bar = document.getElementById('pptxProgressBar');
-      const status = document.getElementById('pptxUploadStatus');
-      const result = document.getElementById('pptxUploadResult');
-
-      btn.disabled = true;
-      progress.classList.remove('hidden');
-      result.classList.add('hidden');
-      status.textContent = 'Uploading to catbox.moe...';
-      bar.style.width = '30%';
-
-      try {
-        const formData = new FormData();
-        formData.append('reqtype', 'fileupload');
-        formData.append('fileToUpload', selectedPptxFile);
-
-        const xhr = new XMLHttpRequest();
-        const url = await new Promise((resolve, reject) => {
-          xhr.open('POST', 'https://catbox.moe/user/api.php');
-          xhr.upload.onprogress = (e) => {
-            if (e.lengthComputable) {
-              const pct = Math.round((e.loaded / e.total) * 80) + 10;
-              bar.style.width = pct + '%';
-            }
-          };
-          xhr.onload = () => {
-            if (xhr.status === 200 && xhr.responseText.startsWith('https://')) {
-              bar.style.width = '100%';
-              resolve(xhr.responseText.trim());
-            } else {
-              reject(new Error('Upload failed: ' + xhr.responseText));
-            }
-          };
-          xhr.onerror = () => reject(new Error('Network error'));
-          xhr.send(formData);
-        });
-
-        storeAsset('pptx_url', url);
-        status.textContent = 'Upload complete!';
-        result.classList.remove('hidden');
-        result.className = 'hidden mt-3 p-3 rounded-lg text-xs font-mono break-all bg-accent-green/10 border border-accent-green/20 text-accent-green';
-        result.textContent = `✓ Uploaded: ${url}`;
-        renderCurrentAssets();
-      } catch (err) {
-        status.textContent = 'Upload failed';
+    // Save PPTX URL
+    function savePptxUrl() {
+      const url = document.getElementById('pptxUrlInput').value.trim();
+      const result = document.getElementById('pptxUrlResult');
+      if (!url) { result.classList.add('hidden'); return; }
+      if (!url.startsWith('http')) {
         result.classList.remove('hidden');
         result.className = 'hidden mt-3 p-3 rounded-lg text-xs font-mono break-all bg-red-500/10 border border-red-500/20 text-red-400';
-        result.textContent = `✗ Error: ${err.message}`;
+        result.textContent = '✗ Enter a valid URL starting with http:// or https://';
+        return;
       }
-      btn.disabled = false;
+      storeAsset('pptx_url', url);
+      result.classList.remove('hidden');
+      result.className = 'hidden mt-3 p-3 rounded-lg text-xs font-mono break-all bg-accent-green/10 border border-accent-green/20 text-accent-green';
+      result.textContent = `✓ Saved: ${url}`;
+      renderCurrentAssets();
     }
 
     // Override initPage to use stored assets
