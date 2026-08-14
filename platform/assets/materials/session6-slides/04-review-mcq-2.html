@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="left:-220px; top:-180px;"></div>
+  <div class="bg-glow-magenta" style="right:-160px; bottom:-160px;"></div>
+
+  <!-- QUESTION -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:130px; width:1760px; z-index:10;">
+    <div class="kicker">📖 REVIEW — SESSION 5 · INDEXING &amp; SLICING</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:52px; font-weight:700; color:var(--text-hi); margin-top:18px;">Given <span class="mono" style="color:var(--neon-cyan);">nums = [10, 20, 30, 40, 50]</span>,</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:52px; font-weight:700; color:var(--text-hi); margin-top:8px;">what is <span class="mono" style="color:var(--neon-lime);">nums[1:3]</span>?</div>
+    <div class="arabic" style="font-size:28px; color:var(--text-lo); margin-top:14px;">ما نتيجة التقطيع nums[1:3]؟</div>
+    <div class="mono" style="margin-top:16px; font-size:22px; color:var(--text-dim);">🤔 Slicing: start is included, end is excluded…</div>
+  </div>
+
+  <!-- OPTION A -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:430px; width:860px; height:160px; background:rgba(167,139,250,0.06); border:1px solid rgba(167,139,250,0.35); border-radius:18px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:112px; top:466px; width:800px; z-index:10;">
+    <div style="display:flex; align-items:center;">
+      <span style="font-family:'JetBrains Mono',monospace; font-size:28px; font-weight:700; color:#0a0e1a; background:var(--neon-violet); border-radius:10px; padding:6px 16px; margin-right:24px;">A</span>
+      <span style="font-family:'JetBrains Mono',monospace; font-size:40px; color:var(--text-hi);">[<span class="tok-num">20</span>, <span class="tok-num">30</span>]</span>
+    </div>
+  </div>
+
+  <!-- OPTION B -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:430px; width:860px; height:160px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:18px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1012px; top:466px; width:800px; z-index:10;">
+    <div style="display:flex; align-items:center;">
+      <span style="font-family:'JetBrains Mono',monospace; font-size:28px; font-weight:700; color:#0a0e1a; background:var(--neon-cyan); border-radius:10px; padding:6px 16px; margin-right:24px;">B</span>
+      <span style="font-family:'JetBrains Mono',monospace; font-size:40px; color:var(--text-hi);">[<span class="tok-num">10</span>, <span class="tok-num">20</span>]</span>
+    </div>
+  </div>
+
+  <!-- OPTION C -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:640px; width:860px; height:160px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.35); border-radius:18px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:112px; top:676px; width:800px; z-index:10;">
+    <div style="display:flex; align-items:center;">
+      <span style="font-family:'JetBrains Mono',monospace; font-size:28px; font-weight:700; color:#0a0e1a; background:var(--neon-lime); border-radius:10px; padding:6px 16px; margin-right:24px;">C</span>
+      <span style="font-family:'JetBrains Mono',monospace; font-size:40px; color:var(--text-hi);">[<span class="tok-num">30</span>, <span class="tok-num">40</span>]</span>
+    </div>
+  </div>
+
+  <!-- OPTION D -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:640px; width:860px; height:160px; background:rgba(250,204,21,0.06); border:1px solid rgba(250,204,21,0.35); border-radius:18px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1012px; top:676px; width:800px; z-index:10;">
+    <div style="display:flex; align-items:center;">
+      <span style="font-family:'JetBrains Mono',monospace; font-size:28px; font-weight:700; color:#0a0e1a; background:var(--neon-yellow); border-radius:10px; padding:6px 16px; margin-right:24px;">D</span>
+      <span style="font-family:'JetBrains Mono',monospace; font-size:40px; color:var(--text-hi);">[<span class="tok-num">20</span>, <span class="tok-num">30</span>, <span class="tok-num">40</span>]</span>
+    </div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S06</div>
+  <div class="chrome-pagenum">04 / 45</div>
+</div>
+<template data-slide-notes>
+**Slide 4 — Review MCQ (indexing & slicing)**
+
+**Answer: A — `[20, 30]`**
+
+- `nums[1:3]` → start at index 1 (`20`), stop before index 3 (`40`). Result `[20, 30]`.
+- D `[20, 30, 40]` is the common mistake (forgetting the end index is exclusive).
+
+Visual: draw the indices under the list on the board: `10[0] 20[1] 30[2] 40[3] 50[4]`, then circle 1 and 3.
+
+Say: "Slicing is how we'll later grab words out of a sentence — remember `start included, end excluded`."
+
+Arabic tip: اشرح القاعدة "البداية تدخل، والنهاية لا تدخل" واطلب من طالب أن يعيدها بصوت عالٍ لتثبيتها.
+</template>
+</body>
+</html>

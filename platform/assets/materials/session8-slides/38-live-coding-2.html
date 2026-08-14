@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-200px; right:-160px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-180px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1700px; z-index:10;">
+    <div class="kicker">⚡ LIVE CODING 02 — EVERYONE FOLLOWS</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi); margin-top:10px;">Build: the Expense Tracker 💸</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:330px; width:1600px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-mid); line-height:1.5;">Track daily spending. Loads the previous expenses from JSON, appends new ones, saves everything back — then shows the total. <b style="color:var(--text-hi);">Real app, real data.</b></div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:470px; width:1220px; height:440px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">expenses.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:520px; width:1160px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.55;">
+    <div><span class="tok-kw">import</span> <span class="tok-var">json</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-var">expenses</span> <span class="tok-op">=</span> []</div>
+    <div><span class="tok-kw">try</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">with</span> <span class="tok-fn">open</span>(<span class="tok-str">"expenses.json"</span>) <span class="tok-kw">as</span> <span class="tok-var">f</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">expenses</span> <span class="tok-op">=</span> <span class="tok-var">json</span>.<span class="tok-fn">load</span>(<span class="tok-var">f</span>)</div>
+    <div><span class="tok-kw">except</span> <span class="tok-var">FileNotFoundError</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">expenses</span> <span class="tok-op">=</span> []</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-kw">while</span> <span class="tok-kw">True</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">item</span> <span class="tok-op">=</span> <span class="tok-fn">input</span>(<span class="tok-str">"Item (or 'done'): "</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">if</span> <span class="tok-var">item</span> <span class="tok-op">==</span> <span class="tok-str">"done"</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">break</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">cost</span> <span class="tok-op">=</span> <span class="tok-fn">float</span>(<span class="tok-fn">input</span>(<span class="tok-str">"Cost: "</span>))</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">expenses</span>.<span class="tok-fn">append</span>({<span class="tok-str">"item"</span>: <span class="tok-var">item</span>, <span class="tok-str">"cost"</span>: <span class="tok-var">cost</span>})</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-kw">with</span> <span class="tok-fn">open</span>(<span class="tok-str">"expenses.json"</span>, <span class="tok-str">"w"</span>) <span class="tok-kw">as</span> <span class="tok-var">f</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">json</span>.<span class="tok-fn">dump</span>(<span class="tok-var">expenses</span>, <span class="tok-var">f</span>, <span class="tok-var">indent</span>=<span class="tok-num">2</span>)</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-var">total</span> <span class="tok-op">=</span> <span class="tok-fn">sum</span>(<span class="tok-var">e</span>[<span class="tok-str">"cost"</span>] <span class="tok-kw">for</span> <span class="tok-var">e</span> <span class="tok-kw">in</span> <span class="tok-var">expenses</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">f"💸 Total: {total}"</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"Saved to expenses.json ✅"</span>)</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1340px; top:470px; width:480px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:33px; color:var(--text-mid); line-height:1.6;">The pattern to internalize:</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:27px; color:var(--text-hi); margin-top:16px; line-height:1.9;">
+      <div>1️⃣ load (fail-safe)</div>
+      <div>2️⃣ work in memory</div>
+      <div>3️⃣ dump back</div>
+    </div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:29px; color:var(--text-lo); direction:rtl; margin-top:18px;">تطبيق المصروفات: حمّل السابق، أضف الجديد، ثم احفظ الكل في ملف JSON</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S08</div>
+  <div class="chrome-pagenum">38 / 50</div>
+</div>
+<template data-slide-notes>
+**Live coding 2 — 15 min.** Build the expense tracker step by step; students type along.
+
+1. Start with imports + empty list. Ask: where do previous expenses come from? → the JSON file.
+2. Add the fail-safe load (reuse from slide 35).
+3. Loop with input; add `float()` conversion — warn: typing text crashes, we accept that for now.
+4. Append a dict per expense.
+5. Save with dump + indent=2.
+6. Compute total with a generator in sum().
+7. Run twice: second run still shows the first session's expenses — prove persistence.
+
+Extension: print each expense with an index so they see the loaded data.
+Arabic tip: «حمّل · عدّل · احفظ» (load · edit · save) — the three-step rhythm.
+</template>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-200px; left:-160px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-180px; right:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1700px; z-index:10;">
+    <div class="kicker">🔑 CONCEPT 01 — WHY PERSISTENCE MATTERS</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:92px; font-weight:700; color:var(--text-hi); margin-top:10px;">Why persist data?</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:380px; width:530px; height:300px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:415px; width:470px; z-index:10;">
+    <div style="font-size:42px;">💀</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:600; color:var(--text-hi); margin-top:8px;">Variables die with the program</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-lo); margin-top:10px; line-height:1.4;">Lists, dicts, counters — all live in RAM and vanish on exit.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:660px; top:380px; width:530px; height:300px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:690px; top:415px; width:470px; z-index:10;">
+    <div style="font-size:42px;">💾</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:600; color:var(--text-hi); margin-top:8px;">Files live on the disk</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-lo); margin-top:10px; line-height:1.4;">Text files, images, databases — they survive restarts and reboots.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1240px; top:380px; width:530px; height:300px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1270px; top:415px; width:470px; z-index:10;">
+    <div style="font-size:42px;">⚡</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:600; color:var(--text-hi); margin-top:8px;">Persistence = superpower</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-lo); margin-top:10px; line-height:1.4;">Settings, game saves, orders, logins — the heart of every real app.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:760px; width:1700px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:46px; font-weight:600; color:var(--neon-cyan);">"Persistence turns a <span style="color:var(--text-lo);">demo script</span> into <span style="color:var(--text-hi);">real software</span>."</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:14px;">الحفظ الدائم للبيانات يعني أنها تبقى بعد إغلاق البرنامج، وهذا جوهر التطبيقات الحقيقية</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S08</div>
+  <div class="chrome-pagenum">07 / 50</div>
+</div>
+<template data-slide-notes>
+**Why persistence matters — 5 min.**
+
+- Contrast: a variable is a post-it note; a file is a notebook. Close the program → post-its fly away, the notebook stays.
+- Ask for real apps they use that MUST remember: WhatsApp chats, game saves, Instagram likes.
+- Reframe: everything they built in sessions 1–7 forgot everything. Today = memory.
+- Arabic tip: «البيانات تبقى بعد إغلاق البرنامج إذا حُفظت في ملف» — repeat and have them say "persistence".
+</template>
+</body>
+</html>

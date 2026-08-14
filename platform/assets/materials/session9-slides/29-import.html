@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-150px; left:-120px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-200px; right:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">CORE // 10 — THE IMPORT STATEMENT</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi);">🔌 import</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); margin-top:26px;">Plug the whole module in. Access its contents with <span class="mono" style="color:var(--neon-cyan);">module.name</span>.</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:420px; width:900px; height:480px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span><span class="code-dot code-dot-y"></span><span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">import_demo.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:478px; width:850px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.7;">
+    <div><span class="tok-kw">import</span> <span class="tok-var">math</span></div>
+    <div><span class="tok-kw">import</span> <span class="tok-var">random</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">math</span>.<span class="tok-fn">sqrt</span>(<span class="tok-num">144</span>))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-com"># 12.0</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">math</span>.<span class="tok-var">pi</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-com"># 3.141592653589793</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">random</span>.<span class="tok-fn">randint</span>(<span class="tok-num">1</span>, <span class="tok-num">6</span>))&nbsp;&nbsp;<span class="tok-com"># random 1..6</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1040px; top:420px; width:800px; height:480px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.3); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1080px; top:460px; width:720px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--neon-cyan);">How to read it 🧭</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:22px; line-height:1.7;">
+      <span class="mono" style="color:var(--neon-magenta);">import math</span> → "load the module, keep it as the name <b style="color:var(--text-hi);">math</b>".<br><br>
+      Then use <span class="mono" style="color:var(--neon-cyan);">math.sqrt</span>, <span class="mono" style="color:var(--neon-cyan);">math.pi</span> — <b style="color:var(--text-hi);">dot notation</b> = "inside math, get sqrt".
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:26px; line-height:1.6;">✅ Never name clashes: <span class="mono" style="color:var(--neon-lime);">math.sqrt</span> can't collide with your own <span class="mono" style="color:var(--neon-lime);">sqrt</span>.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:26px; color:var(--text-lo); direction:rtl; margin-top:24px;">import يحمّل الوحدة كاملة وتصل إليها بالنقطة: math.sqrt تعني "داخل math استخرج sqrt".</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">29 / 50</div>
+</div>
+<template data-slide-notes>
+## import
+
+**The mental model (4 min):** `import math` loads the whole file and binds it to the name `math`. Everything in it — functions, constants — becomes `math.xxx` (dot notation).
+
+**Dot notation explanation:** `math.sqrt(144)` reads as "math's sqrt". The module is like a labeled box: you reach inside with a dot.
+
+**Why import (whole module) is safe:** names are namespaced — your own `sqrt` variable won't conflict with math.sqrt.
+
+**Live (3 min):** import math, print math.pi, math.sqrt(144). Then show `dir(math)` — the treasure list inside the module. Students find it fascinating.
+
+**Arabic tip:** شبهها بالصندوق المُعنوَن: النقطة تعني "افتح الصندوق وخذ هذا العنصر".
+</template>
+</body>
+</html>

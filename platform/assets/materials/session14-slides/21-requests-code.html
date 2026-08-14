@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta"></div>
+  <div class="bg-glow-cyan"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:70px; width:1760px; z-index:10;">
+    <div class="kicker">CODE // FETCHING A REAL PAGE 📡</div>
+    <div style="margin-top:22px; font-family:'Space Grotesk',sans-serif; font-size:54px; font-weight:700; color:var(--text-hi);">Fetch + inspect the response</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:12px;">نرسل الطلب، نتحقق من الحالة، ونطبع أول جزء من الصفحة</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:290px; width:1180px; height:560px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">fetch.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" data-lang="python" style="position:absolute; left:110px; top:350px; width:1120px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.6;">
+    <div><span class="tok-kw">import</span> requests</div>
+    <div></div>
+    <div><span class="tok-var">url</span> = <span class="tok-str">"https://quotes.toscrape.com/"</span></div>
+    <div><span class="tok-var">resp</span> = <span class="tok-fn">requests.get</span>(<span class="tok-var">url</span>, timeout=<span class="tok-num">10</span>)</div>
+    <div><span class="tok-var">resp.raise_for_status</span>() <span class="tok-com"># raise if 4xx/5xx</span></div>
+    <div></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">resp.status_code</span>) <span class="tok-com"># 200</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">resp.headers</span>[<span class="tok-str">"Content-Type"</span>])</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">resp.text</span>[:<span class="tok-num">120</span>]) <span class="tok-com"># first characters</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1320px; top:320px; width:520px; z-index:10;">
+    <div class="chip chip-lime">GOOD HABITS</div>
+    <div style="margin-top:20px; font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); line-height:1.6;">
+      ✅ <span class="mono">timeout=10</span> → don't wait forever<br>
+      ✅ <span class="mono">raise_for_status()</span> → catch errors early<br>
+      ✅ <span class="mono">resp.text</span> → the HTML we'll parse
+    </div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:25px; color:var(--text-lo); direction:rtl; margin-top:20px;">عادات جيدة: مهلة زمنية، وفحص الحالة، ثم قراءة النص</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">21 / 50</div>
+</div>
+<template data-slide-notes>
+Live: run fetch.py with internet. Expected output: 200, text/html; charset=UTF-8, then the first 120 chars of HTML.
+
+Explain each print: status, content-type header, and a peek at the raw HTML text.
+
+Why timeout? A dead server would otherwise hang your script forever. Why raise_for_status()? So a 404 doesn't silently give you an error page to parse.
+
+Common mistake: forgetting the trailing slash on the URL, or printing resp.text fully (huge). We print [:120].
+
+Arabic tip: فحص الاستجابة قبل التحليل = قراءة «حالة» الرد قبل فتح الرسالة.
+</template>
+</body>
+</html>

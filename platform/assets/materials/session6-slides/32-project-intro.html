@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-magenta"></div>
+<div class="bg-glow-lime"></div>
+<div class="chrome-topbar"><span class="chrome-dot"></span>PROJECTS</div>
+
+<div class="kicker" data-object="true" data-object-type="textbox" style="position:absolute;top:96px;left:80px;">BUILD WITH ME</div>
+<div class="arabic" data-object="true" data-object-type="textbox" style="position:absolute;top:138px;left:80px;font-size:24px;color:var(--text-lo);">مشروع عملي — مدير جهات الاتصال</div>
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:200px;left:80px;width:1200px;font-family:'Space Grotesk',sans-serif;font-size:64px;font-weight:700;color:var(--text-hi);">💼 Contact Manager</div>
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:300px;left:80px;width:1200px;font-family:'Space Grotesk',sans-serif;font-size:30px;color:var(--text-mid);">A tiny app that stores contacts with <b style="color:var(--text-hi);">name, phone and tags</b> — powered by lists, dictionaries AND sets together.</div>
+
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:420px;left:80px;width:1760px;display:flex;gap:24px;">
+  <div style="flex:1;padding:28px 30px;border-radius:16px;background:var(--bg-1);border:1px solid var(--border);">
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--neon-cyan);margin-bottom:14px;">⚙️ Features</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:22px;color:var(--text-mid);line-height:2.05;">
+      1️⃣ Add a contact <span style="color:var(--text-lo);">(name + phone + tags)</span><br>
+      2️⃣ Search contacts <span style="color:var(--text-lo);">by name</span><br>
+      3️⃣ Remove a contact<br>
+      4️⃣ Show all <b style="color:var(--neon-lime);">unique tags</b> — a set does the work
+    </div>
+  </div>
+  <div style="flex:1;padding:28px 30px;border-radius:16px;background:rgba(250,204,21,0.05);border:1px solid rgba(250,204,21,0.20);">
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--neon-yellow);margin-bottom:14px;">🧠 Skills you'll use</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:22px;color:var(--text-mid);line-height:2.05;">
+      ✅ Lists — hold many contacts<br>
+      ✅ Dictionaries — one <span style="font-family:'JetBrains Mono',monospace;color:var(--neon-magenta);">{"name", "phone", "tags"}</span> per contact<br>
+      ✅ Sets — tags stay unique, zero duplicates<br>
+      ✅ <span style="font-family:'JetBrains Mono',monospace;color:var(--neon-cyan);">while True</span> menu + <span style="font-family:'JetBrains Mono',monospace;color:var(--neon-cyan);">input()</span><br>
+      ✅ f-strings from Session 4
+    </div>
+  </div>
+</div>
+
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:930px;left:80px;width:1760px;padding:16px 28px;border-radius:14px;background:rgba(163,230,53,0.06);border:1px solid rgba(163,230,53,0.18);"><span style="font-size:23px;color:var(--text-mid);">💡 Real-world pattern — phonebooks, CRM systems and the contact list on your phone all work exactly like this.</span></div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S06</div>
+<div class="chrome-pagenum">32 / 45</div>
+</div>
+<template data-slide-notes>
+Introduce the project: today's final deliverable. It is a text-menu app, so it reuses the `while True` menu pattern from Session 5's Grade Manager — but the data model is the new thing.
+
+Ask-before-show (think-pair-share, 1 min):
+- "If I store every contact as a dictionary, what are the keys?" → `name`, `phone`, `tags`.
+- "Why is `tags` a SET and not a list?" → so "work, work, friend" becomes {"work", "friend"} — duplicates collapse automatically.
+- "Where do the contacts live?" → in a list of dicts.
+
+Set expectations:
+- Built in 2 parts. Part 1 = data model + add. Part 2 = search + remove + menu.
+- Everyone types along in the live editor. Encourage students who finish early to help their neighbor.
+
+Arabic tip: اسأل الطلاب: لماذا نحتاج القواميس في هذا المشروع؟ أشر إلى أن كل جهة اتصال هي «بطاقة» فيها اسم ورقم وهاشتاقات. (Why do we need dicts here? Each contact is a card with a name, number and hashtags.)
+</template>
+</body>
+</html>

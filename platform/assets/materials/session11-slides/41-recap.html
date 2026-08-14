@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-magenta"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; z-index:10;">
+    <div class="kicker">📖 RECAP // 60-SECOND SUMMARY</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:150px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:84px; font-weight:700; color:var(--text-hi);">Everything in one map 🗺️</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:16px;">ملخص سريع — عشر كلمات تلخص كل ما تعلمناه اليوم</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:400px; width:430px; height:500px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.5); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:440px; width:370px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--neon-cyan);">THE BASICS</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:20px; line-height:1.8;">
+      🧩 <b>class</b> = blueprint<br>
+      📦 <b>object</b> = instance<br>
+      🎂 <b>__init__</b> = constructor<br>
+      🪞 <b>self</b> = the object itself
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:540px; top:400px; width:430px; height:500px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.5); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:570px; top:440px; width:370px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--neon-lime);">STATE &amp; BEHAVIOR</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:20px; line-height:1.8;">
+      🗃️ <b>attributes</b> = data<br>
+      🎮 <b>methods</b> = actions<br>
+      ✨ <b>__str__</b> = readable print<br>
+      🎯 <b>@property</b> = safe access
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1000px; top:400px; width:430px; height:500px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.5); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1030px; top:440px; width:370px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--neon-magenta);">THE 3 PILLARS</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:20px; line-height:1.8;">
+      🔒 <b>Encapsulation</b> — hide internals<br>
+      🧬 <b>Inheritance</b> — reuse + super()<br>
+      🎭 <b>Polymorphism</b> — same call, many forms
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1460px; top:400px; width:380px; height:500px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.4); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1490px; top:440px; width:320px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--text-hi);">PUT IT TOGETHER</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:20px; line-height:1.8;">
+      🧱 <b>Composition</b> = has-a<br>
+      ⚖️ <b>When OOP?</b> = judgement<br>
+      🛠️ <b>Refactor</b> = reorganize
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--neon-lime); margin-top:18px;">PyBank built today 💰</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S11</div>
+  <div class="chrome-pagenum">41 / 50</div>
+</div>
+<template data-slide-notes>
+**60-second recap — rapid-fire.**
+
+- Go card by card, one word each: "class? blueprint. self? the object. Inheritance? reuse. Polymorphism? same call different result."
+- Have the class *say* the words back — choral repetition locks vocabulary.
+- Point at PyBank as proof: "We built a real app using every single card here."
+- Arabic tip: اقرأ البطاقات الأربع بالعربية سريعًا: مخطط، كائن، دالة بناء، الوراثة.
+- Timebox strictly: 60-90 seconds max. Then bridge to next session.
+</template>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-magenta"></div>
+<div class="bg-glow-cyan"></div>
+<div class="chrome-topbar"><span class="chrome-dot"></span>PROJECTS</div>
+
+<div class="kicker" data-object="true" data-object-type="textbox" style="position:absolute;top:96px;left:80px;">PROJECT // PART 2</div>
+<div class="arabic" data-object="true" data-object-type="textbox" style="position:absolute;top:138px;left:80px;font-size:24px;color:var(--text-lo);">الجزء الثاني — البحث والحذف والقائمة الرئيسية</div>
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:200px;left:80px;width:1600px;font-family:'Space Grotesk',sans-serif;font-size:56px;font-weight:700;color:var(--text-hi);">Search + remove + menu loop</div>
+
+<div data-object="true" data-object-type="shape" style="position:absolute;left:80px;top:330px;width:860px;z-index:5;">
+  <div class="code-window" style="width:860px;">
+    <div class="code-window-header">
+      <div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+      <span class="code-window-title">contact_manager.py</span>
+    </div>
+    <pre style="padding:22px 26px;margin:0;font-size:22px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span class="tok-kw">def</span> <span class="tok-fn">search</span>():
+    <span class="tok-var">word</span> = <span class="tok-fn">input</span>(<span class="tok-str">"Search name: "</span>).<span class="tok-fn">strip</span>().<span class="tok-fn">lower</span>()
+    <span class="tok-kw">for</span> <span class="tok-var">c</span> <span class="tok-kw">in</span> <span class="tok-var">contacts</span>:
+        <span class="tok-kw">if</span> <span class="tok-var">word</span> <span class="tok-kw">in</span> <span class="tok-var">c</span>[<span class="tok-str">"name"</span>].<span class="tok-fn">lower</span>():
+            <span class="tok-fn">print</span>(<span class="tok-var">c</span>[<span class="tok-str">"name"</span>], <span class="tok-str">"|"</span>, <span class="tok-var">c</span>[<span class="tok-str">"phone"</span>],
+                  <span class="tok-str">"| tags:"</span>, <span class="tok-fn">sorted</span>(<span class="tok-var">c</span>[<span class="tok-str">"tags"</span>]))
+
+<span class="tok-kw">def</span> <span class="tok-fn">remove</span>():
+    <span class="tok-var">name</span> = <span class="tok-fn">input</span>(<span class="tok-str">"Remove: "</span>).<span class="tok-fn">strip</span>().<span class="tok-fn">lower</span>()
+    <span class="tok-kw">for</span> <span class="tok-var">i</span>, <span class="tok-var">c</span> <span class="tok-kw">in</span> <span class="tok-fn">enumerate</span>(<span class="tok-var">contacts</span>):
+        <span class="tok-kw">if</span> <span class="tok-var">c</span>[<span class="tok-str">"name"</span>].<span class="tok-fn">lower</span>() == <span class="tok-var">name</span>:
+            <span class="tok-var">contacts</span>.<span class="tok-fn">pop</span>(<span class="tok-var">i</span>)
+            <span class="tok-fn">print</span>(<span class="tok-str">f"Removed </span><span class="tok-str">{</span><span class="tok-var">c</span>[<span class="tok-str">'name'</span>]<span class="tok-str">}</span><span class="tok-str">."</span>)
+            <span class="tok-kw">return</span>
+    <span class="tok-fn">print</span>(<span class="tok-str">"Not found."</span>)</pre>
+  </div>
+</div>
+
+<div data-object="true" data-object-type="shape" style="position:absolute;left:980px;top:330px;width:860px;z-index:5;">
+  <div class="code-window" style="width:860px;">
+    <div class="code-window-header">
+      <div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+      <span class="code-window-title">menu loop</span>
+    </div>
+    <pre style="padding:22px 26px;margin:0;font-size:22px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span class="tok-kw">while</span> <span class="tok-kw">True</span>:
+    <span class="tok-fn">print</span>(<span class="tok-str">"1 add | 2 search | 3 remove | 4 tags | 5 quit"</span>)
+    <span class="tok-var">choice</span> = <span class="tok-fn">input</span>(<span class="tok-str">"> "</span>)
+    <span class="tok-kw">if</span> <span class="tok-var">choice</span> == <span class="tok-str">"1"</span>:
+        <span class="tok-fn">add_contact</span>()
+    <span class="tok-kw">elif</span> <span class="tok-var">choice</span> == <span class="tok-str">"2"</span>:
+        <span class="tok-fn">search</span>()
+    <span class="tok-kw">elif</span> <span class="tok-var">choice</span> == <span class="tok-str">"3"</span>:
+        <span class="tok-fn">remove</span>()
+    <span class="tok-kw">elif</span> <span class="tok-var">choice</span> == <span class="tok-str">"4"</span>:
+        <span class="tok-fn">show_tags</span>()
+    <span class="tok-kw">elif</span> <span class="tok-var">choice</span> == <span class="tok-str">"5"</span>:
+        <span class="tok-kw">break</span>
+    <span class="tok-kw">else</span>:
+        <span class="tok-fn">print</span>(<span class="tok-str">"Invalid choice."</span>)
+<span class="tok-fn">print</span>(<span class="tok-str">"Bye!"</span>)</pre>
+  </div>
+</div>
+
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:940px;left:80px;width:1760px;padding:16px 28px;border-radius:14px;background:rgba(163,230,53,0.06);border:1px solid rgba(163,230,53,0.18);"><span style="font-size:23px;color:var(--text-mid);">🔑 The menu is a <b style="color:var(--text-hi);">dispatcher</b>: it reads one number and calls exactly one function. <span style="font-family:'JetBrains Mono',monospace;color:var(--neon-lime);">break</span> exits the loop → <span style="font-family:'JetBrains Mono',monospace;color:var(--neon-cyan);">"Bye!"</span></span></div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S06</div>
+<div class="chrome-pagenum">34 / 45</div>
+</div>
+<template data-slide-notes>
+LIVE CODING — Part 2 (type it together, ~10 min). Continue in the same `contact_manager.py`.
+
+Steps:
+1. `search()`: compare lowercase against lowercase (`c["name"].lower()`) so typing "SARA" finds "Sara". `in` checks *substring* — "sa" finds "Sara" and "Salem". Good for a demo, mention it.
+2. `remove()`: `enumerate(contacts)` gives index + contact. When the name matches, `pop(i)` removes it by index. The `return` stops the loop immediately — otherwise you'd keep looping over a changed list.
+3. Menu: `while True` + `if/elif` chain calls the right function. Choice `"5"` → `break` → `print("Bye!")`.
+
+Run the full app now. Walk through the whole flow: add 2-3 contacts → search → show tags → remove → quit.
+
+Common mistakes to catch:
+- Comparing `c["name"]` (capitalized) to `name` (lowercased) → never matches. Fix with `.lower()` on both sides.
+- Removing inside a `for` loop without `return` → skips or re-checks items. Show the bug.
+- Indenting the `print("Bye!")` inside the `while` → prints every loop iteration.
+
+Arabic tip: القائمة مثل «قائمة مطعم» — رقم لكل طلب، وكل رقم ينفّذ دالة. كرّر هذا التشبيه بالعربية. (The menu is like a restaurant menu — each number triggers one dish, i.e. one function.)
+</template>
+</body>
+</html>

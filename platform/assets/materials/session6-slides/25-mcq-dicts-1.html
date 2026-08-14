@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-250px; right:-200px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-250px; left:-200px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">🎯 QUICK CHECK // DICTS</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:88px; font-weight:700; color:var(--text-hi); margin-top:16px;">Which line creates a <span style="color:var(--neon-cyan);">dictionary</span>?</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid); margin-top:14px;">Four lines of code — only one builds a dict. 💭</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:14px;">أي سطر من الأسطر الأربعة ينشئ قاموسًا (dict)؟ فكّر قبل أن تُجيب.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:430px; width:840px; height:210px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.3); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:112px; top:464px; width:780px; z-index:10;">
+    <span class="chip chip-cyan">A</span>
+    <span style="font-family:'JetBrains Mono',monospace; font-size:30px; color:var(--text-hi); margin-left:14px;">{"name": "Ahmad", "age": 16}</span>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:var(--text-mid); margin-top:12px;">key: value pairs inside braces</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:430px; width:840px; height:210px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.3); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1012px; top:464px; width:780px; z-index:10;">
+    <span class="chip chip-magenta">B</span>
+    <span style="font-family:'JetBrains Mono',monospace; font-size:30px; color:var(--text-hi); margin-left:14px;">["name", "Ahmad"]</span>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:var(--text-mid); margin-top:12px;">a list of two strings</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:680px; width:840px; height:210px; background:rgba(250,204,21,0.05); border:1px solid rgba(250,204,21,0.3); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:112px; top:714px; width:780px; z-index:10;">
+    <span class="chip chip-yellow">C</span>
+    <span style="font-family:'JetBrains Mono',monospace; font-size:30px; color:var(--text-hi); margin-left:14px;">("name", "Ahmad")</span>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:var(--text-mid); margin-top:12px;">a tuple of two strings</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:680px; width:840px; height:210px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.3); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1012px; top:714px; width:780px; z-index:10;">
+    <span class="chip chip-lime">D</span>
+    <span style="font-family:'JetBrains Mono',monospace; font-size:30px; color:var(--text-hi); margin-left:14px;">{"Ahmad", 16}</span>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:var(--text-mid); margin-top:12px;">a set — no colon, so not a dict!</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:950px; width:1760px; z-index:10;">
+    <div style="display:flex; align-items:center; gap:16px;">
+      <span style="font-size:32px;">🤔</span>
+      <span style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid);">Hint: look for the <span style="font-family:'JetBrains Mono',monospace; color:var(--neon-lime);">:</span> colon — it is the heart of every dictionary.</span>
+    </div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S06</div>
+  <div class="chrome-pagenum">25 / 45</div>
+</div>
+<template data-slide-notes>
+# Slide 25 — MCQ: Which creates a dictionary? (Instructor notes)
+
+**Answer: A** — `{"name": "Ahmad", "age": 16}` has `key: value` pairs, so it is a dict.
+
+**Why the others fail**
+- **B** `["name", "Ahmad"]` → a list. Elements, no keys.
+- **C** `("name", "Ahmad")` → a tuple. Immutable, still no keys.
+- **D** `{"Ahmad", 16}` → a SET. The missing colon is the giveaway. This is the most common trap — students see braces and say "dict".
+
+**How to run it**
+- `type({"Ahmad", 16})` → `<class 'set'>` vs `type({"a": 1})` → `<class 'dict'>`. Project this and let students call it out.
+
+**Arabic teaching tip**
+- اذكر القاعدة: «القاموس فيه نقطتان، المجموعة لا». قاعدة ذهبية تمنع الالتباس بين {} للقاموس و {} للمجموعة.
+</template>
+</body>
+</html>

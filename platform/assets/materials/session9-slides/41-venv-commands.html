@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-150px; right:-120px;"></div>
+  <div class="bg-glow-lime" style="bottom:-200px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">CODE // 17 — THE COMMANDS</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:70px; font-weight:700; color:var(--text-hi);">🛡️ venv on Windows — the full dance</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:960px; height:560px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span><span class="code-dot code-dot-y"></span><span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">terminal (Windows)</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:388px; width:920px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.8;">
+    <div><span class="tok-com"># 1 — create the sandbox</span></div>
+    <div><span class="tok-op">$</span> <span class="tok-var">py -m venv .venv</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-com"># 2 — activate it (Windows)</span></div>
+    <div><span class="tok-op">$</span> <span class="tok-var">.venv\Scripts\activate</span></div>
+    <div><span class="tok-out" style="color:var(--neon-lime);">(.venv) C:\your-project&gt;</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-com"># 3 — install into the sandbox</span></div>
+    <div><span class="tok-op">$</span> <span class="tok-var">pip install requests</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-com"># 4 — leave the sandbox</span></div>
+    <div><span class="tok-op">$</span> <span class="tok-var">deactivate</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1100px; top:330px; width:740px; height:560px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.3); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1140px; top:372px; width:660px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--neon-cyan);">The tell-tale sign 👀</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:22px; line-height:1.7;">
+      When the prompt shows <span class="mono" style="color:var(--neon-lime);">(.venv)</span> in front — you're <b style="color:var(--text-hi);">inside the sandbox</b>.<br><br>
+      No <span class="mono" style="color:var(--neon-lime);">(.venv)</span>? Then <span class="mono" style="color:var(--neon-orange);">pip install</span> hits the <b style="color:var(--text-hi);">global</b> world.
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:26px; line-height:1.7;">💡 Then a <span class="mono" style="color:var(--neon-yellow);">requirements.txt</span> + fresh venv = a brand-new teammate is ready in <b style="color:var(--text-hi);">one minute</b>.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:26px; color:var(--text-lo); direction:rtl; margin-top:24px;">لاحظ ظهور (.venv) أمام الموجه — علامة أنك داخل الصندوق الرملي، و deactivate تعيدك للعالم العام.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">41 / 50</div>
+</div>
+<template data-slide-notes>
+## venv commands — live (15 min)
+
+**This is hands-on — students type along:**
+1. `py -m venv .venv` — creates the sandbox folder (takes a few seconds). Note: `py` is the Windows launcher; on macOS/Linux it's `python3`.
+2. `.venv\Scripts\activate` — the prompt changes to `(.venv)`.
+3. `pip install requests` — notice it installs into .venv. Compare `pip freeze` before and after.
+4. `deactivate` — prompt returns to normal.
+
+**Point out the prompt change** as the visual confirmation they're inside. Common mistake: forgetting to activate → packages go global. The (.venv) prefix is their check.
+
+**macOS/Linux note (30 sec):** `source .venv/bin/activate`. Don't dwell; this class is Windows.
+
+**Arabic tip:** علامة (.venv) هي بوصلتكم — إن ظهرت فأنتم داخل البيئة، وإلا فالتثبيت سيكون عامًا.
+</template>
+</body>
+</html>

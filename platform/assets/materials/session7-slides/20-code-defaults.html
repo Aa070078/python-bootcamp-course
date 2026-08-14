@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime" style="top:-180px; right:-150px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-220px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:100px; width:1720px; z-index:10;">
+    <div class="kicker">⌨️ CODE — DEFAULTS IN ACTION</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi); margin-top:14px;">Greet with or without a greeting</div>
+    <div class="arabic" style="font-size:30px; color:var(--text-lo); margin-top:12px; direction:rtl;">استدعِ الدالة مع أو بدون القيمة الثانية — كلاهما صحيح</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:1180px; height:420px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">defaults.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:400px; width:1120px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:27px; line-height:1.65;">
+    <div><span class="tok-kw">def</span> <span class="tok-fn">greet</span>(<span class="tok-var">name</span>, <span class="tok-var">greeting</span><span class="tok-op">=</span><span class="tok-str">"Hello"</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">f"{greeting}, {name}!"</span>)</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-fn">greet</span>(<span class="tok-str">"Nour"</span>)              <span class="tok-com"># uses default</span></div>
+    <div><span class="tok-fn">greet</span>(<span class="tok-str">"Nour"</span>, <span class="tok-str">"Salam"</span>)  <span class="tok-com"># overrides it</span></div>
+    <div><span class="tok-fn">greet</span>(<span class="tok-str">"Nour"</span>, <span class="tok-str">"Ahlan"</span>)   <span class="tok-com"># another option</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1320px; top:340px; width:500px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--neon-lime);">Output</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--text-lo); margin-top:18px; line-height:1.7;">
+      <div><span class="tok-out">Hello, Nour!</span></div>
+      <div><span class="tok-out">Salam, Nour!</span></div>
+      <div><span class="tok-out">Ahlan, Nour!</span></div>
+    </div>
+    <div class="arabic" style="font-size:26px; color:var(--text-lo); margin-top:20px; direction:rtl;">دالة واحدة، ثلاث نتائج — المرونة هي قوة القيم الافتراضية</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S07</div>
+  <div class="chrome-pagenum">20 / 50</div>
+</div>
+<template data-slide-notes>
+- Live type; ask students to predict each line's output BEFORE running.
+- Call 1 uses "Hello"; calls 2–3 override the default.
+- The SAME function produces 3 different greetings — flexibility without duplication.
+- Ask: "How would you make the default 'Salam'?" → change the def line.
+- Common mistake: passing defaults as keyword after positional is fine, but never put required args after defaults in def.
+- Arabic tip: مرونة الدالة تتيح استخدامات متعددة دون تكرار الكود.
+- Extend challenge: add `emoji="🙌"` default param.
+</template>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-lime"></div>
+
+  <div class="kicker" style="position:absolute;top:100px;left:80px;">THINK BEFORE RUNNING</div>
+  <div class="arabic" style="position:absolute;top:100px;right:80px;">فكر قبل التشغيل</div>
+  <div style="position:absolute;top:160px;left:80px;font-size:36px;font-weight:600;color:var(--text-hi);max-width:800px;">What will this code print?</div>
+  <div style="position:absolute;left:80px;top:240px;"><div class="code-window" style="width:760px;">
+<div class="code-window-header">
+<div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+<span class="code-window-title">main.py</span>
+</div>
+<pre style="padding:24px 28px;margin:0;font-size:20px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span style="color:var(--neon-cyan);">text</span> = <span style="color:var(--neon-lime);">"hello"</span>
+<span style="color:var(--neon-cyan);">result</span> = <span style="color:var(--neon-lime);">""</span>
+<span style="color:var(--neon-magenta);">for</span> <span style="color:var(--neon-cyan);">char</span> <span style="color:var(--neon-magenta);">in</span> text:
+    <span style="color:var(--neon-magenta);">if</span> text.count(char) > <span style="color:var(--neon-yellow);">1</span>:
+        result += char
+<span style="color:var(--neon-magenta);">print</span>(result)</pre>
+</div></div>
+  <div style="position:absolute;left:880px;top:240px;width:880px;display:flex;flex-direction:column;gap:20px;">
+    <div style="padding:20px 24px;border-radius:12px;background:rgba(34,211,238,0.08);border:1px solid rgba(34,211,238,0.2);">
+      <div style="font-size:18px;color:var(--neon-cyan);font-weight:600;margin-bottom:8px;">🔍 HINT 1</div>
+      <div style="font-size:20px;color:var(--text-body);">text.count(char) counts how many times <code style="color:var(--neon-yellow);">char</code> appears in the string</div>
+    </div>
+    <div style="padding:20px 24px;border-radius:12px;background:rgba(163,230,53,0.08);border:1px solid rgba(163,230,53,0.2);">
+      <div style="font-size:18px;color:var(--neon-lime);font-weight:600;margin-bottom:8px;">🔍 HINT 2</div>
+      <div style="font-size:20px;color:var(--text-body);">In <code style="color:var(--neon-yellow);">"hello"</code>: h=1, e=1, l=2, l=2, o=1</div>
+    </div>
+    <div style="padding:20px 24px;border-radius:12px;background:rgba(250,204,21,0.08);border:1px solid rgba(250,204,21,0.2);">
+      <div style="font-size:18px;color:var(--neon-yellow);font-weight:600;margin-bottom:8px;">🔍 HINT 3</div>
+      <div style="font-size:20px;color:var(--text-body);">Only characters with count > 1 are added to <code style="color:var(--neon-cyan);">result</code></div>
+    </div>
+  </div>
+  <div style="position:absolute;left:80px;bottom:120px;max-width:1600px;padding:20px 28px;border-radius:12px;background:rgba(163,230,53,0.12);border:1px solid rgba(163,230,53,0.3);">
+    <span style="font-size:22px;color:var(--neon-lime);font-weight:600;">Answer → </span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:24px;color:var(--text-hi);">"ll"</span>
+    <span style="font-size:20px;color:var(--text-dim);margin-left:16px;">Only 'l' appears more than once (twice)</span>
+  </div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S04</div>
+<div class="chrome-pagenum">55 / 76</div>
+<template data-slide-notes></template>
+</div>
+</body>
+</html>

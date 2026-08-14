@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime" style="top:-240px; right:-160px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-280px; left:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">📋 CHEAT SHEET</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi); margin-top:14px;">Everything on one page</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:900px; height:470px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:380px; width:840px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:24px; line-height:1.65;">
+    <div><span class="tok-com"># install once</span></div>
+    <div><span class="tok-str">pip install requests</span></div>
+    <div><br></div>
+    <div><span class="tok-kw">import</span> <span class="tok-var">requests</span></div>
+    <div><br></div>
+    <div><span class="tok-com"># GET with params</span></div>
+    <div><span class="tok-var">resp</span> <span class="tok-op">=</span> <span class="tok-var">requests</span>.<span class="tok-fn">get</span>(<span class="tok-var">url</span><span class="tok-op">,</span> <span class="tok-var">params</span><span class="tok-op">=</span><span class="tok-op">{</span><span class="tok-str">"key"</span><span class="tok-op">:</span> <span class="tok-str">"value"</span><span class="tok-op">}</span><span class="tok-op">)</span></div>
+    <div><span class="tok-var">resp</span>.<span class="tok-fn">raise_for_status</span>()</div>
+    <div><span class="tok-var">data</span> <span class="tok-op">=</span> <span class="tok-var">resp</span>.<span class="tok-fn">json</span>()</div>
+    <div><br></div>
+    <div><span class="tok-com"># POST with a body</span></div>
+    <div><span class="tok-var">resp</span> <span class="tok-op">=</span> <span class="tok-var">requests</span>.<span class="tok-fn">post</span>(<span class="tok-var">url</span><span class="tok-op">,</span> <span class="tok-var">json</span><span class="tok-op">=</span><span class="tok-op">{</span><span class="tok-str">"title"</span><span class="tok-op">:</span> <span class="tok-str">"Hi"</span><span class="tok-op">}</span><span class="tok-op">)</span></div>
+    <div><br></div>
+    <div><span class="tok-com"># friendly error handling</span></div>
+    <div><span class="tok-kw">if</span> <span class="tok-var">resp</span>.<span class="tok-var">status_code</span> <span class="tok-op">!=</span> <span class="tok-num">200</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Oops:"</span>, <span class="tok-var">resp</span>.<span class="tok-var">status_code</span>)</div>
+    <div><br></div>
+    <div><span class="tok-kw">try</span>: <span class="tok-var">requests</span>.<span class="tok-fn">get</span>(<span class="tok-var">url</span>)</div>
+    <div><span class="tok-kw">except</span> <span class="tok-var">requests</span>.<span class="tok-var">exceptions</span>.<span class="tok-var">RequestException</span>: <span class="tok-fn">print</span>(<span class="tok-str">"offline"</span>)</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1030px; top:330px; width:810px; height:470px; background:rgba(250,204,21,0.05); border:1px solid rgba(250,204,21,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1070px; top:370px; width:730px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-yellow);">METHODS &amp; STATUS</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:14px; line-height:1.9;">
+      <span class="mono" style="color:var(--neon-cyan);">GET</span> read &middot; <span class="mono" style="color:var(--neon-lime);">POST</span> create<br>
+      <span class="mono" style="color:var(--neon-yellow);">PUT</span> update &middot; <span class="mono" style="color:var(--neon-magenta);">DELETE</span> remove<br><br>
+      <span class="mono" style="color:var(--neon-lime);">200</span> OK &middot; <span class="mono" style="color:var(--neon-lime);">201</span> Created<br>
+      <span class="mono" style="color:var(--neon-orange);">404</span> Not found &middot; <span class="mono" style="color:var(--neon-orange);">401</span> No key<br>
+      <span class="mono" style="color:var(--neon-orange);">429</span> Too fast &middot; <span class="mono" style="color:var(--neon-magenta);">500</span> Server down
+    </div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--neon-cyan); margin-top:24px;">RESPONSE ATTRIBUTES</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-mid); margin-top:10px; line-height:1.8;">
+      <span class="mono">resp.status_code</span> &middot; <span class="mono">resp.ok</span><br>
+      <span class="mono">resp.text</span> &middot; <span class="mono">resp.json()</span> &middot; <span class="mono">resp.headers</span><br>
+      <span class="mono">resp.url</span> &middot; <span class="mono">resp.raise_for_status()</span>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:25px; color:var(--text-lo); margin-top:20px; line-height:1.7;">💡 Free APIs: open-meteo, frankfurter, jsonplaceholder, jokeapi, randomuser, coingecko.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:845px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-lo);">Save this slide. It's the whole session in two boxes. 📌</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:920px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">ورقة الغش: كل ما تحتاجه في صفحة واحدة — احفظها وارجع إليها في مشاريعك القادمة 📋</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">50 / 50</div>
+</div>
+<template data-slide-notes>
+Cheat sheet — the whole session in two boxes.
+
+Left box: the reusable code pattern (install → import → GET/POST → raise_for_status → .json() → error handling).
+
+Right box: methods, status codes, response attributes, and the free API list.
+
+Advice for students: screenshot this slide, or copy it into their own notes. It's the reference they'll want for the homework and future projects.
+
+Closing note for the teacher: remind students the cheat sheet exists as an HTML slide they can revisit any time.
+
+Arabic tip: اطلب من الطلاب "التقاط" هذه الشريحة على هواتفهم — مرجع سريع يحملونه أينما كانوا.
+</template>
+</body>
+</html>

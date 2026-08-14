@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime" style="top:-240px; right:-160px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-280px; left:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">➕ CORE CONCEPT #15</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:84px; font-weight:700; color:var(--text-hi); margin-top:14px;">POST &mdash; send data</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:320px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); line-height:1.6;">GET <span style="color:var(--neon-lime);">reads</span>. POST <span style="color:var(--neon-cyan);">creates</span>. You send a JSON body; the server replies with what it saved.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:450px; width:900px; height:380px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:500px; width:840px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.7;">
+    <div><span class="tok-kw">import</span> <span class="tok-var">requests</span></div>
+    <div><br></div>
+    <div><span class="tok-var">new_post</span> <span class="tok-op">=</span> <span class="tok-op">{</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"title"</span><span class="tok-op">:</span> <span class="tok-str">"Hello API"</span><span class="tok-op">,</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"body"</span><span class="tok-op">:</span> <span class="tok-str">"My first POST"</span><span class="tok-op">,</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"userId"</span><span class="tok-op">:</span> <span class="tok-num">1</span><span class="tok-op">,</span></div>
+    <div><span class="tok-op">}</span></div>
+    <div><br></div>
+    <div><span class="tok-var">resp</span> <span class="tok-op">=</span> <span class="tok-var">requests</span>.<span class="tok-fn">post</span>(</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"https://jsonplaceholder.typicode.com/posts"</span><span class="tok-op">,</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">json</span><span class="tok-op">=</span><span class="tok-var">new_post</span><span class="tok-op">,</span></div>
+    <div>)</div>
+    <div><br></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">resp</span>.<span class="tok-var">status_code</span>)&nbsp;&nbsp;<span class="tok-com"># 201 Created</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">resp</span>.<span class="tok-fn">json</span>()[<span class="tok-str">"id"</span>])&nbsp;<span class="tok-com"># new id</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1030px; top:450px; width:810px; height:380px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1070px; top:490px; width:730px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-magenta);">WHAT CHANGED?</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:16px; line-height:1.9;">
+      <span class="mono" style="color:var(--text-hi);">post(</span> instead of <span class="mono" style="color:var(--text-hi);">get(</span><br>
+      <span class="mono" style="color:var(--neon-lime);">json=new_post</span> sends the dict as the body<br><br>
+      Server replies <span class="mono" style="color:var(--neon-lime);">201 Created</span> + the saved object with a new <span class="mono">id</span>.<br><br>
+      ⚠️ We use a <span style="color:var(--neon-yellow);">test-only API</span> (JSONPlaceholder) — it doesn't really save, but it behaves like a real one.
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:880px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">POST لإرسال بيانات جديدة: ترسل قاموساً في جسم الطلب، ويعيد الخادم ما حفظه مع معرّف جديد ➕</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">31 / 50</div>
+</div>
+<template data-slide-notes>
+POST requests — creating data.
+
+Contrast with GET:
+- GET: no body, read-only, answer is the data.
+- POST: body = the new data, answer = the created resource (with an id).
+
+Note the `json=` parameter name — requests serializes the Python dict to a JSON body automatically and sets Content-Type: application/json.
+
+We use jsonplaceholder.typicode.com — a free fake API built for practice. Real POSTs would need auth/keys (a later session).
+
+Live: run it; show 201 and the echoed object with id=101.
+
+Pitfall: passing `data=` instead of `json=` — data sends form-encoded text; for APIs use json=.
+
+Arabic tip: التمييز الذهبي: "GET يقرأ، POST يُنشئ" — و"json=" تنقل القاموس بأمان إلى الخادم.
+</template>
+</body>
+</html>

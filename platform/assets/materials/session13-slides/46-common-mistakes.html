@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-240px; right:-160px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-280px; left:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">⚠️ COMMON MISTAKES</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi); margin-top:14px;">Don't fall for these</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:860px; height:300px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:380px; width:780px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-magenta);">❌ MISTAKES</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:14px; line-height:1.9;">
+      &bull; Forgetting to check <span class="mono">status_code</span><br>
+      &bull; Printing <span class="mono">resp.text</span> and treating it as a dict<br>
+      &bull; Sharing API keys / committing them to Git<br>
+      &bull; No try/except around the network call<br>
+      &bull; Hand-writing URLs with messy strings instead of params
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:340px; width:860px; height:300px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1020px; top:380px; width:780px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-lime);">✅ THE FIX</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:14px; line-height:1.9;">
+      &bull; <span class="mono">if resp.status_code != 200: handle it</span><br>
+      &bull; <span class="mono">data = resp.json()</span> before indexing<br>
+      &bull; Keys in <span class="mono">headers</span>, secrets in env vars<br>
+      &bull; <span class="mono">try/except requests.exceptions.RequestException</span><br>
+      &bull; <span class="mono">params={...}</span> and let requests build the URL
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:700px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-lo);">🧠 If your program breaks, read the <span style="color:var(--neon-yellow);">traceback</span> first — 9 times out of 10 it names the exact fix.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:800px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-lo);">Common error messages you'll see: <span class="mono" style="color:var(--neon-cyan);">KeyError</span> (wrong key) &middot; <span class="mono" style="color:var(--neon-cyan);">ConnectionError</span> (no internet) &middot; <span class="mono" style="color:var(--neon-cyan);">HTTPError 404</span> (raise_for_status fired).</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:900px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">أخطاء شائعة وحلولها: تحقق من الحالة، استخدم .json() قبل الوصول للمفاتيح، واحفظ أسرارك بعيداً عن الكود ⚠️</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">46 / 50</div>
+</div>
+<template data-slide-notes>
+Common mistakes — wrong vs right, side by side.
+
+Walk each row: mistake → fix. Let students self-diagnose which mistake they nearly made today.
+
+Emphasize the "three error messages" box:
+- KeyError → wrong key name (case-sensitive!)
+- ConnectionError → offline / bad domain
+- HTTPError → raise_for_status() caught a 4xx/5xx
+
+Quick activity: give one minute to find their own mistake from today's session and tell the class what they'd do differently.
+
+Arabic tip: اجعلهم يتحلون بالأمانة: "من وقع في أي خطأ اليوم؟" — الاعتراف بالخطأ جزء من التعلم.
+</template>
+</body>
+</html>

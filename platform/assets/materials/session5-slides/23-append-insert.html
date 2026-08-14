@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-cyan"></div>
+<div class="chrome-topbar"><span class="chrome-dot"></span>MODIFYING</div>
+
+<div class="kicker" style="position:absolute;top:100px;left:80px;">ADDING ITEMS</div>
+<div class="arabic" style="position:absolute;top:140px;left:80px;font-size:24px;color:var(--text-lo);">إضافة عناصر</div>
+<div style="position:absolute;top:200px;left:80px;width:830px;"><div class="code-window" style="width:830px;">
+<div class="code-window-header">
+<div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+<span class="code-window-title">adding.py</span>
+</div>
+<pre style="padding:24px 28px;margin:0;font-size:20px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span class="tok-var">cart</span> = [<span class="tok-str">"milk"</span>, <span class="tok-str">"bread"</span>]
+
+<span class="tok-com"># append(x) — add to the END</span>
+<span class="tok-var">cart</span>.<span class="tok-fn">append</span>(<span class="tok-str">"eggs"</span>)
+<span class="tok-fn">print</span>(<span class="tok-var">cart</span>)
+<span class="tok-com"># ["milk", "bread", "eggs"]</span>
+
+<span class="tok-com"># insert(i, x) — add at index i</span>
+<span class="tok-var">cart</span>.<span class="tok-fn">insert</span>(<span class="tok-num">1</span>, <span class="tok-str">"juice"</span>)
+<span class="tok-fn">print</span>(<span class="tok-var">cart</span>)
+<span class="tok-com"># ["milk", "juice", "bread", "eggs"]</span></pre>
+</div></div>
+<div style="position:absolute;top:200px;right:80px;width:830px;display:flex;flex-direction:column;gap:18px;">
+  <div style="padding:18px 22px;border-radius:12px;background:var(--bg-1);border:1px solid var(--border);">
+    <div style="font-size:20px;color:var(--neon-lime);font-weight:700;margin-bottom:12px;">append(x) — pushes to the end</div>
+    <div style="display:flex;gap:14px;align-items:center;flex-wrap:nowrap;"><div style="height:64px;min-width:92px;padding:0 14px;border-radius:10px;background:rgba(34,211,238,0.1);border:1px solid rgba(34,211,238,0.3);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--neon-cyan);white-space:nowrap;">milk</div><div style="height:64px;min-width:92px;padding:0 14px;border-radius:10px;background:rgba(34,211,238,0.1);border:1px solid rgba(34,211,238,0.3);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--neon-cyan);white-space:nowrap;">bread</div></div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--text-dim);margin:6px 0;">↓ append("eggs")</div>
+    <div style="display:flex;gap:14px;align-items:center;flex-wrap:nowrap;"><div style="height:64px;min-width:92px;padding:0 14px;border-radius:10px;background:rgba(34,211,238,0.1);border:1px solid rgba(34,211,238,0.3);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--neon-cyan);white-space:nowrap;">milk</div><div style="height:64px;min-width:92px;padding:0 14px;border-radius:10px;background:rgba(34,211,238,0.1);border:1px solid rgba(34,211,238,0.3);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--neon-cyan);white-space:nowrap;">bread</div><div style="height:64px;min-width:92px;padding:0 14px;border-radius:10px;background:rgba(163,230,53,0.12);border:1px solid rgba(163,230,53,0.4);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--neon-lime);white-space:nowrap;">eggs</div></div>
+  </div>
+  <div style="padding:18px 22px;border-radius:12px;background:var(--bg-1);border:1px solid var(--border);">
+    <div style="font-size:20px;color:var(--neon-yellow);font-weight:700;margin-bottom:12px;">insert(i, x) — slides in at index i</div>
+    <div style="display:flex;gap:14px;align-items:center;flex-wrap:nowrap;"><div style="height:64px;min-width:92px;padding:0 14px;border-radius:10px;background:rgba(34,211,238,0.1);border:1px solid rgba(34,211,238,0.3);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--neon-cyan);white-space:nowrap;">milk</div><div style="height:64px;min-width:92px;padding:0 14px;border-radius:10px;background:rgba(34,211,238,0.1);border:1px solid rgba(34,211,238,0.3);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--neon-cyan);white-space:nowrap;">bread</div><div style="height:64px;min-width:92px;padding:0 14px;border-radius:10px;background:rgba(34,211,238,0.1);border:1px solid rgba(34,211,238,0.3);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--neon-cyan);white-space:nowrap;">eggs</div></div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--text-dim);margin:6px 0;">↓ insert(1, "juice")</div>
+    <div style="display:flex;gap:14px;align-items:center;flex-wrap:nowrap;"><div style="height:64px;min-width:92px;padding:0 14px;border-radius:10px;background:rgba(34,211,238,0.1);border:1px solid rgba(34,211,238,0.3);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--neon-cyan);white-space:nowrap;">milk</div><div style="height:64px;min-width:92px;padding:0 14px;border-radius:10px;background:rgba(163,230,53,0.12);border:1px solid rgba(163,230,53,0.4);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--neon-lime);white-space:nowrap;">juice</div><div style="height:64px;min-width:92px;padding:0 14px;border-radius:10px;background:rgba(34,211,238,0.1);border:1px solid rgba(34,211,238,0.3);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--neon-cyan);white-space:nowrap;">bread</div><div style="height:64px;min-width:92px;padding:0 14px;border-radius:10px;background:rgba(34,211,238,0.1);border:1px solid rgba(34,211,238,0.3);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--neon-cyan);white-space:nowrap;">eggs</div></div>
+  </div>
+</div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S05</div>
+<div class="chrome-pagenum">23 / 63</div>
+<template data-slide-notes>append() adds to the end. insert(i,x) adds at position i, shifting the rest right. Show before/after visuals.</template>
+</div>
+</body>
+</html>

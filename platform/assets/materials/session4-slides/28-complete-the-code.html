@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-cyan"></div>
+
+<div class="kicker" style="position:absolute;top:100px;left:80px;">COMPLETE THE CODE</div>
+<div class="arabic" style="position:absolute;top:100px;right:80px;font-size:20px;color:rgba(34,211,238,0.5);">أكمل الكود</div>
+<div style="position:absolute;top:160px;left:80px;display:flex;gap:30px;width:1760px;">
+  <div style="flex:1;">
+<div class="code-window" style="width:900px;">
+<div class="code-window-header">
+<div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+<span class="code-window-title">main.py</span>
+</div>
+<pre style="padding:24px 28px;margin:0;font-size:20px;line-height:1.55;color:var(--text-hi);overflow:hidden;">text = <span style="color:var(--neon-lime);">"Programming"</span>
+
+<span style="color:#6B7280;"># Slice "Program"</span>
+blank1 = text[<span style="color:var(--neon-magenta);">____</span>:<span style="color:var(--neon-magenta);">____</span>]
+
+<span style="color:#6B7280;"># Slice "gramming"</span>
+blank2 = text[<span style="color:var(--neon-magenta);">____</span>]
+
+<span style="color:#6B7280;"># Reverse the string</span>
+blank3 = text[<span style="color:var(--neon-magenta);">____</span>]
+
+<span style="color:#6B7280;"># Get every 2nd character</span>
+blank4 = text[<span style="color:var(--neon-magenta);">____</span>:<span style="color:var(--neon-magenta);">____</span>:<span style="color:var(--neon-magenta);">____</span>]</pre>
+</div>
+  </div>
+  <div style="flex:1;">
+    <div style="font-size:22px;font-weight:600;color:var(--neon-yellow);margin-bottom:18px;">💡 Hints</div>
+    <div style="padding:16px 22px;border-radius:12px;background:rgba(34,211,238,0.06);border:1px solid rgba(34,211,238,0.15);margin-bottom:12px;">
+      <div style="font-size:18px;font-weight:600;color:var(--neon-cyan);">blank1 — "Program"</div>
+      <div style="font-size:16px;color:var(--text-mid);margin-top:4px;">Starts at 0, how many characters? Count: P-r-o-g-r-a-m = 7 chars, so end = 7</div>
+    </div>
+    <div style="padding:16px 22px;border-radius:12px;background:rgba(163,230,53,0.06);border:1px solid rgba(163,230,53,0.15);margin-bottom:12px;">
+      <div style="font-size:18px;font-weight:600;color:var(--neon-lime);">blank2 — "gramming"</div>
+      <div style="font-size:16px;color:var(--text-mid);margin-top:4px;">"g" is at index... count from the start of "Programming"</div>
+    </div>
+    <div style="padding:16px 22px;border-radius:12px;background:rgba(250,204,21,0.06);border:1px solid rgba(250,204,21,0.15);margin-bottom:12px;">
+      <div style="font-size:18px;font-weight:600;color:var(--neon-yellow);">blank3 — Reverse</div>
+      <div style="font-size:16px;color:var(--text-mid);margin-top:4px;">Use the step parameter with a negative value</div>
+    </div>
+    <div style="padding:16px 22px;border-radius:12px;background:rgba(236,72,153,0.06);border:1px solid rgba(236,72,153,0.15);">
+      <div style="font-size:18px;font-weight:600;color:var(--neon-magenta);">blank4 — Every 2nd char</div>
+      <div style="font-size:16px;color:var(--text-mid);margin-top:4px;">Use all three parts: start:end:step</div>
+    </div>
+  </div>
+</div>
+<div style="position:absolute;bottom:110px;left:80px;max-width:1600px;padding:16px 24px;border-radius:12px;background:rgba(163,230,53,0.08);border:1px solid rgba(163,230,53,0.2);font-size:20px;color:var(--neon-lime);">✓ Answers: text[0:7] | text[3:] | text[::-1] | text[::2]</div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S04</div>
+<div class="chrome-pagenum">28 / 76</div>
+<template data-slide-notes>Interactive exercise: students fill in the blanks to practice slicing with different parameters.</template>
+</div>
+</body>
+</html>

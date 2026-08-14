@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-150px; left:-120px;"></div>
+  <div class="bg-glow-lime" style="bottom:-200px; right:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">PROJECT // PUT IT ALL TOGETHER</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi);">💼 Project — PyGuess CLI</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-mid); margin-top:22px;">A number-guessing game that is <b style="color:var(--neon-lime);">impossible to crash</b>. Every skill from today, one app.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:400px; width:560px; height:480px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:24px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:115px; top:440px; width:500px; z-index:10;">
+    <div style="font-size:52px;">🎮</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--text-hi); margin-top:10px;">The game</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:16px; line-height:1.6;">
+      ▶ Computer picks a secret number 1–20.<br><br>
+      ▶ You guess until you find it.<br><br>
+      ▶ Guesses + high scores saved to <span class="mono" style="color:var(--neon-cyan);">scores.json</span>.
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:680px; top:400px; width:1160px; height:480px; background:rgba(250,204,21,0.06); border:1px solid rgba(250,204,21,0.4); border-radius:24px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:720px; top:440px; width:1080px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--neon-yellow);">Every skill on duty 🧰</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:22px; line-height:1.8;">
+      ✅ <span class="mono" style="color:var(--neon-cyan);">get_int()</span> — the bulletproof validator (try/except + loop)<br>
+      ✅ <span class="mono" style="color:var(--neon-magenta);">FileNotFoundError</span> — no scores file? Start fresh<br>
+      ✅ <span class="mono" style="color:var(--neon-magenta);">json.JSONDecodeError</span> — corrupt file? Recover<br>
+      ✅ <span class="mono" style="color:var(--neon-magenta);">OSError</span> — can't save? Warn, don't crash<br>
+      ✅ <span class="mono" style="color:var(--neon-lime);">import json, random</span> — stdlib power<br><br>
+      🎯 Challenge: type <span class="mono" style="color:var(--neon-yellow);">"banana"</span>, <span class="mono" style="color:var(--neon-yellow);">"99"</span>, <span class="mono" style="color:var(--neon-yellow);">""</span> — <b style="color:var(--text-hi);">it never dies</b>.
+    </div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:26px; color:var(--text-lo); direction:rtl; margin-top:20px;">مشروعنا: لعبة تخمين لا يمكن كسرها؛ كل مهارات اليوم في تطبيق واحد صغير.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">42 / 50</div>
+</div>
+<template data-slide-notes>
+## Project intro — PyGuess CLI (announce, 3 min)
+
+**Announce the build:** "We've been collecting tools all day. Now we assemble them into one real app."
+
+**Set expectations:** ~20 minutes, code split across two files/slides, then we run it and attack it with garbage input to prove it's unbreakable.
+
+**Highlight the skill mapping:** get_int (validation), FileNotFoundError & JSONDecodeError (file robustness), OSError (save robustness), import (modules). Students should recognize their own day.
+
+**Tease the attack test:** "After we finish, I will try to crash it. banana, 99, nothing at all. Watch — it will keep going. That's today's win."
+
+**Arabic tip:** اربط كل جزء من المشروع بجزء من اليوم: المدخلات، الملفات، الاستيراد — كل شيء تجمّع هنا.
+</template>
+</body>
+</html>

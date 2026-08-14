@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-lime"></div>
+<div class="chrome-topbar"><span class="chrome-dot"></span>PROJECTS</div>
+
+<div class="kicker" style="position:absolute;top:100px;left:80px;">PROJECT // PART 2</div>
+<div class="arabic" style="position:absolute;top:140px;left:80px;font-size:24px;color:var(--text-lo););font-size:24px;color:var(--text-lo);">الجزء الثاني — الإحصائيات والقائمة</div>
+<div style="position:absolute;top:200px;left:80px;"><div class="code-window" style="width:880px;">
+<div class="code-window-header">
+<div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+<span class="code-window-title">grade_manager.py</span>
+</div>
+<pre style="padding:24px 28px;margin:0;font-size:20px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span class="tok-kw">def</span> <span class="tok-fn">show_average</span>():
+    <span class="tok-var">total</span> = <span class="tok-num">0</span>
+    <span class="tok-kw">for</span> <span class="tok-var">s</span> <span class="tok-kw">in</span> <span class="tok-var">students</span>:
+        <span class="tok-var">total</span> <span class="tok-op">+=</span> <span class="tok-var">s</span>[<span class="tok-num">1</span>]
+    <span class="tok-fn">print</span>(<span class="tok-str">f"Average: </span><span class="tok-str">{</span><span class="tok-var">total</span> <span class="tok-op">/</span> <span class="tok-fn">len</span>(<span class="tok-var">students</span>)<span class="tok-str">:</span><span class="tok-str">.2f}</span><span class="tok-str">"</span>)
+
+<span class="tok-kw">def</span> <span class="tok-fn">show_top</span>():
+    <span class="tok-var">best</span> = <span class="tok-var">students</span>[<span class="tok-num">0</span>]
+    <span class="tok-kw">for</span> <span class="tok-var">s</span> <span class="tok-kw">in</span> <span class="tok-var">students</span>:
+        <span class="tok-kw">if</span> <span class="tok-var">s</span>[<span class="tok-num">1</span>] <span class="tok-op">&gt;</span> <span class="tok-var">best</span>[<span class="tok-num">1</span>]:
+            <span class="tok-var">best</span> = <span class="tok-var">s</span>
+    <span class="tok-fn">print</span>(<span class="tok-str">f"Top student: </span><span class="tok-str">{</span><span class="tok-var">best</span>[<span class="tok-num">0</span>]<span class="tok-str">}</span><span class="tok-str"> (</span><span class="tok-str">{</span><span class="tok-var">best</span>[<span class="tok-num">1</span>]<span class="tok-str">}</span><span class="tok-str">)"</span>)
+
+<span class="tok-kw">while</span> <span class="tok-kw">True</span>:
+    <span class="tok-fn">print</span>(<span class="tok-str">"1. Add  2. Show all  3. Average  4. Top  5. Quit"</span>)
+    <span class="tok-var">choice</span> = <span class="tok-fn">input</span>(<span class="tok-str">"Choose: "</span>)
+    <span class="tok-kw">if</span> <span class="tok-var">choice</span> == <span class="tok-str">"1"</span>:  <span class="tok-var">add_student</span>()
+    <span class="tok-kw">elif</span> <span class="tok-var">choice</span> == <span class="tok-str">"2"</span>:  <span class="tok-var">show_all</span>()
+    <span class="tok-kw">elif</span> <span class="tok-var">choice</span> == <span class="tok-str">"3"</span>:  <span class="tok-var">show_average</span>()
+    <span class="tok-kw">elif</span> <span class="tok-var">choice</span> == <span class="tok-str">"4"</span>:  <span class="tok-var">show_top</span>()
+    <span class="tok-kw">elif</span> <span class="tok-var">choice</span> == <span class="tok-str">"5"</span>:  <span class="tok-kw">break</span>
+    <span class="tok-kw">else</span>:           <span class="tok-fn">print</span>(<span class="tok-str">"Invalid choice!"</span>)</pre>
+</div></div>
+<div style="position:absolute;top:200px;right:80px;width:800px;display:flex;flex-direction:column;gap:16px;">
+  <div style="padding:20px 24px;border-radius:12px;background:rgba(34,211,238,0.06);border:1px solid rgba(34,211,238,0.15);">
+    <div style="font-size:20px;color:var(--neon-cyan);font-weight:700;margin-bottom:6px;">show_average()</div>
+    <div style="font-size:18px;color:var(--text-mid);">Sum all scores with a loop, divide by count. .2f rounds to 2 decimals.</div>
+  </div>
+  <div style="padding:20px 24px;border-radius:12px;background:rgba(163,230,53,0.06);border:1px solid rgba(163,230,53,0.15);">
+    <div style="font-size:20px;color:var(--neon-lime);font-weight:700;margin-bottom:6px;">show_top()</div>
+    <div style="font-size:18px;color:var(--text-mid);">Classic "find the max" pattern: start with first, keep the higher one.</div>
+  </div>
+  <div style="padding:20px 24px;border-radius:12px;background:rgba(250,204,21,0.06);border:1px solid rgba(250,204,21,0.15);">
+    <div style="font-size:20px;color:var(--neon-yellow);font-weight:700;margin-bottom:6px;">Menu loop</div>
+    <div style="font-size:18px;color:var(--text-mid);">while True + break on "5". Conditionals route each choice to its function.</div>
+  </div>
+</div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S05</div>
+<div class="chrome-pagenum">56 / 63</div>
+<template data-slide-notes>Project part 2: show_average() accumulator pattern, show_top() max pattern, while True menu with break. Complete program!</template>
+</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-150px; right:-120px;"></div>
+  <div class="bg-glow-lime" style="bottom:-200px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">CORE // 03 — THE SHIELD</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi);">🛡️ try / except</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); margin-top:26px;">The heart of the whole session. <b style="color:var(--text-hi);">Try</b> something risky — if it fails, <b style="color:var(--text-hi);">except</b> catches it and the program survives.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:420px; width:800px; height:470px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.3); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:460px; width:720px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700; color:var(--neon-cyan);">How it works ⚙️</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:31px; color:var(--text-mid); margin-top:24px; line-height:1.7;">
+      ▶ Python runs the code inside <span class="mono" style="color:var(--neon-magenta);">try:</span><br>
+      ▶ If it throws an <b style="color:var(--text-hi);">exception</b> → execution jumps to <span class="mono" style="color:var(--neon-magenta);">except:</span><br>
+      ▶ The <span class="mono" style="color:var(--neon-lime);">program keeps running</span> — no crash 💪<br><br>
+      🧠 No exception → the <span class="mono">except</span> block is <b style="color:var(--text-hi);">skipped</b> entirely.
+    </div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:940px; top:420px; width:900px; height:470px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span><span class="code-dot code-dot-y"></span><span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">shield.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:970px; top:478px; width:850px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.7;">
+    <div><span class="tok-kw">try</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">age</span> <span class="tok-op">=</span> <span class="tok-fn">int</span>(<span class="tok-fn">input</span>(<span class="tok-str">"Your age: "</span>))</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Next year:"</span>, <span class="tok-var">age</span> <span class="tok-op">+</span> <span class="tok-num">1</span>)</div>
+    <div><span class="tok-kw">except</span> <span class="tok-var">ValueError</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"That wasn't a number 😉"</span>)</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"The program survives!"</span>)</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:940px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-hi);">🚀 Try it: run once with <span class="mono" style="color:var(--neon-yellow);">17</span>, once with <span class="mono" style="color:var(--neon-yellow);">banana</span> — both end with the last line printed.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:14px;">جرّب إدخال رقمًا ثم نصًا: في الحالتين يستمر البرنامج في العمل بعد المعالجة.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">12 / 50</div>
+</div>
+<template data-slide-notes>
+## try / except — the shield
+
+**This is the anchor concept.** Give it energy and clarity (6 min).
+
+**Narrative:** try = "I'm about to do something risky." except = "if it blows up, here's my escape plan." The program does NOT die.
+
+**Teach the control flow precisely:** draw it on the board — try block runs → if error, skip to except → after except, execution continues normally below the whole block. No exception → except is skipped.
+
+**Catch specificity note:** here we catch `ValueError` specifically (int() raises it on bad text). Bare `except:` catches everything — warn it's a sledgehammer; you'll usually name a specific type (next slides).
+
+**Live (5 min):** type the code together, run twice (17 then banana). Ask: "what would have happened with bare input before today?" (crash).
+
+**Arabic tip:** اشرح كأنك تحكي: "حاول" ثم "إلا إذا حصل خطأ فافعل". كرّر المصطلحين بالإنجليزي والعربي معًا.
+</template>
+</body>
+</html>

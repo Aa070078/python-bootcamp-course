@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-lime"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:80px; width:1760px; z-index:10;">
+    <div class="kicker">CORE CONCEPT // FETCHING PAGES 📡</div>
+    <div style="margin-top:26px; font-family:'Space Grotesk',sans-serif; font-size:80px; font-weight:700; color:var(--text-hi); line-height:1.05;">The <span style="color:var(--neon-cyan);">requests</span> library</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:29px; color:var(--text-lo); direction:rtl; margin-top:14px;">مكتبة requests: نرسل طلب HTTP إلى الموقع ونستلم الاستجابة التي تحتوي على نص الصفحة</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:320px; width:1760px; z-index:10;">
+    <div style="display:flex; gap:34px;">
+      <div style="flex:1; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:22px; padding:30px;">
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; font-weight:700; color:var(--neon-cyan);">1️⃣ REQUEST</div>
+        <div style="margin-top:14px; font-family:'Space Grotesk',sans-serif; font-size:25px; color:var(--text-mid); line-height:1.55;">Your script asks the server: "send me this page, please". Exactly what your browser does.</div>
+      </div>
+      <div style="flex:1; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:22px; padding:30px;">
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; font-weight:700; color:var(--neon-magenta);">2️⃣ RESPONSE</div>
+        <div style="margin-top:14px; font-family:'Space Grotesk',sans-serif; font-size:25px; color:var(--text-mid); line-height:1.55;">Server replies with a status code + the page text. A <span class="mono">Response</span> object holds both.</div>
+      </div>
+      <div style="flex:1; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.35); border-radius:22px; padding:30px;">
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; font-weight:700; color:var(--neon-lime);">3️⃣ STATUS CODES</div>
+        <div style="margin-top:14px; font-family:'Space Grotesk',sans-serif; font-size:25px; color:var(--text-mid); line-height:1.55;"><span class="mono">200</span> OK • <span class="mono">404</span> missing • <span class="mono">403</span> forbidden • <span class="mono">5xx</span> server problem.</div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:860px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:31px; color:var(--text-hi);">💾 Install once: <span class="mono" style="color:var(--neon-lime);">pip install requests</span> — then import it in every project.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">20 / 50</div>
+</div>
+<template data-slide-notes>
+Recap the request/response model from session 13, now applied to pages instead of APIs. requests.get(url) is the whole magic.
+
+Read status codes like a doctor reading a body: 200 = healthy, 404 = page not found, 403 = refused entry, 500 = server sick. This is the first thing to check when a scraper "does nothing".
+
+Demo: `pip install requests` — show it once, students do it once.
+
+Arabic tip: الطلب = طلب الزيارة، والاستجابة = رد الموقع. رقم 200 يعني «أهلًا وسهلًا»، و404 يعني «لا يوجد هنا».
+</template>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-200px; right:-160px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-180px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1700px; z-index:10;">
+    <div class="kicker">➕ CONCEPT 06 — APPEND</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:88px; font-weight:700; color:var(--text-hi); margin-top:10px;">Append — add without deleting</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:340px; width:1600px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; color:var(--text-mid); line-height:1.45;">Open with <span class="mono" style="color:var(--neon-lime);">"a"</span> → the file pointer starts at the <b style="color:var(--text-hi);">end</b>. Old content stays, new lines pile up behind it. <b style="color:var(--neon-lime);">The safe mode.</b></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:500px; width:820px; height:310px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:535px; width:760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:600; color:var(--neon-lime);">📜 Perfect for</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:16px; line-height:1.6;">📝 diaries &amp; notes history<br>🧾 log files (app activity)<br>🗒️ todo lists &amp; chat histories</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:960px; top:500px; width:820px; height:310px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:990px; top:535px; width:760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:600; color:var(--neon-cyan);">🧪 Both rules</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:16px; line-height:1.6;">✔ creates the file <b style="color:var(--text-hi);">if it doesn't exist</b><br>✔ never deletes existing content<br>✖ can't change what's already written</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:870px; width:1700px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--neon-yellow);">⚡ Memory hook: <b>r</b>ead · <b>w</b>ipe-or-write · <b>a</b>dd — "RWA"</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:14px;">الوضع a يضيف في نهاية الملف دون حذف أي شيء، ويُنشئ الملف إذا لم يكن موجوداً</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S08</div>
+  <div class="chrome-pagenum">20 / 50</div>
+</div>
+<template data-slide-notes>
+**Append — 4 min.**
+
+- Contrast with "w": same position on the keyboard, opposite destiny. w = reset button, a = "keep going".
+- Ask students for use cases (logs, chat, diary) and tie to real apps.
+- Clarify "a" never rewrites old lines — you can only add at the tail.
+- Arabic tip: «أضف دون حذف» (add without deleting) — append's slogan.
+</template>
+</body>
+</html>

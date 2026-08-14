@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-200px; right:-160px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-180px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1700px; z-index:10;">
+    <div class="kicker">🧑‍💻 CODE — CATCH THE CRASH</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi); margin-top:10px;">try / except the file</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:1100px; height:440px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">safe_read.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:380px; width:1040px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.6;">
+    <div><span class="tok-kw">try</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">with</span> <span class="tok-fn">open</span>(<span class="tok-str">"scores.json"</span>) <span class="tok-kw">as</span> <span class="tok-var">f</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">data</span> <span class="tok-op">=</span> <span class="tok-var">json</span>.<span class="tok-fn">load</span>(<span class="tok-var">f</span>)</div>
+    <div><span class="tok-kw">except</span> <span class="tok-var">FileNotFoundError</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"⚠️ File not found — starting fresh"</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">data</span> <span class="tok-op">=</span> []</div>
+    <div><span class="tok-kw">except</span> <span class="tok-var">json</span>.<span class="tok-var">JSONDecodeError</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"❌ File is corrupted"</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">data</span> <span class="tok-op">=</span> []</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1240px; top:330px; width:560px; height:300px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1270px; top:362px; width:500px; z-index:10;">
+    <div class="kicker" style="font-size:20px; color:var(--neon-lime);">PATTERN: FAIL-SAFE LOAD</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:16px; line-height:1.55;">This is the <b style="color:var(--text-hi);">default-loaded-data pattern</b>: if the save file is missing or broken, start with an empty list instead of crashing.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1240px; top:700px; width:560px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:31px; color:var(--text-mid); line-height:1.5;">You'll use this pattern in the project — <b style="color:var(--text-hi);">every save file starts as an empty list on first run.</b></div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:29px; color:var(--text-lo); direction:rtl; margin-top:14px;">try/except يمنع انهيار البرنامج إذا فُقد الملف، ويبدأ بقائمة فارغة عند أول تشغيل</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S08</div>
+  <div class="chrome-pagenum">35 / 50</div>
+</div>
+<template data-slide-notes>
+**try/except code — 6 min.**
+
+- Type it; the "fail-safe load" is the single most reused snippet in file-based apps.
+- Run three scenarios live: 1) no file → prints warning, data = []; 2) valid file → loads; 3) corrupt file → "corrupted".
+- Mention: full exceptions course comes next session — today we just need FileNotFoundError + JSONDecodeError.
+- Arabic tip: «شبكة الأمان» (safety net) — that's what try/except is.
+</template>
+</body>
+</html>

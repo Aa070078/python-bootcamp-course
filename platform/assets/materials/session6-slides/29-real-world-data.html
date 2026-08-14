@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-250px; right:-200px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-250px; left:-200px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">💼 REAL-WORLD DATA</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:90px; font-weight:700; color:var(--text-hi); margin-top:16px;">Data in the Wild</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-mid); margin-top:14px;">Real programs store real things as dicts — students, products, contacts.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:14px;">في التطبيقات الحقيقية: طالب، منتج، أو جهة اتصال — كلٌّ منها قاموس يحمل بياناته.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:390px; width:900px; height:590px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.25); border-radius:24px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:112px; top:426px; width:840px; z-index:10;">
+    <div class="kicker" style="font-size:20px;">EVERY RECORD IS A DICT</div>
+    <div style="margin-top:20px; background:rgba(163,230,53,0.08); border:1px solid rgba(163,230,53,0.35); border-radius:16px; padding:16px 22px;">
+      <div style="font-size:24px; font-weight:700; color:var(--neon-lime);">🛒 &nbsp;Product</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:23px; color:var(--text-hi); margin-top:8px; line-height:1.6;">
+        <span class="tok-var">product</span> <span class="tok-op">=</span> <span class="tok-op">{</span><span class="tok-str">"id"</span><span class="tok-op">:</span> <span class="tok-num">101</span>, <span class="tok-str">"name"</span><span class="tok-op">:</span> <span class="tok-str">"Laptop"</span>, <span class="tok-str">"price"</span><span class="tok-op">:</span> <span class="tok-num">2499</span><span class="tok-op">}</span>
+      </div>
+    </div>
+    <div style="margin-top:16px; background:rgba(34,211,238,0.08); border:1px solid rgba(34,211,238,0.35); border-radius:16px; padding:16px 22px;">
+      <div style="font-size:24px; font-weight:700; color:var(--neon-cyan);">🎓 &nbsp;Student</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:23px; color:var(--text-hi); margin-top:8px; line-height:1.6;">
+        <span class="tok-var">student</span> <span class="tok-op">=</span> <span class="tok-op">{</span><span class="tok-str">"name"</span><span class="tok-op">:</span> <span class="tok-str">"Ahmad"</span>, <span class="tok-str">"grade"</span><span class="tok-op">:</span> <span class="tok-num">90</span>, <span class="tok-str">"city"</span><span class="tok-op">:</span> <span class="tok-str">"Amman"</span><span class="tok-op">}</span>
+      </div>
+    </div>
+    <div style="margin-top:16px; background:rgba(236,72,153,0.08); border:1px solid rgba(236,72,153,0.4); border-radius:16px; padding:16px 22px;">
+      <div style="font-size:24px; font-weight:700; color:var(--neon-magenta);">📇 &nbsp;Contact</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:23px; color:var(--text-hi); margin-top:8px; line-height:1.6;">
+        <span class="tok-var">contact</span> <span class="tok-op">=</span> <span class="tok-op">{</span><span class="tok-str">"name"</span><span class="tok-op">:</span> <span class="tok-str">"Layla"</span>, <span class="tok-str">"phone"</span><span class="tok-op">:</span> <span class="tok-str">"0556 789 012"</span><span class="tok-op">}</span>
+      </div>
+    </div>
+    <div style="margin-top:16px; background:rgba(250,204,21,0.08); border:1px solid rgba(250,204,21,0.4); border-radius:16px; padding:14px 22px;">
+      <div style="font-size:23px; color:var(--text-mid);">🤖 &nbsp;A whole dataset = a <b style="color:var(--neon-yellow);">list of dicts</b>, each row one record.</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1040px; top:390px; width:800px; height:590px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.25); border-radius:24px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1072px; top:426px; width:740px; z-index:10;">
+    <div class="kicker" style="font-size:20px;">📊 STUDENTS TABLE</div>
+    <div style="margin-top:20px; border:1px solid var(--border); border-radius:14px; overflow:hidden; font-family:'JetBrains Mono',monospace; font-size:24px;">
+      <div style="display:flex; background:rgba(34,211,238,0.12); color:var(--neon-cyan); padding:14px 20px; letter-spacing:.08em;">
+        <span style="width:190px;">NAME</span>
+        <span style="width:150px;">GRADE</span>
+        <span style="flex:1;">CITY</span>
+      </div>
+      <div style="display:flex; padding:14px 20px; border-top:1px solid var(--border); color:var(--text-hi);">
+        <span style="width:190px;">Ahmad</span>
+        <span style="width:150px; color:var(--neon-yellow);">90</span>
+        <span style="flex:1;">Amman</span>
+      </div>
+      <div style="display:flex; padding:14px 20px; border-top:1px solid var(--border); color:var(--text-hi);">
+        <span style="width:190px;">Layla</span>
+        <span style="width:150px; color:var(--neon-yellow);">85</span>
+        <span style="flex:1;">Aqaba</span>
+      </div>
+      <div style="display:flex; padding:14px 20px; border-top:1px solid var(--border); color:var(--text-hi);">
+        <span style="width:190px;">Omar</span>
+        <span style="width:150px; color:var(--neon-yellow);">78</span>
+        <span style="flex:1;">Irbid</span>
+      </div>
+    </div>
+    <div style="margin-top:18px; background:rgba(163,230,53,0.08); border:1px solid rgba(163,230,53,0.35); border-radius:16px; padding:16px 22px;">
+      <div style="font-size:24px; font-weight:700; color:var(--neon-lime);">🧠 &nbsp;How to read row 1</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:23px; color:var(--text-mid); margin-top:8px; line-height:1.6;">
+        <span class="tok-var">students</span>[<span class="tok-num">1</span>][<span class="tok-str">"grade"</span>] <span class="tok-op">→</span> <span class="tok-num">85</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S06</div>
+  <div class="chrome-pagenum">29 / 45</div>
+</div>
+<template data-slide-notes>
+# Slide 29 — Real-World Data Modeling (Instructor notes)
+
+**What to say**
+- Connect to the phonebook from slide 19: contacts are literally dicts. Now expand to products and students.
+- Frame the table: it IS a list of dicts. Every column is a key; every row is one dict. This is how databases think.
+
+**Live demo (4 min)**
+- Build `students = [{...}, {...}, {...}]` and print each row with a loop:
+  ```python
+  for s in students:
+      print(s["name"], s["grade"], s["city"])
+  ```
+- Compute class average with `sum(s["grade"] for s in students) / len(students)`.
+- Add a field to one dict mid-program (`.update`) and re-run — data is mutable.
+
+**Common mistakes**
+- Students index the table with a string: `students["name"]` — must be `students[0]["name"]`.
+- Students forget commas between the dict rows → SyntaxError. Point out the pattern visually.
+
+**Arabic teaching tip**
+- اشرح أن الجدول وقائمة القواميس شيء واحد: «العمود = مفتاح، والصف = قاموس». هذا يبني أساسًا قويًا لقواعد البيانات لاحقًا.
+</template>
+</body>
+</html>

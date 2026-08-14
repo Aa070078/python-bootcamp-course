@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-lime"></div>
+
+  <div class="kicker" style="position:absolute;top:100px;left:80px;">PROJECT 1 // USERNAME FORMATTER</div>
+  <div class="arabic" style="position:absolute;top:100px;right:80px;">مشروع 1 — منسق أسماء المستخدمين</div>
+  <div style="position:absolute;top:160px;left:80px;font-size:36px;font-weight:600;color:var(--text-hi);">Build a username formatter step by step</div>
+  <div style="position:absolute;left:80px;top:240px;width:700px;display:flex;flex-direction:column;gap:14px;">
+    <div style="display:flex;align-items:center;gap:14px;padding:16px 20px;border-radius:12px;background:rgba(34,211,238,0.08);border:1px solid rgba(34,211,238,0.2);">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:18px;color:var(--neon-cyan);font-weight:600;min-width:32px;">01</span>
+      <span style="font-size:20px;color:var(--text-hi);">Remove leading/trailing spaces</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px;padding:16px 20px;border-radius:12px;background:rgba(163,230,53,0.08);border:1px solid rgba(163,230,53,0.2);">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:18px;color:var(--neon-lime);font-weight:600;min-width:32px;">02</span>
+      <span style="font-size:20px;color:var(--text-hi);">Convert to lowercase</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px;padding:16px 20px;border-radius:12px;background:rgba(250,204,21,0.08);border:1px solid rgba(250,204,21,0.2);">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:18px;color:var(--neon-yellow);font-weight:600;min-width:32px;">03</span>
+      <span style="font-size:20px;color:var(--text-hi);">Replace spaces with underscores</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px;padding:16px 20px;border-radius:12px;background:rgba(236,72,153,0.08);border:1px solid rgba(236,72,153,0.2);">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:18px;color:var(--neon-magenta);font-weight:600;min-width:32px;">04</span>
+      <span style="font-size:20px;color:var(--text-hi);">Remove special characters</span>
+    </div>
+  </div>
+  <div style="position:absolute;left:820px;top:220px;">
+    <div class="code-window" style="width:760px;">
+<div class="code-window-header">
+<div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+<span class="code-window-title">main.py</span>
+</div>
+<pre style="padding:24px 28px;margin:0;font-size:20px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span style="color:var(--neon-cyan);">username</span> = <span style="color:var(--neon-lime);">"  Ahmed Ali  "</span>
+
+<span style="color:var(--text-dim);"># Step 1: Strip spaces</span>
+username = username.<span style="color:var(--neon-yellow);">strip</span>()
+
+<span style="color:var(--text-dim);"># Step 2: Lowercase</span>
+username = username.<span style="color:var(--neon-yellow);">lower</span>()
+
+<span style="color:var(--text-dim);"># Step 3: Replace spaces</span>
+username = username.<span style="color:var(--neon-yellow);">replace</span>(<span style="color:var(--neon-lime);">" "</span>, <span style="color:var(--neon-lime);">"_"</span>)
+
+<span style="color:var(--neon-magenta);">print</span>(username)  <span style="color:var(--text-dim);"># "ahmed_ali"</span></pre>
+</div></div>
+  <div style="position:absolute;left:80px;bottom:120px;max-width:1600px;padding:20px 28px;border-radius:12px;background:rgba(34,211,238,0.08);border:1px solid rgba(34,211,238,0.2);">
+    <span style="font-size:20px;color:var(--neon-cyan);font-weight:600;">Input:</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:22px;color:var(--text-hi);margin-left:12px;">"  Ahmed Ali  "</span>
+    <span style="font-size:20px;color:var(--neon-lime);font-weight:600;margin-left:40px;">Output:</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:22px;color:var(--text-hi);margin-left:12px;">"ahmed_ali"</span>
+  </div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S04</div>
+<div class="chrome-pagenum">56 / 76</div>
+<template data-slide-notes></template>
+</div>
+</body>
+</html>

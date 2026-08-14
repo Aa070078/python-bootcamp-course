@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-240px; right:-160px;"></div>
+  <div class="bg-glow-lime" style="bottom:-280px; left:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">👀 VISUAL — A REAL RESPONSE</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi); margin-top:14px;">What the server sends back</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:300px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-lo);">This is a real (trimmed) response from <span class="mono" style="color:var(--neon-cyan);">api.open-meteo.com</span> — the weather API we'll use for live coding.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:380px; width:900px; height:520px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:420px; width:840px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.75;">
+    <div><span class="tok-op">{</span></div>
+    <div>&nbsp;&nbsp;<span class="tok-str">"latitude"</span><span class="tok-op">:</span> <span class="tok-num">30.05</span><span class="tok-op">,</span></div>
+    <div>&nbsp;&nbsp;<span class="tok-str">"longitude"</span><span class="tok-op">:</span> <span class="tok-num">31.24</span><span class="tok-op">,</span></div>
+    <div>&nbsp;&nbsp;<span class="tok-str">"timezone"</span><span class="tok-op">:</span> <span class="tok-str">"Africa/Cairo"</span><span class="tok-op">,</span></div>
+    <div>&nbsp;&nbsp;<span class="tok-str">"current_weather"</span><span class="tok-op">:</span> <span class="tok-op">{</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"temperature"</span><span class="tok-op">:</span> <span class="tok-num">38.1</span><span class="tok-op">,</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"windspeed"</span><span class="tok-op">:</span> <span class="tok-num">11.2</span><span class="tok-op">,</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"weathercode"</span><span class="tok-op">:</span> <span class="tok-num">1</span><span class="tok-op">,</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"is_day"</span><span class="tok-op">:</span> <span class="tok-num">1</span><span class="tok-op">,</span></div>
+    <div>&nbsp;&nbsp;<span class="tok-op">}</span></div>
+    <div><span class="tok-op">}</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1030px; top:380px; width:810px; height:520px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1070px; top:420px; width:730px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-magenta);">HOW TO READ IT</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:18px; line-height:1.9;">
+      <span style="color:var(--neon-lime);">temperature</span> = the number we want: <span class="mono" style="color:var(--text-hi);">38.1°C</span> 🔥<br><br>
+      The outer <span style="color:var(--neon-cyan);">"current_weather"</span> holds <span style="color:var(--text-hi);">a nested dict</span>.<br><br>
+      To reach it in Python:<br>
+      <span class="mono" style="color:var(--neon-lime);">data["current_weather"]["temperature"]</span><br><br>
+      Keys are strings in quotes — always.
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:940px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">هذه استجابة حقيقية: قواميس متداخلة داخل نص واحد — وسنصل إلى "temperature" بسلسلة مفاتيح 👀</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">24 / 50</div>
+</div>
+<template data-slide-notes>
+Visual: a realistic Open-Meteo JSON response, trimmed for teaching.
+
+Walk the nesting: outer dict → "current_weather" → nested dict → "temperature". Show the Python access path:
+`data["current_weather"]["temperature"]` → 38.1
+
+This exact structure returns in live coding (slides 34–35). If students can read this JSON now, live coding is smooth.
+
+Activity (3 min): open the live URL in a browser (it needs internet) and compare with the trimmed version. Let them find "timezone" and "windspeed" in the real payload.
+
+Mistake to pre-empt: forgetting that keys are strings with quotes → KeyError on `data[current_weather]`.
+
+Arabic tip: علّمهم أن يقرؤوا JSON من "الداخل إلى الخارج": ابدأ من المفتاح الأعمق ثم اخرج. سلسلة مفاتيح مثل خريطة كنز.
+</template>
+</body>
+</html>

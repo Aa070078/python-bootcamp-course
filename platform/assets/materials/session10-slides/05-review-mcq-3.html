@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:50px; right:-250px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-150px; left:-200px;"></div>
+
+  <div class="chrome-topbar">
+    <span class="chrome-dot"></span>
+    <span>RECAP // MIXED CHALLENGE</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:120px; width:1760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-yellow); letter-spacing:0.25em; text-transform:uppercase;">📖 Review Q3</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:56px; font-weight:700; color:var(--text-hi); margin-top:16px;">Which import correctly brings in only the <span class="mono" style="color:var(--neon-cyan);">sqrt</span> function from the <span class="mono" style="color:var(--neon-lime);">math</span> module?</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:470px; width:1760px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:32px; line-height:2; color:var(--text-mid);">
+    <div><span style="color:var(--neon-yellow);">A</span> &nbsp;<span class="tok-kw">import</span> math.sqrt</div>
+    <div><span style="color:var(--neon-yellow);">B</span> &nbsp;<span class="tok-kw">from</span> math <span class="tok-kw">import</span> sqrt <span class="tok-com"># only sqrt</span></div>
+    <div><span style="color:var(--neon-yellow);">C</span> &nbsp;<span class="tok-kw">from</span> math.sqrt <span class="tok-kw">import</span> sqrt</div>
+    <div><span style="color:var(--neon-yellow);">D</span> &nbsp;<span class="tok-kw">import</span> sqrt <span class="tok-kw">from</span> math</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:820px; width:1760px; z-index:10;">
+    <span class="chip chip-yellow">import vs from ... import</span>
+    <span class="chip chip-cyan">✅ correct syntax</span>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:28px;">راجع ذاكرتك قبل أن نبدأ — اختر الصيغة الصحيحة لاستيراد دالة معينة.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S10</div>
+  <div class="chrome-pagenum">05 / 50</div>
+</div>
+<template data-slide-notes>
+**Slide 5 — Review MCQ 3 (2 min) — Mixed**
+- **Correct answer: B.** `from math import sqrt` imports only the function, so you call `sqrt(16)` directly.
+- A and C fail: `math.sqrt` is not a module — you cannot import a function as if it were a package.
+- D has the wrong order — Python syntax is always `from module import name`.
+- Bridging comment: "Version control is exactly the same skill as modules — organisation. You're organising your history now."
+- Arabic tip: ذكّرهم بقاعدة الذاكرة: "من المكتبة ← استورد الاسم"، أي من math استورد sqrt.
+</template>
+</body>
+</html>

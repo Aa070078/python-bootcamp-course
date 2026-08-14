@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-180px; right:-150px;"></div>
+  <div class="bg-glow-lime" style="bottom:-220px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1720px; z-index:10;">
+    <div class="kicker">🏗️ REUSABLE FUNCTIONS &amp; DESIGN</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi); margin-top:16px;">Design like a pro ✨</div>
+    <div class="arabic" style="font-size:32px; color:var(--text-lo); margin-top:14px; direction:rtl;">اسم الدالة فعل واضح، ومهمة واحدة لكل دالة، ومواصفات واضحة</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:360px; width:850px; height:300px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:390px; width:790px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:40px; font-weight:700; color:var(--neon-cyan);">Naming rules 📛</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--text-mid); margin-top:16px; line-height:1.9;">
+      <div>✅ <span class="tok-var">snake_case</span></div>
+      <div>✅ verbs: <span class="tok-var">get_total</span>, <span class="tok-var">is_even</span>, <span class="tok-var">find_max</span></div>
+      <div>❌ vague: <span class="tok-var">thing</span>, <span class="tok-var">x1</span>, <span class="tok-var">do_stuff</span></div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:960px; top:360px; width:850px; height:300px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.4); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:990px; top:390px; width:790px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:40px; font-weight:700; color:var(--neon-lime);">One job per function 🎯</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:16px; line-height:1.6;">If the name needs "and", split it:<br><span class="mono" style="color:var(--neon-magenta);">calculate_and_print</span> → two functions.</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-hi); font-weight:700; margin-top:18px;">Small functions compose into big programs 🧱</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:750px; width:1720px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid);">Reusable = parameterized 📦: same machine, different ingredients, predictable results.</div>
+    <div class="arabic" style="font-size:30px; color:var(--text-lo); margin-top:14px; direction:rtl;">الدالة القابلة لإعادة الاستخدام = مدخلات مختلفة ونتائج ثابتة المنطق</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S07</div>
+  <div class="chrome-pagenum">31 / 50</div>
+</div>
+<template data-slide-notes>
+- Read names aloud; students should hear the difference between get_total and x1.
+- Style tip: verbs for functions (actions), nouns for variables (things).
+- "If the function name contains 'and', split it" — memorable rule.
+- Why it matters: teams read your code; future-you reads your code.
+- Small challenge: rename 3 terrible function names students suggest.
+- Arabic tip: الاسم الجيد = كود شبه موثّق بلا تعليقات.
+- Transition: "Before the docs, meet the tiny one-line function: lambda."
+</template>
+</body>
+</html>

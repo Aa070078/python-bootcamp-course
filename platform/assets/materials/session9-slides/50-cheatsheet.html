@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-150px; left:-120px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-200px; right:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">CHEAT SHEET // KEEP THIS CLOSE</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:160px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:64px; font-weight:700; color:var(--text-hi);">📋 Session 9 cheat sheet</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:320px; width:940px; height:560px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span><span class="code-dot code-dot-y"></span><span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">cheatsheet.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:378px; width:900px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:24px; line-height:1.7;">
+    <div><span class="tok-com"># try / except / else / finally</span></div>
+    <div><span class="tok-kw">try</span>: <span class="tok-var">x</span> <span class="tok-op">=</span> <span class="tok-fn">int</span>(<span class="tok-var">s</span>)</div>
+    <div><span class="tok-kw">except</span> <span class="tok-var">ValueError</span>: <span class="tok-fn">print</span>(<span class="tok-str">"bad!"</span>)</div>
+    <div><span class="tok-kw">else</span>: <span class="tok-fn">print</span>(<span class="tok-str">"ok"</span>)&nbsp;&nbsp;<span class="tok-com"># success only</span></div>
+    <div><span class="tok-kw">finally</span>: <span class="tok-fn">cleanup</span>()&nbsp;&nbsp;<span class="tok-com"># always</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-com"># raise your own</span></div>
+    <div><span class="tok-kw">raise</span> <span class="tok-var">ValueError</span>(<span class="tok-str">"explain it"</span>)</div>
+    <div><span class="tok-kw">class</span> <span class="tok-var">MyError</span>(<span class="tok-var">Exception</span>): <span class="tok-kw">pass</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-com"># imports</span></div>
+    <div><span class="tok-kw">import</span> <span class="tok-var">math</span>; <span class="tok-var">math</span>.<span class="tok-fn">sqrt</span>(<span class="tok-num">4</span>)</div>
+    <div><span class="tok-kw">from</span> <span class="tok-var">math</span> <span class="tok-kw">import</span> <span class="tok-var">sqrt</span>; <span class="tok-fn">sqrt</span>(<span class="tok-num">4</span>)</div>
+    <div><span class="tok-kw">if</span> <span class="tok-var">__name__</span> <span class="tok-op">==</span> <span class="tok-str">"__main__"</span>: <span class="tok-fn">main</span>()</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:1080px; top:320px; width:760px; height:560px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span><span class="code-dot code-dot-y"></span><span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">terminal</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1110px; top:378px; width:720px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:24px; line-height:1.75;">
+    <div><span class="tok-com"># pip</span></div>
+    <div><span class="tok-op">$</span> <span class="tok-var">pip install requests</span></div>
+    <div><span class="tok-op">$</span> <span class="tok-var">pip install -r requirements.txt</span></div>
+    <div><span class="tok-op">$</span> <span class="tok-var">pip freeze &gt; requirements.txt</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-com"># venv (Windows)</span></div>
+    <div><span class="tok-op">$</span> <span class="tok-var">py -m venv .venv</span></div>
+    <div><span class="tok-op">$</span> <span class="tok-var">.venv\Scripts\activate</span></div>
+    <div><span class="tok-out" style="color:var(--neon-lime);">(.venv) ...&gt;</span></div>
+    <div><span class="tok-op">$</span> <span class="tok-var">deactivate</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-com"># common exceptions</span></div>
+    <div><span class="tok-var">ValueError&nbsp;&nbsp;TypeError</span></div>
+    <div><span class="tok-var">IndexError&nbsp;&nbsp;KeyError</span></div>
+    <div><span class="tok-var">FileNotFoundError</span></div>
+    <div><span class="tok-var">ZeroDivisionError</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:940px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-hi);">🐍 You handled the errors. You organized the code. <b style="color:var(--neon-lime);">You are ready for Git.</b> See you in Session 10!</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:16px;">حفظك للأخطاء ونظمت الكود — أنت جاهز للجلسة العاشرة: Git و GitHub. إلى اللقاء!</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">50 / 50</div>
+</div>
+<template data-slide-notes>
+## Cheat sheet + closing (3 min)
+
+**Point them to this slide as a reference** they can screenshot. It condenses the whole session into one screen: the try/except/else/finally skeleton, raise, imports, guard, pip, venv, and the six common exceptions.
+
+**Closing message:** celebrate the journey from slide 2 (the crash) to the bulletproof PyGuess. "Today's lesson wasn't about syntax — it was about resilience. Real code crashes; great code survives."
+
+**Next session teaser:** Git & GitHub — version control, rollback, and their first open-source-style repository.
+
+**Final encouragement (Arabic):** "الكود القوي ليس الذي لا يخطئ أبدًا، بل الذي ينهض بعد كل خطأ." (Strong code isn't code that never errs — it's code that survives every error.)
+
+**Ask them to save slide 50** — it will be their quick reference for every project from now on.
+</template>
+</body>
+</html>

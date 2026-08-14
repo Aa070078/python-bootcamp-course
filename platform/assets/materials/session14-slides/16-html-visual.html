@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta"></div>
+  <div class="bg-glow-cyan"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:70px; width:1760px; z-index:10;">
+    <div class="kicker">VISUAL // HTML → WHAT YOU SEE 📸</div>
+    <div style="margin-top:22px; font-family:'Space Grotesk',sans-serif; font-size:56px; font-weight:700; color:var(--text-hi);">Code on the left → page on the right</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:12px;">الكود يتحول إلى صفحة مرئية: نفس الوسوم تظهر كعناوين وفقرات وروابط</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:290px; width:900px; height:540px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">page.html</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" data-lang="html" style="position:absolute; left:110px; top:350px; width:840px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.7;">
+    <div><span class="tok-op">&lt;h1</span> <span class="tok-str">class</span>=<span class="tok-str">"title"</span><span class="tok-op">&gt;</span>My Shop<span class="tok-op">&lt;/h1&gt;</span></div>
+    <div><span class="tok-op">&lt;p</span> <span class="tok-str">id</span>=<span class="tok-str">"intro"</span><span class="tok-op">&gt;</span>Fresh notebooks<span class="tok-op">&lt;/p&gt;</span></div>
+    <div><span class="tok-op">&lt;ul</span><span class="tok-op">&gt;</span></div>
+    <div>&nbsp;&nbsp;<span class="tok-op">&lt;li</span> <span class="tok-str">class</span>=<span class="tok-str">"item"</span><span class="tok-op">&gt;</span>Dune — 12$<span class="tok-op">&lt;/li&gt;</span></div>
+    <div>&nbsp;&nbsp;<span class="tok-op">&lt;li</span> <span class="tok-str">class</span>=<span class="tok-str">"item"</span><span class="tok-op">&gt;</span>1984 — 9$<span class="tok-op">&lt;/li&gt;</span></div>
+    <div><span class="tok-op">&lt;/ul&gt;</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1040px; top:290px; width:800px; height:540px; background:#ffffff; border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1080px; top:340px; width:720px; z-index:10;">
+    <div style="font-family:'Arial',sans-serif; font-size:44px; font-weight:800; color:#111827;">My Shop</div>
+    <div style="margin-top:10px; font-family:'Arial',sans-serif; font-size:24px; color:#374151;">Fresh notebooks</div>
+    <div style="margin-top:24px; font-family:'Arial',sans-serif; font-size:24px; color:#111827;">• Dune — 12$</div>
+    <div style="margin-top:6px; font-family:'Arial',sans-serif; font-size:24px; color:#111827;">• 1984 — 9$</div>
+    <div style="margin-top:40px; font-size:30px;">🧑‍💻 The browser <b>renders</b> the tags.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:26px; color:var(--text-lo); direction:rtl; margin-top:16px;">المتصفح يرسم الوسوم، والكاشطة تقرأ الوسوم نفسها كنص</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">16 / 50</div>
+</div>
+<template data-slide-notes>
+The "aha" slide: same HTML becomes a pretty page in the browser. Your scraper skips the pretty part.
+
+Point at the structure: h1.title = the big heading; p#intro = paragraph; li.item repeated = list items. Notice `class="item"` on BOTH list items — that's the hook a scraper uses to grab "all products".
+
+Note: `id="intro"` appears once — a scraper uses it to grab "the intro specifically".
+
+Arabic tip: العنصر المتكرر class = «الدفعة»، والعنصر الفريد id = «الشخص». نلتقط الدفعة كلها أو الشخص وحده.
+</template>
+</body>
+</html>

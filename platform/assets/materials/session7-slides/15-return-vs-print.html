@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-180px; right:-150px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-220px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1720px; z-index:10;">
+    <div class="kicker">💥 RETURN vs PRINT</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi); margin-top:16px;">The showdown 🥊</div>
+    <div class="arabic" style="font-size:32px; color:var(--text-lo); margin-top:14px; direction:rtl;">return تُعيد القيمة للمستدعي، أما print فتعرضها على الشاشة فقط</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:850px; height:320px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:370px; width:790px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:40px; font-weight:700; color:var(--neon-cyan);">🖥️ print</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:14px; line-height:1.6;">Shows text on the screen.<br>👀 For humans. The value is then <span style="color:var(--text-hi); font-weight:700;">GONE</span>.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:960px; top:340px; width:850px; height:320px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.4); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:990px; top:370px; width:790px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:40px; font-weight:700; color:var(--neon-lime);">🎁 return</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:14px; line-height:1.6;">Hands a value BACK to the caller.<br>🤖 For your code. It can be stored and reused.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:740px; width:1720px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; color:var(--text-mid);"><span style="color:var(--neon-yellow); font-weight:700;">rule of thumb:</span> a function's JOB is to <span style="color:var(--neon-lime); font-weight:700;">return</span> — printing is a side effect. 🔎</div>
+    <div class="arabic" style="font-size:30px; color:var(--text-lo); margin-top:14px; direction:rtl;">القاعدة: وظيفة الدالة أن تُعيد قيمة، والطباعة مجرد أثر جانبي</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S07</div>
+  <div class="chrome-pagenum">15 / 50</div>
+</div>
+<template data-slide-notes>
+- The single most confusing concept of the session — slow down here.
+- Analogy: print = speaker announces the result to the room; return = waiter hands the dish to the chef.
+- Emphasize: print alone → the calling code receives NOTHING (None).
+- "Who can compute with print? Nobody. Who can compute with return? Your program."
+- Ask: "If a function only prints, what does the caller get?" → None.
+- Arabic tip: اشرحها بالدارجة: return «يرجّع» القيمة، print «يطبعها على الشاشة فقط».
+- Transition: "Let's see the difference in code — this is worth memorizing."
+</template>
+</body>
+</html>

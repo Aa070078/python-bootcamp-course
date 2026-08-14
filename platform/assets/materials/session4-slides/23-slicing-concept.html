@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-magenta"></div>
+
+<div class="kicker" style="position:absolute;top:100px;left:80px;">STRING SLICING</div>
+<div class="arabic" style="position:absolute;top:100px;right:80px;font-size:20px;color:rgba(34,211,238,0.5);">تقسيم السلاسل النصية</div>
+<div style="position:absolute;top:180px;left:50%;transform:translateX(-50%);text-align:center;">
+  <div style="font-size:44px;font-weight:700;color:var(--text-hi);font-family:'JetBrains Mono',monospace;margin-bottom:20px;">
+    word[<span style="color:var(--neon-cyan);">start</span> : <span style="color:var(--neon-lime);">end</span> : <span style="color:var(--neon-yellow);">step</span>]
+  </div>
+  <div style="display:flex;gap:40px;justify-content:center;margin-top:10px;">
+    <div style="padding:14px 24px;border-radius:10px;background:rgba(34,211,238,0.08);border:1px solid rgba(34,211,238,0.2);text-align:center;">
+      <div style="font-size:20px;font-weight:700;color:var(--neon-cyan);">start</div>
+      <div style="font-size:16px;color:var(--text-mid);margin-top:4px;">Where to begin (inclusive)</div>
+      <div style="font-size:14px;color:var(--text-mid);">Default: 0</div>
+    </div>
+    <div style="padding:14px 24px;border-radius:10px;background:rgba(163,230,53,0.08);border:1px solid rgba(163,230,53,0.2);text-align:center;">
+      <div style="font-size:20px;font-weight:700;color:var(--neon-lime);">end</div>
+      <div style="font-size:16px;color:var(--text-mid);margin-top:4px;">Where to stop (exclusive)</div>
+      <div style="font-size:14px;color:var(--text-mid);">Default: len(s)</div>
+    </div>
+    <div style="padding:14px 24px;border-radius:10px;background:rgba(250,204,21,0.08);border:1px solid rgba(250,204,21,0.2);text-align:center;">
+      <div style="font-size:20px;font-weight:700;color:var(--neon-yellow);">step</div>
+      <div style="font-size:16px;color:var(--text-mid);margin-top:4px;">How many to skip</div>
+      <div style="font-size:14px;color:var(--text-mid);">Default: 1</div>
+    </div>
+  </div>
+</div>
+<div style="position:absolute;top:520px;left:50%;transform:translateX(-50%);">
+  <div style="display:flex;gap:0;justify-content:center;">
+    <div style="width:100px;height:80px;display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:700;color:var(--neon-cyan);background:rgba(34,211,238,0.08);border:2px solid rgba(34,211,238,0.3);border-radius:10px 0 0 10px;">P</div>
+    <div style="width:100px;height:80px;display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:700;color:var(--neon-cyan);background:rgba(34,211,238,0.06);border-top:2px solid rgba(34,211,238,0.3);border-bottom:2px solid rgba(34,211,238,0.3);">y</div>
+    <div style="width:100px;height:80px;display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:700;color:var(--neon-lime);background:rgba(163,230,53,0.08);border-top:2px solid rgba(163,230,53,0.3);border-bottom:2px solid rgba(163,230,53,0.3);">t</div>
+    <div style="width:100px;height:80px;display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:700;color:var(--neon-lime);background:rgba(163,230,53,0.06);border-top:2px solid rgba(163,230,53,0.3);border-bottom:2px solid rgba(163,230,53,0.3);">h</div>
+    <div style="width:100px;height:80px;display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:700;color:var(--text-mid);background:rgba(255,255,255,0.03);border-top:2px solid rgba(255,255,255,0.1);border-bottom:2px solid rgba(255,255,255,0.1);">o</div>
+    <div style="width:100px;height:80px;display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:700;color:var(--text-mid);background:rgba(255,255,255,0.03);border:2px solid rgba(255,255,255,0.1);border-radius:0 10px 10px 0;">n</div>
+  </div>
+  <div style="display:flex;gap:0;justify-content:center;">
+    <div style="width:100px;text-align:center;font-size:22px;font-weight:700;color:var(--neon-cyan);">0</div>
+    <div style="width:100px;text-align:center;font-size:22px;font-weight:700;color:var(--neon-cyan);">1</div>
+    <div style="width:100px;text-align:center;font-size:22px;font-weight:700;color:var(--neon-lime);">2</div>
+    <div style="width:100px;text-align:center;font-size:22px;font-weight:700;color:var(--neon-lime);">3</div>
+    <div style="width:100px;text-align:center;font-size:22px;font-weight:700;color:var(--text-mid);">4</div>
+    <div style="width:100px;text-align:center;font-size:22px;font-weight:700;color:var(--text-mid);">5</div>
+  </div>
+  <div style="text-align:center;margin-top:14px;font-size:22px;color:var(--text-mid);">word[2:4] = <span style="color:var(--neon-lime);font-weight:600;">"th"</span> <span style="color:rgba(255,255,255,0.4);">(includes index 2, stops before index 4)</span></div>
+</div>
+<div style="position:absolute;bottom:110px;left:80px;max-width:1600px;padding:16px 24px;border-radius:12px;background:rgba(250,204,21,0.08);border:1px solid rgba(250,204,21,0.2);font-size:20px;color:var(--neon-yellow);font-weight:500;">⚠️ Key rule: <span style="font-weight:700;">start is inclusive</span>, <span style="font-weight:700;">end is exclusive</span></div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S04</div>
+<div class="chrome-pagenum">23 / 76</div>
+<template data-slide-notes>Slicing extracts a portion of a string. The start index is included, the end index is excluded.</template>
+</div>
+</body>
+</html>

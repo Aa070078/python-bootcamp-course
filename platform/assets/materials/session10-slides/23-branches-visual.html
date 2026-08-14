@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-150px; left:-200px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-180px; right:-200px;"></div>
+
+  <div class="chrome-topbar">
+    <span class="chrome-dot"></span>
+    <span>VISUAL // A BRANCH IN ACTION</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-cyan); letter-spacing:0.25em; text-transform:uppercase;">👁️ VISUAL</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi); margin-top:12px;">main → branch → merge</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:350px; width:300px; height:120px; background:rgba(34,211,238,0.08); border:1px solid rgba(34,211,238,0.45); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:145px; top:390px; width:250px; z-index:10; text-align:center; font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-cyan);">c1 initial</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:420px; top:395px; width:80px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:36px; color:var(--neon-cyan);">→</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:500px; top:350px; width:300px; height:120px; background:rgba(34,211,238,0.08); border:1px solid rgba(34,211,238,0.45); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:525px; top:390px; width:250px; z-index:10; text-align:center; font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-cyan);">c2 add score</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:800px; top:395px; width:80px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:36px; color:var(--neon-cyan);">→</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:880px; top:350px; width:300px; height:120px; background:rgba(34,211,238,0.08); border:1px solid rgba(34,211,238,0.45); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:905px; top:390px; width:250px; z-index:10; text-align:center; font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-cyan);">c3 <b style="color:var(--neon-lime);">main</b></div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:880px; top:590px; width:300px; height:120px; background:rgba(250,204,21,0.08); border:1px solid rgba(250,204,21,0.45); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:905px; top:630px; width:250px; z-index:10; text-align:center; font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-yellow);">c4 <b style="color:var(--neon-yellow);">feature-boss</b> 🆕</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1180px; top:410px; width:80px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:34px; color:var(--neon-yellow);">↗</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1180px; top:620px; width:80px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:34px; color:var(--neon-yellow);">→</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1260px; top:350px; width:320px; height:120px; background:rgba(163,230,53,0.08); border:1px solid rgba(163,230,53,0.45); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1285px; top:390px; width:270px; z-index:10; text-align:center; font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-lime);">c5 merge 🎉</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:880px; top:760px; width:700px; height:120px; background:rgba(236,72,153,0.05); border:1px dashed rgba(236,72,153,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:910px; top:795px; width:640px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid);">c4 is <span style="color:var(--neon-magenta);">not on main</span> — main stays safe. Merging brings c4 into main as c5.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:770px; width:700px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:30px; line-height:1.9;">
+      <div><span class="tok-num">1</span> <span class="tok-var">git switch -c feature-boss</span></div>
+      <div><span class="tok-num">2</span> <span class="tok-var">git add . && git commit</span></div>
+      <div><span class="tok-num">3</span> <span class="tok-var">git switch main</span></div>
+      <div><span class="tok-num">4</span> <span class="tok-var">git merge feature-boss</span></div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:950px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">رسم بياني: فرع يولد من main، يضيف عملاً جديداً، ثم يعود ليُدمج فيه.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S10</div>
+  <div class="chrome-pagenum">23 / 50</div>
+</div>
+<template data-slide-notes>
+**Slide 23 — Branch visual (4 min)**
+- Draw the timeline live on the board as you talk.
+- main: c1 → c2 → c3. Then "feature-boss" branches off from c3 and gets its own commit c4.
+- The dashed box emphasises: main does NOT contain c4 until merge.
+- Steps on the left summarise the exact commands they'll type on the next slide.
+- Point at c5: after merge, main contains everything (c1+c2+c3+c4).
+- Arabic tip: شبّه الفروع بشجرة حقيقية: جذع واحد (main) وأغصان تنمو ثم تعود للاندماج مع الجذع.
+</template>
+</body>
+</html>

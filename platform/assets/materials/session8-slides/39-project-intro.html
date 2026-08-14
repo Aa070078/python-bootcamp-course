@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-200px; right:-160px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-180px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1700px; z-index:10;">
+    <div class="kicker">💼 MINI PROJECT — BUILD IT YOURSELF</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:84px; font-weight:700; color:var(--text-hi); margin-top:10px;">My Notes — a file manager 🗒️</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:330px; width:1550px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); line-height:1.5;">A <b style="color:var(--text-hi);">command-line notes manager</b> that remembers everything in <span class="mono" style="color:var(--neon-cyan);">notes.json</span>. Add, view, delete — close the program, come back, notes are still there.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:520px; width:530px; height:340px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:555px; width:470px; z-index:10;">
+    <div class="kicker" style="font-size:20px;">FEATURES</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:16px; line-height:1.7;">1️⃣ Add a note<br>2️⃣ View all notes<br>3️⃣ Delete by number<br>4️⃣ Exit (data stays)</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:660px; top:520px; width:530px; height:340px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:690px; top:555px; width:470px; z-index:10;">
+    <div class="kicker" style="font-size:20px; color:var(--neon-lime);">SKILLS USED</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:16px; line-height:1.7;">✅ functions<br>✅ fail-safe json load<br>✅ json dump with indent<br>✅ loops + conditionals</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1240px; top:520px; width:530px; height:340px; background:rgba(250,204,21,0.06); border:1px solid rgba(250,204,21,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1270px; top:555px; width:470px; z-index:10;">
+    <div class="kicker" style="font-size:20px; color:var(--neon-yellow);">OUTPUT FILE</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:29px; color:var(--text-hi); margin-top:16px; line-height:1.8;">
+      <div style="color:var(--neon-yellow);">notes.json</div>
+      <div>[{<span class="tok-str">"note"</span>: <span class="tok-str">"…"</span>}, …]</div>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-lo); margin-top:14px;">Open it in any editor — it's just text.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:930px; width:1700px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--neon-cyan);">⏱️ You have <b>20 minutes</b> — build it in your own folder. I'm here for every error. 🐍</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:29px; color:var(--text-lo); direction:rtl; margin-top:14px;">المشروع: مدير ملاحظات يحفظ بياناته في ملف JSON ويُعيد قراءتها عند كل تشغيل</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S08</div>
+  <div class="chrome-pagenum">39 / 50</div>
+</div>
+<template data-slide-notes>
+**Project intro — 4 min.**
+
+- Set the mission: 20 minutes, build "My Notes" from scratch. They can look at slides 35 & 38 patterns.
+- Walk features: add / view / delete by number / exit.
+- Show notes.json will be plain text they can inspect — demystify the "file" part.
+- Motivate: "This is the same skeleton as real note apps and todo apps."
+- Arabic tip: «المشروع يحفظ نفسه» (the project saves itself) — punchline before they code.
+</template>
+</body>
+</html>

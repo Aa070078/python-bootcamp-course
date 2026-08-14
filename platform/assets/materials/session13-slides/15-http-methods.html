@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-240px; right:-160px;"></div>
+  <div class="bg-glow-lime" style="bottom:-280px; left:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">🗂️ CORE CONCEPT #5</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:84px; font-weight:700; color:var(--text-hi); margin-top:14px;">HTTP <span style="color:var(--neon-cyan);">methods</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:320px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; color:var(--text-mid); line-height:1.6;">The <span style="color:var(--neon-lime);">verb</span> of your request. Four verbs cover almost everything: <span style="color:var(--text-hi);">read, create, update, delete</span>.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:460px; width:430px; height:330px; background:rgba(34,211,238,0.07); border:1px solid rgba(34,211,238,0.5); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:500px; width:350px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:44px; font-weight:700; color:var(--neon-cyan);">GET</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-lo); margin-top:10px; line-height:1.6;">Read data. Safe — no changes on the server. Used constantly.</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--neon-lime); margin-top:12px;">get_weather()</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:540px; top:460px; width:430px; height:330px; background:rgba(163,230,53,0.07); border:1px solid rgba(163,230,53,0.5); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:580px; top:500px; width:350px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:44px; font-weight:700; color:var(--neon-lime);">POST</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-lo); margin-top:10px; line-height:1.6;">Create new data. Sends a body with the new item.</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--neon-lime); margin-top:12px;">create_user()</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1000px; top:460px; width:430px; height:330px; background:rgba(250,204,21,0.07); border:1px solid rgba(250,204,21,0.5); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1040px; top:500px; width:350px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:44px; font-weight:700; color:var(--neon-yellow);">PUT</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-lo); margin-top:10px; line-height:1.6;">Update existing data. Replace or edit an item.</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--neon-lime); margin-top:12px;">update_profile()</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1460px; top:460px; width:420px; height:330px; background:rgba(236,72,153,0.07); border:1px solid rgba(236,72,153,0.5); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1500px; top:500px; width:340px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:44px; font-weight:700; color:var(--neon-magenta);">DELETE</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-lo); margin-top:10px; line-height:1.6;">Remove data on the server. Handle with care.</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--neon-lime); margin-top:12px;">delete_post()</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:830px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-lo);">These four are the <span style="color:var(--neon-cyan);">CRUD</span> operations — <span class="mono">Create, Read, Update, Delete</span> — the backbone of every data app.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:910px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">لكل فعل طريقة: GET للقراءة، POST للإنشاء، PUT للتحديث، DELETE للحذف — هذه أساس أي تطبيق بيانات 🗂️</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">15 / 50</div>
+</div>
+<template data-slide-notes>
+HTTP methods — four colored cards.
+
+Use real-life mapping: 
+- GET = look at the menu
+- POST = place a new order
+- PUT = change your order
+- DELETE = cancel the order
+
+Clarify nuance (keep simple): GET should never change data ("safe"); POST creates; PUT replaces/updates; DELETE removes. Today's session focuses on GET + POST — the other two exist in the same pattern.
+
+Tie back: last session (SQLite) did the same CRUD with SQL commands; today the "database" is remote and the "SQL" is an HTTP method.
+
+Arabic tip: ترجم CRUD إلى: أنشئ، اقرأ، حدّث، احذف — واطلب من الطلاب تسمية فعلٍ من حياتهم لكل واحدة.
+</template>
+</body>
+</html>

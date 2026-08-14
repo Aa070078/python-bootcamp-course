@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-lime"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:70px; width:1760px; z-index:10;">
+    <div class="kicker">PROJECT // STEP 1 — FETCH + PARSE 🔨</div>
+    <div style="margin-top:22px; font-family:'Space Grotesk',sans-serif; font-size:54px; font-weight:700; color:var(--text-hi);">Build the pipeline: get the page</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:12px;">الخطوة الأولى: نجلب الصفحة، نتحقق من نجاح الطلب، ثم نحللها</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:290px; width:1200px; height:560px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">quote_scraper.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" data-lang="python" style="position:absolute; left:110px; top:350px; width:1140px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.6;">
+    <div><span class="tok-kw">import</span> requests</div>
+    <div><span class="tok-kw">from</span> bs4 <span class="tok-kw">import</span> BeautifulSoup</div>
+    <div></div>
+    <div><span class="tok-var">url</span> = <span class="tok-str">"https://quotes.toscrape.com/"</span></div>
+    <div><span class="tok-var">resp</span> = <span class="tok-fn">requests.get</span>(<span class="tok-var">url</span>, timeout=<span class="tok-num">10</span>)</div>
+    <div><span class="tok-var">resp.raise_for_status</span>() <span class="tok-com"># stop if request failed</span></div>
+    <div><span class="tok-var">soup</span> = <span class="tok-fn">BeautifulSoup</span>(<span class="tok-var">resp.text</span>, <span class="tok-str">"html.parser"</span>)</div>
+    <div></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"title:"</span>, <span class="tok-var">soup.title.text</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"quotes:"</span>, <span class="tok-fn">len</span>(<span class="tok-fn">soup.select</span>(<span class="tok-str">".quote"</span>)))</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1330px; top:320px; width:510px; z-index:10;">
+    <div class="chip chip-lime">RUN IT</div>
+    <div style="margin-top:20px; font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); line-height:1.6;">
+      Expect: <span class="mono">title: Quotes to Scrape</span><br>
+      and <span class="mono">quotes: 10</span>.<br><br>
+      A broken URL → <span class="mono">raise_for_status</span> shouts loudly.
+    </div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:25px; color:var(--text-lo); direction:rtl; margin-top:20px;">النتيجة المتوقعة: عنوان الموقع وعدد الاقتباسات في الصفحة الأولى</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">33 / 50</div>
+</div>
+<template data-slide-notes>
+Live-coding step 1. Write it together line by line, run it, confirm output.
+
+Walking through each line: import, url, get with timeout, raise_for_status safety net, soup parse, then two sanity checks (title + count). Sanity checks tell you "am I on the right page?" before you write extraction logic.
+
+If quotes: 0 → the page changed or got blocked; teach them to re-inspect rather than panic.
+
+Arabic tip: «فحص الصحة» قبل الاستخراج يوفر ساعة من الحيرة. تأكد أنك في الصفحة الصحيحة أولًا.
+</template>
+</body>
+</html>

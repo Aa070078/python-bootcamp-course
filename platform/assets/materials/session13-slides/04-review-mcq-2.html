@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime" style="top:-260px; right:-160px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-300px; left:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">🧠 REVIEW &mdash; LAST SESSION: SQLite</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi); margin-top:16px;">What does CREATE TABLE do?</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:360px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; color:var(--text-mid);">After running <span class="mono" style="color:var(--neon-lime);">cursor.execute(...)</span>, what actually happened in the database?</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:520px; width:860px; height:190px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:555px; width:800px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:33px; color:var(--text-hi);"><span style="color:var(--neon-magenta);">A)</span> Deleted the whole database file</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-lo); margin-top:8px;">DROP TABLE deletes — not CREATE.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:520px; width:860px; height:190px; background:rgba(163,230,53,0.07); border:1px solid rgba(163,230,53,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1010px; top:555px; width:800px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:33px; color:var(--text-hi);"><span style="color:var(--neon-magenta);">B)</span> Created a new table structure &nbsp;✅</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-lo); margin-top:8px;">Defines columns and types, ready to hold rows.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:750px; width:860px; height:190px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:785px; width:800px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:33px; color:var(--text-hi);"><span style="color:var(--neon-magenta);">C)</span> Connected to a remote server</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-lo); margin-top:8px;">SQLite is a single local file — no server.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:750px; width:860px; height:190px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1010px; top:785px; width:800px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:33px; color:var(--text-hi);"><span style="color:var(--neon-magenta);">D)</span> Printed every row to the screen</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-lo); margin-top:8px;">That is SELECT + fetchall().</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:975px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl;">الجدول في SQLite مثل صفحة إكسل: أعمدة تحدد نوع البيانات، وصفوف تحمل القيم 📊</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">04 / 50</div>
+</div>
+<template data-slide-notes>
+MCQ 2 — SQLite review. Answer: **B) Created a new table structure**.
+
+Concept to reinforce: a table is a *schema* first (columns + types) and *data* second (rows). Today we get the reverse: JSON arrives *already full of rows*, and we must figure out the "columns" ourselves.
+
+Extra teaching point: `CREATE TABLE IF NOT EXISTS` — the `IF NOT EXISTS` guard. Good habit: ask "what would happen if we ran CREATE TABLE twice?" (error). Tie to today: with APIs, mistakes return error *codes*, not Python tracebacks.
+
+Arabic tip: شبّه الجدول بملف إكسل — الأعمدة تحدد "الشكل"، والصفوف هي "المحتوى". وفي الـ APIs نستقبل المحتوى أولاً ثم نكتشف الشكل.
+</template>
+</body>
+</html>

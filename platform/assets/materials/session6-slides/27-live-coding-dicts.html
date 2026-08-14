@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-250px; right:-200px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-250px; left:-200px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:120px; width:1760px; z-index:10;">
+    <div class="kicker">⚡ LIVE CODING</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:92px; font-weight:700; color:var(--text-hi); margin-top:18px;">Word Frequency Counter</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); margin-top:16px;">Count how many times each word appears — the <b style="color:var(--neon-lime);">classic</b> dict problem.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:16px;">برمجة مباشرة: عدّاد تكرار الكلمات — نستخدم القاموس لنجعل كل كلمة مفتاحًا وعدد تكرارها قيمة.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:400px; width:780px; height:540px; background:rgba(167,139,250,0.06); border:1px solid rgba(167,139,250,0.3); border-radius:24px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:434px; width:720px; z-index:10;">
+    <div class="kicker" style="font-size:20px;">THE PLAN — 3 STEPS</div>
+    <div style="margin-top:22px; background:rgba(34,211,238,0.08); border:1px solid rgba(34,211,238,0.35); border-radius:16px; padding:16px 22px;">
+      <div style="font-size:27px; font-weight:700; color:var(--neon-cyan);">1️⃣ &nbsp;Split the text</div>
+      <div style="font-size:23px; color:var(--text-mid); margin-top:6px;"><span style="font-family:'JetBrains Mono',monospace;">text.split()</span> → a list of words</div>
+    </div>
+    <div style="margin-top:16px; background:rgba(163,230,53,0.08); border:1px solid rgba(163,230,53,0.35); border-radius:16px; padding:16px 22px;">
+      <div style="font-size:27px; font-weight:700; color:var(--neon-lime);">2️⃣ &nbsp;Look it up</div>
+      <div style="font-size:23px; color:var(--text-mid); margin-top:6px;"><span style="font-family:'JetBrains Mono',monospace;">freq.get(w, 0)</span> → 0 if we've never seen it</div>
+    </div>
+    <div style="margin-top:16px; background:rgba(236,72,153,0.08); border:1px solid rgba(236,72,153,0.4); border-radius:16px; padding:16px 22px;">
+      <div style="font-size:27px; font-weight:700; color:var(--neon-magenta);">3️⃣ &nbsp;Count it</div>
+      <div style="font-size:23px; color:var(--text-mid); margin-top:6px;">Add <span style="font-family:'JetBrains Mono',monospace;">1</span> and store it back under the word</div>
+    </div>
+    <div style="margin-top:16px; background:rgba(250,204,21,0.08); border:1px solid rgba(250,204,21,0.4); border-radius:16px; padding:16px 22px;">
+      <div style="font-size:26px; font-weight:700; color:var(--neon-yellow);">🤝 &nbsp;Try it yourself</div>
+      <div style="font-size:23px; color:var(--text-mid); margin-top:6px;">Can you rewrite step 2–3 with an <span style="font-family:'JetBrains Mono',monospace;">if</span> statement instead?</div>
+    </div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:920px; top:400px; width:920px; height:540px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">frequency.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:950px; top:470px; width:860px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.65;">
+    <div><span class="tok-var">text</span> <span class="tok-op">=</span> <span class="tok-str">"the cat and the dog and the cat"</span></div>
+    <div><span class="tok-var">words</span> <span class="tok-op">=</span> <span class="tok-var">text</span>.<span class="tok-fn">split</span>()</div>
+    <div><span class="tok-var">freq</span> <span class="tok-op">=</span> <span class="tok-op">{}</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-kw">for</span> <span class="tok-var">w</span> <span class="tok-kw">in</span> <span class="tok-var">words</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">freq</span>[<span class="tok-var">w</span>] <span class="tok-op">=</span> <span class="tok-var">freq</span>.<span class="tok-fn">get</span>(<span class="tok-var">w</span>, <span class="tok-num">0</span>) <span class="tok-op">+</span> <span class="tok-num">1</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">freq</span>)</div>
+    <div><span class="tok-com"># {'the': 2, 'cat': 2, 'and': 2, 'dog': 1}</span></div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S06</div>
+  <div class="chrome-pagenum">27 / 45</div>
+</div>
+<template data-slide-notes>
+# Slide 27 — Live Coding: Word Frequency Counter (Instructor notes)
+
+**Live coding flow (8-10 min)**
+1. Type the sentence. Ask: "How many unique words? Which repeats?"
+2. Build step by step: `text.split()`, then empty `freq = {}`.
+3. First version WITH an `if`:
+   ```python
+   for w in words:
+       if w in freq:
+           freq[w] += 1
+       else:
+           freq[w] = 1
+   ```
+4. Then refactor to the one-liner `freq[w] = freq.get(w, 0) + 1`. Show that both give the same answer — this is the "aha" moment.
+5. Run it; check `'the'` counts to 2, not 3 — the sentence only has two "the".
+
+**Common mistakes**
+- Students forget `+ 1` and overwrite with `freq.get(w, 0)` → every count becomes 0.
+- Students use `freq[w] = freq[w] + 1` before the key exists → KeyError. The `.get()` version is the fix.
+- Students count letters instead of words (skipping `.split()`).
+
+**Extension challenge**
+- Count words case-insensitively: lower each word with `w.lower()`.
+- Count letters instead: `for ch in text`.
+
+**Arabic teaching tip**
+- ذكّرهم أن «freq.get(w, 0)» تقول: «أعطني العدد الحالي، وإن لم يوجد فابدأ من صفر». هذا جوهر التكرار.
+</template>
+</body>
+</html>

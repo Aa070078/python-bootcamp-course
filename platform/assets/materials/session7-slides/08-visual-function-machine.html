@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-200px; left:600px;"></div>
+  <div class="bg-glow-lime" style="bottom:-220px; right:-150px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:100px; width:1720px; z-index:10;">
+    <div class="kicker">👁️ VISUAL — THE FUNCTION MACHINE</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi); margin-top:14px;">Inputs → Machine → Output</div>
+    <div class="arabic" style="font-size:30px; color:var(--text-lo); margin-top:12px; direction:rtl;">الآلة تأخذ مدخلات وتُخرج نتيجة — هذه هي الدالة</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:140px; top:400px; width:380px; height:240px; background:rgba(34,211,238,0.08); border:1px solid rgba(34,211,238,0.5); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:170px; top:440px; width:320px; z-index:10;">
+    <div class="kicker" style="font-size:18px; color:var(--neon-cyan);">INPUT</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:32px; color:var(--text-hi); margin-top:14px;"><span class="tok-num">5</span></div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:32px; color:var(--text-hi); margin-top:10px;"><span class="tok-num">2</span></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:var(--text-lo); margin-top:12px;">arguments</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:560px; top:475px; width:120px; z-index:10;">
+    <div style="font-size:64px; color:var(--neon-cyan);">→</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:720px; top:400px; width:480px; height:240px; background:rgba(236,72,153,0.08); border:1px solid rgba(236,72,153,0.5); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:750px; top:430px; width:420px; z-index:10;">
+    <div class="kicker" style="font-size:18px; color:var(--neon-magenta);">THE FUNCTION</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:28px; color:var(--text-hi); margin-top:16px;"><span class="tok-kw">def</span> <span class="tok-fn">add</span>(<span class="tok-var">a</span>, <span class="tok-var">b</span>):</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:28px; color:var(--text-hi);">&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-var">a</span> <span class="tok-op">+</span> <span class="tok-var">b</span></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:var(--text-lo); margin-top:12px;">hides its steps ⚙️</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1240px; top:475px; width:120px; z-index:10;">
+    <div style="font-size:64px; color:var(--neon-magenta);">→</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1400px; top:400px; width:380px; height:240px; background:rgba(163,230,53,0.08); border:1px solid rgba(163,230,53,0.5); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1430px; top:440px; width:320px; z-index:10;">
+    <div class="kicker" style="font-size:18px; color:var(--neon-lime);">OUTPUT</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:44px; color:var(--neon-lime); font-weight:700; margin-top:18px;"><span class="tok-num">7</span></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:var(--text-lo); margin-top:12px;">returned value</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:140px; top:740px; width:1640px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid);">The caller feeds values in, the function computes, and <span style="color:var(--neon-lime); font-weight:700;">returns</span> a result. The inside is a black box. 🤖</div>
+    <div class="arabic" style="font-size:28px; color:var(--text-lo); margin-top:12px; direction:rtl;">المستدعي يمرّر القيم، والدالة تعالج وتُرجع النتيجة — التفاصيل الداخلية مخفية</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S07</div>
+  <div class="chrome-pagenum">08 / 50</div>
+</div>
+<template data-slide-notes>
+- Draw the machine on the board too: f(x) with a gearbox.
+- Emphasize the black-box idea: callers care about WHAT, not HOW.
+- Demo physically: two students pass "ingredients", one student "cooks" (adds), returns the dish.
+- Note the arrow names: input = argument, machine = function, output = return value.
+- Ask: "What could go IN a vending machine function?" — money + button; out comes a snack.
+- Arabic tip: صوّر الدالة كآلة بيع: تدخل عملة، تخرج قطعة حلوى.
+- Transition into code: "Let's write that machine in Python."
+</template>
+</body>
+</html>

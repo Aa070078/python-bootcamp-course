@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="bottom:-200px; left:-180px;"></div>
+  <div class="bg-glow-magenta" style="top:80px; right:-220px;"></div>
+
+  <div class="chrome-topbar">
+    <span class="chrome-dot"></span>
+    <span>PART 3 // GITHUB &amp; REMOTES</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-cyan); letter-spacing:0.25em; text-transform:uppercase;">☁️ CONCEPT</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi); margin-top:12px;">Remote repositories</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:380px; width:830px; height:430px; background:#0b1020; border:1px solid var(--border); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:420px; width:770px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-cyan);">💻 YOUR COMPUTER — LOCAL</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:16px; line-height:1.7;">Full history lives here. You work, commit, and only sync when you want.</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--text-lo); margin-top:20px;">my_game/ &nbsp;← your repo</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:940px; top:540px; width:160px; z-index:10; text-align:center;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--neon-lime);">push ▲</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:40px; color:var(--neon-cyan);">⇄</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--neon-magenta);">pull ▼</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1130px; top:380px; width:710px; height:430px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1160px; top:420px; width:650px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-magenta);">🐙 GITHUB — REMOTE</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:16px; line-height:1.7;">A copy hosted online. It's the "official" shared version and your backup.</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--text-lo); margin-top:20px;">origin &nbsp;← default remote name</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:880px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-hi); font-weight:600;">Key ideas 🗝️</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:12px;">• A repo can live in both places at once.<br>• <span class="mono" style="color:var(--neon-lime);">push</span> = send local commits up · <span class="mono" style="color:var(--neon-magenta);">pull</span> = fetch remote changes down.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:24px;">المستودع البعيد: نسخة مشروعك على سحابة GitHub، تزامنها بالدفع والسحب.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S10</div>
+  <div class="chrome-pagenum">26 / 50</div>
+</div>
+<template data-slide-notes>
+**Slide 26 — Remote repositories (4 min)**
+- Connect back to Git vs GitHub (slide 09): local Git repo + remote copy on GitHub.
+- The word "remote" just means "not on this computer". `origin` is the conventional nickname for your GitHub copy.
+- push = upload; pull = download. Revisit the arrow diagram — this is the heart of collaboration.
+- Analogy: local is the draft folder, remote is the published folder; you choose when to publish (push) and when to refresh (pull).
+- Arabic tip: "بعيد" = remote؛ أي نسخة موجودة على خادم بعيد عن جهازك.
+- Bridge: "Now let's learn the three remote commands: clone, push, pull."
+</template>
+</body>
+</html>

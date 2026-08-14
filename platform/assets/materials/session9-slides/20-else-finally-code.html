@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-150px; left:-120px;"></div>
+  <div class="bg-glow-lime" style="bottom:-200px; right:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">CODE // 05 — THE FULL SHIELD</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:70px; font-weight:700; color:var(--text-hi);">➕ Four lanes in action</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:940px; height:520px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span><span class="code-dot code-dot-y"></span><span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">read_data.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:388px; width:900px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.75;">
+    <div><span class="tok-kw">try</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">f</span> <span class="tok-op">=</span> <span class="tok-fn">open</span>(<span class="tok-str">"data.txt"</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">text</span> <span class="tok-op">=</span> <span class="tok-var">f</span>.<span class="tok-fn">read</span>()</div>
+    <div><span class="tok-kw">except</span> <span class="tok-var">FileNotFoundError</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"No data.txt yet."</span>)</div>
+    <div><span class="tok-kw">else</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Read successful!"</span>, <span class="tok-var">len</span>(<span class="tok-var">text</span>), <span class="tok-str">"chars"</span>)</div>
+    <div><span class="tok-kw">finally</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Cleanup done."</span>)</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1080px; top:330px; width:760px; height:520px; background:rgba(167,139,250,0.05); border:1px solid rgba(167,139,250,0.35); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1120px; top:372px; width:680px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--neon-violet);">Two runs, same finally</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:24px; line-height:1.7;">
+      ✅ <b style="color:var(--text-hi);">File exists:</b> "Read successful!" then "Cleanup done."<br><br>
+      ❌ <b style="color:var(--text-hi);">File missing:</b> "No data.txt yet." then "Cleanup done."<br><br>
+      🔁 <span class="mono" style="color:var(--neon-lime);">finally</span> printed in <b style="color:var(--text-hi);">both</b> cases — that's its promise.
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-lo); margin-top:28px; line-height:1.6;">💡 <span class="mono" style="color:var(--neon-yellow);">else</span> only on success; <span class="mono" style="color:var(--neon-yellow);">except</span> only on failure; <span class="mono" style="color:var(--neon-yellow);">finally</span> every single time.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:26px; color:var(--text-lo); direction:rtl; margin-top:24px;">finally مضمون في الحالتين: سواء نجحت القراءة أو فشلت، يظهر "Cleanup done" دائمًا.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">20 / 50</div>
+</div>
+<template data-slide-notes>
+## Code — four lanes in action
+
+**Type & run (6 min).** First with data.txt present, then delete it and run again. Both runs print "Cleanup done." because finally always runs.
+
+**Predict before running:** ask students to write the output for the two scenarios BEFORE you run them. Then verify.
+
+**Pro discussion:** "Why bother with else here instead of putting print in try?" Answer: code in else can't raise the exception we're handling, and it signals intent — "this is the success path". Good practice, keeps try small.
+
+**Real-world finally:** closing a database connection or a network socket even when the request failed. Today `with open()` handles files, but the concept generalizes.
+
+**Arabic tip:** اجعلهم يحفظون الترتيب بالتلوين: else للنجاح، finally دائمًا، كأنه ضمان التنظيف.
+</template>
+</body>
+</html>

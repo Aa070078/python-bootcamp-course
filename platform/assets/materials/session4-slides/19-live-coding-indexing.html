@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-cyan"></div>
+
+<div class="kicker" style="position:absolute;top:100px;left:80px;">LIVE CODING // INDEXING</div>
+<div class="arabic" style="position:absolute;top:100px;right:80px;font-size:20px;color:rgba(34,211,238,0.5);">برمجة مباشرة — الفهرسة</div>
+<div style="position:absolute;top:160px;left:80px;width:1760px;">
+<div class="code-window" style="width:1760px;">
+<div class="code-window-header">
+<div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+<span class="code-window-title">main.py</span>
+</div>
+<pre style="padding:24px 28px;margin:0;font-size:20px;line-height:1.55;color:var(--text-hi);overflow:hidden;">filename = <span style="color:var(--neon-lime);">"presentation_final_v2.pptx"</span>
+
+<span style="color:#6B7280;"># Get the extension</span>
+ext_start = filename.find(<span style="color:var(--neon-lime);">"."</span>)
+extension = filename[ext_start:]       <span style="color:#6B7280;"># .pptx</span>
+
+<span style="color:#6B7280;"># Get the name without extension</span>
+name = filename[:ext_start]            <span style="color:#6B7280;"># presentation_final_v2</span>
+
+<span style="color:#6B7280;"># Get the last 4 characters</span>
+print(filename[<span style="color:var(--neon-yellow);">-4</span>:])                 <span style="color:#6B7280;"># .pptx</span>
+
+<span style="color:#6B7280;"># Check first character</span>
+<span style="color:var(--neon-cyan);">if</span> filename[<span style="color:var(--neon-yellow);">0</span>] == <span style="color:var(--neon-lime);">"p"</span>:
+    print(<span style="color:var(--neon-lime);">"Starts with p!"</span>)</pre>
+</div>
+</div>
+<div style="position:absolute;bottom:110px;left:80px;max-width:1600px;display:flex;gap:20px;">
+  <div style="padding:14px 22px;border-radius:10px;background:rgba(34,211,238,0.06);border:1px solid rgba(34,211,238,0.15);font-size:18px;color:var(--text-mid);"><span style="color:var(--neon-cyan);font-weight:600;">.find(".")</span> returns the index of the first dot</div>
+  <div style="padding:14px 22px;border-radius:10px;background:rgba(163,230,53,0.06);border:1px solid rgba(163,230,53,0.15);font-size:18px;color:var(--text-mid);"><span style="color:var(--neon-lime);font-weight:600;">[ext_start:]</span> = from dot to end</div>
+  <div style="padding:14px 22px;border-radius:10px;background:rgba(250,204,21,0.06);border:1px solid rgba(250,204,21,0.15);font-size:18px;color:var(--text-mid);"><span style="color:var(--neon-yellow);font-weight:600;">[:ext_start]</span> = from start to dot</div>
+</div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S04</div>
+<div class="chrome-pagenum">19 / 76</div>
+<template data-slide-notes>Practical example: using indexing to parse a filename and extract its extension and base name.</template>
+</div>
+</body>
+</html>

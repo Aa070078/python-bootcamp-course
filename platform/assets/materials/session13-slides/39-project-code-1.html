@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-240px; right:-160px;"></div>
+  <div class="bg-glow-lime" style="bottom:-280px; left:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">🎯 PROJECT — CODE PART 1</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi); margin-top:14px;">Fetch the <span style="color:var(--neon-cyan);">rates</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:320px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-lo);">Write this in <span class="mono" style="color:var(--neon-lime);">converter.py</span> — a function that fetches today's rates for one currency.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:410px; width:940px; height:360px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:460px; width:880px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.7;">
+    <div><span class="tok-kw">import</span> <span class="tok-var">requests</span></div>
+    <div><br></div>
+    <div><span class="tok-var">BASE_URL</span> <span class="tok-op">=</span> <span class="tok-str">"https://api.frankfurter.app/latest"</span></div>
+    <div><br></div>
+    <div><span class="tok-kw">def</span> <span class="tok-fn">get_rates</span>(<span class="tok-var">from_currency</span><span class="tok-op">=</span><span class="tok-str">"USD"</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">resp</span> <span class="tok-op">=</span> <span class="tok-var">requests</span>.<span class="tok-fn">get</span>(</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">BASE_URL</span><span class="tok-op">,</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">params</span><span class="tok-op">=</span><span class="tok-op">{</span><span class="tok-str">"from"</span><span class="tok-op">:</span> <span class="tok-var">from_currency</span><span class="tok-op">}</span><span class="tok-op">,</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">resp</span>.<span class="tok-fn">raise_for_status</span>()</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-var">resp</span>.<span class="tok-fn">json</span>()[<span class="tok-str">"rates"</span>]</div>
+    <div><br></div>
+    <div><span class="tok-var">rates</span> <span class="tok-op">=</span> <span class="tok-fn">get_rates</span>(<span class="tok-str">"USD"</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"1 USD ="</span>, <span class="tok-var">rates</span>[<span class="tok-str">"EUR"</span>], <span class="tok-str">"EUR"</span>)</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1070px; top:410px; width:770px; height:360px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1110px; top:450px; width:690px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-magenta);">NEW TOOL: raise_for_status()</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:14px; line-height:1.9;">
+      <span class="mono" style="color:var(--text-hi);">resp.raise_for_status()</span><br>
+      Shortcut from slide 33: if the status is 4xx/5xx it raises an exception; otherwise nothing.<br><br>
+      So our function either returns <span class="mono" style="color:var(--neon-lime);">rates</span> or fails loudly — no silent garbage. 
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:820px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-lo);">Run it. Then we convert for real in Part 2. →</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:900px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">الدالة get_rates تجلب كل أسعار اليوم من عملة واحدة، وتحمي نفسها من الأخطاء بـ raise_for_status 🛡️</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">39 / 50</div>
+</div>
+<template data-slide-notes>
+PROJECT code part 1 — get_rates().
+
+Teach the new tool raise_for_status(): one line that combines "check the code" + "raise on error". Explain it raises requests.HTTPError for 4xx/5xx.
+
+Walk through the function:
+- default from_currency="USD"
+- params dict, pass to requests.get
+- raise_for_status() guards
+- return resp.json()["rates"] — the nested dict of rates
+
+Expected output: `1 USD = 0.92 EUR` (approx).
+
+Student pitfall: returning resp.json() (the whole object) instead of ["rates"] — then later code breaks. Have them print type(rates) → dict.
+
+Arabic tip: اشرح raise_for_status كـ"إنذار فوري": إذا لم يكن الرد سليماً أطلق صفارة، لا تواصل بصمت.
+</template>
+</body>
+</html>

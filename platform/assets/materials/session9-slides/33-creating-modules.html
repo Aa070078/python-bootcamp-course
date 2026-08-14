@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-150px; right:-120px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-200px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">CORE // 12 — WRITE YOUR OWN</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:70px; font-weight:700; color:var(--text-hi);">🛠️ Create your own module</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:33px; color:var(--text-mid); margin-top:22px;">Two files. One imports the other. <b style="color:var(--text-hi);">You are now a library author.</b></div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:900px; height:280px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span><span class="code-dot code-dot-y"></span><span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">helpers.py — our module</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:388px; width:850px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.7;">
+    <div><span class="tok-kw">def</span> <span class="tok-fn">add</span>(<span class="tok-var">a</span>, <span class="tok-var">b</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-var">a</span> <span class="tok-op">+</span> <span class="tok-var">b</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-kw">def</span> <span class="tok-fn">greet</span>(<span class="tok-var">name</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-fn">f</span>(<span class="tok-str">"Hello {name}!"</span>)</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:1040px; top:330px; width:800px; height:280px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span><span class="code-dot code-dot-y"></span><span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">main.py — the user</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1070px; top:388px; width:760px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.7;">
+    <div><span class="tok-kw">import</span> <span class="tok-var">helpers</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">helpers</span>.<span class="tok-fn">add</span>(<span class="tok-num">2</span>, <span class="tok-num">3</span>))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-com"># 5</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">helpers</span>.<span class="tok-fn">greet</span>(<span class="tok-str">"Ali"</span>))&nbsp;&nbsp;<span class="tok-com"># Hello Ali!</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:660px; width:1760px; height:270px; background:rgba(167,139,250,0.05); border:1px solid rgba(167,139,250,0.35); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:700px; width:1680px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:33px; font-weight:700; color:var(--neon-violet);">The rules of the game 📐</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:20px; line-height:1.7;">
+      1️⃣ Both files live in the <b style="color:var(--text-hi);">same folder</b> (Python looks there first).<br>
+      2️⃣ <span class="mono" style="color:var(--neon-lime);">import helpers</span> uses the filename <b style="color:var(--text-hi);">without .py</b>.<br>
+      3️⃣ Functions are reached via <span class="mono" style="color:var(--neon-lime);">helpers.add</span> — the dot again.<br>
+      4️⃣ Naming: lowercase, no spaces — <span class="mono" style="color:var(--neon-lime);">my_helpers.py</span> not <span class="mono" style="color:var(--neon-orange);">My Helpers.py</span>.
+    </div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:26px; color:var(--text-lo); direction:rtl; margin-top:18px;">ضع الملفين في نفس المجلد، واستورد باسم الملف دون .py، وسمِّ ملفاتك بأحرف صغيرة.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">33 / 50</div>
+</div>
+<template data-slide-notes>
+## Create your own module
+
+**Live (8 min):** create helpers.py with add() and greet(). Create main.py that imports it. Run main.py — works!
+
+**Key gotcha to demo:** put the files in DIFFERENT folders → import fails with ModuleNotFoundError. Shows that location matters. (Same folder = simplest.)
+
+**Import filename:** `import helpers` — NO ".py". Students always forget this. Also, import filename must be a valid identifier (no dashes/spaces).
+
+**Demo value:** "You just wrote a library." Suddenly the stdlib imports make total sense — math.py is just someone else's helpers.py.
+
+**Arabic tip:** اربط: "أنت الآن مؤلف مكتبات" — كل وحدة في المكتبة القياسية هي مجرد ملف مثل ملفك.
+</template>
+</body>
+</html>

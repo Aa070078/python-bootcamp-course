@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-240px; right:-160px;"></div>
+  <div class="bg-glow-lime" style="bottom:-280px; left:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">🧰 CORE CONCEPT #14</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:80px; font-weight:700; color:var(--text-hi); margin-top:14px;">Parse the <span style="color:var(--neon-cyan);">JSON</span> response</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:310px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-lo);"><span class="mono" style="color:var(--neon-lime);">resp.json()</span> turns the JSON text into a real Python dict. Then it's yours to explore. 🔍</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:400px; width:900px; height:360px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:450px; width:840px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.75;">
+    <div><span class="tok-kw">import</span> <span class="tok-var">requests</span></div>
+    <div><br></div>
+    <div><span class="tok-var">resp</span> <span class="tok-op">=</span> <span class="tok-var">requests</span>.<span class="tok-fn">get</span>(</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"https://api.frankfurter.app/latest"</span><span class="tok-op">,</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">params</span><span class="tok-op">=</span><span class="tok-op">{</span><span class="tok-str">"from"</span><span class="tok-op">:</span> <span class="tok-str">"USD"</span><span class="tok-op">,</span> <span class="tok-str">"to"</span><span class="tok-op">:</span> <span class="tok-str">"EUR"</span><span class="tok-op">}</span><span class="tok-op">,</span></div>
+    <div>)</div>
+    <div><br></div>
+    <div><span class="tok-var">data</span> <span class="tok-op">=</span> <span class="tok-var">resp</span>.<span class="tok-fn">json</span>()</div>
+    <div><br></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-fn">type</span>(<span class="tok-var">data</span>))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-com"># &lt;class 'dict'&gt;</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">data</span>[<span class="tok-str">"base"</span>])&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-com"># USD</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">data</span>[<span class="tok-str">"rates"</span>][<span class="tok-str">"EUR"</span>])&nbsp;<span class="tok-com"># 0.92...</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1030px; top:400px; width:810px; height:360px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1070px; top:440px; width:730px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-magenta);">THE PIPELINE</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:16px; line-height:1.9;">
+      <span class="mono" style="color:var(--text-hi);">resp.text</span> &rarr; string of JSON<br>
+      <span class="mono" style="color:var(--neon-lime);">resp.json()</span> &rarr; Python dict<br><br>
+      Then <span style="color:var(--neon-cyan);">dict access</span> works as usual:<br>
+      <span class="mono">data["rates"]["EUR"]</span><br><br>
+      Nested? Chain the keys. Missing key? KeyError — that's your cue to re-read the docs. 📖
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:810px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-lo);">💡 <span class="mono" style="color:var(--neon-yellow);">pprint(data)</span> prints big JSON in a readable layout — great for exploring.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:900px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">بعد .json() تصبح الاستجابة قاموساً عادياً — استكشفه بطباعة المفاتيح كما تشاء 🧰</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">29 / 50</div>
+</div>
+<template data-slide-notes>
+Parsing JSON — the .json() moment.
+
+Pipeline emphasis: text (string) → .json() → dict. Then everything is normal Python again (indexing, .get(), loops, nested access).
+
+Live: after calling, show type(data) is dict, then print(data["rates"]) and data["rates"]["EUR"]. Also demo pprint(data) for readability.
+
+Mistakes students will hit:
+- data["rates"] gives a dict, and they forget the second key → they print a dict and wonder why "EUR" isn't there.
+- KeyError from a typo like "Rates" (capital R) → tell them: JSON keys are case-sensitive, copy-paste from docs.
+- resp.json() on a 404 body → error; solve with status check (slide 33).
+
+Arabic tip: شبّه الأمر بفتح صندوق الشحن: .text هو الصندوق المغلق (نص)، و.json() يفتحه لتحصل على المحتويات المرتبة.
+</template>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-magenta"></div>
+
+<div class="kicker" style="position:absolute;top:100px;left:80px;">ITERATING THROUGH STRINGS</div>
+<div class="arabic" style="position:absolute;top:140px;left:80px;font-size:24px;color:var(--text-lo);">التكرار عبر السلاسل النصية</div>
+<div style="position:absolute;top:200px;left:80px;"><div class="code-window" style="width:880px;">
+<div class="code-window-header">
+<div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+<span class="code-window-title">iteration.py</span>
+</div>
+<pre style="padding:24px 28px;margin:0;font-size:20px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span class="tok-com"># Basic iteration</span>
+<span class="tok-var">message</span> = <span class="tok-str">"Hello"</span>
+<span class="tok-kw">for</span> <span class="tok-var">letter</span> <span class="tok-kw">in</span> <span class="tok-var">message</span>:
+    <span class="tok-fn">print</span>(<span class="tok-var">letter</span>, <span class="tok-var">end</span>=<span class="tok-str">" "</span>)
+<span class="tok-com"># Output: H e l l o</span>
+
+<span class="tok-com"># With index using enumerate</span>
+<span class="tok-kw">for</span> <span class="tok-var">i</span>, <span class="tok-var">char</span> <span class="tok-kw">in</span> <span class="tok-fn">enumerate</span>(<span class="tok-var">message</span>):
+    <span class="tok-fn">print</span>(<span class="tok-str">f"</span><span class="tok-str">{</span><span class="tok-var">i</span><span class="tok-str">}</span><span class="tok-str">: </span><span class="tok-str">{</span><span class="tok-var">char</span><span class="tok-str">}</span><span class="tok-str">"</span>)
+
+<span class="tok-com"># Practical: count vowels</span>
+<span class="tok-var">text</span> = <span class="tok-str">"Programming"</span>
+<span class="tok-var">count</span> = <span class="tok-num">0</span>
+<span class="tok-kw">for</span> <span class="tok-var">char</span> <span class="tok-kw">in</span> <span class="tok-var">text</span>.<span class="tok-fn">lower</span>():
+    <span class="tok-kw">if</span> <span class="tok-var">char</span> <span class="tok-kw">in</span> <span class="tok-str">"aeiou"</span>:
+        <span class="tok-var">count</span> <span class="tok-op">+=</span> <span class="tok-num">1</span>
+<span class="tok-fn">print</span>(<span class="tok-str">f"Vowels: </span><span class="tok-str">{</span><span class="tok-var">count</span><span class="tok-str">}</span><span class="tok-str">"</span>)  <span class="tok-com"># 3</span></pre>
+</div></div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S04</div>
+<div class="chrome-pagenum">51 / 76</div>
+<template data-slide-notes></template>
+</div>
+</body>
+</html>

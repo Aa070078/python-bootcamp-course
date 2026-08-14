@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime" style="top:-240px; right:-160px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-280px; left:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">🎯 PROJECT — CODE PART 2</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi); margin-top:14px;">Convert <span style="color:var(--neon-cyan);">&amp;</span> protect</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:320px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-lo);">Add the user input, the math, and a graceful error path — all in one small program.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:410px; width:940px; height:370px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:460px; width:880px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:24px; line-height:1.7;">
+    <div><span class="tok-kw">import</span> <span class="tok-var">requests</span></div>
+    <div><br></div>
+    <div><span class="tok-kw">def</span> <span class="tok-fn">convert</span>(<span class="tok-var">amount</span>, <span class="tok-var">from_cur</span>, <span class="tok-var">to_cur</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">resp</span> <span class="tok-op">=</span> <span class="tok-var">requests</span>.<span class="tok-fn">get</span>(</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"https://api.frankfurter.app/latest"</span><span class="tok-op">,</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">params</span><span class="tok-op">=</span><span class="tok-op">{</span><span class="tok-str">"from"</span><span class="tok-op">:</span> <span class="tok-var">from_cur</span><span class="tok-op">,</span> <span class="tok-str">"to"</span><span class="tok-op">:</span> <span class="tok-var">to_cur</span><span class="tok-op">}</span><span class="tok-op">,</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">if</span> <span class="tok-var">resp</span>.<span class="tok-var">status_code</span> <span class="tok-op">!=</span> <span class="tok-num">200</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Invalid currency or server error."</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-kw">None</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">rate</span> <span class="tok-op">=</span> <span class="tok-var">resp</span>.<span class="tok-fn">json</span>()[<span class="tok-str">"rates"</span>][<span class="tok-var">to_cur</span>]</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-fn">round</span>(<span class="tok-var">amount</span> <span class="tok-op">*</span> <span class="tok-var">rate</span>, <span class="tok-num">2</span>)</div>
+    <div><br></div>
+    <div><span class="tok-var">amount</span> <span class="tok-op">=</span> <span class="tok-fn">float</span>(<span class="tok-fn">input</span>(<span class="tok-str">"Amount: "</span>))</div>
+    <div><span class="tok-var">result</span> <span class="tok-op">=</span> <span class="tok-fn">convert</span>(<span class="tok-var">amount</span>, <span class="tok-str">"USD"</span>, <span class="tok-str">"EUR"</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-fn">f</span>(<span class="tok-str">"{amount} USD = {result} EUR"</span>))</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1070px; top:410px; width:770px; height:370px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1110px; top:450px; width:690px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-lime);">DECISIONS</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-mid); margin-top:14px; line-height:1.9;">
+      📥 <span style="color:var(--text-hi);">input()</span> — user types the amount<br>
+      ➗ <span style="color:var(--text-hi);">amount * rate</span> — the math<br>
+      🛡️ <span style="color:var(--text-hi);">status check</span> — friendly message, no crash<br>
+      🔁 <span style="color:var(--text-hi);">round(, 2)</span> — clean money output<br><br>
+      <span style="color:var(--neon-yellow);">Challenge:</span> wrap <span class="mono">float(input(...))</span> in try/except so typing "abc" doesn't crash!
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:840px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-lo);">Next slide shows the full run. →</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:910px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">أكملنا المحوّل: إدخال من المستخدم، حساب بضرب المبلغ في السعر، ومعالجة الأخطاء بلطف 🛡️</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">40 / 50</div>
+</div>
+<template data-slide-notes>
+PROJECT code part 2 — convert() + main flow.
+
+Walk through:
+- convert() takes amount, from, to.
+- params get both currencies.
+- status check returns None with a friendly message on failure.
+- rate extracted, math done, rounded to 2 decimals.
+- main: float(input()), call convert, print result.
+
+Live: run with 100 USD → EUR. Show the output.
+
+Challenge (5 min, optional): make it crash-proof for "abc" input with try/except around float(). Also allow the user to choose the target currency with input().
+
+Expected pitfalls:
+- float("abc") → ValueError crash (hence the challenge).
+- params key "from"/"to" are fine to pass as dict keys in requests.
+
+Arabic tip: اجعلهم يفكرون: "ماذا لو كتب المستخدم حروفاً بدل الأرقام؟" — اتركهم يجدون الحل بأنفسهم قبل أن تكشفه.
+</template>
+</body>
+</html>

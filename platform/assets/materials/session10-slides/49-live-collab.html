@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="bottom:-200px; left:-180px;"></div>
+  <div class="bg-glow-magenta" style="top:80px; right:-220px;"></div>
+
+  <div class="chrome-topbar">
+    <span class="chrome-dot"></span>
+    <span>LIVE CODING 2 // COLLABORATE</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:100px; width:1760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-violet); letter-spacing:0.25em; text-transform:uppercase;">🖥️ LIVE CODING 2 — PAIR UP</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:64px; font-weight:700; color:var(--text-hi); margin-top:12px;">Fork, branch &amp; open a <span style="color:var(--neon-violet);">Pull Request</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:320px; width:600px; height:120px; background:rgba(250,204,21,0.07); border:1px solid rgba(250,204,21,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:355px; width:540px; z-index:10; font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid);">
+    <span style="color:var(--neon-yellow); font-family:'JetBrains Mono',monospace;">A (owner)</span> &nbsp;Open your repo on GitHub → <b style="color:var(--text-hi);">Fork</b> button is for B. Give B the URL.
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:470px; width:600px; height:120px; background:rgba(34,211,238,0.07); border:1px solid rgba(34,211,238,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:505px; width:540px; z-index:10; font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid);">
+    <span style="color:var(--neon-cyan); font-family:'JetBrains Mono',monospace;">B (contributor)</span> &nbsp;Fork → clone → new branch → edit → commit → push to YOUR fork.
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:620px; width:1120px; height:290px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">bash — person B</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:670px; width:1060px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:27px; line-height:1.85;">
+    <div><span class="tok-var">$</span> git clone https://github.com/B/repo.git <span class="tok-com"># your fork</span></div>
+    <div><span class="tok-var">$</span> git switch -c add-hello</div>
+    <div><span class="tok-com"># edit code... then</span></div>
+    <div><span class="tok-var">$</span> git add . && git commit -m <span class="tok-str">"Add hello greeting"</span></div>
+    <div><span class="tok-var">$</span> git push -u origin add-hello</div>
+    <div class="tok-out">... use github.com/B/repo → "Compare &amp; pull request"</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1260px; top:320px; width:580px; height:590px; background:rgba(167,139,250,0.05); border:1px solid rgba(167,139,250,0.3); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1290px; top:360px; width:520px; z-index:10;">
+    <div style="font-size:52px;">🔮</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-hi); font-weight:600; margin-top:12px;">Predict!</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:16px; line-height:1.6;">After B pushes to their fork, what appears on GitHub?<br><br>→ A big yellow <b style="color:var(--neon-yellow);">"Compare &amp; pull request"</b> button. Click it! 🟨</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--neon-violet); margin-top:18px;">Then A reviews &amp; clicks <b>Merge pull request</b> → done!</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:950px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">لنتعاون: ارفع فرعك إلى نسختك، وافتح طلب سحب، ثم راجع وادمج — ها قد تعاونت فعلاً!</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S10</div>
+  <div class="chrome-pagenum">49 / 50</div>
+</div>
+<template data-slide-notes>
+**Slide 49 — LIVE CODING 2: collaborate via PR (15 min, optional/extra)**
+- Pair students A & B. A is repo owner, B is contributor.
+- B's flow: fork on GitHub → clone fork → `git switch -c` → edit → commit → push to fork.
+- PREDICT moment: after push, GitHub shows the yellow "Compare & pull request" button on B's fork page (and as a banner on A's repo page).
+- A reviews the PR (looks at the diff), clicks Merge. Celebrate the first PR merge!
+- If time is short, do it as ONE live demo with the projector instead of pairs.
+- Arabic tip: هذا الدرس يجعلهم يشعرون بالاحتراف: "أنت الآن تساهم في مشروع زميلك".
+- Time check: if running late, compress this to a demonstration only.
+</template>
+</body>
+</html>

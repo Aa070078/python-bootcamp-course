@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-200px; right:-160px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-180px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1700px; z-index:10;">
+    <div class="kicker">🚪 CONCEPT 03 — open()</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:92px; font-weight:700; color:var(--text-hi); margin-top:10px;"><span class="tok-fn" style="color:var(--neon-cyan);">open()</span> — the door to a file</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:340px; width:1600px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; color:var(--text-mid); line-height:1.45;">Every file has a <b style="color:var(--text-hi);">door</b>. <span class="tok-fn">open()</span> opens it and hands you a <b style="color:var(--neon-cyan);">file object</b> you can read from or write to. Default mode is <span class="tok-str">"r"</span> (read).</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:500px; width:1200px; height:310px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">open_demo.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:570px; width:1140px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:34px; line-height:1.6;">
+    <div><span class="tok-com"># three steps to use a file</span></div>
+    <div><span class="tok-var">f</span> <span class="tok-op">=</span> <span class="tok-fn">open</span>(<span class="tok-str">"notes.txt"</span>, <span class="tok-str">"r"</span>)&nbsp;&nbsp;<span class="tok-com"># 1. open the door</span></div>
+    <div><span class="tok-var">text</span> <span class="tok-op">=</span> <span class="tok-var">f</span>.<span class="tok-fn">read</span>()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-com"># 2. use it</span></div>
+    <div><span class="tok-var">f</span>.<span class="tok-fn">close</span>()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-com"># 3. close the door</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1340px; top:500px; width:460px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:44px; color:var(--neon-yellow);">🚪→📄</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid); margin-top:12px; line-height:1.5;">Forgetting to close = leaving the door open. We fix this later with <span class="tok-kw" style="color:var(--neon-magenta);">with</span>.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:830px; width:1700px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--neon-cyan);">🔑 <b>open(path, mode)</b> → returns a file object. You pick the mode — that's the next slide.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:14px;">الدالة open تفتح الباب للملف وتُعيد كائن الملف الذي نقرأ منه أو نكتب إليه</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S08</div>
+  <div class="chrome-pagenum">12 / 50</div>
+</div>
+<template data-slide-notes>
+**open() — 5 min.**
+
+- Walk the three steps out loud: open → use → close. Use the door metaphor physically (knock, walk in, close).
+- Show that `open("notes.txt")` works without the mode because `"r"` is the default.
+- Preview: `with` will replace the manual close — but we still need to understand what close means.
+- Live demo: open a file in the interpreter and show the `<_io.TextIOWrapper>` object.
+- Arabic tip: «افتح ثم استخدم ثم أغلق» (open, use, close) — three-word chant.
+</template>
+</body>
+</html>

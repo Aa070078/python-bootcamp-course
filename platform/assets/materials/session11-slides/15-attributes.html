@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-magenta"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; z-index:10;">
+    <div class="kicker">STATE // WHERE DATA LIVES</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:150px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:78px; font-weight:700; color:var(--text-hi);">Attributes: instance vs class</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:16px;">الخصائص: لكل كائن خصائصه الخاصة، وأخرى مشتركة بين كل الكائنات</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:330px; width:860px; z-index:10;">
+    <span class="chip chip-lime">INSTANCE ATTRIBUTE — لكل كائن نسخته</span>
+  </div>
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:380px; width:860px; height:420px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">attrs_1.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:438px; width:800px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.5;">
+    <div><span class="tok-kw">class</span> <span class="tok-var">Student</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">__init__</span>(<span class="tok-var">self</span>, <span class="tok-var">name</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">name</span> <span class="tok-op">=</span> <span class="tok-var">name</span> <span class="tok-com"># instance attr</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-var">s1</span> <span class="tok-op">=</span> <span class="tok-fn">Student</span>(<span class="tok-str">"Lina"</span>)</div>
+    <div><span class="tok-var">s2</span> <span class="tok-op">=</span> <span class="tok-fn">Student</span>(<span class="tok-str">"Omar"</span>)</div>
+    <div><span class="tok-var">s1</span>.<span class="tok-var">name</span> <span class="tok-op">=</span> <span class="tok-str">"Lina K."</span> <span class="tok-com"># s1 only</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">s1</span>.<span class="tok-var">name</span>, <span class="tok-var">s2</span>.<span class="tok-var">name</span>) <span class="tok-com"># Lina K. Omar</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1000px; top:330px; width:840px; z-index:10;">
+    <span class="chip chip-cyan">CLASS ATTRIBUTE — مشتركة بين كل الكائنات</span>
+  </div>
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:1000px; top:380px; width:840px; height:420px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">attrs_2.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1030px; top:438px; width:780px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.5;">
+    <div><span class="tok-kw">class</span> <span class="tok-var">Student</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">school</span> <span class="tok-op">=</span> <span class="tok-str">"Neon High"</span> <span class="tok-com"># class attr</span></div>
+    <div>&nbsp;</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">__init__</span>(<span class="tok-var">self</span>, <span class="tok-var">name</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">name</span> <span class="tok-op">=</span> <span class="tok-var">name</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-var">s1</span> <span class="tok-op">=</span> <span class="tok-fn">Student</span>(<span class="tok-str">"Lina"</span>)</div>
+    <div><span class="tok-var">s2</span> <span class="tok-op">=</span> <span class="tok-fn">Student</span>(<span class="tok-str">"Omar"</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">s1</span>.<span class="tok-var">school</span>, <span class="tok-var">s2</span>.<span class="tok-var">school</span>) <span class="tok-com"># shared</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:840px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid);">⚡ You can also add an attribute <b>anywhere</b>: <span class="mono">s1.city = "Cairo"</span> works even outside the class.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S11</div>
+  <div class="chrome-pagenum">15 / 50</div>
+</div>
+<template data-slide-notes>
+**Two kinds of attributes — keep them separate.**
+
+- Instance attributes (`self.name`) live on the *object*; each object owns its own copy. Set them in `__init__` → every object is born with them.
+- Class attributes (defined at class level, no self) are *shared* by every instance — great for constants like `school`, `max_speed`.
+- Reading `s1.school` when it's a class attribute works via the class. But beware: **assigning** `s1.school = "X"` creates a NEW instance attribute and hides the class one (we cover this in common mistakes).
+- Arabic tip: «خصائص الكائن» instance vs «خصائص الصنف» class.
+- Challenge the class: add `school` as a class attribute, then change `Student.school = "Cairo High"` and show every student updates at once.
+</template>
+</body>
+</html>

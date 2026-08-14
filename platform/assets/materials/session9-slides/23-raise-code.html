@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime" style="top:-150px; right:-120px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-200px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">CODE // 06 — QUALITY CONTROL</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:70px; font-weight:700; color:var(--text-hi);">🚦 raise + catch = full control</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid); margin-top:20px;">The same function can <b style="color:var(--neon-magenta);">raise</b> at the gate and be <b style="color:var(--neon-lime);">caught</b> by the caller.</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:940px; height:520px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span><span class="code-dot code-dot-y"></span><span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">withdraw.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:388px; width:900px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.75;">
+    <div><span class="tok-kw">def</span> <span class="tok-fn">withdraw</span>(<span class="tok-var">balance</span>, <span class="tok-var">amount</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">if</span> <span class="tok-var">amount</span> <span class="tok-op">&gt;</span> <span class="tok-var">balance</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">raise</span> <span class="tok-var">ValueError</span>(<span class="tok-str">"Insufficient funds"</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-var">balance</span> <span class="tok-op">-</span> <span class="tok-var">amount</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-kw">try</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">new_balance</span> <span class="tok-op">=</span> <span class="tok-fn">withdraw</span>(<span class="tok-num">100</span>, <span class="tok-num">250</span>)</div>
+    <div><span class="tok-kw">except</span> <span class="tok-var">ValueError</span> <span class="tok-kw">as</span> <span class="tok-var">err</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Rejected:"</span>, <span class="tok-var">err</span>)</div>
+    <div><span class="tok-kw">else</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"New balance:"</span>, <span class="tok-var">new_balance</span>)</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1080px; top:330px; width:760px; height:520px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.35); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1120px; top:372px; width:680px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--neon-lime);">What happens? 🎬</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:24px; line-height:1.7;">
+      <span class="mono" style="color:var(--neon-yellow);">withdraw(100, 250)</span> → raises <b style="color:var(--text-hi);">ValueError</b> because 250 &gt; 100.<br><br>
+      The caller's <span class="mono" style="color:var(--neon-lime);">except ValueError as err</span> catches it and prints the message.<br><br>
+      🧠 <span class="mono">as err</span> = "give me the exception object" — so we can read <span class="mono">err</span> (the message we raised).
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-hi); margin-top:26px;">Output: <span class="tok-out" style="color:var(--neon-orange);">Rejected: Insufficient funds</span></div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:26px; color:var(--text-lo); direction:rtl; margin-top:22px;">رفضَ السحب بسبب رصيد غير كافٍ، والتقط المتصل الخطأ وقرأ رسالته عبر as err.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">23 / 50</div>
+</div>
+<template data-slide-notes>
+## Code — raise + catch
+
+**Live code (6 min).** Build a tiny bank-account demo. `withdraw(100, 250)` must not silently return a negative balance — it RAISES "Insufficient funds". The caller catches it and prints a friendly message.
+
+**Teach `as err`:** `except ValueError as err` binds the exception object; `err` (or `e`) holds the message. Print it — you get exactly the string passed to ValueError(...).
+
+**Emphasize the pattern:** functions validate with raise; callers handle with try/except. This is exactly how professional libraries communicate errors.
+
+**Stretch question:** "What would `except Exception as err` do here?" — catches anything, prints the message; useful for debugging, dangerous for production.
+
+**Arabic tip:** كلمة "as err" تعني "أعطني كائن الخطأ" — من خلاله نقرأ رسالة الخطأ نفسها.
+</template>
+</body>
+</html>

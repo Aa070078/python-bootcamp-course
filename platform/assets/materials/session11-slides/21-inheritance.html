@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-magenta"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; z-index:10;">
+    <div class="kicker">PRINCIPLE #2 // REUSE</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:160px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:84px; font-weight:700; color:var(--text-hi);">Inheritance: children reuse parents 👨‍👧</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:16px;">الوراثة: الصنف الابن يرث كل شيء من الأب ثم يضيف المزيد</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:380px; width:400px; height:220px; background:rgba(236,72,153,0.07); border:1px solid rgba(236,72,153,0.5); border-radius:18px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:416px; width:340px; z-index:10; text-align:center;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700; color:var(--text-hi);">Animal 🦴</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--text-mid); margin-top:12px;">name<br>speak()</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:480px; top:470px; width:200px; z-index:10; text-align:center;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:40px; color:var(--neon-cyan);">▼▲▼</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:var(--text-lo); margin-top:6px;">inherits</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:680px; top:380px; width:380px; height:220px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.4); border-radius:18px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:710px; top:416px; width:320px; z-index:10; text-align:center;">
+    <div style="font-size:40px;">🐶</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--neon-lime); margin-top:4px;">Dog</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:23px; color:var(--text-mid); margin-top:10px;">+ nothing (yet!)</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1100px; top:380px; width:380px; height:220px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:18px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1130px; top:416px; width:320px; z-index:10; text-align:center;">
+    <div style="font-size:40px;">🐱</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--neon-cyan); margin-top:4px;">Cat</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:23px; color:var(--text-mid); margin-top:10px;">+ nothing (yet!)</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:660px; width:1080px; height:330px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">inheritance.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:718px; width:1020px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.5;">
+    <div><span class="tok-kw">class</span> <span class="tok-var">Animal</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">__init__</span>(<span class="tok-var">self</span>, <span class="tok-var">name</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">name</span> <span class="tok-op">=</span> <span class="tok-var">name</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-kw">class</span> <span class="tok-var">Dog</span>(<span class="tok-var">Animal</span>): <span class="tok-com"># Dog IS-A Animal</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">pass</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-var">rex</span> <span class="tok-op">=</span> <span class="tok-fn">Dog</span>(<span class="tok-str">"Rex"</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">rex</span>.<span class="tok-var">name</span>) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-com"># Rex</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-fn">isinstance</span>(<span class="tok-var">rex</span>, <span class="tok-var">Animal</span>)) <span class="tok-com"># True</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1240px; top:660px; width:600px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-mid); line-height:1.6;">
+      🎁 <b>Dog</b> automatically gets everything <b>Animal</b> has — the <span class="mono">__init__</span>, <span class="mono">name</span>, and any methods — for free.
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--neon-lime); margin-top:22px;">Write it once. Reuse it everywhere.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S11</div>
+  <div class="chrome-pagenum">21 / 50</div>
+</div>
+<template data-slide-notes>
+**Inheritance = reuse.** The child class (`Dog`) is declared with the parent in parentheses: `class Dog(Animal):` → "Dog IS-A Animal".
+
+- Demo live: create `Dog("Rex")` and call inherited behaviors. `rex.name` works even though Dog defines nothing.
+- `isinstance(rex, Animal)` → True. Because a Dog *is* an Animal.
+- Analogy: family tree / genes. The child inherits traits from the parent, then adds its own.
+- Arabic tip: «الابن يرث من الأب» — the child inherits from the parent. Use family-tree language, it maps perfectly.
+- This is the foundation for the next three slides: super(), overriding, and polymorphism.
+- Emphasize DRY (Don't Repeat Yourself): inheritance exists so you never copy-paste code between similar classes.
+</template>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="left:-200px; top:-160px;"></div>
+  <div class="bg-glow-lime" style="right:-180px; bottom:-180px;"></div>
+
+  <!-- HEADER -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:140px; width:1760px; z-index:10;">
+    <div class="kicker">💼 REAL PROBLEM</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:64px; font-weight:700; color:var(--text-hi); margin-top:16px;">Clean a messy list in <span style="color:var(--neon-lime); text-shadow:0 0 30px rgba(163,230,53,0.4);">ONE line</span></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:12px;">Duplicated emails? The set eats them. 🍽️</div>
+    <div class="arabic" style="font-size:26px; color:var(--text-lo); margin-top:14px;">تنظيف القوائم المكرّرة في سطر واحد — المجموعة تحذف التكرارات</div>
+  </div>
+
+  <!-- CODE WINDOW -->
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:420px; width:1000px; height:520px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">clean.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:112px; top:482px; width:940px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.8;">
+    <div><span class="tok-var">emails</span> <span class="tok-op">=</span> [<span class="tok-str">"ali@x.com"</span>, <span class="tok-str">"sam@x.com"</span>,</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"ali@x.com"</span>, <span class="tok-str">"noor@x.com"</span>]</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-var">unique</span> <span class="tok-op">=</span> <span class="tok-fn">list</span>(<span class="tok-fn">set</span>(<span class="tok-var">emails</span>))</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">unique</span>)</div>
+    <div><span class="tok-out"># ['ali@x.com', 'sam@x.com', 'noor@x.com']</span></div>
+  </div>
+
+  <!-- BEFORE / AFTER PANELS -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1140px; top:420px; width:700px; height:230px; background:rgba(250,204,21,0.05); border:1px solid rgba(250,204,21,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1170px; top:446px; width:640px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--neon-yellow); letter-spacing:0.12em;">BEFORE 📜 — 4 items, 1 duplicate</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:25px; color:var(--text-mid); margin-top:14px;">ali@x.com · sam@x.com · <span style="opacity:0.45;">ali@x.com</span> · noor@x.com</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1140px; top:690px; width:700px; height:230px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1170px; top:716px; width:640px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--neon-lime); letter-spacing:0.12em;">AFTER ✅ — 3 unique</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:25px; color:var(--text-mid); margin-top:14px;">ali@x.com · sam@x.com · noor@x.com</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:23px; color:var(--text-lo); margin-top:12px;">⚠️ <span style="color:var(--neon-yellow);">Order is not preserved</span> — use <span class="mono">sorted()</span> if order matters.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S06</div>
+  <div class="chrome-pagenum">13 / 45</div>
+</div>
+<template data-slide-notes>
+**Slide 13 — Remove duplicates from a list**
+
+The most practical recipe of the sets chapter. Read the pattern aloud: **`list(set(mylist))`** — "list of the set of my list."
+
+- Walk through the pipeline: list → set (dedupe) → list (back to a list you can index and sort).
+- Highlight the `ali@x.com` in the BEFORE panel: it's the duplicate being eaten.
+- The ⚠️ note is essential: set order is not list order. If they need sorted output, show `sorted(set(mylist))`.
+
+Have them type it themselves with their own list of repeated names. Quick check: "What's `list(set([7, 7, 7]))`?" → `[7]`.
+
+Arabic tip: اقرأ السطر كمعادلة: "قائمةٌ من مجموعةِ قائمتي". واطلب من الطلاب ترجمتها بالعربية بأسلوبهم الخاص ليترسّخ المعنى.
+</template>
+</body>
+</html>

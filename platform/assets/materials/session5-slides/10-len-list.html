@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-cyan"></div>
+<div class="chrome-topbar"><span class="chrome-dot"></span>LISTS</div>
+
+<div class="kicker" style="position:absolute;top:100px;left:80px;">LENGTH — len()</div>
+<div class="arabic" style="position:absolute;top:140px;left:80px;font-size:24px;color:var(--text-lo);">طول القائمة</div>
+<div style="position:absolute;top:210px;left:80px;font-size:36px;font-weight:700;color:var(--text-hi);max-width:1600px;"><span style="font-family:'JetBrains Mono',monospace;color:var(--neon-cyan);">len(list)</span> returns the number of items — exactly like strings</div>
+<div style="position:absolute;top:320px;left:80px;"><div class="code-window" style="width:880px;">
+<div class="code-window-header">
+<div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+<span class="code-window-title">len_demo.py</span>
+</div>
+<pre style="padding:24px 28px;margin:0;font-size:20px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span class="tok-var">students</span> = [<span class="tok-str">"Ahmed"</span>, <span class="tok-str">"Omar"</span>, <span class="tok-str">"Ali"</span>, <span class="tok-str">"Sara"</span>]
+<span class="tok-fn">print</span>(<span class="tok-fn">len</span>(<span class="tok-var">students</span>))  <span class="tok-com"># 4</span>
+
+<span class="tok-com"># Empty list has length 0</span>
+<span class="tok-var">todo</span> = []
+<span class="tok-fn">print</span>(<span class="tok-fn">len</span>(<span class="tok-var">todo</span>))      <span class="tok-com"># 0</span>
+
+<span class="tok-com"># Last item is at index len(list) - 1</span>
+<span class="tok-fn">print</span>(<span class="tok-var">students</span>[<span class="tok-fn">len</span>(<span class="tok-var">students</span>) <span class="tok-op">-</span> <span class="tok-num">1</span>])  <span class="tok-com"># "Sara"</span></pre>
+</div></div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S05</div>
+<div class="chrome-pagenum">10 / 63</div>
+<template data-slide-notes>len() works on lists exactly like strings. Length of empty list is 0. Last index = len - 1.</template>
+</div>
+</body>
+</html>

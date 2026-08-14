@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-180px; right:-150px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-200px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1720px; z-index:10;">
+    <div class="kicker">🔮 PREDICT THE OUTPUT #1</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi); margin-top:16px;">Trace it line by line ✍️</div>
+    <div class="arabic" style="font-size:30px; color:var(--text-lo); margin-top:12px; direction:rtl;">توقّع المخرجات: تتبّع التنفيذ سطرًا بسطر قبل أن تشغّل</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:1000px; height:380px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">predict1.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:400px; width:940px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:27px; line-height:1.65;">
+    <div><span class="tok-kw">def</span> <span class="tok-fn">mystery</span>(<span class="tok-var">x</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-var">x</span> <span class="tok-op">*</span> <span class="tok-num">2</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-var">x</span> <span class="tok-op">+</span> <span class="tok-num">1</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-var">result</span> <span class="tok-op">=</span> <span class="tok-fn">mystery</span>(<span class="tok-num">5</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">result</span>)</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1140px; top:340px; width:680px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--neon-yellow);">What prints? 🤔</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:16px; line-height:1.6;">Inside the call: <span class="mono">x*2</span> prints.<br>Then the returned value lands in <span class="mono">result</span>.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1140px; top:560px; width:680px; height:240px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1170px; top:590px; width:620px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--text-lo); line-height:1.7;">
+      <div><span class="tok-out">10</span></div>
+      <div><span class="tok-out">6</span></div>
+    </div>
+    <div class="arabic" style="font-size:26px; color:var(--text-lo); margin-top:14px; direction:rtl;">الخطوة الأولى: طباعة ضعف العدد، ثم إرجاع العدد زائد واحد</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S07</div>
+  <div class="chrome-pagenum">18 / 50</div>
+</div>
+<template data-slide-notes>
+- **Answer: 10 then 6.**
+- Walk through: call mystery(5) → x=5 → print(5*2)=10 → return 5+1=6 → result=6 → print(result)=6.
+- Emphasize the print INSIDE vs the print OUTSIDE happen at different times.
+- Cover the answer panel, let students write predictions on paper first.
+- Common slip: students print "10, 5" or forget the inner print order.
+- Arabic tip: تتبّع القيمة x داخل الدالة ثم عد إلى الخارج.
+- Use this as a template for live-coding trace skills later.
+</template>
+</body>
+</html>

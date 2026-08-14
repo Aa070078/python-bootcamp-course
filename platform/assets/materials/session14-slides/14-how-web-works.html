@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-magenta"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:80px; width:1760px; z-index:10;">
+    <div class="kicker">CORE CONCEPT // HOW THE WEB WORKS 🌍</div>
+    <div style="margin-top:26px; font-family:'Space Grotesk',sans-serif; font-size:80px; font-weight:700; color:var(--text-hi); line-height:1.05;">How websites are <span style="color:var(--neon-cyan);">structured</span></div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:29px; color:var(--text-lo); direction:rtl; margin-top:14px;">كيف تُبنى المواقع: صفحة الويب تتكون من HTML للهيكل وCSS للتنسيق وJavaScript للتفاعل</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:330px; width:1760px; z-index:10;">
+    <div style="display:flex; gap:34px;">
+      <div style="flex:1; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:22px; padding:30px;">
+        <div style="font-size:40px;">🦴</div>
+        <div style="margin-top:14px; font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--neon-cyan);">HTML</div>
+        <div style="margin-top:10px; font-family:'Space Grotesk',sans-serif; font-size:25px; color:var(--text-mid); line-height:1.55;">The skeleton. Headings, paragraphs, links, images — the meaning and structure. <b>This is what we scrape.</b></div>
+      </div>
+      <div style="flex:1; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:22px; padding:30px;">
+        <div style="font-size:40px;">🎨</div>
+        <div style="margin-top:14px; font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--neon-magenta);">CSS</div>
+        <div style="margin-top:10px; font-family:'Space Grotesk',sans-serif; font-size:25px; color:var(--text-mid); line-height:1.55;">The skin. Colors, fonts, layout. Makes it pretty — <b>not needed for data</b>.</div>
+      </div>
+      <div style="flex:1; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.35); border-radius:22px; padding:30px;">
+        <div style="font-size:40px;">⚡</div>
+        <div style="margin-top:14px; font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--neon-lime);">JavaScript</div>
+        <div style="margin-top:10px; font-family:'Space Grotesk',sans-serif; font-size:25px; color:var(--text-mid); line-height:1.55;">The muscles. Animations, buttons, live updates. Sometimes loads data <b>after</b> the page — more on that later.</div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:880px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid);">💡 A web page you see is really a <span style="color:var(--text-hi);">text file</span> of HTML your browser downloaded and drew. Scrapers read that file directly.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">14 / 50</div>
+</div>
+<template data-slide-notes>
+Frame: "A website is three languages in one file." HTML = structure, CSS = looks, JS = behavior. When scraping we only care about HTML.
+
+Live demo: press F12 in the browser → Elements tab shows the raw HTML of the page you're looking at. "This is the file your scraper will read."
+
+Emphasize: JS-loaded content (feeds, "load more" buttons) won't be in the initial HTML — that's exactly why we later introduce browser automation.
+
+Arabic tip: شبه الموقع بجسم الإنسان: الهيكل العظمي HTML، البشرة CSS، العضلات JavaScript. نحن نستخرج «الهيكل».
+</template>
+</body>
+</html>

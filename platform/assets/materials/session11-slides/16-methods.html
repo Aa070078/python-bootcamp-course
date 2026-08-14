@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime"></div>
+  <div class="bg-glow-cyan"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; z-index:10;">
+    <div class="kicker">BEHAVIOR // def INSIDE class</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:150px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:78px; font-weight:700; color:var(--text-hi);">Methods: behavior on the object</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:16px;">الدوال داخل الصنف هي سلوك الكائن، و__str__ تجعله مقروءًا عند الطباعة</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:330px; width:860px; z-index:10;">
+    <span class="chip chip-lime">CUSTOM METHODS</span>
+  </div>
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:380px; width:860px; height:520px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">methods_1.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:438px; width:800px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.5;">
+    <div><span class="tok-kw">class</span> <span class="tok-var">Student</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">__init__</span>(<span class="tok-var">self</span>, <span class="tok-var">name</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">name</span> <span class="tok-op">=</span> <span class="tok-var">name</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">grades</span> <span class="tok-op">=</span> []</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">add_grade</span>(<span class="tok-var">self</span>, <span class="tok-var">g</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">grades</span>.<span class="tok-fn">append</span>(<span class="tok-var">g</span>)</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">average</span>(<span class="tok-var">self</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-fn">sum</span>(<span class="tok-var">self</span>.<span class="tok-var">grades</span>) <span class="tok-op">/</span> <span class="tok-fn">len</span>(<span class="tok-var">self</span>.<span class="tok-var">grades</span>)</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-var">s</span> <span class="tok-op">=</span> <span class="tok-fn">Student</span>(<span class="tok-str">"Omar"</span>)</div>
+    <div><span class="tok-var">s</span>.<span class="tok-fn">add_grade</span>(<span class="tok-num">90</span>)</div>
+    <div><span class="tok-var">s</span>.<span class="tok-fn">add_grade</span>(<span class="tok-num">80</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">s</span>.<span class="tok-fn">average</span>()) <span class="tok-com"># 85.0</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1000px; top:330px; width:840px; z-index:10;">
+    <span class="chip chip-cyan">__str__ — NICER OUTPUT</span>
+  </div>
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:1000px; top:380px; width:840px; height:520px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">methods_2.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1030px; top:438px; width:780px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.5;">
+    <div><span class="tok-kw">class</span> <span class="tok-var">Student</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">__init__</span>(<span class="tok-var">self</span>, <span class="tok-var">name</span>, <span class="tok-var">age</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">name</span> <span class="tok-op">=</span> <span class="tok-var">name</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">age</span> <span class="tok-op">=</span> <span class="tok-var">age</span></div>
+    <div>&nbsp;</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">__str__</span>(<span class="tok-var">self</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-fn">f</span><span class="tok-str">"Student({self.name}, {self.age})"</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-var">s</span> <span class="tok-op">=</span> <span class="tok-fn">Student</span>(<span class="tok-str">"Lina"</span>, <span class="tok-num">17</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">s</span>) <span class="tok-com"># Student(Lina, 17)</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-com"># without __str__ → ugly default repr</span></div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S11</div>
+  <div class="chrome-pagenum">16 / 50</div>
+</div>
+<template data-slide-notes>
+**Methods = functions that live inside a class and always take self.**
+
+- Point out: `s.add_grade(90)` stores the grade in *s's own* list — no global variable needed. Compare to the messy parallel-list code from the hook slide!
+- `average()` computes from self.grades — the object "knows" its own data.
+- `__str__`: Python calls it whenever you `print(obj)` or `str(obj)`. It returns the *string representation* for humans.
+- Before __str__: `print(s)` shows `<__main__.Student object at 0x...>`. After: `Student(Lina, 17)`. Demo the before/after live.
+- Arabic tip: __str__ = «التمثيل النصي للكائن».
+- Extra: `__repr__` exists too but keep it optional — don't overload today.
+</template>
+</body>
+</html>

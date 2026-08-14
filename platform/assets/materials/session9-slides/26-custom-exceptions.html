@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-150px; right:-120px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-200px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">CORE // 08 — YOUR OWN EXCEPTIONS</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi);">🏷️ Custom exceptions</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); margin-top:26px;">Built-in types don't fit everything. Make <b style="color:var(--text-hi);">your own</b> — with a name that speaks your app's language.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:420px; width:840px; height:500px; background:rgba(167,139,250,0.06); border:1px solid rgba(167,139,250,0.4); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:460px; width:760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700; color:var(--neon-violet);">Why custom? 🤷</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:24px; line-height:1.7;">
+      ▶ "ValueError" says nothing about <b style="color:var(--text-hi);">YOUR</b> business.<br>
+      ▶ "InsufficientFundsError" says everything. 💰<br><br>
+      🧠 Rule: <b style="color:var(--text-hi);">one class per business rule</b>. Catch them separately, handle them differently.
+    </div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--text-hi); margin-top:28px; line-height:1.7;">
+      <span class="tok-kw">class</span> <span class="tok-var">InsufficientFundsError</span>(<span class="tok-var">Exception</span>):<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">pass</span>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-lo); margin-top:22px; line-height:1.6;">That's it. Your exception now exists and behaves like any other.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:420px; width:860px; height:500px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.35); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1020px; top:460px; width:780px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700; color:var(--neon-cyan);">The pattern 🧬</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:22px; line-height:1.7;">
+      1️⃣ Define: <span class="mono" style="color:var(--neon-violet);">class MyError(Exception): pass</span><br>
+      2️⃣ Raise: <span class="mono" style="color:var(--neon-magenta);">raise MyError("explain it")</span><br>
+      3️⃣ Catch: <span class="mono" style="color:var(--neon-lime);">except MyError:</span> — handle just this rule<br><br>
+      🔗 Inherit from <span class="mono" style="color:var(--neon-yellow);">Exception</span> so it behaves like a true exception (caught by <span class="mono" style="color:var(--neon-yellow);">except Exception</span> too).
+    </div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:26px; color:var(--text-lo); direction:rtl; margin-top:24px;">اصنع استثناءً خاصًا بتطبيقك: class جديد يرث من Exception، ثم raise له، ثم except له وحده.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">26 / 50</div>
+</div>
+<template data-slide-notes>
+## Custom exceptions
+
+**Big idea (4 min):** exception names are a language. "ValueError" is generic; "InsufficientFundsError" tells you exactly which business rule failed. Naming is clarity.
+
+**Syntax is tiny:** `class Name(Exception): pass` — one line, usually with `pass` (no custom behavior needed). It inherits everything from Exception.
+
+**Pattern to memorize:** define → raise → catch. Show all three on the board.
+
+**Real-world pitch:** libraries like requests define their own exceptions (requests.exceptions.ConnectionError). That's how you know precisely what failed and what to do about it.
+
+**Arabic tip:** شبّه الاسم بأنه "رمز النداء" الخاص بقاعدة عملك — اسم واضح = تشخيص سريع.
+</template>
+</body>
+</html>

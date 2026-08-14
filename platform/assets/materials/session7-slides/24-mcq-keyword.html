@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-180px; right:-150px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-200px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1720px; z-index:10;">
+    <div class="kicker">❓ QUICK CHECK — KEYWORD ARGS</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:64px; font-weight:700; color:var(--text-hi); margin-top:16px;">Which call is LEGAL?</div>
+    <div class="arabic" style="font-size:30px; color:var(--text-lo); margin-top:12px; direction:rtl;">أي استدعاء قانوني للدالة f ذات المعاملات الثلاثة؟</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:900px; height:200px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">q.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:380px; width:840px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:28px; line-height:1.6;">
+    <div><span class="tok-kw">def</span> <span class="tok-fn">f</span>(<span class="tok-var">a</span>, <span class="tok-var">b</span>, <span class="tok-var">c</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-var">a</span> <span class="tok-op">+</span> <span class="tok-var">b</span> <span class="tok-op">+</span> <span class="tok-var">c</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1060px; top:330px; width:760px; height:120px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1090px; top:362px; width:700px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:27px;"><span class="tok-var">A)</span> <span class="tok-fn">f</span>(<span class="tok-num">1</span>, <span class="tok-num">2</span>, <span class="tok-num">3</span>)</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1060px; top:480px; width:760px; height:120px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.35); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1090px; top:512px; width:700px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:27px;"><span class="tok-var">B)</span> <span class="tok-fn">f</span>(<span class="tok-var">b</span><span class="tok-op">=</span><span class="tok-num">2</span>, <span class="tok-var">a</span><span class="tok-op">=</span><span class="tok-num">1</span>, <span class="tok-var">c</span><span class="tok-op">=</span><span class="tok-num">3</span>)</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1060px; top:630px; width:760px; height:120px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1090px; top:662px; width:700px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:27px;"><span class="tok-var">C)</span> <span class="tok-fn">f</span>(<span class="tok-num">1</span>, <span class="tok-var">c</span><span class="tok-op">=</span><span class="tok-num">3</span>, <span class="tok-var">b</span><span class="tok-op">=</span><span class="tok-num">2</span>)</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1060px; top:780px; width:760px; height:120px; background:rgba(167,139,250,0.06); border:1px solid rgba(167,139,250,0.35); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1090px; top:812px; width:700px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:27px;"><span class="tok-var">D)</span> <span class="tok-var">All</span> <span class="tok-op">of</span> <span class="tok-var">them</span></div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S07</div>
+  <div class="chrome-pagenum">24 / 50</div>
+</div>
+<template data-slide-notes>
+- **Answer: D — all of them.** A is fully positional, B fully keyword (any order), C mixed positional-then-keyword.
+- All three return 6.
+- Illegal would be: `f(c=3, 1, 2)` (keyword before positional) or `f(1, 2)` (missing c).
+- Celebrate students who spotted the mixing rule.
+- Arabic tip: قواعد الاستدعاء: المسمّى لا يأتي قبل الموضعي، وكل المعاملات يجب أن تُمرَّر.
+- Transition: "Now the flexible powers: *args and **kwargs."
+</template>
+</body>
+</html>

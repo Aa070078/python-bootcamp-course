@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime"></div>
+  <div class="bg-glow-magenta"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; z-index:10;">
+    <div class="kicker">BRIDGE // WHERE OOP MEETS DATA</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:160px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:84px; font-weight:700; color:var(--text-hi);">Objects are great… but they're in RAM 💭</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:16px;">الكائنات رائعة — لكنها تختفي عندما ينتهي البرنامج. الحل: قاعدة بيانات</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:400px; width:860px; height:540px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.45); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:440px; width:800px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700; color:var(--text-hi);">The problem ⏳</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:22px; line-height:1.7;">
+      Close the terminal → Sara's $300, Omar's $30.9… <b>gone</b>.<br><br>
+      Real apps must <b>save</b> their objects and <b>reload</b> them next run.<br><br>
+      🔑 That job = a <b>database</b>.
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:400px; width:860px; height:540px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.45); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1010px; top:440px; width:800px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700; color:var(--text-hi);">Sneak peek: SQLite 🗄️</div>
+    <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:1010px; top:540px; width:790px; height:250px; z-index:5;">
+      <div class="code-window-header">
+        <span class="code-dot code-dot-r"></span>
+        <span class="code-dot code-dot-y"></span>
+        <span class="code-dot code-dot-g"></span>
+        <span class="code-window-title">next_session.py</span>
+      </div>
+    </div>
+    <div data-object="true" data-object-type="textbox" style="position:absolute; left:1040px; top:598px; width:730px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:24px; line-height:1.5;">
+      <div><span class="tok-kw">import</span> <span class="tok-var">sqlite3</span></div>
+      <div><span class="tok-var">conn</span> <span class="tok-op">=</span> <span class="tok-fn">sqlite3</span>.<span class="tok-fn">connect</span>(<span class="tok-str">"bank.db"</span>)</div>
+      <div><span class="tok-var">conn</span>.<span class="tok-fn">execute</span>(<span class="tok-str">"CREATE TABLE accounts(owner TEXT, balance INT)"</span>)</div>
+      <div><span class="tok-var">conn</span>.<span class="tok-fn">execute</span>(<span class="tok-str">"INSERT INTO accounts VALUES ('Sara', 300)"</span>)</div>
+      <div><span class="tok-var">conn</span>.<span class="tok-fn">commit</span>()</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:980px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:31px; color:var(--text-mid);">➡️ Next session: <b>SQLite &amp; Databases</b> — we'll save PyBank's objects and bring them back. 🚀</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S11</div>
+  <div class="chrome-pagenum">42 / 50</div>
+</div>
+<template data-slide-notes>
+**Bridge slide.** Point at the real limitation of what we built today: no persistence.
+
+- Recap: Sara and Omar's balances vanish on exit. Real software persists state.
+- The SQL snippet is a *taste* — don't teach it now. Just say: "next session you'll save objects to a file-backed database and load them back."
+- This connects OOP (their mental model) to databases (where data lives) — objects ↔ rows.
+- Arabic tip: «قاعدة البيانات» = database — المكان الذي تبقى فيه الكائنات بعد إغلاق البرنامج.
+- Tease the mapping: one object ≈ one row. One class ≈ one table.
+- Keep this slide short — the teaser slide follows.
+</template>
+</body>
+</html>

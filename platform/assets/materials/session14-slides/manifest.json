@@ -1,0 +1,202 @@
+[
+    {
+        "file":  "01-cover.html",
+        "title":  "01-cover"
+    },
+    {
+        "file":  "02-hook.html",
+        "title":  "02-hook"
+    },
+    {
+        "file":  "03-review-mcq-1.html",
+        "title":  "03-review-mcq-1"
+    },
+    {
+        "file":  "04-review-mcq-2.html",
+        "title":  "04-review-mcq-2"
+    },
+    {
+        "file":  "05-review-mcq-3.html",
+        "title":  "05-review-mcq-3"
+    },
+    {
+        "file":  "06-timeline.html",
+        "title":  "06-timeline"
+    },
+    {
+        "file":  "07-what-is-scraping.html",
+        "title":  "07-what-is-scraping"
+    },
+    {
+        "file":  "08-scraping-visual.html",
+        "title":  "08-scraping-visual"
+    },
+    {
+        "file":  "09-scraping-code.html",
+        "title":  "09-scraping-code"
+    },
+    {
+        "file":  "10-scraping-mcq.html",
+        "title":  "10-scraping-mcq"
+    },
+    {
+        "file":  "11-legal-ethics.html",
+        "title":  "11-legal-ethics"
+    },
+    {
+        "file":  "12-legal-visual.html",
+        "title":  "12-legal-visual"
+    },
+    {
+        "file":  "13-legal-mcq.html",
+        "title":  "13-legal-mcq"
+    },
+    {
+        "file":  "14-how-web-works.html",
+        "title":  "14-how-web-works"
+    },
+    {
+        "file":  "15-html-elements.html",
+        "title":  "15-html-elements"
+    },
+    {
+        "file":  "16-html-visual.html",
+        "title":  "16-html-visual"
+    },
+    {
+        "file":  "17-html-mcq.html",
+        "title":  "17-html-mcq"
+    },
+    {
+        "file":  "18-html-tree.html",
+        "title":  "18-html-tree"
+    },
+    {
+        "file":  "19-html-tree-code.html",
+        "title":  "19-html-tree-code"
+    },
+    {
+        "file":  "20-requests.html",
+        "title":  "20-requests"
+    },
+    {
+        "file":  "21-requests-code.html",
+        "title":  "21-requests-code"
+    },
+    {
+        "file":  "22-requests-mcq.html",
+        "title":  "22-requests-mcq"
+    },
+    {
+        "file":  "23-beautifulsoup.html",
+        "title":  "23-beautifulsoup"
+    },
+    {
+        "file":  "24-bs4-find.html",
+        "title":  "24-bs4-find"
+    },
+    {
+        "file":  "25-bs4-code.html",
+        "title":  "25-bs4-code"
+    },
+    {
+        "file":  "26-bs4-mcq.html",
+        "title":  "26-bs4-mcq"
+    },
+    {
+        "file":  "27-selectors.html",
+        "title":  "27-selectors"
+    },
+    {
+        "file":  "28-selectors-code.html",
+        "title":  "28-selectors-code"
+    },
+    {
+        "file":  "29-selectors-mcq.html",
+        "title":  "29-selectors-mcq"
+    },
+    {
+        "file":  "30-extract-clean.html",
+        "title":  "30-extract-clean"
+    },
+    {
+        "file":  "31-save-data.html",
+        "title":  "31-save-data"
+    },
+    {
+        "file":  "32-project-intro.html",
+        "title":  "32-project-intro"
+    },
+    {
+        "file":  "33-project-code-1.html",
+        "title":  "33-project-code-1"
+    },
+    {
+        "file":  "34-project-code-2.html",
+        "title":  "34-project-code-2"
+    },
+    {
+        "file":  "35-project-output.html",
+        "title":  "35-project-output"
+    },
+    {
+        "file":  "36-pagination-politeness.html",
+        "title":  "36-pagination-politeness"
+    },
+    {
+        "file":  "37-being-blocked.html",
+        "title":  "37-being-blocked"
+    },
+    {
+        "file":  "38-exercises.html",
+        "title":  "38-exercises"
+    },
+    {
+        "file":  "39-homework.html",
+        "title":  "39-homework"
+    },
+    {
+        "file":  "40-final-quiz.html",
+        "title":  "40-final-quiz"
+    },
+    {
+        "file":  "41-recap.html",
+        "title":  "41-recap"
+    },
+    {
+        "file":  "42-bridge.html",
+        "title":  "42-bridge"
+    },
+    {
+        "file":  "43-teaser.html",
+        "title":  "43-teaser"
+    },
+    {
+        "file":  "44-closing.html",
+        "title":  "44-closing"
+    },
+    {
+        "file":  "45-notes.html",
+        "title":  "45-notes"
+    },
+    {
+        "file":  "46-live-coding-1.html",
+        "title":  "46-live-coding-1"
+    },
+    {
+        "file":  "47-live-coding-2.html",
+        "title":  "47-live-coding-2"
+    },
+    {
+        "file":  "48-browser-automation.html",
+        "title":  "48-browser-automation"
+    },
+    {
+        "file":  "49-automation-code.html",
+        "title":  "49-automation-code"
+    },
+    {
+        "file":  "50-decision-guide.html",
+        "title":  "50-decision-guide"
+    }
+]

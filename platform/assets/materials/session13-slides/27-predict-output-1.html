@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-240px; right:-160px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-280px; left:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">🧠 PREDICT THE OUTPUT</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi); margin-top:14px;">Think before you run ⏸️</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:300px; width:900px; height:300px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:340px; width:840px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.7;">
+    <div><span class="tok-kw">import</span> <span class="tok-var">requests</span></div>
+    <div><br></div>
+    <div><span class="tok-var">resp</span> <span class="tok-op">=</span> <span class="tok-var">requests</span>.<span class="tok-fn">get</span>(<span class="tok-str">"https://api.frankfurter.app/latest"</span>)</div>
+    <div><br></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-fn">type</span>(<span class="tok-var">resp</span>))</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">resp</span>.<span class="tok-var">ok</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">resp</span>.<span class="tok-var">status_code</span> == <span class="tok-num">200</span>)</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1030px; top:300px; width:810px; height:300px; background:rgba(250,204,21,0.05); border:1px solid rgba(250,204,21,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1070px; top:340px; width:730px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-yellow);">YOUR GUESS</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:16px; line-height:1.9;">
+      1. What <span style="color:var(--text-hi);">type</span> is <span class="mono">resp</span>?<br>
+      2. Is <span class="mono">resp.ok</span> True or False?<br>
+      3. Does the comparison print True or False?<br><br>
+      <span style="color:var(--neon-lime);">Answer in the notes — no peeking!</span> 🤫
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:650px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-lo); line-height:1.6;">Predicting trains your brain to <span style="color:var(--neon-cyan);">read code like a computer</span> — the #1 programmer skill.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:760px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-dim);">Hint: <span class="mono">requests.get</span> always returns the same kind of object — no matter which API you call.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:900px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">توقّع الناتج قبل التشغيل — هذه العادة تجعلك تقرأ الكود مثل الحاسوب 🧠</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">27 / 50</div>
+</div>
+<template data-slide-notes>
+Predict the output #1. Answers:
+1. `<class 'requests.models.Response'>` — resp is always a Response object.
+2. `True` — status 200 is in the success range, so resp.ok is True.
+3. `True` — 200 == 200.
+
+Run it live after guesses. If offline, explain the answers from the printed slide.
+
+Debrief: the point is that the *type* of the object never changes — only the data inside changes. That's why we can write one pattern and reuse it for any API.
+
+Variation: ask what would change if the server were down → status_code 500, resp.ok False, comparison False.
+
+Arabic tip: اشرح أن التوقع قبل التشغيل يبني "حدس المبرمج" — ثم نفّذ الكود ليتأكدوا من إجاباتهم.
+</template>
+</body>
+</html>

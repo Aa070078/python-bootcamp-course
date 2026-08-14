@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime" style="top:-240px; right:-160px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-280px; left:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">🧱 CORE CONCEPT #4</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:88px; font-weight:700; color:var(--text-hi); margin-top:14px;">HTTP basics</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:320px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; color:var(--text-mid); line-height:1.6;"><span style="color:var(--neon-cyan);">HTTP</span> = <span style="color:var(--text-hi);">HyperText Transfer Protocol</span>.<br>The <span style="color:var(--neon-lime);">language of the web</span> — the rules both sides agree on.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:520px; width:860px; height:260px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:560px; width:780px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-cyan);">A REQUEST LOOKS LIKE</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:30px; color:var(--text-hi); margin-top:14px; line-height:1.7;">
+      <span class="tok-kw">GET</span> <span class="tok-str">/latest?from=USD&amp;to=EUR</span> <span class="tok-num">HTTP/1.1</span><br>
+      <span class="tok-com">Host:</span> <span class="tok-var">api.frankfurter.app</span>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:var(--text-lo); margin-top:12px;">Method &middot; path &middot; version + headers. That's all a request is.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:520px; width:860px; height:260px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1020px; top:560px; width:780px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-magenta);">A RESPONSE LOOKS LIKE</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:30px; color:var(--text-hi); margin-top:14px; line-height:1.7;">
+      <span class="tok-num">HTTP/1.1 200 OK</span><br>
+      <span class="tok-com">Content-Type:</span> <span class="tok-var">application/json</span><br><br>
+      <span class="tok-out">{ "base": "USD", "rates": { "EUR": 0.92 } }</span>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:var(--text-lo); margin-top:12px;">Version &middot; status code &middot; headers &middot; body.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:830px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-lo);">Good news: you never write this raw text by hand — the <span class="mono" style="color:var(--neon-lime);">requests</span> library writes it for you. But you must understand it to read errors.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:930px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">HTTP هو "لغة الويب": طريقة موحّدة يرسل بها العميل طلبه ويستقبل بها الخادم إجابته 🔤</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">13 / 50</div>
+</div>
+<template data-slide-notes>
+HTTP basics. Two windows: a raw request and a raw response.
+
+Point-by-point:
+- Request line: METHOD + path + HTTP version. Headers after it.
+- Response: version + status code (200 OK) + headers + body.
+- We'll never type this by hand — `requests` does it. But knowing the shape helps read errors and debug.
+
+Do a quick "literal HTTP" demo: read a request/response out loud in robot voice to make it stick.
+
+Where we go next: the METHOD is the verb. Slides 15–16 cover GET/POST/PUT/DELETE; slide 14 shows request vs response visually.
+
+Arabic tip: ترجم "Protocol" بكلمة "بروتوكول/اتفاقية" — أي قواعد متفق عليها مسبقاً بين الطرفين.
+</template>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-150px; left:-120px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-200px; right:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">CORE // 15 — BEYOND THE STDLIB</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi);">🚀 pip — the package installer</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); margin-top:26px;">The stdlib is great — but the real power is <b style="color:var(--text-hi);">millions of packages</b> from the Python community.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:420px; width:840px; height:490px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.35); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:460px; width:760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700; color:var(--neon-cyan);">What is pip? 🧰</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:24px; line-height:1.7;">
+      ▶ <span class="mono" style="color:var(--neon-magenta);">pip</span> = Python's official <b style="color:var(--text-hi);">app store</b>.<br><br>
+      ▶ Downloads packages from <b style="color:var(--text-hi);">PyPI</b> (the Python Package Index).<br><br>
+      ▶ Examples: <span class="mono" style="color:var(--neon-lime);">requests</span> (HTTP), <span class="mono" style="color:var(--neon-lime);">colorama</span> (colored terminal), <span class="mono" style="color:var(--neon-lime);">pygame</span> (games).
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-lo); margin-top:24px; line-height:1.6;">One command installs a package and all its dependencies automatically.</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:420px; width:860px; height:490px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span><span class="code-dot code-dot-y"></span><span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">terminal</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1010px; top:478px; width:820px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.8;">
+    <div><span class="tok-op">$</span> <span class="tok-var">pip install requests</span></div>
+    <div><span class="tok-out" style="color:var(--text-mid);">Collecting requests...</span></div>
+    <div><span class="tok-out" style="color:var(--text-mid);">Downloading requests-2.32.3-py3-none-any.whl</span></div>
+    <div><span class="tok-out" style="color:var(--neon-lime);">Successfully installed requests-2.32.3</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-op">$</span> <span class="tok-var">python -m pip --version</span>&nbsp;<span class="tok-com"># check pip</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:950px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:31px; color:var(--text-hi);">After install: <span class="mono" style="color:var(--neon-yellow);">import requests</span> and use it like any stdlib module. 💡 pip comes bundled with Python 3.4+.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:14px;">pip هو "متجر تطبيقات" بايثون: أمر واحد يثبّت الحزمة ويحل تبعياتها تلقائيًا من مستودع PyPI.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">38 / 50</div>
+</div>
+<template data-slide-notes>
+## pip — the package installer
+
+**Concept (4 min):** pip = the package manager. Think "App Store for Python". It pulls code from PyPI into your machine, ready to import.
+
+**Show the command:** `pip install requests` → downloads, installs, done. Then `import requests` just works.
+
+**Naming:** pip = "Pip Installs Packages". It ships with Python since 3.4, so no separate install needed.
+
+**Live (5 min):** `pip --version` to confirm, then install a tiny, safe package like `colorama` and print colored text. Keep the install quick; don't block on network issues — pre-warn students they'll do the big installs in the venv section and homework.
+
+**Mention modern best practice:** on some systems `python -m pip install` is preferred to avoid path issues. Show both.
+
+**Arabic tip:** "pip هو متجر التطبيقات" — تعلمه أسهل مما تظن: pip install اسم_الحزمة.
+</template>
+</body>
+</html>

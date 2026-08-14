@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-240px; right:-160px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-280px; left:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">⏱️ CORE CONCEPT #18</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:84px; font-weight:700; color:var(--text-hi); margin-top:14px;">Rate limits</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:320px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); line-height:1.6;">APIs are shared. Too many requests too fast &rarr; server says <span class="mono" style="color:var(--neon-orange);">429 Too Many Requests</span>. Be a polite guest. 🤝</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:460px; width:900px; height:330px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:510px; width:840px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.7;">
+    <div><span class="tok-kw">import</span> <span class="tok-var">time</span></div>
+    <div><span class="tok-kw">import</span> <span class="tok-var">requests</span></div>
+    <div><br></div>
+    <div><span class="tok-kw">for</span> <span class="tok-var">i</span> <span class="tok-kw">in</span> <span class="tok-fn">range</span>(<span class="tok-num">5</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">resp</span> <span class="tok-op">=</span> <span class="tok-var">requests</span>.<span class="tok-fn">get</span>(<span class="tok-str">"https://api.frankfurter.app/latest"</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-var">resp</span>.<span class="tok-var">status_code</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">time</span>.<span class="tok-fn">sleep</span>(<span class="tok-num">1</span>)&nbsp;&nbsp;<span class="tok-com"># 1 second pause between calls</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1030px; top:460px; width:810px; height:330px; background:rgba(250,204,21,0.05); border:1px solid rgba(250,204,21,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1070px; top:500px; width:730px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-yellow);">GOOD API CITIZEN</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:14px; line-height:1.9;">
+      🐢 <span style="color:var(--text-hi);">sleep() between calls</span> — don't hammer<br>
+      📄 <span style="color:var(--text-hi);">Read the docs</span> for your free limit<br>
+      💾 <span style="color:var(--text-hi);">Cache answers</span> — don't re-fetch what you have<br>
+      🛑 If you see <span class="mono" style="color:var(--neon-orange);">429</span>, stop and wait<br><br>
+      Free tiers: typically <span style="color:var(--neon-lime);">~10–60 requests/minute</span>.
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:840px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-lo);">Real servers may also return <span class="mono" style="color:var(--neon-cyan);">Retry-After</span> in headers telling you when to ask again.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:915px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">لا تضغط على الخادم بلا حدود: توقف بين الطلبات، واحترم الحدود، واحفظ الإجابات السابقة ⏱️</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">36 / 50</div>
+</div>
+<template data-slide-notes>
+Rate limits — being a good citizen.
+
+Story: servers are shared. If 10,000 students all hit one API every 10 ms, it collapses. 429 is the server politely saying "wait a second."
+
+Good habits (write on board):
+- time.sleep() between requests in loops
+- read the docs' rate-limit section
+- cache: store what you fetched instead of re-fetching
+- respect Retry-After headers when present
+
+This slide connects to status codes (429 was mentioned on slide 20). Quick recall: which family is 429? (4xx — client error: too many requests.)
+
+Arabic tip: مثال حي: عندما يتزاحم الجميع على باب واحد لا يدخل أحد — الـ 429 هو "قف قليلاً ثم عد".
+</template>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime"></div>
+  <div class="bg-glow-magenta"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:70px; width:1760px; z-index:10;">
+    <div class="kicker">CORE CONCEPT // PAGE STRUCTURE 🌳</div>
+    <div style="margin-top:22px; font-family:'Space Grotesk',sans-serif; font-size:62px; font-weight:700; color:var(--text-hi);">Every page is a <span style="color:var(--neon-lime);">tree</span></div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:12px;">بنية الصفحة: عناصر داخل عناصر — شجرة متفرعة تبدأ من جذر واحد</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:300px; width:560px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.6; color:var(--text-mid);">
+      <span class="tok-op">&lt;html&gt;</span><br>
+      <span class="tok-op">&nbsp;&nbsp;&lt;head&gt;</span> … <span class="tok-op">&lt;/head&gt;</span><br>
+      <span class="tok-op">&nbsp;&nbsp;&lt;body&gt;</span><br>
+      <span class="tok-op">&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;</span>Title<span class="tok-op">&lt;/h1&gt;</span><br>
+      <span class="tok-op">&nbsp;&nbsp;&nbsp;&nbsp;&lt;div</span> <span class="tok-str">class</span>=<span class="tok-str">"quote"</span><span class="tok-op">&gt;</span><br>
+      <span class="tok-op">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span</span> <span class="tok-str">class</span>=<span class="tok-str">"text"</span><span class="tok-op">&gt;</span>“…“<span class="tok-op">&lt;/span&gt;</span><br>
+      <span class="tok-op">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;small</span> <span class="tok-str">class</span>=<span class="tok-str">"author"</span><span class="tok-op">&gt;</span>Name<span class="tok-op">&lt;/small&gt;</span><br>
+      <span class="tok-op">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;</span><br>
+      <span class="tok-op">&nbsp;&nbsp;&lt;/body&gt;</span><br>
+      <span class="tok-op">&lt;/html&gt;</span>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:700px; top:320px; width:560px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.7; color:var(--text-mid);">
+      html<br>
+      ├─ head<br>
+      └─ body<br>
+      &nbsp;&nbsp;&nbsp;├─ h1 <span style="color:var(--text-dim);">Title</span><br>
+      &nbsp;&nbsp;&nbsp;└─ div.quote<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─ span.text <span style="color:var(--text-dim);">“…”</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─ small.author <span style="color:var(--text-dim);">Name</span>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1320px; top:320px; width:520px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--text-hi);">🧠 Why it matters</div>
+    <div style="margin-top:20px; font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); line-height:1.6;">The scraper climbs this tree: from <span class="mono">div.quote</span> it descends to <span class="mono">span.text</span> and <span class="mono">small.author</span>. Parent → children = relationships you can walk in code.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:26px; color:var(--text-lo); direction:rtl; margin-top:20px;">الشجرة تحدد «من يحتوي من» — فتعرف أين تجد البيانات بالضبط</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">18 / 50</div>
+</div>
+<template data-slide-notes>
+Show the DOM tree: left = the actual HTML, right = the tree of nodes, far right = why we care.
+
+Key vocab: parent (parent), child (child), descendant, sibling. `div.quote` is the parent of `span.text` and `small.author`. Each quote block repeats this mini-tree.
+
+Do this live: open quotes.toscrape.com → inspect one `.quote` div → expand/collapse children in DevTools. Students see the tree for real.
+
+Arabic tip: الشجرة = عائلة العناصر. الأب يحتوي الأبناء، وتجد المعلومات بالوصول من الأب إلى الابن.
+</template>
+</body>
+</html>

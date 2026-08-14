@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-120px; left:-200px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-150px; right:-250px;"></div>
+
+  <div class="chrome-topbar">
+    <span class="chrome-dot"></span>
+    <span>PREDICT THE OUTPUT // THINK FIRST</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-yellow); letter-spacing:0.25em; text-transform:uppercase;">🧠 PREDICT THE OUTPUT</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:64px; font-weight:700; color:var(--text-hi); margin-top:12px;">Scenario: you already committed. Now you edit a file…</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:380px; width:900px; height:340px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">bash — what is the output?</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:440px; width:840px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:29px; line-height:1.85;">
+    <div><span class="tok-var">$</span> git commit -m <span class="tok-str">"Add score system"</span></div>
+    <div><span class="tok-var">$</span> <span class="tok-com"># now open app.py in editor</span></div>
+    <div><span class="tok-com"># and change one line...</span></div>
+    <div><span class="tok-var">$</span> git status</div>
+    <div><span style="color:var(--neon-yellow);">???</span> <span class="tok-com"># you predict</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:790px; width:1760px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:30px; line-height:2; color:var(--text-mid);">
+    <div><span style="color:var(--neon-cyan);">A</span> &nbsp;nothing — clean working tree</div>
+    <div><span style="color:var(--neon-cyan);">B</span> &nbsp;Changes not staged for commit: modified: app.py</div>
+    <div><span style="color:var(--neon-cyan);">C</span> &nbsp;Untracked files: app.py</div>
+    <div><span style="color:var(--neon-cyan);">D</span> &nbsp;error: nothing to commit</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:960px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">توقّع: ماذا سيعرض git status بعد تعديل ملف تم التزامه سابقاً؟</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S10</div>
+  <div class="chrome-pagenum">21 / 50</div>
+</div>
+<template data-slide-notes>
+**Slide 21 — Predict the output MCQ (3 min)**
+- Pause: let students call out letters. **Correct answer: B** — the file is now "modified" and appears under "Changes not staged for commit".
+- Walk through why each other option is wrong:
+  - A fails because the file differs from the last snapshot.
+  - C fails because the file was already tracked (it's not untracked anymore).
+  - D is wrong — git status never errors here; committing would complain, but status is fine.
+- Reinforce the 3 states of a tracked file: modified → staged → committed.
+- Arabic tip: ذكّرهم: "المعدّل" = تغيّر منذ آخر التزام، و"غير المتتبَّع" = ملف جديد لم يُضف قط.
+</template>
+</body>
+</html>

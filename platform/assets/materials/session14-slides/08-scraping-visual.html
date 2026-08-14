@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-lime"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:70px; width:1760px; z-index:10;">
+    <div class="kicker">VISUAL // HOW THE PIPELINE WORKS 🔄</div>
+    <div style="margin-top:22px; font-family:'Space Grotesk',sans-serif; font-size:60px; font-weight:700; color:var(--text-hi);">Same web, two readers</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:12px;">نفس الموقع، وقارئان مختلفان: المتصفح يعرض، والبرنامج يستخرج</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:300px; width:520px; height:560px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:24px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:330px; width:460px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; font-weight:700; color:var(--neon-cyan);">🌐 THE BROWSER</div>
+    <div style="margin-top:22px; font-size:34px; line-height:1.4;">📄 HTML → 🎨 CSS → ⚡ JS</div>
+    <div style="margin-top:20px; font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-mid); line-height:1.6;">Downloads the page, renders it into pixels, shows buttons & images you can click.</div>
+    <div style="margin-top:24px;"><span class="chip chip-cyan">FOR HUMANS</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:680px; top:340px; width:520px; z-index:10;">
+    <div style="font-size:56px; text-align:center; color:var(--neon-lime);">▶</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--text-lo); text-align:center; margin-top:10px;">requests → soup → data</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--text-lo); text-align:center; margin-top:8px;">(the "pipeline")</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1280px; top:300px; width:520px; height:560px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.35); border-radius:24px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1310px; top:330px; width:460px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; font-weight:700; color:var(--neon-lime);">🐍 YOUR SCRIPT</div>
+    <div style="margin-top:22px; font-size:34px; line-height:1.4;">🕸️ HTML → 🧹 parse → 📊 rows</div>
+    <div style="margin-top:20px; font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-mid); line-height:1.6;">Reads the same HTML as raw text, skips the pixels, keeps only the data. Zero clicking.</div>
+    <div style="margin-top:24px;"><span class="chip chip-lime">FOR MACHINES</span></div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">08 / 50</div>
+</div>
+<template data-slide-notes>
+Draw the mental picture: the browser and your script download the exact same HTML. The browser turns it into a pretty page; your script turns it into data.
+
+Key insight for students: "When you scrape, you never see the website — you see the HTML text behind it. That's why we spend 20 minutes learning HTML."
+
+Visual walkthrough: point at the two cards. Left = what you do all day. Right = what we build.
+
+Arabic tip: المتصفح = عيون، الكاشطة = أداة قياس. كلاهما يقرأ نفس الملف، لكن الهدف مختلف.
+</template>
+</body>
+</html>

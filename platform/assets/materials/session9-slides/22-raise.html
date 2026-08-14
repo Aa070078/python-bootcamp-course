@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-150px; left:-120px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-200px; right:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">CORE // 06 — BE THE BOSS</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi);">🚦 raise — throw your own errors</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); margin-top:26px;">So far you <b style="color:var(--text-hi);">caught</b> errors. Now learn to <b style="color:var(--neon-magenta);">throw</b> them on purpose.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:420px; width:840px; height:490px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.3); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:460px; width:760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700; color:var(--neon-cyan);">Why raise at all? 🤔</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:24px; line-height:1.7;">
+      ▶ Your function gets <b style="color:var(--text-hi);">impossible data</b>.<br>
+      ▶ You refuse to compute garbage.<br>
+      ▶ You signal "caller, you made a mistake" — <b style="color:var(--text-hi);">loudly</b>.<br><br>
+      🧠 Think of <span class="mono" style="color:var(--neon-magenta);">raise</span> as <b style="color:var(--text-hi);">quality control at the gate</b>: bad input never gets past you.
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-lo); margin-top:24px; line-height:1.6;">The raised exception can still be caught with try/except by the caller — raising ≠ crashing.</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:420px; width:860px; height:490px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span><span class="code-dot code-dot-y"></span><span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">raise.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1010px; top:478px; width:820px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.75;">
+    <div><span class="tok-kw">def</span> <span class="tok-fn">set_age</span>(<span class="tok-var">age</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">if</span> <span class="tok-var">age</span> <span class="tok-op">&lt;</span> <span class="tok-num">0</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">raise</span> <span class="tok-var">ValueError</span>(<span class="tok-str">"Age can't be negative"</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-fn">f</span>(<span class="tok-str">"Age set to {age}"</span>))</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-fn">set_age</span>(<span class="tok-num">17</span>)&nbsp;&nbsp;<span class="tok-com"># ✅ prints normally</span></div>
+    <div><span class="tok-fn">set_age</span>(<span class="tok-op">-</span><span class="tok-num">5</span>)&nbsp;&nbsp;<span class="tok-com"># 💥 raises ValueError</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:960px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-hi);">The message you pass to <span class="mono" style="color:var(--neon-yellow);">ValueError(...)</span> becomes the visible diagnosis. Make it <b style="color:var(--text-hi);">clear and specific</b>.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:14px;">استخدم raise لرفض البيانات الخاطئة بوقاحة واضحة: الرقم السالب يُرفض برسالة معبّرة قبل أي حساب.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">22 / 50</div>
+</div>
+<template data-slide-notes>
+## raise — throw your own errors
+
+**Mindset shift (5 min):** Catching is DEFENSE. Raising is OFFENSE — you declare "this value is unacceptable, I refuse to proceed." Real libraries do this constantly.
+
+**Anatomy:** `raise ExceptionType("message")`. The message is what users/debuggers see — write it like a sentence ("Age can't be negative"), not a code.
+
+**Key subtlety:** raising doesn't have to crash the program — if the CALLER wraps the call in try/except, they catch your raise and handle it. So raise is also a way to hand control back up the stack.
+
+**Live (3 min):** call set_age(-5) and let it crash to show the custom message. Then wrap the call in try/except ValueError to show catching your own raise.
+
+**Arabic tip:** اشرح المفهوم كأنك "ضابط جودة": raise = رفض البضاعة التالفة عند البوابة قبل دخولها المصنع.
+</template>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-240px; right:-160px;"></div>
+  <div class="bg-glow-lime" style="bottom:-280px; left:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">⚙️ CORE CONCEPT #13</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:80px; font-weight:700; color:var(--text-hi); margin-top:14px;">GET with <span style="color:var(--neon-cyan);">query params</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:310px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-lo);">Don't hand-build URLs — let <span class="mono" style="color:var(--neon-lime);">params</span> do it cleanly (it even URL-encodes spaces for you).</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:400px; width:900px; height:400px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:450px; width:840px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:27px; line-height:1.75;">
+    <div><span class="tok-kw">import</span> <span class="tok-var">requests</span></div>
+    <div><br></div>
+    <div><span class="tok-var">params</span> <span class="tok-op">=</span> <span class="tok-op">{</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"from"</span><span class="tok-op">:</span> <span class="tok-str">"USD"</span><span class="tok-op">,</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"to"</span><span class="tok-op">:</span> <span class="tok-str">"EUR"</span><span class="tok-op">,</span></div>
+    <div><span class="tok-op">}</span></div>
+    <div><br></div>
+    <div><span class="tok-var">resp</span> <span class="tok-op">=</span> <span class="tok-var">requests</span>.<span class="tok-fn">get</span>(</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"https://api.frankfurter.app/latest"</span><span class="tok-op">,</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">params</span><span class="tok-op">=</span><span class="tok-var">params</span><span class="tok-op">,</span></div>
+    <div>)</div>
+    <div><br></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">resp</span>.<span class="tok-var">url</span>)&nbsp;&nbsp;<span class="tok-com"># built for you</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1030px; top:400px; width:810px; height:400px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1070px; top:440px; width:730px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-lime);">WHAT REQUESTS DOES FOR YOU</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:16px; line-height:1.9;">
+      Your dict <span class="mono" style="color:var(--text-hi);">{ "from": "USD", "to": "EUR" }</span><br>
+      becomes the query string:<br><br>
+      <span class="mono" style="color:var(--neon-cyan);">?from=USD&amp;to=EUR</span><br><br>
+      <span style="color:var(--neon-yellow);">resp.url</span> shows the final URL.<br><br>
+      Clean, readable, and it handles encoding. 👌
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:850px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-lo);">Rule: use <span class="mono" style="color:var(--neon-cyan);">params=</span> for options. Never jam them into the URL string by hand.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:930px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">استخدم معامل params بدلاً من كتابة الـ URL يدوياً — المكتبة تبني العنوان الصحيح نيابة عنك ⚙️</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">28 / 50</div>
+</div>
+<template data-slide-notes>
+GET with query parameters via the `params=` argument.
+
+Point out the elegance: we give requests a normal Python dict, it builds the query string. Also mention URL encoding: if a value had a space, requests turns it into %20 automatically.
+
+Live demo: print(resp.url) to show what was built — "see, it did the ? and & for us."
+
+This is the exact technique the weather live-coding uses (slides 34–35), where params = {latitude, longitude, current_weather}.
+
+Common mistake: passing params in the URL AND in params= — you'll get both; choose one.
+
+Arabic tip: القاعدة: "المعاملات في القاموس، والرابط نظيف" — لا تكتب علامتي ؟ و& بنفسك أبداً.
+</template>
+</body>
+</html>

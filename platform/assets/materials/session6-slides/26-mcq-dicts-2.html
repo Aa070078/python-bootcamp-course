@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-250px; right:-200px;"></div>
+  <div class="bg-glow-lime" style="bottom:-250px; left:-180px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">🎯 QUICK CHECK #2 // DICTS</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:88px; font-weight:700; color:var(--text-hi); margin-top:16px;">What gets printed?</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid); margin-top:14px;">Trace <span style="font-family:'JetBrains Mono',monospace; color:var(--neon-cyan);">.get()</span> carefully. 💭</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:14px;">ما الذي ستطبعُه هذه الشيفرة؟ تذكّر سلوك طريقة get() عندما لا يوجد المفتاح.</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:400px; width:940px; height:330px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">predict.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:470px; width:880px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:27px; line-height:1.65;">
+    <div><span class="tok-var">d</span> <span class="tok-op">=</span> <span class="tok-op">{</span><span class="tok-str">"a"</span><span class="tok-op">:</span> <span class="tok-num">1</span>, <span class="tok-str">"b"</span><span class="tok-op">:</span> <span class="tok-num">2</span>, <span class="tok-str">"c"</span><span class="tok-op">:</span> <span class="tok-num">3</span><span class="tok-op">}</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">d</span>.<span class="tok-fn">get</span>(<span class="tok-str">"x"</span>, <span class="tok-num">0</span>))</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1080px; top:400px; width:760px; height:330px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.3); border-radius:24px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1112px; top:436px; width:700px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; font-weight:700; color:var(--text-hi);">Pick one option ⬇️</div>
+    <div style="display:flex; flex-direction:column; gap:14px; margin-top:22px;">
+      <div style="display:flex; align-items:center; gap:14px;"><span class="chip chip-cyan">A</span><span style="font-family:'JetBrains Mono',monospace; font-size:28px; color:var(--text-hi);">0</span></div>
+      <div style="display:flex; align-items:center; gap:14px;"><span class="chip chip-magenta">B</span><span style="font-family:'JetBrains Mono',monospace; font-size:28px; color:var(--text-hi);">None</span></div>
+      <div style="display:flex; align-items:center; gap:14px;"><span class="chip chip-yellow">C</span><span style="font-family:'JetBrains Mono',monospace; font-size:28px; color:var(--text-hi);">KeyError</span></div>
+      <div style="display:flex; align-items:center; gap:14px;"><span class="chip chip-lime">D</span><span style="font-family:'JetBrains Mono',monospace; font-size:28px; color:var(--text-hi);">1</span></div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:800px; width:1760px; z-index:10;">
+    <div style="display:flex; align-items:center; gap:16px;">
+      <span style="font-size:32px;">🧠</span>
+      <span style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid);">Recall: <span style="font-family:'JetBrains Mono',monospace; color:var(--neon-lime);">"x"</span> is missing from <span style="font-family:'JetBrains Mono',monospace; color:var(--neon-cyan);">d</span> — so what does the second argument do?</span>
+    </div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S06</div>
+  <div class="chrome-pagenum">26 / 45</div>
+</div>
+<template data-slide-notes>
+# Slide 26 — MCQ: What gets printed? (Instructor notes)
+
+**Answer: A** — `d.get("x", 0)` prints `0`.
+
+**Explain the reasoning**
+- `"x"` is NOT a key in `d` (`{"a": 1, "b": 2, "c": 3}`).
+- `.get(key, default)` returns `default` when the key is missing. Here default is `0`.
+- Without the second argument, `.get("x")` would return `None` (option B).
+- Option C (KeyError) would only happen with bracket access `d["x"]`.
+- Option D (`1`) is the value of key `"a"` — a distractor.
+
+**Arabic teaching tip**
+- أعِد التأكيد: d[key] يرمي خطأً KeyError إذا غاب المفتاح، بينما .get(key, default) يعيد القيمة الافتراضية بهدوء.
+</template>
+</body>
+</html>

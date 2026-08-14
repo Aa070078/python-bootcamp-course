@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-200px; right:-160px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-180px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1700px; z-index:10;">
+    <div class="kicker">🎨 VISUAL — FOLDER TREE</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:80px; font-weight:700; color:var(--text-hi); margin-top:10px;">Where is your file?</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:360px; width:860px; height:560px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:390px; width:800px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:32px; line-height:1.7; color:var(--text-hi);">
+    <div>📁 <span style="color:var(--neon-yellow);">Desktop/</span></div>
+    <div>&nbsp;&nbsp;&nbsp;└─ 📁 <span style="color:var(--neon-yellow);">python_bootcamp/</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─ 📁 <span style="color:var(--neon-yellow);">session8/</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├─ 📄 <span class="tok-str">notes.txt</span> &nbsp;👈</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├─ 📄 <span class="tok-str">diary.py</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└─ 📁 <span style="color:var(--neon-yellow);">data/</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─ 📄 <span class="tok-str">users.csv</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─ 📁 <span style="color:var(--neon-yellow);">projects/</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1000px; top:360px; width:800px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:40px; font-weight:700; color:var(--text-hi);">🧭 Paths from <span class="mono" style="color:var(--neon-cyan);">session8/</span></div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:32px; line-height:1.9; color:var(--text-hi); margin-top:22px;">
+      <div><span class="tok-com"># notes.txt → in the same folder</span></div>
+      <div><span class="tok-str">"notes.txt"</span></div>
+      <div>&nbsp;</div>
+      <div><span class="tok-com"># users.csv → one folder down</span></div>
+      <div><span class="tok-str">"data/users.csv"</span></div>
+      <div>&nbsp;</div>
+      <div><span class="tok-com"># one folder up, then down</span></div>
+      <div><span class="tok-str">"../projects/app.py"</span></div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1000px; top:760px; width:800px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:28px; color:var(--text-lo);">absolute: <span class="tok-str">C:/Users/Nour/Desktop/python_bootcamp/session8/notes.txt</span></div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:14px;">شجرة المجلدات تُظهر مكان كل ملف، والمسار النسبي يُحسب من مجلد العمل</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S08</div>
+  <div class="chrome-pagenum">10 / 50</div>
+</div>
+<template data-slide-notes>
+**Folder tree visual — 4 min.**
+
+- Walk the tree together: from Desktop you dive into python_bootcamp → session8 → notes.txt.
+- Point out: relative paths are written *as if you're standing inside* the running folder (here `session8/`).
+- Ask students to "climb" the tree: what path reaches `projects/app.py` from `session8`? → `../projects/app.py`.
+- Arabic tip: «شجرة المجلدات» (folder tree) — have students point at the tree while saying each folder name.
+</template>
+</body>
+</html>

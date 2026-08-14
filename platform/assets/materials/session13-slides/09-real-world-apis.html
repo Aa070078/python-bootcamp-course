@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-240px; right:-160px;"></div>
+  <div class="bg-glow-lime" style="bottom:-280px; left:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">🌐 CORE CONCEPT #2</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:80px; font-weight:700; color:var(--text-hi); margin-top:14px;">You already use APIs <span style="color:var(--neon-cyan);">every day</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:540px; height:240px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:360px; width:480px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:44px;">🌦️</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; font-weight:600; color:var(--text-hi); margin-top:8px;">Weather apps</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:var(--text-lo); margin-top:8px; line-height:1.5;">Fetch forecasts from weather servers (we'll use Open-Meteo today).</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:660px; top:330px; width:540px; height:240px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:690px; top:360px; width:480px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:44px;">💱</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; font-weight:600; color:var(--text-hi); margin-top:8px;">Currency apps</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:var(--text-lo); margin-top:8px; line-height:1.5;">Live exchange rates (we'll use Frankfurter in our project).</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1240px; top:330px; width:600px; height:240px; background:rgba(250,204,21,0.06); border:1px solid rgba(250,204,21,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1270px; top:360px; width:540px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:44px;">📱</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; font-weight:600; color:var(--text-hi); margin-top:8px;">Social media feeds</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:var(--text-lo); margin-top:8px; line-height:1.5;">TikTok, X, Instagram: apps fetch fresh posts through APIs.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:610px; width:540px; height:240px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:640px; width:480px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:44px;">🚚</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; font-weight:600; color:var(--text-hi); margin-top:8px;">Delivery tracking</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:var(--text-lo); margin-top:8px; line-height:1.5;">"Your order is 2 stops away" — a live API response.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:660px; top:610px; width:540px; height:240px; background:rgba(167,139,250,0.06); border:1px solid rgba(167,139,250,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:690px; top:640px; width:480px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:44px;">🎬</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; font-weight:600; color:var(--text-hi); margin-top:8px;">Movie listings</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:var(--text-lo); margin-top:8px; line-height:1.5;">Showtimes, ratings, posters — all served via APIs.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1240px; top:610px; width:600px; height:240px; background:rgba(251,146,60,0.07); border:1px solid rgba(251,146,60,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1270px; top:640px; width:540px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:44px;">🤖</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; font-weight:600; color:var(--text-hi); margin-top:8px;">AI chatbots</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:var(--text-lo); margin-top:8px; line-height:1.5;">You send text, the model sends an answer — over an API.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:890px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">أنت تستخدم الـ APIs كل يوم دون أن تدري: الطقس، العملات، الخرائط، ومواقع التواصل 🌍</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">09 / 50</div>
+</div>
+<template data-slide-notes>
+Real-world API examples. Six cards — have the class count how many they personally use in one day (weather, social, delivery, movies, AI).
+
+Point of the slide: APIs are not an obscure tech term — they power nearly every app students touch. "If a phone app shows live data, there's an API behind it."
+
+Highlight the two we'll actually code with today:
+- Open-Meteo (weather) — free, no API key.
+- Frankfurter (currency rates) — free, no API key.
+
+Also mention Google Maps, GitHub, and ChatGPT as famous ones — GitHub's API is a great self-study target ("what do my own repositories look like?").
+
+Arabic tip: اسأل: "كم تطبيقاً على هاتفك يعرض بيانات 'حية'؟" — كلها تستخدم APIs. اربط المفهوم بحياتهم اليومية مباشرة.
+</template>
+</body>
+</html>

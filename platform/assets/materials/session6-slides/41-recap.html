@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-cyan"></div>
+<div class="bg-glow-magenta"></div>
+<div class="chrome-topbar"><span class="chrome-dot"></span>WRAP-UP</div>
+
+<div class="kicker" data-object="true" data-object-type="textbox" style="position:absolute;top:96px;left:80px;">SESSION RECAP</div>
+<div class="arabic" data-object="true" data-object-type="textbox" style="position:absolute;top:138px;left:80px;font-size:24px;color:var(--text-lo);">ملخص الجلسة — المجموعات والقواميس</div>
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:200px;left:80px;width:1600px;font-family:'Space Grotesk',sans-serif;font-size:56px;font-weight:700;color:var(--text-hi);">Everything you learned today</div>
+
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:320px;left:80px;width:1760px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+  <div style="padding:28px 30px;border-radius:16px;background:rgba(34,211,238,0.05);border:1px solid rgba(34,211,238,0.22);">
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--neon-cyan);margin-bottom:14px;">🔷 Sets</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:21px;color:var(--text-mid);line-height:2.0;">
+      ✅ Unordered + unique — duplicates collapse<br>
+      ✅ <span style="font-family:'JetBrains Mono',monospace;color:var(--neon-cyan);">add()</span> / <span style="font-family:'JetBrains Mono',monospace;color:var(--neon-cyan);">discard()</span> / membership <span style="font-family:'JetBrains Mono',monospace;color:var(--neon-cyan);">in</span><br>
+      ✅ Union <span style="font-family:'JetBrains Mono',monospace;color:var(--neon-cyan);">|</span> · intersection <span style="font-family:'JetBrains Mono',monospace;color:var(--neon-cyan);">&amp;</span> · difference<br>
+      ✅ Dedupe trick: <span style="font-family:'JetBrains Mono',monospace;color:var(--neon-lime);">list(set(x))</span>
+    </div>
+  </div>
+  <div style="padding:28px 30px;border-radius:16px;background:rgba(236,72,153,0.05);border:1px solid rgba(236,72,153,0.22);">
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--neon-magenta);margin-bottom:14px;">🔶 Dictionaries</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:21px;color:var(--text-mid);line-height:2.0;">
+      ✅ key → value pairs<br>
+      ✅ Safe reads with <span style="font-family:'JetBrains Mono',monospace;color:var(--neon-magenta);">.get()</span> (no KeyError)<br>
+      ✅ Loop <span style="font-family:'JetBrains Mono',monospace;color:var(--neon-magenta);">.items()</span> → key &amp; value<br>
+      ✅ Count pattern: <span style="font-family:'JetBrains Mono',monospace;color:var(--neon-lime);">counts[k] = counts.get(k, 0) + 1</span>
+    </div>
+  </div>
+  <div style="padding:28px 30px;border-radius:16px;background:rgba(163,230,53,0.05);border:1px solid rgba(163,230,53,0.22);">
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--neon-lime);margin-bottom:14px;">🔗 Combining them</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:21px;color:var(--text-mid);line-height:2.0;">
+      ✅ Lists of dicts = collections of records<br>
+      ✅ Dict values can be <b style="color:var(--text-hi);">sets</b> (tags!)<br>
+      ✅ Real apps: phonebook, contacts, analytics<br>
+      ✅ Built one: the <b style="color:var(--text-hi);">Contact Manager</b> 💼
+    </div>
+  </div>
+</div>
+
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:900px;left:80px;width:1760px;padding:20px 28px;border-radius:14px;background:rgba(163,230,53,0.07);border:1px solid rgba(163,230,53,0.20);"><span style="font-size:26px;color:var(--neon-lime);font-weight:700;">🗝️ One sentence: <span style="color:var(--text-hi);">A set keeps things unique — a dict links a key to a value — together they model almost any real-world data.</span></span></div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S06</div>
+<div class="chrome-pagenum">41 / 45</div>
+</div>
+<template data-slide-notes>
+Recap in ~3 minutes. Three pillars — keep it fast, this is reinforcement not new content.
+
+Suggested script:
+1. Sets: "Give me the sentence for sets." → "No duplicates." Mention union/intersection are how you combine tag sets.
+2. Dicts: "Give me the sentence for dicts." → "Key links to a value." Stress `.get()` as the safety skill they must use in homework.
+3. Combining: point at the Contact Manager — today they shipped a real app that uses all three data types.
+
+Then read the one-sentence takeaway aloud and ask the class to repeat it. This is the memory anchor for the whole session.
+
+Check understanding: quick show-of-hands "who can explain dedupe in one line?" before moving to the bridge slide.
+
+Arabic tip: اقرأ جملة الخلاصة بالعربية: «المجموعة تحفظ العناصر الفريدة، والقاموس يربط مفتاحًا بقيمة». (Read the takeaway sentence in Arabic.)
+</template>
+</body>
+</html>

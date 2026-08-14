@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-240px; right:-160px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-280px; left:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">📦 CORE CONCEPT #10</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:84px; font-weight:700; color:var(--text-hi); margin-top:14px;">JSON — the API <span style="color:var(--neon-cyan);">format</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:320px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); line-height:1.6;"><span style="color:var(--text-hi);">JSON</span> = <span style="color:var(--neon-cyan);">JavaScript Object Notation</span>. It's just <span style="color:var(--neon-lime);">text</span> — but text shaped like Python dictionaries and lists.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:440px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-lo);">Because it's plain text, ANY programming language can read it. That's why the whole web chose it. 🌍</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:540px; width:860px; height:300px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:575px; width:780px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-cyan);">WHAT YOU ALREADY KNOW</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:28px; color:var(--text-hi); margin-top:16px; line-height:1.8;">
+      {<span class="tok-str">"name"</span>: <span class="tok-str">"Sara"</span>, <span class="tok-str">"age"</span>: <span class="tok-num">19</span>} <span class="tok-com"># dict</span><br>
+      [<span class="tok-num">1</span>, <span class="tok-num">2</span>, <span class="tok-num">3</span>] <span class="tok-com"># list</span>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-lo); margin-top:14px;">JSON = dicts and lists written as text. That's it.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:540px; width:860px; height:300px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1020px; top:575px; width:780px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-lime);">DATA TYPES</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:16px; line-height:1.9;">
+      <span class="mono" style="color:var(--text-hi);">string</span> &mdash; <span class="mono">"Cairo"</span><br>
+      <span class="mono" style="color:var(--text-hi);">number</span> &mdash; <span class="mono">38.2</span><br>
+      <span class="mono" style="color:var(--text-hi);">boolean</span> &mdash; <span class="mono">true / false</span><br>
+      <span class="mono" style="color:var(--text-hi);">null</span> &mdash; nothing / missing<br>
+      <span class="mono" style="color:var(--text-hi);">object / array</span> &mdash; nested data
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:890px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-lo);">Tiny note: JSON spells <span class="mono" style="color:var(--neon-yellow);">true / null</span>, Python spells <span class="mono" style="color:var(--neon-lime);">True / None</span>. requests converts for you.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:955px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">JSON صيغة نصية تشبه قواميس Python وقوائمها، ولهذا تستطيع كل اللغات قراءتها 📦</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">23 / 50</div>
+</div>
+<template data-slide-notes>
+JSON — concept slide.
+
+Key reassurance: students already know dicts and lists from earlier sessions. JSON is just "the same thing as text" — that's the whole secret. Repeat: "A JSON response is a dictionary you haven't unpacked yet."
+
+Data types table: strings, numbers, booleans, null, objects, arrays. Watch out for the casing difference (true vs True, null vs None) — requests converts automatically, but it's a classic confusion.
+
+Why JSON won: it is language-neutral plain text. C, Java, Python, JavaScript — all parse it.
+
+Preview: slide 24 shows a realistic response we will actually receive from Open-Meteo in live coding.
+
+Arabic tip: "JSON ليست لغة برمجة، بل صيغة نصية" — نقطة يساء فهمها كثيراً، أكدها الآن.
+</template>
+</body>
+</html>

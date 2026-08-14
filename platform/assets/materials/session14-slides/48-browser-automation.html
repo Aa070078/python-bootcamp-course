@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-magenta"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:80px; width:1760px; z-index:10;">
+    <div class="kicker">EXTRA // BROWSER AUTOMATION 🤖</div>
+    <div style="margin-top:26px; font-family:'Space Grotesk',sans-serif; font-size:78px; font-weight:700; color:var(--text-hi); line-height:1.05;">When pages <span style="color:var(--neon-lime);">fight back</span></div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:29px; color:var(--text-lo); direction:rtl; margin-top:14px;">بعض المواقع تحمّل البيانات بواسطة JavaScript؛ هنا نستدعي متصفحًا حقيقيًا يعمل مكاننا</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:330px; width:1760px; z-index:10;">
+    <div style="display:flex; gap:30px;">
+      <div style="flex:1; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:22px; padding:30px;">
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; font-weight:700; color:var(--text-hi);">🚧 The problem</div>
+        <div style="margin-top:16px; font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-mid); line-height:1.6;">Some pages load data <b>after</b> the page via JavaScript ("load more", infinite scroll, login walls). <span class="mono">resp.text</span> is empty of data.</div>
+      </div>
+      <div style="flex:1; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:22px; padding:30px;">
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; font-weight:700; color:var(--text-hi);">🎮 The tools</div>
+        <div style="margin-top:16px; font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-mid); line-height:1.6;"><b>Selenium</b> or <b>Playwright</b> launch a real browser that runs the JavaScript, then you read the rendered page.</div>
+      </div>
+      <div style="flex:1; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.35); border-radius:22px; padding:30px;">
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; font-weight:700; color:var(--text-hi);">👆 Superpowers</div>
+        <div style="margin-top:16px; font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-mid); line-height:1.6;">Open pages, <b>click</b> buttons, <b>fill</b> forms, <b>wait</b> for elements — automation, not just reading.</div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:880px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:31px; color:var(--text-hi);">⚠️ Remember the rules: automation never bypasses logins, CAPTCHAs or anti-bot systems — it just runs the <span style="color:var(--neon-lime);">same browser</span> you use.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">48 / 50</div>
+</div>
+<template data-slide-notes>
+Why browser automation exists: requests+BS4 reads the RAW HTML. If data is injected by JavaScript AFTER load, raw HTML won't contain it. Selenium/Playwright run a real browser → JS executes → page is complete.
+
+Big clarification: automation still follows the same ethics. Using a browser does NOT make bypassing locks OK. We automate public, allowed flows (e.g. filling a public search form).
+
+Playwright is our recommendation (modern, simple sync API, auto-waits). Install: pip install playwright && playwright install chromium.
+
+Arabic tip: البيانات التي تولّدها JS لا تظهر في النص الخام — شبهها بمتجر يفتح صندوقه بعد وصولك، فتحتاج «متصفحًا» ينتظر الافتتاح.
+</template>
+</body>
+</html>

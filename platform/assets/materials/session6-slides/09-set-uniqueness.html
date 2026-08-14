@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="left:-220px; top:-160px;"></div>
+  <div class="bg-glow-magenta" style="right:-180px; bottom:-180px;"></div>
+
+  <!-- HEADER -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:150px; width:1760px; z-index:10;">
+    <div class="kicker">🎯 UNIQUENESS</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:64px; font-weight:700; color:var(--text-hi); margin-top:16px;">Duplicates collapse into <span style="color:var(--neon-cyan); text-shadow:0 0 30px rgba(34,211,238,0.4);">one</span></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:12px;">Feed it in twice — the set keeps only the first memory of it. 🧠</div>
+  </div>
+
+  <!-- INPUT PANEL -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:470px; width:700px; height:320px; background:rgba(250,204,21,0.05); border:1px solid rgba(250,204,21,0.35); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:498px; width:640px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--neon-yellow); letter-spacing:0.15em;">INPUT — 5 ELEMENTS</div>
+    <div style="font-size:58px; margin-top:26px;">
+      <span style="display:inline-block; padding:4px 14px; border-radius:12px; border:1px solid rgba(250,204,21,0.45);">🔴</span>
+      <span style="display:inline-block; padding:4px 14px; border-radius:12px; border:1px solid rgba(250,204,21,0.45);">🔵</span>
+      <span style="display:inline-block; padding:4px 14px; border-radius:12px; border:1px solid rgba(250,204,21,0.45); opacity:0.4;">🔴</span>
+      <span style="display:inline-block; padding:4px 14px; border-radius:12px; border:1px solid rgba(250,204,21,0.45);">🟢</span>
+      <span style="display:inline-block; padding:4px 14px; border-radius:12px; border:1px solid rgba(250,204,21,0.45); opacity:0.4;">🔵</span>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:var(--text-lo); margin-top:18px;">The faded ones are copies — <span style="color:var(--text-mid);">they get dropped.</span></div>
+  </div>
+
+  <!-- ARROW -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:812px; top:590px; width:60px; z-index:10; font-size:60px; color:var(--neon-cyan); text-shadow:0 0 24px rgba(34,211,238,0.7);">→</div>
+
+  <!-- OUTPUT PANEL -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:900px; top:470px; width:700px; height:320px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.45); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:930px; top:498px; width:640px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--neon-cyan); letter-spacing:0.15em;">OUTPUT — A SET, 3 UNIQUE</div>
+    <div style="font-size:58px; margin-top:26px;">
+      <span style="display:inline-block; padding:4px 14px; border-radius:12px; border:1px solid rgba(34,211,238,0.6); box-shadow:0 0 16px rgba(34,211,238,0.3);">🔴</span>
+      <span style="display:inline-block; padding:4px 14px; border-radius:12px; border:1px solid rgba(34,211,238,0.6); box-shadow:0 0 16px rgba(34,211,238,0.3);">🔵</span>
+      <span style="display:inline-block; padding:4px 14px; border-radius:12px; border:1px solid rgba(34,211,238,0.6); box-shadow:0 0 16px rgba(34,211,238,0.3);">🟢</span>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:var(--text-mid); margin-top:18px;">Each color appears exactly <span style="color:var(--neon-lime); font-weight:700;">once</span> ✅</div>
+  </div>
+
+  <!-- BOTTOM STRIP -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:840px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid);">🔑 <span style="color:var(--neon-yellow); font-weight:700;">Rule:</span> a set stores <span style="color:var(--neon-cyan);">unique values only</span> — duplicates are ignored automatically.</div>
+    <div class="arabic" style="font-size:28px; color:var(--text-lo); margin-top:12px;">التكرارات تندمج وتختفي — كل قيمة تظهر مرة واحدة فقط</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S06</div>
+  <div class="chrome-pagenum">09 / 45</div>
+</div>
+<template data-slide-notes>
+**Slide 9 — Set uniqueness (visual)**
+
+The core concept of the hour. Narrate the animation:
+
+- "Five emojis go in. The red copy and the blue copy are identical to earlier ones — the set recognizes them and refuses."
+- "Only three come out. That's uniqueness in action."
+
+Demo in the shell: `s = {1, 1, 2, 2, 2, 3}` then `print(s)` → `{1, 2, 3}`.
+
+- Ask: "If I add 1 again — does the set grow?" No, size stays 3.
+- Connect to the hook: duplicates of phone numbers collapse the same way.
+
+Arabic tip: اطلب من طالب أن يصف ما حدث بالعربية: "أدخلنا خمس قيم، لكن المكرر منها اختفى وبقيت ثلاث قيم فقط." ثم اربطها بفكرة المجموعات الرياضية.
+</template>
+</body>
+</html>

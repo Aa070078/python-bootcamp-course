@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-130px; left:-220px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-160px; right:-200px;"></div>
+
+  <div class="chrome-topbar">
+    <span class="chrome-dot"></span>
+    <span>LIVE CODING // PUSH TO GITHUB</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:100px; width:1760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-lime); letter-spacing:0.25em; text-transform:uppercase;">🖥️ LIVE CODING — PUSH TIME</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:68px; font-weight:700; color:var(--text-hi); margin-top:12px;">Get your repo <span style="color:var(--neon-lime);">onto GitHub</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:560px; height:120px; background:rgba(250,204,21,0.07); border:1px solid rgba(250,204,21,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:375px; width:500px; z-index:10; font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid);">
+    <span style="color:var(--neon-yellow); font-family:'JetBrains Mono',monospace;">STEP 1</span> &nbsp;github.com → <b style="color:var(--text-hi);">New repository</b> → name it → Create (don't add files yet)
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:490px; width:560px; height:120px; background:rgba(34,211,238,0.07); border:1px solid rgba(34,211,238,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:525px; width:500px; z-index:10; font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid);">
+    <span style="color:var(--neon-cyan); font-family:'JetBrains Mono',monospace;">STEP 2</span> &nbsp;Copy the <span class="mono" style="color:var(--text-hi);">git remote add origin ...</span> line GitHub shows you
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:650px; width:1120px; height:280px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">bash — step 3</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:700px; width:1060px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:27px; line-height:1.8;">
+    <div><span class="tok-var">$</span> git remote add origin https://github.com/you/my_game.git</div>
+    <div><span class="tok-var">$</span> git remote -v <span class="tok-com"># verify the link</span></div>
+    <div class="tok-out">origin https://github.com/you/my_game.git (fetch)</div>
+    <div class="tok-out">origin https://github.com/you/my_game.git (push)</div>
+    <div><span class="tok-var">$</span> git push -u origin main</div>
+    <div class="tok-out">* [new branch] main -&gt; main</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1260px; top:340px; width:580px; height:590px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.3); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1290px; top:380px; width:520px; z-index:10;">
+    <div style="font-size:52px;">🔮</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-hi); font-weight:600; margin-top:12px;">Predict!</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:16px; line-height:1.6;">After <span class="mono" style="color:var(--neon-lime);">git push</span>, what do you see on GitHub?<br>→ Your files, the commit history, and the green <span style="color:var(--neon-lime);">main</span> branch. 🎉</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--neon-yellow); margin-top:20px; line-height:1.5;">Auth pop-up? Sign in once with your GitHub account — the computer remembers you.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:960px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">لنرفع أول مشروع لك إلى GitHub معاً — بعد هذه الخطوة يصبح مشروعك على الإنترنت.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S10</div>
+  <div class="chrome-pagenum">29 / 50</div>
+</div>
+<template data-slide-notes>
+**Slide 29 — LIVE CODING: push to GitHub (15 min)**
+- Preparation: every student must have a GitHub account BEFORE this slide (tell them to sign up during the break).
+- Step 1: create an empty repo on GitHub (do NOT tick "Add a README" — it creates an extra commit that causes conflicts later).
+- Step 2: copy the exact `git remote add origin <url>` line GitHub offers.
+- Step 3: run it locally, verify with `git remote -v`, then `git push -u origin main`.
+- On first push GitHub asks for login — using the credential manager is fine for the bootcamp. Mention PAT/token only if advanced students ask.
+- PREDICT: after push, GitHub shows files + commit list + "main" branch. Refresh the page together.
+- If a student accidentally created README on GitHub: teach `git pull origin main` then push (or start clean).
+- Arabic tip: بعد النجاح، ارفعوا أصابعكم وقل "شحننا!" — هذه أول لحظة فخر في الجلسة.
+</template>
+</body>
+</html>

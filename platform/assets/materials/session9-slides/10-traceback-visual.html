@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime" style="top:-150px; left:-120px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-200px; right:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">VISUAL // 02 — TRACEBACK ANATOMY</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:70px; font-weight:700; color:var(--text-hi);">Anatomy of a crash 🩺</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:900px; height:540px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span><span class="code-dot code-dot-y"></span><span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">real traceback</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:388px; width:860px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.7;">
+    <div><span class="tok-out" style="color:var(--neon-orange);">Traceback (most recent call last):</span></div>
+    <div><span class="tok-out" style="color:var(--neon-orange);">&nbsp;&nbsp;File "shop.py", line 9, in &lt;module&gt;</span></div>
+    <div><span class="tok-out" style="color:var(--neon-orange);">&nbsp;&nbsp;&nbsp;&nbsp;total = checkout(cart)</span></div>
+    <div><span class="tok-out" style="color:var(--neon-orange);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;^^^^^^^</span></div>
+    <div><span class="tok-out" style="color:var(--neon-orange);">&nbsp;&nbsp;File "shop.py", line 3, in checkout</span></div>
+    <div><span class="tok-out" style="color:var(--neon-orange);">&nbsp;&nbsp;&nbsp;&nbsp;return cart["total"] + 5</span></div>
+    <div><span class="tok-out" style="color:var(--neon-orange);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;^^^^^^^^^^^</span></div>
+    <div><span class="tok-out" style="color:var(--neon-magenta); font-weight:700;">KeyError: 'total'</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-com"># 🔽 last line = TYPE + REASON (the diagnosis)</span></div>
+    <div><span class="tok-com">#    the '^' shows the exact bad expression</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1040px; top:330px; width:800px; height:540px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.3); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1080px; top:370px; width:720px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--neon-magenta);">Read it like a detective 🕵️</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:24px; line-height:1.6;">
+      1️⃣ <b style="color:var(--text-hi);">Diagnosis</b> (last line): <span class="mono" style="color:var(--neon-yellow);">KeyError</span> → a missing key.<br><br>
+      2️⃣ <b style="color:var(--text-hi);">Crime scene</b> (the last File line): <span class="mono" style="color:var(--neon-lime);">cart["total"]</span> → key not in dict.<br><br>
+      3️⃣ <b style="color:var(--text-hi);">Accomplices</b> (File lines above): the call chain that led there — <span class="mono" style="color:var(--neon-cyan);">checkout(cart)</span>.<br><br>
+      4️⃣ <b style="color:var(--text-hi);">Fix</b>: is <span class="mono" style="color:var(--neon-lime);">"total"</span> missing, or wrongly named?
+    </div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:26px; color:var(--text-lo); direction:rtl; margin-top:22px;">التتبّع قصة بوليسية: التشخيص في آخر سطر، وموقع الخطأ تحت علامة ^، والمساعدون في الأسطر أعلاه.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">10 / 50</div>
+</div>
+<template data-slide-notes>
+## Visual — traceback anatomy
+
+**Read it like a detective.** This slide gives the full mental model. Do it step by step:
+1. Last line: `KeyError: 'total'` — the exception type and what was missing.
+2. Crime scene: `cart["total"]` with `^^^^` under it — the exact expression that failed.
+3. Accomplices: the call chain, `main` → `checkout` → boom.
+4. Fix: the key "total" doesn't exist in the cart dict — check how `cart` was built.
+
+**Hands-on tip:** tell students the FIRST thing they do on any error: read the last line aloud. If they can say "it's a KeyError, key 'total' is missing", they're already debugging like a pro.
+
+**Live demo suggestion:** create a dict `cart = {"name": "laptop"}`, try `cart["total"]` and compare the traceback shape to this slide — it will match almost exactly.
+
+**Arabic tip:** علّمهم عادة قول نوع الخطأ بصوت عالٍ قبل أي شيء — نصف الحل في فهم النوع.
+</template>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-150px; right:-120px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-200px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">PROJECT // CODE — PART 2</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:70px; font-weight:700; color:var(--text-hi);">💼 Part 2 — scores, game &amp; guard</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:940px; height:560px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span><span class="code-dot code-dot-y"></span><span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">pyguess.py (continued)</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:388px; width:900px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.75;">
+    <div><span class="tok-kw">def</span> <span class="tok-fn">load_scores</span>():</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">try</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">with</span> <span class="tok-fn">open</span>(<span class="tok-str">"scores.json"</span>) <span class="tok-kw">as</span> <span class="tok-var">f</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-fn">json.load</span>(<span class="tok-var">f</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">except</span> <span class="tok-var">FileNotFoundError</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> {}</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">except</span> <span class="tok-var">json</span>.<span class="tok-var">JSONDecodeError</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Corrupt file. Starting fresh."</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> {}</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-kw">def</span> <span class="tok-fn">save_scores</span>(<span class="tok-var">scores</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">try</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">with</span> <span class="tok-fn">open</span>(<span class="tok-str">"scores.json"</span>, <span class="tok-str">"w"</span>) <span class="tok-kw">as</span> <span class="tok-var">f</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">json.dump</span>(<span class="tok-var">scores</span>, <span class="tok-var">f</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">except</span> <span class="tok-var">OSError</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Could not save scores."</span>)</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1080px; top:330px; width:760px; height:560px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.3); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1120px; top:372px; width:680px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--neon-magenta);">Two rescue nets 🥅</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:22px; line-height:1.7;">
+      ▶ <span class="mono" style="color:var(--neon-cyan);">load_scores()</span>: no file → returns <span class="mono" style="color:var(--neon-lime);">{}</span>; corrupt JSON → friendly message + fresh dict. <b style="color:var(--text-hi);">Never crashes.</b><br><br>
+      ▶ <span class="mono" style="color:var(--neon-yellow);">save_scores()</span>: disk error → polite warning. <b style="color:var(--text-hi);">Game continues.</b><br><br>
+      ▶ Both use <span class="mono" style="color:var(--neon-cyan);">with open()</span> — auto-close, no finally needed here.
+    </div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:26px; color:var(--text-lo); direction:rtl; margin-top:24px;">شبكتا نجاة: قراءة مفقودة أو تالفة تعود بأمان، وفشل الحفظ يكتفي بتحذير دون انهيار.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">44 / 50</div>
+</div>
+<template data-slide-notes>
+## Project code part 2 — load/save scores (8 min)
+
+**Type the load_scores function with them.** Emphasize the two failure modes:
+- FileNotFoundError → no file yet (first run) → return empty dict. Normal, not an error!
+- json.JSONDecodeError → file exists but garbage inside → warn + start fresh.
+
+**Save robustness:** OSError is the parent of file errors; catching it covers permission/disk issues. The game continues even if saving fails — resilience over perfection.
+
+**Ask students:** "Why do we not need `finally` with `with open()`?" → because `with` auto-closes the file. finally shines for non-file resources.
+
+**Fast finish:** complete the main() game loop + `if __name__ == "__main__"` guard (from slide 35) on the board. Then slide 45 shows the full run.
+
+**Arabic tip:** "مع with، لا نحتاج finally لإغلاق الملف — with يغلقه بنفسه."
+</template>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="bottom:-200px; left:-150px;"></div>
+  <div class="bg-glow-magenta" style="top:60px; right:-250px;"></div>
+
+  <div class="chrome-topbar">
+    <span class="chrome-dot"></span>
+    <span>COMMAND #1 // git init</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-cyan); letter-spacing:0.25em; text-transform:uppercase;">⚡ COMMAND #1</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:80px; font-weight:700; color:var(--text-hi); margin-top:10px;"><span style="color:var(--neon-lime);">git init</span></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-mid); margin-top:10px;">Turn any folder into a repository — Git starts watching it.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:400px; width:820px; height:440px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.3); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:435px; width:760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-hi); font-weight:600;">How it works</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:16px; line-height:1.7;">• Creates the hidden <span class="mono" style="color:var(--neon-lime);">.git/</span> folder<br>• Names your default branch (we use <span class="mono" style="color:var(--neon-cyan);">-b main</span>)<br>• The repo is born — still empty, no commits yet<br>• Run it ONCE per project, inside the project folder</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:960px; top:400px; width:880px; height:440px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">bash</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:990px; top:460px; width:820px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:30px; line-height:1.9;">
+    <div><span class="tok-com"># inside your project folder</span></div>
+    <div><span class="tok-var">$</span> cd my_game</div>
+    <div><span class="tok-var">$</span> git init <span class="tok-op">-b</span> main</div>
+    <div class="tok-out">Initialized empty Git repository in</div>
+    <div class="tok-out">C:/Users/you/my_game/.git/</div>
+    <div style="height:12px;"></div>
+    <div><span class="tok-var">$</span> git status</div>
+    <div class="tok-out">On branch main</div>
+    <div class="tok-out">No commits yet</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:920px; width:1760px; z-index:10;">
+    <span class="chip chip-lime">$ git init -b main</span>
+    <span class="chip chip-cyan">one-time per project</span>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:24px;">git init تحوّل أي مجلد إلى مستودع يتابعه Git.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S10</div>
+  <div class="chrome-pagenum">12 / 50</div>
+</div>
+<template data-slide-notes>
+**Slide 12 — git init (5 min)**
+- Demo: create a folder, `cd` into it, run `git init -b main`.
+- Show the output line "Initialized empty Git repository in ..." — celebrate it.
+- Then run `git status` → shows "On branch main" + "No commits yet". This proves the repo exists.
+- Tell them to check the hidden `.git` folder with `ls -la` (Git Bash) — a fun "behind the scenes" moment.
+- Note: if they forget `-b main`, the branch is called `master`. Not a disaster — we'll mention fixing it with `git branch -M main` later.
+- Arabic tip: العبارة "Initialized empty..." تعني "تم تهيئة مستودع فارغ" — اجعلهم يقرؤونها كأول نجاح.
+</template>
+</body>
+</html>

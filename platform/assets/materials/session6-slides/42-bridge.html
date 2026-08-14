@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-cyan"></div>
+<div class="bg-glow-lime"></div>
+<div class="chrome-topbar"><span class="chrome-dot"></span>BRIDGE</div>
+
+<div class="kicker" data-object="true" data-object-type="textbox" style="position:absolute;top:96px;left:80px;">LOOKING AHEAD</div>
+<div class="arabic" data-object="true" data-object-type="textbox" style="position:absolute;top:138px;left:80px;font-size:24px;color:var(--text-lo);">جسر نحو الدوال — الفصل القادم</div>
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:200px;left:80px;width:1600px;font-family:'Space Grotesk',sans-serif;font-size:64px;font-weight:700;color:var(--text-hi);">Next up → <span style="color:var(--neon-lime);">Functions</span></div>
+
+<div data-object="true" data-object-type="shape" style="position:absolute;left:80px;top:360px;width:860px;z-index:5;">
+  <div class="code-window" style="width:860px;">
+    <div class="code-window-header">
+      <div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+      <span class="code-window-title">first_function.py</span>
+    </div>
+    <pre style="padding:22px 26px;margin:0;font-size:22px;line-height:1.6;color:var(--text-hi);overflow:hidden;"><span class="tok-kw">def</span> <span class="tok-fn">greet</span>(<span class="tok-var">name</span>):
+    <span class="tok-kw">return</span> <span class="tok-fn">f</span>(<span class="tok-str">"Hello, </span><span class="tok-str">{</span><span class="tok-var">name</span><span class="tok-str">}</span><span class="tok-str">!"</span>)
+
+<span class="tok-fn">print</span>(<span class="tok-fn">greet</span>(<span class="tok-str">"Sara"</span>))   <span class="tok-com"># Hello, Sara!</span>
+<span class="tok-fn">print</span>(<span class="tok-fn">greet</span>(<span class="tok-str">"Omar"</span>))   <span class="tok-com"># Hello, Omar!</span></pre>
+  </div>
+</div>
+
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:380px;right:80px;width:820px;display:flex;flex-direction:column;gap:20px;">
+  <div style="padding:22px 26px;border-radius:14px;background:var(--bg-1);border:1px solid rgba(34,211,238,0.22);">
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:23px;font-weight:700;color:var(--neon-cyan);margin-bottom:8px;">🔦 You've been a user of functions all session</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:20px;color:var(--text-mid);line-height:1.8;"><span style="font-family:'JetBrains Mono',monospace;color:var(--neon-cyan);">len() · input() · set() · sorted() · .get() · .append()</span><br>— you called them dozens of times today.</div>
+  </div>
+  <div style="padding:22px 26px;border-radius:14px;background:var(--bg-1);border:1px solid rgba(163,230,53,0.22);">
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:23px;font-weight:700;color:var(--neon-lime);margin-bottom:8px;">⚡ Next session you become the author</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:20px;color:var(--text-mid);line-height:1.8;">Write your own <b style="color:var(--text-hi);">def</b> — same word you used to build the Contact Manager, now for your own reusable tools.</div>
+  </div>
+  <div style="padding:22px 26px;border-radius:14px;background:var(--bg-1);border:1px solid rgba(250,204,21,0.22);">
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:23px;font-weight:700;color:var(--neon-yellow);margin-bottom:8px;">🎯 Why it matters</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:20px;color:var(--text-mid);line-height:1.8;">One piece of logic, used anywhere. That's how real software is built.</div>
+  </div>
+</div>
+
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:940px;left:80px;width:1760px;padding:16px 28px;border-radius:14px;background:rgba(163,230,53,0.06);border:1px solid rgba(163,230,53,0.18);"><span style="font-size:23px;color:var(--text-mid);">🪄 Sneak peek — <span style="font-family:'JetBrains Mono',monospace;color:var(--neon-cyan);">def</span> is how you'll build a calculator, a converter, and a password checker.</span></div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S06</div>
+<div class="chrome-pagenum">42 / 45</div>
+</div>
+<template data-slide-notes>
+Bridge slide — 2 minutes, purely motivational.
+
+Key message: "You've been using functions all day. `len()`, `input()`, `set()`, `sorted()` — someone wrote those with `def`. Next session, that someone is YOU."
+
+Read the `greet` example aloud and trace it: `def` creates the function, `name` is a parameter (input), `return` is the output, then we call it twice with different values.
+
+Connection to today: today's project was built from functions too — `add_contact()`, `search()`, `remove()`, `show_tags()` are all the *result* of `def`. So functions are not new; next session just makes them first-class citizens.
+
+If time: ask "which functions did you call today?" and collect on a whiteboard — it's a fun memory list.
+
+Arabic tip: اسألهم: «مَن كتب دوال اليوم؟» — الجواب: أنتم، داخل مدير جهات الاتصال. هذا يبني الثقة قبل فصل الدوال. (Who wrote functions today? You did, inside the Contact Manager.)
+</template>
+</body>
+</html>

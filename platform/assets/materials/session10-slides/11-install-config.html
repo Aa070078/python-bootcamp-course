@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-120px; left:-200px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-200px; right:-200px;"></div>
+
+  <div class="chrome-topbar">
+    <span class="chrome-dot"></span>
+    <span>SETUP // INSTALL &amp; CONFIGURE</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-cyan); letter-spacing:0.25em; text-transform:uppercase;">⚙️ SETUP</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi); margin-top:12px;">Install Git &amp; introduce yourself</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:340px; width:520px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); line-height:1.6;">1️⃣ Download from <span class="mono" style="color:var(--neon-cyan);">git-scm.com</span> → install with defaults.</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); line-height:1.6; margin-top:18px;">2️⃣ Check it works — run <span class="mono" style="color:var(--neon-lime);">git --version</span>.</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); line-height:1.6; margin-top:18px;">3️⃣ One-time identity setup (see terminal →).</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:640px; top:340px; width:1200px; height:470px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">bash — one-time setup</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:670px; top:400px; width:1140px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:28px; line-height:1.9;">
+    <div><span class="tok-var">$</span> git --version</div>
+    <div class="tok-out">git version 2.45.1.windows.1</div>
+    <div><span class="tok-var">$</span> git config --global user.name <span class="tok-str">"Your Name"</span></div>
+    <div><span class="tok-var">$</span> git config --global user.email <span class="tok-str">"you@example.com"</span></div>
+    <div><span class="tok-var">$</span> git config --global init.defaultBranch main</div>
+    <div><span class="tok-var">$</span> git config --list</div>
+    <div class="tok-out">user.name=Your Name</div>
+    <div class="tok-out">user.email=you@example.com</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:880px; width:1760px; z-index:10;">
+    <span class="chip chip-cyan">--global = once per computer</span>
+    <span class="chip chip-yellow">use the email you'll register on GitHub</span>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:28px;">ثبّت Git مرة واحدة، عرّف نفسك باسمك وبريدك، ثم انطلق في كل مشاريعك.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S10</div>
+  <div class="chrome-pagenum">11 / 50</div>
+</div>
+<template data-slide-notes>
+**Slide 11 — Install & configure (live, 6 min)**
+- LIVE: walk around to confirm everyone has Git installed (Windows: Git Bash; macOS/Linux: git is usually built in).
+- `git --version` proves installation. If a student has an old version, don't panic — commands still work.
+- `git config --global` stores your identity for ALL repos on that machine. Without it, commits have no author.
+- `init.defaultBranch main` makes new repos default to `main` instead of the outdated `master`.
+- COMMON MISTAKE: typing a fake email like `asdf@asdf` — GitHub then shows your commits as "unknown author". Encourage the real email they will use for GitHub.
+- Arabic tip: اشرح كلمة "عالمي" في --global: الإعداد يُحفظ على مستوى الحاسوب وليس المشروع.
+- Teacher: run the demo yourself first, then let students copy.
+</template>
+</body>
+</html>

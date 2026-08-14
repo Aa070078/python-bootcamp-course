@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-lime"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:80px; width:1760px; z-index:10;">
+    <div class="kicker">CORE CONCEPT // HTML FUNDAMENTALS 🏗️</div>
+    <div style="margin-top:26px; font-family:'Space Grotesk',sans-serif; font-size:80px; font-weight:700; color:var(--text-hi); line-height:1.05;">Elements, <span style="color:var(--neon-cyan);">tags</span> & attributes</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:29px; color:var(--text-lo); direction:rtl; margin-top:14px;">العناصر والوسوم والخصائص: اللبنات الأساسية التي تُبنى منها كل صفحة ويب</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:1040px; height:430px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:24px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:360px; width:980px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:30px; line-height:1.7;">
+      <span class="tok-op">&lt;<!-- -->a</span> <span class="tok-str">href</span>=<span class="tok-str">"https://picsum.photos"</span> <span class="tok-str">class</span>=<span class="tok-str">"photo-link"</span><span class="tok-op">&gt;</span>My photo<span class="tok-op">&lt;/a&gt;</span>
+    </div>
+    <div style="margin-top:30px; font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); line-height:1.7;">
+      <span style="color:var(--neon-magenta);">opening tag</span> → <span class="mono">a</span> • <span style="color:var(--neon-lime);">attributes</span> → <span class="mono">href</span> & <span class="mono">class</span> • <span style="color:var(--neon-cyan);">content</span> → "My photo" • <span style="color:var(--neon-yellow);">closing tag</span> → <span class="mono">&lt;/a&gt;</span>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1180px; top:330px; width:660px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--text-hi);">🧩 The recipe</div>
+    <div style="margin-top:20px; font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); line-height:1.65;">
+      <span class="mono" style="color:var(--neon-cyan);">class</span> = a <b>label</b> many elements can share → reuse ✓<br><br>
+      <span class="mono" style="color:var(--neon-cyan);">id</span> = a <b>unique</b> name for one element → one per page ✓<br><br>
+      Scrapers locate data using these labels!
+    </div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:26px; color:var(--text-lo); direction:rtl; margin-top:22px;">class تُستخدم لأكثر من عنصر، بينما id فريد لكل عنصر — والكاشطة تبحث بهما</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">15 / 50</div>
+</div>
+<template data-slide-notes>
+Grammar lesson of HTML: element = opening tag + content + closing tag. Attributes live inside the opening tag.
+
+The two attributes that matter most for scraping: `class` (many elements share it) and `id` (one unique element). We'll use both as "addresses" to find data.
+
+Show the anatomy on the <a> tag: name, href, class, content.
+
+Live: in DevTools, right-click a headline → Inspect. Students see the tags and attributes for real.
+
+Arabic tip: class = لافتة متكررة، id = اسم فريد. عندما تريد العثور على عنصر، تسأل: ما لافتته؟
+</template>
+</body>
+</html>

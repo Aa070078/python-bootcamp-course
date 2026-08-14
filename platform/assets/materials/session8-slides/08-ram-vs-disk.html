@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-200px; right:-160px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-180px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1700px; z-index:10;">
+    <div class="kicker">🎨 VISUAL — RAM VS DISK</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:80px; font-weight:700; color:var(--text-hi); margin-top:10px;">RAM vs Disk</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:350px; width:820px; height:420px; background:rgba(250,204,21,0.05); border:1px solid rgba(250,204,21,0.4); border-radius:24px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:385px; width:760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:48px; font-weight:700; color:var(--neon-yellow);">⚡ RAM <span style="font-size:30px; color:var(--text-lo);">(memory)</span></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid); margin-top:18px; line-height:1.5;">Super fast · volatile</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid); line-height:1.5;">Holds your variables</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--neon-magenta); margin-top:14px;">✗ wiped when the program closes</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:960px; top:350px; width:820px; height:420px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.4); border-radius:24px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:990px; top:385px; width:760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:48px; font-weight:700; color:var(--neon-cyan);">💾 DISK <span style="font-size:30px; color:var(--text-lo);">(storage)</span></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid); margin-top:18px; line-height:1.5;">Slower · permanent</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid); line-height:1.5;">Holds your files</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--neon-lime); margin-top:14px;">✔ survives restarts, reboots, power cuts</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:830px; width:1700px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:34px; color:var(--text-hi); line-height:1.5;"><span class="tok-com"># program runs</span> → data in RAM &nbsp;&nbsp;<span class="tok-com"># program closes</span> → RAM empty, <span style="color:var(--neon-lime);">DISK keeps the file</span></div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:14px;">الذاكرة المؤقتة تُمحى عند الإغلاق، أما القرص فيحتفظ بالملفات إلى الأبد</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S08</div>
+  <div class="chrome-pagenum">08 / 50</div>
+</div>
+<template data-slide-notes>
+**RAM vs Disk visual — 4 min.**
+
+- Draw the life-cycle: run → read file from disk into RAM → work → write back to disk → close. Without step 3, data is lost.
+- Analogy: RAM is a whiteboard, disk is your notebook. You copy homework from the whiteboard into the notebook *before* the class ends.
+- Common misunderstanding: "why not keep everything in RAM?" → because RAM is expensive and volatile.
+- Arabic tip: «الذاكرة عشوائية، القرص دائم» (RAM is random/volatile, disk is permanent).
+</template>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-240px; left:-160px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-280px; right:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">📖 CORE CONCEPT #1</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:90px; font-weight:700; color:var(--text-hi); margin-top:14px;">What is an <span style="color:var(--neon-cyan);">API</span>?</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:330px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; color:var(--text-mid); line-height:1.6;"><span style="color:var(--neon-lime); font-weight:600;">API</span> = <span style="color:var(--text-hi);">Application Programming Interface</span>.<br>It's the <span style="color:var(--neon-cyan);">agreed-upon language</span> two programs use to talk to each other.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:520px; width:560px; height:230px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:555px; width:500px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--neon-cyan);">🐍 Program A</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-lo); margin-top:12px; line-height:1.6;">Your Python script.<br>Wants data. Doesn't know where it lives.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:670px; top:600px; width:120px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:44px; color:var(--neon-magenta); text-align:center;">⇄</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:820px; top:520px; width:560px; height:230px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:850px; top:555px; width:500px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--neon-magenta);">🖥️ Program B</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-lo); margin-top:12px; line-height:1.6;">A server somewhere.<br>Has the data. Publishes it through an API.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1420px; top:520px; width:420px; height:230px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1450px; top:555px; width:360px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--neon-lime);">📦 The API</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-lo); margin-top:12px; line-height:1.6;">A menu of allowed questions + the format of answers.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:800px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-lo); line-height:1.6;">Key insight: an API doesn't give you the server's <span style="color:var(--text-hi);">database</span> — it gives you a <span style="color:var(--neon-yellow);">controlled door</span> with rules. No touching the messy stuff inside.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:930px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">API اختصار لـ "واجهة برمجة التطبيقات" — وهي الباب المنظَّم الذي يتحدث من خلاله برنامجان 🚪</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">07 / 50</div>
+</div>
+<template data-slide-notes>
+Core concept 1 — What is an API.
+
+Deliver as a story: You have two programs. Program A (your Python) wants data it doesn't own. Program B (a server) owns the data. The API is the *agreed rules* — "you may ask these specific questions, in this format, and I will answer like this."
+
+Reinforce the three words: Application (a program), Programming (for developers), Interface (a boundary with rules).
+
+Analogies students connect with:
+- The API is the *menu* at a restaurant — you can't see the kitchen, you just pick from the menu.
+- The API is the *checkout counter* — you don't wander into the warehouse.
+
+Analogy preview: the next slide (08) is the restaurant analogy — use this slide to plant the seed, then go visual.
+
+Arabic tip: الترجمة الحرفية "واجهة برمجة التطبيقات" مربكة؛ اشرحها كـ "اتفاقية محادثة بين برنامجين" — اتفقا على الأسئلة المسموحة وصيغة الإجابات.
+</template>
+</body>
+</html>

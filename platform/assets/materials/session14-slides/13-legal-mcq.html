@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta"></div>
+  <div class="bg-glow-lime"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1760px; z-index:10;">
+    <div class="kicker">CHECKPOINT // QUICK MCQ 🎯</div>
+    <div style="margin-top:26px; font-family:'Space Grotesk',sans-serif; font-size:54px; font-weight:700; color:var(--text-hi);">A site's <span class="mono" style="color:var(--neon-lime);">robots.txt</span> says <span class="mono" style="color:var(--neon-lime);">Disallow: /login</span>. What should you do?</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:14px;">ملف robots.txt يمنع قراءة مسار /login؛ ماذا يجب أن تفعل؟</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:360px; width:1760px; z-index:10;">
+    <div style="display:flex; gap:30px; flex-wrap:wrap;">
+      <div style="width:850px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.3); border-radius:20px; padding:26px 30px;"><span class="chip chip-magenta">A</span> <span style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-hi);">Ignore it — it's just a text file</span></div>
+      <div style="width:850px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.3); border-radius:20px; padding:26px 30px;"><span class="chip chip-magenta">B</span> <span style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-hi);">Try to bypass the login with scripts</span></div>
+      <div style="width:850px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.3); border-radius:20px; padding:26px 30px;"><span class="chip chip-magenta">C</span> <span style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-hi);">Don't scrape /login; scrape only allowed public pages</span></div>
+      <div style="width:850px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.3); border-radius:20px; padding:26px 30px;"><span class="chip chip-magenta">D</span> <span style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-hi);">Send 100 requests at once to test it</span></div>
+    </div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">13 / 50</div>
+</div>
+<template data-slide-notes>
+Answer: C. Respect the robots.txt. /login is behind access control anyway — scraping it would mean bypassing login, which we never do.
+
+Tie to the "golden rule": polite reader, not a thief. B (bypass login) is explicitly off-limits in this course; D is rude and gets you blocked.
+
+Arabic tip: robots.txt مثل قائمة «الممنوع دخوله». احترمها، ولا تحاول «فتح القفل» — فذلك خارج نطاق تعلمنا.
+</template>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-120px; left:-200px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-180px; right:-220px;"></div>
+
+  <div class="chrome-topbar">
+    <span class="chrome-dot"></span>
+    <span>VISUAL // THE STAGING AREA</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-cyan); letter-spacing:0.25em; text-transform:uppercase;">👁️ VISUAL — THE PIPELINE</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi); margin-top:12px;">Working → Staging → <span style="color:var(--neon-magenta);">History</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:400px; width:520px; height:360px; background:rgba(34,211,238,0.07); border:1px solid rgba(34,211,238,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:440px; width:460px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-cyan);">1 · WORKING DIR</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-hi); font-weight:600; margin-top:14px;">Your editor here</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-mid); margin-top:12px; line-height:1.5;">You write &amp; edit files. Changes exist only on disk — Git doesn't know yet.</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--neon-cyan); margin-top:14px;">"untracked / modified"</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:640px; top:520px; width:160px; z-index:10; text-align:center;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--neon-lime);">git add</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:42px; color:var(--neon-lime);">→</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:840px; top:400px; width:520px; height:360px; background:rgba(250,204,21,0.07); border:1px solid rgba(250,204,21,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:870px; top:440px; width:460px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-yellow);">2 · STAGING AREA</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-hi); font-weight:600; margin-top:14px;">A waiting room 🛋️</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-mid); margin-top:12px; line-height:1.5;">Files are prepped for the next snapshot. You can still change your mind.</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--neon-yellow); margin-top:14px;">"staged"</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1400px; top:520px; width:160px; z-index:10; text-align:center;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--neon-magenta);">git commit</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:42px; color:var(--neon-magenta);">→</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1600px; top:400px; width:240px; height:360px; background:rgba(236,72,153,0.07); border:1px solid rgba(236,72,153,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1625px; top:440px; width:190px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--neon-magenta);">3 · HISTORY</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-hi); font-weight:600; margin-top:14px;">📸 saved</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:var(--text-mid); margin-top:10px; line-height:1.5;">Snapshot written to .git forever.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:850px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-hi); font-weight:600;">The daily rhythm 🔁</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:28px; color:var(--text-mid); margin-top:10px;">edit → <span style="color:var(--neon-lime);">git add</span> → <span style="color:var(--neon-magenta);">git commit</span> → repeat</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:26px;">مرحلة التجهيز: منطقة انتظار بين عملك والتاريخ، تُحفظ فيها التغييرات قبل الالتزام.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S10</div>
+  <div class="chrome-pagenum">15 / 50</div>
+</div>
+<template data-slide-notes>
+**Slide 15 — Staging area visual (4 min)**
+- This is THE core mental model of Git. Do not rush it.
+- Three zones: working directory (your editor), staging area (waiting room), history (.git).
+- `git add` moves files INTO the waiting room; `git commit` takes the whole waiting room and stamps it as one snapshot.
+- Emphasise: a commit always captures the staging area, not whatever is open in the editor.
+- Analogy: it's like preparing your suitcase (add) then sealing it with a label (commit).
+- Arabic tip: استخدم استعارة "غرفة الانتظار": git add يُدخل الملفات لغرفة الانتظار، وgit commit يغلق الباب ويحفظ اللقطة.
+</template>
+</body>
+</html>

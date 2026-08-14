@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-150px; right:-120px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-200px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">PRACTICE // YOUR TURN</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:70px; font-weight:700; color:var(--text-hi);">✍️ Exercises — three levels</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:560px; height:470px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.4); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:115px; top:370px; width:500px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; font-weight:700; color:var(--neon-lime);">🌱 EASY</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:16px; line-height:1.6;">Write a program that asks for a number. If the user types text, print <span class="mono" style="color:var(--neon-cyan);">"Please enter a number"</span> and keep the program running.</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-lo); margin-top:18px;">(One try/except around <span class="mono">int(input())</span> — from slide 12.)</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:680px; top:330px; width:560px; height:470px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:715px; top:370px; width:500px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; font-weight:700; color:var(--neon-cyan);">💪 MEDIUM</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:16px; line-height:1.6;">Write <span class="mono" style="color:var(--neon-lime);">safe_average()</span>: take a list of numbers, handle <span class="mono" style="color:var(--neon-magenta);">ZeroDivisionError</span> (empty list) with <span class="mono" style="color:var(--neon-yellow);">else/finally</span>, and return the mean using <span class="mono">statistics.mean</span>.</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-lo); margin-top:18px;">Reuse slide 20's four-lane pattern.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1280px; top:330px; width:560px; height:470px; background:rgba(250,204,21,0.06); border:1px solid rgba(250,204,21,0.4); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1315px; top:370px; width:500px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; font-weight:700; color:var(--neon-yellow);">🔥 CHALLENGE</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:16px; line-height:1.6;">Create a <span class="mono" style="color:var(--neon-magenta);">TemperatureTooHighError</span> custom exception. A <span class="mono" style="color:var(--neon-cyan);">check_temp()</span> function raises it above 100°C. Catch it in main with a clear message.</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-lo); margin-top:18px;">Define → raise → catch (slides 26–27).</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:840px; width:1760px; height:160px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.4); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:870px; width:1680px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-hi);">🐞 <b style="color:var(--neon-magenta);">Debugging challenge:</b> this crashes — <span class="mono" style="color:var(--neon-yellow);">users = {"sara": 92}; print(users["ali"])</span>. Fix it <b style="color:var(--text-hi);">two ways</b>: (1) check with <span class="mono">in</span>, (2) catch <span class="mono" style="color:var(--neon-magenta);">KeyError</span>.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:26px; color:var(--text-lo); direction:rtl; margin-top:12px;">تحدي تصحيح: أصلح الخطأ بطريقتين — فحص مسبق بالمفتاح، أو التقاط KeyError.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">46 / 50</div>
+</div>
+<template data-slide-notes>
+## Exercises — three levels (15 min)
+
+**Let students choose level; encourage climbing.** Give 10 minutes, then quickly go over all three solutions.
+
+**Easy solution:**
+```python
+while True:
+    try:
+        num = int(input("Number: "))
+        break
+    except ValueError:
+        print("Please enter a number")
+print("Got:", num)
+```
+
+**Medium solution sketch:** safe_average uses try/except ZeroDivisionError; else prints the mean; finally prints "done". Note: statistics.mean([]) raises StatisticsError (a ValueError subclass) — the exercise's "empty list" handling can catch ZeroDivisionError if they compute manually, or Exception — keep guidance flexible.
+
+**Challenge solution:** `class TemperatureTooHighError(Exception): pass`; `if temp > 100: raise TemperatureTooHighError("Too hot!")`; wrap call in try/except.
+
+**Debugging challenge (3 min):** solution 1 `if "ali" in users:`; solution 2 `try: print(users["ali"]) except KeyError: print("not found")`. Ask which is better and why (context).
+
+**Arabic tip:** شجّعهم: "المتوسط سهل، والتحدي يبني تطبيقك القادم." لا تترك أحدًا عالقًا على المستوى السهل.
+</template>
+</body>
+</html>

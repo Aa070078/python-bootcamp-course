@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-magenta"></div>
+<div class="bg-glow-lime"></div>
+<div class="chrome-topbar"><span class="chrome-dot"></span>EXERCISES</div>
+
+<div class="kicker" data-object="true" data-object-type="textbox" style="position:absolute;top:96px;left:80px;">TIME TO CODE // 15 MIN</div>
+<div class="arabic" data-object="true" data-object-type="textbox" style="position:absolute;top:138px;left:80px;font-size:24px;color:var(--text-lo);">تمارين بثلاث مستويات</div>
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:200px;left:80px;width:1600px;font-family:'Space Grotesk',sans-serif;font-size:56px;font-weight:700;color:var(--text-hi);">Practice — pick your level, climb up</div>
+
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:330px;left:80px;width:1760px;display:flex;gap:24px;">
+  <div style="flex:1;padding:28px 30px;border-radius:16px;background:rgba(163,230,53,0.05);border:1px solid rgba(163,230,53,0.22);">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+      <span class="chip chip-lime">EASY</span>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:21px;color:var(--text-mid);line-height:1.9;">
+      🎨 Your 3 favorite colors in a <b style="color:var(--text-hi);">set</b>.<br>
+      ➕ Add a 4th with <span style="font-family:'JetBrains Mono',monospace;color:var(--neon-lime);">.add()</span><br>
+      ➖ Remove one with <span style="font-family:'JetBrains Mono',monospace;color:var(--neon-lime);">.discard()</span><br>
+      🔢 Print <span style="font-family:'JetBrains Mono',monospace;color:var(--neon-lime);">len()</span> — notice duplicates collapse.
+    </div>
+  </div>
+  <div style="flex:1;padding:28px 30px;border-radius:16px;background:rgba(250,204,21,0.05);border:1px solid rgba(250,204,21,0.22);">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+      <span class="chip chip-yellow">MEDIUM</span>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:21px;color:var(--text-mid);line-height:1.9;">
+      👥 A <b style="color:var(--text-hi);">dict</b> of 4 friends → their ages.<br>
+      🔁 Loop <span style="font-family:'JetBrains Mono',monospace;color:var(--neon-yellow);">.items()</span> → print <span style="font-family:'JetBrains Mono',monospace;color:var(--neon-cyan);">"name is X years old"</span><br>
+      ➕ Add a new friend.<br>
+      🔍 Look one up with <span style="font-family:'JetBrains Mono',monospace;color:var(--neon-yellow);">.get()</span> + a default.
+    </div>
+  </div>
+  <div style="flex:1;padding:28px 30px;border-radius:16px;background:rgba(236,72,153,0.05);border:1px solid rgba(236,72,153,0.22);">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+      <span class="chip chip-magenta">CHALLENGE</span>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:21px;color:var(--text-mid);line-height:1.9;">
+      ⌨️ Keep asking for names until <span style="font-family:'JetBrains Mono',monospace;color:var(--neon-magenta);">"done"</span>.<br>
+      📦 Store them in a <b style="color:var(--text-hi);">set</b> — auto-dedupe.<br>
+      🗂️ Print the sorted unique names.<br>
+      🔢 Print how many unique names there are.
+    </div>
+  </div>
+</div>
+
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:900px;left:80px;width:1760px;padding:16px 28px;border-radius:14px;background:rgba(163,230,53,0.06);border:1px solid rgba(163,230,53,0.18);"><span style="font-size:23px;color:var(--text-mid);">💡 Each tier builds on the last. Try all three — the challenge tier is 90% of the Contact Manager you just built.</span></div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S06</div>
+<div class="chrome-pagenum">38 / 45</div>
+</div>
+<template data-slide-notes>
+15 minutes of independent work. Encourage students to start at EASY even if it feels simple — it warms up the syntax. The goal is to reach the CHALLENGE tier.
+
+Walking solutions to check:
+
+EASY:
+```python
+colors = {"red", "green", "blue"}
+colors.add("orange")        # set is {red, green, blue, orange}
+colors.discard("green")     # no error even if missing
+print(len(colors))          # 3
+```
+Note: `discard()` never errors; `remove()` would raise KeyError if missing. This is a great teaching moment.
+
+MEDIUM:
+```python
+friends = {"Sara": 16, "Omar": 17, "Lina": 16, "Ali": 18}
+for name, age in friends.items():
+    print(f"{name} is {age} years old")
+friends["Nour"] = 15
+print(friends.get("Nour", "not found"))     # 15
+print(friends.get("Zaid", "not found"))     # not found
+```
+
+CHALLENGE:
+```python
+names = set()
+while True:
+    n = input("Name (or 'done'): ").strip()
+    if n == "done":
+        break
+    names.add(n)
+print(sorted(names))
+print(len(names))
+```
+Emphasize: because it's a SET, adding "Sara" twice still keeps one — no extra if-check needed.
+
+Common mistakes:
+- EASY: using `remove()` on a possibly-missing item → KeyError.
+- MEDIUM: `friends.get("Nour")` returns `None`, not a default — show the two-argument form.
+- CHALLENGE: building a list first then deduping at the end (works, but a set from the start is cleaner).
+
+Arabic tip: ذكّرهم أن اسم التمرين المتوسط «أصدقاء وأعمارهم» — تشبيه القاموس بالدفتر. (The medium task is a friends-and-ages notebook — the classic dict analogy.)
+</template>
+</body>
+</html>

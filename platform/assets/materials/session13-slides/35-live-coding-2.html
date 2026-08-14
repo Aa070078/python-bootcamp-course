@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime" style="top:-240px; right:-160px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-280px; left:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">👨‍💻 LIVE CODING — PART 2/2</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi); margin-top:14px;">Weather app: show it 🌡️</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:320px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-mid); line-height:1.6;">Same script, two more lines: dig into the dict and print a friendly report.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:440px; width:940px; height:330px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:490px; width:880px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.7;">
+    <div><span class="tok-kw">import</span> <span class="tok-var">requests</span></div>
+    <div><br></div>
+    <div><span class="tok-com"># ... part 1: URL, params, data = resp.json()</span></div>
+    <div><br></div>
+    <div><span class="tok-var">weather</span> <span class="tok-op">=</span> <span class="tok-var">data</span>[<span class="tok-str">"current_weather"</span>]</div>
+    <div><span class="tok-var">temp</span> <span class="tok-op">=</span> <span class="tok-var">weather</span>[<span class="tok-str">"temperature"</span>]</div>
+    <div><span class="tok-var">wind</span> <span class="tok-op">=</span> <span class="tok-var">weather</span>[<span class="tok-str">"windspeed"</span>]</div>
+    <div><br></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-fn">f</span>(<span class="tok-str">"Cairo: {temp} °C, wind {wind} km/h"</span>))</div>
+    <div><br></div>
+    <div><span class="tok-kw">if</span> <span class="tok-var">temp</span> <span class="tok-op">&gt;</span> <span class="tok-num">30</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"🔥 It's hot — stay hydrated!"</span>)</div>
+    <div><span class="tok-kw">else</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"😎 Comfortable weather."</span>)</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1070px; top:440px; width:770px; height:330px; background:rgba(250,204,21,0.05); border:1px solid rgba(250,204,21,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1110px; top:480px; width:690px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-yellow);">PREDICT THE REPORT</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:14px; line-height:1.9;">
+      With temp = 38.1, what prints?<br><br>
+      <span class="mono" style="color:var(--neon-lime);">Cairo: 38.1 °C, wind 11.2 km/h</span><br>
+      <span class="mono" style="color:var(--neon-lime);">🔥 It's hot — stay hydrated!</span><br><br>
+      Try <span class="mono" style="color:var(--text-hi);">latitude</span> for London (51.5) or Berlin (52.5) — the same code works for any city!
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:820px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-lo);">🎉 You just built a real app that reads live data. Next: your project — a currency converter.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:905px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">أكملنا التطبيق: استخرجنا الأرقام وطبعنا تقريراً جميلاً — غيّر الإحداثيات لترى الطقس في أي مدينة 🌡️</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">35 / 50</div>
+</div>
+<template data-slide-notes>
+LIVE CODING part 2 — finish the weather app.
+
+Steps (10 min):
+1. Continue weather.py.
+2. Extract current_weather → weather dict, then temperature and windspeed.
+3. Print the f-string report.
+4. Add the if/else comment about temp.
+
+Ask students to change the coordinates to their own city and re-run. This makes the lesson personal — expect excited reactions.
+
+Common mistakes while typing:
+- Forgetting the second index: data["current_weather"]["temperature"] written as data["current_weather"] then printing a dict.
+- Typos in key names → KeyError. Remind: copy-paste keys from print(data).
+
+Bonus if time: wrap in try/except from slide 33, or add a `while` loop asking for city names.
+
+Offline plan: hardcode the sample dict from slide 24 and run the extraction part.
+
+Arabic tip: اتركهم يجرّبون مدينتهم الخاصة — "التخصيص" يرفع الحماس ويرسّخ الفهم أكثر من أي شرح.
+</template>
+</body>
+</html>

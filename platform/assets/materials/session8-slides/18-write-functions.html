@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-200px; right:-160px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-180px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1700px; z-index:10;">
+    <div class="kicker">✍️ CONCEPT 05 — WRITING</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:88px; font-weight:700; color:var(--text-hi); margin-top:10px;">Write data to a file</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:340px; width:1600px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; color:var(--text-mid); line-height:1.45;">Open with <span class="mono" style="color:var(--neon-yellow);">"w"</span> and Python <b style="color:var(--text-hi);">creates the file</b> if needed — but beware: it <b style="color:var(--neon-magenta);">erases the old content</b> first. ⚠️</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:480px; width:820px; height:300px; background:rgba(250,204,21,0.06); border:1px solid rgba(250,204,21,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:515px; width:760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:42px; font-weight:700; color:var(--neon-yellow);">f.write(text)</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:14px; line-height:1.5;">Writes <b style="color:var(--text-hi);">one string</b>. You add <span class="mono" style="color:var(--neon-cyan);">"\n"</span> yourself — Python does not add newlines for you.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:960px; top:480px; width:820px; height:300px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:990px; top:515px; width:760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:42px; font-weight:700; color:var(--neon-cyan);">f.writelines(list)</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:14px; line-height:1.5;">Writes a <b style="color:var(--text-hi);">list of strings</b> in one call. Still no automatic <span class="mono">"\n"</span>.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:850px; width:1700px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:34px; color:var(--text-hi);"><span class="tok-com"># only strings can be written — numbers need str() or f-strings</span></div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:14px;">الوضع w يمسح الملف القديم ثم يكتب الجديد، واكتب الأسطر مع إضافة \n بنفسك</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S08</div>
+  <div class="chrome-pagenum">18 / 50</div>
+</div>
+<template data-slide-notes>
+**Writing functions — 4 min.**
+
+- Big warning board: opening with "w" on an existing file = instant wipe. Demo it with a precious file (or a fake one) to make the point stick.
+- `write` takes exactly one string. Newlines are NOT automatic — that's the #1 "why is it all on one line" bug.
+- Arabic tip: «w يمسح، a يُبقي» (w erases, a keeps).
+</template>
+</body>
+</html>

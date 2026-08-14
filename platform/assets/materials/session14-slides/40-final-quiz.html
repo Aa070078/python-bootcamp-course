@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-magenta"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:80px; width:1760px; z-index:10;">
+    <div class="kicker">FINAL QUIZ // 5 QUESTIONS 🧠</div>
+    <div style="margin-top:26px; font-family:'Space Grotesk',sans-serif; font-size:66px; font-weight:700; color:var(--text-hi);">Prove it — <span style="color:var(--neon-cyan);">answers on paper</span></div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:29px; color:var(--text-lo); direction:rtl; margin-top:14px;">اختبار سريع من خمسة أسئلة — اكتب إجاباتك قبل أن نكشفها</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:330px; width:1760px; z-index:10;">
+    <div style="display:flex; gap:30px;">
+      <div style="flex:1; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:22px; padding:28px;">
+        <div class="chip chip-cyan">Q1</div>
+        <div style="margin-top:16px; font-family:'Space Grotesk',sans-serif; font-size:25px; color:var(--text-mid); line-height:1.55;">Which library downloads the page, and which one parses it?</div>
+      </div>
+      <div style="flex:1; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:22px; padding:28px;">
+        <div class="chip chip-magenta">Q2</div>
+        <div style="margin-top:16px; font-family:'Space Grotesk',sans-serif; font-size:25px; color:var(--text-mid); line-height:1.55;">Selector for "every <span class="mono">&lt;span class='price'&gt;</span>"?</div>
+      </div>
+      <div style="flex:1; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.35); border-radius:22px; padding:28px;">
+        <div class="chip chip-lime">Q3</div>
+        <div style="margin-top:16px; font-family:'Space Grotesk',sans-serif; font-size:25px; color:var(--text-mid); line-height:1.55;"><span class="mono">find()</span> vs <span class="mono">find_all()</span> — what's the difference in return value?</div>
+      </div>
+      <div style="flex:1; background:rgba(250,204,21,0.06); border:1px solid rgba(250,204,21,0.35); border-radius:22px; padding:28px;">
+        <div class="chip chip-yellow">Q4</div>
+        <div style="margin-top:16px; font-family:'Space Grotesk',sans-serif; font-size:25px; color:var(--text-mid); line-height:1.55;">Name 2 things robots.txt can tell you.</div>
+      </div>
+      <div style="flex:1; background:rgba(167,139,250,0.06); border:1px solid rgba(167,139,250,0.35); border-radius:22px; padding:28px;">
+        <div class="chip chip-violet">Q5</div>
+        <div style="margin-top:16px; font-family:'Space Grotesk',sans-serif; font-size:25px; color:var(--text-mid); line-height:1.55;">A site blocks you. What do you do?</div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:880px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid);">🖊️ 3 minutes. Then we correct together — full answers in the next slide's notes.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">40 / 50</div>
+</div>
+<template data-slide-notes>
+Give 3 quiet minutes. Then reveal answers:
+- Q1: requests downloads, BeautifulSoup parses.
+- Q2: "span.price" (tag + dot + class).
+- Q3: find → ONE Tag or None; find_all → a LIST (possibly empty).
+- Q4: which paths are Disallowed, and Crawl-delay (plus User-agent rules).
+- Q5: Stop, slow down, respect it, look for an official API.
+
+Mark quickly with peer-checking. This quiz doubles as the recap pre-test for slide 41.
+
+Arabic tip: راجع معهم أين أخطأوا: معظم الأخطاء في Q2 (نسيان النقطة) وQ3 (الفرق بين عنصر وقائمة).
+</template>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-lime"></div>
+<div class="bg-glow-cyan"></div>
+<div class="chrome-topbar"><span class="chrome-dot"></span>CHALLENGES</div>
+
+<div class="kicker" data-object="true" data-object-type="textbox" style="position:absolute;top:96px;left:80px;">CODE CHALLENGE // 10 MIN</div>
+<div class="arabic" data-object="true" data-object-type="textbox" style="position:absolute;top:138px;left:80px;font-size:24px;color:var(--text-lo);">تحدي البرمجة — عدّ الحروف وإزالة التكرار</div>
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:200px;left:80px;width:1600px;font-family:'Space Grotesk',sans-serif;font-size:56px;font-weight:700;color:var(--text-hi);">Two small challenges — no peeking at solutions!</div>
+
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:330px;left:80px;width:860px;padding:26px 28px;border-radius:18px;background:var(--bg-1);border:1px solid rgba(34,211,238,0.25);">
+  <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--neon-cyan);margin-bottom:10px;">🔡 Challenge 1 — Letter frequency</div>
+  <div style="font-family:'Space Grotesk',sans-serif;font-size:20px;color:var(--text-mid);line-height:1.75;margin-bottom:18px;">Count how many times each letter appears in the string. Build a dict where <b style="color:var(--text-hi);">key = letter, value = count</b>.</div>
+  <div class="code-window" style="width:804px;">
+    <div class="code-window-header">
+      <div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+      <span class="code-window-title">solution.py</span>
+    </div>
+    <pre style="padding:20px 24px;margin:0;font-size:20px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span class="tok-var">text</span> = <span class="tok-str">"hello"</span>
+<span class="tok-var">counts</span> = {}
+<span class="tok-kw">for</span> <span class="tok-var">ch</span> <span class="tok-kw">in</span> <span class="tok-var">text</span>:
+    <span class="tok-var">counts</span>[<span class="tok-var">ch</span>] = <span class="tok-var">counts</span>.<span class="tok-fn">get</span>(<span class="tok-var">ch</span>, <span class="tok-num">0</span>) + <span class="tok-num">1</span>
+<span class="tok-fn">print</span>(<span class="tok-var">counts</span>)</pre>
+  </div>
+  <div style="margin-top:14px;padding:14px 18px;border-radius:10px;background:rgba(163,230,53,0.06);border:1px solid rgba(163,230,53,0.18);">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:19px;color:var(--neon-lime);">Expected → {'h': 1, 'e': 1, 'l': 2, 'o': 1}</span>
+  </div>
+</div>
+
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:330px;left:980px;width:860px;padding:26px 28px;border-radius:18px;background:var(--bg-1);border:1px solid rgba(236,72,153,0.25);">
+  <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--neon-magenta);margin-bottom:10px;">🧑‍🤝‍🧑 Challenge 2 — Dedupe names</div>
+  <div style="font-family:'Space Grotesk',sans-serif;font-size:20px;color:var(--text-mid);line-height:1.75;margin-bottom:18px;">A class list has duplicate names. Keep only the <b style="color:var(--text-hi);">unique names</b> with a set — and count how many were removed.</div>
+  <div class="code-window" style="width:804px;">
+    <div class="code-window-header">
+      <div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+      <span class="code-window-title">solution.py</span>
+    </div>
+    <pre style="padding:20px 24px;margin:0;font-size:20px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span class="tok-var">names</span> = [<span class="tok-str">"Sara"</span>, <span class="tok-str">"Omar"</span>, <span class="tok-str">"Sara"</span>, <span class="tok-str">"Lina"</span>, <span class="tok-str">"Omar"</span>]
+<span class="tok-var">unique</span> = <span class="tok-fn">set</span>(<span class="tok-var">names</span>)
+<span class="tok-fn">print</span>(<span class="tok-fn">len</span>(<span class="tok-var">names</span>), <span class="tok-str">"-&gt;"</span>, <span class="tok-fn">len</span>(<span class="tok-var">unique</span>), <span class="tok-str">"unique"</span>)
+<span class="tok-fn">print</span>(<span class="tok-fn">sorted</span>(<span class="tok-var">unique</span>))</pre>
+  </div>
+  <div style="margin-top:14px;padding:14px 18px;border-radius:10px;background:rgba(163,230,53,0.06);border:1px solid rgba(163,230,53,0.18);">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:19px;color:var(--neon-lime);">Expected → 5 -&gt; 3 unique</span><br>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:19px;color:var(--neon-lime);">['Lina', 'Omar', 'Sara']</span>
+  </div>
+</div>
+
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:940px;left:80px;width:1760px;padding:16px 28px;border-radius:14px;background:rgba(250,204,21,0.06);border:1px solid rgba(250,204,21,0.20);"><span style="font-size:23px;color:var(--text-mid);">💡 Hint — Challenge 1: <span style="font-family:'JetBrains Mono',monospace;color:var(--neon-yellow);">counts.get(ch, 0)</span> returns the current count, or 0 if the letter is new. That's the whole trick.</span></div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S06</div>
+<div class="chrome-pagenum">37 / 45</div>
+</div>
+<template data-slide-notes>
+10 minutes, work in pairs (screen-share or side-by-side). Both challenges are shown WITH solutions — so the real task is to write them from memory in the editor, then check. Ask students to try first, then compare.
+
+Challenge 1 explainer (only if stuck):
+- "For each letter, we need its current count. `counts.get(ch, 0)` gives 0 if it's the first time. Add 1, store it back."
+- Common mistake: writing `counts[ch] = 1` (resets every time → each count = 1) or `counts[ch] += 1` without `.get()` → KeyError on the first new letter. Show both errors live.
+
+Challenge 2 explainer:
+- `set(names)` drops duplicates instantly. `len(names) - len(unique)` = duplicates removed.
+- `sorted(unique)` gives a stable, alphabetical order — sets themselves have no order.
+- Common mistake: forgetting that `sorted()` returns a list, printing the set directly and getting a random-looking order.
+
+When done, quickly poll: "Who had all 5 unique? Who found the KeyError? What fixed it?"
+
+Arabic tip: لاحظ أن كل طالبين معًا يحلّان سريعًا — التحدي الثاني (إزالة التكرار) هو نفس فكرة «حذف الأسماء المكررة من قائمة الصف». (Pairs work faster; challenge 2 mirrors deduping the class list.)
+</template>
+</body>
+</html>

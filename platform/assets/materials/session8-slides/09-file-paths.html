@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-200px; right:-160px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-180px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1700px; z-index:10;">
+    <div class="kicker">🗂️ CONCEPT 02 — FILE PATHS</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:88px; font-weight:700; color:var(--text-hi); margin-top:10px;">File paths — the address of a file</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:340px; width:800px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; color:var(--text-mid); line-height:1.45;">A <b style="color:var(--neon-cyan);">path</b> tells Python <i>where</i> a file lives. Like a house address, it names the folders you must walk through to reach the file.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:520px; width:820px; height:240px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:552px; width:760px; z-index:10;">
+    <div class="kicker" style="font-size:20px;">ABSOLUTE — full address</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:30px; color:var(--text-hi); margin-top:12px;">C:\Users\Nour\notes.txt</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-lo); margin-top:10px;">Works from anywhere on the computer.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:960px; top:520px; width:820px; height:240px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:990px; top:552px; width:760px; z-index:10;">
+    <div class="kicker" style="font-size:20px; color:var(--neon-lime);">RELATIVE — from here</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:30px; color:var(--text-hi); margin-top:12px;">notes.txt &nbsp;or&nbsp; data/users.csv</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-lo); margin-top:10px;">Relative to the folder where Python is running.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:820px; width:1700px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid);">💡 Windows uses <span class="mono" style="color:var(--neon-yellow);">\</span> — Python accepts <span class="mono" style="color:var(--neon-yellow);">/</span> everywhere. <span class="mono">.</span> = current folder, <span class="mono">..</span> = parent folder.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:14px;">المسار هو عنوان الملف على الحاسوب: مسار مطلق كامل أو مسار نسبي من مجلد العمل</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S08</div>
+  <div class="chrome-pagenum">09 / 50</div>
+</div>
+<template data-slide-notes>
+**File paths — 5 min.**
+
+- Ask: "How do you tell a friend where your house is?" Either the full country→street address (absolute) or "from school, walk 2 blocks" (relative). Same idea.
+- Emphasize: most bootcamp work uses relative paths — the file sits next to your `.py`.
+- Note the backslash gotcha: on Windows prefer `/` in Python strings so you don't need double backslashes.
+- Arabic tip: «المسار هو عنوان الملف» — have them translate "absolute" and "relative" back to you.
+</template>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-130px; left:-220px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-160px; right:-200px;"></div>
+
+  <div class="chrome-topbar">
+    <span class="chrome-dot"></span>
+    <span>PROJECT // STEP 2 — COMMIT &amp; PUSH</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:100px; width:1760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-cyan); letter-spacing:0.25em; text-transform:uppercase;">🚀 PROJECT · CODE 2/2</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:66px; font-weight:700; color:var(--text-hi); margin-top:12px;">Step 2: commit the code, then <span style="color:var(--neon-lime);">push it to GitHub</span></div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:1120px; height:420px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">bash — commit + push</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:400px; width:1060px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:28px; line-height:1.8;">
+    <div><span class="tok-num">1</span> <span class="tok-var">$</span> git add . <span class="tok-com"># stage all the code files</span></div>
+    <div><span class="tok-num">2</span> <span class="tok-var">$</span> git commit -m <span class="tok-str">"Add final game code"</span></div>
+    <div class="tok-out">&nbsp;&nbsp;[main 7f3e9a1] Add final game code</div>
+    <div><span class="tok-num">3</span> <span class="tok-var">$</span> git remote add origin https://github.com/you/my_project.git</div>
+    <div><span class="tok-num">4</span> <span class="tok-var">$</span> git push -u origin main</div>
+    <div class="tok-out">&nbsp;&nbsp;* [new branch] main -&gt; main</div>
+    <div style="height:8px;"></div>
+    <div><span class="tok-com"># later: edit app.py → add → commit → push again</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1260px; top:340px; width:580px; height:420px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.3); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1290px; top:380px; width:520px; z-index:10;">
+    <div style="font-size:50px;">🔄</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:33px; color:var(--text-hi); font-weight:600; margin-top:10px;">Upgrade &amp; re-push</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:14px; line-height:1.6;">
+      1️⃣ Change one feature in app.py<br>
+      2️⃣ git add .<br>
+      3️⃣ git commit -m "Add level select"<br>
+      4️⃣ git push <span class="tok-com"># -u remembered origin</span>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--neon-lime); margin-top:16px;">Edit → commit → push. That's the pro rhythm.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:850px; width:1760px; z-index:10;">
+    <span class="chip chip-lime">add . → commit -m → push</span>
+    <span class="chip chip-yellow">repeat after every feature</span>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:24px;">الخطوة 2: التزم الكود كله وادفعه إلى GitHub، ثم أضف ميزة وادفع مجدداً.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S10</div>
+  <div class="chrome-pagenum">34 / 50</div>
+</div>
+<template data-slide-notes>
+**Slide 34 — Project code 2 (12 min)**
+- Live the full flow: add all code → commit → create empty GitHub repo → add remote → push -u origin main.
+- Insist on the correct order: remote add BEFORE push, commit BEFORE push.
+- After the first successful push, have them add ONE small feature, then re-commit + re-push to feel the loop.
+- Check everyone's GitHub URL is live. Collect 2–3 links and open them on the projector.
+- Troubleshoot on the spot: "remote origin already exists" → `git remote set-url origin <url>`.
+- Arabic tip: الإيقاع المحترف: عدّل ← التزم ← ادفع. هذا كل شيء — البساطة قوة.
+</template>
+</body>
+</html>

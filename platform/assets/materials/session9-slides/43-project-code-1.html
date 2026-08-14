@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-150px; right:-120px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-200px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">PROJECT // CODE — PART 1</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:70px; font-weight:700; color:var(--text-hi);">💼 Part 1 — helpers &amp; validation</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid); margin-top:20px;">The two functions that make the game <b style="color:var(--neon-lime);">unbreakable</b>.</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:940px; height:560px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span><span class="code-dot code-dot-y"></span><span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">pyguess.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:388px; width:900px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.75;">
+    <div><span class="tok-kw">import</span> <span class="tok-var">json</span></div>
+    <div><span class="tok-kw">import</span> <span class="tok-var">random</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-kw">def</span> <span class="tok-fn">get_int</span>(<span class="tok-var">prompt</span>, <span class="tok-var">low</span>, <span class="tok-var">high</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">while</span> <span class="tok-kw">True</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">try</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">value</span> <span class="tok-op">=</span> <span class="tok-fn">int</span>(<span class="tok-fn">input</span>(<span class="tok-var">prompt</span>))</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">except</span> <span class="tok-var">ValueError</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Not a number. Try again."</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">continue</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">if</span> <span class="tok-var">low</span> <span class="tok-op">&lt;=</span> <span class="tok-var">value</span> <span class="tok-op">&lt;=</span> <span class="tok-var">high</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-var">value</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-fn">f</span>(<span class="tok-str">"Enter a number between {low} and {high}."</span>))</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1080px; top:330px; width:760px; height:560px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.3); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1120px; top:372px; width:680px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--neon-lime);">Read it line by line 🔍</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:22px; line-height:1.7;">
+      ▶ <span class="mono" style="color:var(--neon-cyan);">while True</span> — never give up on asking.<br><br>
+      ▶ <span class="mono" style="color:var(--neon-magenta);">try int(input())</span> — risky conversion.<br><br>
+      ▶ <span class="mono" style="color:var(--neon-magenta);">except ValueError</span> → message → <span class="mono" style="color:var(--neon-yellow);">continue</span> re-asks.<br><br>
+      ▶ <span class="mono" style="color:var(--neon-lime);">if low ≤ value ≤ high</span> — range check.<br><br>
+      ▶ <span class="mono" style="color:var(--neon-cyan);">return value</span> — first valid number wins.
+    </div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:26px; color:var(--text-lo); direction:rtl; margin-top:24px;">هذه الدالة هي درع اللعبة: تُعيد أول رقم صحيح ضمن المدى، وترفض كل ما سواه برفق.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">43 / 50</div>
+</div>
+<template data-slide-notes>
+## Project code part 1 — get_int (8 min)
+
+**Type it with them.** This is the upgraded get_int from live-coding #2, now with range parameters low/high.
+
+**Walk the flow with example inputs:**
+- "banana" → int() fails → ValueError → message → continue (loop again).
+- "99" (with high=20) → passes int() → range check fails → message → loop again.
+- "7" → passes both → return 7.
+
+**Why continue:** restarts the while loop — clean way to "ask again". Without continue, the code would fall through to the range check with a bad value... actually no — the except block catches, then execution continues after the try; continue prevents the range check. Point this out explicitly.
+
+**Checkpoint (2 min):** have each student write the function, then pair-compare. Fast class: also write `load_scores()` from the next slide.
+
+**Arabic tip:** اختبرهم: "ماذا يحدث مع banana؟ مع 99؟ مع 7؟" — تتبعوا المسارات الثلاثة معًا.
+</template>
+</body>
+</html>

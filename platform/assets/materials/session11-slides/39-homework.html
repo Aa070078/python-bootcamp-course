@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime"></div>
+  <div class="bg-glow-cyan"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; z-index:10;">
+    <div class="kicker">📚 HOMEWORK // LIBRARY MANAGER</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:160px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:84px; font-weight:700; color:var(--text-hi);">Homework: Library Manager 📚</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:16px;">الواجب: نظام مكتبة + استخدام Git — أرسل رابط المستودع</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:400px; width:880px; height:520px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.45); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:440px; width:820px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700; color:var(--text-hi);">Tasks 🧾</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:24px; line-height:1.75;">
+      1️⃣ <span class="mono">Book(title, author, year)</span> + <span class="mono">__str__</span><br>
+      2️⃣ <span class="mono">Library</span> with add / remove / find_by_title / show_all<br>
+      3️⃣ Bonus: <span class="mono">borrow(title)</span> sets <span class="mono">book.borrowed = True</span><br>
+      4️⃣ Demo at the bottom: add 3 books, find one, list all
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1000px; top:400px; width:840px; height:520px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.45); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1030px; top:440px; width:780px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700; color:var(--text-hi);">Ship it with Git 🚢</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--text-mid); margin-top:24px; line-height:1.8;">
+      <span style="color:var(--neon-cyan);">git init</span><br>
+      <span style="color:var(--neon-cyan);">git add .</span><br>
+      <span style="color:var(--neon-cyan);">git commit -m "library oop homework"</span><br>
+      <span style="color:var(--neon-cyan);">git push -u origin main</span>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--neon-lime); margin-top:26px;">Deliverable: the GitHub repo URL. Review is on Monday.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S11</div>
+  <div class="chrome-pagenum">39 / 50</div>
+</div>
+<template data-slide-notes>
+**Homework = build a Library Manager, ship via Git. Ties the session to last week.**
+
+- Go through the tasks; the Library structure mirrors Bank (composition + find returning None).
+- Remind them of the review-MCQ answers from the start: add → commit → push.
+- Deadline + submission: GitHub repo URL (in the chat / LMS). Monday review.
+- Encourage: homework is graded on *working code that runs*, not perfect design. Running > elegant.
+- Arabic tip: «أرسل رابط المستودع» — submit the repo link.
+- Give the stretch: borrow() with a bool return, and preventing double-borrow.
+- Quick check they know where to start: "What class first?" → Book (it's the leaf).
+</template>
+</body>
+</html>

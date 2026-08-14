@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-200px; right:-160px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-180px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1700px; z-index:10;">
+    <div class="kicker">⚠️ CONCEPT 12 — FILE ERRORS</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:84px; font-weight:700; color:var(--text-hi); margin-top:10px;">When files fight back</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:360px; width:820px; height:300px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:395px; width:760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:34px; font-weight:700; color:var(--neon-magenta);">FileNotFoundError</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:14px; line-height:1.5;">Reading a file that doesn't exist. <b style="color:var(--text-hi);">Most common crash today.</b></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:960px; top:360px; width:820px; height:300px; background:rgba(250,204,21,0.06); border:1px solid rgba(250,204,21,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:990px; top:395px; width:760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:34px; font-weight:700; color:var(--neon-yellow);">PermissionError</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:14px; line-height:1.5;">No permission to read/write (protected folder, locked file).</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:720px; width:820px; height:240px; background:rgba(167,139,250,0.06); border:1px solid rgba(167,139,250,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:755px; width:760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:34px; font-weight:700; color:var(--neon-violet);">IsADirectoryError</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:14px; line-height:1.5;">You gave a folder path where a file is expected.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:960px; top:720px; width:820px; height:240px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:990px; top:755px; width:760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:34px; font-weight:700; color:var(--neon-cyan);">JSONDecodeError</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:14px; line-height:1.5;">The file's JSON is broken (missing comma, bad quote).</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:1000px; width:1700px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:29px; color:var(--text-lo); direction:rtl;">أخطاء شائعة: ملف غير موجود، صلاحيات مرفوضة، مسار مجلد، أو JSON تالف</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S08</div>
+  <div class="chrome-pagenum">34 / 50</div>
+</div>
+<template data-slide-notes>
+**File errors — 4 min.**
+
+- Teach the error name → cause mapping. Don't read the whole traceback; read the LAST line.
+- Demo: `open("does_not_exist.txt")` live and let them see FileNotFoundError.
+- Preview: next slide's try/except is the medicine. Sessions 9 covers exceptions deeply — today we just need the bandage.
+- Arabic tip: «اقرأ آخر سطر من الخطأ» (read the last line of the error).
+</template>
+</body>
+</html>

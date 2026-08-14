@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime"></div>
+  <div class="bg-glow-magenta"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1760px; z-index:10;">
+    <div class="kicker">PREDICT THE OUTPUT 🧠</div>
+    <div style="margin-top:26px; font-family:'Space Grotesk',sans-serif; font-size:52px; font-weight:700; color:var(--text-hi);">This page has <span class="mono" style="color:var(--neon-lime);">3 paragraphs</span>. What prints?</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:14px;">الصفحة تحتوي ثلاث فقرات؛ ماذا سيطبع الكود؟</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:1100px; height:430px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">predict.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" data-lang="python" style="position:absolute; left:110px; top:390px; width:1040px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:27px; line-height:1.7;">
+    <div><span class="tok-var">soup</span> = <span class="tok-fn">BeautifulSoup</span>(<span class="tok-str">"&lt;p&gt;A&lt;/p&gt;&lt;p&gt;B&lt;/p&gt;&lt;p&gt;C&lt;/p&gt;"</span>, <span class="tok-str">"html.parser"</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-fn">soup.find</span>(<span class="tok-str">"p"</span>).text)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-fn">len</span>(<span class="tok-fn">soup.find_all</span>(<span class="tok-str">"p"</span>)))</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-fn">soup.find_all</span>(<span class="tok-str">"p"</span>)[<span class="tok-num">2</span>].text)</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1240px; top:350px; width:600px; z-index:10;">
+    <div class="chip chip-yellow">THINK</div>
+    <div style="margin-top:22px; font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); line-height:1.6;">Write your 3 answers on paper. Then we run it and compare. 🖊️</div>
+    <div style="margin-top:18px; font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-lo);">find → first item. find_all → whole list. Index [2] → third.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:25px; color:var(--text-lo); direction:rtl; margin-top:18px;">توقّع: A ثم 3 ثم C — هل أصبت؟</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">26 / 50</div>
+</div>
+<template data-slide-notes>
+Answer: `A`, `3`, `C`.
+
+Teaching moment: find returns first (A). find_all returns a list of 3 tags → len 3. Indexing [2] (0-based!) gives the third paragraph C.
+
+Ask students who answered 2 for the middle line — why? Because they may have counted find() also as "a find". Emphasize: find returns ONE tag; find_all returns the full list.
+
+Arabic tip: الترقيم يبدأ من صفر: [0] الأول، [2] الثالث. عادة يفاجئ الطلاب.
+</template>
+</body>
+</html>

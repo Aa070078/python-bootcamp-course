@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-180px; right:-150px;"></div>
+  <div class="bg-glow-lime" style="bottom:-220px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:100px; width:1720px; z-index:10;">
+    <div class="kicker">⌨️ CODE — MULTIPLE PARAMETERS</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi); margin-top:14px;">One function, many inputs</div>
+    <div class="arabic" style="font-size:30px; color:var(--text-lo); margin-top:12px; direction:rtl;">دالة واحدة تقبل عدة مدخلات وتستقبل قيمًا مختلفة</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:1100px; height:420px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">greetings.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:400px; width:1040px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:27px; line-height:1.65;">
+    <div><span class="tok-kw">def</span> <span class="tok-fn">greet</span>(<span class="tok-var">name</span>, <span class="tok-var">age</span>, <span class="tok-var">city</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">f"Hi {name} ({age}) from {city}!"</span>)</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-fn">greet</span>(<span class="tok-str">"Nour"</span>, <span class="tok-num">19</span>, <span class="tok-str">"Cairo"</span>)</div>
+    <div><span class="tok-fn">greet</span>(<span class="tok-str">"Omar"</span>, <span class="tok-num">21</span>, <span class="tok-str">"Dubai"</span>)</div>
+    <div><span class="tok-fn">greet</span>(<span class="tok-str">"Sara"</span>, <span class="tok-num">18</span>, <span class="tok-str">"Amman"</span>)</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1240px; top:340px; width:600px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--neon-lime);">Same recipe → different dishes 🍲</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:18px; line-height:1.7;">3 calls, 3 outputs — but the logic lives in ONE place.</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--text-lo); margin-top:22px; line-height:1.7;">
+      <div><span class="tok-out">Hi Nour (19) from Cairo!</span></div>
+      <div><span class="tok-out">Hi Omar (21) from Dubai!</span></div>
+      <div><span class="tok-out">Hi Sara (18) from Amman!</span></div>
+    </div>
+    <div class="arabic" style="font-size:26px; color:var(--text-lo); margin-top:20px; direction:rtl;">ثلاث استدعاءات وثلاث مخرجات، لكن المنطق مكتوب مرة واحدة فقط</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S07</div>
+  <div class="chrome-pagenum">13 / 50</div>
+</div>
+<template data-slide-notes>
+- Live type the 3-parameter version; have students shout the arguments.
+- Emphasize: parameter ORDER defines the contract — document it in your head.
+- Count arguments: "How many arguments in call #2?" → three.
+- Show the output column on the right corresponds to each call.
+- Common mistake: passing too many/too few → TypeError. Let them hit it once.
+- Arabic tip: لاحظ أن القيم تتغير لكن الدالة ثابتة — هذا جوهر إعادة الاستخدام.
+- Challenge the class: write a version that returns the string instead of printing (foreshadow).
+</template>
+</body>
+</html>

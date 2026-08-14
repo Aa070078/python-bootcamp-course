@@ -1,0 +1,202 @@
+[
+    {
+        "file":  "01-cover.html",
+        "title":  "01-cover"
+    },
+    {
+        "file":  "02-hook.html",
+        "title":  "02-hook"
+    },
+    {
+        "file":  "03-review-mcq-1.html",
+        "title":  "03-review-mcq-1"
+    },
+    {
+        "file":  "04-review-mcq-2.html",
+        "title":  "04-review-mcq-2"
+    },
+    {
+        "file":  "05-review-mcq-3.html",
+        "title":  "05-review-mcq-3"
+    },
+    {
+        "file":  "06-timeline.html",
+        "title":  "06-timeline"
+    },
+    {
+        "file":  "07-errors-types.html",
+        "title":  "07-errors-types"
+    },
+    {
+        "file":  "08-errors-visual.html",
+        "title":  "08-errors-visual"
+    },
+    {
+        "file":  "09-traceback.html",
+        "title":  "09-traceback"
+    },
+    {
+        "file":  "10-traceback-visual.html",
+        "title":  "10-traceback-visual"
+    },
+    {
+        "file":  "11-livecode-1.html",
+        "title":  "11-livecode-1"
+    },
+    {
+        "file":  "12-try-except.html",
+        "title":  "12-try-except"
+    },
+    {
+        "file":  "13-try-except-code.html",
+        "title":  "13-try-except-code"
+    },
+    {
+        "file":  "14-mcq-try-except.html",
+        "title":  "14-mcq-try-except"
+    },
+    {
+        "file":  "15-specific-exceptions.html",
+        "title":  "15-specific-exceptions"
+    },
+    {
+        "file":  "16-exceptions-code.html",
+        "title":  "16-exceptions-code"
+    },
+    {
+        "file":  "17-mcq-which-exception.html",
+        "title":  "17-mcq-which-exception"
+    },
+    {
+        "file":  "18-predict-output-1.html",
+        "title":  "18-predict-output-1"
+    },
+    {
+        "file":  "19-else-finally.html",
+        "title":  "19-else-finally"
+    },
+    {
+        "file":  "20-else-finally-code.html",
+        "title":  "20-else-finally-code"
+    },
+    {
+        "file":  "21-mcq-else-finally.html",
+        "title":  "21-mcq-else-finally"
+    },
+    {
+        "file":  "22-raise.html",
+        "title":  "22-raise"
+    },
+    {
+        "file":  "23-raise-code.html",
+        "title":  "23-raise-code"
+    },
+    {
+        "file":  "24-input-validation.html",
+        "title":  "24-input-validation"
+    },
+    {
+        "file":  "25-livecode-2.html",
+        "title":  "25-livecode-2"
+    },
+    {
+        "file":  "26-custom-exceptions.html",
+        "title":  "26-custom-exceptions"
+    },
+    {
+        "file":  "27-custom-exceptions-code.html",
+        "title":  "27-custom-exceptions-code"
+    },
+    {
+        "file":  "28-modules.html",
+        "title":  "28-modules"
+    },
+    {
+        "file":  "29-import.html",
+        "title":  "29-import"
+    },
+    {
+        "file":  "30-from-import.html",
+        "title":  "30-from-import"
+    },
+    {
+        "file":  "31-mcq-import.html",
+        "title":  "31-mcq-import"
+    },
+    {
+        "file":  "32-predict-output-2.html",
+        "title":  "32-predict-output-2"
+    },
+    {
+        "file":  "33-creating-modules.html",
+        "title":  "33-creating-modules"
+    },
+    {
+        "file":  "34-name-main.html",
+        "title":  "34-name-main"
+    },
+    {
+        "file":  "35-name-main-code.html",
+        "title":  "35-name-main-code"
+    },
+    {
+        "file":  "36-stdlib.html",
+        "title":  "36-stdlib"
+    },
+    {
+        "file":  "37-mcq-stdlib.html",
+        "title":  "37-mcq-stdlib"
+    },
+    {
+        "file":  "38-pip.html",
+        "title":  "38-pip"
+    },
+    {
+        "file":  "39-requirements.html",
+        "title":  "39-requirements"
+    },
+    {
+        "file":  "40-venv.html",
+        "title":  "40-venv"
+    },
+    {
+        "file":  "41-venv-commands.html",
+        "title":  "41-venv-commands"
+    },
+    {
+        "file":  "42-project-intro.html",
+        "title":  "42-project-intro"
+    },
+    {
+        "file":  "43-project-code-1.html",
+        "title":  "43-project-code-1"
+    },
+    {
+        "file":  "44-project-code-2.html",
+        "title":  "44-project-code-2"
+    },
+    {
+        "file":  "45-project-output.html",
+        "title":  "45-project-output"
+    },
+    {
+        "file":  "46-exercises.html",
+        "title":  "46-exercises"
+    },
+    {
+        "file":  "47-homework.html",
+        "title":  "47-homework"
+    },
+    {
+        "file":  "48-final-quiz.html",
+        "title":  "48-final-quiz"
+    },
+    {
+        "file":  "49-recap.html",
+        "title":  "49-recap"
+    },
+    {
+        "file":  "50-cheatsheet.html",
+        "title":  "50-cheatsheet"
+    }
+]

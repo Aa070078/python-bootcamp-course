@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-lime"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; z-index:10;">
+    <div class="kicker">⚡ LIVE CODING #2 // RUN IT</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:150px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:78px; font-weight:700; color:var(--text-hi);">School System — write &amp; run</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:16px;">اكتب الأصناف الثلاثة وشغّل الجلسة — الأصناف تتحدث مع بعضها</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:320px; width:1280px; height:660px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">school.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:378px; width:1220px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.5;">
+    <div><span class="tok-kw">class</span> <span class="tok-var">Course</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">__init__</span>(<span class="tok-var">self</span>, <span class="tok-var">title</span>, <span class="tok-var">credits</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">title</span> <span class="tok-op">=</span> <span class="tok-var">title</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">credits</span> <span class="tok-op">=</span> <span class="tok-var">credits</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-kw">class</span> <span class="tok-var">Student</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">__init__</span>(<span class="tok-var">self</span>, <span class="tok-var">name</span>, <span class="tok-var">age</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">name</span> <span class="tok-op">=</span> <span class="tok-var">name</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">age</span> <span class="tok-op">=</span> <span class="tok-var">age</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">courses</span> <span class="tok-op">=</span> []</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">enroll</span>(<span class="tok-var">self</span>, <span class="tok-var">course</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">courses</span>.<span class="tok-fn">append</span>(<span class="tok-var">course</span>)</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-kw">class</span> <span class="tok-var">School</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">__init__</span>(<span class="tok-var">self</span>, <span class="tok-var">name</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">name</span> <span class="tok-op">=</span> <span class="tok-var">name</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">students</span> <span class="tok-op">=</span> []</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">add_student</span>(<span class="tok-var">self</span>, <span class="tok-var">student</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">students</span>.<span class="tok-fn">append</span>(<span class="tok-var">student</span>)</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-var">school</span> <span class="tok-op">=</span> <span class="tok-fn">School</span>(<span class="tok-str">"Neon High"</span>)</div>
+    <div><span class="tok-var">course</span> <span class="tok-op">=</span> <span class="tok-fn">Course</span>(<span class="tok-str">"Python"</span>, <span class="tok-num">3</span>)</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-var">s1</span> <span class="tok-op">=</span> <span class="tok-fn">Student</span>(<span class="tok-str">"Lina"</span>, <span class="tok-num">17</span>)</div>
+    <div><span class="tok-var">s1</span>.<span class="tok-fn">enroll</span>(<span class="tok-var">course</span>)</div>
+    <div><span class="tok-var">school</span>.<span class="tok-fn">add_student</span>(<span class="tok-var">s1</span>)</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-kw">for</span> <span class="tok-var">s</span> <span class="tok-kw">in</span> <span class="tok-var">school</span>.<span class="tok-var">students</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-fn">f</span><span class="tok-str">"{s.name}, {s.age}"</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">for</span> <span class="tok-var">c</span> <span class="tok-kw">in</span> <span class="tok-var">s</span>.<span class="tok-var">courses</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-fn">f</span><span class="tok-str">"  → {c.title} ({c.credits} cr)"</span>)</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1400px; top:320px; width:440px; height:660px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1430px; top:362px; width:380px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--text-hi);">Output 🖥️</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:27px; color:var(--neon-lime); margin-top:20px; line-height:1.7;">
+      Lina, 17<br>
+      &nbsp;&nbsp;→ Python (3 cr)
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:24px; line-height:1.6;">Objects talking to objects — <b>composition</b> in action.</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--neon-lime); margin-top:22px;">Now add a second student with 2 courses — does anything else change?</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S11</div>
+  <div class="chrome-pagenum">48 / 50</div>
+</div>
+<template data-slide-notes>
+**Write + run the school app live. This mirrors exactly the C3 challenge and homework structure.**
+
+- Have students type the whole file, then run together. Celebrate output "Lina, 17 → Python (3 cr)".
+- Ask the challenge question: add Omar with two courses — the loop already handles it. Nothing else changes. (That's composition + uniform interface.)
+- Point out the "dot chains": `school.students` → objects, `s.courses` → objects, `c.title` → data. Objects containing objects containing data.
+- Arabic tip: «كائنات تتحدث مع كائنات» — objects talking to objects.
+- Fast finishers: convert Student to inherit from a `Person` base (name, age) — the live demo of inheritance inside composition.
+- Wrap: "That's two apps in one session."
+</template>
+</body>
+</html>

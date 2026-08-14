@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-magenta"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1760px; z-index:10;">
+    <div class="kicker">PROJECT // LET'S BUILD IT 🔨</div>
+    <div style="margin-top:26px; font-family:'Space Grotesk',sans-serif; font-size:84px; font-weight:700; color:var(--text-hi); line-height:1.05;">Mini project: <span style="color:var(--neon-lime);">Quote Scraper</span></div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:29px; color:var(--text-lo); direction:rtl; margin-top:14px;">مشروع اليوم: كاشطة اقتباسات — نجلب الصفحة، نستخرج الاقتباسات والمؤلفين، ونحفظها</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:1040px; height:480px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.35); border-radius:24px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:370px; width:980px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--text-hi);">🎯 The task</div>
+    <div style="margin-top:16px; font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); line-height:1.6;">Scrape <span class="mono" style="color:var(--neon-lime);">quotes.toscrape.com</span> — a sandbox site made for learning. For every quote: <b>text</b> + <b>author</b>. Save to a file.</div>
+    <div style="margin-top:22px; font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-lo); line-height:1.6;">✅ robots.txt allows it ✅ public data ✅ perfect for learning</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1180px; top:330px; width:660px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--text-hi);">🧩 Structure</div>
+    <div style="margin-top:20px; font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); line-height:1.7;">
+      <span class="mono" style="color:var(--neon-cyan);">&lt;div class="quote"&gt;</span><br>
+      &nbsp;&nbsp;<span class="mono">└─ &lt;span class="text"&gt;</span> “The quote…”<br>
+      &nbsp;&nbsp;<span class="mono">└─ &lt;small class="author"&gt;</span> Author<br>
+      <span class="mono" style="color:var(--neon-cyan);">&lt;/div&gt;</span> — repeated 10× per page
+    </div>
+    <div style="margin-top:18px;"><span class="chip chip-lime">SELECTORS: .quote .text .author</span></div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:26px; color:var(--text-lo); direction:rtl; margin-top:22px;">كل اقتباس داخل div يحمل الفئة quote، والنص والمؤلف داخل عنصرين فرعيين</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">32 / 50</div>
+</div>
+<template data-slide-notes>
+Project kickoff. We build together, two code slides (33-34) + output (35).
+
+Why quotes.toscrape.com? Built BY scraping teachers FOR scraping practice — zero ethical risk. This is the "gym" for scraping.
+
+Show the page structure live: open the site, inspect one .quote div, count 10 per page.
+
+Set the goal: by slide 35 you'll have a file with every quote + author from the homepage, saved as JSON.
+
+Arabic tip: هذا الموقع «صالة تدريب» للكشط — بياناته عامة ومخصصة للتعلم، فتدربوا عليه بثقة.
+</template>
+</body>
+</html>

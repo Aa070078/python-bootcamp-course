@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-150px; left:-120px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-200px; right:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">PREDICT THE OUTPUT // #2</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:70px; font-weight:700; color:var(--text-hi);">🔍 Predict the output</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid); margin-top:20px;">Trace it. No running. Write all three lines.</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:900px; height:360px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span><span class="code-dot code-dot-y"></span><span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">rounding.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:398px; width:850px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.7;">
+    <div><span class="tok-kw">import</span> <span class="tok-var">math</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">math</span>.<span class="tok-fn">floor</span>(<span class="tok-num">3.9</span>))</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">math</span>.<span class="tok-fn">ceil</span>(<span class="tok-num">3.1</span>))</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-fn">round</span>(<span class="tok-num">3.5</span>))</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:760px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-hi);">Write the three outputs ✍️</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid); margin-top:22px; line-height:1.6;">Hints: floor = down, ceil = up, round = nearest. <b style="color:var(--text-hi);">Python's round has a surprise.</b></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:900px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid); line-height:1.6;">✔ Output: <span class="mono" style="color:var(--neon-lime);">3</span>, <span class="mono" style="color:var(--neon-lime);">4</span>, <span class="mono" style="color:var(--neon-lime);">4</span> — floor(3.9)=3, ceil(3.1)=4, round(3.5)=4 (banker's rounding rounds .5 to even).</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:14px;">floor يُقرّب للأسفل، ceil للأعلى، بينما round يستخدم "تدوير المصرفيين" عند النصف.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">32 / 50</div>
+</div>
+<template data-slide-notes>
+## Predict the output #2 — math module
+
+**90 seconds, no running.** Students write three lines: 3, 4, then... the surprise.
+
+**Banker's rounding surprise:** `round(3.5)` is 4, but `round(4.5)` is ALSO 4 (rounds to even). This trips everyone once. `math.floor`/`math.ceil` always behave as expected (down/up). If you need classic "always round half up", you'd use `math.floor(x + 0.5)` or the Decimal module (mention, don't go deep).
+
+**Teaching point:** knowing your stdlib functions avoids reinventing wheels — and knowing their edge cases avoids bugs.
+
+**Arabic tip:** "round(4.5) = 4" مفاجأة يحفظونها — علّمهم أن بايثون تختار العدد الزوجي عند النصف.
+</template>
+</body>
+</html>

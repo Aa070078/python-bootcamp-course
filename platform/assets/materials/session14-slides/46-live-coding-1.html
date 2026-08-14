@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-lime"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:70px; width:1760px; z-index:10;">
+    <div class="kicker">LIVE CODING // WE BUILD TOGETHER ⌨️</div>
+    <div style="margin-top:22px; font-family:'Space Grotesk',sans-serif; font-size:52px; font-weight:700; color:var(--text-hi);">From blank file to data — step by step</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:12px;">كود مباشر: نكتب سكربتًا كاملًا معًا من الصفر — راقبني ثم اكتب نفسك</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:300px; width:1200px; height:500px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">live_1.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" data-lang="python" style="position:absolute; left:110px; top:360px; width:1140px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.6;">
+    <div><span class="tok-kw">import</span> requests</div>
+    <div><span class="tok-kw">from</span> bs4 <span class="tok-kw">import</span> BeautifulSoup</div>
+    <div></div>
+    <div><span class="tok-var">url</span> = <span class="tok-str">"https://quotes.toscrape.com/"</span></div>
+    <div><span class="tok-var">resp</span> = <span class="tok-fn">requests.get</span>(<span class="tok-var">url</span>, timeout=<span class="tok-num">10</span>)</div>
+    <div><span class="tok-var">soup</span> = <span class="tok-fn">BeautifulSoup</span>(<span class="tok-var">resp.text</span>, <span class="tok-str">"html.parser"</span>)</div>
+    <div></div>
+    <div><span class="tok-var">first</span> = <span class="tok-fn">soup.select_one</span>(<span class="tok-str">".quote"</span>) <span class="tok-com"># one quote block</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-fn">first.select_one</span>(<span class="tok-str">".text"</span>).get_text())</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"--"</span>, <span class="tok-fn">first.select_one</span>(<span class="tok-str">".author"</span>).get_text())</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1330px; top:320px; width:510px; z-index:10;">
+    <div class="chip chip-lime">FOLLOW ALONG</div>
+    <div style="margin-top:20px; font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); line-height:1.6;">
+      I type, you type. Run it. Then <span style="color:var(--neon-lime);">your turn:</span> change <span class="mono">select_one</span> → <span class="mono">select</span> and loop all quotes.
+    </div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:25px; color:var(--text-lo); direction:rtl; margin-top:20px;">اكتب الكود معي خطوة بخطوة ثم حوّله ليستخرج كل الاقتباسات</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">46 / 50</div>
+</div>
+<template data-slide-notes>
+Live-coding session #1 (15 min). Build live_1.py from scratch, narrating every decision:
+- "Why timeout?" (hang prevention)
+- "Why select_one for the first quote?" (we just want one to test the pipeline)
+- Then challenge them to swap to select + for loop.
+
+Pause frequently: ask "what do you expect to print?" before running. Fix errors out loud when they appear (they will — good teaching).
+
+Arabic tip: الكود المكتوب بيديك يُحفر في الذاكرة — لا تنسخوا، اكتبوا معي حرفًا حرفًا.
+</template>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime"></div>
+  <div class="bg-glow-cyan"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:70px; width:1760px; z-index:10;">
+    <div class="kicker">PROJECT // THE OUTPUT 🎉</div>
+    <div style="margin-top:22px; font-family:'Space Grotesk',sans-serif; font-size:54px; font-weight:700; color:var(--text-hi);">You just scraped your first dataset!</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:12px;">أنت الآن تملك أول بياناتك المكشوطة: عشرة اقتباسات مع مؤلفيها</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:290px; width:1200px; height:560px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">quotes.json</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" data-lang="python" style="position:absolute; left:110px; top:350px; width:1140px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:24px; line-height:1.55;">
+    <div>[</div>
+    <div>&nbsp;&nbsp;{</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"text"</span>: <span class="tok-str">"“The world as we have created it is a process of our thinking...”"</span>,</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"author"</span>: <span class="tok-str">"Albert Einstein"</span></div>
+    <div>&nbsp;&nbsp;},</div>
+    <div>&nbsp;&nbsp;{</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"text"</span>: <span class="tok-str">"“It is our choices, Harry, that show what we truly are...”"</span>,</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"author"</span>: <span class="tok-str">"J.K. Rowling"</span></div>
+    <div>&nbsp;&nbsp;},</div>
+    <div>&nbsp;&nbsp;<span class="tok-com"># ... 8 more quotes ...</span></div>
+    <div>]</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1330px; top:320px; width:510px; z-index:10;">
+    <div class="chip chip-lime">🎉 DONE</div>
+    <div style="margin-top:20px; font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); line-height:1.6;">
+      Open it with <span class="mono">json.load</span> anywhere. Load it in Excel, in a chart, in a GUI next session.
+    </div>
+    <div style="margin-top:16px; font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-lo);">Next: make it go through <b>all pages</b> — politely.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:25px; color:var(--text-lo); direction:rtl; margin-top:18px;">بيانات منظمة جاهزة للاستخدام — هذه مهارة حقيقية في سوق العمل</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">35 / 50</div>
+</div>
+<template data-slide-notes>
+Celebrate the win — students just built a real data pipeline. Show the JSON file, compare to what they saw in the browser.
+
+Ask: "How many lines did this take? Now imagine 10 pages, 1000 quotes — same loop."
+
+Road to pagination: the homepage shows page 1 only. Next slide shows the /page/N/ trick.
+
+Arabic tip: قارن بين عرض المتصفح والـJSON: نفس المعلومات، لكن منظمة كبيانات قابلة للبرمجة.
+</template>
+</body>
+</html>

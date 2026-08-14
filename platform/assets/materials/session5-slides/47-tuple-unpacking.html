@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-cyan"></div>
+<div class="chrome-topbar"><span class="chrome-dot"></span>TUPLES</div>
+
+<div class="kicker" style="position:absolute;top:100px;left:80px;">TUPLE UNPACKING</div>
+<div class="arabic" style="position:absolute;top:140px;left:80px;font-size:24px;color:var(--text-lo););font-size:24px;color:var(--text-lo);">تفكيك الصف</div>
+<div style="position:absolute;top:210px;left:80px;font-size:36px;font-weight:700;color:var(--text-hi);max-width:1600px;">Extract every value <span style="color:var(--neon-magenta);">into variables in one line</span></div>
+<div style="position:absolute;top:320px;left:80px;"><div class="code-window" style="width:880px;">
+<div class="code-window-header">
+<div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+<span class="code-window-title">unpacking.py</span>
+</div>
+<pre style="padding:24px 28px;margin:0;font-size:20px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span class="tok-var">point</span> = (<span class="tok-num">3</span>, <span class="tok-num">4</span>)
+
+<span class="tok-com"># One line — two variables!</span>
+<span class="tok-var">x</span>, <span class="tok-var">y</span> = <span class="tok-var">point</span>
+<span class="tok-fn">print</span>(<span class="tok-var">x</span>)  <span class="tok-com"># 3</span>
+<span class="tok-fn">print</span>(<span class="tok-var">y</span>)  <span class="tok-com"># 4</span>
+
+<span class="tok-com"># Real-world: swapping values</span>
+<span class="tok-var">a</span>, <span class="tok-var">b</span> = <span class="tok-num">5</span>, <span class="tok-num">10</span>
+<span class="tok-var">a</span>, <span class="tok-var">b</span> = <span class="tok-var">b</span>, <span class="tok-var">a</span>
+<span class="tok-fn">print</span>(<span class="tok-var">a</span>, <span class="tok-var">b</span>)  <span class="tok-com"># 10 5 — no temp variable needed!</span>
+
+<span class="tok-com"># Works on lists too</span>
+<span class="tok-var">name</span>, <span class="tok-var">score</span> = [<span class="tok-str">"Ahmed"</span>, <span class="tok-num">95</span>]</span></pre>
+</div></div>
+<div style="position:absolute;top:320px;right:80px;width:800px;padding:24px;border-radius:14px;background:rgba(163,230,53,0.06);border:1px solid rgba(163,230,53,0.15);">
+  <div style="font-size:24px;font-weight:700;color:var(--neon-lime);margin-bottom:14px;">💡 Why it matters</div>
+  <div style="font-size:21px;color:var(--text-mid);line-height:1.8;">Unpacking is used everywhere — <span style="font-family:JetBrains Mono,monospace;color:var(--neon-cyan);">enumerate()</span>, <span style="font-family:JetBrains Mono,monospace;color:var(--neon-cyan);">zip()</span>, nested lists. You already saw it in Session 4!</div>
+</div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S05</div>
+<div class="chrome-pagenum">47 / 63</div>
+<template data-slide-notes>Tuple unpacking: assign each element to a variable in one line. Enables the classic Python swap: a,b = b,a.</template>
+</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime" style="top:-180px; right:-150px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-220px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1720px; z-index:10;">
+    <div class="kicker">📚 HOMEWORK — STUDENT MANAGEMENT SYSTEM</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi); margin-top:16px;">Build your mini system 🏫</div>
+    <div class="arabic" style="font-size:30px; color:var(--text-lo); margin-top:12px; direction:rtl;">واجب المنزل: نظام إدارة طلاب صغير مبني على الدوال والقواميس</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:850px; height:360px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:370px; width:790px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700; color:var(--neon-cyan);">Tasks 🗒️</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:16px; line-height:1.9;">
+      <div>1️⃣ <span class="mono">add_student(students, name)</span></div>
+      <div>2️⃣ <span class="mono">add_score(students, name, score)</span></div>
+      <div>3️⃣ <span class="mono">average_of(name)</span></div>
+      <div>4️⃣ <span class="mono">top_student(students)</span></div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:960px; top:340px; width:850px; height:360px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.4); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:990px; top:370px; width:790px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700; color:var(--neon-lime);">Data shape 💾</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--text-lo); margin-top:16px; line-height:1.7;">
+      <div><span class="tok-var">students</span> <span class="tok-op">=</span> {</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"Nour"</span>: [<span class="tok-num">90</span>, <span class="tok-num">85</span>],</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"Omar"</span>: [<span class="tok-num">70</span>]</div>
+    <div>}</div>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-mid); margin-top:12px;">Name → list of scores.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:760px; width:1720px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--neon-yellow);">Bonus ⭐: a text menu to drive it all — you already know how!</div>
+    <div class="arabic" style="font-size:28px; color:var(--text-lo); margin-top:12px; direction:rtl;">مكافأة: قائمة نصية تشغّل النظام كله — أنت تعرف الطريقة الآن</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S07</div>
+  <div class="chrome-pagenum">45 / 50</div>
+</div>
+<template data-slide-notes>
+- Homework = the project pattern applied to a student database.
+- Walk the data shape: dict of name → list of scores.
+- Tips: top_student compares averages; use .get() for missing names.
+- Suggest they reuse average() from live coding.
+- Expected solutions:
+  - add_student: `students.setdefault(name, [])` or `if name not in students: students[name] = []`
+  - average_of: `sum(scores)/len(scores)`
+  - top_student: loop through students, track max average.
+- Deadline: next session. Encouragement: this is portfolio material.
+- Arabic tip: نفّذ الوظائف واحدة واحدة واختبرها قبل الانتقال للتالية.
+- Transition: "Final quiz — prove your mastery!"
+</template>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime"></div>
+  <div class="bg-glow-magenta"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; z-index:10;">
+    <div class="kicker">🥇 CHALLENGES // TRY YOURSELF</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:160px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:84px; font-weight:700; color:var(--text-hi);">Three challenges</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:16px;">تحديات متدرجة — اختر مستواك ثم ادفع نفسك للأعلى</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:380px; width:560px; height:560px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.45); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:416px; width:500px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--neon-lime);">C1 · Easy — __str__ 🪄</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:18px; line-height:1.65;">Add <span class="mono">__str__</span> to <span class="mono">Student</span> so that:<br><br><span class="mono" style="color:var(--neon-cyan);">print(Student("Lina", 17))</span><br>→ <span class="mono" style="color:var(--neon-lime);">Lina — 17 years</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:680px; top:380px; width:560px; height:560px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.45); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:710px; top:416px; width:500px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--neon-cyan);">C2 · Medium — Vehicle 🚗</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:18px; line-height:1.65;">Base <span class="mono">Vehicle(brand, max_speed)</span> with <span class="mono">describe()</span>.<br><br>Children: <span class="mono">Car</span> + seats, <span class="mono">Motorcycle</span> + has_sidecar. Override describe in each.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1280px; top:380px; width:560px; height:560px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.45); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1310px; top:416px; width:500px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--neon-magenta);">C3 · Hard — Mini Library 📚</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:18px; line-height:1.65;"><span class="mono">Book(title, author)</span> + <span class="mono">Library</span> with <span class="mono">add</span>, <span class="mono">find_by_title</span>, <span class="mono">show_all</span>.<br><br>Use composition (Library HAS books).</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S11</div>
+  <div class="chrome-pagenum">37 / 50</div>
+</div>
+<template data-slide-notes>
+**10 minutes, individual or pairs.** Everyone starts at C1, then goes as far as possible.
+
+- C1 solution: `def __str__(self): return f"{self.name} — {self.age} years"`.
+- C2 solution sketch: base sets brand/max_speed; Car adds seats and describe returns f"{brand} car with {seats} seats"; Motorcycle similar. Overriding demo.
+- C3 solution sketch: Library holds `self.books = []`; add appends; find_by_title loops and returns book or None (same pattern as Bank.find); show_all loops and prints.
+- Circulate and help: the most common blockers are forgetting self, and returning None vs printing.
+- Arabic tip: «ابدأ السهل، واصعد» — start easy, climb higher.
+- C3 is basically homework preview — completing it = homework half done.
+</template>
+</body>
+</html>

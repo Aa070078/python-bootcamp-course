@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta"></div>
+  <div class="bg-glow-lime"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:80px; width:1760px; z-index:10;">
+    <div class="kicker">CORE CONCEPT // SEARCHING THE TREE 🔍</div>
+    <div style="margin-top:26px; font-family:'Space Grotesk',sans-serif; font-size:78px; font-weight:700; color:var(--text-hi); line-height:1.05;"><span style="color:var(--neon-magenta);">find()</span> and <span style="color:var(--neon-lime);">find_all()</span></div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:29px; color:var(--text-lo); direction:rtl; margin-top:14px;">find تعيد أول عنصر مطابق، وfind_all تعيد قائمة بكل العناصر المطابقة</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:320px; width:1760px; z-index:10;">
+    <div style="display:flex; gap:34px;">
+      <div style="flex:1; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:22px; padding:32px;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:28px; color:var(--neon-magenta);">soup.find("h1")</div>
+        <div style="margin-top:18px; font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-mid); line-height:1.6;">Returns the <b>first</b> match, or <span class="mono">None</span> if nothing matches. → 1 element (or nothing).</div>
+        <div style="margin-top:16px;"><span class="chip chip-magenta">FIRST MATCH</span></div>
+      </div>
+      <div style="flex:1; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.35); border-radius:22px; padding:32px;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:28px; color:var(--neon-lime);">soup.find_all("li")</div>
+        <div style="margin-top:18px; font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-mid); line-height:1.6;">Returns a <b>list</b> of every match. Loop over it: <span class="mono">for item in soup.find_all("li")</span>.</div>
+        <div style="margin-top:16px;"><span class="chip chip-lime">ALL MATCHES</span></div>
+      </div>
+      <div style="flex:1; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:22px; padding:32px;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:28px; color:var(--neon-cyan);">find_all("span", class_="price")</div>
+        <div style="margin-top:18px; font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-mid); line-height:1.6;">Filter by tag AND attribute. Note: <span class="mono">class_</span> with underscore (class is a keyword).</div>
+        <div style="margin-top:16px;"><span class="chip chip-cyan">FILTERED</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:900px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:31px; color:var(--text-hi);">🕵️ <span style="color:var(--neon-yellow);">find()</span> = "give me one" • <span style="color:var(--neon-lime);">find_all()</span> = "give me the list" • results are <span style="color:var(--neon-cyan);">Tag</span> objects, use <span class="mono">.text</span></div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">24 / 50</div>
+</div>
+<template data-slide-notes>
+The two workhorses. find() = first match or None (great when you KNOW there's one). find_all() = list (great for "every product", "every comment").
+
+The classic bug: forgetting the underscore in class_. Python can't use class as a parameter name.
+
+Analogies: find() = "show me the first person named Omar". find_all() = "show me everyone named Omar".
+
+Arabic tip: find = أوّل تطابق فقط، find_all = كل التطابقات. تذكر الشرطة السفلية في class_!
+</template>
+</body>
+</html>

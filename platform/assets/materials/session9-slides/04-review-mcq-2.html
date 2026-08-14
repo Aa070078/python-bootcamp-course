@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime" style="top:-160px; right:-120px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-200px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">WARM-UP // LAST SESSION: FILES &amp; JSON</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:180px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi);">📖 Review MCQ #2 — JSON in Python</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:330px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-hi);">You have a Python dict and you want a <b style="color:var(--neon-cyan);">JSON string</b> to save into a file. Which call does it?</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid); margin-top:28px; line-height:1.7;">
+      <span class="chip chip-magenta" style="margin-right:14px;">A&nbsp; json.load(data)</span>
+      <span class="chip chip-cyan" style="margin-right:14px;">B&nbsp; json.dump(data)</span>
+      <span class="chip chip-lime" style="margin-right:14px;">C&nbsp; json.dumps(data)</span>
+      <span class="chip chip-violet" style="margin-right:14px;">D&nbsp; json.loads(data)</span>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:610px; width:1760px; height:270px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.3); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:640px; width:1680px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.65;">
+      <div><span class="tok-var">player</span> <span class="tok-op">=</span> {<span class="tok-str">"name"</span>: <span class="tok-str">"Sara"</span>, <span class="tok-str">"score"</span>: <span class="tok-num">92</span>}</div>
+      <div><span class="tok-var">text</span> <span class="tok-op">=</span> <span class="tok-fn">json.dumps</span>(<span class="tok-var">player</span>)&nbsp;&nbsp;<span class="tok-com"># -> '{"name": "Sara", "score": 92}'</span></div>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid); margin-top:26px; line-height:1.5;">💡 Memory trick: <b style="color:var(--text-hi);">dumps = to String</b>, <b style="color:var(--text-hi);">dump = to File</b>.<br>The <span class="mono" style="color:var(--neon-yellow);">s</span> stands for <b>string</b>.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:920px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--neon-lime); font-weight:700;">✔ Answer: C — json.dumps(data) returns the JSON string.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:14px;">تذكّر: dumps تُحوّل إلى نص JSON، بينما dump تكتب مباشرة إلى ملف.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">04 / 50</div>
+</div>
+<template data-slide-notes>
+## Review MCQ #2 — json.dumps vs json.dump
+
+**Have them answer first** (A-D), then reveal C.
+
+**Key teaching point:** `json.dumps` → string (think "s" for string), `json.loads` → parse a string; `json.dump`/`json.load` work on **files**. Students mix these up constantly — hammer the "s" memory trick.
+
+**Connection to today:** json.loads / json.load can both raise errors — if the JSON file is corrupt you get a `json.JSONDecodeError`. Today we learn to catch exactly that.
+
+**Arabic tip:** اربط "s" بكلمة "نص/سلسلة" (string). ركّز على أن الحرف s يعني نصًا وليس ملفًا.
+</template>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="left:-220px; top:-180px;"></div>
+  <div class="bg-glow-magenta" style="right:-160px; bottom:-160px;"></div>
+
+  <!-- QUESTION -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:140px; width:1760px; z-index:10;">
+    <div class="kicker">📖 REVIEW — SESSION 5 · LISTS &amp; TUPLES</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:60px; font-weight:700; color:var(--text-hi); margin-top:20px;">Which one creates a valid <span style="color:var(--neon-lime);">tuple</span>?</div>
+    <div class="arabic" style="font-size:28px; color:var(--text-lo); margin-top:14px;">أيٌّ من هذه الخيارات يمثّل توبل (tuple) صحيح؟</div>
+    <div class="mono" style="margin-top:16px; font-size:22px; color:var(--text-dim);">🤔 Take 20 seconds — no code, just recall…</div>
+  </div>
+
+  <!-- OPTION A -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:430px; width:860px; height:160px; background:rgba(167,139,250,0.06); border:1px solid rgba(167,139,250,0.35); border-radius:18px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:112px; top:466px; width:800px; z-index:10;">
+    <div style="display:flex; align-items:center;">
+      <span style="font-family:'JetBrains Mono',monospace; font-size:28px; font-weight:700; color:#0a0e1a; background:var(--neon-violet); border-radius:10px; padding:6px 16px; margin-right:24px;">A</span>
+      <span style="font-family:'JetBrains Mono',monospace; font-size:40px; color:var(--text-hi);">[<span class="tok-num">1</span>, <span class="tok-num">2</span>, <span class="tok-num">3</span>]</span>
+    </div>
+  </div>
+
+  <!-- OPTION B -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:430px; width:860px; height:160px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:18px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1012px; top:466px; width:800px; z-index:10;">
+    <div style="display:flex; align-items:center;">
+      <span style="font-family:'JetBrains Mono',monospace; font-size:28px; font-weight:700; color:#0a0e1a; background:var(--neon-cyan); border-radius:10px; padding:6px 16px; margin-right:24px;">B</span>
+      <span style="font-family:'JetBrains Mono',monospace; font-size:40px; color:var(--text-hi);">(<span class="tok-num">1</span>, <span class="tok-num">2</span>, <span class="tok-num">3</span>)</span>
+    </div>
+  </div>
+
+  <!-- OPTION C -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:640px; width:860px; height:160px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.35); border-radius:18px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:112px; top:676px; width:800px; z-index:10;">
+    <div style="display:flex; align-items:center;">
+      <span style="font-family:'JetBrains Mono',monospace; font-size:28px; font-weight:700; color:#0a0e1a; background:var(--neon-lime); border-radius:10px; padding:6px 16px; margin-right:24px;">C</span>
+      <span style="font-family:'JetBrains Mono',monospace; font-size:40px; color:var(--text-hi);">{<span class="tok-num">1</span>, <span class="tok-num">2</span>, <span class="tok-num">3</span>}</span>
+    </div>
+  </div>
+
+  <!-- OPTION D -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:640px; width:860px; height:160px; background:rgba(250,204,21,0.06); border:1px solid rgba(250,204,21,0.35); border-radius:18px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1012px; top:676px; width:800px; z-index:10;">
+    <div style="display:flex; align-items:center;">
+      <span style="font-family:'JetBrains Mono',monospace; font-size:28px; font-weight:700; color:#0a0e1a; background:var(--neon-yellow); border-radius:10px; padding:6px 16px; margin-right:24px;">D</span>
+      <span style="font-family:'JetBrains Mono',monospace; font-size:40px; color:var(--text-hi);">&lt;<span class="tok-num">1</span>, <span class="tok-num">2</span>, <span class="tok-num">3</span>&gt;</span>
+    </div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S06</div>
+  <div class="chrome-pagenum">03 / 45</div>
+</div>
+<template data-slide-notes>
+**Slide 3 — Review MCQ (Session 5: lists & tuples)**
+
+**Answer: B — `(1, 2, 3)`** is the tuple.
+
+- A `[1, 2, 3]` → a **list** (square brackets, mutable, ordered).
+- C `{1, 2, 3}` → a **set** in Python 3 (curly braces) — a sneak peek of today's topic, or a dict.
+- D `<1, 2, 3>` → not valid Python.
+
+Explain the bracket memory trick: `[ ]` list, `( )` tuple, `{ }` set/dict.
+
+Say: "This session is the *next chapter* — C is literally where we start today!"
+
+Arabic tip: أعد تذكير الطلاب بجدول الأقواس: القوس المربع قائمة، والقوس الدائري توبل، والقوس المعقوف مجموعة. اكتب الجدول على السبورة.
+</template>
+</body>
+</html>

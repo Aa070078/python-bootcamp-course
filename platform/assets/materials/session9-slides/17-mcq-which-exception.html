@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime" style="top:-150px; right:-120px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-200px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">CHECKPOINT // MCQ #2</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:70px; font-weight:700; color:var(--text-hi);">🎯 MCQ — Name that exception</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid); margin-top:20px;">Which exception does this line raise?</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:900px; height:330px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span><span class="code-dot code-dot-y"></span><span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">mystery.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:398px; width:850px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:27px; line-height:1.7;">
+    <div><span class="tok-var">user</span> <span class="tok-op">=</span> <span class="tok-fn">input</span>(<span class="tok-str">"How many siblings? "</span>)</div>
+    <div><span class="tok-var">count</span> <span class="tok-op">=</span> <span class="tok-fn">int</span>(<span class="tok-var">user</span>)&nbsp;&nbsp;<span class="tok-com"># user typed "three" 😅</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:720px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-hi);">int() got the string <span class="mono" style="color:var(--neon-yellow);">"three"</span>. Which exception is raised?</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid); margin-top:26px; line-height:1.8;">
+      <span class="chip chip-cyan" style="margin-right:14px;">A&nbsp; TypeError</span>
+      <span class="chip chip-lime" style="margin-right:14px;">B&nbsp; ValueError</span>
+      <span class="chip chip-violet" style="margin-right:14px;">C&nbsp; KeyError</span>
+      <span class="chip chip-magenta" style="margin-right:14px;">D&nbsp; SyntaxError</span>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:930px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--neon-lime); font-weight:700;">✔ Answer: B — the value is wrong (it IS a string, just not convertible). Value<b>Error</b>.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:14px;">النوع صحيح (نص) لكن القيمة غير قابلة للتحويل، لذلك الاستثناء هو ValueError وليس TypeError.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">17 / 50</div>
+</div>
+<template data-slide-notes>
+## MCQ #2 — name that exception
+
+**Trap alert:** students often confuse ValueError with TypeError here. Distinguish:
+- TypeError = wrong TYPE of thing ("2" + 2 → mixing str and int).
+- ValueError = right type, unacceptable VALUE ("three" is a valid string, but not a valid number for int()).
+
+**Rule of thumb to teach:** if `int()` can't convert it, that's ValueError. If you're mixing incompatible types, that's TypeError.
+
+**Extra drill (1 min):** quick-fire: `float("NaN")` → ValueError; `len(5)` → TypeError; `[1,2][5]` → IndexError.
+
+**Arabic tip:** كلمة السر: ValueError = قيمة غير مقبولة، TypeError = نوع غير متوافق. القيمة والنوع شيئان مختلفان.
+</template>
+</body>
+</html>

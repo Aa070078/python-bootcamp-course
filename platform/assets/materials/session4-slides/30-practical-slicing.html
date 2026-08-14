@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-cyan"></div>
+
+<div class="kicker" style="position:absolute;top:100px;left:80px;">PRACTICAL SLICING</div>
+<div class="arabic" style="position:absolute;top:140px;left:80px;font-size:24px;color:var(--text-lo);">applications عملية للتقسيم</div>
+<div style="position:absolute;top:200px;left:80px;"><div class="code-window" style="width:880px;">
+<div class="code-window-header">
+<div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+<span class="code-window-title">slicing_examples.py</span>
+</div>
+<pre style="padding:24px 28px;margin:0;font-size:20px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span class="tok-com"># Get file extension</span>
+<span class="tok-var">filename</span> = <span class="tok-str">"photo.jpg"</span>
+<span class="tok-var">ext</span> = <span class="tok-var">filename</span>[<span class="tok-num">-4</span>:]  <span class="tok-com"># ".jpg"</span>
+
+<span class="tok-com"># Check if palindrome</span>
+<span class="tok-var">word</span> = <span class="tok-str">"racecar"</span>
+<span class="tok-var">is_pal</span> = <span class="tok-var">word</span> <span class="tok-op">==</span> <span class="tok-var">word</span>[<span class="tok-num">::-1</span>]  <span class="tok-com"># True</span>
+
+<span class="tok-com"># Mask a phone number</span>
+<span class="tok-var">phone</span> = <span class="tok-str">"0512345678"</span>
+<span class="tok-var">masked</span> = <span class="tok-var">phone</span>[:<span class="tok-num">3</span>] + <span class="tok-str">"****"</span> + <span class="tok-var">phone</span>[<span class="tok-num">-3</span>:]
+<span class="tok-fn">print</span>(<span class="tok-var">masked</span>)  <span class="tok-com"># "051****678"</span>
+
+<span class="tok-com"># Get initials</span>
+<span class="tok-var">name</span> = <span class="tok-str">"Ahmed Ali"</span>
+<span class="tok-var">space</span> = <span class="tok-var">name</span>.<span class="tok-fn">find</span>(<span class="tok-str">" "</span>)
+<span class="tok-var">initials</span> = <span class="tok-var">name</span>[<span class="tok-num">0</span>] + <span class="tok-var">name</span>[<span class="tok-var">space</span><span class="tok-op">+</span><span class="tok-num">1</span>]
+<span class="tok-fn">print</span>(<span class="tok-var">initials</span>)  <span class="tok-com"># "AA"</span></pre>
+</div></div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S04</div>
+<div class="chrome-pagenum">30 / 76</div>
+<template data-slide-notes></template>
+</div>
+</body>
+</html>

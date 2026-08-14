@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-180px; right:-150px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-200px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1720px; z-index:10;">
+    <div class="kicker">🔮 PREDICT THE OUTPUT #2</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi); margin-top:16px;">Defaults + stars together</div>
+    <div class="arabic" style="font-size:30px; color:var(--text-lo); margin-top:12px; direction:rtl;">توقّع: قيمة افتراضية مع نجمتين — ماذا ستُطبع؟</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:1000px; height:360px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">predict2.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:400px; width:940px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:27px; line-height:1.65;">
+    <div><span class="tok-kw">def</span> <span class="tok-fn">describe</span>(<span class="tok-var">name</span>, <span class="tok-var">city</span><span class="tok-op">=</span><span class="tok-str">"Cairo"</span>, <span class="tok-op">**</span><span class="tok-var">extra</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-var">name</span>, <span class="tok-var">city</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-var">extra</span>)</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-fn">describe</span>(<span class="tok-str">"Nour"</span>, <span class="tok-var">level</span><span class="tok-op">=</span><span class="tok-num">3</span>, <span class="tok-var">team</span><span class="tok-op">=</span><span class="tok-str">"Blue"</span>)</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" string="false" style="position:absolute; left:1140px; top:340px; width:680px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--neon-yellow);">What prints? 🤔</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:16px; line-height:1.6;">Which args become <span class="mono">extra</span>?<br>What's the default city?</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1140px; top:560px; width:680px; height:240px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1170px; top:590px; width:620px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--text-lo); line-height:1.8;">
+      <div><span class="tok-out">Nour Cairo</span></div>
+      <div><span class="tok-out">{'level': 3, 'team': 'Blue'}</span></div>
+    </div>
+    <div class="arabic" style="font-size:26px; color:var(--text-lo); margin-top:14px; direction:rtl;">"Cairo" القيمة الافتراضية، والباقي تجمعه النجمتان في قاموس</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S07</div>
+  <div class="chrome-pagenum">36 / 50</div>
+</div>
+<template data-slide-notes>
+- **Answer: "Nour Cairo" then {'level': 3, 'team': 'Blue'}.**
+- Nour → name (positional); no city given → default "Cairo"; level/team → extra dict.
+- Walk the matching logic: filled params get their args, leftover keywords → **extra.
+- Common slip: students expect city to be something else or extra to be a tuple.
+- Note: we used print, not return — the function prints and returns None.
+- Arabic tip: القيم غير المطابقة تذهب تلقائيًا إلى **kwargs.
+- Transition: "Enough reading — let's BUILD. Live coding time!"
+</template>
+</body>
+</html>

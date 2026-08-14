@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime" style="top:-240px; right:-160px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-280px; left:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">🎨 VISUAL — THE RESTAURANT</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi); margin-top:14px;">APIs are menus. 🍽️</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:310px; width:520px; height:300px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:340px; width:460px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-hi);">😀 You (the client)</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-lo); margin-top:14px; line-height:1.6;">Sit at the table. You know what you want, but you <span style="color:var(--neon-cyan);">cannot cook</span>.</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-lime); margin-top:16px;">"I'd like a pizza" 🍕</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:640px; top:430px; width:100px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:40px; color:var(--neon-magenta); text-align:center;">→</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:780px; top:310px; width:520px; height:300px; background:rgba(250,204,21,0.07); border:1px solid rgba(250,204,21,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:810px; top:340px; width:460px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-hi);">🙋 The waiter (the API)</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-lo); margin-top:14px; line-height:1.6;">Knows exactly which dishes exist and carries the order back.</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-yellow); margin-top:16px;">Menu → order → deliver 🛎️</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1340px; top:430px; width:100px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:40px; color:var(--neon-magenta); text-align:center;">→</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1480px; top:310px; width:420px; height:300px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1510px; top:340px; width:360px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-hi);">👨‍🍳 Kitchen (the server)</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-lo); margin-top:14px; line-height:1.6;">Has the ingredients and makes the dish. You never walk in.</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-magenta); margin-top:16px;">"Here's your pizza 🍕"</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:660px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-mid); line-height:1.6;">The waiter never lets you see the kitchen. You can only order <span style="color:var(--neon-lime);">what's on the menu</span> — that's the API contract. ✨</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:780px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-lo);">Mapping to real life: <span class="mono" style="color:var(--neon-cyan);">Menu = list of endpoints</span> &middot; <span class="mono" style="color:var(--neon-lime);">Dish = the data</span> &middot; <span class="mono" style="color:var(--neon-yellow);">Order = your request</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:900px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">المطعم هو أوضح تشبيه: أنت تطلب من القائمة، والنادل ينقل طلبك، والمطبخ ينفّذ — دون أن ترى المطبخ 🍽️</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">08 / 50</div>
+</div>
+<template data-slide-notes>
+The restaurant analogy — the visual anchor for the whole session.
+
+Walk the diagram left to right: You (client) → Waiter (API) → Kitchen (server).
+
+Repeat three times if needed; the analogy is the *master key* of the session. Whenever students get lost later, say "remember the waiter."
+
+Key points:
+- The menu = the documentation. You can only ask for what's listed.
+- You never enter the kitchen = you never touch the server's database.
+- The waiter enforces rules = the API validates your request and returns an error if invalid.
+
+Memory hooks for students: "API = the waiter", "endpoint = menu item", "request = your order", "response = your dish".
+
+Quick check (verbal): "If I want the weather, which 'dish' would I order? Where's the waiter?" — then continue to slide 09.
+
+Arabic tip: اطلب من طالب أن يلخّص التشبيه بجملة واحدة بالعربية — التكرار بأسلوبهم يثبّت المفهوم.
+</template>
+</body>
+</html>

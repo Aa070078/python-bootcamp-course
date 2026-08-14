@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-150px; right:-120px;"></div>
+  <div class="bg-glow-lime" style="bottom:-200px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">CHECKPOINT // MCQ #3</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:70px; font-weight:700; color:var(--text-hi);">🎯 MCQ — else vs finally</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:900px; height:330px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span><span class="code-dot code-dot-y"></span><span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">order.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:388px; width:850px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.7;">
+    <div><span class="tok-kw">try</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">x</span> <span class="tok-op">=</span> <span class="tok-num">5</span> <span class="tok-op">//</span> <span class="tok-num">0</span></div>
+    <div><span class="tok-kw">except</span> <span class="tok-var">ZeroDivisionError</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"E"</span>)</div>
+    <div><span class="tok-kw">else</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"S"</span>)</div>
+    <div><span class="tok-kw">finally</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"F"</span>)</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:720px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-hi);">What does it print?</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid); margin-top:26px; line-height:1.8;">
+      <span class="chip chip-magenta" style="margin-right:14px;">A&nbsp; E<br>F</span>
+      <span class="chip chip-lime" style="margin-right:14px;">B&nbsp; E<br>S<br>F</span>
+      <span class="chip chip-violet" style="margin-right:14px;">C&nbsp; S<br>F</span>
+      <span class="chip chip-yellow" style="margin-right:14px;">D&nbsp; F only</span>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:930px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--neon-lime); font-weight:700;">✔ Answer: A — division failed, so except runs, else is skipped, finally always runs. Output: E then F.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:14px;">القسمة على صفر فشلت، فتنفَّذ E، ويُتخطى else، ويبقى finally دائمًا: الناتج E ثم F.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">21 / 50</div>
+</div>
+<template data-slide-notes>
+## MCQ #3 — else vs finally
+
+**Predict first (2 min).** The trap: thinking else runs when an exception is caught (it does NOT — else runs only when try succeeds). finally always runs.
+
+**Walk it:** `5 // 0` raises ZeroDivisionError → except prints "E" → else skipped (try failed) → finally prints "F". Output E, F.
+
+**Variations to drill:** if line were `x = 5 // 2` → output "S" then "F". Contrast the two outputs on the board.
+
+**Arabic tip:** اختبرهم شفهيًا: "متى يعمل else؟" — فقط عند نجاح try. "متى يعمل finally؟" — دائمًا.
+</template>
+</body>
+</html>

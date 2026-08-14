@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime" style="top:-180px; right:-150px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-220px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:100px; width:1720px; z-index:10;">
+    <div class="kicker">⌨️ PROJECT CODE — PART 1: OPERATIONS</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi); margin-top:14px;">The four machines</div>
+    <div class="arabic" style="font-size:30px; color:var(--text-lo); margin-top:12px; direction:rtl;">أربع دوال صغيرة: كل دالة عملية حسابية واحدة — نقية وقابلة لإعادة الاستخدام</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:1180px; height:440px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">calc.py — part 1</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:400px; width:1120px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.7;">
+    <div><span class="tok-kw">def</span> <span class="tok-fn">add</span>(<span class="tok-var">a</span>, <span class="tok-var">b</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-var">a</span> <span class="tok-op">+</span> <span class="tok-var">b</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-kw">def</span> <span class="tok-fn">subtract</span>(<span class="tok-var">a</span>, <span class="tok-var">b</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-var">a</span> <span class="tok-op">-</span> <span class="tok-var">b</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-kw">def</span> <span class="tok-fn">multiply</span>(<span class="tok-var">a</span>, <span class="tok-var">b</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-var">a</span> <span class="tok-op">*</span> <span class="tok-var">b</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-kw">def</span> <span class="tok-fn">divide</span>(<span class="tok-var">a</span>, <span class="tok-var">b</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">if</span> <span class="tok-var">b</span> <span class="tok-op">==</span> <span class="tok-num">0</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-str">"Cannot divide by zero!"</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-var">a</span> <span class="tok-op">/</span> <span class="tok-var">b</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1320px; top:340px; width:500px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--neon-lime);">Why separate? ✅</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:18px; line-height:1.7;">Each function is tiny and testable. Fix a bug in multiply — the others stay safe.</div>
+    <div class="arabic" style="font-size:26px; color:var(--text-lo); margin-top:18px; direction:rtl;">كل دالة صغيرة وسهلة الاختبار — إصلاح خطأ لا يمسّ بقية الدوال</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S07</div>
+  <div class="chrome-pagenum">41 / 50</div>
+</div>
+<template data-slide-notes>
+- Students type part 1 themselves; circulate to check indentation.
+- Emphasize `return` — these are PURE functions, they give values back.
+- Highlight the divide() guard: returns a friendly string instead of crashing.
+- Test together: add(3, 4) → 7; divide(10, 0) → "Cannot divide by zero!".
+- Arabic tip: الدوال النقية تُرجع القيمة ولا تطبعها — سنطبع في القائمة.
+- Transition: "Part 2 wires these machines into a menu."
+</template>
+</body>
+</html>

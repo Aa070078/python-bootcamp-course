@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime"></div>
+  <div class="bg-glow-magenta"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; z-index:10;">
+    <div class="kicker">JUDGEMENT // TOOL CHOICE</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:160px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:84px; font-weight:700; color:var(--text-hi);">When OOP? When not? ⚖️</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:16px;">استخدم الكائنات عند الحاجة، وليس في كل سطر — اختر الأداة المناسبة</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:400px; width:860px; height:540px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.45); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:440px; width:800px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:42px; font-weight:700; color:var(--neon-lime);">USE OOP ✅</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:24px; line-height:1.7;">
+      🧩 Many objects that share structure (students, accounts, monsters)<br>
+      🎭 Behavior must differ per kind (inheritance + polymorphism)<br>
+      🔐 Data needs guarding (encapsulation / properties)<br>
+      ♻️ You'll reuse the blueprint across the app
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:400px; width:860px; height:540px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.45); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1010px; top:440px; width:800px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:42px; font-weight:700; color:var(--neon-magenta);">SKIP OOP ⏭️</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:24px; line-height:1.7;">
+      📝 A 15-line throwaway script<br>
+      🧮 Pure math / one-off calculation (no state)<br>
+      🪜 Simple top-to-bottom logic<br>
+      💬 A couple of functions is all you need
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:980px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid);">💡 OOP is a <b>tool</b>, not a rule. Good engineers pick the simplest tool that fits — and refactor when the script grows up.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S11</div>
+  <div class="chrome-pagenum">29 / 50</div>
+</div>
+<template data-slide-notes>
+**Engineering judgement.** OOP isn't "always" — it's *when state + behavior belong together*.
+
+- Fight the misconception that "OOP = good code". A tiny script with classes is over-engineering; a big app without classes is spaghetti.
+- The skill is recognizing when to *introduce* classes. Rule of thumb: "when you find yourself keeping parallel lists in sync, or passing the same 4 values everywhere — that's when a class is calling."
+- Practical guidance for their level: start procedural, and when it gets messy → refactor into classes (next slide).
+- Arabic tip: «الأداة المناسبة للعمل» — the right tool for the job.
+- Reassure: this judgment comes with practice; the homework forces you to make this call.
+</template>
+</body>
+</html>

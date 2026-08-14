@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-180px; right:-150px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-220px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1720px; z-index:10;">
+    <div class="kicker">📦 PARAMETERS vs ARGUMENTS</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi); margin-top:16px;">Two words, one idea</div>
+    <div class="arabic" style="font-size:32px; color:var(--text-lo); margin-top:14px; direction:rtl;">المُعامِل هو صندوق جاهز في التعريف، والحجة هي القيمة التي تضعها فيه</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:360px; width:850px; height:290px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.4); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:390px; width:790px; z-index:10;">
+    <div style="font-size:44px;">🎫</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:40px; font-weight:700; color:var(--neon-magenta); margin-top:6px;">Parameter</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:12px;">The <span style="color:var(--text-hi); font-weight:700;">placeholder</span> written in the definition. Like an empty textbox on a form.</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--text-lo); margin-top:14px;"><span class="tok-kw">def</span> <span class="tok-fn">greet</span>(<span class="tok-var">name</span>): <span class="tok-com"># name = parameter</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:960px; top:360px; width:850px; height:290px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.4); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:990px; top:390px; width:790px; z-index:10;">
+    <div style="font-size:44px;">🎁</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:40px; font-weight:700; color:var(--neon-lime); margin-top:6px;">Argument</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:12px;">The <span style="color:var(--text-hi); font-weight:700;">actual value</span> you pass when calling. It fills the placeholder.</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--text-lo); margin-top:14px;"><span class="tok-fn">greet</span>(<span class="tok-str">"Nour"</span>) <span class="tok-com"># "Nour" = argument</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:720px; width:1720px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700; color:var(--neon-cyan);">Remember the form 📝</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid); margin-top:12px;">The form has empty fields (parameters). <span style="color:var(--neon-lime);">You fill them</span> with your info (arguments).</div>
+    <div class="arabic" style="font-size:30px; color:var(--text-lo); margin-top:16px; direction:rtl;">المُعامِلات حقول فارغة في استمارة، والحِجَج هي المعلومات التي تملأ بها الحقول</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S07</div>
+  <div class="chrome-pagenum">11 / 50</div>
+</div>
+<template data-slide-notes>
+- This vocabulary matters: params = in def, arguments = in call.
+- Form analogy: a registration form = function; fields = parameters; what you type = arguments.
+- Read the two code lines side by side and color-code the pair.
+- Have students chant: "Parameters in the definition! Arguments in the call!"
+- Common confusion source: many tutorials use the words interchangeably — we won't.
+- Arabic tip: «المُعامِل» مقابل «الحجة» — ركّز على مكان ظهور كل منهما.
+- Transition: "Now a function with TWO parameters."
+</template>
+</body>
+</html>

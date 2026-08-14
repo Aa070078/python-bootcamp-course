@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-240px; right:-160px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-280px; left:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">📚 CORE CONCEPT #11</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:84px; font-weight:700; color:var(--text-hi); margin-top:14px;">The <span style="color:var(--neon-cyan);">requests</span> library</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:320px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); line-height:1.6;">The #1 Python library for HTTP. One function call = one whole HTTP round trip. 🐍⚡</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:460px; width:860px; height:380px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:500px; width:780px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-cyan);">INSTALL</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:32px; color:var(--text-hi); margin-top:16px;">
+      <span class="tok-str">pip install requests</span>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-lo); margin-top:12px;">One command, done. Run it once — it stays.</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-cyan); margin-top:26px;">IMPORT</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:32px; color:var(--text-hi); margin-top:10px;">
+      <span class="tok-kw">import</span> <span class="tok-var">requests</span>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:460px; width:860px; height:380px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1020px; top:500px; width:780px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-lime);">THE RESPONSE OBJECT</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:16px; line-height:1.9;">
+      <span class="mono" style="color:var(--text-hi);">resp.status_code</span> — the verdict number<br>
+      <span class="mono" style="color:var(--text-hi);">resp.ok</span> — True if status is 200–399<br>
+      <span class="mono" style="color:var(--text-hi);">resp.text</span> — raw body as string<br>
+      <span class="mono" style="color:var(--text-hi);">resp.json()</span> — body parsed into Python<br>
+      <span class="mono" style="color:var(--text-hi);">resp.headers</span> — response headers dict
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:880px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-lo);">You'll use exactly five of these today. Next: the first GET. →</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:945px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">مكتبة requests هي الجسر بين Python وباقي الإنترنت: تثبّتها مرة وتستعملها للأبد 📚</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">25 / 50</div>
+</div>
+<template data-slide-notes>
+The requests library — our main tool.
+
+Demo install live (30 s): `pip install requests`. Then `import requests; print(requests.__version__)`.
+
+The response object is the star. Drill the five attributes with a real call:
+- status_code, ok, text, json(), headers.
+
+Set up the next two slides: slide 26 = first GET (frankfurter), slide 27 = predict-the-output on those attributes.
+
+Common mistake: forgetting to install, then a ModuleNotFoundError at import. Walk them through reading that error calmly.
+
+Arabic tip: اشرح أن `requests` مكتبة خارجية تُثبَّت عبر `pip` — وفرّق بين المكتبات المدمجة (مثل sqlite3) والخارجية (مثل requests).
+</template>
+</body>
+</html>

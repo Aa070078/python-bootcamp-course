@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-180px; right:-150px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-220px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:100px; width:1720px; z-index:10;">
+    <div class="kicker">⌨️ CODE — DEFINE &amp; CALL</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi); margin-top:14px;">Your first function</div>
+    <div class="arabic" style="font-size:30px; color:var(--text-lo); margin-top:12px; direction:rtl;">اكتب الدالة ثم استدعِها بالاسم مع أقواس</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:1100px; height:400px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">hello.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:400px; width:1040px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:28px; line-height:1.6;">
+    <div><span class="tok-kw">def</span> <span class="tok-fn">greet</span>():</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Hello, bootcamper! 🐍"</span>)</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-com"># definition ends — nothing printed yet!</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-fn">greet</span>()  <span class="tok-com"># call #1</span></div>
+    <div><span class="tok-fn">greet</span>()  <span class="tok-com"># call #2</span></div>
+    <div><span class="tok-fn">greet</span>()  <span class="tok-com"># call #3</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1240px; top:340px; width:580px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--neon-cyan);">The 4 pieces 🔑</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--text-mid); margin-top:20px; line-height:1.8;">
+      <div>1️⃣ <span class="tok-kw" style="color:var(--neon-magenta);">def</span> keyword</div>
+      <div>2️⃣ name + <span class="tok-op" style="color:var(--neon-violet);">()</span></div>
+      <div>3️⃣ colon <span class="tok-op" style="color:var(--neon-violet);">:</span></div>
+      <div>4️⃣ indented body</div>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:24px;">Calling runs the body — every time.</div>
+    <div class="arabic" style="font-size:26px; color:var(--text-lo); margin-top:16px; direction:rtl;">الاستدعاء ينفّذ جسم الدالة في كل مرة — بدون نقرة زر</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S07</div>
+  <div class="chrome-pagenum">09 / 50</div>
+</div>
+<template data-slide-notes>
+- **Live type this**: `def greet():` then indent, `print(...)`, then call it 3 times.
+- Key drama: the definition alone does nothing. Only CALLS run the body.
+- Common mistake: forgetting the colon → SyntaxError; forgetting indentation → IndentationError.
+- Show the two-phase model: Python reads def (stores it) then executes calls.
+- Ask a student: "If we call greet() 3 times, how many lines print?" → 3.
+- Arabic tip: كلمة def تعني «عَرّف» والاستدعاء هو تنفيذ فعلي.
+- Transition: "Now add ingredients — parameters next."
+</template>
+</body>
+</html>

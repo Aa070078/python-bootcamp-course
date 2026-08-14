@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta"></div>
+  <div class="bg-glow-lime"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:80px; width:1760px; z-index:10;">
+    <div class="kicker">HOMEWORK // FOR NEXT SESSION 📚</div>
+    <div style="margin-top:26px; font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi);">Homework: <span style="color:var(--neon-lime);">Book Price Tracker</span></div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:29px; color:var(--text-lo); direction:rtl; margin-top:14px;">الواجب: تتبّع أسعار الكتب من books.toscrape.com واحفظها مع التاريخ</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:1040px; height:480px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.35); border-radius:24px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:370px; width:980px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:31px; font-weight:700; color:var(--text-hi);">🎯 Build a price tracker</div>
+    <div style="margin-top:16px; font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); line-height:1.65;">
+      Scrape <span class="mono">books.toscrape.com</span> (page 1): for each book get <b>title</b> + <b>price</b>. Save <span class="mono">book_prices.csv</span> with columns <span class="mono">title, price, date</span> (use <span class="mono">datetime.date.today()</span>).
+    </div>
+    <div style="margin-top:20px; font-family:'Space Grotesk',sans-serif; font-size:25px; color:var(--text-lo); line-height:1.6;">
+      ✅ robots.txt allows it • ✅ public data • ✅ use <span class="mono">.strip()</span> + <span class="mono">replace("£", "")</span> to clean prices
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1180px; top:330px; width:660px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; font-weight:700; color:var(--text-hi);">✨ Bonus (+1 level)</div>
+    <div style="margin-top:18px; font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-mid); line-height:1.6;">Run the script again tomorrow. If today's CSV exists, only append <b>new</b> dates — a real tracker logs history. Store in SQLite if you're brave.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:25px; color:var(--text-lo); direction:rtl; margin-top:20px;">شغّل السكربت يوميًا وأضف التواريخ الجديدة فقط — كاشطة حقيقية تعمل لأسابيع</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">39 / 50</div>
+</div>
+<template data-slide-notes>
+Homework = small, doable, real. Price tracking is the classic first scraper project and it maps to next session (GUI: showing the prices in a Flet table!).
+
+Give the starter:
+```
+import requests, csv, datetime
+from bs4 import BeautifulSoup
+resp = requests.get("https://books.toscrape.com/", timeout=10)
+soup = BeautifulSoup(resp.text, "html.parser")
+# TODO: select article.product_pod, extract h3 a text + p.price_color
+```
+Hint: prices look like £51.77 — strip the £ with .replace and keep as float.
+
+Accept any reasonable structure; grade on: clean prices, date column, encoding utf-8.
+
+Arabic tip: ذكّرهم أن التنظيف جزء من الدرجة: رقم السعر يجب أن يصل نقيًا بدون رمز العملة.
+</template>
+</body>
+</html>

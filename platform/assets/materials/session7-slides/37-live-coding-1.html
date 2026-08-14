@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime" style="top:-180px; right:-150px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-220px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:100px; width:1720px; z-index:10;">
+    <div class="kicker">⚡ LIVE CODING #1 — TEMPERATURE CONVERTER</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi); margin-top:14px;">Build it together 🤝</div>
+    <div class="arabic" style="font-size:30px; color:var(--text-lo); margin-top:12px; direction:rtl;">سنبني معًا محوّل درجات حرارة — تابع خطوة بخطوة</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:850px; height:330px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:370px; width:790px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--neon-cyan);">Step 1 — the formulas</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:25px; color:var(--text-lo); margin-top:16px; line-height:1.7;">
+      <div><span class="tok-kw">def</span> <span class="tok-fn">c2f</span>(<span class="tok-var">c</span>): <span class="tok-kw">return</span> <span class="tok-var">c</span> <span class="tok-op">*</span> <span class="tok-num">9</span> <span class="tok-op">/</span> <span class="tok-num">5</span> <span class="tok-op">+</span> <span class="tok-num">32</span></div>
+      <div><span class="tok-kw">def</span> <span class="tok-fn">f2c</span>(<span class="tok-var">f</span>): <span class="tok-kw">return</span> (<span class="tok-var">f</span> <span class="tok-op">-</span> <span class="tok-num">32</span>) <span class="tok-op">*</span> <span class="tok-num">5</span> <span class="tok-op">/</span> <span class="tok-num">9</span></div>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-mid); margin-top:16px;">Two tiny pure functions — test them first! 🧪</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:960px; top:340px; width:850px; height:330px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.4); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:990px; top:370px; width:790px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--neon-lime);">Step 2 — the menu loop</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--text-lo); margin-top:16px; line-height:1.7;">
+      <div><span class="tok-kw">while</span> <span class="tok-kw">True</span>:</div>
+      <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">choice</span> <span class="tok-op">=</span> <span class="tok-fn">input</span>(<span class="tok-str">"C or F? (q=quit) "</span>)</div>
+      <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">if</span> <span class="tok-var">choice</span>.<span class="tok-fn">lower</span>() <span class="tok-op">==</span> <span class="tok-str">"q"</span>: <span class="tok-kw">break</span></div>
+      <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">value</span> <span class="tok-op">=</span> <span class="tok-fn">float</span>(<span class="tok-fn">input</span>(<span class="tok-str">"Degrees: "</span>))</div>
+      <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">if</span> <span class="tok-var">choice</span> <span class="tok-op">==</span> <span class="tok-str">"C"</span>: <span class="tok-fn">print</span>(<span class="tok-fn">c2f</span>(<span class="tok-var">value</span>))</div>
+      <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">else</span>: <span class="tok-fn">print</span>(<span class="tok-fn">f2c</span>(<span class="tok-var">value</span>))</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:740px; width:1720px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid);">Live steps: ⬅️ define both functions → 🔁 test with <span class="mono">c2f(100) = 212</span> → 🧩 add the loop → 🎉 run!</div>
+    <div class="arabic" style="font-size:30px; color:var(--text-lo); margin-top:14px; direction:rtl;">أولًا عرّف الدوال، ثانيًا اختبرها، ثالثًا أضف الحلقة، وأخيرًا شغّلها</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S07</div>
+  <div class="chrome-pagenum">37 / 50</div>
+</div>
+<template data-slide-notes>
+- **Live-coding steps (type everything yourself):**
+  1. Write c2f and f2c; test c2f(100) → 212.0, f2c(32) → 0.0.
+  2. Add the while loop with input(); handle "q" to quit.
+  3. Run and let a student pick a conversion.
+- Common mistakes to call out: forgetting float() (string errors), comparing "c" vs "C" (use .lower()).
+- Extension: guard against invalid choice with an else message.
+- Emphasize: we wrote the math ONCE and the loop reuses it.
+- Arabic tip: تدرّج: اكتب دالة، اختبرها، ثم استخدمها — لا تكتب كل شيء دفعة واحدة.
+- This becomes the pattern for the project.
+</template>
+</body>
+</html>

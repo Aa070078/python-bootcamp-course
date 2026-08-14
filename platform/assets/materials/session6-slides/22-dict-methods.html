@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-250px; right:-200px;"></div>
+  <div class="bg-glow-lime" style="bottom:-250px; left:-180px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:120px; width:1760px; z-index:10;">
+    <div class="kicker">🛠 ADD · UPDATE · DELETE</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:92px; font-weight:700; color:var(--text-hi); margin-top:18px;">Changing a Dictionary</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); margin-top:16px;">Dictionaries are <b style="color:var(--neon-lime);">mutable</b> — add, overwrite, or remove keys freely.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:16px;">القواميس قابلة للتعديل: نضيف المفاتيح، نحدّث قيمها، أو نحذفها تمامًا.</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:400px; width:940px; height:500px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">mutate.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:470px; width:880px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.65;">
+    <div><span class="tok-var">student</span> <span class="tok-op">=</span> <span class="tok-op">{</span><span class="tok-str">"name"</span><span class="tok-op">:</span> <span class="tok-str">"Ahmad"</span><span class="tok-op">}</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-var">student</span>[<span class="tok-str">"age"</span>] <span class="tok-op">=</span> <span class="tok-num">16</span> <span class="tok-com"># add a new key</span></div>
+    <div><span class="tok-var">student</span>[<span class="tok-str">"age"</span>] <span class="tok-op">=</span> <span class="tok-num">17</span> <span class="tok-com"># same key, new value → update</span></div>
+    <div><span class="tok-var">student</span>.<span class="tok-fn">update</span>(<span class="tok-op">{</span><span class="tok-str">"city"</span><span class="tok-op">:</span> <span class="tok-str">"Amman"</span>, <span class="tok-str">"grade"</span><span class="tok-op">:</span> <span class="tok-str">"A"</span><span class="tok-op">}</span>)</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-kw">del</span> <span class="tok-var">student</span>[<span class="tok-str">"age"</span>] <span class="tok-com"># delete a key entirely</span></div>
+    <div><span class="tok-var">grade</span> <span class="tok-op">=</span> <span class="tok-var">student</span>.<span class="tok-fn">pop</span>(<span class="tok-str">"grade"</span>, <span class="tok-kw">None</span>) <span class="tok-com"># delete + return the value</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">grade</span>) <span class="tok-com"># A</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1080px; top:400px; width:760px; height:540px; background:rgba(250,204,21,0.06); border:1px solid rgba(250,204,21,0.3); border-radius:24px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1110px; top:432px; width:700px; z-index:10;">
+    <div class="kicker" style="font-size:20px;">THE TOOLBOX</div>
+    <div style="margin-top:20px; background:rgba(34,211,238,0.08); border:1px solid rgba(34,211,238,0.35); border-radius:16px; padding:13px 22px;">
+      <div style="font-size:25px; font-weight:700; color:var(--neon-cyan);">➕ &nbsp;d[key] = value</div>
+      <div style="font-size:22px; color:var(--text-mid); margin-top:4px;">Adds a key, or updates it if it already exists</div>
+    </div>
+    <div style="margin-top:16px; background:rgba(163,230,53,0.08); border:1px solid rgba(163,230,53,0.35); border-radius:16px; padding:13px 22px;">
+      <div style="font-size:25px; font-weight:700; color:var(--neon-lime);">🧰 &nbsp;.update({...})</div>
+      <div style="font-size:22px; color:var(--text-mid); margin-top:4px;">Adds or updates several keys in one call</div>
+    </div>
+    <div style="margin-top:16px; background:rgba(236,72,153,0.08); border:1px solid rgba(236,72,153,0.4); border-radius:16px; padding:13px 22px;">
+      <div style="font-size:25px; font-weight:700; color:var(--neon-magenta);">✂️ &nbsp;del d[key]</div>
+      <div style="font-size:22px; color:var(--text-mid); margin-top:4px;">Deletes the key — KeyError if it is missing</div>
+    </div>
+    <div style="margin-top:16px; background:rgba(167,139,250,0.08); border:1px solid rgba(167,139,250,0.35); border-radius:16px; padding:13px 22px;">
+      <div style="font-size:25px; font-weight:700; color:var(--neon-violet);">🎣 &nbsp;.pop(key)</div>
+      <div style="font-size:22px; color:var(--text-mid); margin-top:4px;">Deletes the key and hands you its value back</div>
+    </div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S06</div>
+  <div class="chrome-pagenum">22 / 45</div>
+</div>
+<template data-slide-notes>
+# Slide 22 — Changing a Dictionary (Instructor notes)
+
+**What to say**
+- Emphasize: the SAME syntax `d[key] = value` both adds AND updates. Nothing is created "new" — the key just lands in the dict.
+- `del` throws away the key/value completely; `.pop()` throws it away but returns the value first.
+
+**Live demo (2 min)**
+- Build `student` line by line, printing after each mutation so students see the dict grow and change.
+- Try `del student["missing"]` → KeyError. Then `student.pop("missing", None)` → None, no crash.
+
+**Common mistakes**
+- Students think `d["x"] = v` creates a new dict — it mutates in place.
+- Students expect `.pop()` without a key to be safe — it also raises KeyError unless a default is given.
+- Students use `del d` (deleting the whole dict!) instead of `del d[key]`.
+
+**Arabic teaching tip**
+- شبّه القاموس بلوحة تعليق: يمكنك إضافة بطاقة جديدة، تغيير محتوى بطاقة، أو إزالتها. كل ذلك دون تغيير اللوحة نفسها.
+</template>
+</body>
+</html>

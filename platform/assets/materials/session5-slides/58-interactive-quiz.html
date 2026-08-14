@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-lime"></div>
+<div class="chrome-topbar"><span class="chrome-dot"></span>QUIZ</div>
+
+<div class="kicker" style="position:absolute;top:100px;left:80px;">SPEED ROUND</div>
+<div class="arabic" style="position:absolute;top:140px;left:80px;font-size:24px;color:var(--text-lo););font-size:24px;color:var(--text-lo);">جولة سريعة</div>
+<div style="position:absolute;top:190px;left:80px;width:1760px;display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+  <div style="padding:22px 26px;border-radius:14px;background:var(--bg-1);border:1px solid var(--border);">
+    <div style="font-size:20px;color:var(--text-hi);font-weight:700;margin-bottom:10px;">Q1 — What is <span style="font-family:JetBrains Mono,monospace;color:var(--neon-cyan);">[1,2,3][-1]</span>?</div>
+    <div style="font-size:19px;color:var(--neon-lime);">A: 3 — the last element</div>
+  </div>
+  <div style="padding:22px 26px;border-radius:14px;background:var(--bg-1);border:1px solid var(--border);">
+    <div style="font-size:20px;color:var(--text-hi);font-weight:700;margin-bottom:10px;">Q2 — Does <span style="font-family:JetBrains Mono,monospace;color:var(--neon-cyan);">"Ali" in ["Omar","Ali"]</span> give True or False?</div>
+    <div style="font-size:19px;color:var(--neon-lime);">A: True — in checks membership</div>
+  </div>
+  <div style="padding:22px 26px;border-radius:14px;background:var(--bg-1);border:1px solid var(--border);">
+    <div style="font-size:20px;color:var(--text-hi);font-weight:700;margin-bottom:10px;">Q3 — After <span style="font-family:JetBrains Mono,monospace;color:var(--neon-cyan);">a=[1]; b=a; b.append(2)</span>, what is <span style="font-family:JetBrains Mono,monospace;color:var(--neon-cyan);">a</span>?</div>
+    <div style="font-size:19px;color:var(--neon-lime);">A: [1, 2] — b is not a copy!</div>
+  </div>
+  <div style="padding:22px 26px;border-radius:14px;background:var(--bg-1);border:1px solid var(--border);">
+    <div style="font-size:20px;color:var(--text-hi);font-weight:700;margin-bottom:10px;">Q4 — <span style="font-family:JetBrains Mono,monospace;color:var(--neon-cyan);">t=(1,2); t[0]=9</span> — what happens?</div>
+    <div style="font-size:19px;color:var(--neon-magenta);">A: TypeError — tuples are immutable</div>
+  </div>
+</div>
+<div style="position:absolute;top:560px;left:80px;width:1760px;padding:22px 26px;border-radius:14px;background:rgba(163,230,53,0.06);border:1px solid rgba(163,230,53,0.2);">
+  <div style="font-size:20px;color:var(--text-hi);font-weight:700;margin-bottom:10px;">Q5 — What does <span style="font-family:JetBrains Mono,monospace;color:var(--neon-cyan);">list(zip([1,2],[3,4]))</span> produce?</div>
+  <div style="font-size:19px;color:var(--neon-lime);">A: [(1, 3), (2, 4)] — pairs by position</div>
+</div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S05</div>
+<div class="chrome-pagenum">58 / 63</div>
+<template data-slide-notes>Speed round: 5 quick questions with answers. Covers indexing, in, aliasing, tuple immutability, zip.</template>
+</div>
+</body>
+</html>

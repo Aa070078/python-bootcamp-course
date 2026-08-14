@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-magenta"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:80px; width:1760px; z-index:10;">
+    <div class="kicker">CORE CONCEPT // THE PARSER 🥣</div>
+    <div style="margin-top:26px; font-family:'Space Grotesk',sans-serif; font-size:80px; font-weight:700; color:var(--text-hi); line-height:1.05;">Meet <span style="color:var(--neon-lime);">BeautifulSoup</span></div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:29px; color:var(--text-lo); direction:rtl; margin-top:14px;">BeautifulSoup يحوّل نص HTML إلى شجرة عناصر سهلة التنقل والبحث</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:1040px; height:470px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.35); border-radius:24px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:370px; width:980px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; font-weight:700; color:var(--text-hi);">🥣 From soup text to soup tree</div>
+    <div style="margin-top:18px; font-size:40px;">📄 <span class="mono" style="font-size:30px;">resp.text</span> ──► 🧠 <span class="mono" style="font-size:30px;">BeautifulSoup(...)</span> ──► 🌳 <span class="mono" style="font-size:30px;">soup</span></div>
+    <div style="margin-top:26px; font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); line-height:1.65;">
+      In goes a plain <b>string</b> of HTML. Out comes a <b>tree object</b> with tags, text and attributes. Then you can <span style="color:var(--neon-cyan);">search</span>, <span style="color:var(--neon-lime);">filter</span> and <span style="color:var(--neon-magenta);">navigate</span> it — like a Python list of elements.
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1180px; top:330px; width:660px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--text-hi);">🧰 What it gives you</div>
+    <div style="margin-top:20px; font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); line-height:1.7;">
+      <span class="mono" style="color:var(--neon-cyan);">soup.title</span> → first tag<br>
+      <span class="mono" style="color:var(--neon-cyan);">tag.text</span> → inner text<br>
+      <span class="mono" style="color:var(--neon-lime);">tag["href"]</span> → attribute<br>
+      <span class="mono" style="color:var(--neon-magenta);">find() / find_all()</span> → search<br>
+      <span class="mono" style="color:var(--neon-yellow);">select()</span> → CSS selectors
+    </div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:26px; color:var(--text-lo); direction:rtl; margin-top:22px;">واجهة بسيطة للبحث داخل الشجرة: ابحث، اقرأ النص، اقرأ الخصائص</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">23 / 50</div>
+</div>
+<template data-slide-notes>
+BeautifulSoup = the parsing library. `pip install beautifulsoup4`, import name is `bs4`. Parser argument: "html.parser" (built-in, no extra install).
+
+Mental model: it's like turning a block of text into a folder tree you can open. Every tag becomes a node.
+
+Do NOT confuse: requests downloads, BeautifulSoup parses. Two libraries, one pipeline. If the page prints as raw text but selectors find nothing, usually the parse failed or content is JS-loaded.
+
+Arabic tip: BeautifulSoup = «مفككة» الشجرة. أعطها نصًا، تحصل على هيكل قابل للتنقل.
+</template>
+</body>
+</html>

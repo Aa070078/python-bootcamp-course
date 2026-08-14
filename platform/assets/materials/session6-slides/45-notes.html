@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-cyan"></div>
+<div class="bg-glow-lime"></div>
+<div class="chrome-topbar"><span class="chrome-dot"></span>CHEAT SHEET</div>
+
+<div class="kicker" data-object="true" data-object-type="textbox" style="position:absolute;top:96px;left:80px;">QUICK REFERENCE</div>
+<div class="arabic" data-object="true" data-object-type="textbox" style="position:absolute;top:138px;left:80px;font-size:24px;color:var(--text-lo);">ملاحظات سريعة — المجموعات والقواميس</div>
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:186px;left:80px;width:1600px;font-family:'Space Grotesk',sans-serif;font-size:48px;font-weight:700;color:var(--text-hi);">📋 Set &amp; dict cheat sheet — screenshot this</div>
+
+<div data-object="true" data-object-type="shape" style="position:absolute;left:80px;top:290px;width:880px;z-index:5;">
+  <div class="code-window" style="width:880px;">
+    <div class="code-window-header">
+      <div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+      <span class="code-window-title" style="color:var(--neon-cyan);">sets.py</span>
+    </div>
+    <pre style="padding:20px 24px;margin:0;font-size:19px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span class="tok-com"># SETS — unique, unordered, no duplicates</span>
+<span class="tok-var">colors</span> = {<span class="tok-str">"red"</span>, <span class="tok-str">"green"</span>, <span class="tok-str">"blue"</span>}
+<span class="tok-var">colors</span>.<span class="tok-fn">add</span>(<span class="tok-str">"orange"</span>)          <span class="tok-com"># add one</span>
+<span class="tok-var">colors</span>.<span class="tok-fn">discard</span>(<span class="tok-str">"red"</span>)         <span class="tok-com"># safe remove</span>
+<span class="tok-var">colors</span>.<span class="tok-fn">remove</span>(<span class="tok-str">"blue"</span>)         <span class="tok-com"># error if missing</span>
+<span class="tok-str">"green"</span> <span class="tok-kw">in</span> <span class="tok-var">colors</span>             <span class="tok-com"># True</span>
+
+<span class="tok-var">a</span> = {<span class="tok-num">1</span>, <span class="tok-num">2</span>, <span class="tok-num">3</span>}
+<span class="tok-var">b</span> = {<span class="tok-num">3</span>, <span class="tok-num">4</span>, <span class="tok-num">5</span>}
+<span class="tok-var">a</span> | <span class="tok-var">b</span>       <span class="tok-com"># union         -&gt; {1,2,3,4,5}</span>
+<span class="tok-var">a</span> &amp; <span class="tok-var">b</span>       <span class="tok-com"># intersection  -&gt; {3}</span>
+<span class="tok-var">a</span> - <span class="tok-var">b</span>       <span class="tok-com"># difference    -&gt; {1,2}</span>
+<span class="tok-var">a</span> ^ <span class="tok-var">b</span>       <span class="tok-com"># symmetric     -&gt; {1,2,4,5}</span>
+
+<span class="tok-var">unique</span> = <span class="tok-fn">list</span>(<span class="tok-fn">set</span>([<span class="tok-num">1</span>, <span class="tok-num">1</span>, <span class="tok-num">2</span>, <span class="tok-num">3</span>, <span class="tok-num">3</span>]))  <span class="tok-com"># dedupe</span></pre>
+  </div>
+</div>
+
+<div data-object="true" data-object-type="shape" style="position:absolute;left:980px;top:290px;width:860px;z-index:5;">
+  <div class="code-window" style="width:860px;">
+    <div class="code-window-header">
+      <div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+      <span class="code-window-title" style="color:var(--neon-magenta);">dicts.py</span>
+    </div>
+    <pre style="padding:20px 24px;margin:0;font-size:19px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span class="tok-com"># DICTS — key -&gt; value pairs</span>
+<span class="tok-var">phonebook</span> = {<span class="tok-str">"Sara"</span>: <span class="tok-str">"050-1234"</span>, <span class="tok-str">"Omar"</span>: <span class="tok-str">"077-5678"</span>}
+<span class="tok-var">phonebook</span>[<span class="tok-str">"Lina"</span>] = <span class="tok-str">"055-9999"</span>   <span class="tok-com"># add / update</span>
+<span class="tok-kw">del</span> <span class="tok-var">phonebook</span>[<span class="tok-str">"Omar"</span>]            <span class="tok-com"># remove</span>
+<span class="tok-var">phonebook</span>.<span class="tok-fn">get</span>(<span class="tok-str">"Sara"</span>)            <span class="tok-com"># "050-1234"</span>
+<span class="tok-var">phonebook</span>.<span class="tok-fn">get</span>(<span class="tok-str">"Ali"</span>, <span class="tok-str">"none"</span>)     <span class="tok-com"># default value</span>
+
+<span class="tok-kw">for</span> <span class="tok-var">name</span>, <span class="tok-var">num</span> <span class="tok-kw">in</span> <span class="tok-var">phonebook</span>.<span class="tok-fn">items</span>():
+    <span class="tok-fn">print</span>(<span class="tok-var">name</span>, <span class="tok-var">num</span>)
+
+<span class="tok-var">counts</span> = {}
+<span class="tok-var">counts</span>[<span class="tok-str">"a"</span>] = <span class="tok-var">counts</span>.<span class="tok-fn">get</span>(<span class="tok-str">"a"</span>, <span class="tok-num">0</span>) + <span class="tok-num">1</span>   <span class="tok-com"># counting</span></pre>
+  </div>
+</div>
+
+<div data-object="true" data-object-type="shape" style="position:absolute;left:80px;top:880px;width:1760px;z-index:5;">
+  <div style="padding:18px 28px;border-radius:16px;background:#0b1020;border:1px solid rgba(163,230,53,0.30);">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:40px;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--text-hi);line-height:1.75;">
+        <span class="tok-com"># COMBINING — list of dicts, set values</span><br>
+        <span class="tok-var">team</span> = [{<span class="tok-str">"name"</span>: <span class="tok-str">"Sara"</span>, <span class="tok-str">"tags"</span>: {<span class="tok-str">"work"</span>, <span class="tok-str">"friend"</span>}},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="tok-str">"name"</span>: <span class="tok-str">"Omar"</span>, <span class="tok-str">"tags"</span>: {<span class="tok-str">"work"</span>, <span class="tok-str">"gym"</span>}}]
+      </div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--text-hi);line-height:1.75;">
+        <span class="tok-var">all_tags</span> = <span class="tok-fn">set</span>()<br>
+        <span class="tok-kw">for</span> <span class="tok-var">m</span> <span class="tok-kw">in</span> <span class="tok-var">team</span>: <span class="tok-var">all_tags</span> |= <span class="tok-var">m</span>[<span class="tok-str">"tags"</span>]<br>
+        <span class="tok-fn">print</span>(<span class="tok-fn">sorted</span>(<span class="tok-var">all_tags</span>))   <span class="tok-com"># ['friend','gym','work']</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S06</div>
+<div class="chrome-pagenum">45 / 45</div>
+</div>
+<template data-slide-notes>
+Reference slide — leave on screen while students start their homework, or screenshot it.
+
+Use this as the "open-book" moment: tell students they may keep this slide open while doing the homework. Note that it's the ONLY slide they get to look at — the real work is applying these to new problems.
+
+Walk through each block quickly (2 minutes):
+1. Sets: add vs discard vs remove (the error difference matters — `.remove` on a missing item raises KeyError).
+2. Set math: the four operators and their names. `^` symmetric difference is the least intuitive — one example: `{1,2} ^ {2,3}` → `{1,3}` (everything not shared).
+3. Dicts: `.get(key, default)` is the line to remember — it's how you avoid KeyError crashes.
+4. Combining: this is the exact pattern from the Contact Manager — a list of dicts whose values can be sets. Read it top to bottom and point at the union loop.
+
+Encourage students to build their own version of this cheat sheet from memory tomorrow morning — recalling syntax beats re-reading it.
+
+Arabic tip: قل لهم: «احفظوا هذا ببناء ورقة مثله من الذاكرة صباحًا — الاسترجاع أقوى من القراءة». (Suggest rewriting the sheet from memory the next morning.)
+</template>
+</body>
+</html>

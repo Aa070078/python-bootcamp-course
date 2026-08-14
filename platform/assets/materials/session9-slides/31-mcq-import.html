@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-150px; right:-120px;"></div>
+  <div class="bg-glow-lime" style="bottom:-200px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">CHECKPOINT // MCQ #4</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:70px; font-weight:700; color:var(--text-hi);">🎯 MCQ — Which import lets you write <span class="mono" style="color:var(--neon-yellow);">randint(1, 6)</span>?</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:340px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-hi);">You want to call <span class="mono" style="color:var(--neon-cyan);">randint(1, 6)</span> WITHOUT the <span class="mono" style="color:var(--neon-cyan);">random.</span> prefix. Which import makes that possible?</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid); margin-top:28px; line-height:1.9;">
+      <span class="chip chip-violet" style="margin-right:14px;">A&nbsp; import random</span>
+      <span class="chip chip-lime" style="margin-right:14px;">B&nbsp; from random import randint</span>
+      <span class="chip chip-magenta" style="margin-right:14px;">C&nbsp; from random import *</span>
+      <span class="chip chip-yellow" style="margin-right:14px;">D&nbsp; both B and C</span>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:610px; width:1760px; height:240px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.3); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:650px; width:1680px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); line-height:1.65;">
+      🔍 <b style="color:var(--text-hi);">A</b> keeps the dot (needs <span class="mono" style="color:var(--neon-cyan);">random.randint</span>).<br>
+      🎯 <b style="color:var(--text-hi);">B</b> brings <span class="mono" style="color:var(--neon-lime);">randint</span> directly into scope — no dot.<br>
+      ⭐ <b style="color:var(--text-hi);">C</b> also works but dumps <b style="color:var(--text-hi);">every</b> random name in — bad hygiene, avoid.
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:900px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--neon-lime); font-weight:700;">✔ Answer: D — B is clean, C works but is messy. Best practice: B.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:14px;">الأفضل استيراد الاسم المحدد only؛ الاستيراد بـ * يجلب كل شيء بلا حاجة وهو عادة سيئة.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">31 / 50</div>
+</div>
+<template data-slide-notes>
+## MCQ #4 — import vs from
+
+**Explain the trap (3 min):** A keeps the prefix. B and C both allow bare `randint`. D is correct because B is the clean way and C technically works.
+
+**Warn against `import *`:** it dumps every public name of the module into your namespace — silent name clashes become likely. "You don't empty a toolbox on the floor; you grab the wrench you need." (B is the wrench.)
+
+**Rule to leave them with:** prefer `import random` when using several functions; prefer `from random import randint` when you need one or two specific names.
+
+**Arabic tip:** "لا تُفرغ صندوق العدة على الأرض" — استيراد ما تحتاجه فقط.
+</template>
+</body>
+</html>

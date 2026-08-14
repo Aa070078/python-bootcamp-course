@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-180px; right:-150px;"></div>
+  <div class="bg-glow-lime" style="bottom:-220px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1720px; z-index:10;">
+    <div class="kicker">🔧 DEFAULT PARAMETERS</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi); margin-top:16px;">Optional inputs 🎚️</div>
+    <div class="arabic" style="font-size:32px; color:var(--text-lo); margin-top:14px; direction:rtl;">القيمة الافتراضية: معامل اختياري — إن لم تُمرّر، تُستخدم القيمة الجاهزة</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:360px; width:850px; height:300px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:390px; width:790px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:40px; font-weight:700; color:var(--neon-cyan);">What it is</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:14px; line-height:1.6;">A parameter with a <span style="color:var(--text-hi); font-weight:700;">fallback value</span>. If the caller skips it, Python uses the default.</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-lime); margin-top:16px;"><span class="tok-kw">def</span> <span class="tok-fn">greet</span>(<span class="tok-var">name</span>, <span class="tok-var">greeting</span><span class="tok-op">=</span><span class="tok-str">"Hello"</span>):</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:960px; top:360px; width:850px; height:300px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.4); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:990px; top:390px; width:790px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:40px; font-weight:700; color:var(--neon-lime);">Golden rule ⚠️</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:14px; line-height:1.6;">Defaults must come <span style="color:var(--neon-magenta); font-weight:700;">AFTER</span> required parameters.</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--text-lo); margin-top:16px;"><span class="tok-com"># ❌ def f(a=1, b):</span></div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--text-lo); margin-top:8px;"><span class="tok-com"># ✅ def f(a, b=1):</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:740px; width:1720px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid);">Think: settings menu ⚙️ — you only change what you need, the rest has sane defaults.</div>
+    <div class="arabic" style="font-size:30px; color:var(--text-lo); margin-top:14px; direction:rtl;">مثل إعدادات التطبيق: غيّر ما تحتاجه فقط، والباقي له قيم جاهزة منطقية</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S07</div>
+  <div class="chrome-pagenum">19 / 50</div>
+</div>
+<template data-slide-notes>
+- Show a "settings" analogy: volume=50, brightness=70 — you can override one.
+- The ordering rule is a common SyntaxError: "non-default argument follows default argument".
+- Demo the error once; it's very common for students.
+- Emphasize: default is evaluated at def time — brief mention, don't deep dive.
+- Arabic tip: القيمة الافتراضية هي «خطة بديلة» عند عدم إرسال شيء.
+- Transition: "Now let's USE defaults in code."
+</template>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-magenta"></div>
+<div class="chrome-topbar"><span class="chrome-dot"></span>TUPLES</div>
+
+<div class="kicker" style="position:absolute;top:100px;left:80px;">WHAT IS A TUPLE?</div>
+<div class="arabic" style="position:absolute;top:140px;left:80px;font-size:24px;color:var(--text-lo);">ما هو الصف Tuple؟</div>
+<div style="position:absolute;top:210px;left:80px;font-size:38px;font-weight:700;color:var(--text-hi);max-width:1600px;">A tuple is an <span style="color:var(--neon-magenta);">ordered, immutable</span> collection</div>
+<div style="position:absolute;top:310px;left:80px;display:grid;grid-template-columns:1fr 1fr;gap:24px;width:1760px;">
+  <div style="padding:26px;border-radius:14px;background:rgba(236,72,153,0.06);border:1px solid rgba(236,72,153,0.15);">
+    <div style="font-size:26px;font-weight:700;color:var(--neon-magenta);margin-bottom:12px;">🔒 Immutable</div>
+    <div style="font-size:21px;color:var(--text-mid);line-height:1.7;">Once created, you CANNOT add, remove, or change items. Trying to → TypeError.</div>
+  </div>
+  <div style="padding:26px;border-radius:14px;background:rgba(34,211,238,0.06);border:1px solid rgba(34,211,238,0.15);">
+    <div style="font-size:26px;font-weight:700;color:var(--neon-cyan);margin-bottom:12px;">📝 Written with ( )</div>
+    <div style="font-size:21px;color:var(--text-mid);line-height:1.7;">Parentheses instead of square brackets. Access items by index — just like lists.</div>
+  </div>
+</div>
+<div style="position:absolute;top:560px;left:80px;"><div class="code-window" style="width:880px;">
+<div class="code-window-header">
+<div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+<span class="code-window-title">tuples.py</span>
+</div>
+<pre style="padding:24px 28px;margin:0;font-size:20px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span class="tok-var">point</span> = (<span class="tok-num">3</span>, <span class="tok-num">4</span>)
+<span class="tok-var">colors</span> = (<span class="tok-str">"red"</span>, <span class="tok-str">"green"</span>, <span class="tok-str">"blue"</span>)
+<span class="tok-var">single</span> = (<span class="tok-num">42</span>,)   <span class="tok-com"># comma required!</span>
+
+<span class="tok-fn">print</span>(<span class="tok-var">point</span>[<span class="tok-num">0</span>])  <span class="tok-com"># 3  (same indexing)</span>
+<span class="tok-fn">print</span>(<span class="tok-fn">len</span>(<span class="tok-var">colors</span>))  <span class="tok-com"># 3</span></pre>
+</div></div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S05</div>
+<div class="chrome-pagenum">45 / 63</div>
+<template data-slide-notes>A tuple is ordered but immutable. Parentheses, indexable, len() works. Single-item tuple needs a trailing comma.</template>
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-240px; right:-160px;"></div>
+  <div class="bg-glow-lime" style="bottom:-280px; left:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">🔄 VISUAL — THE ROUND TRIP</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi); margin-top:14px;">One request, one journey</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:420px; height:300px; background:rgba(34,211,238,0.07); border:1px solid rgba(34,211,238,0.45); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:370px; width:340px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:28px; color:var(--neon-cyan);">STEP 1</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-hi); margin-top:8px;">Client asks 🐍</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--neon-lime); margin-top:12px;">requests.get(url)</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:var(--text-lo); margin-top:8px;">Builds a request with method + URL.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:540px; top:450px; width:120px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:44px; color:var(--neon-magenta); text-align:center;">→</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:700px; top:330px; width:420px; height:300px; background:rgba(250,204,21,0.07); border:1px solid rgba(250,204,21,0.45); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:740px; top:370px; width:340px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:28px; color:var(--neon-yellow);">STEP 2</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-hi); margin-top:8px;">Travels ⚡</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:var(--text-lo); margin-top:12px;">Flies over the internet to the server.</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--text-dim); margin-top:8px;">milliseconds, worldwide</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1160px; top:450px; width:120px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:44px; color:var(--neon-magenta); text-align:center;">→</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1320px; top:330px; width:520px; height:300px; background:rgba(236,72,153,0.07); border:1px solid rgba(236,72,153,0.45); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1360px; top:370px; width:440px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:28px; color:var(--neon-magenta);">STEP 3</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-hi); margin-top:8px;">Server answers 🖥️</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:var(--text-lo); margin-top:12px;">Checks the question, fetches data, replies with a status code + JSON.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:690px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); line-height:1.6;">The whole thing is a <span style="color:var(--neon-lime);">round trip</span>: request goes out, response comes back.<br><span style="color:var(--text-hi);">When it returns, your program holds the data as a Python object.</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:880px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">رحلة الطلب: عميل يسأل ← الخادم يفكّر ← استجابة تعود — كل ذلك في أجزاء من الثانية ⚡</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">12 / 50</div>
+</div>
+<template data-slide-notes>
+Visual: the request round trip. Walk the 3 steps with hand motions (out → travel → back).
+
+Explain that step 3 returns two things bundled together: a status code (did it work?) and a body (the actual data, usually JSON).
+
+Activity: have students draw the triangle (client → internet → server → back) on paper in 30 seconds. Memory: "ASK — FLY — ANSWER."
+
+This mental model is used on every later slide; when we call `requests.get()` in slide 26, point back to this diagram.
+
+Arabic tip: ارسم المثلث على السبورة وكرر "يسأل، يطير، يجيب" — اجعل الطلاب يرددونها معك.
+</template>
+</body>
+</html>

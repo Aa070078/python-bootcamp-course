@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-240px; right:-160px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-280px; left:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">📨 VISUAL — TWO ENVELOPES</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi); margin-top:14px;">Request vs Response</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:860px; height:420px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.45); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:370px; width:780px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-cyan);">📤 REQUEST (what YOU send)</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:14px; line-height:1.7;">
+      <span style="color:var(--text-hi);">Method</span> — what do you want to do? (GET, POST…)<br>
+      <span style="color:var(--text-hi);">URL</span> — who do you want it from?<br>
+      <span style="color:var(--text-hi);">Headers</span> — extra info (who you are, keys)<br>
+      <span style="color:var(--text-hi);">Body</span> — optional data you're sending
+    </div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-lime); margin-top:16px;">"GET me the current temperature in Cairo"</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:980px; top:470px; width:100px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:44px; color:var(--neon-magenta); text-align:center;">⇄</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1120px; top:330px; width:800px; height:420px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.45); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1160px; top:370px; width:720px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-magenta);">📥 RESPONSE (what you get back)</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:14px; line-height:1.7;">
+      <span style="color:var(--text-hi);">Status code</span> — did it work? (200, 404…)<br>
+      <span style="color:var(--text-hi);">Headers</span> — meta info about the answer<br>
+      <span style="color:var(--text-hi);">Body</span> — the actual data, usually <span style="color:var(--neon-lime);">JSON</span>
+    </div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-yellow); margin-top:16px;">"200 OK → {"temp": 38, "city": "Cairo"}"</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:800px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-lo);">In Python, <span class="mono" style="color:var(--neon-cyan);">resp.status_code</span> and <span class="mono" style="color:var(--neon-cyan);">resp.text</span> read those two parts for you.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:900px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">الطلب هو السؤال، والاستجابة هي الجواب — كلاهما بطاقة بريدية ذات أجزاء محددة 📨</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">14 / 50</div>
+</div>
+<template data-slide-notes>
+Request vs response, visualized as two envelopes.
+
+Point out the parts a request *can* have vs a response *must* have (a response always has a status code).
+
+Emphasize: the response body in almost every API is JSON — that's the treasure. We'll dissect it in slides 23–24.
+
+Quick pairing activity: students pair up, one pretends to be client and one server; client "sends" a request envelope, server "returns" a response envelope with a status code. 2 minutes.
+
+Arabic tip: شبّه الأمر بإرسال رسالة واستلام رد: أنت تكتب السؤال والتفاصيل، والطرف الآخر يرد بكلمة حالة "تم" أو "غير موجود" مع المحتوى.
+</template>
+</body>
+</html>

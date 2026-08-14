@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-240px; right:-160px;"></div>
+  <div class="bg-glow-lime" style="bottom:-280px; left:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">🛡️ CORE CONCEPT #17</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:84px; font-weight:700; color:var(--text-hi); margin-top:14px;">Handle API <span style="color:var(--neon-cyan);">errors</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:320px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); line-height:1.6;">The server doesn't crash your program — it <span style="color:var(--neon-lime);">replies with an error code</span>. YOU decide what to do with it.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:440px; width:900px; height:360px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:490px; width:840px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.7;">
+    <div><span class="tok-kw">import</span> <span class="tok-var">requests</span></div>
+    <div><br></div>
+    <div><span class="tok-kw">def</span> <span class="tok-fn">get_rate</span>(<span class="tok-var">currency</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">url</span> <span class="tok-op">=</span> <span class="tok-fn">f</span>(<span class="tok-str">"https://api.frankfurter.app/latest?from=USD&amp;to={currency}"</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">resp</span> <span class="tok-op">=</span> <span class="tok-var">requests</span>.<span class="tok-fn">get</span>(<span class="tok-var">url</span>)</div>
+    <div><br></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">if</span> <span class="tok-var">resp</span>.<span class="tok-var">status_code</span> <span class="tok-op">!=</span> <span class="tok-num">200</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-fn">f</span>(<span class="tok-str">"Error {resp.status_code}: {resp.reason}"</span>))</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-kw">None</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">data</span> <span class="tok-op">=</span> <span class="tok-var">resp</span>.<span class="tok-fn">json</span>()</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-var">data</span>[<span class="tok-str">"rates"</span>][<span class="tok-var">currency</span>]</div>
+    <div><br></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-fn">get_rate</span>(<span class="tok-str">"EUR"</span>))</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1030px; top:440px; width:810px; height:360px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1070px; top:480px; width:730px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-magenta);">THE 3-STEP SHIELD</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:14px; line-height:1.9;">
+      1️⃣ <span style="color:var(--text-hi);">Check the code</span> — is it 200?<br>
+      2️⃣ <span style="color:var(--text-hi);">Decide</span> — print, return None, or retry<br>
+      3️⃣ <span style="color:var(--text-hi);">Protect</span> — wrap network calls in try/except:<br>
+      <span class="mono" style="color:var(--neon-lime);">except requests.exceptions.RequestException</span><br><br>
+      Never let a missing internet connection crash the whole app.
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:850px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-lo);">Pattern: <span class="mono" style="color:var(--neon-cyan);">check status</span> &rarr; <span class="mono" style="color:var(--neon-cyan);">handle gracefully</span>. You'll use this in the project. 🛡️</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:925px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">الخادم لا يوقف برنامجك — يعيد رمز خطأ، وأنت تقرر: تحقّق من الحالة، ثم تعامل معها بأمان 🛡️</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">33 / 50</div>
+</div>
+<template data-slide-notes>
+Error handling — the 3-step shield.
+
+Walk the code: check status_code != 200 first, print a friendly message + return None. Mention resp.reason gives "Not Found" text.
+
+Two error layers students must distinguish:
+1. HTTP errors (4xx/5xx) — caught by checking status_code.
+2. Network errors (no internet, DNS failure) — these raise exceptions; catch with try/except requests.exceptions.RequestException.
+
+Live demo idea: unplug/reload — call get_rate("XXX") (invalid code) → shows the graceful path returns None instead of crashing.
+
+This pattern is required in the project (currency converter). Hammer it now.
+
+Arabic tip: "احمِ برنامجك كأنه هاتفك — أنت لا ترميه عند انقطاع الإنترنت، بل تعالج الموقف" مثال واقعي قريب من حياتهم.
+</template>
+</body>
+</html>

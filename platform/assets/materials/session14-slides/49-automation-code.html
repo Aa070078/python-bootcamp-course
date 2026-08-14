@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta"></div>
+  <div class="bg-glow-lime"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:70px; width:1760px; z-index:10;">
+    <div class="kicker">EXTRA // PLAYWRIGHT IN 10 LINES 🎭</div>
+    <div style="margin-top:22px; font-family:'Space Grotesk',sans-serif; font-size:50px; font-weight:700; color:var(--text-hi);">Open → fill → click → wait</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:12px;">نموذج Playwright: افتح صفحة، املأ نموذجًا، اضغط زرًا، وانتظر النتيجة</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:290px; width:1200px; height:560px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">automate.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" data-lang="python" style="position:absolute; left:110px; top:350px; width:1140px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.6;">
+    <div><span class="tok-kw">from</span> playwright.sync_api <span class="tok-kw">import</span> sync_playwright</div>
+    <div></div>
+    <div><span class="tok-kw">with</span> <span class="tok-fn">sync_playwright</span>() <span class="tok-kw">as</span> <span class="tok-var">p</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">browser</span> = <span class="tok-var">p.chromium.launch</span>(headless=<span class="tok-kw">True</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">page</span> = <span class="tok-var">browser.new_page</span>()</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">page.goto</span>(<span class="tok-str">"https://example.com/login"</span>) <span class="tok-com"># open</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">page.fill</span>(<span class="tok-str">"#user"</span>, <span class="tok-str">"bootcamper"</span>) <span class="tok-com"># fill</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">page.fill</span>(<span class="tok-str">"#pass"</span>, <span class="tok-str">"hunter2"</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">page.click</span>(<span class="tok-str">"button[type=submit]"</span>) <span class="tok-com"># click</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">page.wait_for_selector</span>(<span class="tok-str">".dashboard"</span>) <span class="tok-com"># wait</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-var">page.title</span>())</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">browser.close</span>()</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1330px; top:320px; width:510px; z-index:10;">
+    <div class="chip chip-yellow">CHOOSE YOUR TOOL</div>
+    <div style="margin-top:20px; font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-mid); line-height:1.65;">
+      <span style="color:var(--neon-lime);">requests+BS4</span> → static pages, data in the HTML<br><br>
+      <span style="color:var(--neon-magenta);">Playwright/Selenium</span> → JS-loaded pages, clicks, forms
+    </div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:25px; color:var(--text-lo); direction:rtl; margin-top:20px;">البيانات في HTML → requests؛ تحتاج تفاعلًا وتنفيذ JavaScript → متصفح آلي</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">49 / 50</div>
+</div>
+<template data-slide-notes>
+Note: `example.com/login` is illustrative — always test on sandbox/sites you may automate. In a demo, use a public form (e.g. Wikipedia search).
+
+Walk the four verbs: goto (open), fill (type into a field by selector), click (press a button), wait_for_selector (pause until the result element exists). Selectors work just like BS4's CSS selectors.
+
+If no time: install playwright during break. `pip install playwright` + `playwright install chromium`. headless=True keeps it invisible; set False to WATCH the browser do it — very fun demo.
+
+Arabic tip: wait_for_selector = «انتظر ظهور النتيجة». بدونها قد يقرأ البرنامج الصفحة قبل اكتمال التحميل.
+</template>
+</body>
+</html>

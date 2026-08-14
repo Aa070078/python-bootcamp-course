@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime"></div>
+  <div class="bg-glow-cyan"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1760px; z-index:10;">
+    <div class="kicker">REVIEW // LAST SESSION — APIS ⏮️</div>
+    <div style="margin-top:26px; font-family:'Space Grotesk',sans-serif; font-size:58px; font-weight:700; color:var(--text-hi);">Which of these is <span style="color:var(--neon-yellow);">NOT</span> a good API habit we learned?</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:14px;">أيٌّ مما يلي ليس عادةً جيدة عند التعامل مع واجهات برمجة التطبيقات؟</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:370px; width:1760px; z-index:10;">
+    <div style="display:flex; gap:30px; flex-wrap:wrap;">
+      <div style="width:850px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.3); border-radius:20px; padding:26px 30px;"><span class="chip chip-lime">A</span> <span style="font-family:'JetBrains Mono',monospace; font-size:27px; color:var(--text-hi);">Setting a timeout on every request</span></div>
+      <div style="width:850px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.3); border-radius:20px; padding:26px 30px;"><span class="chip chip-lime">B</span> <span style="font-family:'JetBrains Mono',monospace; font-size:27px; color:var(--text-hi);">Checking status codes before using the data</span></div>
+      <div style="width:850px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.3); border-radius:20px; padding:26px 30px;"><span class="chip chip-lime">C</span> <span style="font-family:'JetBrains Mono',monospace; font-size:27px; color:var(--text-hi);">Bombarding the server with thousands of parallel requests</span></div>
+      <div style="width:850px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.3); border-radius:20px; padding:26px 30px;"><span class="chip chip-lime">D</span> <span style="font-family:'JetBrains Mono',monospace; font-size:27px; color:var(--text-hi);">Respecting rate limits from the docs</span></div>
+    </div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">05 / 50</div>
+</div>
+<template data-slide-notes>
+Answer: C. Flooding a server is rude, gets you blocked, and can be illegal (DoS-ish behaviour). Timeouts, status checks and rate limits are the good habits.
+
+Foreshadowing: "Today the same politeness applies to websites — we'll meet robots.txt and sleep() between requests."
+
+Poll the room on each option to review quickly, then reveal C.
+
+Arabic tip: مفتاح المراجعة: «الأدب مع الخادم» — نفس المبدأ ينطبق اليوم على المواقع. رسّخ كلمة الهدوء في الطلبات.
+</template>
+</body>
+</html>

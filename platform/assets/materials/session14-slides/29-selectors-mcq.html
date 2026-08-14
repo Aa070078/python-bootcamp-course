@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta"></div>
+  <div class="bg-glow-cyan"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1760px; z-index:10;">
+    <div class="kicker">CHECKPOINT // QUICK MCQ 🎯</div>
+    <div style="margin-top:26px; font-family:'Space Grotesk',sans-serif; font-size:52px; font-weight:700; color:var(--text-hi);">Which selector grabs every <span class="mono" style="color:var(--neon-lime);">&lt;li class="item"&gt;</span> on the page?</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:14px;">أي محدّد يلتقط كل عناصر القائمة ذات الفئة item؟</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:360px; width:1760px; z-index:10;">
+    <div style="display:flex; gap:30px; flex-wrap:wrap;">
+      <div style="width:850px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.3); border-radius:20px; padding:26px 30px;"><span class="chip chip-magenta">A</span> <span class="mono" style="font-family:'JetBrains Mono',monospace; font-size:27px; color:var(--text-hi);">"li#item"</span></div>
+      <div style="width:850px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.3); border-radius:20px; padding:26px 30px;"><span class="chip chip-magenta">B</span> <span class="mono" style="font-family:'JetBrains Mono',monospace; font-size:27px; color:var(--text-hi);">"li.item"</span></div>
+      <div style="width:850px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.3); border-radius:20px; padding:26px 30px;"><span class="chip chip-magenta">C</span> <span class="mono" style="font-family:'JetBrains Mono',monospace; font-size:27px; color:var(--text-hi);">"#li .item"</span></div>
+      <div style="width:850px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.3); border-radius:20px; padding:26px 30px;"><span class="chip chip-magenta">D</span> <span class="mono" style="font-family:'JetBrains Mono',monospace; font-size:27px; color:var(--text-hi);">"item.li"</span></div>
+    </div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">29 / 50</div>
+</div>
+<template data-slide-notes>
+Answer: B. `li.item` = tag li that has class item. `#` is for id, and order matters (tag.class, not class.tag).
+
+Follow-up: "How would you get the FIRST such element?" → select_one("li.item").
+
+Arabic tip: النقطة قبل الكلمة = فئة، فالتقط اللي الذي يحمل الفئة item. ترتيب الوسم ثم الفئة.
+</template>
+</body>
+</html>

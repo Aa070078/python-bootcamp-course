@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="bottom:-180px; left:-200px;"></div>
+  <div class="bg-glow-magenta" style="top:80px; right:-220px;"></div>
+
+  <div class="chrome-topbar">
+    <span class="chrome-dot"></span>
+    <span>PRO TIP // .gitignore</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-cyan); letter-spacing:0.25em; text-transform:uppercase;">🔑 PRO TIP</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi); margin-top:12px;"><span style="color:var(--neon-lime);">.gitignore</span></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-mid); margin-top:10px;">A list of files Git should never track. Keeps your repo clean &amp; safe.</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:390px; width:920px; height:450px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">.gitignore</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:450px; width:860px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:29px; line-height:1.85;">
+    <div><span class="tok-com"># Python cache — no one needs these</span></div>
+    <div><span class="tok-str">__pycache__/</span></div>
+    <div><span class="tok-str">*.pyc</span></div>
+    <div style="height:6px;"></div>
+    <div><span class="tok-com"># virtual environments</span></div>
+    <div><span class="tok-str">venv/</span></div>
+    <div style="height:6px;"></div>
+    <div><span class="tok-com"># secrets — NEVER commit these!</span></div>
+    <div><span class="tok-str">.env</span></div>
+    <div style="height:6px;"></div>
+    <div><span class="tok-com"># OS junk</span></div>
+    <div><span class="tok-str">.DS_Store</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1060px; top:390px; width:780px; height:450px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.3); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1090px; top:430px; width:720px; z-index:10;">
+    <div style="font-size:52px;">🕵️</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-hi); font-weight:600; margin-top:12px;">Why it matters</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:16px; line-height:1.7;">• Repo stays small &amp; clean<br>• No leaked passwords or API keys<br>• No 5000-file cache garbage<br><br>Create it, then <span class="mono" style="color:var(--neon-lime);">git add .gitignore</span> + commit it.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:920px; width:1760px; z-index:10;">
+    <span class="chip chip-lime">__pycache__/</span>
+    <span class="chip chip-yellow">venv/</span>
+    <span class="chip chip-magenta">.env ← secrets</span>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:24px;">.gitignore يستثني الملفات غير المرغوبة — خاصة الأسرار والملفات المؤقتة.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S10</div>
+  <div class="chrome-pagenum">30 / 50</div>
+</div>
+<template data-slide-notes>
+**Slide 30 — .gitignore (5 min)**
+- Demo: create `.gitignore`, add the common Python entries, commit it.
+- Show the benefit live: create a `__pycache__` (run a python file once) → `git status` no longer lists it after adding to .gitignore.
+- SECURITY emphasis: never commit `.env` files — real companies get hacked this way. Don't share passwords on GitHub.
+- Note: patterns with `/` = folders; `*` = wildcard (e.g. `*.log`).
+- Arabic tip: الاسم يعني "تجاهُل Git" — أي أن Git يتجاهل هذه الملفات تماماً.
+- Common slip: creating `.gitignore.txt` (wrong). In Git Bash `touch .gitignore` creates it correctly.
+</template>
+</body>
+</html>

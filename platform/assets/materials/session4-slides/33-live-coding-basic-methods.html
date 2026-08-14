@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-cyan"></div>
+
+<div class="kicker" style="position:absolute;top:100px;left:80px;">LIVE CODING // BASIC METHODS</div>
+<div class="arabic" style="position:absolute;top:140px;left:80px;font-size:24px;color:var(--text-lo);">برمجة مباشرة — الدوال الأساسية</div>
+<div style="position:absolute;top:200px;left:80px;"><div class="code-window" style="width:880px;">
+<div class="code-window-header">
+<div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+<span class="code-window-title">clean_input.py</span>
+</div>
+<pre style="padding:24px 28px;margin:0;font-size:20px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span class="tok-com"># Real-world: cleaning user input</span>
+<span class="tok-var">user_input</span> = <span class="tok-str">"  PyThOn  "</span>
+
+<span class="tok-com"># Step 1: Remove spaces</span>
+<span class="tok-var">cleaned</span> = <span class="tok-var">user_input</span>.<span class="tok-fn">strip</span>()
+<span class="tok-fn">print</span>(<span class="tok-var">cleaned</span>)     <span class="tok-com"># "PyThON"</span>
+
+<span class="tok-com"># Step 2: Convert to lowercase</span>
+<span class="tok-var">cleaned</span> = <span class="tok-var">cleaned</span>.<span class="tok-fn">lower</span>()
+<span class="tok-fn">print</span>(<span class="tok-var">cleaned</span>)     <span class="tok-com"># "python"</span>
+
+<span class="tok-com"># Step 3: Capitalize for display</span>
+<span class="tok-var">display</span> = <span class="tok-var">cleaned</span>.<span class="tok-fn">capitalize</span>()
+<span class="tok-fn">print</span>(<span class="tok-var">display</span>)     <span class="tok-com"># "Python"</span>
+
+<span class="tok-com"># Step 4: Validate</span>
+<span class="tok-kw">if</span> <span class="tok-var">cleaned</span> <span class="tok-op">==</span> <span class="tok-str">"python"</span>:
+    <span class="tok-fn">print</span>(<span class="tok-str">"Welcome, Python learner!"</span>)</pre>
+</div></div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S04</div>
+<div class="chrome-pagenum">33 / 76</div>
+<template data-slide-notes></template>
+</div>
+</body>
+</html>

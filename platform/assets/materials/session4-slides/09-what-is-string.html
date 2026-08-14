@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-cyan"></div>
+
+<div class="kicker" style="position:absolute;top:100px;left:80px;">WHAT IS A STRING?</div>
+<div class="arabic" style="position:absolute;top:100px;right:80px;font-size:20px;color:rgba(34,211,238,0.5);">ما هي السلاسل النصية؟</div>
+<div style="position:absolute;top:160px;left:80px;font-size:36px;font-weight:600;color:var(--text-hi);max-width:1200px;">A string is a <span style="color:var(--neon-cyan);">sequence of characters</span></div>
+<div style="position:absolute;top:240px;left:80px;display:flex;flex-wrap:wrap;gap:20px;width:1000px;">
+  <div style="padding:22px 28px;border-radius:14px;background:rgba(34,211,238,0.06);border:1px solid rgba(34,211,238,0.15);width:400px;">
+      <div style="font-size:22px;font-weight:700;color:var(--neon-cyan);margin-bottom:6px;">Text wrapped in quotes</div>
+      <div style="font-size:18px;color:var(--text-mid);">"hello" or 'hello'</div>
+    </div><div style="padding:22px 28px;border-radius:14px;background:rgba(34,211,238,0.06);border:1px solid rgba(34,211,238,0.15);width:400px;">
+      <div style="font-size:22px;font-weight:700;color:var(--neon-cyan);margin-bottom:6px;">Single or double quotes</div>
+      <div style="font-size:18px;color:var(--text-mid);">Both work the same way</div>
+    </div><div style="padding:22px 28px;border-radius:14px;background:rgba(34,211,238,0.06);border:1px solid rgba(34,211,238,0.15);width:400px;">
+      <div style="font-size:22px;font-weight:700;color:var(--neon-cyan);margin-bottom:6px;">Every character has an index</div>
+      <div style="font-size:18px;color:var(--text-mid);">Position numbers start at 0</div>
+    </div><div style="padding:22px 28px;border-radius:14px;background:rgba(34,211,238,0.06);border:1px solid rgba(34,211,238,0.15);width:400px;">
+      <div style="font-size:22px;font-weight:700;color:var(--neon-cyan);margin-bottom:6px;">Strings are IMMUTABLE</div>
+      <div style="font-size:18px;color:var(--text-mid);">Cannot change after creation</div>
+    </div>
+</div>
+<div style="position:absolute;top:240px;right:80px;"><div class="code-window" style="width:780px;">
+<div class="code-window-header">
+<div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+<span class="code-window-title">main.py</span>
+</div>
+<pre style="padding:24px 28px;margin:0;font-size:20px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span style="color:#6B7280;"># Creating strings</span>
+name = <span style="color:var(--neon-lime);">"Ahmed"</span>
+greeting = <span style="color:var(--neon-lime);">'Hello World'</span>
+mixed = <span style="color:var(--neon-lime);">"It's OK"</span>
+
+<span style="color:#6B7280;"># Check the type</span>
+print(type(name))  <span style="color:#6B7280;"># &lt;class 'str'&gt;</span></pre>
+</div></div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S04</div>
+<div class="chrome-pagenum">9 / 76</div>
+<template data-slide-notes>A string is a sequence of characters wrapped in quotes. Strings are immutable meaning you cannot change individual characters after creation.</template>
+</div>
+</body>
+</html>

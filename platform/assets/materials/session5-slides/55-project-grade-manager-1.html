@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-lime"></div>
+<div class="chrome-topbar"><span class="chrome-dot"></span>PROJECTS</div>
+
+<div class="kicker" style="position:absolute;top:100px;left:80px;">PROJECT // PART 1</div>
+<div class="arabic" style="position:absolute;top:140px;left:80px;font-size:24px;color:var(--text-lo););font-size:24px;color:var(--text-lo);">الجزء الأول — البيانات والإضافة</div>
+<div style="position:absolute;top:200px;left:80px;"><div class="code-window" style="width:880px;">
+<div class="code-window-header">
+<div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+<span class="code-window-title">grade_manager.py</span>
+</div>
+<pre style="padding:24px 28px;margin:0;font-size:20px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span class="tok-com"># Student Grade Manager — Part 1: data + add</span>
+<span class="tok-var">students</span> = []   <span class="tok-com"># each student = [name, score]</span>
+
+<span class="tok-kw">def</span> <span class="tok-fn">add_student</span>():
+    <span class="tok-var">name</span> = <span class="tok-fn">input</span>(<span class="tok-str">"Student name: "</span>)
+    <span class="tok-var">score</span> = <span class="tok-fn">int</span>(<span class="tok-fn">input</span>(<span class="tok-str">"Score: "</span>))
+    <span class="tok-var">students</span>.<span class="tok-fn">append</span>([<span class="tok-var">name</span>, <span class="tok-var">score</span>])
+    <span class="tok-fn">print</span>(<span class="tok-str">f"Added </span><span class="tok-str">{</span><span class="tok-var">name</span><span class="tok-str">}</span><span class="tok-str"> with </span><span class="tok-str">{</span><span class="tok-var">score</span><span class="tok-str">}</span><span class="tok-str">!"</span>)
+
+<span class="tok-kw">def</span> <span class="tok-fn">show_all</span>():
+    <span class="tok-kw">if</span> <span class="tok-kw">not</span> <span class="tok-var">students</span>:
+        <span class="tok-fn">print</span>(<span class="tok-str">"No students yet."</span>)
+        <span class="tok-kw">return</span>
+    <span class="tok-kw">for</span> <span class="tok-var">i</span>, <span class="tok-var">s</span> <span class="tok-kw">in</span> <span class="tok-fn">enumerate</span>(<span class="tok-var">students</span>, <span class="tok-num">1</span>):
+        <span class="tok-fn">print</span>(<span class="tok-str">f"</span><span class="tok-str">{</span><span class="tok-var">i</span><span class="tok-str">}</span><span class="tok-str">. </span><span class="tok-str">{</span><span class="tok-var">s</span>[<span class="tok-num">0</span>]<span class="tok-str">}</span><span class="tok-str">: </span><span class="tok-str">{</span><span class="tok-var">s</span>[<span class="tok-num">1</span>]<span class="tok-str">}</span><span class="tok-str">"</span>)</pre>
+</div></div>
+<div style="position:absolute;top:200px;right:80px;width:800px;display:flex;flex-direction:column;gap:16px;">
+  <div style="padding:20px 24px;border-radius:12px;background:rgba(34,211,238,0.06);border:1px solid rgba(34,211,238,0.15);">
+    <div style="font-size:20px;color:var(--neon-cyan);font-weight:700;margin-bottom:6px;">students = []</div>
+    <div style="font-size:18px;color:var(--text-mid);">A list that will hold [name, score] lists.</div>
+  </div>
+  <div style="padding:20px 24px;border-radius:12px;background:rgba(163,230,53,0.06);border:1px solid rgba(163,230,53,0.15);">
+    <div style="font-size:20px;color:var(--neon-lime);font-weight:700;margin-bottom:6px;">add_student()</div>
+    <div style="font-size:18px;color:var(--text-mid);">Gets input, builds the inner list, appends it. The core of the app.</div>
+  </div>
+  <div style="padding:20px 24px;border-radius:12px;background:rgba(250,204,21,0.06);border:1px solid rgba(250,204,21,0.15);">
+    <div style="font-size:20px;color:var(--neon-yellow);font-weight:700;margin-bottom:6px;">show_all()</div>
+    <div style="font-size:18px;color:var(--text-mid);">enumerate() gives row numbers starting at 1 — like a real list.</div>
+  </div>
+</div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S05</div>
+<div class="chrome-pagenum">55 / 63</div>
+<template data-slide-notes>Project part 1: nested list storage, add_student() with append, show_all() with enumerate.</template>
+</div>
+</body>
+</html>

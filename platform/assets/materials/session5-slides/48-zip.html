@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-cyan"></div>
+<div class="chrome-topbar"><span class="chrome-dot"></span>TUPLES</div>
+
+<div class="kicker" style="position:absolute;top:100px;left:80px;">ZIP</div>
+<div class="arabic" style="position:absolute;top:140px;left:80px;font-size:24px;color:var(--text-lo););font-size:24px;color:var(--text-lo);">الدمج zip</div>
+<div style="position:absolute;top:210px;left:80px;font-size:36px;font-weight:700;color:var(--text-hi);max-width:1600px;"><span style="font-family:'JetBrains Mono',monospace;color:var(--neon-magenta);">zip()</span> pairs items from two lists together</div>
+<div style="position:absolute;top:320px;left:80px;"><div class="code-window" style="width:880px;">
+<div class="code-window-header">
+<div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+<span class="code-window-title">zip.py</span>
+</div>
+<pre style="padding:24px 28px;margin:0;font-size:20px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span class="tok-var">names</span>  = [<span class="tok-str">"Ahmed"</span>, <span class="tok-str">"Omar"</span>, <span class="tok-str">"Sara"</span>]
+<span class="tok-var">scores</span> = [<span class="tok-num">95</span>, <span class="tok-num">88</span>, <span class="tok-num">91</span>]
+
+<span class="tok-com"># Pair them up!</span>
+<span class="tok-kw">for</span> <span class="tok-var">name</span>, <span class="tok-var">score</span> <span class="tok-kw">in</span> <span class="tok-fn">zip</span>(<span class="tok-var">names</span>, <span class="tok-var">scores</span>):
+    <span class="tok-fn">print</span>(<span class="tok-str">f"</span><span class="tok-str">{</span><span class="tok-var">name</span><span class="tok-str">}</span><span class="tok-str">: </span><span class="tok-str">{</span><span class="tok-var">score</span><span class="tok-str">}</span><span class="tok-str">"</span>)
+
+<span class="tok-com"># Ahmed: 95</span>
+<span class="tok-com"># Omar: 88</span>
+<span class="tok-com"># Sara: 91</span>
+
+<span class="tok-com"># zip() also returns pairs as tuples</span>
+<span class="tok-fn">print</span>(<span class="tok-fn">list</span>(<span class="tok-fn">zip</span>(<span class="tok-var">names</span>, <span class="tok-var">scores</span>)))
+<span class="tok-com"># [("Ahmed", 95), ("Omar", 88), ("Sara", 91)]</span></pre>
+</div></div>
+<div style="position:absolute;top:320px;right:80px;width:800px;padding:24px;border-radius:14px;background:rgba(34,211,238,0.06);border:1px solid rgba(34,211,238,0.15);">
+  <div style="font-size:24px;font-weight:700;color:var(--neon-cyan);margin-bottom:14px;">🤝 Like a zipper</div>
+  <div style="font-size:21px;color:var(--text-mid);line-height:1.8;">Takes position 0 of each list, then position 1, and so on. Perfect for connecting names with scores.</div>
+</div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S05</div>
+<div class="chrome-pagenum">48 / 63</div>
+<template data-slide-notes>zip() pairs up two lists by position. Loop with tuple unpacking, or convert to a list of tuples.</template>
+</div>
+</body>
+</html>

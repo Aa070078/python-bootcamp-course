@@ -1,0 +1,202 @@
+[
+    {
+        "file":  "01-cover.html",
+        "title":  "01-cover"
+    },
+    {
+        "file":  "02-hook.html",
+        "title":  "02-hook"
+    },
+    {
+        "file":  "03-review-mcq-1.html",
+        "title":  "03-review-mcq-1"
+    },
+    {
+        "file":  "04-review-mcq-2.html",
+        "title":  "04-review-mcq-2"
+    },
+    {
+        "file":  "05-review-mcq-3.html",
+        "title":  "05-review-mcq-3"
+    },
+    {
+        "file":  "06-timeline.html",
+        "title":  "06-timeline"
+    },
+    {
+        "file":  "07-why-functions.html",
+        "title":  "07-why-functions"
+    },
+    {
+        "file":  "08-visual-function-machine.html",
+        "title":  "08-visual-function-machine"
+    },
+    {
+        "file":  "09-def-and-call.html",
+        "title":  "09-def-and-call"
+    },
+    {
+        "file":  "10-mcq-def-call.html",
+        "title":  "10-mcq-def-call"
+    },
+    {
+        "file":  "11-params-vs-args.html",
+        "title":  "11-params-vs-args"
+    },
+    {
+        "file":  "12-visual-args-passing.html",
+        "title":  "12-visual-args-passing"
+    },
+    {
+        "file":  "13-code-parameters.html",
+        "title":  "13-code-parameters"
+    },
+    {
+        "file":  "14-mcq-parameters.html",
+        "title":  "14-mcq-parameters"
+    },
+    {
+        "file":  "15-return-vs-print.html",
+        "title":  "15-return-vs-print"
+    },
+    {
+        "file":  "16-code-return-print.html",
+        "title":  "16-code-return-print"
+    },
+    {
+        "file":  "17-mcq-return.html",
+        "title":  "17-mcq-return"
+    },
+    {
+        "file":  "18-predict-output-1.html",
+        "title":  "18-predict-output-1"
+    },
+    {
+        "file":  "19-default-params.html",
+        "title":  "19-default-params"
+    },
+    {
+        "file":  "20-code-defaults.html",
+        "title":  "20-code-defaults"
+    },
+    {
+        "file":  "21-mcq-defaults.html",
+        "title":  "21-mcq-defaults"
+    },
+    {
+        "file":  "22-keyword-args.html",
+        "title":  "22-keyword-args"
+    },
+    {
+        "file":  "23-code-keyword.html",
+        "title":  "23-code-keyword"
+    },
+    {
+        "file":  "24-mcq-keyword.html",
+        "title":  "24-mcq-keyword"
+    },
+    {
+        "file":  "25-star-args.html",
+        "title":  "25-star-args"
+    },
+    {
+        "file":  "26-code-star-args.html",
+        "title":  "26-code-star-args"
+    },
+    {
+        "file":  "27-scope.html",
+        "title":  "27-scope"
+    },
+    {
+        "file":  "28-visual-scope.html",
+        "title":  "28-visual-scope"
+    },
+    {
+        "file":  "29-code-scope.html",
+        "title":  "29-code-scope"
+    },
+    {
+        "file":  "30-mcq-scope.html",
+        "title":  "30-mcq-scope"
+    },
+    {
+        "file":  "31-reusable-design.html",
+        "title":  "31-reusable-design"
+    },
+    {
+        "file":  "32-lambda-intro.html",
+        "title":  "32-lambda-intro"
+    },
+    {
+        "file":  "33-code-lambda.html",
+        "title":  "33-code-lambda"
+    },
+    {
+        "file":  "34-docstrings.html",
+        "title":  "34-docstrings"
+    },
+    {
+        "file":  "35-collections-practical.html",
+        "title":  "35-collections-practical"
+    },
+    {
+        "file":  "36-predict-output-2.html",
+        "title":  "36-predict-output-2"
+    },
+    {
+        "file":  "37-live-coding-1.html",
+        "title":  "37-live-coding-1"
+    },
+    {
+        "file":  "38-common-mistakes.html",
+        "title":  "38-common-mistakes"
+    },
+    {
+        "file":  "39-live-coding-2.html",
+        "title":  "39-live-coding-2"
+    },
+    {
+        "file":  "40-project-intro.html",
+        "title":  "40-project-intro"
+    },
+    {
+        "file":  "41-project-code-1.html",
+        "title":  "41-project-code-1"
+    },
+    {
+        "file":  "42-project-code-2.html",
+        "title":  "42-project-code-2"
+    },
+    {
+        "file":  "43-project-output.html",
+        "title":  "43-project-output"
+    },
+    {
+        "file":  "44-exercises.html",
+        "title":  "44-exercises"
+    },
+    {
+        "file":  "45-homework.html",
+        "title":  "45-homework"
+    },
+    {
+        "file":  "46-final-quiz.html",
+        "title":  "46-final-quiz"
+    },
+    {
+        "file":  "47-recap.html",
+        "title":  "47-recap"
+    },
+    {
+        "file":  "48-bridge-files-json.html",
+        "title":  "48-bridge-files-json"
+    },
+    {
+        "file":  "49-closing.html",
+        "title":  "49-closing"
+    },
+    {
+        "file":  "50-cheat-sheet.html",
+        "title":  "50-cheat-sheet"
+    }
+]

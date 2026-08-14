@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime" style="top:-150px; right:-120px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-200px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">CORE // 16 — SHARE YOUR DEPENDENCIES</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi);">📋 requirements.txt</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); margin-top:26px;">A simple shopping list for your project's packages — so anyone can <b style="color:var(--text-hi);">rebuild your setup</b> in one command.</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:420px; width:880px; height:400px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span><span class="code-dot code-dot-y"></span><span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">requirements.txt</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:478px; width:830px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.7;">
+    <div><span class="tok-com"># every line = one package</span></div>
+    <div><span class="tok-var">requests</span></div>
+    <div><span class="tok-var">colorama</span>==<span class="tok-num">0.4.6</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-com"># pinned version</span></div>
+    <div><span class="tok-var">rich</span>&gt;=<span class="tok-num">13.0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-com"># minimum version</span></div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:1020px; top:420px; width:820px; height:400px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span><span class="code-dot code-dot-y"></span><span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">terminal</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1050px; top:478px; width:770px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.8;">
+    <div><span class="tok-com"># install everything at once</span></div>
+    <div><span class="tok-op">$</span> <span class="tok-var">pip install -r requirements.txt</span></div>
+    <div><span class="tok-out" style="color:var(--neon-lime);">Successfully installed requests colorama rich</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-com"># generate it from current env</span></div>
+    <div><span class="tok-op">$</span> <span class="tok-var">pip freeze &gt; requirements.txt</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:880px; width:1760px; height:120px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.3); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:910px; width:1680px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); line-height:1.6;">🎁 Hand your friend this one file → they run one command → identical environment. <b style="color:var(--text-hi);">This is how real projects ship dependencies.</b></div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:26px; color:var(--text-lo); direction:rtl; margin-top:10px;">requirements.txt قائمة مشتريات مشروعك: أمر واحد يثبّت كل شيء، و pip freeze يولّدها تلقائيًا.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">39 / 50</div>
+</div>
+<template data-slide-notes>
+## requirements.txt
+
+**Concept (4 min):** a plain text file, one package per line. Version formats: bare name, pinned (==), minimum (>=). Pinning versions = reproducibility (tomorrow's code breaks when packages change).
+
+**The two commands:**
+- `pip install -r requirements.txt` — install everything on a fresh machine.
+- `pip freeze > requirements.txt` — auto-generate the file from the currently installed packages.
+
+**Demo (5 min):** create requirements.txt with colorama, run the install, run pip freeze to see the generated list.
+
+**Connect to next session (Git):** "Next session you'll share code with Git — requirements.txt travels with the code so anyone can run it. This file is part of professional hygiene."
+
+**Arabic tip:** "قائمة المشتريات" — كل سطر حزمة. لا تكتبها يدويًا أحيانًا، pip freeze ينشئها.
+</template>
+</body>
+</html>

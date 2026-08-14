@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-magenta"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:70px; width:1760px; z-index:10;">
+    <div class="kicker">CODE // FIND IN ACTION 🔍</div>
+    <div style="margin-top:22px; font-family:'Space Grotesk',sans-serif; font-size:54px; font-weight:700; color:var(--text-hi);">Extract the first — and all — quotes</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:12px;">نستخرج أول عنصر ثم جميع العناصر المطابقة، ونقارن بين find وfind_all</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:290px; width:1200px; height:560px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">find_demo.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" data-lang="python" style="position:absolute; left:110px; top:350px; width:1140px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.6;">
+    <div><span class="tok-kw">from</span> bs4 <span class="tok-kw">import</span> BeautifulSoup</div>
+    <div></div>
+    <div><span class="tok-var">html</span> = <span class="tok-str">"&lt;div class='quote'&gt;&lt;span class='text'&gt;Hi&lt;/span&gt;&lt;/div&gt;&lt;div class='quote'&gt;&lt;span class='text'&gt;Bye&lt;/span&gt;&lt;/div&gt;"</span></div>
+    <div><span class="tok-var">soup</span> = <span class="tok-fn">BeautifulSoup</span>(<span class="tok-var">html</span>, <span class="tok-str">"html.parser"</span>)</div>
+    <div></div>
+    <div><span class="tok-var">first</span> = <span class="tok-fn">soup.find</span>(<span class="tok-str">"div"</span>) <span class="tok-com"># first div only</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-fn">first.get_text</span>()) <span class="tok-com"># Hi</span></div>
+    <div></div>
+    <div><span class="tok-var">all_quotes</span> = <span class="tok-fn">soup.find_all</span>(<span class="tok-str">"div"</span>, class_=<span class="tok-str">"quote"</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-fn">len</span>(<span class="tok-var">all_quotes</span>)) <span class="tok-com"># 2</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1330px; top:320px; width:510px; z-index:10;">
+    <div class="chip chip-yellow">WATCH OUT</div>
+    <div style="margin-top:20px; font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-mid); line-height:1.6;">find returns a <span class="mono">Tag</span> — print it with <span class="mono">.get_text()</span> or it shows raw HTML. If you get <span class="mono">None</span>, your filter didn't match.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:25px; color:var(--text-lo); direction:rtl; margin-top:20px;">المطابقة الشرطية: div مع class="quote" — ونطبع أول عنصر فقط</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">25 / 50</div>
+</div>
+<template data-slide-notes>
+Run and compare outputs: Hi (first div), then 2 (both divs matched). Show that find gives a Tag, not text — you must call .get_text().
+
+Live variation: change find_all("div", class_="quote") → find_all(class_="quote") works too (any tag). Mention class_ keyword.
+
+Arabic tip: اشرح أن print(first) يطبع الوسم كاملًا، بينما .get_text() يستخرج النص فقط.
+</template>
+</body>
+</html>

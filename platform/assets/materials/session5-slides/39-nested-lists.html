@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-magenta"></div>
+<div class="chrome-topbar"><span class="chrome-dot"></span>INPUT & NESTED</div>
+
+<div class="kicker" style="position:absolute;top:100px;left:80px;">LISTS OF LISTS</div>
+<div class="arabic" style="position:absolute;top:140px;left:80px;font-size:24px;color:var(--text-lo);">قوائم داخل قوائم</div>
+<div style="position:absolute;top:210px;left:80px;font-size:38px;font-weight:700;color:var(--text-hi);max-width:1600px;">A list can hold <span style="color:var(--neon-magenta);">other lists</span> — that's a table!</div>
+<div style="position:absolute;top:320px;left:80px;"><div class="code-window" style="width:880px;">
+<div class="code-window-header">
+<div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+<span class="code-window-title">classroom.py</span>
+</div>
+<pre style="padding:24px 28px;margin:0;font-size:20px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span class="tok-var">classroom</span> = [
+    [<span class="tok-str">"Ahmed"</span>, <span class="tok-num">95</span>],
+    [<span class="tok-str">"Omar"</span>,  <span class="tok-num">88</span>],
+    [<span class="tok-str">"Sara"</span>,  <span class="tok-num">91</span>],
+]
+<span class="tok-fn">print</span>(<span class="tok-var">classroom</span>[<span class="tok-num">0</span>])  <span class="tok-com"># ["Ahmed", 95]</span>
+<span class="tok-fn">print</span>(<span class="tok-fn">len</span>(<span class="tok-var">classroom</span>))  <span class="tok-com"># 3 rows</span></pre>
+</div></div>
+<div style="position:absolute;top:320px;right:80px;width:800px;padding:24px;border-radius:14px;background:var(--bg-1);border:1px solid var(--border);">
+  <div style="font-size:24px;font-weight:700;color:var(--neon-cyan);margin-bottom:16px;">Like a spreadsheet 🗂️</div>
+  <table style="border-collapse:collapse;font-size:20px;width:100%;">
+    <tr>
+      <td style="padding:10px 14px;border:1px solid rgba(34,211,238,0.25);color:var(--text-dim);">row 0</td>
+      <td style="padding:10px 14px;border:1px solid rgba(34,211,238,0.25);color:var(--text-hi);">"Ahmed"</td>
+      <td style="padding:10px 14px;border:1px solid rgba(34,211,238,0.25);color:var(--neon-yellow);">95</td>
+    </tr>
+    <tr>
+      <td style="padding:10px 14px;border:1px solid rgba(34,211,238,0.25);color:var(--text-dim);">row 1</td>
+      <td style="padding:10px 14px;border:1px solid rgba(34,211,238,0.25);color:var(--text-hi);">"Omar"</td>
+      <td style="padding:10px 14px;border:1px solid rgba(34,211,238,0.25);color:var(--neon-yellow);">88</td>
+    </tr>
+    <tr>
+      <td style="padding:10px 14px;border:1px solid rgba(34,211,238,0.25);color:var(--text-dim);">row 2</td>
+      <td style="padding:10px 14px;border:1px solid rgba(34,211,238,0.25);color:var(--text-hi);">"Sara"</td>
+      <td style="padding:10px 14px;border:1px solid rgba(34,211,238,0.25);color:var(--neon-yellow);">91</td>
+    </tr>
+  </table>
+</div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S05</div>
+<div class="chrome-pagenum">39 / 63</div>
+<template data-slide-notes>Lists of lists = tables/rows. Each inner list is a row; access with [row].</template>
+</div>
+</body>
+</html>

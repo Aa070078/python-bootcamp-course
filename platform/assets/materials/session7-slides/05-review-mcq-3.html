@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime" style="top:-180px; right:-150px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-200px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1720px; z-index:10;">
+    <div class="kicker">🔁 QUICK REVIEW — SETS &amp; DICTS</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:64px; font-weight:700; color:var(--text-hi); margin-top:16px;">Fastest membership check? 🏃</div>
+    <div class="arabic" style="font-size:30px; color:var(--text-lo); margin-top:12px; direction:rtl;">أي بنية بيانات هي الأسرع للبحث عن عنصر؟</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:320px; width:1720px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; color:var(--text-mid);">Searching <span class="mono" style="color:var(--neon-cyan);">"Nour"</span> in a huge collection of 100k names. Which container is FASTEST?</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:430px; width:850px; height:150px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:465px; width:790px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:30px;"><span class="tok-var">A)</span> <span class="tok-fn">list</span> <span class="tok-com"># checks every item</span></div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:960px; top:430px; width:850px; height:150px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.35); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:990px; top:465px; width:790px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:30px;"><span class="tok-var">B)</span> <span class="tok-fn">tuple</span> <span class="tok-com"># checks every item</span></div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:610px; width:850px; height:150px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:645px; width:790px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:30px;"><span class="tok-var">C)</span> <span class="tok-fn">set</span> <span class="tok-com"># O(1) via hashing</span></div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:960px; top:610px; width:850px; height:150px; background:rgba(167,139,250,0.06); border:1px solid rgba(167,139,250,0.35); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:990px; top:645px; width:790px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:30px;"><span class="tok-var">D)</span> <span class="tok-fn">string</span> <span class="tok-com"># scans char by char</span></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:820px; width:1720px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid);">Hint: hashing 🔑 puts each item in a near-instant lookup slot. Both <span class="mono" style="color:var(--neon-yellow);">set</span> and <span class="mono" style="color:var(--neon-yellow);">dict keys</span> use it.</div>
+    <div class="arabic" style="font-size:28px; color:var(--text-lo); margin-top:14px; direction:rtl;">تلميح: التجزئة تجعل البحث شبه فوري في المجموعات ومفاتيح القواميس.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S07</div>
+  <div class="chrome-pagenum">05 / 50</div>
+</div>
+<template data-slide-notes>
+- **Answer: C — set (and dict keys are equally fast).** Lists/tuples/strings scan item by item → O(n).
+- Demo: `"Nour" in big_set` vs `"Nour" in big_list` with 1M items — the set wins instantly.
+- This is WHY dicts and sets feel "magic fast": hashing.
+- Connect forward: "Functions let you BUILD such helpers once and reuse them."
+- Have students raise hands per option, then reveal.
+- Arabic tip: ابحث في مجموعة (set) إذا كنت تريد سرعة فائقة في التحقق من الوجود.
+- Keep it light — no formal big-O notation needed, just intuition.
+</template>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="bottom:-200px; left:-180px;"></div>
+  <div class="bg-glow-magenta" style="top:80px; right:-200px;"></div>
+
+  <div class="chrome-topbar">
+    <span class="chrome-dot"></span>
+    <span>LIVE CODING // YOUR FIRST COMMIT</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:100px; width:1760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-lime); letter-spacing:0.25em; text-transform:uppercase;">🖥️ LIVE CODING — DO IT WITH ME</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:70px; font-weight:700; color:var(--text-hi); margin-top:12px;">Your <span style="color:var(--neon-lime);">first commit</span>, end to end</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:360px; width:1120px; height:520px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">bash — follow along</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:420px; width:1060px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:28px; line-height:1.85;">
+    <div><span class="tok-num">1</span> <span class="tok-var">$</span> mkdir my_game <span class="tok-com"># new project folder</span></div>
+    <div><span class="tok-num">2</span> <span class="tok-var">$</span> cd my_game</div>
+    <div><span class="tok-num">3</span> <span class="tok-var">$</span> touch app.py <span class="tok-com"># create a file (or via editor)</span></div>
+    <div><span class="tok-num">4</span> <span class="tok-var">$</span> git init -b main</div>
+    <div class="tok-out">&nbsp;&nbsp;Initialized empty Git repository...</div>
+    <div><span class="tok-num">5</span> <span class="tok-var">$</span> git status</div>
+    <div class="tok-out">&nbsp;&nbsp;Untracked files:&nbsp;&nbsp;app.py</div>
+    <div><span class="tok-num">6</span> <span class="tok-var">$</span> git add .</div>
+    <div><span class="tok-num">7</span> <span class="tok-var">$</span> git commit -m <span class="tok-str">"Add app skeleton"</span></div>
+    <div class="tok-out">&nbsp;&nbsp;[main 9f8e7d6] Add app skeleton</div>
+    <div class="tok-out">&nbsp;&nbsp;1 file changed, 12 insertions(+)</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1260px; top:360px; width:580px; height:520px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.3); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1290px; top:400px; width:520px; z-index:10;">
+    <div style="font-size:52px;">🔮</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-hi); font-weight:600; margin-top:12px;">Predict before you run!</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:16px; line-height:1.6;">After step 3 (<span class="mono" style="color:var(--neon-lime);">touch app.py</span>), what will <span class="mono" style="color:var(--neon-cyan);">git status</span> show?</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:25px; color:var(--text-mid); margin-top:20px; line-height:1.8;">
+      A. <span class="tok-str">nothing, all clean</span><br>
+      B. <span class="tok-str">untracked: app.py</span> ✅<br>
+      C. <span class="tok-str">changes staged</span>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:940px; width:1760px; z-index:10;">
+    <span class="chip chip-lime">type each line yourself — muscle memory!</span>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:24px;">لننفّذ أول التزام معاً خطوة بخطوة — اكتبوا كل أمر بأنفسكم.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S10</div>
+  <div class="chrome-pagenum">18 / 50</div>
+</div>
+<template data-slide-notes>
+**Slide 18 — LIVE CODING: first commit (15 min, THE key moment)**
+- Run the whole sequence on the projector, pausing after each command.
+- PREDICT: after `touch app.py`, ask "what will git status say?" → B: untracked: app.py.
+- IMPORTANT: `touch` works in Git Bash on Windows; if using cmd/PowerShell, create the file via the editor instead.
+- Walk slowly at step 4 (init) and 7 (commit) — these are the two big "aha" moments.
+- Check the room: every student must see `[main ...]` and "1 file changed". Call out success.
+- If someone opens Vim by mistake (no -m): ESC, :q!, Enter.
+- Arabic tip: اجعل الطلاب يكررون التسلسل ذهنياً: أنشئ ← عرّف ← أضف ← التزم.
+- Time-box: don't let them tweak code yet; the point is the workflow.
+</template>
+</body>
+</html>

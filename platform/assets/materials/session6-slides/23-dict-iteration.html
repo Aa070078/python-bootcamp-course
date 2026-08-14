@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-250px; right:-200px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-250px; left:-200px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:120px; width:1760px; z-index:10;">
+    <div class="kicker">🔁 ITERATION</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:92px; font-weight:700; color:var(--text-hi); margin-top:18px;">Looping Over a Dictionary</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); margin-top:16px;">See the <b style="color:var(--neon-cyan);">keys</b>, the <b style="color:var(--neon-lime);">values</b>, or both — pair by pair.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:16px;">التكرار على القاموس: نستطيع المرور على المفاتيح أو القيم أو كلاهما معًا في حلقة for.</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:400px; width:940px; height:500px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">loop.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:470px; width:880px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.65;">
+    <div><span class="tok-var">scores</span> <span class="tok-op">=</span> <span class="tok-op">{</span><span class="tok-str">"Ali"</span><span class="tok-op">:</span> <span class="tok-num">90</span>, <span class="tok-str">"Lina"</span><span class="tok-op">:</span> <span class="tok-num">85</span>, <span class="tok-str">"Omar"</span><span class="tok-op">:</span> <span class="tok-num">78</span><span class="tok-op">}</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">scores</span>.<span class="tok-fn">keys</span>()) <span class="tok-com"># dict_keys(['Ali', 'Lina', 'Omar'])</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">scores</span>.<span class="tok-fn">values</span>()) <span class="tok-com"># dict_values([90, 85, 78])</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">scores</span>.<span class="tok-fn">items</span>()) <span class="tok-com"># dict_items([('Ali', 90), ...])</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-kw">for</span> <span class="tok-var">name</span>, <span class="tok-var">score</span> <span class="tok-kw">in</span> <span class="tok-var">scores</span>.<span class="tok-fn">items</span>():</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-var">name</span>, <span class="tok-str">"got"</span>, <span class="tok-var">score</span>)</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-com"># Ali got 90  ·  Lina got 85  ·  Omar got 78</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1080px; top:400px; width:760px; height:540px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.3); border-radius:24px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1110px; top:432px; width:700px; z-index:10;">
+    <div class="kicker" style="font-size:20px;">THREE VIEWS</div>
+    <div style="margin-top:20px; background:rgba(34,211,238,0.08); border:1px solid rgba(34,211,238,0.35); border-radius:16px; padding:14px 22px;">
+      <div style="font-size:26px; font-weight:700; color:var(--neon-cyan);">🔑 &nbsp;.keys()</div>
+      <div style="font-size:23px; color:var(--text-mid); margin-top:6px;">Just the names — loop over keys only</div>
+    </div>
+    <div style="margin-top:18px; background:rgba(236,72,153,0.08); border:1px solid rgba(236,72,153,0.4); border-radius:16px; padding:14px 22px;">
+      <div style="font-size:26px; font-weight:700; color:var(--neon-magenta);">💎 &nbsp;.values()</div>
+      <div style="font-size:23px; color:var(--text-mid); margin-top:6px;">Just the numbers — loop over values only</div>
+    </div>
+    <div style="margin-top:18px; background:rgba(163,230,53,0.08); border:1px solid rgba(163,230,53,0.35); border-radius:16px; padding:14px 22px;">
+      <div style="font-size:26px; font-weight:700; color:var(--neon-lime);">🧶 &nbsp;.items()</div>
+      <div style="font-size:23px; color:var(--text-mid); margin-top:6px;">(key, value) pairs — unpack both in the loop</div>
+    </div>
+    <div style="margin-top:18px; background:rgba(250,204,21,0.08); border:1px solid rgba(250,204,21,0.4); border-radius:16px; padding:14px 22px;">
+      <div style="font-size:26px; font-weight:700; color:var(--neon-yellow);">🤖 &nbsp;Pro tip</div>
+      <div style="font-size:23px; color:var(--text-mid); margin-top:6px;"><span style="font-family:'JetBrains Mono',monospace;">for k in d:</span> is a shortcut for <span style="font-family:'JetBrains Mono',monospace;">for k in d.keys():</span></div>
+    </div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S06</div>
+  <div class="chrome-pagenum">23 / 45</div>
+</div>
+<template data-slide-notes>
+# Slide 23 — Looping Over a Dictionary (Instructor notes)
+
+**What to say**
+- Three "views" of the same dict: keys, values, pairs.
+- `for k in d:` iterates over KEYS by default — say this out loud, students always assume values.
+
+**Live demo (2 min)**
+- Loop `for name in scores:` and print `scores[name]` to show the classic key → value pattern.
+- Then upgrade to `for name, score in scores.items():`.
+
+**Common mistakes**
+- Students write `for name, score in scores:` — this raises "too many values to unpack" because iterating a dict yields only keys. Always `.items()` for both.
+- Students print `dict_keys([...])` output and worry — explain it is a view, not a list.
+
+**Arabic teaching tip**
+- ذكّرهم: التكرار الافتراضي يمرّ على المفاتيح فقط. إذا أردت المفتاح والقيمة معًا، استخدم `.items()`.
+</template>
+</body>
+</html>

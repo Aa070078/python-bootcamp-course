@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-200px; right:-160px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-180px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1700px; z-index:10;">
+    <div class="kicker">🧑‍💻 CODE — WITH IN ACTION</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi); margin-top:10px;">Read + write with <span class="tok-kw" style="color:var(--neon-magenta);">with</span></div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:900px; height:430px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">with_demo.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:385px; width:840px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.6;">
+    <div><span class="tok-kw">with</span> <span class="tok-fn">open</span>(<span class="tok-str">"notes.txt"</span>, <span class="tok-str">"r"</span>) <span class="tok-kw">as</span> <span class="tok-var">f</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">text</span> <span class="tok-op">=</span> <span class="tok-var">f</span>.<span class="tok-fn">read</span>()</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">text</span>)&nbsp;&nbsp;<span class="tok-com"># outside the block — f is closed</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-kw">with</span> <span class="tok-fn">open</span>(<span class="tok-str">"notes.txt"</span>, <span class="tok-str">"a"</span>) <span class="tok-kw">as</span> <span class="tok-var">f</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">f</span>.<span class="tok-fn">write</span>(<span class="tok-str">"\nAdded with with! 🎉\n"</span>)</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1040px; top:330px; width:820px; height:430px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1070px; top:362px; width:760px; z-index:10;">
+    <div class="kicker" style="font-size:20px; color:var(--neon-lime);">📄 notes.txt — AFTER</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:27px; line-height:1.5; color:var(--text-hi); margin-top:12px;">
+      <div>Session 8: Files &amp; JSON</div>
+      <div>Persistence is a superpower</div>
+      <div>Score: 95</div>
+      <div style="color:var(--neon-lime);">Added with with! 🎉</div>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:20px; line-height:1.5;">Same 4 lines of effect — but the close is <b style="color:var(--text-hi);">guaranteed</b>.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:820px; width:1700px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:30px; color:var(--text-hi);"><span class="tok-kw">with</span> <span class="tok-fn">open</span>(...) <span class="tok-kw">as</span> <span class="tok-var">f</span>: → file is closed <b>the moment</b> the indented block ends.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:14px;">استخدم with في القراءة والكتابة معاً، وسيُغلق الملف تلقائياً بعد نهاية الكتلة</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S08</div>
+  <div class="chrome-pagenum">23 / 50</div>
+</div>
+<template data-slide-notes>
+**with code — 5 min.**
+
+- Type both blocks; emphasize that reading inside the first block and writing in the second happen as independent sessions.
+- Try: use `f` AFTER the with block → NameError/ValueError? Actually f still exists but closed; demonstrate reading → error "I/O operation on closed file" to prove auto-close.
+- Arabic tip: «بعد الكتلة الملف مقفول» (after the block, the file is locked).
+</template>
+</body>
+</html>

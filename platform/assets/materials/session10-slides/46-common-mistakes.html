@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-130px; left:-220px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-160px; right:-220px;"></div>
+
+  <div class="chrome-topbar">
+    <span class="chrome-dot"></span>
+    <span>EXTRA // COMMON MISTAKES</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-orange); letter-spacing:0.25em; text-transform:uppercase;">⚠️ EXTRA</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi); margin-top:12px;">Common Git mistakes (&amp; fixes)</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:380px; width:860px; height:450px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.3); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:420px; width:800px; z-index:10; font-family:'Space Grotesk',sans-serif; font-size:28px; line-height:1.85;">
+    <div><span style="color:var(--neon-magenta);">❌</span> <span style="color:var(--text-hi);">Committing secrets</span> <span class="mono" style="color:var(--text-lo);">(.env, passwords)</span></div>
+    <div style="margin-left:36px; color:var(--text-lo); font-size:25px;">✅ fix: add to .gitignore, remove from repo</div>
+    <div style="margin-top:14px;"><span style="color:var(--neon-magenta);">❌</span> <span style="color:var(--text-hi);">Messages like "asdf"</span></div>
+    <div style="margin-left:36px; color:var(--text-lo); font-size:25px;">✅ fix: describe what + why</div>
+    <div style="margin-top:14px;"><span style="color:var(--neon-magenta);">❌</span> <span style="color:var(--text-hi);">Committing <span class="mono">__pycache__/</span></span></div>
+    <div style="margin-left:36px; color:var(--text-lo); font-size:25px;">✅ fix: .gitignore + git rm -r --cached</div>
+    <div style="margin-top:14px;"><span style="color:var(--neon-magenta);">❌</span> <span style="color:var(--text-hi);">Forgetting <span class="mono">git add</span> → commit with nothing staged</span></div>
+    <div style="margin-left:36px; color:var(--text-lo); font-size:25px;">✅ fix: add first, then commit</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1000px; top:380px; width:840px; height:450px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.3); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1030px; top:420px; width:780px; z-index:10; font-family:'Space Grotesk',sans-serif; font-size:28px; line-height:1.85;">
+    <div><span style="color:var(--neon-cyan);">❌</span> <span style="color:var(--text-hi);">git commit without -m → Vim screen 😱</span></div>
+    <div style="margin-left:36px; color:var(--text-lo); font-size:25px;">✅ fix: ESC → :q! → Enter, retry with -m</div>
+    <div style="margin-top:14px;"><span style="color:var(--neon-cyan);">❌</span> <span style="color:var(--text-hi);">Editing files directly on GitHub</span></div>
+    <div style="margin-left:36px; color:var(--text-lo); font-size:25px;">✅ fix: edit locally, commit, push</div>
+    <div style="margin-top:14px;"><span style="color:var(--neon-cyan);">❌</span> <span style="color:var(--text-hi);">git init inside a sub-folder</span></div>
+    <div style="margin-left:36px; color:var(--text-lo); font-size:25px;">✅ fix: init once at the PROJECT root</div>
+    <div style="margin-top:14px;"><span style="color:var(--neon-cyan);">❌</span> <span style="color:var(--text-hi);">Deleting the .git folder "to fix it"</span></div>
+    <div style="margin-left:36px; color:var(--text-lo); font-size:25px;">✅ fix: never. you lose all history.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:910px; width:1760px; z-index:10;">
+    <span class="chip chip-magenta">mistakes are normal</span>
+    <span class="chip chip-lime">Git forgives — almost everything</span>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:24px;">أخطاء شائعة: تجنّبها ليبقى مستودعك نظيفاً وآمناً — والأخطاء جزء طبيعي من التعلم.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S10</div>
+  <div class="chrome-pagenum">46 / 50</div>
+</div>
+<template data-slide-notes>
+**Slide 46 — Common mistakes (3 min)**
+- Read each mistake like a confession students already know ("who has done #4? hands up").
+- The Vim panic is the funniest and most common — demo it once so they're not afraid.
+- `git rm -r --cached __pycache__` = untrack without deleting files (only if they already committed cache).
+- Message: "Every mistake here is a badge of learning. You'll all hit several today."
+- Arabic tip: اطمئنهم: "الخطأ ليس فشلاً؛ كل المبرمجين المحترفين وقعوا في الـ Vim يوماً ما".
+</template>
+</body>
+</html>

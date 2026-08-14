@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime" style="top:-150px; right:-120px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-200px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">CORE // 11 — FROM...IMPORT</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi);">🎁 from ... import ...</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); margin-top:26px;">Grab <b style="color:var(--text-hi);">only what you need</b> — no dot required afterwards.</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:420px; width:900px; height:480px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span><span class="code-dot code-dot-y"></span><span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">from_import.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:478px; width:850px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.7;">
+    <div><span class="tok-kw">from</span> <span class="tok-var">math</span> <span class="tok-kw">import</span> <span class="tok-var">sqrt</span>, <span class="tok-var">pi</span></div>
+    <div><span class="tok-kw">from</span> <span class="tok-var">datetime</span> <span class="tok-kw">import</span> <span class="tok-var">datetime</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-fn">sqrt</span>(<span class="tok-num">25</span>))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-com"># 5.0 (no math. needed)</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">pi</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-com"># 3.14159...</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">datetime</span>.<span class="tok-fn">now</span>())&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-com"># current date + time</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1040px; top:420px; width:800px; height:480px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.3); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1080px; top:460px; width:720px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--neon-magenta);">import vs from</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:22px; line-height:1.75;">
+      <span class="mono" style="color:var(--neon-cyan);">import math</span> → <span class="mono">math.sqrt()</span> — everything, dotted.<br><br>
+      <span class="mono" style="color:var(--neon-lime);">from math import sqrt</span> → <span class="mono">sqrt()</span> — one name, no dot.<br><br>
+      ⚠️ Name clash risk: a name you import directly can overwrite your own (or vice versa). Use <span class="mono">from</span> for <b style="color:var(--text-hi);">a few specific things</b>.
+    </div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:26px; color:var(--text-lo); direction:rtl; margin-top:24px;">from import يستورد أسماء محددة فقط وتستخدمها دون نقطة، لكن احذر من تعارض الأسماء.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">30 / 50</div>
+</div>
+<template data-slide-notes>
+## from ... import ...
+
+**Compare (4 min):** two import styles on one slide. import = the whole box; from import = pick only sqrt and pi. After `from math import sqrt`, you call sqrt(25) directly — no dot.
+
+**Clash warning is the key safety lesson:** `from math import sqrt` then later define your own `sqrt`? Your definition wins and silently shadows the import. That's why importing the whole module is safer. Teach the rule: prefer `import module`; use `from` for a few specific names.
+
+**Live (3 min):** show both styles for datetime; note the difference between `import datetime` (datetime.datetime.now()) vs `from datetime import datetime` (datetime.now()). This nesting confuses beginners — clarify the module/class distinction lightly.
+
+**Arabic tip:** "import = تأخذ الصندوق كله، from = تأخذ ما تحتاج فقط." الاختيار يعتمد على الموقف.
+</template>
+</body>
+</html>

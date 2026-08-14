@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-180px; right:-150px;"></div>
+  <div class="bg-glow-lime" style="bottom:-220px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:100px; width:1720px; z-index:10;">
+    <div class="kicker">⌨️ CODE — *ARGS &amp; **KWARGS</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi); margin-top:14px;">Flexible in action</div>
+    <div class="arabic" style="font-size:30px; color:var(--text-lo); margin-top:12px; direction:rtl;">اجمع أي عدد من الأرقام، أو اعرض أي عدد من الخصائص</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:1180px; height:480px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">stars.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:400px; width:1120px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.65;">
+    <div><span class="tok-kw">def</span> <span class="tok-fn">add_all</span>(<span class="tok-op">*</span><span class="tok-var">numbers</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">total</span> <span class="tok-op">=</span> <span class="tok-num">0</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">for</span> <span class="tok-var">n</span> <span class="tok-kw">in</span> <span class="tok-var">numbers</span>:  <span class="tok-com"># numbers is a tuple</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">total</span> <span class="tok-op">+=</span> <span class="tok-var">n</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-var">total</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-fn">add_all</span>(<span class="tok-num">1</span>, <span class="tok-num">2</span>, <span class="tok-num">3</span>))        <span class="tok-com"># 6</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-fn">add_all</span>(<span class="tok-num">4</span>, <span class="tok-num">5</span>, <span class="tok-num">6</span>, <span class="tok-num">7</span>))    <span class="tok-com"># 22</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-kw">def</span> <span class="tok-fn">show_info</span>(<span class="tok-op">**</span><span class="tok-var">info</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">for</span> <span class="tok-var">key</span>, <span class="tok-var">value</span> <span class="tok-kw">in</span> <span class="tok-var">info</span>.<span class="tok-fn">items</span>():</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">f"{key}: {value}"</span>)</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-fn">show_info</span>(<span class="tok-var">name</span><span class="tok-op">=</span><span class="tok-str">"Nour"</span>, <span class="tok-var">level</span><span class="tok-op">=</span><span class="tok-num">3</span>)</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1320px; top:340px; width:500px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--neon-lime);">Output</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:25px; color:var(--text-lo); margin-top:18px; line-height:1.7;">
+      <div><span class="tok-out">6</span></div>
+      <div><span class="tok-out">22</span></div>
+      <div><span class="tok-out">name: Nour</span></div>
+      <div><span class="tok-out">level: 3</span></div>
+    </div>
+    <div class="arabic" style="font-size:26px; color:var(--text-lo); margin-top:20px; direction:rtl;">أربعة أرقام في المرة الثانية دون تغيير الدالة — مرونة حقيقية</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S07</div>
+  <div class="chrome-pagenum">26 / 50</div>
+</div>
+<template data-slide-notes>
+- Live-code both; have students count arguments passed each call.
+- Point at the loop: we already know tuples and dicts — this is a fresh USE of them.
+- show_info(**info): "name" and "level" become dict keys automatically.
+- Ask: "What type is `numbers`?" → tuple; "What type is `info`?" → dict.
+- Extend challenge: add_all(1, 2, 3, 4, 5, 6) → 21, instantly works.
+- Arabic tip: دالة واحدة تخدم أي عدد من المدخلات — توفير كبير في الكود.
+- Warn: don't overuse; clear named params beat **kwargs when the interface is fixed.
+</template>
+</body>
+</html>

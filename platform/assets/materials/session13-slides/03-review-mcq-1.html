@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-260px; right:-160px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-300px; left:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">🧠 REVIEW &mdash; LAST SESSION: SQLite</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi); margin-top:16px;">Which module talks to SQLite?</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:360px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; color:var(--text-mid);">In our last session we stored data in a local database. Which Python module did we use to connect and run queries?</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:500px; width:860px; height:200px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:540px; width:800px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:34px; color:var(--text-hi);"><span style="color:var(--neon-magenta);">A)</span> <span class="tok-kw">import</span> <span class="tok-var">mysql</span></div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:30px; color:var(--text-lo); margin-top:10px;">Not installed by default &mdash; needs a separate server.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:500px; width:860px; height:200px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1010px; top:540px; width:800px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:34px; color:var(--text-hi);"><span style="color:var(--neon-magenta);">B)</span> <span class="tok-kw">import</span> <span class="tok-var">sqlite3</span> &nbsp;&nbsp;✅</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:30px; color:var(--text-lo); margin-top:10px;">Built into Python — one file, no server needed.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:740px; width:860px; height:200px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:780px; width:800px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:34px; color:var(--text-hi);"><span style="color:var(--neon-magenta);">C)</span> <span class="tok-kw">import</span> <span class="tok-var">pickle</span></div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:30px; color:var(--text-lo); margin-top:10px;">Saves Python objects, but cannot run SQL.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:740px; width:860px; height:200px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1010px; top:780px; width:800px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:34px; color:var(--text-hi);"><span style="color:var(--neon-magenta);">D)</span> <span class="tok-kw">import</span> <span class="tok-var">json</span></div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:30px; color:var(--text-lo); margin-top:10px;">Saves text data — but it has no tables or queries.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:970px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl;">مراجعة سريعة: في الجلسة الماضية خزّنا البيانات في قاعدة بيانات SQLite المحلية 💾</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">03 / 50</div>
+</div>
+<template data-slide-notes>
+MCQ 1 — review of SQLite (previous session). Answer: **B) import sqlite3**.
+
+Why it matters today: last session we stored data *locally* (own database). Today we fetch data *remotely* (someone else's server). The module changes, but the mindset — "connect, run something, get data back" — is the same.
+
+Pacing: 40 seconds of silence, then "hands up for A? B? C? D?", then reveal B. Explain: `sqlite3` ships with Python; MySQL needs an external server; pickle stores objects but cannot query; json is text-only.
+
+Optional quick demo (20 s): run `import sqlite3; conn = sqlite3.connect("test.db")` and show the file appears on disk. Sets up today's contrast with remote data.
+
+Arabic tip: اشرح أننا انتقلنا من "قاعدة بيانات على جهازك" إلى "بيانات على خادم بعيد" — الفكرة نفسها، لكن البيانات أصبحت تُجلب عبر الإنترنت.
+</template>
+</body>
+</html>

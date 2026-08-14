@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-200px; right:-160px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-180px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1700px; z-index:10;">
+    <div class="kicker">🎨 VISUAL — JSON STRUCTURE</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:80px; font-weight:700; color:var(--text-hi); margin-top:10px;">Read a JSON document</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:350px; width:1700px; height:560px; background:rgba(167,139,250,0.06); border:1px solid rgba(167,139,250,0.4); border-radius:24px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:385px; width:1640px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:30px; line-height:1.7; color:var(--text-hi);">
+    <div><span style="color:var(--neon-yellow);">{</span> <span class="tok-com">← one object</span></div>
+    <div>&nbsp;&nbsp;<span class="tok-str">"user"</span><span class="tok-op">:</span> <span style="color:var(--neon-yellow);">{</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"name"</span><span class="tok-op">:</span> <span class="tok-str">"Nour"</span><span class="tok-op">,</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"age"</span><span class="tok-op">:</span> <span class="tok-num">18</span><span class="tok-op">,</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"is_student"</span><span class="tok-op">:</span> <span style="color:var(--neon-yellow);">true</span><span class="tok-op">,</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"tags"</span><span class="tok-op">:</span> <span style="color:var(--neon-yellow);">[</span><span class="tok-str">"python"</span><span class="tok-op">,</span> <span class="tok-str">"code"</span><span class="tok-op">]</span> <span class="tok-com">← array</span></div>
+    <div>&nbsp;&nbsp;<span style="color:var(--neon-yellow);">}</span><span class="tok-op">,</span></div>
+    <div>&nbsp;&nbsp;<span class="tok-str">"level"</span><span class="tok-op">:</span> <span class="tok-num">8</span></div>
+    <div><span style="color:var(--neon-yellow);">}</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:870px; width:1640px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-mid); line-height:1.5;">🔎 Keys are <b style="color:var(--text-hi);">always strings</b> · values can be strings, numbers, booleans, arrays, or nested objects. <b style="color:var(--neon-magenta);">You can zoom in like folders.</b></div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:29px; color:var(--text-lo); direction:rtl; margin-top:14px;">مفاتيح JSON نصوص دائماً، والقيم يمكن أن تكون نصوصاً أو أرقاماً أو مصفوفات أو كائنات متداخلة</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S08</div>
+  <div class="chrome-pagenum">29 / 50</div>
+</div>
+<template data-slide-notes>
+**JSON visual — 4 min.**
+
+- Read the document out loud as a sentence: "user has name Nour, age 18, is a student, tags python and code, level 8."
+- Point out nesting: object inside object, array of strings.
+- This is exactly what they'll parse from APIs next session.
+- Arabic tip: «المفتاح نص، والقيمة أي نوع» (key is text, value can be any type).
+</template>
+</body>
+</html>

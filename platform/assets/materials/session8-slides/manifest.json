@@ -1,0 +1,202 @@
+[
+    {
+        "file":  "01-cover.html",
+        "title":  "01-cover"
+    },
+    {
+        "file":  "02-hook.html",
+        "title":  "02-hook"
+    },
+    {
+        "file":  "03-review-mcq-1.html",
+        "title":  "03-review-mcq-1"
+    },
+    {
+        "file":  "04-review-mcq-2.html",
+        "title":  "04-review-mcq-2"
+    },
+    {
+        "file":  "05-review-mcq-3.html",
+        "title":  "05-review-mcq-3"
+    },
+    {
+        "file":  "06-timeline.html",
+        "title":  "06-timeline"
+    },
+    {
+        "file":  "07-why-persistence.html",
+        "title":  "07-why-persistence"
+    },
+    {
+        "file":  "08-ram-vs-disk.html",
+        "title":  "08-ram-vs-disk"
+    },
+    {
+        "file":  "09-file-paths.html",
+        "title":  "09-file-paths"
+    },
+    {
+        "file":  "10-path-diagram.html",
+        "title":  "10-path-diagram"
+    },
+    {
+        "file":  "11-path-mcq.html",
+        "title":  "11-path-mcq"
+    },
+    {
+        "file":  "12-open-function.html",
+        "title":  "12-open-function"
+    },
+    {
+        "file":  "13-open-modes.html",
+        "title":  "13-open-modes"
+    },
+    {
+        "file":  "14-read-functions.html",
+        "title":  "14-read-functions"
+    },
+    {
+        "file":  "15-read-code.html",
+        "title":  "15-read-code"
+    },
+    {
+        "file":  "16-predict-output-1.html",
+        "title":  "16-predict-output-1"
+    },
+    {
+        "file":  "17-read-mcq.html",
+        "title":  "17-read-mcq"
+    },
+    {
+        "file":  "18-write-functions.html",
+        "title":  "18-write-functions"
+    },
+    {
+        "file":  "19-write-code.html",
+        "title":  "19-write-code"
+    },
+    {
+        "file":  "20-append-mode.html",
+        "title":  "20-append-mode"
+    },
+    {
+        "file":  "21-append-code.html",
+        "title":  "21-append-code"
+    },
+    {
+        "file":  "22-with-statement.html",
+        "title":  "22-with-statement"
+    },
+    {
+        "file":  "23-with-code.html",
+        "title":  "23-with-code"
+    },
+    {
+        "file":  "24-with-mcq.html",
+        "title":  "24-with-mcq"
+    },
+    {
+        "file":  "25-live-coding-1.html",
+        "title":  "25-live-coding-1"
+    },
+    {
+        "file":  "26-csv-concept.html",
+        "title":  "26-csv-concept"
+    },
+    {
+        "file":  "27-csv-code.html",
+        "title":  "27-csv-code"
+    },
+    {
+        "file":  "28-json-concept.html",
+        "title":  "28-json-concept"
+    },
+    {
+        "file":  "29-json-visual.html",
+        "title":  "29-json-visual"
+    },
+    {
+        "file":  "30-json-dumps-loads.html",
+        "title":  "30-json-dumps-loads"
+    },
+    {
+        "file":  "31-json-dump-load-code.html",
+        "title":  "31-json-dump-load-code"
+    },
+    {
+        "file":  "32-json-mcq.html",
+        "title":  "32-json-mcq"
+    },
+    {
+        "file":  "33-structured-data.html",
+        "title":  "33-structured-data"
+    },
+    {
+        "file":  "34-error-handling.html",
+        "title":  "34-error-handling"
+    },
+    {
+        "file":  "35-error-code.html",
+        "title":  "35-error-code"
+    },
+    {
+        "file":  "36-practical-persistence.html",
+        "title":  "36-practical-persistence"
+    },
+    {
+        "file":  "37-predict-output-2.html",
+        "title":  "37-predict-output-2"
+    },
+    {
+        "file":  "38-live-coding-2.html",
+        "title":  "38-live-coding-2"
+    },
+    {
+        "file":  "39-project-intro.html",
+        "title":  "39-project-intro"
+    },
+    {
+        "file":  "40-project-code-1.html",
+        "title":  "40-project-code-1"
+    },
+    {
+        "file":  "41-project-code-2.html",
+        "title":  "41-project-code-2"
+    },
+    {
+        "file":  "42-project-output.html",
+        "title":  "42-project-output"
+    },
+    {
+        "file":  "43-exercises.html",
+        "title":  "43-exercises"
+    },
+    {
+        "file":  "44-homework.html",
+        "title":  "44-homework"
+    },
+    {
+        "file":  "45-final-quiz.html",
+        "title":  "45-final-quiz"
+    },
+    {
+        "file":  "46-recap.html",
+        "title":  "46-recap"
+    },
+    {
+        "file":  "47-bridge.html",
+        "title":  "47-bridge"
+    },
+    {
+        "file":  "48-teaser.html",
+        "title":  "48-teaser"
+    },
+    {
+        "file":  "49-closing.html",
+        "title":  "49-closing"
+    },
+    {
+        "file":  "50-cheat-sheet.html",
+        "title":  "50-cheat-sheet"
+    }
+]

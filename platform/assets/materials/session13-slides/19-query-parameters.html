@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-240px; right:-160px;"></div>
+  <div class="bg-glow-lime" style="bottom:-280px; left:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">🔑 CORE CONCEPT #7</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:80px; font-weight:700; color:var(--text-hi); margin-top:14px;">Query <span style="color:var(--neon-cyan);">parameters</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:320px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); line-height:1.6;">Options you pass to an endpoint: <span style="color:var(--text-hi);">which city</span>, <span style="color:var(--text-hi);">which currency</span>, <span style="color:var(--text-hi);">how many results</span>.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:450px; width:860px; height:300px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:490px; width:780px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-cyan);">STRUCTURE</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:32px; color:var(--text-hi); margin-top:16px; line-height:1.7;">
+      <span class="tok-op">?</span><span class="tok-var">key1</span><span class="tok-op">=</span><span class="tok-var">value1</span><span class="tok-op">&amp;</span><span class="tok-var">key2</span><span class="tok-op">=</span><span class="tok-var">value2</span>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-lo); margin-top:14px; line-height:1.6;">Starts with <span class="mono" style="color:var(--neon-lime);">?</span>. Pairs joined by <span class="mono" style="color:var(--neon-lime);">&amp;</span>.<br>Order usually doesn't matter.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:450px; width:860px; height:300px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1020px; top:490px; width:780px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-lime);">REAL EXAMPLE</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:32px; color:var(--text-hi); margin-top:16px; line-height:1.7;">
+      <span class="tok-str">/latest</span><span class="tok-op">?</span><span class="tok-var">from</span><span class="tok-op">=</span><span class="tok-num">USD</span><span class="tok-op">&amp;</span><span class="tok-var">to</span><span class="tok-op">=</span><span class="tok-num">EUR</span>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-lo); margin-top:14px; line-height:1.6;">"Latest rates, converting <span style="color:var(--neon-lime);">from USD to EUR</span>".</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:800px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-lo);">Each API defines its own parameter names — read the docs. Common ones: <span class="mono" style="color:var(--neon-cyan);">q</span>, <span class="mono" style="color:var(--neon-cyan);">limit</span>, <span class="mono" style="color:var(--neon-cyan);">page</span>, <span class="mono" style="color:var(--neon-cyan);">lang</span>.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:900px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">المعاملات هي خيارات طلبك: تبدأ بعد ؟ وتكتب بصيغة مفتاح=قيمة تفصل بينها & 🔑</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">19 / 50</div>
+</div>
+<template data-slide-notes>
+Query parameters.
+
+Rules to memorize (put on board):
+1. Starts with `?` after the path.
+2. `key=value` pairs.
+3. Multiple pairs joined by `&`.
+4. No spaces allowed — use `+` or `%20` if needed (requests handles this for you, slide 28!).
+
+Why it matters today: query params are how we ask "Cairo, not London" or "USD to EUR". The weather live-coding slide 34 is all query params.
+
+Show how Google uses them: `google.com/search?q=penguins` — students instantly connect.
+
+Arabic tip: اذكر مثال "بحث جوجل": `search?q=مصطلح` — نفس الفكرة تماماً، حتى في متصفحك العادي.
+</template>
+</body>
+</html>

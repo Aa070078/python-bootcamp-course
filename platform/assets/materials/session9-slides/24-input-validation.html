@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-150px; left:-120px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-200px; right:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">CORE // 07 — DEFENSE IN DEPTH</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi);">🎯 Input validation — the golden habit</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); margin-top:26px;"><b style="color:var(--text-hi);">Never trust the user.</b> Validate every value before you use it.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:420px; width:560px; height:480px; background:rgba(250,204,21,0.06); border:1px solid rgba(250,204,21,0.4); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:115px; top:460px; width:500px; z-index:10;">
+    <div style="font-size:48px;">🚧</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--text-hi); margin-top:10px;">Two layers</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:16px; line-height:1.6;">
+      1️⃣ <b style="color:var(--text-hi);">Catch it</b> — try/except around risky conversions.<br><br>
+      2️⃣ <b style="color:var(--text-hi);">Check it</b> — if conditions on ranges &amp; values (<span class="mono" style="color:var(--neon-cyan);">0 ≤ age ≤ 120</span>).
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:680px; top:420px; width:1160px; height:480px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.35); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:720px; top:460px; width:1080px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--neon-cyan);">The recipe 🍳</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:22px; line-height:1.8;">
+      1️⃣ Wrap conversion in <span class="mono" style="color:var(--neon-magenta);">try/except</span> → handle "not a number".<br>
+      2️⃣ Apply <span class="mono" style="color:var(--neon-lime);">if</span> checks → handle "out of range".<br>
+      3️⃣ <b style="color:var(--text-hi);">Loop until valid</b> — keep asking instead of quitting.<br>
+      4️⃣ Return the <b style="color:var(--text-hi);">clean value</b>.
+    </div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:25px; color:var(--text-hi); margin-top:26px; line-height:1.7;">
+      <span class="tok-kw">while</span> <span class="tok-kw">True</span>:<br>
+      &nbsp;&nbsp;<span class="tok-kw">try</span>: <span class="tok-var">age</span> <span class="tok-op">=</span> <span class="tok-fn">int</span>(<span class="tok-fn">input</span>(<span class="tok-str">"Age: "</span>))<br>
+      &nbsp;&nbsp;<span class="tok-kw">except</span> <span class="tok-var">ValueError</span>: <span class="tok-kw">continue</span>&nbsp;<span class="tok-com"># 🔁 retry</span><br>
+      &nbsp;&nbsp;<span class="tok-kw">if</span> <span class="tok-num">0</span> <span class="tok-op">&lt;=</span> <span class="tok-var">age</span> <span class="tok-op">&lt;=</span> <span class="tok-num">120</span>: <span class="tok-kw">break</span><br>
+      &nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"0-120 please."</span>)
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:950px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:31px; color:var(--text-hi);">The program asks again instead of crashing — this is <b style="color:var(--neon-lime);">professional UX</b>.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:14px;">لا تثق بالمستخدم أبدًا: تحقق من المدخل، وإذا كان خاطئًا أعد السؤال بدلًا من الانهيار.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">24 / 50</div>
+</div>
+<template data-slide-notes>
+## Input validation — golden habit
+
+**Big rule (3 min):** "Never trust the user." Input is the #1 source of crashes. Two layers of defense: catch conversions (try/except) and check ranges (if).
+
+**Walk the recipe loop:** while True → try int() → except ValueError continue (retry) → check 0–120 → break when valid. Emphasize that `continue` re-asks without crashing, `break` exits with a valid value.
+
+**This is the pattern for the whole project.** Reference it: "We'll use this exact loop in the Robust CLI."
+
+**Live demo idea (5 min):** run the loop, feed it "abc", then "200", then "17" — show each rejection and final acceptance.
+
+**Arabic tip:** "لا تثق بالمستخدم" — عبارة يحفظونها ويرددونها في كل مشروع قادم.
+</template>
+</body>
+</html>

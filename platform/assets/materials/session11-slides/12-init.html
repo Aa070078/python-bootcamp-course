@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-lime"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; z-index:10;">
+    <div class="kicker">SYNTAX // THE INITIALIZER</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:160px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:84px; font-weight:700; color:var(--text-hi);">__init__: born with data 🎂</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:16px;">دالة __init__ تهيئ كل كائن عند ولادته — تُستدعى تلقائيًا</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:360px; width:1080px; height:470px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">dog_002.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:418px; width:1020px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.5;">
+    <div><span class="tok-kw">class</span> <span class="tok-var">Dog</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">__init__</span>(<span class="tok-var">self</span>, <span class="tok-var">name</span>, <span class="tok-var">age</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">name</span> <span class="tok-op">=</span> <span class="tok-var">name</span> &nbsp;<span class="tok-com"># store on the object</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">age</span> <span class="tok-op">=</span> <span class="tok-var">age</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-var">rex</span> <span class="tok-op">=</span> <span class="tok-fn">Dog</span>(<span class="tok-str">"Rex"</span>, <span class="tok-num">3</span>) &nbsp;<span class="tok-com"># __init__ runs NOW</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">rex</span>.<span class="tok-var">name</span>, <span class="tok-var">rex</span>.<span class="tok-var">age</span>) &nbsp;<span class="tok-com"># Rex 3</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1240px; top:360px; width:600px; height:470px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1270px; top:400px; width:540px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700; color:var(--text-hi);">How it works ⚙️</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:22px; line-height:1.65;">
+      ⏱️ <b>__init__</b> fires <b>automatically</b> the moment you create an object.<br>
+      🎯 It's the <b>initializer</b> — the "constructor" that sets up each new object.<br>
+      🗃️ <b>self.name = name</b> attaches the value to <b>this specific object</b>.<br>
+      🐍 The double underscores mean "special" — we call these <b>dunder</b> methods.
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-lo); margin-top:20px;">You never call __init__ yourself — Python calls it for you.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S11</div>
+  <div class="chrome-pagenum">12 / 50</div>
+</div>
+<template data-slide-notes>
+**Live demo.** Type this together. Emphasize that `__init__` is called automatically.
+
+- Trace it: `Dog("Rex", 3)` → Python allocates an object, then calls `__init__(self, "Rex", 3)` where self is the new object.
+- Then run `Dog("Rex", 3)` with the wrong number of args → TypeError. This is a feature: the blueprint *forces* every dog to have a name and age.
+- Vocabulary: "dunder" = double underscore. `__init__` is the most famous dunder.
+- Make one object per student name on screen — `Dog("Sara", 17)`, `Dog("Omar", 16)` — to show each object carries its own values.
+- Arabic tip: «تهيئة» = initializing; __init__ تعني "أنا أجهز الكائن".
+- Common mistake: misspelling it `__init__` → objects get created but never initialized (silent bug!). Show it.
+</template>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-260px; right:-160px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-300px; left:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">✅ QUICK CHECK #2</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi); margin-top:16px;">Which method reads?</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:340px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:40px; color:var(--text-mid); line-height:1.6;">Your app needs to <span style="color:var(--text-hi);">show a list of a user's orders</span>.<br>Which HTTP method fits best?</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:540px; width:860px; height:200px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:580px; width:800px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:33px; color:var(--text-hi);"><span style="color:var(--neon-magenta);">A)</span> <span style="color:var(--neon-cyan);">POST</span> &mdash; create a new order</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-lo); margin-top:8px;">POST changes data — not a read.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:540px; width:860px; height:200px; background:rgba(163,230,53,0.07); border:1px solid rgba(163,230,53,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1010px; top:580px; width:800px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:33px; color:var(--text-hi);"><span style="color:var(--neon-magenta);">B)</span> <span style="color:var(--neon-cyan);">GET</span> &nbsp;✅</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-lo); margin-top:8px;">Reading data = GET. Nothing changes on the server.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:780px; width:860px; height:200px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:820px; width:800px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:33px; color:var(--text-hi);"><span style="color:var(--neon-magenta);">C)</span> <span style="color:var(--neon-cyan);">PUT</span> &mdash; update an order</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-lo); margin-top:8px;">PUT edits existing data.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:780px; width:860px; height:200px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1010px; top:820px; width:800px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:33px; color:var(--text-hi);"><span style="color:var(--neon-magenta);">D)</span> <span style="color:var(--neon-cyan);">DELETE</span> &mdash; remove an order</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-lo); margin-top:8px;">DELETE destroys data.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:1020px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">القراءة دائماً GET: لا يغيّر أي شيء على الخادم، فقط يجلب البيانات 📖</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">16 / 50</div>
+</div>
+<template data-slide-notes>
+Mid-deck MCQ 2 (HTTP methods). Answer: **B) GET**.
+
+Rule to chant: "Read with GET, create with POST, update with PUT, delete with DELETE."
+
+Pitfall to flag: students will later use `requests.get` for everything because it's the friendliest. That's fine for this session's read-only APIs; but remind them a POST exists for creating things (slide 31).
+
+Arabic tip: أنشئ جملة حفظ سريعة: "اقرأ GET، أنشئ POST، حدّث PUT، احذف DELETE" وكررها مرتين.
+</template>
+</body>
+</html>

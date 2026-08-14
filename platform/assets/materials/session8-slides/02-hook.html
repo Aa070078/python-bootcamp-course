@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-220px; right:-160px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-200px; left:-140px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1700px; z-index:10;">
+    <div class="kicker">THE PROBLEM</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:96px; font-weight:700; line-height:1.05; color:var(--text-hi); margin-top:10px;">Your program has <span style="color:var(--neon-magenta);">amnesia</span> 🧠💨</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:330px; width:1500px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:40px; color:var(--text-mid); line-height:1.4;">Every variable lives in <b style="color:var(--text-hi);">RAM</b>. The moment the program closes, RAM is wiped — <span style="color:var(--text-lo);">scores, notes, names… all gone forever.</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:520px; width:480px; height:250px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:555px; width:420px; z-index:10;">
+    <div style="font-size:44px;">🎮</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:600; color:var(--text-hi); margin-top:6px;">Level 20 reached</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-lo); margin-top:8px;">close the app → level gone 💀</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:620px; top:520px; width:480px; height:250px; background:rgba(250,204,21,0.06); border:1px solid rgba(250,204,21,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:650px; top:555px; width:420px; z-index:10;">
+    <div style="font-size:44px;">🗒️</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:600; color:var(--text-hi); margin-top:6px;">500-word note</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-lo); margin-top:8px;">typed all night → vanished 💨</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1160px; top:520px; width:480px; height:250px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1190px; top:555px; width:420px; z-index:10;">
+    <div style="font-size:44px;">📇</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:600; color:var(--text-hi); margin-top:6px;">100 contacts added</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-lo); margin-top:8px;">next run → empty list 😵</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:840px; width:1700px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:46px; font-weight:600; color:var(--neon-cyan);">Today we learn how to make data <span style="color:var(--text-hi);">outlive</span> your program. →</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:14px;">كل بياناتك تختفي عند إغلاق البرنامج — اليوم نتعلّم كيف نحفظها إلى الأبد</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S08</div>
+  <div class="chrome-pagenum">02 / 50</div>
+</div>
+<template data-slide-notes>
+**Hook — 5 min.**
+
+Tell three short stories that happened "to your friend": a game losing a save, a note lost, contacts wiped. Let students groan — that groan is the motivation.
+
+- Ask: "Has anything like this ever happened to you?" (games saves are the universal answer).
+- Write on the board: RAM = memory of a goldfish. Disk = memory of an elephant.
+- End with the promise: "By the end of today your programs will have an elephant's memory."
+
+Arabic tip: say «الذاكرة تُمحى» (memory is wiped) and «الملف يبقى» (the file stays). Get them to repeat the pair.
+</template>
+</body>
+</html>

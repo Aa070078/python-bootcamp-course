@@ -1,0 +1,306 @@
+[
+    {
+        "file":  "01-title.html",
+        "title":  "01-title"
+    },
+    {
+        "file":  "02-review-mcq-1-q.html",
+        "title":  "02-review-mcq-1-q"
+    },
+    {
+        "file":  "03-review-mcq-1-a.html",
+        "title":  "03-review-mcq-1-a"
+    },
+    {
+        "file":  "04-review-mcq-2-q.html",
+        "title":  "04-review-mcq-2-q"
+    },
+    {
+        "file":  "05-review-mcq-2-a.html",
+        "title":  "05-review-mcq-2-a"
+    },
+    {
+        "file":  "06-review-mcq-3-q.html",
+        "title":  "06-review-mcq-3-q"
+    },
+    {
+        "file":  "07-review-mcq-3-a.html",
+        "title":  "07-review-mcq-3-a"
+    },
+    {
+        "file":  "08-why-strings.html",
+        "title":  "08-why-strings"
+    },
+    {
+        "file":  "09-what-is-string.html",
+        "title":  "09-what-is-string"
+    },
+    {
+        "file":  "10-creating-strings.html",
+        "title":  "10-creating-strings"
+    },
+    {
+        "file":  "11-single-vs-double.html",
+        "title":  "11-single-vs-double"
+    },
+    {
+        "file":  "12-multiline-escape.html",
+        "title":  "12-multiline-escape"
+    },
+    {
+        "file":  "13-mcq-string-basics-q.html",
+        "title":  "13-mcq-string-basics-q"
+    },
+    {
+        "file":  "14-mcq-string-basics-a.html",
+        "title":  "14-mcq-string-basics-a"
+    },
+    {
+        "file":  "15-fix-the-string.html",
+        "title":  "15-fix-the-string"
+    },
+    {
+        "file":  "16-indexing-concept.html",
+        "title":  "16-indexing-concept"
+    },
+    {
+        "file":  "17-positive-indexing.html",
+        "title":  "17-positive-indexing"
+    },
+    {
+        "file":  "18-negative-indexing.html",
+        "title":  "18-negative-indexing"
+    },
+    {
+        "file":  "19-live-coding-indexing.html",
+        "title":  "19-live-coding-indexing"
+    },
+    {
+        "file":  "20-mcq-indexing-q.html",
+        "title":  "20-mcq-indexing-q"
+    },
+    {
+        "file":  "21-mcq-indexing-a.html",
+        "title":  "21-mcq-indexing-a"
+    },
+    {
+        "file":  "22-predict-indexing.html",
+        "title":  "22-predict-indexing"
+    },
+    {
+        "file":  "23-slicing-concept.html",
+        "title":  "23-slicing-concept"
+    },
+    {
+        "file":  "24-slicing-examples.html",
+        "title":  "24-slicing-examples"
+    },
+    {
+        "file":  "25-step-reverse.html",
+        "title":  "25-step-reverse"
+    },
+    {
+        "file":  "26-mcq-slicing-q.html",
+        "title":  "26-mcq-slicing-q"
+    },
+    {
+        "file":  "27-mcq-slicing-a.html",
+        "title":  "27-mcq-slicing-a"
+    },
+    {
+        "file":  "28-complete-the-code.html",
+        "title":  "28-complete-the-code"
+    },
+    {
+        "file":  "29-slicing-patterns.html",
+        "title":  "29-slicing-patterns"
+    },
+    {
+        "file":  "30-practical-slicing.html",
+        "title":  "30-practical-slicing"
+    },
+    {
+        "file":  "31-methods-overview.html",
+        "title":  "31-methods-overview"
+    },
+    {
+        "file":  "32-basic-methods.html",
+        "title":  "32-basic-methods"
+    },
+    {
+        "file":  "33-live-coding-basic-methods.html",
+        "title":  "33-live-coding-basic-methods"
+    },
+    {
+        "file":  "34-mcq-basic-methods-q.html",
+        "title":  "34-mcq-basic-methods-q"
+    },
+    {
+        "file":  "35-mcq-basic-methods-a.html",
+        "title":  "35-mcq-basic-methods-a"
+    },
+    {
+        "file":  "36-searching-methods.html",
+        "title":  "36-searching-methods"
+    },
+    {
+        "file":  "37-mcq-searching-q.html",
+        "title":  "37-mcq-searching-q"
+    },
+    {
+        "file":  "38-mcq-searching-a.html",
+        "title":  "38-mcq-searching-a"
+    },
+    {
+        "file":  "39-editing-methods.html",
+        "title":  "39-editing-methods"
+    },
+    {
+        "file":  "40-live-coding-editing.html",
+        "title":  "40-live-coding-editing"
+    },
+    {
+        "file":  "41-mcq-editing-q.html",
+        "title":  "41-mcq-editing-q"
+    },
+    {
+        "file":  "42-mcq-editing-a.html",
+        "title":  "42-mcq-editing-a"
+    },
+    {
+        "file":  "43-validation-methods.html",
+        "title":  "43-validation-methods"
+    },
+    {
+        "file":  "44-mcq-validation-q.html",
+        "title":  "44-mcq-validation-q"
+    },
+    {
+        "file":  "45-mcq-validation-a.html",
+        "title":  "45-mcq-validation-a"
+    },
+    {
+        "file":  "46-find-the-bug.html",
+        "title":  "46-find-the-bug"
+    },
+    {
+        "file":  "47-string-formatting.html",
+        "title":  "47-string-formatting"
+    },
+    {
+        "file":  "48-fstrings-deep-dive.html",
+        "title":  "48-fstrings-deep-dive"
+    },
+    {
+        "file":  "49-mcq-formatting-q.html",
+        "title":  "49-mcq-formatting-q"
+    },
+    {
+        "file":  "50-mcq-formatting-a.html",
+        "title":  "50-mcq-formatting-a"
+    },
+    {
+        "file":  "51-iterating-strings.html",
+        "title":  "51-iterating-strings"
+    },
+    {
+        "file":  "52-live-coding-char-counter.html",
+        "title":  "52-live-coding-char-counter"
+    },
+    {
+        "file":  "53-mcq-iteration-q.html",
+        "title":  "53-mcq-iteration-q"
+    },
+    {
+        "file":  "54-mcq-iteration-a.html",
+        "title":  "54-mcq-iteration-a"
+    },
+    {
+        "file":  "55-predict-iteration.html",
+        "title":  "55-predict-iteration"
+    },
+    {
+        "file":  "56-project-username-formatter.html",
+        "title":  "56-project-username-formatter"
+    },
+    {
+        "file":  "57-project-email-validator.html",
+        "title":  "57-project-email-validator"
+    },
+    {
+        "file":  "58-project-password-strength.html",
+        "title":  "58-project-password-strength"
+    },
+    {
+        "file":  "59-project-word-analyzer.html",
+        "title":  "59-project-word-analyzer"
+    },
+    {
+        "file":  "60-mcq-projects-q.html",
+        "title":  "60-mcq-projects-q"
+    },
+    {
+        "file":  "61-mcq-projects-a.html",
+        "title":  "61-mcq-projects-a"
+    },
+    {
+        "file":  "62-exercises-easy.html",
+        "title":  "62-exercises-easy"
+    },
+    {
+        "file":  "63-exercises-medium.html",
+        "title":  "63-exercises-medium"
+    },
+    {
+        "file":  "64-mcq-comprehensive-q.html",
+        "title":  "64-mcq-comprehensive-q"
+    },
+    {
+        "file":  "65-mcq-comprehensive-a.html",
+        "title":  "65-mcq-comprehensive-a"
+    },
+    {
+        "file":  "66-final-quiz.html",
+        "title":  "66-final-quiz"
+    },
+    {
+        "file":  "67-final-quiz-answers.html",
+        "title":  "67-final-quiz-answers"
+    },
+    {
+        "file":  "68-session-recap.html",
+        "title":  "68-session-recap"
+    },
+    {
+        "file":  "69-homework-easy.html",
+        "title":  "69-homework-easy"
+    },
+    {
+        "file":  "70-homework-medium.html",
+        "title":  "70-homework-medium"
+    },
+    {
+        "file":  "71-homework-hard.html",
+        "title":  "71-homework-hard"
+    },
+    {
+        "file":  "72-mcq-final-review-q.html",
+        "title":  "72-mcq-final-review-q"
+    },
+    {
+        "file":  "73-mcq-final-review-a.html",
+        "title":  "73-mcq-final-review-a"
+    },
+    {
+        "file":  "74-mcq-bonus-q.html",
+        "title":  "74-mcq-bonus-q"
+    },
+    {
+        "file":  "75-mcq-bonus-a.html",
+        "title":  "75-mcq-bonus-a"
+    },
+    {
+        "file":  "76-session5-teaser.html",
+        "title":  "76-session5-teaser"
+    }
+]

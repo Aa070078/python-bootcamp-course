@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-200px; right:-160px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-180px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1700px; z-index:10;">
+    <div class="kicker">🏋️ PRACTICE — EXERCISES</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:80px; font-weight:700; color:var(--text-hi); margin-top:10px;">Three levels, one hour</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:360px; width:530px; height:460px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:395px; width:470px; z-index:10;">
+    <div class="chip chip-cyan">EASY</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:33px; color:var(--text-hi); margin-top:18px;">Line counter</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-lo); margin-top:12px; line-height:1.55;">Read <span class="mono">poem.txt</span> and print how many lines and how many characters it has.</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--text-dim); margin-top:16px;">hint: len(lines), len(text)</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:660px; top:360px; width:530px; height:460px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:690px; top:395px; width:470px; z-index:10;">
+    <div class="chip chip-lime">MEDIUM</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:33px; color:var(--text-hi); margin-top:18px;">Log builder</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-lo); margin-top:12px; line-height:1.55;">Append 3 lines to <span class="mono">log.txt</span>, then read it back and print the whole thing.</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--text-dim); margin-top:16px;">hint: "a" then "r"</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1240px; top:360px; width:530px; height:460px; background:rgba(250,204,21,0.06); border:1px solid rgba(250,204,21,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1270px; top:395px; width:470px; z-index:10;">
+    <div class="chip chip-yellow">CHALLENGE</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:33px; color:var(--text-hi); margin-top:18px;">Contact book</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-lo); margin-top:12px; line-height:1.55;">Save contacts to <span class="mono">contacts.json</span>. Add, list, and <b style="color:var(--text-hi);">search by name</b>. Reuse the fail-safe pattern.</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--text-dim); margin-top:16px;">hint: json.dump / json.load</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:890px; width:1700px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--neon-cyan);">🐍 Finish easy + medium now; challenge if you're fast. Solutions in the notes.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:29px; color:var(--text-lo); direction:rtl; margin-top:14px;">تمارين: عداد الأسطر سهل، باني السجلات متوسط، دفتر الاتصالات تحدي</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S08</div>
+  <div class="chrome-pagenum">43 / 50</div>
+</div>
+<template data-slide-notes>
+**Exercises — 25 min.**
+
+Easy solution:
+```python
+with open("poem.txt") as f:
+    lines = f.readlines()
+    print("lines:", len(lines))
+    print("chars:", sum(len(l) for l in lines))
+```
+
+Medium solution:
+```python
+with open("log.txt", "a") as f:
+    f.write("line 1\nline 2\nline 3\n")
+with open("log.txt") as f:
+    print(f.read())
+```
+
+Challenge: contact book reusing load/save + a loop comparing `c["name"] == search`.
+
+Coach around: forgetting `\n`, and FileNotFoundError on first run. Arabic tip: «جرّب ثم أعد المحاولة» (try, then try again).
+</template>
+</body>
+</html>

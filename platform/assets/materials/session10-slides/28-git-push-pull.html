@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="bottom:-200px; left:-180px;"></div>
+  <div class="bg-glow-magenta" style="top:80px; right:-220px;"></div>
+
+  <div class="chrome-topbar">
+    <span class="chrome-dot"></span>
+    <span>COMMANDS #8 &amp; #9 // PUSH &amp; PULL</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-cyan); letter-spacing:0.25em; text-transform:uppercase;">⚡ COMMANDS #8 &amp; #9</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi); margin-top:12px;"><span style="color:var(--neon-lime);">push</span> &amp; <span style="color:var(--neon-magenta);">pull</span></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-mid); margin-top:10px;">Sync your local repo with your GitHub remote.</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:390px; width:1120px; height:440px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">bash</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:450px; width:1060px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:29px; line-height:1.9;">
+    <div><span class="tok-com"># after adding a remote named "origin"</span></div>
+    <div><span class="tok-var">$</span> git push -u origin main <span class="tok-com"># send commits UP ⬆️</span></div>
+    <div class="tok-out">Enumerating objects: 5, done.</div>
+    <div class="tok-out">To https://github.com/you/my_game.git</div>
+    <div class="tok-out">* [new branch] main -&gt; main</div>
+    <div style="height:10px;"></div>
+    <div><span class="tok-var">$</span> git pull origin main <span class="tok-com"># fetch DOWN ⬇️</span></div>
+    <div class="tok-out">Already up to date.</div>
+    <div style="height:10px;"></div>
+    <div><span class="tok-com"># after -u, later runs are just: git push / git pull</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1260px; top:390px; width:580px; height:440px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.3); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1290px; top:430px; width:520px; z-index:10;">
+    <div style="font-size:50px;">🔁</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:33px; color:var(--text-hi); font-weight:600; margin-top:12px;">When to use each</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:16px; line-height:1.7;">
+      <span style="color:var(--neon-lime);">push</span> → after you commit, upload it<br>
+      <span style="color:var(--neon-magenta);">pull</span> → before you start work, get latest<br>
+      Always <span style="color:var(--neon-yellow);">pull</span> before you <span style="color:var(--neon-lime);">push</span>! 🤝
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:910px; width:1760px; z-index:10;">
+    <span class="chip chip-lime">push = upload commits</span>
+    <span class="chip chip-magenta">pull = download commits</span>
+    <span class="chip chip-yellow">pull before push</span>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:24px;">الدفع يرسل التزاماتك إلى GitHub، والسحب ينزّل التغييرات الجديدة إلى جهازك.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S10</div>
+  <div class="chrome-pagenum">28 / 50</div>
+</div>
+<template data-slide-notes>
+**Slide 28 — push & pull (5 min)**
+- Read both commands aloud with energy — this is the moment projects go public.
+- `-u origin main`: sets upstream tracking so future commands are just `git push` / `git pull`.
+- Golden habit: pull before you start work, and pull before you push. Avoids the "rejected" error we fix later.
+- Clarify push does NOT happen automatically — commits stay local until you push. (Very common beginner confusion.)
+- Arabic tip: قارن الدفع بالإرسال إلى الصندوق البريدي، والسحب بجلب الرسائل الجديدة.
+- Note for teacher: on first push GitHub may ask for authentication (HTTPS token / credential manager). Have them sign in once.
+</template>
+</body>
+</html>

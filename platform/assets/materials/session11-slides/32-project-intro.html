@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-magenta"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; z-index:10;">
+    <div class="kicker">PROJECT // LET'S BUILD TOGETHER</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:160px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:84px; font-weight:700; color:var(--text-hi);">Mini Project: PyBank 💰</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:16px;">المشروع: نظام بنك بأصناف متعددة — نجمع كل ما تعلمناه</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:380px; width:400px; height:420px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.5); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:416px; width:340px; z-index:10; text-align:center;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700; color:var(--text-hi);">Account</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:23px; color:var(--neon-lime); margin-top:14px;">number · owner · _balance</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:23px; color:var(--neon-cyan); margin-top:10px;">deposit() · withdraw()<br>balance (property)</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:480px; top:520px; width:120px; z-index:10; text-align:center;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:44px; color:var(--neon-magenta);">▲</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:var(--text-lo); margin-top:4px;">inherits</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:600px; top:380px; width:420px; height:420px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.5); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:630px; top:416px; width:360px; z-index:10; text-align:center;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700; color:var(--neon-lime);">SavingsAccount</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:23px; color:var(--text-mid); margin-top:14px;">inherits all of Account<br>+ interest = 0.03<br>+ apply_interest()</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1060px; top:380px; width:420px; height:420px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.5); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1090px; top:416px; width:360px; z-index:10; text-align:center;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700; color:var(--text-hi);">Bank</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:23px; color:var(--neon-magenta); margin-top:14px;">name · accounts[]</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:23px; color:var(--neon-cyan); margin-top:10px;">open_account()<br>find()</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1520px; top:520px; width:80px; z-index:10; text-align:center;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:44px; color:var(--neon-lime);">♡</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:22px; color:var(--text-lo); margin-top:4px;">has-a</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:840px; width:1760px; z-index:10;">
+    <span class="chip chip-cyan">DEPOSITS</span>
+    <span class="chip chip-lime">WITHDRAWALS</span>
+    <span class="chip chip-magenta">INTEREST</span>
+    <span class="chip chip-cyan">ACCOUNT REPORT</span>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S11</div>
+  <div class="chrome-pagenum">32 / 50</div>
+</div>
+<template data-slide-notes>
+**Project kickoff.** Present the design BEFORE any code — this is how real software starts.
+
+- Three classes: Account (base), SavingsAccount (child — inheritance), Bank (container — composition).
+- Point out we're using EVERYTHING: attributes, methods, property, super(), inheritance.
+- Divide into two files like a real project: `bank_1.py` (classes) and `bank_2.py` (the demo).
+- Rules for the live build: students type, you type, everyone runs together. Speed = one small step per student.
+- Arabic tip: «صمّم المخطط قبل الكود» — draw the plan before coding.
+- Get excited: "This is a real mini-application, not a toy."
+- Next two slides are the code; third is the output. Keep momentum.
+</template>
+</body>
+</html>

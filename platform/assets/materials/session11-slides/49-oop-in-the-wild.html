@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime"></div>
+  <div class="bg-glow-cyan"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; z-index:10;">
+    <div class="kicker">PERSPECTIVE // REAL WORLD</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:160px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:84px; font-weight:700; color:var(--text-hi);">OOP is everywhere 🌍</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:16px;">كل مكتبة استخدمتها حتى الآن مبنية من أصناف</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:400px; width:420px; height:500px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.45); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:440px; width:360px; z-index:10;">
+    <div style="font-size:52px;">🎮</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--text-hi); margin-top:10px;">Games — pygame</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:16px; line-height:1.6;">Every sprite is a <b>class</b>. Your player, enemy, and bullet are all objects with attributes and methods.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:520px; top:400px; width:420px; height:500px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.45); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:550px; top:440px; width:360px; z-index:10;">
+    <div style="font-size:52px;">🌐</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--text-hi); margin-top:10px;">Web — Django</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:16px; line-height:1.6;">Models, views, forms — <b>classes</b> everywhere. One class ≈ one table in the database.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:960px; top:400px; width:420px; height:500px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.45); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:990px; top:440px; width:360px; z-index:10;">
+    <div style="font-size:52px;">📊</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--text-hi); margin-top:10px;">Data — pandas</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:16px; line-height:1.6;">A <b>DataFrame</b> is an object. <span class="mono">df.head()</span>, <span class="mono">df.mean()</span> — methods on an object.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1400px; top:400px; width:420px; height:500px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.45); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1430px; top:440px; width:360px; z-index:10;">
+    <div style="font-size:52px;">🖥️</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--text-hi); margin-top:10px;">Apps — tkinter</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:16px; line-height:1.6;">Buttons, windows, labels are all <b>Widget</b> objects. You've been using OOP all along.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:940px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--neon-lime);">💡 "Every library you've touched is built from classes — today you learned to read its source."</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S11</div>
+  <div class="chrome-pagenum">49 / 50</div>
+</div>
+<template data-slide-notes>
+**Perspective slide — why this session matters beyond the bootcamp.**
+
+- Every example is something they've *already used* (or will soon): pygame sprites, Django models, pandas DataFrame, tkinter widgets. All classes.
+- This is the "aha" moment for many: the dot after `df.head()` is exactly `self` in disguise.
+- In Arabic: «أصبحت تقرأ سطورًا رأيتها طوال الوقت» — you can now read code you've only used.
+- Optional homework link: read the source of one method you love (`list.append` is C, but pandas is Python).
+- Keep energy high — one slide left, the full map.
+</template>
+</body>
+</html>

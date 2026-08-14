@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="bottom:-180px; left:-200px;"></div>
+  <div class="bg-glow-magenta" style="top:80px; right:-200px;"></div>
+
+  <div class="chrome-topbar">
+    <span class="chrome-dot"></span>
+    <span>COMMAND #3 // git add</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-cyan); letter-spacing:0.25em; text-transform:uppercase;">⚡ COMMAND #3</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:80px; font-weight:700; color:var(--text-hi); margin-top:10px;"><span style="color:var(--neon-yellow);">git add</span></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-mid); margin-top:10px;">Pick the files you want in the next snapshot → they go to the staging area.</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:400px; width:940px; height:460px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">bash</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:460px; width:880px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:29px; line-height:1.85;">
+    <div><span class="tok-var">$</span> git add app.py</div>
+    <div><span class="tok-com"># or: stage everything in this folder</span></div>
+    <div><span class="tok-var">$</span> git add .</div>
+    <div style="height:8px;"></div>
+    <div><span class="tok-var">$</span> git status</div>
+    <div class="tok-out">Changes to be committed:</div>
+    <div class="tok-out">&nbsp;&nbsp;new file:&nbsp;&nbsp; app.py</div>
+    <div class="tok-out">&nbsp;&nbsp;new file:&nbsp;&nbsp; score.py</div>
+    <div style="height:8px;"></div>
+    <div><span class="tok-com"># now they are STAGED — ready for commit</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1090px; top:400px; width:750px; height:460px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.3); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1120px; top:440px; width:690px; z-index:10;">
+    <div style="font-size:52px;">🎯</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-hi); font-weight:600; margin-top:12px;">Ways to add</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:27px; color:var(--text-mid); margin-top:18px; line-height:1.9;">
+      git add app.py<br>
+      git add score.py utils.py<br>
+      git add *.py <span class="tok-com"># all python files</span><br>
+      git add . <span class="tok-com"># everything</span>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--neon-lime); margin-top:20px;">`git add .` is the bootcamp favourite. 🔥</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:930px; width:1760px; z-index:10;">
+    <span class="chip chip-lime">git add . = stage all</span>
+    <span class="chip chip-yellow">git add file.py = stage one</span>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:24px;">git add تضع ملفاتك في قائمة الانتظار قبل الحفظ النهائي.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S10</div>
+  <div class="chrome-pagenum">14 / 50</div>
+</div>
+<template data-slide-notes>
+**Slide 14 — git add (5 min)**
+- Demo: `git add app.py`, then `git status` — show "Changes to be committed".
+- Explain why it exists: so you can commit ONE logical change (e.g., only the bug fix, not the half-written feature).
+- `git add .` is great for beginners but show the targeted form too.
+- PREDICT-QUESTION for the room: "After `git add .`, what will `git status` say?" → files move to "Changes to be committed".
+- Arabic tip: نطق "add" كما هو؛ اشرح معناه "أضِف الملفات إلى الحزمة القادمة".
+- Common slip: students add, then forget to commit. Remind: add is only the first half.
+</template>
+</body>
+</html>

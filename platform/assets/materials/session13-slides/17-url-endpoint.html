@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime" style="top:-240px; right:-160px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-280px; left:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">📍 CORE CONCEPT #6</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:80px; font-weight:700; color:var(--text-hi); margin-top:14px;">URL &amp; <span style="color:var(--neon-cyan);">endpoint</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:320px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); line-height:1.6;"><span style="color:var(--text-hi);">URL</span> = a full address. <span style="color:var(--neon-cyan);">Endpoint</span> = one specific "door" on that server that answers a particular question.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:440px; width:1760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:34px; color:var(--text-hi); line-height:1.8;">
+      <span class="tok-str">https://api.frankfurter.app</span><span class="tok-com">/latest</span><span class="tok-op">?</span><span class="tok-fn">from</span><span class="tok-op">=</span><span class="tok-var">USD</span>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:560px; width:860px; height:250px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:600px; width:780px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-cyan);">HOST / DOMAIN</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:10px; line-height:1.6;">Which server — like a city name.<br><span class="mono" style="color:var(--neon-lime);">api.frankfurter.app</span> = the currency server.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:560px; width:860px; height:250px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1020px; top:600px; width:780px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-magenta);">PATH / ENDPOINT</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:10px; line-height:1.6;">Which resource — like a street name.<br><span class="mono" style="color:var(--neon-lime);">/latest</span> = "give me today's rates".</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:870px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-lo);">Endpoints follow a pattern: <span class="mono" style="color:var(--neon-cyan);">/orders</span> &middot; <span class="mono" style="color:var(--neon-cyan);">/orders/42</span> &middot; <span class="mono" style="color:var(--neon-cyan);">/forecast</span>. Read the docs to learn the menu. 📖</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:940px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">الـ URL عنوان كامل، والـ Endpoint باب محدد على الخادم يجيب عن سؤال واحد محدد 📍</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">17 / 50</div>
+</div>
+<template data-slide-notes>
+URL & endpoint.
+
+Two-part mental model: URL = address of the building (server), endpoint/path = which room/door (specific resource). Different endpoints = different "dishes" on the same restaurant menu.
+
+Examples to write on the board:
+- GET /latest → latest rates
+- GET /2023-01-01 → rates on a specific date
+- GET /forecast → weather forecast
+
+Point out the pattern `/resource` and `/resource/id` — this is the most common API design convention.
+
+Arabic tip: شبّه العنوان بـ"الحي" والمجرّد/المسار بـ"الشارع" — كلاهما لازم للوصول إلى المعلومة.
+</template>
+</body>
+</html>

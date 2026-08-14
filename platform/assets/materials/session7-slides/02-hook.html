@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-200px; right:-150px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-220px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:120px; width:1720px; z-index:10;">
+    <div class="kicker">🎣 HOOK — THE COPY-PASTE NIGHTMARE</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi); margin-top:16px;">Print a receipt 5 times…</div>
+    <div class="arabic" style="font-size:32px; color:var(--text-lo); margin-top:14px; direction:rtl;">تخيّل أنك تكرر نفس الكود عشرات المرات — فوضى وصعوبة في التعديل!</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:360px; width:560px; height:560px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:390px; width:500px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:24px; line-height:1.7;">
+    <div class="kicker" style="font-size:18px;">COPY 1</div>
+    <div><span class="tok-kw">for</span> <span class="tok-var">i</span> <span class="tok-kw">in</span> <span class="tok-fn">range</span>(<span class="tok-num">3</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"🍔 Burger "</span> <span class="tok-op">+</span> <span class="tok-var">i</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"---"</span>)</div>
+    <div style="margin-top:18px; color:var(--text-lo);">… and paste it again 🧱</div>
+    <div style="margin-top:18px; color:var(--text-lo);">… and again 🧱🧱</div>
+    <div style="margin-top:18px; color:var(--text-lo);">… and again 🧱🧱🧱</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:720px; top:400px; width:1120px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:52px; font-weight:700; color:var(--text-hi);">Then your boss changes the format 😱</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); margin-top:22px;">Now you must edit <span style="color:var(--neon-magenta); font-weight:700;">every copy</span>… and miss one → bug ships.</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:40px; font-weight:700; color:var(--neon-lime); margin-top:34px;">DRY — Don’t Repeat Yourself ✂️</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid); margin-top:14px;">Write the logic <span style="color:var(--neon-cyan); font-weight:700;">once</span> inside a function, call it anywhere.</div>
+    <div class="arabic" style="font-size:30px; color:var(--text-lo); margin-top:26px; direction:rtl;">الحل: اكتب المنطق مرة واحدة داخل دالة، ثم استدعِها من أي مكان — هذا مبدأ DRY.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S07</div>
+  <div class="chrome-pagenum">02 / 50</div>
+</div>
+<template data-slide-notes>
+- **Hook script**: read the pasted blocks dramatically, build tension.
+- Ask: "What happens if the format changes?" → you edit 5 places.
+- Point at DRY principle; this is the #1 motivation for functions.
+- Fun demo: have a student count duplicated lines in a file if available.
+- Live mini-prompt: "What real repetition do you have in your life? A morning routine = a function!"
+- Arabic tip: DRY تُقرأ حرفيًا «لا تكرر نفسك».
+- Transition: "Today you'll build a machine that you can run anytime."
+</template>
+</body>
+</html>

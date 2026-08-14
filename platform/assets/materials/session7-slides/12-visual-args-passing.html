@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-180px; left:600px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-220px; right:-150px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:100px; width:1720px; z-index:10;">
+    <div class="kicker">👁️ VISUAL — ARGUMENTS FILL PARAMETERS</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi); margin-top:14px;">Values flow in, by position</div>
+    <div class="arabic" style="font-size:30px; color:var(--text-lo); margin-top:12px; direction:rtl;">القيم تتدفق إلى المعاملات بالترتيب: الأولى إلى الأول وهكذا</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:920px; height:290px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">position.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:380px; width:860px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:27px; line-height:1.7;">
+    <div><span class="tok-kw">def</span> <span class="tok-fn">greet</span>(<span class="tok-var">name</span>, <span class="tok-var">age</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">f"Hi {name}, you are {age}!"</span>)</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-fn">greet</span>(<span class="tok-str">"Nour"</span>, <span class="tok-num">19</span>)</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1060px; top:330px; width:180px; z-index:10;">
+    <div style="font-size:56px; color:var(--neon-cyan);">→</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1280px; top:340px; width:260px; height:120px; background:rgba(34,211,238,0.08); border:1px solid rgba(34,211,238,0.5); border-radius:18px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1300px; top:368px; width:220px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:24px;">
+    <div class="kicker" style="font-size:16px;">ARGUMENT</div>
+    <div><span class="tok-str">"Nour"</span> → <span class="tok-var">name</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1280px; top:490px; width:260px; height:120px; background:rgba(163,230,53,0.08); border:1px solid rgba(163,230,53,0.5); border-radius:18px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1300px; top:518px; width:220px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:24px;">
+    <div class="kicker" style="font-size:16px; color:var(--neon-lime);">ARGUMENT</div>
+    <div><span class="tok-num">19</span> → <span class="tok-var">age</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1580px; top:340px; width:260px; height:270px; background:rgba(236,72,153,0.08); border:1px solid rgba(236,72,153,0.5); border-radius:18px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1600px; top:368px; width:220px; z-index:10;">
+    <div class="kicker" style="font-size:16px; color:var(--neon-magenta);">PARAMETERS</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; margin-top:10px;"><span class="tok-var">name</span></div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; margin-top:10px;"><span class="tok-var">age</span></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:20px; color:var(--text-lo); margin-top:12px;">filled slots inside the function</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:700px; width:1720px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid);">Position matters: first argument → first parameter, second → second. 🔢</div>
+    <div class="arabic" style="font-size:28px; color:var(--text-lo); margin-top:12px; direction:rtl;">الترتيب مهم: الحجة الأولى تذهب للمعامل الأول دائمًا</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S07</div>
+  <div class="chrome-pagenum">12 / 50</div>
+</div>
+<template data-slide-notes>
+- Trace the arrows by hand on screen: "Nour" drops into name, 19 drops into age.
+- Switch the values on the board: greet(19, "Nour") → prints "Hi 19, you are Nour!" — funny but broken logic.
+- Ask: "What if we pass too few arguments?" → TypeError: missing 1 required positional argument.
+- Demo the error live once — students must SEE TypeError.
+- Arabic tip: الترتيب كأنك تملىء نموذجًا من الأعلى للأسفل.
+- Transition: "Let's write a multi-parameter function together."
+</template>
+</body>
+</html>

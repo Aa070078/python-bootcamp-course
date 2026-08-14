@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-magenta"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1760px; z-index:10;">
+    <div class="kicker">REVIEW // LAST SESSION — APIS ⏮️</div>
+    <div style="margin-top:26px; font-family:'Space Grotesk',sans-serif; font-size:60px; font-weight:700; color:var(--text-hi);">What does <span class="mono" style="color:var(--neon-cyan);">requests.get(url)</span> return in Python?</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:14px;">ما الذي تُرجعه الدالة requests.get(url) في بايثون؟</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:360px; width:1760px; z-index:10;">
+    <div style="display:flex; gap:30px; flex-wrap:wrap;">
+      <div style="width:850px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.3); border-radius:20px; padding:26px 30px;"><span class="chip chip-cyan">A</span> <span style="font-family:'JetBrains Mono',monospace; font-size:27px; color:var(--text-hi);">The raw HTML text</span></div>
+      <div style="width:850px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.3); border-radius:20px; padding:26px 30px;"><span class="chip chip-cyan">B</span> <span style="font-family:'JetBrains Mono',monospace; font-size:27px; color:var(--text-hi);">A Response object (status + text + headers)</span></div>
+      <div style="width:850px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.3); border-radius:20px; padding:26px 30px;"><span class="chip chip-cyan">C</span> <span style="font-family:'JetBrains Mono',monospace; font-size:27px; color:var(--text-hi);">A Python dictionary</span></div>
+      <div style="width:850px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.3); border-radius:20px; padding:26px 30px;"><span class="chip chip-cyan">D</span> <span style="font-family:'JetBrains Mono',monospace; font-size:27px; color:var(--text-hi);">None (it prints the page)</span></div>
+    </div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">03 / 50</div>
+</div>
+<template data-slide-notes>
+Answer: B. `requests.get()` returns a `requests.Response` object. You read `.status_code`, `.text`, `.json()`, `.headers`.
+
+Why we ask: today we call `.text` and hand it to BeautifulSoup — the same Response object is the bridge between "talking to APIs" (session 13) and "reading web pages" (today).
+
+Ask: "What would `resp.json()` be useful for?" → API endpoints returning JSON.
+
+Arabic tip: ذكّرهم أن الاستجابة Response = الطلب + النص + الحالة. اربط المعلومة القديمة بالجديدة.
+</template>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="left:-220px; top:-160px;"></div>
+  <div class="bg-glow-magenta" style="right:-180px; bottom:-180px;"></div>
+
+  <!-- HEADER -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:120px; width:1760px; z-index:10;">
+    <div class="kicker">🧮 SET OPERATIONS</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:64px; font-weight:700; color:var(--text-hi); margin-top:14px;">Four superpowers: <span class="mono" style="color:var(--neon-cyan);">|</span> <span class="mono" style="color:var(--neon-lime);">&amp;</span> <span class="mono" style="color:var(--neon-yellow);">-</span> <span class="mono" style="color:var(--neon-magenta);">^</span></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:10px;">Venn-style thinking — <span class="mono" style="color:var(--neon-cyan);">a = {1,2,3}</span> · <span class="mono" style="color:var(--neon-magenta);">b = {3,4,5}</span></div>
+  </div>
+
+  <!-- UNION -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:360px; width:860px; height:260px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.4); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:388px; width:820px; z-index:10;">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-cyan); letter-spacing:0.15em;">UNION 🧬</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--text-mid);"><span class="tok-var">a</span> <span class="tok-op">|</span> <span class="tok-var">b</span></div>
+    </div>
+    <div style="display:flex; align-items:center; margin-top:30px;">
+      <div style="width:96px; height:96px; border-radius:50%; border:3px solid var(--neon-cyan); background:rgba(34,211,238,0.14);"></div>
+      <div style="width:96px; height:96px; border-radius:50%; border:3px solid var(--neon-magenta); background:rgba(236,72,153,0.14); margin-left:-34px;"></div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:28px; color:var(--neon-lime); margin-left:40px;">→ {1, 2, 3, 4, 5}</div>
+    </div>
+  </div>
+
+  <!-- INTERSECTION -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:360px; width:860px; height:260px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.4); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1010px; top:388px; width:820px; z-index:10;">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-lime); letter-spacing:0.15em;">INTERSECTION 🎯</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--text-mid);"><span class="tok-var">a</span> <span class="tok-op">&amp;</span> <span class="tok-var">b</span></div>
+    </div>
+    <div style="display:flex; align-items:center; margin-top:30px;">
+      <div style="width:96px; height:96px; border-radius:50%; border:3px solid var(--neon-lime); background:rgba(163,230,53,0.14);"></div>
+      <div style="width:96px; height:96px; border-radius:50%; border:3px solid var(--neon-magenta); background:rgba(236,72,153,0.14); margin-left:-34px;"></div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:28px; color:var(--neon-lime); margin-left:40px;">→ {3}</div>
+    </div>
+  </div>
+
+  <!-- DIFFERENCE -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:660px; width:860px; height:260px; background:rgba(250,204,21,0.05); border:1px solid rgba(250,204,21,0.4); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:688px; width:820px; z-index:10;">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-yellow); letter-spacing:0.15em;">DIFFERENCE ➖</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--text-mid);"><span class="tok-var">a</span> <span class="tok-op">-</span> <span class="tok-var">b</span></div>
+    </div>
+    <div style="display:flex; align-items:center; margin-top:30px;">
+      <div style="width:96px; height:96px; border-radius:50%; border:3px solid var(--neon-yellow); background:rgba(250,204,21,0.14);"></div>
+      <div style="width:96px; height:96px; border-radius:50%; border:3px solid var(--neon-magenta); background:rgba(236,72,153,0.14); margin-left:-34px;"></div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:28px; color:var(--neon-lime); margin-left:40px;">→ {1, 2} <span style="color:var(--text-dim); font-size:20px;">(in a, not in b)</span></div>
+    </div>
+  </div>
+
+  <!-- SYMMETRIC DIFFERENCE -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:660px; width:860px; height:260px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.4); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1010px; top:688px; width:820px; z-index:10;">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-magenta); letter-spacing:0.15em;">SYMMETRIC DIFFERENCE 🪞</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--text-mid);"><span class="tok-var">a</span> <span class="tok-op">^</span> <span class="tok-var">b</span></div>
+    </div>
+    <div style="display:flex; align-items:center; margin-top:30px;">
+      <div style="width:96px; height:96px; border-radius:50%; border:3px solid var(--neon-magenta); background:rgba(236,72,153,0.14);"></div>
+      <div style="width:96px; height:96px; border-radius:50%; border:3px solid var(--neon-cyan); background:rgba(34,211,238,0.14); margin-left:-34px;"></div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:28px; color:var(--neon-lime); margin-left:40px;">→ {1, 2, 4, 5} <span style="color:var(--text-dim); font-size:20px;">(in exactly one)</span></div>
+    </div>
+  </div>
+
+  <!-- BOTTOM STRIP -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:950px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-size:26px; color:var(--text-lo);">اتحاد | · تقاطع &amp; · فرق - · فرق متماثل ^</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S06</div>
+  <div class="chrome-pagenum">12 / 45</div>
+</div>
+<template data-slide-notes>
+**Slide 12 — Set operations (Venn cards)**
+
+Work through each operation with `a = {1, 2, 3}` and `b = {3, 4, 5}`. Draw the two overlapping circles on the board.
+
+- **Union** `a | b` → everything: `{1, 2, 3, 4, 5}`.
+- **Intersection** `a & b` → only the shared part: `{3}`.
+- **Difference** `a - b` → in `a` but not in `b`: `{1, 2}`. (Direction matters! `b - a` = `{4, 5}`.)
+- **Symmetric difference** `a ^ b` → in exactly one: `{1, 2, 4, 5}`.
+
+Ask the class to predict each result *before* showing. The `^` usually surprises people — celebrate it.
+
+Real-world tie-in: "Union = merging contact lists. Intersection = friends in common. Difference = contacts only you have."
+
+Arabic tip: استخدم مثالًا محليًا: "الطلاب الذين يدرسون الرياضيات فقط، الذين يدرسون البرمجة فقط، والذين يدرسون الاثنين معًا" لتوضيح العمليات الأربع.
+</template>
+</body>
+</html>

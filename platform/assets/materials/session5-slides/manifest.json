@@ -1,0 +1,254 @@
+[
+    {
+        "file":  "01-title.html",
+        "title":  "01-title"
+    },
+    {
+        "file":  "02-review-mcq-1-q.html",
+        "title":  "02-review-mcq-1-q"
+    },
+    {
+        "file":  "03-review-mcq-1-a.html",
+        "title":  "03-review-mcq-1-a"
+    },
+    {
+        "file":  "04-review-mcq-2-q.html",
+        "title":  "04-review-mcq-2-q"
+    },
+    {
+        "file":  "05-review-mcq-2-a.html",
+        "title":  "05-review-mcq-2-a"
+    },
+    {
+        "file":  "06-hook-10000-students.html",
+        "title":  "06-hook-10000-students"
+    },
+    {
+        "file":  "07-what-is-list.html",
+        "title":  "07-what-is-list"
+    },
+    {
+        "file":  "08-creating-lists.html",
+        "title":  "08-creating-lists"
+    },
+    {
+        "file":  "09-list-visualization.html",
+        "title":  "09-list-visualization"
+    },
+    {
+        "file":  "10-len-list.html",
+        "title":  "10-len-list"
+    },
+    {
+        "file":  "11-mcq-list-basics-q.html",
+        "title":  "11-mcq-list-basics-q"
+    },
+    {
+        "file":  "12-mcq-list-basics-a.html",
+        "title":  "12-mcq-list-basics-a"
+    },
+    {
+        "file":  "13-indexing-concept.html",
+        "title":  "13-indexing-concept"
+    },
+    {
+        "file":  "14-live-coding-indexing.html",
+        "title":  "14-live-coding-indexing"
+    },
+    {
+        "file":  "15-index-error.html",
+        "title":  "15-index-error"
+    },
+    {
+        "file":  "16-mcq-indexing-q.html",
+        "title":  "16-mcq-indexing-q"
+    },
+    {
+        "file":  "17-mcq-indexing-a.html",
+        "title":  "17-mcq-indexing-a"
+    },
+    {
+        "file":  "18-slicing-concept.html",
+        "title":  "18-slicing-concept"
+    },
+    {
+        "file":  "19-predict-slicing.html",
+        "title":  "19-predict-slicing"
+    },
+    {
+        "file":  "20-mcq-slicing-q.html",
+        "title":  "20-mcq-slicing-q"
+    },
+    {
+        "file":  "21-mcq-slicing-a.html",
+        "title":  "21-mcq-slicing-a"
+    },
+    {
+        "file":  "22-mutability.html",
+        "title":  "22-mutability"
+    },
+    {
+        "file":  "23-append-insert.html",
+        "title":  "23-append-insert"
+    },
+    {
+        "file":  "24-remove-pop-del.html",
+        "title":  "24-remove-pop-del"
+    },
+    {
+        "file":  "25-mcq-modifying-q.html",
+        "title":  "25-mcq-modifying-q"
+    },
+    {
+        "file":  "26-mcq-modifying-a.html",
+        "title":  "26-mcq-modifying-a"
+    },
+    {
+        "file":  "27-searching-in-notin.html",
+        "title":  "27-searching-in-notin"
+    },
+    {
+        "file":  "28-index-count.html",
+        "title":  "28-index-count"
+    },
+    {
+        "file":  "29-sort-vs-sorted.html",
+        "title":  "29-sort-vs-sorted"
+    },
+    {
+        "file":  "30-mcq-search-sort-q.html",
+        "title":  "30-mcq-search-sort-q"
+    },
+    {
+        "file":  "31-mcq-search-sort-a.html",
+        "title":  "31-mcq-search-sort-a"
+    },
+    {
+        "file":  "32-loop-through-lists.html",
+        "title":  "32-loop-through-lists"
+    },
+    {
+        "file":  "33-enumerate.html",
+        "title":  "33-enumerate"
+    },
+    {
+        "file":  "34-mcq-looping-q.html",
+        "title":  "34-mcq-looping-q"
+    },
+    {
+        "file":  "35-mcq-looping-a.html",
+        "title":  "35-mcq-looping-a"
+    },
+    {
+        "file":  "36-find-the-bug.html",
+        "title":  "36-find-the-bug"
+    },
+    {
+        "file":  "37-break.html",
+        "title":  "37-break"
+    },
+    {
+        "file":  "38-user-input-lists.html",
+        "title":  "38-user-input-lists"
+    },
+    {
+        "file":  "39-nested-lists.html",
+        "title":  "39-nested-lists"
+    },
+    {
+        "file":  "40-nested-access.html",
+        "title":  "40-nested-access"
+    },
+    {
+        "file":  "41-mcq-nested-q.html",
+        "title":  "41-mcq-nested-q"
+    },
+    {
+        "file":  "42-mcq-nested-a.html",
+        "title":  "42-mcq-nested-a"
+    },
+    {
+        "file":  "43-aliasing-problem.html",
+        "title":  "43-aliasing-problem"
+    },
+    {
+        "file":  "44-copy-solution.html",
+        "title":  "44-copy-solution"
+    },
+    {
+        "file":  "45-what-is-tuple.html",
+        "title":  "45-what-is-tuple"
+    },
+    {
+        "file":  "46-tuple-vs-list.html",
+        "title":  "46-tuple-vs-list"
+    },
+    {
+        "file":  "47-tuple-unpacking.html",
+        "title":  "47-tuple-unpacking"
+    },
+    {
+        "file":  "48-zip.html",
+        "title":  "48-zip"
+    },
+    {
+        "file":  "49-mcq-tuples-q.html",
+        "title":  "49-mcq-tuples-q"
+    },
+    {
+        "file":  "50-mcq-tuples-a.html",
+        "title":  "50-mcq-tuples-a"
+    },
+    {
+        "file":  "51-list-or-tuple.html",
+        "title":  "51-list-or-tuple"
+    },
+    {
+        "file":  "52-predict-zip.html",
+        "title":  "52-predict-zip"
+    },
+    {
+        "file":  "53-challenges.html",
+        "title":  "53-challenges"
+    },
+    {
+        "file":  "54-project-grade-manager-intro.html",
+        "title":  "54-project-grade-manager-intro"
+    },
+    {
+        "file":  "55-project-grade-manager-1.html",
+        "title":  "55-project-grade-manager-1"
+    },
+    {
+        "file":  "56-project-grade-manager-2.html",
+        "title":  "56-project-grade-manager-2"
+    },
+    {
+        "file":  "57-common-mistakes.html",
+        "title":  "57-common-mistakes"
+    },
+    {
+        "file":  "58-interactive-quiz.html",
+        "title":  "58-interactive-quiz"
+    },
+    {
+        "file":  "59-session-recap.html",
+        "title":  "59-session-recap"
+    },
+    {
+        "file":  "60-homework-shopping-cart.html",
+        "title":  "60-homework-shopping-cart"
+    },
+    {
+        "file":  "61-final-mcq-q.html",
+        "title":  "61-final-mcq-q"
+    },
+    {
+        "file":  "62-final-mcq-a.html",
+        "title":  "62-final-mcq-a"
+    },
+    {
+        "file":  "63-session6-teaser.html",
+        "title":  "63-session6-teaser"
+    }
+]

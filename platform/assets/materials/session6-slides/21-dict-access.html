@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-250px; right:-200px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-250px; left:-200px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:120px; width:1760px; z-index:10;">
+    <div class="kicker">🔑 ACCESSING VALUES</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:92px; font-weight:700; color:var(--text-hi); margin-top:18px;">Getting Values Out</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); margin-top:16px;">Bracket lookup <b style="color:var(--neon-cyan);">d["key"]</b> vs the safe <b style="color:var(--neon-lime);">.get()</b> method.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:16px;">الوصول إلى القيم: استخدم d["المفتاح"] أو الطريقة الآمنة d.get() التي لا تُسبب خطأً إذا غاب المفتاح.</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:400px; width:940px; height:500px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">access.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:470px; width:880px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:27px; line-height:1.65;">
+    <div><span class="tok-var">student</span> <span class="tok-op">=</span> <span class="tok-op">{</span><span class="tok-str">"name"</span><span class="tok-op">:</span> <span class="tok-str">"Ahmad"</span>, <span class="tok-str">"age"</span><span class="tok-op">:</span> <span class="tok-num">16</span><span class="tok-op">}</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">student</span>[<span class="tok-str">"name"</span>]) <span class="tok-com"># Ahmad</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">student</span>.<span class="tok-fn">get</span>(<span class="tok-str">"age"</span>)) <span class="tok-com"># 16</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-com"># print(student["grade"])  # KeyError: 'grade'</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">student</span>.<span class="tok-fn">get</span>(<span class="tok-str">"grade"</span>, <span class="tok-str">"N/A"</span>)) <span class="tok-com"># N/A — safe fallback</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1080px; top:400px; width:760px; height:540px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.3); border-radius:24px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1110px; top:432px; width:700px; z-index:10;">
+    <div class="kicker" style="font-size:20px;">BRACKETS vs .GET()</div>
+    <div style="margin-top:20px; background:rgba(236,72,153,0.08); border:1px solid rgba(236,72,153,0.4); border-radius:16px; padding:14px 22px;">
+      <div style="font-size:26px; font-weight:700; color:var(--neon-magenta);">⚠️ &nbsp;d["key"]</div>
+      <div style="font-size:23px; color:var(--text-mid); margin-top:6px;">Fast, but a missing key <b>raises KeyError</b> and crashes the program</div>
+    </div>
+    <div style="margin-top:18px; background:rgba(163,230,53,0.08); border:1px solid rgba(163,230,53,0.35); border-radius:16px; padding:14px 22px;">
+      <div style="font-size:26px; font-weight:700; color:var(--neon-lime);">🛡️ &nbsp;.get(key)</div>
+      <div style="font-size:23px; color:var(--text-mid); margin-top:6px;">Returns <span style="font-family:'JetBrains Mono',monospace;">None</span> if the key is missing — no crash</div>
+    </div>
+    <div style="margin-top:18px; background:rgba(34,211,238,0.08); border:1px solid rgba(34,211,238,0.35); border-radius:16px; padding:14px 22px;">
+      <div style="font-size:26px; font-weight:700; color:var(--neon-cyan);">🎯 &nbsp;.get(key, default)</div>
+      <div style="font-size:23px; color:var(--text-mid); margin-top:6px;">Your own fallback value when the key is missing</div>
+    </div>
+    <div style="margin-top:18px; background:rgba(250,204,21,0.08); border:1px solid rgba(250,204,21,0.4); border-radius:16px; padding:14px 22px;">
+      <div style="font-size:26px; font-weight:700; color:var(--neon-yellow);">🧠 &nbsp;Rule of thumb</div>
+      <div style="font-size:23px; color:var(--text-mid); margin-top:6px;">Use <span style="font-family:'JetBrains Mono',monospace;">[]</span> when the key <b>must</b> exist, <span style="font-family:'JetBrains Mono',monospace;">.get()</span> when it might not</div>
+    </div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S06</div>
+  <div class="chrome-pagenum">21 / 45</div>
+</div>
+<template data-slide-notes>
+# Slide 21 — Accessing Values (Instructor notes)
+
+**What to say**
+- Two tools for the same job. `d["key"]` is direct; `.get()` is defensive.
+- Explain KeyError precisely: it means "that key is not in this dictionary."
+
+**Live demo (2 min)**
+- `student["grade"]` → KeyError. Read the traceback aloud — this is the skill students need.
+- Then `student.get("grade")` → None (prints as `None`).
+- Then `student.get("grade", "N/A")` → `N/A`.
+
+**Common mistakes**
+- Students expect `d["x"]` to return None on a miss — it raises instead. Show both side by side.
+- Students forget `.get()` does NOT add the key; the dict stays unchanged.
+
+**Arabic teaching tip**
+- اشرح أن «KeyError» تعني «هذا المفتاح غير موجود». استخدم صورة الخزانة: إذا لم يوجد الرف رقم 7، لن تصل إليه.
+</template>
+</body>
+</html>

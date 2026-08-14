@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-260px; right:-160px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-300px; left:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">✅ QUICK CHECK #1</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi); margin-top:16px;">Spot the API in the wild</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:340px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:40px; color:var(--text-mid); line-height:1.6;">A shopping app shows live prices from the store's database.<br><span style="color:var(--text-hi);">How is the phone getting that data?</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:540px; width:860px; height:200px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:580px; width:800px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:33px; color:var(--text-hi);"><span style="color:var(--neon-magenta);">A)</span> It reads the store's whole database file</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-lo); margin-top:8px;">Too risky — the store never shares its raw database.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:540px; width:860px; height:200px; background:rgba(163,230,53,0.07); border:1px solid rgba(163,230,53,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1010px; top:580px; width:800px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:33px; color:var(--text-hi);"><span style="color:var(--neon-magenta);">B)</span> It asks the store's API &nbsp;✅</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-lo); margin-top:8px;">A controlled question, answered with just the prices.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:780px; width:860px; height:200px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:820px; width:800px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:33px; color:var(--text-hi);"><span style="color:var(--neon-magenta);">C)</span> A human copies prices into the app</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-lo); margin-top:8px;">Too slow — prices change every minute.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:780px; width:860px; height:200px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1010px; top:820px; width:800px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:33px; color:var(--text-hi);"><span style="color:var(--neon-magenta);">D)</span> It guesses from last week's ad</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-lo); margin-top:8px;">Live prices require live answers.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:1020px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">الإجابة B: التطبيق يسأل واجهة الـ API — لا يحصل أبداً على قاعدة البيانات نفسها 📱</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">10 / 50</div>
+</div>
+<template data-slide-notes>
+Mid-deck MCQ 1 (real-world APIs). Answer: **B) It asks the store's API**.
+
+This is the moment to solidify: data flows from a server to your device only through a controlled API — never by giving away the database itself.
+
+If students pick A, probe: "Would any company give you its raw database?" — reinforces why APIs exist.
+
+Transition: "Great. Now WHO is talking to WHOM? Let's name the two roles." → slides 11–12 (client vs server).
+
+Arabic tip: ذكّرهم: "أنت لا تحصل على قاعدة البيانات، بل على إجابة سؤال محدّد" — هذه هي فلسفة الـ APIs كلها.
+</template>
+</body>
+</html>

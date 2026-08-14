@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-magenta"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; z-index:10;">
+    <div class="kicker">⚡ LIVE CODING #1 // FOLLOW ALONG</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:160px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:84px; font-weight:700; color:var(--text-hi);">Let's build a Student class</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:16px;">لنبرمج معًا خطوة بخطوة — صمّم ثم اكتب ثم شغّل</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:380px; width:560px; height:560px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:416px; width:500px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--text-hi);">Step 1 — Sketch 🧠</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:18px; line-height:1.6;">
+      What does a student <b>have</b> (attributes)?<br>
+      → name, age, grades list<br><br>
+      What can it <b>do</b> (methods)?<br>
+      → add_grade, average, report
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:680px; top:380px; width:560px; height:560px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:710px; top:416px; width:500px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--text-hi);">Step 2 — Write ✍️</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:18px; line-height:1.6;">
+      Start empty:<br>
+      <span class="mono" style="color:var(--neon-cyan);">class Student:</span><br>
+      <span class="mono">pass</span><br><br>
+      Then fill <span class="mono">__init__</span>, then each method. Add <span class="mono">__str__</span> last.
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1280px; top:380px; width:560px; height:560px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1310px; top:416px; width:500px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--text-hi);">Step 3 — Run 🚀</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:18px; line-height:1.6;">
+      Create two students.<br>
+      Add grades, print the report.<br><br>
+      <span class="chip chip-magenta">Target output:</span><br>
+      <span class="mono" style="color:var(--neon-lime);">Lina (17): avg 85.0</span>
+    </div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S11</div>
+  <div class="chrome-pagenum">17 / 50</div>
+</div>
+<template data-slide-notes>
+**Live-coding session #1 — the instructor writes, students follow in their editors.**
+
+Step-by-step delivery (speak while typing):
+1. `class Student:` + `pass` → run (empty but valid).
+2. Add `__init__(self, name, age)` storing self.name, self.age, and `self.grades = []`.
+3. Add `add_grade(self, g)`.
+4. Add `average(self)` — guard: `if not self.grades: return 0`.
+5. Add `report(self)` returning the f-string. Add `__str__` returning the same.
+6. Instantiate `s = Student("Lina", 17)`, add 90 and 80, print `s.report()`.
+
+Common live mistakes to model and fix: forgetting self, forgetting `:` after def, spelling `__init__` wrong.
+
+At the end ask each student to make *their own* student and print a report — 2 minutes, everyone shows output.
+Arabic tip: «صمّم ثم نفّذ» — design before you code.
+</template>
+</body>
+</html>

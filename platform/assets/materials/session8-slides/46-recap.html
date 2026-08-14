@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-200px; right:-160px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-180px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1700px; z-index:10;">
+    <div class="kicker">📋 RECAP — WHAT STUCK TODAY</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:88px; font-weight:700; color:var(--text-hi); margin-top:10px;">You learned to remember 🧠</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:350px; width:800px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:31px; line-height:2.0; color:var(--text-hi);">
+    <div><span class="chip chip-magenta">01</span> &nbsp;<span class="tok-fn">open</span>(path, mode) → file object</div>
+    <div><span class="chip chip-magenta">02</span> &nbsp;<span class="tok-str">"r"</span> read · <span class="tok-str">"w"</span> wipe+write · <span class="tok-str">"a"</span> append</div>
+    <div><span class="chip chip-magenta">03</span> &nbsp;<span class="tok-fn">read</span>() · <span class="tok-fn">readline</span>() · <span class="tok-fn">readlines</span>()</div>
+    <div><span class="chip chip-magenta">04</span> &nbsp;<span class="tok-fn">write</span>() · <span class="tok-fn">writelines</span>()</div>
+    <div><span class="chip chip-magenta">05</span> &nbsp;<span class="tok-kw">with</span> <span class="tok-fn">open</span>() <span class="tok-kw">as</span> f → auto-close</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:960px; top:350px; width:820px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:31px; line-height:2.0; color:var(--text-hi);">
+    <div><span class="chip chip-cyan">06</span> &nbsp;📊 CSV = table as comma-text</div>
+    <div><span class="chip chip-cyan">07</span> &nbsp;📦 JSON = universal data format</div>
+    <div><span class="chip chip-cyan">08</span> &nbsp;<span class="tok-var">json</span>.<span class="tok-fn">dump</span>/<span class="tok-fn">load</span> → files</div>
+    <div><span class="chip chip-cyan">09</span> &nbsp;<span class="tok-var">json</span>.<span class="tok-fn">dumps</span>/<span class="tok-fn">loads</span> → strings</div>
+    <div><span class="chip chip-cyan">10</span> &nbsp;⚠️ <span class="tok-kw">try/except</span> → fail-safe load</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:760px; width:1700px; height:150px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:795px; width:1640px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid);">The golden pattern: <b style="color:var(--text-hi);">load (fail-safe) → edit in memory → dump</b>. You'll use it for the rest of your coding life.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:29px; color:var(--text-lo); direction:rtl; margin-top:12px;">النمط الذهبي: حمّل بأمان، عدّل في الذاكرة، ثم احفظ في الملف</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S08</div>
+  <div class="chrome-pagenum">46 / 50</div>
+</div>
+<template data-slide-notes>
+**Recap — 3 min.**
+
+- Rapid-fire the 10 bullets; students shout the answers before you read them.
+- End on the golden pattern — this one sentence is the course's takeaway.
+- Arabic tip: «النمط الذهبي» (the golden pattern) — let it land.
+</template>
+</body>
+</html>

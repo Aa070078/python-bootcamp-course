@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-180px; right:-150px;"></div>
+  <div class="bg-glow-lime" style="bottom:-220px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:100px; width:1720px; z-index:10;">
+    <div class="kicker">⚡ LIVE CODING #2 — STUDENT GRADE REPORT</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi); margin-top:14px;">Guided practice 🎓</div>
+    <div class="arabic" style="font-size:30px; color:var(--text-lo); margin-top:12px; direction:rtl;">تدريب موجّه: تقرير درجات الطلاب — أنا أبدأ وأنتم تكمّلون</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:1180px; height:460px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">report.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:400px; width:1120px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.65;">
+    <div><span class="tok-kw">def</span> <span class="tok-fn">average</span>(<span class="tok-var">scores</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"""Return the mean of a list of numbers."""</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-fn">sum</span>(<span class="tok-var">scores</span>) <span class="tok-op">/</span> <span class="tok-fn">len</span>(<span class="tok-var">scores</span>)</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-kw">def</span> <span class="tok-fn">grade_report</span>(<span class="tok-var">students</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"""Print average + pass/fail for each student."""</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">for</span> <span class="tok-var">name</span>, <span class="tok-var">scores</span> <span class="tok-kw">in</span> <span class="tok-var">students</span>.<span class="tok-fn">items</span>():</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">avg</span> <span class="tok-op">=</span> <span class="tok-fn">average</span>(<span class="tok-var">scores</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">status</span> <span class="tok-op">=</span> <span class="tok-str">"PASS"</span> <span class="tok-kw">if</span> <span class="tok-var">avg</span> <span class="tok-op">>=</span> <span class="tok-num">50</span> <span class="tok-kw">else</span> <span class="tok-str">"FAIL"</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">f"{name}: {avg:.1f} -&gt; {status}"</span>)</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-var">report</span> <span class="tok-op">=</span> {<span class="tok-str">"Nour"</span>: [<span class="tok-num">90</span>, <span class="tok-num">88</span>, <span class="tok-num">95</span>], <span class="tok-str">"Omar"</span>: [<span class="tok-num">40</span>, <span class="tok-num">55</span>, <span class="tok-num">48</span>]}</div>
+    <div><span class="tok-fn">grade_report</span>(<span class="tok-var">report</span>)</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1320px; top:340px; width:500px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--neon-lime);">Output</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--text-lo); margin-top:18px; line-height:1.7;">
+      <div><span class="tok-out">Nour: 91.0 -&gt; PASS</span></div>
+      <div><span class="tok-out">Omar: 47.7 -&gt; FAIL</span></div>
+    </div>
+    <div class="arabic" style="font-size:26px; color:var(--text-lo); margin-top:20px; direction:rtl;">دالة تستدعي دالة — البناء التراكمي للبرامج الحقيقية</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S07</div>
+  <div class="chrome-pagenum">39 / 50</div>
+</div>
+<template data-slide-notes>
+- **Guided practice steps:** students write `average()` alone (1 min), then we build grade_report together.
+- One function calling another = composability; average() is reusable.
+- Point at `f"{avg:.1f}"` — format spec for one decimal.
+- Prediction pause: "What average will Nour get? Omar?"
+- Extension for strong students: letter grades (A/B/C) based on avg.
+- Debug moment: what if a student has an empty score list → ZeroDivisionError (len=0).
+- Arabic tip: الوظيفة الكبيرة تُبنى من وظائف صغيرة — البناء التراكمي.
+- Transition: "Now the final boss: the Modular Calculator project."
+</template>
+</body>
+</html>

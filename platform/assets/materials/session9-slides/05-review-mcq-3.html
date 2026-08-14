@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-160px; right:-100px;"></div>
+  <div class="bg-glow-lime" style="bottom:-200px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">WARM-UP // LAST SESSION: FILES &amp; JSON</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:180px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi);">📖 Review MCQ #3 — Predict the output</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:820px; height:310px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span><span class="code-dot code-dot-y"></span><span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">scores.txt</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:390px; width:780px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.6;">
+    <div><span class="tok-num">90</span></div>
+    <div><span class="tok-num">80</span></div>
+    <div><span class="tok-num">70</span></div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:960px; top:330px; width:880px; height:310px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span><span class="code-dot code-dot-y"></span><span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">read.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:990px; top:390px; width:840px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.6;">
+    <div><span class="tok-kw">with</span> <span class="tok-fn">open</span>(<span class="tok-str">"scores.txt"</span>) <span class="tok-kw">as</span> <span class="tok-var">f</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">lines</span> <span class="tok-op">=</span> <span class="tok-var">f</span>.<span class="tok-fn">readlines</span>()</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-fn">repr</span>(<span class="tok-var">lines</span>[<span class="tok-num">0</span>]))</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:690px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-hi);">What does <span class="mono" style="color:var(--neon-cyan);">repr(lines[0])</span> print?</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid); margin-top:26px; line-height:1.8;">
+      <span class="chip chip-magenta" style="margin-right:14px;">A&nbsp; '90'</span>
+      <span class="chip chip-lime" style="margin-right:14px;">B&nbsp; '90\n'</span>
+      <span class="chip chip-violet" style="margin-right:14px;">C&nbsp; 90</span>
+      <span class="chip chip-yellow" style="margin-right:14px;">D&nbsp; ['90\n', '80\n']</span>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:920px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--neon-lime); font-weight:700;">✔ Answer: B — readlines() keeps the newline, so line 0 is '90\n'.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:14px;">دالة readlines تحتفظ بحرف السطر الجديد \n مع كل سطر.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">05 / 50</div>
+</div>
+<template data-slide-notes>
+## Review MCQ #3 — readlines keeps newlines
+
+**Predict first.** Give 20 seconds, then reveal B.
+
+**Explain why:** `readlines()` splits the file into lines but keeps each line's trailing `\n`. So `lines[0]` is the string `'90\n'`. Using `repr()` makes the hidden newline visible — a neat debugging trick to teach now (it will pay off when we debug tracebacks later).
+
+**Note:** if they picked D — clarify `lines[0]` is ONE line, not a list; D describes the whole `lines` list.
+
+**Arabic tip:** علّمهم أن الحرف \n جزء من النص ولا يُرى عند الطباعة العادية؛ استخدم repr() لإظهاره.
+</template>
+</body>
+</html>

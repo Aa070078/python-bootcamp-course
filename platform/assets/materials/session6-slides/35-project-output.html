@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-lime"></div>
+<div class="bg-glow-magenta"></div>
+<div class="chrome-topbar"><span class="chrome-dot"></span>PROJECTS</div>
+
+<div class="kicker" data-object="true" data-object-type="textbox" style="position:absolute;top:96px;left:80px;">EXPECTED OUTPUT</div>
+<div class="arabic" data-object="true" data-object-type="textbox" style="position:absolute;top:138px;left:80px;font-size:24px;color:var(--text-lo);">الناتج المتوقع — محاكاة جلسة كاملة</div>
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:200px;left:80px;width:1400px;font-family:'Space Grotesk',sans-serif;font-size:56px;font-weight:700;color:var(--text-hi);">This is what your program should do</div>
+
+<div data-object="true" data-object-type="shape" style="position:absolute;left:80px;top:330px;width:900px;z-index:5;">
+  <div class="code-window" style="width:900px;">
+    <div class="code-window-header">
+      <div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+      <span class="code-window-title">terminal</span>
+    </div>
+    <pre style="padding:22px 26px;margin:0;font-size:22px;line-height:1.6;color:var(--text-hi);overflow:hidden;"><span class="tok-op">$</span> python contact_manager.py
+<span class="tok-com">1 add | 2 search | 3 remove | 4 tags | 5 quit</span>
+<span class="tok-fn">&gt; 1</span>
+Name: Sara
+Phone: 050-1234567
+Tags: work, friend
+<span class="tok-out">Added Sara!</span>
+<span class="tok-com">1 add | 2 search | 3 remove | 4 tags | 5 quit</span>
+<span class="tok-fn">&gt; 1</span>
+Name: Omar
+Phone: 077-7654321
+Tags: work, gym
+<span class="tok-out">Added Omar!</span>
+<span class="tok-com">1 add | 2 search | 3 remove | 4 tags | 5 quit</span>
+<span class="tok-fn">&gt; 4</span>
+<span class="tok-out">Unique tags: ['friend', 'gym', 'work']</span>
+<span class="tok-com">1 add | 2 search | 3 remove | 4 tags | 5 quit</span>
+<span class="tok-fn">&gt; 3</span>
+Remove: sara
+<span class="tok-out">Removed Sara.</span>
+<span class="tok-com">1 add | 2 search | 3 remove | 4 tags | 5 quit</span>
+<span class="tok-fn">&gt; 5</span>
+<span class="tok-out">Bye!</span></pre>
+  </div>
+</div>
+
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:350px;right:80px;width:820px;display:flex;flex-direction:column;gap:18px;">
+  <div style="padding:20px 24px;border-radius:12px;background:rgba(34,211,238,0.06);border:1px solid rgba(34,211,238,0.18);">
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:21px;font-weight:700;color:var(--neon-cyan);margin-bottom:8px;">🗂️ <span style="font-family:'JetBrains Mono',monospace;">&gt; 4</span> show tags</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:19px;color:var(--text-mid);">Union of both contacts' tag sets → <b style="color:var(--text-hi);">friend, gym, work</b>. No duplicates, even though "work" was typed twice.</div>
+  </div>
+  <div style="padding:20px 24px;border-radius:12px;background:rgba(250,204,21,0.06);border:1px solid rgba(250,204,21,0.18);">
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:21px;font-weight:700;color:var(--neon-yellow);margin-bottom:8px;">🗂️ <span style="font-family:'JetBrains Mono',monospace;">&gt; 3</span> remove</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:19px;color:var(--text-mid);">Typing "sara" (lowercase) still matches → compared with <b style="color:var(--text-hi);">.lower()</b>. <span style="font-family:'JetBrains Mono',monospace;color:var(--neon-magenta);">pop(i)</span> removes it from the list.</div>
+  </div>
+  <div style="padding:20px 24px;border-radius:12px;background:rgba(163,230,53,0.06);border:1px solid rgba(163,230,53,0.18);">
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:21px;font-weight:700;color:var(--neon-lime);margin-bottom:8px;">🗂️ <span style="font-family:'JetBrains Mono',monospace;">&gt; 5</span> quit</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:19px;color:var(--text-mid);"><span style="font-family:'JetBrains Mono',monospace;color:var(--neon-cyan);">break</span> leaves the loop, the program prints <b style="color:var(--text-hi);">Bye!</b> and ends cleanly.</div>
+  </div>
+</div>
+
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:940px;left:80px;width:1760px;padding:16px 28px;border-radius:14px;background:rgba(163,230,53,0.06);border:1px solid rgba(163,230,53,0.18);"><span style="font-size:23px;color:var(--text-mid);">▶️ Run it yourself — type the code in the live editor and reproduce this session. Your output should match line for line.</span></div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S06</div>
+<div class="chrome-pagenum">35 / 45</div>
+</div>
+<template data-slide-notes>
+Show the expected output and let students self-check. Give 5 minutes for everyone to get their program running and matching this output.
+
+Walk through each block aloud:
+1. `> 4` → `['friend', 'gym', 'work']` — ask "where did the set magic happen?" Answer: `show_tags()` union. Note `sorted()` makes the set output stable (sets have no order).
+2. `> 3` + typing "sara" — lowercasing on both sides is why it matched. Emphasize case-insensitivity as a *feature*, not a hack.
+3. `> 5` → `break` → `Bye!`.
+
+Troubleshooting queue while they run it:
+- If tags come back as one long string → they forgot `.split(",")` (compare with slide 33).
+- If `Remove` says "Not found." → they compared the raw names without `.lower()`.
+- If the menu re-prints after quit → `print("Bye!")` is inside the `while`.
+
+Celebrate: "That's a real, working app. Ten days ago you couldn't write a loop — now you built a phonebook."
+
+Arabic tip: اطلب من طالب يشرح بالعربية ماذا يحدث عند اختيار الرقم ٤ — شرح الزميل يرسّخ الفكرة. (Ask a student to explain in Arabic what happens on option 4 — peer explanation cements the idea.)
+</template>
+</body>
+</html>

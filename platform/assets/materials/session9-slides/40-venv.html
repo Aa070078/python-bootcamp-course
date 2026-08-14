@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-150px; left:-120px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-200px; right:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">CORE // 17 — ISOLATE YOUR WORLD</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi);">🛡️ Virtual environments (venv)</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); margin-top:26px;">Each project gets its own <b style="color:var(--text-hi);">private package world</b> — no more "works on my machine".</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:420px; width:840px; height:500px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.4); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:460px; width:760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700; color:var(--neon-magenta);">The problem 🤯</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:24px; line-height:1.75;">
+      ▶ Project A needs <span class="mono" style="color:var(--neon-lime);">requests 1.x</span>.<br><br>
+      ▶ Project B needs <span class="mono" style="color:var(--neon-lime);">requests 2.x</span>.<br><br>
+      ▶ Installed globally, they <b style="color:var(--text-hi);">fight each other</b> 😵<br><br>
+      ✅ A venv gives each project its own folder of packages.
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:420px; width:860px; height:500px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.4); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1020px; top:460px; width:780px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700; color:var(--neon-lime);">The mental model 🧠</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:24px; line-height:1.75;">
+      ▶ A venv = a <b style="color:var(--text-hi);">private sandbox</b> folder (e.g. <span class="mono" style="color:var(--neon-cyan);">.venv</span>).<br><br>
+      ▶ When <b style="color:var(--text-hi);">activated</b>, pip installs go <b style="color:var(--text-hi);">inside it</b> — global stays clean.<br><br>
+      ▶ Same Python, same code, different package sets — <b style="color:var(--text-hi);">no conflicts</b>.<br><br>
+      🔁 Deactivate to return to the global world.
+    </div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:26px; color:var(--text-lo); direction:rtl; margin-top:24px;">البيئة الافتراضية صندوق رمل خاص لكل مشروع: تثبّت الحزم داخلها دون المساس بالعالم العام.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">40 / 50</div>
+</div>
+<template data-slide-notes>
+## Virtual environments — the concept
+
+**Story (4 min):** two projects need different versions of the same package. Global install → conflict. Solution: each project gets its own sandbox where pip installs go. The venv is just a folder (usually named .venv).
+
+**Mental model:** "activated venv = pip and python now point inside .venv". Global remains untouched. Deactivate returns to normal.
+
+**When to create one:** for every real project. Not for quick single-file experiments (mention it's fine to skip for tiny scripts — keep it pragmatic).
+
+**Demo (5 min):** create a venv in a demo folder, show pip freeze inside vs outside (different lists), install colorama inside, deactivate, show the global pip freeze did NOT change. Very convincing.
+
+**Arabic tip:** "كل مشروع له غرفته الخاصة" — البيئة الافتراضية تمنع الحزم من التصارع.
+</template>
+</body>
+</html>

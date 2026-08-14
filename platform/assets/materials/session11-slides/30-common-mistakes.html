@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-magenta"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; z-index:10;">
+    <div class="kicker">⚠️ TRAPS // AVOID THESE</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:150px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:78px; font-weight:700; color:var(--text-hi);">Common mistakes 🚧</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:16px;">أخطاء شائعة — تجنبها ووفّر وقتًا ثمينًا</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:860px; height:330px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:366px; width:800px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--text-hi);">1️⃣ Forgetting <span class="mono">self</span></div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--text-mid); margin-top:16px; line-height:1.5;"><span style="color:var(--neon-magenta);">def bark():</span> <span class="tok-com"># ❌ no self</span><br>→ TypeError: bark() takes 0 positional args but 1 was given</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--neon-lime); margin-top:14px;">Fix: <span class="mono">def bark(self):</span> — every method takes self first.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:330px; width:860px; height:330px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1010px; top:366px; width:800px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--text-hi);">2️⃣ Mutable default argument</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--text-mid); margin-top:16px; line-height:1.5;"><span class="tok-kw">def</span> <span class="tok-fn">__init__</span>(<span class="tok-var">self</span>, <span class="tok-var">grades</span><span class="tok-op">=</span>[]): <span class="tok-com"># ❌ shared list!</span></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--neon-lime); margin-top:14px;">Fix: <span class="mono">grades=None</span>, then <span class="mono">self.grades = grades or []</span>.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:700px; width:860px; height:330px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:736px; width:800px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--text-hi);">3️⃣ Skipping <span class="mono">super().__init__()</span></div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--text-mid); margin-top:16px; line-height:1.5;">Child defines its own <span class="mono">__init__</span> → parent's never runs → <span class="mono">AttributeError: 'Dog' object has no attribute 'name'</span></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--neon-lime); margin-top:14px;">Fix: call <span class="mono">super().__init__(name)</span> first.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:700px; width:860px; height:330px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1010px; top:736px; width:800px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--text-hi);">4️⃣ Assigning to a class attribute</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--text-mid); margin-top:16px; line-height:1.5;"><span class="tok-var">s1</span>.<span class="tok-var">school</span> <span class="tok-op">=</span> <span class="tok-str">"X"</span> <span class="tok-com"># ❌ makes a NEW instance attr, hides the class one</span></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--neon-lime); margin-top:14px;">Fix: change it on the class: <span class="mono">Student.school = "X"</span>.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S11</div>
+  <div class="chrome-pagenum">30 / 50</div>
+</div>
+<template data-slide-notes>
+**Walk each trap live — show the error, then fix it. These are the top mistakes you'll see in this class.**
+
+1. Missing self → TypeError. Model fixing it in the editor.
+2. Mutable default `grades=[]` → ALL students share ONE list (silent!). Demo: two students, add a grade to s1, s2 has it too. Fix with None.
+3. Forgetting super() → AttributeError on `name`. Demo creating a Dog and touching rex.name.
+4. `s1.school = "X"` creates an instance attribute; `Student.school` still "Neon High". Demo the confusion.
+
+Arabic tip: «أربع حفر مشهورة» — four famous pitfalls.
+Time check: this is a good spot for a stretch break. Then refactoring + the project.
+</template>
+</body>
+</html>

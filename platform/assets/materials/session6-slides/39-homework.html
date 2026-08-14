@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-cyan"></div>
+<div class="bg-glow-magenta"></div>
+<div class="chrome-topbar"><span class="chrome-dot"></span>WRAP-UP</div>
+
+<div class="kicker" data-object="true" data-object-type="textbox" style="position:absolute;top:96px;left:80px;">HOMEWORK</div>
+<div class="arabic" data-object="true" data-object-type="textbox" style="position:absolute;top:138px;left:80px;font-size:24px;color:var(--text-lo);">الواجب المنزلي — ثلاث مهام ومهمة إضافية</div>
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:200px;left:80px;width:1600px;font-family:'Space Grotesk',sans-serif;font-size:56px;font-weight:700;color:var(--text-hi);">📚 Homework — build at home</div>
+
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:320px;left:80px;width:1760px;display:flex;gap:24px;">
+  <div style="flex:1;padding:26px 28px;border-radius:16px;background:rgba(163,230,53,0.05);border:1px solid rgba(163,230,53,0.22);">
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:21px;font-weight:700;color:var(--neon-lime);margin-bottom:12px;">1️⃣ EASY — Music library</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:20px;color:var(--text-mid);line-height:1.85;">
+      A playlist has repeated songs.<br>
+      Turn it into a <b style="color:var(--text-hi);">set</b>.<br>
+      Print the unique songs + how many were removed.
+    </div>
+  </div>
+  <div style="flex:1;padding:26px 28px;border-radius:16px;background:rgba(250,204,21,0.05);border:1px solid rgba(250,204,21,0.22);">
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:21px;font-weight:700;color:var(--neon-yellow);margin-bottom:12px;">2️⃣ MEDIUM — Phonebook</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:20px;color:var(--text-mid);line-height:1.85;">
+      A <b style="color:var(--text-hi);">dict</b> name → number.<br>
+      Add contacts in a loop until <span style="font-family:'JetBrains Mono',monospace;color:var(--neon-yellow);">"done"</span>.<br>
+      Then search by name with <span style="font-family:'JetBrains Mono',monospace;color:var(--neon-yellow);">.get()</span>.
+    </div>
+  </div>
+  <div style="flex:1;padding:26px 28px;border-radius:16px;background:rgba(236,72,153,0.05);border:1px solid rgba(236,72,153,0.22);">
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:21px;font-weight:700;color:var(--neon-magenta);margin-bottom:12px;">3️⃣ HARD — Word frequency</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:20px;color:var(--text-mid);line-height:1.85;">
+      Count every word in a paragraph.<br>
+      Use the <span style="font-family:'JetBrains Mono',monospace;color:var(--neon-magenta);">counts.get(word, 0) + 1</span> pattern.<br>
+      Print the top 3 most common words.
+    </div>
+  </div>
+</div>
+
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:680px;left:80px;width:1760px;padding:24px 30px;border-radius:16px;background:rgba(34,211,238,0.06);border:1px solid rgba(34,211,238,0.25);">
+  <div style="font-family:'Space Grotesk',sans-serif;font-size:23px;font-weight:700;color:var(--neon-cyan);margin-bottom:8px;">⭐ BONUS — Contact Manager v2</div>
+  <div style="font-family:'Space Grotesk',sans-serif;font-size:20px;color:var(--text-mid);line-height:1.8;">Extend today's project: add <b style="color:var(--text-hi);">"find by tag"</b> (search all contacts for a given tag — a set membership check), and a menu option <span style="font-family:'JetBrains Mono',monospace;color:var(--neon-cyan);">6</span> to list everyone in a chosen tag.</div>
+  <div class="arabic" style="font-size:21px;color:var(--text-lo);margin-top:10px;">المهمة الإضافية: أضف خاصية «البحث حسب الوسم» إلى مدير جهات الاتصال.</div>
+</div>
+
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:940px;left:80px;width:1760px;padding:16px 28px;border-radius:14px;background:rgba(163,230,53,0.06);border:1px solid rgba(163,230,53,0.18);"><span style="font-size:23px;color:var(--text-mid);">📅 Due next session. The Hard task is the word-frequency pattern you already saw — reuse it!</span></div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S06</div>
+<div class="chrome-pagenum">39 / 45</div>
+</div>
+<template data-slide-notes>
+Assign homework, set expectations, and give a 2-minute hint for each task.
+
+Hints:
+1. EASY: `len(playlist) - len(set(playlist))` = number of duplicate songs.
+2. MEDIUM: loop + `input()`, stop on "done", then `phonebook.get(name, "Not found")`.
+3. HARD: `.split()` the paragraph into words, then the frequency pattern from slide 37. For "top 3", hint toward `sorted(counts.items(), key=lambda x: x[1], reverse=True)[:3]` — but only show it if they ask. It's a preview of Session 7 (functions + lambda).
+
+BONUS (Contact Manager v2): "find by tag" needs a loop over `contacts` and `"tag" in c["tags"]` — that's the set-membership check from today. This is genuinely the most impressive task; praise anyone who attempts it.
+
+Remind them:
+- Submission: paste code in the class channel / drive before next session.
+- No AI copy-paste — if you can't explain your code, it's not done.
+
+Arabic tip: ذكّرهم أن المهمة الإضافية اختيارية لكنها «نجمة» في السيرة الذاتية للمبرمج الناشئ. (The bonus is optional but a star for their budding-dev résumé.)
+</template>
+</body>
+</html>

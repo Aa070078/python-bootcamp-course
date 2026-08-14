@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-240px; right:-160px;"></div>
+  <div class="bg-glow-lime" style="bottom:-280px; left:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">🔁 RECAP</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:80px; font-weight:700; color:var(--text-hi); margin-top:14px;">Today you learned</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:560px; height:220px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:375px; width:480px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:31px; color:var(--neon-cyan);">The concepts</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:25px; color:var(--text-lo); margin-top:10px; line-height:1.7;">API, client vs server, HTTP, URL &amp; endpoint, query params, methods, status codes, headers, JSON.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:680px; top:340px; width:560px; height:220px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:720px; top:375px; width:480px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:31px; color:var(--neon-lime);">The code</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:25px; color:var(--text-lo); margin-top:10px; line-height:1.7;">requests.get/post, params=, .json(), status checks, raise_for_status, error handling, rate-limit manners.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1280px; top:340px; width:620px; height:220px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1320px; top:375px; width:540px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:31px; color:var(--neon-magenta);">What you built</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:25px; color:var(--text-lo); margin-top:10px; line-height:1.7;">A live weather app 🌦️ and a currency converter 💱 that talk to real servers.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:620px; width:1760px; height:250px; background:rgba(34,211,238,0.05); border:1px dashed rgba(34,211,238,0.3); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:660px; width:1680px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; color:var(--text-hi);">The golden pattern 💎</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:30px; color:var(--neon-lime); margin-top:18px;">1) <span class="tok-kw">import</span> requests &nbsp;2) <span class="tok-fn">requests.get(url, params)</span> &nbsp;3) check <span class="tok-var">status_code</span> &nbsp;4) <span class="tok-fn">resp.json()</span> → dict &nbsp;5) extract, loop, display</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-lo); margin-top:16px;">This one pattern powers nearly every app you've ever used. 🚀</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:915px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">ملخص اليوم: مفهوم واحد ذهبي — اسأل الخادم بالطريقة الصحيحة، واستلم البيانات، وابنِ عليها شيئاً مفيداً 🔁</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">45 / 50</div>
+</div>
+<template data-slide-notes>
+Recap — consolidate the golden pattern.
+
+Read the golden pattern out loud slowly; students repeat each step. This is the "one pattern" that powers everything: import → get → check → parse → use.
+
+Reinforce what they built (weather + currency) — point out they are now doing "real developer work."
+
+Ask a fast-fire round of recap questions (30 seconds each):
+- What does 404 mean? (not found)
+- What does resp.json() return? (dict)
+- Which method reads? (GET)
+- Why sleep between requests? (rate limits)
+
+Then transition: "Today we asked APIs that websites generously open for us. What if we want data that has NO API?" → slide 46 (common mistakes) → 47 (bridge to scraping).
+
+Arabic tip: اجعل التلخيص "حلقة سريعة": أنت تسأل، الطلاب يجيبون بسرعة — إنهاء الجلسة بطاقة عالية يثبّت كل شيء.
+</template>
+</body>
+</html>

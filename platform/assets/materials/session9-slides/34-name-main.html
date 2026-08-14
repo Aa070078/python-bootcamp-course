@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-150px; right:-120px;"></div>
+  <div class="bg-glow-lime" style="bottom:-200px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">CORE // 13 — THE GUARD</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi);">🚧 __name__ == "__main__"</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-mid); margin-top:24px;">The famous guard. It answers one question: <b style="color:var(--text-hi);">"Am I being run, or am I being imported?"</b></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:420px; width:840px; height:500px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.35); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:460px; width:760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700; color:var(--neon-cyan);">The two lives of a .py file 🎭</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:22px; line-height:1.7;">
+      ▶ <b style="color:var(--text-hi);">Run directly:</b> <span class="mono">python game.py</span> → Python sets <span class="mono" style="color:var(--neon-lime);">__name__ = "__main__"</span><br><br>
+      ▶ <b style="color:var(--text-hi);">Imported:</b> <span class="mono">import game</span> → Python sets <span class="mono" style="color:var(--neon-yellow);">__name__ = "game"</span><br><br>
+      🧠 The guard runs test/demo code <b style="color:var(--text-hi);">only when run directly</b> — imports stay clean.
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:420px; width:860px; height:500px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.35); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1020px; top:460px; width:780px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700; color:var(--neon-lime);">Why do we care? 💡</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:22px; line-height:1.7;">
+      1️⃣ Without the guard, importing your module <b style="color:var(--text-hi);">executes the test code</b> — printing junk, asking input, maybe crashing.<br><br>
+      2️⃣ With it, import is <b style="color:var(--text-hi);">silent and safe</b>.<br><br>
+      3️⃣ Every professional Python file ends with this guard.
+    </div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:26px; color:var(--text-lo); direction:rtl; margin-top:24px;">هذا السطر يجيب: هل أُشغَّل مباشرة أم أُستورد؟ التجارب تبقى للملف الرئيسي فقط.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">34 / 50</div>
+</div>
+<template data-slide-notes>
+## __name__ == "__main__"
+
+**This is THE confusing line for beginners — teach it as a drama (5 min):**
+Every .py file has a built-in variable `__name__`.
+- Run directly (`python game.py`): Python sets `__name__` to `"__main__"`.
+- Imported (`import game`): Python sets `__name__` to `"game"` (the module's name).
+
+**The guard pattern:** `if __name__ == "__main__":` — "run this only when I'm the main program." So test code, demos and `main()` calls go inside the guard.
+
+**Concrete demo:** helpers.py with a `print("helpers loaded")` at top. Import it from main.py → you see "helpers loaded" — proof the import executes module code. Then put the print inside the guard → importing stays quiet, running directly prints it.
+
+**Arabic tip:** "الممثل الرئيسي" و"الممثل الضيف": __main__ = الرئيسي، وأي استيراد = ضيف لا يشغّل الكواليس.
+</template>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-240px; left:-160px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-280px; right:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">🤝 CORE CONCEPT #3</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:88px; font-weight:700; color:var(--text-hi); margin-top:14px;">Client <span style="color:var(--neon-cyan);">vs</span> Server</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:330px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; color:var(--text-mid); line-height:1.6;">Every API conversation has two roles. Someone <span style="color:var(--neon-lime);">asks</span>, someone <span style="color:var(--neon-cyan);">answers</span>.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:470px; width:860px; height:300px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:510px; width:780px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:44px; color:var(--neon-cyan);">💻 CLIENT</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:14px; line-height:1.7;">The one who <span style="color:var(--text-hi);">asks</span>. A phone, a browser, your Python script.<br>Always initiates the conversation. Sends the request.</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-lime); margin-top:18px;">requests.get(...)  ← your code, the client</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:980px; top:560px; width:100px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:44px; color:var(--neon-magenta); text-align:center;">⇄</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1120px; top:470px; width:800px; height:300px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1160px; top:510px; width:720px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:44px; color:var(--neon-magenta);">🖥️ SERVER</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:14px; line-height:1.7;">The one who <span style="color:var(--text-hi);">answers</span>. A powerful machine that waits, 24/7, for requests.<br>Checks your question, grabs the data, sends a response.</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-lime); margin-top:18px;">→ returns data as JSON</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:820px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-lo);">Your laptop can be <span style="color:var(--neon-cyan);">both</span>: a client now (calling weather APIs) and a server later (in another session). One program can even be both at once.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:920px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">العميل هو من يطلب، والخادم هو من يجيب — وهكذا يدور حوار كل الـ APIs 🤝</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">11 / 50</div>
+</div>
+<template data-slide-notes>
+Client vs server — two cards.
+
+Emphasize the asymmetry: the client always *starts* the conversation; the server *waits*. That's why servers run on powerful machines with public addresses, while your laptop just knocks on the door.
+
+Real talk: "Your Python script is the client today. When you run `requests.get(...)`, your script is literally a phone app asking for weather."
+
+Extra: define "client" broadly — it's not just a browser. Any code making requests is a client.
+
+Tease: next slide shows the full journey of a request.
+
+Arabic tip: عبّر عنها بـ"سائل ومُجيب" — أدوار ثابتة في كل محادثة بين برنامجين.
+</template>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-magenta"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:80px; width:1760px; z-index:10;">
+    <div class="kicker">CORE CONCEPT // EXTRACT + CLEAN 🧹</div>
+    <div style="margin-top:26px; font-family:'Space Grotesk',sans-serif; font-size:80px; font-weight:700; color:var(--text-hi); line-height:1.05;">Text, attributes & <span style="color:var(--neon-lime);">cleaning</span></div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:29px; color:var(--text-lo); direction:rtl; margin-top:14px;">نستخرج النص والخصائص، ثم ننظف النتائج من الفراغات والرموز الزائدة</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:320px; width:1760px; z-index:10;">
+    <div style="display:flex; gap:34px;">
+      <div style="flex:1; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:22px; padding:32px;">
+        <div class="mono" style="font-size:28px; color:var(--neon-cyan);">tag.text</div>
+        <div style="margin-top:16px; font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-mid); line-height:1.55;">The visible text inside a tag. <span class="mono">"  $19.99  "</span></div>
+      </div>
+      <div style="flex:1; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.35); border-radius:22px; padding:32px;">
+        <div class="mono" style="font-size:28px; color:var(--neon-lime);">tag["href"]</div>
+        <div style="margin-top:16px; font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-mid); line-height:1.55;">Any attribute: links, image src, data-* fields.</div>
+      </div>
+      <div style="flex:1; background:rgba(250,204,21,0.06); border:1px solid rgba(250,204,21,0.35); border-radius:22px; padding:32px;">
+        <div class="mono" style="font-size:28px; color:var(--neon-yellow);">.strip()</div>
+        <div style="margin-top:16px; font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-mid); line-height:1.55;">Removes leading/trailing whitespace and newlines. Clean data starts here.</div>
+      </div>
+      <div style="flex:1; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:22px; padding:32px;">
+        <div class="mono" style="font-size:28px; color:var(--neon-magenta);">.replace()</div>
+        <div style="margin-top:16px; font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-mid); line-height:1.55;">Swap unwanted text: <span class="mono">"$12".replace("$", "")</span> → <span class="mono">"12"</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:850px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:31px; color:var(--text-hi);">🧹 Dirty in → clean out: <span class="mono" style="color:var(--neon-lime);">price = tag.text.strip().replace("$", "")</span> then <span class="mono" style="color:var(--neon-lime);">float(price)</span> for math</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">30 / 50</div>
+</div>
+<template data-slide-notes>
+Real-world data is messy: extra spaces, symbols, newlines. Extraction + cleaning always travel together.
+
+The pipeline: .text → .strip() → .replace() → convert (int/float). Show a price "$19.99 " → strip → replace "$" → float.
+
+Arabic tip: البيانات الخام فيها «قشور» — التنظيف = تقشيرها. strip يزيل الفراغات، replace يبدّل الرموز.
+</template>
+</body>
+</html>

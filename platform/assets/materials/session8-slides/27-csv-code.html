@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-200px; right:-160px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-180px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1700px; z-index:10;">
+    <div class="kicker">🧑‍💻 CODE — CSV WITHOUT LIBRARIES</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi); margin-top:10px;">CSV with plain Python</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:980px; height:500px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">csv_demo.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:385px; width:920px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.6;">
+    <div><span class="tok-com"># write a CSV</span></div>
+    <div><span class="tok-kw">with</span> <span class="tok-fn">open</span>(<span class="tok-str">"scores.csv"</span>, <span class="tok-str">"w"</span>) <span class="tok-kw">as</span> <span class="tok-var">f</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">f</span>.<span class="tok-fn">write</span>(<span class="tok-str">"name,score\n"</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">f</span>.<span class="tok-fn">write</span>(<span class="tok-str">"Nour,95\n"</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">f</span>.<span class="tok-fn">write</span>(<span class="tok-str">"Sara,88\n"</span>)</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-com"># read it back, split on commas</span></div>
+    <div><span class="tok-kw">with</span> <span class="tok-fn">open</span>(<span class="tok-str">"scores.csv"</span>) <span class="tok-kw">as</span> <span class="tok-var">f</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">for</span> <span class="tok-var">line</span> <span class="tok-kw">in</span> <span class="tok-var">f</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">name</span>, <span class="tok-var">score</span> <span class="tok-op">=</span> <span class="tok-var">line</span>.<span class="tok-fn">strip</span>().<span class="tok-fn">split</span>(<span class="tok-str">","</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-var">name</span>, <span class="tok-str">"→"</span>, <span class="tok-var">score</span>)</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1120px; top:330px; width:680px; height:300px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1150px; top:362px; width:620px; z-index:10;">
+    <div class="kicker" style="font-size:20px; color:var(--neon-lime);">🖥️ OUTPUT</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:30px; line-height:1.6; color:var(--neon-lime); margin-top:16px;">
+      <div>name → score</div>
+      <div>Nour → 95</div>
+      <div>Sara → 88</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1120px; top:700px; width:680px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-mid); line-height:1.5;">💡 <b style="color:var(--text-hi);">strip()</b> removes the <span class="mono" style="color:var(--neon-yellow);">\n</span>, then <b style="color:var(--text-hi);">split(",")</b> splits the row into its cells.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:29px; color:var(--text-lo); direction:rtl; margin-top:14px;">نقرأ CSV سطراً سطراً ونقسم كل سطر على الفاصلة للحصول على الخلايا</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S08</div>
+  <div class="chrome-pagenum">27 / 50</div>
+</div>
+<template data-slide-notes>
+**CSV code — 8 min.**
+
+- Write + read in one file. When reading, walk the unpacking: `name, score = row.split(",")`.
+- Note `strip()` before `split` — otherwise the last column keeps a `\n`.
+- CSV gotcha: the header row is read too. For numeric math, skip it: `header = f.readline()` once, or guard with `if line.strip() == "name,score": continue`. The demo above intentionally prints every row (including the header).
+- Extend: convert score to int and compute the average of scores — tiny math win.
+- Keep csv module mention one line ("there's a fancier csv module for real projects").
+- Arabic tip: «قسّم على الفاصلة» (split on the comma) — the reading mantra.
+</template>
+</body>
+</html>

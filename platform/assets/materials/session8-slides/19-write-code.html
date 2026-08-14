@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-200px; right:-160px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-180px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1700px; z-index:10;">
+    <div class="kicker">🧑‍💻 CODE — WRITING IN ACTION</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi); margin-top:10px;">Write + before/after</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:900px; height:360px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">write_notes.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:390px; width:840px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:27px; line-height:1.6;">
+    <div><span class="tok-var">f</span> <span class="tok-op">=</span> <span class="tok-fn">open</span>(<span class="tok-str">"notes.txt"</span>, <span class="tok-str">"w"</span>)</div>
+    <div><span class="tok-var">f</span>.<span class="tok-fn">write</span>(<span class="tok-str">"Session 8: Files &amp; JSON\n"</span>)</div>
+    <div><span class="tok-var">f</span>.<span class="tok-fn">write</span>(<span class="tok-str">"Persistence is a superpower\n"</span>)</div>
+    <div><span class="tok-var">f</span>.<span class="tok-fn">write</span>(<span class="tok-str">"Score: "</span> <span class="tok-op">+</span> <span class="tok-fn">str</span>(<span class="tok-num">95</span>) <span class="tok-op">+</span> <span class="tok-str">"\n"</span>)</div>
+    <div><span class="tok-var">f</span>.<span class="tok-fn">close</span>()</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1040px; top:330px; width:400px; height:250px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1070px; top:362px; width:340px; z-index:10;">
+    <div class="kicker" style="font-size:20px; color:var(--neon-lime);">📄 notes.txt</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:28px; line-height:1.6; color:var(--text-hi); margin-top:14px;">
+      <div>Session 8: Files &amp; JSON</div>
+      <div>Persistence is a superpower</div>
+      <div>Score: 95</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1500px; top:330px; width:380px; height:250px; background:rgba(250,204,21,0.06); border:1px solid rgba(250,204,21,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1530px; top:362px; width:320px; z-index:10;">
+    <div class="kicker" style="font-size:20px; color:var(--neon-yellow);">⬅ BEFORE</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:28px; line-height:1.6; color:var(--text-lo); margin-top:14px;">
+      <div>old line 1</div>
+      <div>old line 2</div>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:var(--neon-magenta); margin-top:10px;">⚠️ erased by "w"</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:760px; width:900px; height:170px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">writelines.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:800px; width:840px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.6;">
+    <div><span class="tok-var">lines</span> <span class="tok-op">=</span> [<span class="tok-str">"a\n"</span>, <span class="tok-str">"b\n"</span>, <span class="tok-str">"c\n"</span>]</div>
+    <div><span class="tok-var">f</span> <span class="tok-op">=</span> <span class="tok-fn">open</span>(<span class="tok-str">"out.txt"</span>, <span class="tok-str">"w"</span>)</div>
+    <div><span class="tok-var">f</span>.<span class="tok-fn">writelines</span>(<span class="tok-var">lines</span>)</div>
+    <div><span class="tok-var">f</span>.<span class="tok-fn">close</span>()</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1040px; top:760px; width:820px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid);">📁 Open <span class="mono" style="color:var(--neon-cyan);">out.txt</span> — three lines: a, b, c.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:29px; color:var(--text-lo); direction:rtl; margin-top:14px;">اكتب إلى الملف ثم افتحه وتأكد من المحتوى الجديد</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S08</div>
+  <div class="chrome-pagenum">19 / 50</div>
+</div>
+<template data-slide-notes>
+**Write code — 6 min.**
+
+Live code `write_notes.py`, then open the file in the editor to PROVE it wrote.
+
+- Walk: str(95) — writing numbers needs conversion to string.
+- Then `writelines.py`: emphasize the list literal and that each element still needs `\n`.
+- Demo the destructive part: run the same program twice; second run wipes and rewrites (same result), then try writing fewer lines to see truncation.
+- Arabic tip: «افتح الملف وتأكد» (open the file and verify) — verification is a habit.
+</template>
+</body>
+</html>

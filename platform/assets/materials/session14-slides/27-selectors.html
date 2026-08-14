@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-magenta"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:80px; width:1760px; z-index:10;">
+    <div class="kicker">CORE CONCEPT // CSS SELECTORS 🎯</div>
+    <div style="margin-top:26px; font-family:'Space Grotesk',sans-serif; font-size:80px; font-weight:700; color:var(--text-hi); line-height:1.05;">CSS <span style="color:var(--neon-cyan);">selectors</span></div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:29px; color:var(--text-lo); direction:rtl; margin-top:14px;">محددات CSS: لغة اختصار للعثور على العناصر حسب النوع والخاصية والموقع</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:320px; width:1760px; z-index:10;">
+    <div style="display:flex; gap:30px;">
+      <div style="flex:1; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:22px; padding:30px;">
+        <div class="mono" style="font-size:32px; color:var(--neon-cyan);">tag</div>
+        <div style="margin-top:14px; font-family:'Space Grotesk',sans-serif; font-size:25px; color:var(--text-mid);">All elements of a tag: <span class="mono">"h1"</span>, <span class="mono">"li"</span>, <span class="mono">"a"</span></div>
+      </div>
+      <div style="flex:1; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.35); border-radius:22px; padding:30px;">
+        <div class="mono" style="font-size:32px; color:var(--neon-lime);">.class</div>
+        <div style="margin-top:14px; font-family:'Space Grotesk',sans-serif; font-size:25px; color:var(--text-mid);">Shared label: <span class="mono">".quote"</span>, <span class="mono">".price"</span> — the classic pattern</div>
+      </div>
+      <div style="flex:1; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:22px; padding:30px;">
+        <div class="mono" style="font-size:32px; color:var(--neon-magenta);">#id</div>
+        <div style="margin-top:14px; font-family:'Space Grotesk',sans-serif; font-size:25px; color:var(--text-mid);">Unique element: <span class="mono">"#main"</span>, <span class="mono">"#header"</span></div>
+      </div>
+      <div style="flex:1; background:rgba(250,204,21,0.06); border:1px solid rgba(250,204,21,0.35); border-radius:22px; padding:30px;">
+        <div class="mono" style="font-size:32px; color:var(--neon-yellow);">div .item</div>
+        <div style="margin-top:14px; font-family:'Space Grotesk',sans-serif; font-size:25px; color:var(--text-mid);">Descendant: <span class="mono">.item</span> inside a <span class="mono">div</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:780px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-hi);">💬 In code: <span class="mono" style="color:var(--neon-lime);">soup.select(".quote")</span> → same as <span class="mono" style="color:var(--neon-cyan);">find_all(class_="quote")</span>, but shorter & more powerful</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:16px;">المحدد .quote يعني: كل العناصر التي تحمل هذا الفئة — نفس معنى find_all(class_="quote")</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">27 / 50</div>
+</div>
+<template data-slide-notes>
+CSS selectors are the power move: one short string that finds things. `.class` dot, `#id` hash, `tag` plain, and combinations with spaces = descendants.
+
+This is the SAME selector language CSS uses for styling — so "class and id" (slide 15) now pays off.
+
+Demo: in DevTools, Ctrl+F inside Elements panel accepts CSS selectors — instant preview of what a selector matches on a real page.
+
+Arabic tip: نقطة = فئة، شبكة/علامة = معرّف فريد. اجعلهم يكتبون أمثلة: ".quote", "#main", "a".
+</template>
+</body>
+</html>

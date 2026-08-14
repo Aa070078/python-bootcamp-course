@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-200px; right:-160px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-180px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1700px; z-index:10;">
+    <div class="kicker">📝 CHECKPOINT — MCQ</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:80px; font-weight:700; color:var(--text-hi); margin-top:10px;">Q · readlines() return type</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; color:var(--text-mid); margin-top:14px;"><span class="mono">notes.txt</span> has 3 lines. <span class="tok-fn">readlines()</span> returns…?</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:400px; width:820px; height:150px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:442px; width:740px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-hi);"><span class="chip chip-cyan">A</span> &nbsp;A string with 3 newlines</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:960px; top:400px; width:820px; height:150px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1000px; top:442px; width:740px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-hi);"><span class="chip chip-lime">B</span> &nbsp;A list of 3 strings</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:600px; width:820px; height:150px; background:rgba(250,204,21,0.06); border:1px solid rgba(250,204,21,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:642px; width:740px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-hi);"><span class="chip chip-yellow">C</span> &nbsp;3 separate file objects</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:960px; top:600px; width:820px; height:150px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1000px; top:642px; width:740px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-hi);"><span class="chip chip-magenta">D</span> &nbsp;An integer</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:820px; width:1700px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:40px; color:var(--neon-lime);">✔ Answer: <b>B — a list of 3 strings</b></div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:14px;">ماذا تُرجع readlines؟ تُرجع قائمة من الأسطر — الإجابة: قائمة من 3 نصوص</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S08</div>
+  <div class="chrome-pagenum">17 / 50</div>
+</div>
+<template data-slide-notes>
+**Read MCQ — 2 min.**
+
+- `readlines()` → list, `read()` → string, `readline()` → string. Traps: A confuses read with readlines, D is nonsense.
+- Follow-up: "how would you print the 2nd line?" → `lines[1].strip()`.
+- Arabic tip: «readlines تُرجع قائمة» (readlines returns a list).
+</template>
+</body>
+</html>

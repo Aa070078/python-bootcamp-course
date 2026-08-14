@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-cyan"></div>
+<div class="bg-glow-lime"></div>
+<div class="chrome-topbar"><span class="chrome-dot"></span>PROJECTS</div>
+
+<div class="kicker" data-object="true" data-object-type="textbox" style="position:absolute;top:96px;left:80px;">PROJECT // PART 1</div>
+<div class="arabic" data-object="true" data-object-type="textbox" style="position:absolute;top:138px;left:80px;font-size:24px;color:var(--text-lo);">الجزء الأول — البيانات وإضافة جهة اتصال</div>
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:200px;left:80px;width:1400px;font-family:'Space Grotesk',sans-serif;font-size:56px;font-weight:700;color:var(--text-hi);">Data model + add a contact</div>
+
+<div data-object="true" data-object-type="shape" style="position:absolute;left:80px;top:330px;width:880px;z-index:5;">
+  <div class="code-window" style="width:880px;">
+    <div class="code-window-header">
+      <div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+      <span class="code-window-title">contact_manager.py</span>
+    </div>
+    <pre style="padding:22px 26px;margin:0;font-size:22px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span class="tok-com"># Contact Manager — Part 1: data + add</span>
+<span class="tok-var">contacts</span> = []   <span class="tok-com"># each contact is a dict</span>
+
+<span class="tok-kw">def</span> <span class="tok-fn">add_contact</span>():
+    <span class="tok-var">name</span> = <span class="tok-fn">input</span>(<span class="tok-str">"Name: "</span>).<span class="tok-fn">strip</span>().<span class="tok-fn">title</span>()
+    <span class="tok-var">phone</span> = <span class="tok-fn">input</span>(<span class="tok-str">"Phone: "</span>).<span class="tok-fn">strip</span>()
+    <span class="tok-var">tags</span> = {<span class="tok-var">t</span>.<span class="tok-fn">strip</span>() <span class="tok-kw">for</span> <span class="tok-var">t</span> <span class="tok-kw">in</span> <span class="tok-fn">input</span>(<span class="tok-str">"Tags: "</span>).<span class="tok-fn">split</span>(<span class="tok-str">","</span>)}
+    <span class="tok-var">contacts</span>.<span class="tok-fn">append</span>({
+        <span class="tok-str">"name"</span>: <span class="tok-var">name</span>,
+        <span class="tok-str">"phone"</span>: <span class="tok-var">phone</span>,
+        <span class="tok-str">"tags"</span>: <span class="tok-var">tags</span>
+    })
+    <span class="tok-fn">print</span>(<span class="tok-str">f"Added </span><span class="tok-str">{</span><span class="tok-var">name</span><span class="tok-str">}</span><span class="tok-str">!"</span>)
+
+<span class="tok-kw">def</span> <span class="tok-fn">show_tags</span>():
+    <span class="tok-var">all_tags</span> = <span class="tok-fn">set</span>()
+    <span class="tok-kw">for</span> <span class="tok-var">c</span> <span class="tok-kw">in</span> <span class="tok-var">contacts</span>:
+        <span class="tok-var">all_tags</span> |= <span class="tok-var">c</span>[<span class="tok-str">"tags"</span>]   <span class="tok-com"># union</span>
+    <span class="tok-fn">print</span>(<span class="tok-str">"Unique tags:"</span>, <span class="tok-fn">sorted</span>(<span class="tok-var">all_tags</span>))</pre>
+  </div>
+</div>
+
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:340px;right:80px;width:800px;display:flex;flex-direction:column;gap:18px;">
+  <div style="padding:20px 24px;border-radius:12px;background:rgba(34,211,238,0.06);border:1px solid rgba(34,211,238,0.18);">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:21px;color:var(--neon-cyan);font-weight:700;margin-bottom:6px;">contacts = []</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:19px;color:var(--text-mid);">A list. Each contact inside it is a <b style="color:var(--text-hi);">dictionary</b>.</div>
+  </div>
+  <div style="padding:20px 24px;border-radius:12px;background:rgba(163,230,53,0.06);border:1px solid rgba(163,230,53,0.18);">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:21px;color:var(--neon-lime);font-weight:700;margin-bottom:6px;">tags = {t.strip() for t in ...}</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:19px;color:var(--text-mid);">A <b style="color:var(--text-hi);">set comprehension</b>: split input on commas, trim spaces, keep each tag once.</div>
+  </div>
+  <div style="padding:20px 24px;border-radius:12px;background:rgba(250,204,21,0.06);border:1px solid rgba(250,204,21,0.18);">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:21px;color:var(--neon-yellow);font-weight:700;margin-bottom:6px;">contacts.append({...})</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:19px;color:var(--text-mid);">Each contact = one dict: <b style="color:var(--text-hi);">name</b>, <b style="color:var(--text-hi);">phone</b>, <b style="color:var(--text-hi);">tags</b> (a set).</div>
+  </div>
+  <div style="padding:20px 24px;border-radius:12px;background:rgba(236,72,153,0.06);border:1px solid rgba(236,72,153,0.18);">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:21px;color:var(--neon-magenta);font-weight:700;margin-bottom:6px;">all_tags |= c["tags"]</div>
+    <div style="font-family:'Space Grotesk',sans-serif;font-size:19px;color:var(--text-mid);"><span style="font-family:'JetBrains Mono',monospace;">|</span> = <b style="color:var(--text-hi);">union</b>. Merge every contact's tags → one set of unique tags.</div>
+  </div>
+</div>
+
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:940px;left:80px;width:1760px;padding:16px 28px;border-radius:14px;background:rgba(163,230,53,0.06);border:1px solid rgba(163,230,53,0.18);"><span style="font-size:23px;color:var(--text-mid);">🔑 A set guarantees each tag appears exactly once — even if the user types <span style="font-family:'JetBrains Mono',monospace;color:var(--neon-lime);">work, work, friend</span>.</span></div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S06</div>
+<div class="chrome-pagenum">33 / 45</div>
+</div>
+<template data-slide-notes>
+LIVE CODING — Part 1 (type it together, ~10 min). Keep the code exactly as on screen so students can follow.
+
+Steps:
+1. Create `contact_manager.py`. Start with `contacts = []`.
+2. Ask: "What shape is one contact?" → a dict. Type the `add_contact()` function.
+3. Highlight `.title()`: makes "sara" → "Sara" so search is forgiving later.
+4. The set comprehension line is the star. Explain step by step: `input()` → `"work, friend, work"` → `.split(",")` → `["work", " friend", " work"]` → `t.strip()` removes spaces → `{...}` keeps unique → `{"friend", "work"}`.
+5. Run it, add Sara twice, then call `show_tags()` → tags appear only once.
+
+Common mistakes to catch live:
+- `input("Tags: ")` without split → one giant string "work, friend" stored as a single tag. Ask students what went wrong.
+- Forgetting `contacts.append(...)` → "no contacts" later.
+- Using `+=` on a set instead of `|=` (set has no `+` → TypeError). Show the error, then fix.
+
+Expected demo run (for reference):
+```
+Name: Sara
+Phone: 050-1234567
+Tags: work, friend
+Added Sara!
+```
+
+Arabic tip: اشرح خطوة خطوة كيف تتحول الجملة المدخلة إلى مجموعة وسم — الكتابة بالعربية أوضح: «أدخل الوسوم مفصولة بفواصل ثم نفصلها وننظّفها». (Explain the input → split → strip → set chain in Arabic slowly.)
+</template>
+</body>
+</html>

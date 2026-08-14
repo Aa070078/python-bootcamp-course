@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-120px; left:-250px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-180px; right:-220px;"></div>
+
+  <div class="chrome-topbar">
+    <span class="chrome-dot"></span>
+    <span>COMMAND #5 // git log</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-cyan); letter-spacing:0.25em; text-transform:uppercase;">⚡ COMMAND #5</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:80px; font-weight:700; color:var(--text-hi); margin-top:10px;"><span style="color:var(--neon-cyan);">git log</span></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-mid); margin-top:10px;">Read your project's full history — newest commit first.</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:390px; width:920px; height:470px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">bash</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:450px; width:860px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:29px; line-height:1.85;">
+    <div><span class="tok-var">$</span> git log --oneline</div>
+    <div class="tok-out">g7h8i9j Fix score bug in level 3</div>
+    <div class="tok-out">d4e5f6g Add score system</div>
+    <div class="tok-out">a1b2c3d Initial commit</div>
+    <div style="height:10px;"></div>
+    <div><span class="tok-var">$</span> git log --oneline --graph</div>
+    <div class="tok-out">* g7h8i9j Fix score bug in level 3</div>
+    <div class="tok-out">* d4e5f6g Add score system</div>
+    <div class="tok-out">* a1b2c3d Initial commit</div>
+    <div style="height:10px;"></div>
+    <div><span class="tok-com"># --graph shows the branch picture 🌿</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1060px; top:390px; width:780px; height:470px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.3); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1090px; top:430px; width:720px; z-index:10;">
+    <div style="font-size:52px;">🕰️</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-hi); font-weight:600; margin-top:12px;">Reading the log</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:16px; line-height:1.7;">• Each line = one commit<br>• Short hash + message<br>• Newest on top<br>• <span class="mono" style="color:var(--neon-lime);">git log --oneline</span> = clean one-line view<br>• <span class="mono" style="color:var(--neon-cyan);">--graph</span> = visual branch map</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:930px; width:1760px; z-index:10;">
+    <span class="chip chip-cyan">git log = the diary of your project</span>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:24px;">git log: سجلّ كامل بتاريخ مشروعك — أحدث التزامات في الأعلى.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S10</div>
+  <div class="chrome-pagenum">19 / 50</div>
+</div>
+<template data-slide-notes>
+**Slide 19 — git log (4 min)**
+- Demo `git log --oneline` right after the live commit — students should see their "Add app skeleton" commit.
+- Explain the "diary" framing: every commit you made today is now visible history.
+- Show that `git log --oneline` prints newest first (top = most recent).
+- `--graph` becomes exciting when we do branches — mention we'll revisit it in ~20 minutes.
+- If a student sees "(HEAD -> main)" in the log — explain it means "this commit is where main currently points".
+- Arabic tip: "log" = سجل — اعرض السجل كأنكم تفتحون يوميات مشروعكم.
+</template>
+</body>
+</html>

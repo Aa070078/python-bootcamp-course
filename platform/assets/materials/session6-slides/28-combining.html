@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-250px; right:-200px;"></div>
+  <div class="bg-glow-lime" style="bottom:-250px; left:-180px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:120px; width:1760px; z-index:10;">
+    <div class="kicker">🧩 COMBINING EVERYTHING</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:92px; font-weight:700; color:var(--text-hi); margin-top:18px;">Lists × Sets × Dicts</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); margin-top:16px;">Three tools, <b style="color:var(--neon-lime);">one program</b> — they fit together beautifully.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:16px;">نستطيع دمج كل الأدوات: قائمة من قواميس، قاموس قيمته قوائم، وإزالة التكرار عبر المجموعات.</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:400px; width:940px; height:540px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">combine.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:470px; width:880px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:23px; line-height:1.6;">
+    <div><span class="tok-com"># 1. List of dicts — every item is one record</span></div>
+    <div><span class="tok-var">students</span> <span class="tok-op">=</span> <span class="tok-op">[</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-op">{</span><span class="tok-str">"name"</span><span class="tok-op">:</span> <span class="tok-str">"Ahmad"</span>, <span class="tok-str">"grade"</span><span class="tok-op">:</span> <span class="tok-num">90</span><span class="tok-op">}</span><span class="tok-op">,</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-op">{</span><span class="tok-str">"name"</span><span class="tok-op">:</span> <span class="tok-str">"Layla"</span>, <span class="tok-str">"grade"</span><span class="tok-op">:</span> <span class="tok-num">85</span><span class="tok-op">}</span><span class="tok-op">,</span></div>
+    <div><span class="tok-op">]</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">students</span>[<span class="tok-num">1</span>][<span class="tok-str">"name"</span>]) <span class="tok-com"># Layla</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-com"># 2. Dict of lists — group many values under one key</span></div>
+    <div><span class="tok-var">team</span> <span class="tok-op">=</span> <span class="tok-op">{</span><span class="tok-str">"attackers"</span><span class="tok-op">:</span> <span class="tok-op">[</span><span class="tok-str">"Ali"</span>, <span class="tok-str">"Omar"</span><span class="tok-op">]</span>, <span class="tok-str">"defenders"</span><span class="tok-op">:</span> <span class="tok-op">[</span><span class="tok-str">"Lina"</span><span class="tok-op">]</span><span class="tok-op">}</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">team</span>[<span class="tok-str">"attackers"</span>][<span class="tok-num">0</span>]) <span class="tok-com"># Ali</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-com"># 3. Dedupe a list using a set, then back to a list</span></div>
+    <div><span class="tok-var">ids</span> <span class="tok-op">=</span> <span class="tok-op">[</span><span class="tok-num">1</span>, <span class="tok-num">2</span>, <span class="tok-num">2</span>, <span class="tok-num">3</span>, <span class="tok-num">3</span>, <span class="tok-num">3</span><span class="tok-op">]</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-fn">list</span>(<span class="tok-fn">set</span>(<span class="tok-var">ids</span>))) <span class="tok-com"># [1, 2, 3]</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1080px; top:400px; width:760px; height:540px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.3); border-radius:24px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1110px; top:434px; width:700px; z-index:10;">
+    <div class="kicker" style="font-size:20px;">WHY COMBINE?</div>
+    <div style="margin-top:22px; background:rgba(34,211,238,0.08); border:1px solid rgba(34,211,238,0.35); border-radius:16px; padding:15px 22px;">
+      <div style="font-size:26px; font-weight:700; color:var(--neon-cyan);">📚 &nbsp;List of dicts</div>
+      <div style="font-size:22px; color:var(--text-mid); margin-top:6px;">A whole dataset — each dict is one record (a row in a table)</div>
+    </div>
+    <div style="margin-top:16px; background:rgba(163,230,53,0.08); border:1px solid rgba(163,230,53,0.35); border-radius:16px; padding:15px 22px;">
+      <div style="font-size:26px; font-weight:700; color:var(--neon-lime);">🗂️ &nbsp;Dict of lists</div>
+      <div style="font-size:22px; color:var(--text-mid); margin-top:6px;">Group many values under one key — like teams and players</div>
+    </div>
+    <div style="margin-top:16px; background:rgba(250,204,21,0.08); border:1px solid rgba(250,204,21,0.4); border-radius:16px; padding:15px 22px;">
+      <div style="font-size:26px; font-weight:700; color:var(--neon-yellow);">🪄 &nbsp;Sets for dedupe</div>
+      <div style="font-size:22px; color:var(--text-mid); margin-top:6px;"><span style="font-family:'JetBrains Mono',monospace;">set(list)</span> kills duplicates — wrap back in <span style="font-family:'JetBrains Mono',monospace;">list()</span></div>
+    </div>
+    <div style="margin-top:16px; background:rgba(167,139,250,0.08); border:1px solid rgba(167,139,250,0.35); border-radius:16px; padding:15px 22px;">
+      <div style="font-size:26px; font-weight:700; color:var(--neon-violet);">💡 &nbsp;Mental model</div>
+      <div style="font-size:22px; color:var(--text-mid); margin-top:6px;">List = order · Set = uniqueness · Dict = lookup by key</div>
+    </div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S06</div>
+  <div class="chrome-pagenum">28 / 45</div>
+</div>
+<template data-slide-notes>
+# Slide 28 — Combining Lists, Sets, Dicts (Instructor notes)
+
+**What to say**
+- This is where the three collections become a system. Real programs rarely use one in isolation.
+- Point out the nesting pattern: `students[1]["name"]` mixes list indexing then dict lookup; `team["attackers"][0]` goes the other way.
+
+**Live demo (4 min)**
+- Type the whole file and run it. Then mutate live: append a new student dict to the list, dedupe a messier `ids`, show `len(set(ids))`.
+- Show `team["defenders"] += ["Sara"]` to demonstrate grouping.
+
+**Common mistakes**
+- Students write `students["name"]` forgetting the index — a list has no string keys.
+- Students forget that `set(ids)` output ORDER is not guaranteed — it is fine for dedupe but not for "keep order".
+- Students try `list[set(ids)]` instead of `list(set(ids))`.
+
+**Arabic teaching tip**
+- لخّص القاعدة: «القائمة للترتيب، المجموعة للتفرد، القاموس للبحث بالمفتاح». هذا المثلث يحل معظم المشاكل.
+</template>
+</body>
+</html>

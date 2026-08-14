@@ -1,0 +1,182 @@
+[
+    {
+        "file":  "01-cover.html",
+        "title":  "01-cover"
+    },
+    {
+        "file":  "02-hook.html",
+        "title":  "02-hook"
+    },
+    {
+        "file":  "03-review-mcq-1.html",
+        "title":  "03-review-mcq-1"
+    },
+    {
+        "file":  "04-review-mcq-2.html",
+        "title":  "04-review-mcq-2"
+    },
+    {
+        "file":  "05-review-mcq-3.html",
+        "title":  "05-review-mcq-3"
+    },
+    {
+        "file":  "06-timeline.html",
+        "title":  "06-timeline"
+    },
+    {
+        "file":  "07-sets-intro.html",
+        "title":  "07-sets-intro"
+    },
+    {
+        "file":  "08-creating-sets.html",
+        "title":  "08-creating-sets"
+    },
+    {
+        "file":  "09-set-uniqueness.html",
+        "title":  "09-set-uniqueness"
+    },
+    {
+        "file":  "10-set-methods.html",
+        "title":  "10-set-methods"
+    },
+    {
+        "file":  "11-set-membership.html",
+        "title":  "11-set-membership"
+    },
+    {
+        "file":  "12-set-operations.html",
+        "title":  "12-set-operations"
+    },
+    {
+        "file":  "13-duplicate-removal.html",
+        "title":  "13-duplicate-removal"
+    },
+    {
+        "file":  "14-mcq-sets-1.html",
+        "title":  "14-mcq-sets-1"
+    },
+    {
+        "file":  "15-mcq-sets-2.html",
+        "title":  "15-mcq-sets-2"
+    },
+    {
+        "file":  "16-live-coding-sets.html",
+        "title":  "16-live-coding-sets"
+    },
+    {
+        "file":  "17-predict-set.html",
+        "title":  "17-predict-set"
+    },
+    {
+        "file":  "18-common-mistakes-sets.html",
+        "title":  "18-common-mistakes-sets"
+    },
+    {
+        "file":  "19-dict-intro.html",
+        "title":  "19-dict-intro"
+    },
+    {
+        "file":  "20-creating-dicts.html",
+        "title":  "20-creating-dicts"
+    },
+    {
+        "file":  "21-dict-access.html",
+        "title":  "21-dict-access"
+    },
+    {
+        "file":  "22-dict-methods.html",
+        "title":  "22-dict-methods"
+    },
+    {
+        "file":  "23-dict-iteration.html",
+        "title":  "23-dict-iteration"
+    },
+    {
+        "file":  "24-nested-dicts.html",
+        "title":  "24-nested-dicts"
+    },
+    {
+        "file":  "25-mcq-dicts-1.html",
+        "title":  "25-mcq-dicts-1"
+    },
+    {
+        "file":  "26-mcq-dicts-2.html",
+        "title":  "26-mcq-dicts-2"
+    },
+    {
+        "file":  "27-live-coding-dicts.html",
+        "title":  "27-live-coding-dicts"
+    },
+    {
+        "file":  "28-combining.html",
+        "title":  "28-combining"
+    },
+    {
+        "file":  "29-real-world-data.html",
+        "title":  "29-real-world-data"
+    },
+    {
+        "file":  "30-predict-dict.html",
+        "title":  "30-predict-dict"
+    },
+    {
+        "file":  "31-break.html",
+        "title":  "31-break"
+    },
+    {
+        "file":  "32-project-intro.html",
+        "title":  "32-project-intro"
+    },
+    {
+        "file":  "33-project-code-1.html",
+        "title":  "33-project-code-1"
+    },
+    {
+        "file":  "34-project-code-2.html",
+        "title":  "34-project-code-2"
+    },
+    {
+        "file":  "35-project-output.html",
+        "title":  "35-project-output"
+    },
+    {
+        "file":  "36-mcq-conditions.html",
+        "title":  "36-mcq-conditions"
+    },
+    {
+        "file":  "37-coding-challenge.html",
+        "title":  "37-coding-challenge"
+    },
+    {
+        "file":  "38-exercises.html",
+        "title":  "38-exercises"
+    },
+    {
+        "file":  "39-homework.html",
+        "title":  "39-homework"
+    },
+    {
+        "file":  "40-final-quiz.html",
+        "title":  "40-final-quiz"
+    },
+    {
+        "file":  "41-recap.html",
+        "title":  "41-recap"
+    },
+    {
+        "file":  "42-bridge.html",
+        "title":  "42-bridge"
+    },
+    {
+        "file":  "43-teaser.html",
+        "title":  "43-teaser"
+    },
+    {
+        "file":  "44-closing.html",
+        "title":  "44-closing"
+    },
+    {
+        "file":  "45-notes.html",
+        "title":  "45-notes"
+    }
+]

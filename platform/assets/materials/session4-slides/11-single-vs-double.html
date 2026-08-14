@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-cyan"></div>
+
+<div class="kicker" style="position:absolute;top:100px;left:80px;">SINGLE VS DOUBLE QUOTES</div>
+<div class="arabic" style="position:absolute;top:100px;right:80px;font-size:20px;color:rgba(34,211,238,0.5);">العلامات المفردة مقابلة المزدوجة</div>
+<div style="position:absolute;top:160px;left:80px;display:flex;gap:30px;width:1760px;">
+  <div style="flex:1;">
+    <div style="font-size:24px;font-weight:600;color:var(--neon-cyan);margin-bottom:16px;">Double Quotes "...":</div>
+<div class="code-window" style="width:860px;">
+<div class="code-window-header">
+<div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+<span class="code-window-title">main.py</span>
+</div>
+<pre style="padding:24px 28px;margin:0;font-size:20px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span style="color:#6B7280;"># Great when text has apostrophes</span>
+msg1 = <span style="color:var(--neon-lime);">"It's beautiful"</span>
+msg2 = <span style="color:var(--neon-lime);">"Don't stop"</span>
+msg3 = <span style="color:var(--neon-lime);">"She's here"</span></pre>
+</div>
+  </div>
+  <div style="flex:1;">
+    <div style="font-size:24px;font-weight:600;color:var(--neon-yellow);margin-bottom:16px;">Single Quotes '...':</div>
+<div class="code-window" style="width:860px;">
+<div class="code-window-header">
+<div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+<span class="code-window-title">main.py</span>
+</div>
+<pre style="padding:24px 28px;margin:0;font-size:20px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span style="color:#6B7280;"># Great when text has double quotes</span>
+msg4 = <span style="color:var(--neon-lime);">'He said "hi"'</span>
+msg5 = <span style="color:var(--neon-lime);">'Use "quotes" here'</span>
+msg6 = <span style="color:var(--neon-lime);">'She whispered "stop"'</span></pre>
+</div>
+  </div>
+</div>
+<div style="position:absolute;bottom:120px;left:50%;transform:translateX(-50%);padding:18px 36px;border-radius:14px;background:rgba(163,230,53,0.08);border:1px solid rgba(163,230,53,0.2);font-size:24px;color:var(--neon-lime);font-weight:600;text-align:center;">✓ Both produce identical string objects — pick whichever avoids escaping</div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S04</div>
+<div class="chrome-pagenum">11 / 76</div>
+<template data-slide-notes>Single and double quotes are functionally identical. Use whichever avoids the need to escape quotes inside the string.</template>
+</div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-120px; left:-250px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-150px; right:-200px;"></div>
+
+  <div class="chrome-topbar">
+    <span class="chrome-dot"></span>
+    <span>COMMAND #2 // git status</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-cyan); letter-spacing:0.25em; text-transform:uppercase;">⚡ COMMAND #2</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:80px; font-weight:700; color:var(--text-hi); margin-top:10px;"><span style="color:var(--neon-cyan);">git status</span></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-mid); margin-top:10px;">The dashboard of your repo — it tells you what changed.</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:400px; width:900px; height:470px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">bash</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:460px; width:840px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:29px; line-height:1.85;">
+    <div><span class="tok-var">$</span> git status</div>
+    <div class="tok-out">On branch main</div>
+    <div class="tok-out">No commits yet</div>
+    <div class="tok-out">Untracked files:</div>
+    <div class="tok-out">&nbsp;&nbsp;(use "git add &lt;file&gt;..." to include)</div>
+    <div class="tok-out">&nbsp;&nbsp;&nbsp;&nbsp;app.py</div>
+    <div class="tok-out">score.py</div>
+    <div style="height:10px;"></div>
+    <div><span class="tok-com"># "Untracked" = Git sees them,</span></div>
+    <div><span class="tok-com"># but is not saving their history yet.</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1050px; top:400px; width:790px; height:470px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.3); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1080px; top:440px; width:730px; z-index:10;">
+    <div style="font-size:52px;">🖥️</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-hi); font-weight:600; margin-top:12px;">What it shows</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:16px; line-height:1.7;">• Which branch you're on<br>• Files not tracked yet (<span style="color:var(--neon-magenta);">untracked</span>)<br>• Files changed but not committed<br>• Nothing? 🎉 clean working tree</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--neon-lime); margin-top:18px;">Run it after EVERY big step.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:930px; width:1760px; z-index:10;">
+    <span class="chip chip-cyan">git status = ask "what's up?"</span>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:24px;">git status: دليل الحالة الكامل لمشروعك — استخدمه بعد كل خطوة.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S10</div>
+  <div class="chrome-pagenum">13 / 50</div>
+</div>
+<template data-slide-notes>
+**Slide 13 — git status (5 min)**
+- Call it the "most-used command" — you will type it constantly.
+- Explain "untracked": Git KNOWS the files exist but is not saving versions of them yet. Tracking starts when you `git add`.
+- Have students run `git status` in their fresh repo with their game files — everyone should see their files listed as untracked.
+- Pro tip: when lost, `git status` tells you exactly where you are. "When in doubt — status."
+- Arabic tip: كلمة Untracked = "غير مُتتبَّع"؛ أي أن Git لا يتابع هذا الملف بعد.
+- Encourage shouting the output: "No commits yet" means "history is empty — let's fix that!"
+</template>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime"></div>
+  <div class="bg-glow-magenta"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; z-index:10;">
+    <div class="kicker">PRINCIPLE #1 // HIDE DETAILS</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:160px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:84px; font-weight:700; color:var(--text-hi);">Encapsulation: guard the internals 🔒</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:16px;">التغليف: التفاصيل الداخلية مخفية، والتواصل يكون عبر الدوال فقط</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:360px; width:1080px; height:470px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">encapsulation.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:418px; width:1020px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.5;">
+    <div><span class="tok-kw">class</span> <span class="tok-var">Account</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">__init__</span>(<span class="tok-var">self</span>, <span class="tok-var">owner</span>, <span class="tok-var">balance</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">owner</span> <span class="tok-op">=</span> <span class="tok-var">owner</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">_balance</span> <span class="tok-op">=</span> <span class="tok-var">balance</span> <span class="tok-com"># "private" by convention</span></div>
+    <div>&nbsp;</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">deposit</span>(<span class="tok-var">self</span>, <span class="tok-var">amount</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">if</span> <span class="tok-var">amount</span> <span class="tok-op">&gt;</span> <span class="tok-num">0</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">_balance</span> <span class="tok-op">+=</span> <span class="tok-var">amount</span></div>
+    <div>&nbsp;</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">withdraw</span>(<span class="tok-var">self</span>, <span class="tok-var">amount</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">if</span> <span class="tok-num">0</span> <span class="tok-op">&lt;</span> <span class="tok-var">amount</span> <span class="tok-op">&lt;=</span> <span class="tok-var">self</span>.<span class="tok-var">_balance</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">_balance</span> <span class="tok-op">-=</span> <span class="tok-var">amount</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-var">acc</span> <span class="tok-op">=</span> <span class="tok-fn">Account</span>(<span class="tok-str">"Sara"</span>, <span class="tok-num">100</span>)</div>
+    <div><span class="tok-var">acc</span>.<span class="tok-fn">deposit</span>(<span class="tok-num">50</span>)</div>
+    <div><span class="tok-var">acc</span>.<span class="tok-fn">withdraw</span>(<span class="tok-num">30</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">acc</span>.<span class="tok-var">_balance</span>) <span class="tok-com"># 120 — works, but stay out</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1240px; top:360px; width:600px; height:470px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1270px; top:400px; width:540px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700; color:var(--text-hi);">The rule 🛡️</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:22px; line-height:1.6;">
+      🏦 <b>ATM analogy</b> — you don't reach into the vault; you use the buttons.<br><br>
+      🔑 <b>_balance</b> = internal. Underscore = "please don't touch directly".<br><br>
+      📞 Change state through <b>methods</b> (deposit / withdraw) that validate first.
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--neon-lime); margin-top:20px;">No negative deposits. No overdrawing. The class protects itself.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S11</div>
+  <div class="chrome-pagenum">18 / 50</div>
+</div>
+<template data-slide-notes>
+**Encapsulation = bundling data + the code that safely operates on it, hiding the internals.**
+
+- Walk the code: `_balance` starts with underscore → Python convention for "internal". Not enforced, but respected by the community.
+- The real protection is that `deposit`/`withdraw` *validate*. Direct access `acc._balance = -500` bypasses rules — which is exactly why we hide it.
+- Demo live: try `acc.withdraw(1000)` → nothing happens (balance can't go negative). Then show `acc._balance` is still accessible but "you shouldn't".
+- ATM analogy lands well with 15-22 year olds.
+- Arabic tip: «التغليف» = encapsulation — إخفاء الداخل، وإظهار زر واحد فقط.
+- Next slide: the professional way to expose `balance` — properties.
+</template>
+</body>
+</html>

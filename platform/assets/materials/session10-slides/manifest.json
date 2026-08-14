@@ -1,0 +1,202 @@
+[
+    {
+        "file":  "01-cover.html",
+        "title":  "01-cover"
+    },
+    {
+        "file":  "02-hook.html",
+        "title":  "02-hook"
+    },
+    {
+        "file":  "03-review-mcq-1.html",
+        "title":  "03-review-mcq-1"
+    },
+    {
+        "file":  "04-review-mcq-2.html",
+        "title":  "04-review-mcq-2"
+    },
+    {
+        "file":  "05-review-mcq-3.html",
+        "title":  "05-review-mcq-3"
+    },
+    {
+        "file":  "06-timeline.html",
+        "title":  "06-timeline"
+    },
+    {
+        "file":  "07-why-version-control.html",
+        "title":  "07-why-version-control"
+    },
+    {
+        "file":  "08-version-history-visual.html",
+        "title":  "08-version-history-visual"
+    },
+    {
+        "file":  "09-git-vs-github.html",
+        "title":  "09-git-vs-github"
+    },
+    {
+        "file":  "10-repo-concept.html",
+        "title":  "10-repo-concept"
+    },
+    {
+        "file":  "11-install-config.html",
+        "title":  "11-install-config"
+    },
+    {
+        "file":  "12-git-init.html",
+        "title":  "12-git-init"
+    },
+    {
+        "file":  "13-git-status.html",
+        "title":  "13-git-status"
+    },
+    {
+        "file":  "14-git-add.html",
+        "title":  "14-git-add"
+    },
+    {
+        "file":  "15-staging-area.html",
+        "title":  "15-staging-area"
+    },
+    {
+        "file":  "16-git-commit.html",
+        "title":  "16-git-commit"
+    },
+    {
+        "file":  "17-commit-messages.html",
+        "title":  "17-commit-messages"
+    },
+    {
+        "file":  "18-live-commit.html",
+        "title":  "18-live-commit"
+    },
+    {
+        "file":  "19-git-log.html",
+        "title":  "19-git-log"
+    },
+    {
+        "file":  "20-git-diff.html",
+        "title":  "20-git-diff"
+    },
+    {
+        "file":  "21-predict-output.html",
+        "title":  "21-predict-output"
+    },
+    {
+        "file":  "22-branches-intro.html",
+        "title":  "22-branches-intro"
+    },
+    {
+        "file":  "23-branches-visual.html",
+        "title":  "23-branches-visual"
+    },
+    {
+        "file":  "24-branch-commands.html",
+        "title":  "24-branch-commands"
+    },
+    {
+        "file":  "25-branch-mcq.html",
+        "title":  "25-branch-mcq"
+    },
+    {
+        "file":  "26-remote-repos.html",
+        "title":  "26-remote-repos"
+    },
+    {
+        "file":  "27-git-clone.html",
+        "title":  "27-git-clone"
+    },
+    {
+        "file":  "28-git-push-pull.html",
+        "title":  "28-git-push-pull"
+    },
+    {
+        "file":  "29-live-push.html",
+        "title":  "29-live-push"
+    },
+    {
+        "file":  "30-gitignore.html",
+        "title":  "30-gitignore"
+    },
+    {
+        "file":  "31-readme.html",
+        "title":  "31-readme"
+    },
+    {
+        "file":  "32-project-intro.html",
+        "title":  "32-project-intro"
+    },
+    {
+        "file":  "33-project-code-1.html",
+        "title":  "33-project-code-1"
+    },
+    {
+        "file":  "34-project-code-2.html",
+        "title":  "34-project-code-2"
+    },
+    {
+        "file":  "35-project-output.html",
+        "title":  "35-project-output"
+    },
+    {
+        "file":  "36-github-workflow.html",
+        "title":  "36-github-workflow"
+    },
+    {
+        "file":  "37-collaboration.html",
+        "title":  "37-collaboration"
+    },
+    {
+        "file":  "38-exercises.html",
+        "title":  "38-exercises"
+    },
+    {
+        "file":  "39-homework.html",
+        "title":  "39-homework"
+    },
+    {
+        "file":  "40-final-quiz.html",
+        "title":  "40-final-quiz"
+    },
+    {
+        "file":  "41-recap.html",
+        "title":  "41-recap"
+    },
+    {
+        "file":  "42-bridge.html",
+        "title":  "42-bridge"
+    },
+    {
+        "file":  "43-teaser.html",
+        "title":  "43-teaser"
+    },
+    {
+        "file":  "44-closing.html",
+        "title":  "44-closing"
+    },
+    {
+        "file":  "45-notes.html",
+        "title":  "45-notes"
+    },
+    {
+        "file":  "46-common-mistakes.html",
+        "title":  "46-common-mistakes"
+    },
+    {
+        "file":  "47-troubleshooting.html",
+        "title":  "47-troubleshooting"
+    },
+    {
+        "file":  "48-pull-requests.html",
+        "title":  "48-pull-requests"
+    },
+    {
+        "file":  "49-live-collab.html",
+        "title":  "49-live-collab"
+    },
+    {
+        "file":  "50-github-profile.html",
+        "title":  "50-github-profile"
+    }
+]

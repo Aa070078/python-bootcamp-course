@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-cyan"></div>
+
+  <div class="kicker" style="position:absolute;top:100px;left:80px;">EXERCISES // EASY — 5 MINUTES</div>
+  <div class="arabic" style="position:absolute;top:100px;right:80px;">تمارين — سهل — 5 دقائق</div>
+  <div style="position:absolute;top:160px;left:80px;font-size:30px;font-weight:600;color:var(--text-hi);">Try these on your own before moving on!</div>
+  <div style="position:absolute;left:80px;top:240px;width:860px;display:flex;flex-direction:column;gap:16px;">
+    <div style="display:flex;align-items:flex-start;gap:16px;padding:20px 24px;border-radius:14px;background:rgba(34,211,238,0.08);border:1px solid rgba(34,211,238,0.2);">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:700;color:var(--neon-cyan);min-width:32px;">01</span>
+      <span style="font-size:22px;color:var(--text-hi);">Create a string with your full name and print it</span>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:16px;padding:20px 24px;border-radius:14px;background:rgba(163,230,53,0.08);border:1px solid rgba(163,230,53,0.2);">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:700;color:var(--neon-lime);min-width:32px;">02</span>
+      <span style="font-size:22px;color:var(--text-hi);">Print the first and last character of your name</span>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:16px;padding:20px 24px;border-radius:14px;background:rgba(250,204,21,0.08);border:1px solid rgba(250,204,21,0.2);">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:700;color:var(--neon-yellow);min-width:32px;">03</span>
+      <span style="font-size:22px;color:var(--text-hi);">Reverse your name using slicing</span>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:16px;padding:20px 24px;border-radius:14px;background:rgba(236,72,153,0.08);border:1px solid rgba(236,72,153,0.2);">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:700;color:var(--neon-magenta);min-width:32px;">04</span>
+      <span style="font-size:22px;color:var(--text-hi);">Convert 'PYTHON' to lowercase using a method</span>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:16px;padding:20px 24px;border-radius:14px;background:rgba(34,211,238,0.08);border:1px solid rgba(34,211,238,0.2);">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:700;color:var(--neon-cyan);min-width:32px;">05</span>
+      <span style="font-size:22px;color:var(--text-hi);">Count how many times 'l' appears in 'hello world'</span>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:16px;padding:20px 24px;border-radius:14px;background:rgba(163,230,53,0.08);border:1px solid rgba(163,230,53,0.2);">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:700;color:var(--neon-lime);min-width:32px;">06</span>
+      <span style="font-size:22px;color:var(--text-hi);">Create a string from two parts: 'Hello' + ' ' + 'World'</span>
+    </div>
+  </div>
+  <div style="position:absolute;left:980px;top:260px;width:780px;display:flex;flex-direction:column;gap:16px;">
+    <div class="code-window" style="width:720px;">
+<div class="code-window-header">
+<div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+<span class="code-window-title">main.py</span>
+</div>
+<pre style="padding:24px 28px;margin:0;font-size:20px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span style="color:var(--text-dim);"># Example solutions</span>
+name = <span style="color:var(--neon-lime);">"Ahmed"</span>
+<span style="color:var(--neon-magenta);">print</span>(name[<span style="color:var(--neon-yellow);">0</span>])        <span style="color:var(--text-dim);"># first char</span>
+<span style="color:var(--neon-magenta);">print</span>(name[<span style="color:var(--neon-yellow);">-1</span>])       <span style="color:var(--text-dim);"># last char</span>
+<span style="color:var(--neon-magenta);">print</span>(name[::-<span style="color:var(--neon-yellow);">1</span>])      <span style="color:var(--text-dim);"># reversed</span>
+
+word = <span style="color:var(--neon-lime);">"PYTHON"</span>
+<span style="color:var(--neon-magenta);">print</span>(word.lower())  <span style="color:var(--text-dim);"># python</span>
+
+<span style="color:var(--neon-magenta);">print</span>(<span style="color:var(--neon-lime);">"hello world"</span>.count(<span style="color:var(--neon-lime);">"l"</span>))  <span style="color:var(--text-dim);"># 3</span></pre>
+</div></div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S04</div>
+<div class="chrome-pagenum">62 / 76</div>
+<template data-slide-notes></template>
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-magenta"></div>
+<div class="chrome-topbar"><span class="chrome-dot"></span>MODIFYING</div>
+
+<div class="kicker" style="position:absolute;top:100px;left:80px;">MODIFYING LISTS</div>
+<div class="arabic" style="position:absolute;top:140px;left:80px;font-size:24px;color:var(--text-lo);">قابلية التعديل</div>
+<div style="position:absolute;top:210px;left:80px;font-size:38px;font-weight:700;color:var(--text-hi);max-width:1600px;">Lists are <span style="color:var(--neon-magenta);">mutable</span> — you can change them in place</div>
+<div style="position:absolute;top:310px;left:80px;width:830px;">
+  <div style="padding:20px 24px;border-radius:12px 12px 0 0;background:rgba(163,230,53,0.07);border:1px solid rgba(163,230,53,0.2);font-size:22px;font-weight:700;color:var(--neon-lime);">✅ LIST — can change</div>
+  <div class="code-window" style="width:830px;">
+<div class="code-window-header">
+<div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+<span class="code-window-title">list_mutable.py</span>
+</div>
+<pre style="padding:24px 28px;margin:0;font-size:20px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span class="tok-var">names</span> = [<span class="tok-str">"Ahmed"</span>, <span class="tok-str">"Omar"</span>]
+<span class="tok-var">names</span>[<span class="tok-num">0</span>] = <span class="tok-str">"Sara"</span>
+<span class="tok-fn">print</span>(<span class="tok-var">names</span>)  <span class="tok-com"># ["Sara", "Omar"] ✅</span></pre>
+</div>
+</div>
+<div style="position:absolute;top:310px;right:80px;width:830px;">
+  <div style="padding:20px 24px;border-radius:12px 12px 0 0;background:rgba(236,72,153,0.07);border:1px solid rgba(236,72,153,0.2);font-size:22px;font-weight:700;color:var(--neon-magenta);">❌ STRING — immutable (Session 4)</div>
+  <div class="code-window" style="width:830px;">
+<div class="code-window-header">
+<div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+<span class="code-window-title">string_immutable.py</span>
+</div>
+<pre style="padding:24px 28px;margin:0;font-size:20px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span class="tok-var">word</span> = <span class="tok-str">"Python"</span>
+<span class="tok-var">word</span>[<span class="tok-num">0</span>] = <span class="tok-str">"J"</span>
+
+<span class="tok-com"># TypeError: 'str' object does not
+<span class="tok-com"># support item assignment ❌</span></pre>
+</div>
+</div>
+<div style="position:absolute;bottom:100px;left:80px;max-width:1760px;padding:16px 24px;border-radius:12px;background:rgba(250,204,21,0.07);border:1px solid rgba(250,204,21,0.2);"><span style="font-size:22px;color:var(--neon-yellow);font-weight:700;">⚠️ This is THE biggest difference between lists and strings — and later, between lists and tuples.</span></div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S05</div>
+<div class="chrome-pagenum">22 / 63</div>
+<template data-slide-notes>Lists are mutable: you can change elements in place. Strings are immutable — item assignment throws TypeError.</template>
+</div>
+</body>
+</html>

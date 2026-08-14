@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-130px; left:-200px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-180px; right:-220px;"></div>
+
+  <div class="chrome-topbar">
+    <span class="chrome-dot"></span>
+    <span>COMMAND #7 // git clone</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-cyan); letter-spacing:0.25em; text-transform:uppercase;">⚡ COMMAND #7</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:80px; font-weight:700; color:var(--text-hi); margin-top:10px;"><span style="color:var(--neon-cyan);">git clone</span></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-mid); margin-top:10px;">Copy a remote repository to your machine — history included.</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:390px; width:920px; height:450px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">bash</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:450px; width:860px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:29px; line-height:1.85;">
+    <div><span class="tok-var">$</span> git clone https://github.com/you/awesome_game.git</div>
+    <div class="tok-out">Cloning into 'awesome_game'...</div>
+    <div class="tok-out">remote: Enumerating objects: 42, done.</div>
+    <div class="tok-out">Receiving objects: 100% (42/42), done.</div>
+    <div style="height:10px;"></div>
+    <div><span class="tok-var">$</span> cd awesome_game</div>
+    <div><span class="tok-var">$</span> git log --oneline <span class="tok-com"># full history is here!</span></div>
+    <div class="tok-out">g7h8i9j Fix score bug</div>
+    <div class="tok-out">a1b2c3d Initial commit</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1060px; top:390px; width:780px; height:450px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.3); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1090px; top:430px; width:720px; z-index:10;">
+    <div style="font-size:52px;">📥</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-hi); font-weight:600; margin-top:12px;">Why clone?</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:16px; line-height:1.7;">• Get a full copy of anyone's public repo<br>• The whole history comes with it<br>• Start contributing to real projects<br>• Works with any repo URL — even ones you don't own</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:920px; width:1760px; z-index:10;">
+    <span class="chip chip-cyan">git clone URL = copy to your disk</span>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:24px;">git clone تنسخ مستودعاً كاملاً بتاريخه إلى جهازك لتعمل عليه.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S10</div>
+  <div class="chrome-pagenum">27 / 50</div>
+</div>
+<template data-slide-notes>
+**Slide 27 — git clone (4 min)**
+- Demo: clone a real, public repo (e.g. a small GitHub repo) and open it — students love seeing someone else's history appear.
+- Emphasise: cloning gives you the ENTIRE history, not just the files. Compare to Download ZIP (which has no .git).
+- Note: you can clone repos you don't own — this is the door to open source (we revisit later).
+- Where to find the URL: GitHub repo page → green "Code" button → HTTPS tab → copy.
+- Arabic tip: الفرق بين التحميل والاستنساخ: الاستنساخ يجلب معه "تاريخ المشروع" (.git) وليس الملفات فقط.
+</template>
+</body>
+</html>

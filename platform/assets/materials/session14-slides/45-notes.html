@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime"></div>
+  <div class="bg-glow-magenta"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:70px; width:1760px; z-index:10;">
+    <div class="kicker">CHEAT SHEET // SAVE THIS 📋</div>
+    <div style="margin-top:22px; font-family:'Space Grotesk',sans-serif; font-size:56px; font-weight:700; color:var(--text-hi);">The whole session on one screen</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:12px;">ملخص كل الجلسة في شاشة واحدة — خذ لقطة شاشة الآن</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:280px; width:860px; height:540px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.3); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" data-lang="python" style="position:absolute; left:110px; top:320px; width:800px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:24px; line-height:1.7;">
+    <div><span class="tok-com"># 1. install</span></div>
+    <div><span class="tok-kw">pip install</span> requests beautifulsoup4</div>
+    <div></div>
+    <div><span class="tok-com"># 2. fetch</span></div>
+    <div><span class="tok-var">resp</span> = <span class="tok-fn">requests.get</span>(<span class="tok-var">url</span>, timeout=<span class="tok-num">10</span>)</div>
+    <div><span class="tok-var">resp.raise_for_status</span>()</div>
+    <div></div>
+    <div><span class="tok-com"># 3. parse</span></div>
+    <div><span class="tok-var">soup</span> = <span class="tok-fn">BeautifulSoup</span>(<span class="tok-var">resp.text</span>, <span class="tok-str">"html.parser"</span>)</div>
+    <div></div>
+    <div><span class="tok-com"># 4. locate + extract</span></div>
+    <div><span class="tok-var">items</span> = <span class="tok-fn">soup.select</span>(<span class="tok-str">".item"</span>)</div>
+    <div><span class="tok-var">text</span> = <span class="tok-var">items</span>[<span class="tok-num">0</span>].get_text().strip()</div>
+    <div><span class="tok-var">link</span> = <span class="tok-var">items</span>[<span class="tok-num">0</span>][<span class="tok-str">"href"</span>]</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1000px; top:320px; width:840px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; font-weight:700; color:var(--text-hi);">🔑 Selector cheats</div>
+    <div style="margin-top:18px; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:2; color:var(--text-mid);">
+      <span class="tok-op">p</span> <span style="color:var(--text-dim);">→ tag</span><br>
+      <span class="tok-op">.price</span> <span style="color:var(--text-dim);">→ class</span><br>
+      <span class="tok-op">#main</span> <span style="color:var(--text-dim);">→ id</span><br>
+      <span class="tok-op">div p</span> <span style="color:var(--text-dim);">→ descendant</span><br>
+      <span class="tok-op">p.price</span> <span style="color:var(--text-dim);">→ tag + class</span><br>
+      <span class="tok-op">find()</span> <span style="color:var(--text-dim);">→ one / None</span><br>
+      <span class="tok-op">find_all()</span> <span style="color:var(--text-dim);">→ list</span>
+    </div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:25px; color:var(--text-lo); direction:rtl; margin-top:20px;">احفظ المحددات: النقطة للفئة، الشبكة للمعرّف، والمسافة للعناصر الداخلية</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:850px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid);">🎩 Be polite: <span class="mono">time.sleep(2)</span> between pages • check <span class="mono">robots.txt</span> • never bypass blocks • save with <span class="mono">encoding="utf-8"</span></div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">45 / 50</div>
+</div>
+<template data-slide-notes>
+This is the reference slide — students should screenshot it. It distills: install, fetch, parse, locate, extract + the selector grammar.
+
+Tell them: "Everything after this session is 10% new syntax, 90% this pipeline."
+
+Add the SQLite reminder: they can INSERT the rows into a table (session 12). Fits the "save" step.
+
+Arabic tip: المحددات مثل «عناوين» العناصر — نقطة للفئة، شبكة للمعرّف، وسطر المحدد يعمل في DevTools أيضًا.
+</template>
+</body>
+</html>

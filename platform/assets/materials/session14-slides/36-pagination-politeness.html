@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-magenta"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:70px; width:1760px; z-index:10;">
+    <div class="kicker">CORE CONCEPT // PAGINATION + POLITENESS 🔁</div>
+    <div style="margin-top:22px; font-family:'Space Grotesk',sans-serif; font-size:60px; font-weight:700; color:var(--text-hi);">More than one page? <span style="color:var(--neon-cyan);">Loop it — slowly</span></div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:12px;">عند تعدد الصفحات: حلقة مع مهلة انتظار بين كل طلب — كاشطة مهذبة</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:300px; width:1200px; height:500px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">paginate.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" data-lang="python" style="position:absolute; left:110px; top:360px; width:1140px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.6;">
+    <div><span class="tok-kw">import</span> time, requests</div>
+    <div></div>
+    <div><span class="tok-kw">for</span> <span class="tok-var">page</span> <span class="tok-kw">in</span> <span class="tok-fn">range</span>(<span class="tok-num">1</span>, <span class="tok-num">4</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">url</span> = <span class="tok-fn">f</span>(<span class="tok-str">"https://quotes.toscrape.com/page/{page}/"</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">resp</span> = <span class="tok-fn">requests.get</span>(<span class="tok-var">url</span>, timeout=<span class="tok-num">10</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">resp.raise_for_status</span>()</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-fn">f</span>(<span class="tok-str">"page {page} -> {resp.status_code}"</span>))</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">time.sleep</span>(<span class="tok-num">2</span>) <span class="tok-com"># polite pause between requests</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1330px; top:330px; width:510px; z-index:10;">
+    <div class="chip chip-cyan">THE POLITE PAUSE</div>
+    <div style="margin-top:20px; font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); line-height:1.6;">
+      <span class="mono">time.sleep(2)</span> → wait 2s between requests. A human can't click 1000 pages in a minute — don't pretend to.<br><br>
+      Check <span class="mono">robots.txt</span> for the site's <span class="mono">Crawl-delay</span>.
+    </div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:25px; color:var(--text-lo); direction:rtl; margin-top:20px;">المهلة الزمنية بين الطلبات = احترام للموقع وتجنب الحظر</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">36 / 50</div>
+</div>
+<template data-slide-notes>
+Pagination = the same page repeated with /page/N/. Our loop just changes the number — that f-string is doing real work.
+
+Why sleep(2)? Rate limiting is polite AND protects you: too-fast requests look like an attack and get your IP blocked. Many sites even publish their preferred delay in robots.txt (Crawl-delay).
+
+Demo live: run paginate.py, watch pages 1→2→3 print with 2s gaps. Count the time with them.
+
+Arabic tip: الصبر مع الموقع = أمان لبرنامجك. مهلة صغيرة بين الطلبات تجنبك الحظر.
+</template>
+</body>
+</html>

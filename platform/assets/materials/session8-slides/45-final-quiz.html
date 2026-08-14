@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-200px; right:-160px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-180px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1700px; z-index:10;">
+    <div class="kicker">🏁 FINAL QUIZ — 4 QUICK ONES</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi); margin-top:10px;">Show what you know</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:820px; height:170px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:362px; width:760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:31px; color:var(--text-hi);">Q1 · Which mode <b style="color:var(--neon-lime);">appends</b> to a file?</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:28px; color:var(--text-mid); margin-top:14px;">A) <span class="tok-str">"r"</span> &nbsp; B) <span class="tok-str">"w"</span> &nbsp; <span style="color:var(--neon-lime);">C) <span class="tok-str">"a"</span></span> &nbsp; D) <span class="tok-str">"x"</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:960px; top:330px; width:820px; height:170px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:990px; top:362px; width:760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:31px; color:var(--text-hi);">Q2 · <span class="tok-var">json</span>.<span class="tok-fn">dump</span>(data, f) writes to…</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:14px;">A) a string &nbsp; <span style="color:var(--neon-lime);">B) a file</span> &nbsp; C) the console &nbsp; D) the network</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:540px; width:820px; height:170px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:572px; width:760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:31px; color:var(--text-hi);">Q3 · <span class="tok-kw">with</span> guarantees…</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:14px;">A) speed &nbsp; <span style="color:var(--neon-lime);">B) auto-close</span> &nbsp; C) JSON &nbsp; D) overwrite</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:960px; top:540px; width:820px; height:170px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:990px; top:572px; width:760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:31px; color:var(--text-hi);">Q4 · <span class="tok-fn">readlines</span>() returns…</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:28px; color:var(--text-mid); margin-top:14px;"><span style="color:var(--neon-lime);">A) a list</span> &nbsp; B) a string &nbsp; C) a dict &nbsp; D) an int</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:780px; width:1700px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:40px; color:var(--neon-lime);">✔ All answers: <b>C · B · B · A</b> — if you got 4/4, persistence is YOUR superpower now. 💪</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:14px;">اختِبار سريع: أوضاع الفتح، ودوال JSON، وwith، وreadlines — أجب ثم راجع معنا</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S08</div>
+  <div class="chrome-pagenum">45 / 50</div>
+</div>
+<template data-slide-notes>
+**Final quiz — 5 min.**
+
+- Run as a quick-fire: read Q, count to three, students show 1-4 fingers.
+- Q1: append = "a". Q2: dump = file (dumpS would be string). Q3: with = auto-close. Q4: readlines = list.
+- Review each wrong answer briefly; celebrate perfect scores.
+- Arabic tip: «واحد اثنان ثلاثة» countdown with fingers.
+</template>
+</body>
+</html>

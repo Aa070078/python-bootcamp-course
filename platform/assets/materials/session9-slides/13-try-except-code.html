@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-150px; left:-120px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-200px; right:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">CODE // 03 — THE SHIELD IN ACTION</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:70px; font-weight:700; color:var(--text-hi);">🛡️ Shield the risky parts</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:880px; height:560px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span><span class="code-dot code-dot-y"></span><span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">read_score.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:388px; width:840px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.7;">
+    <div><span class="tok-kw">try</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">f</span> <span class="tok-op">=</span> <span class="tok-fn">open</span>(<span class="tok-str">"score.txt"</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">score</span> <span class="tok-op">=</span> <span class="tok-fn">int</span>(<span class="tok-var">f</span>.<span class="tok-fn">read</span>())</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Best score:"</span>, <span class="tok-var">score</span>)</div>
+    <div><span class="tok-kw">except</span> <span class="tok-var">FileNotFoundError</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"No score yet — start fresh!"</span>)</div>
+    <div><span class="tok-kw">except</span> <span class="tok-var">ValueError</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"score.txt is corrupt (not a number)."</span>)</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1020px; top:330px; width:820px; height:560px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.3); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1060px; top:372px; width:740px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--neon-lime);">Two risks, two shields</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:24px; line-height:1.7;">
+      1️⃣ <b style="color:var(--text-hi);">File is missing</b> → <span class="mono" style="color:var(--neon-magenta);">FileNotFoundError</span> caught → friendly message.<br><br>
+      2️⃣ <b style="color:var(--text-hi);">File has garbage text</b> → <span class="mono" style="color:var(--neon-magenta);">ValueError</span> caught → friendly message.<br><br>
+      🔁 Multiple <span class="mono">except</span> blocks = one shield per danger type. Python checks them top→bottom and runs the <b style="color:var(--text-hi);">first match</b>.
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-lo); margin-top:28px; line-height:1.6;">💡 This is the pattern for <b style="color:var(--text-hi);">every</b> project today: anticipate each failure, give each its own except.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:26px; color:var(--text-lo); direction:rtl; margin-top:22px;">لكل خطر درع خاص: ملف مفقود يعالج بـ FileNotFoundError، ومحتوى تالف يعالج بـ ValueError.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">13 / 50</div>
+</div>
+<template data-slide-notes>
+## Code — try/except in action
+
+**Type this together (6 min).** This is the canonical example: reading a score from a file. Two distinct failure modes, two except blocks.
+
+**Explain control flow:** try block runs top to bottom. If `open` fails → jump to FileNotFoundError except, skip the rest of try. If file exists but `int("garbage")` fails → jump to ValueError except. If all good → both excepts skipped.
+
+**Order matters:** Python matches the FIRST except whose type fits. Keep most specific first (FileNotFoundError is a subtype of OSError — if you had `except OSError` first, FileNotFoundError would be swallowed by it).
+
+**Live test:** create score.txt with "95" → works. Delete it → "No score yet". Write "abc" in it → "corrupt". Three runs, three outcomes, zero crashes.
+
+**Arabic tip:** اكتب السيناريوهات الثلاثة على السبورة وشغّل كلًا منها أمامهم — الرؤية المباشرة تُثبت الفكرة.
+</template>
+</body>
+</html>

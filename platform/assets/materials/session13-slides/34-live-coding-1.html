@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-240px; right:-160px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-280px; left:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">👨‍💻 LIVE CODING — PART 1/2</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi); margin-top:14px;">Build a weather app 🌦️</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:320px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-mid); line-height:1.6;">We ask Open-Meteo for Cairo's weather — <span style="color:var(--neon-lime);">no API key needed</span>. Type along with me, one line at a time.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:440px; width:940px; height:340px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:490px; width:880px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.7;">
+    <div><span class="tok-kw">import</span> <span class="tok-var">requests</span></div>
+    <div><br></div>
+    <div><span class="tok-var">URL</span> <span class="tok-op">=</span> <span class="tok-str">"https://api.open-meteo.com/v1/forecast"</span></div>
+    <div><br></div>
+    <div><span class="tok-var">params</span> <span class="tok-op">=</span> <span class="tok-op">{</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"latitude"</span><span class="tok-op">:</span> <span class="tok-num">30.05</span><span class="tok-op">,</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"longitude"</span><span class="tok-op">:</span> <span class="tok-num">31.24</span><span class="tok-op">,</span> <span class="tok-com"># Cairo</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"current_weather"</span><span class="tok-op">:</span> <span class="tok-str">"true"</span><span class="tok-op">,</span></div>
+    <div><span class="tok-op">}</span></div>
+    <div><br></div>
+    <div><span class="tok-var">resp</span> <span class="tok-op">=</span> <span class="tok-var">requests</span>.<span class="tok-fn">get</span>(<span class="tok-var">URL</span>, <span class="tok-var">params</span><span class="tok-op">=</span><span class="tok-var">params</span>)</div>
+    <div><span class="tok-var">data</span> <span class="tok-op">=</span> <span class="tok-var">resp</span>.<span class="tok-fn">json</span>()</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1070px; top:440px; width:770px; height:340px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1110px; top:480px; width:690px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-lime);">WHY THESE PIECES?</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:14px; line-height:1.9;">
+      <span class="mono" style="color:var(--text-hi);">URL</span> = the endpoint (slide 17)<br>
+      <span class="mono" style="color:var(--text-hi);">params</span> = the question (slide 28)<br>
+      <span class="mono" style="color:var(--text-hi);">resp.json()</span> = the answer as a dict (slide 29)<br><br>
+      Stop here and run it! <span class="mono" style="color:var(--neon-lime);">print(data)</span> to see everything the server gave us.
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:830px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-lo);">Part 2 is next: pick out the numbers and print something beautiful. →</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:910px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">أول خطوة في تطبيق الطقس: نجهّز العنوان والمعاملات ونستقبل الإجابة كقاموس — نفّذ الآن وأطبع data 👨‍💻</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">34 / 50</div>
+</div>
+<template data-slide-notes>
+LIVE CODING part 1 — weather app, Open-Meteo (no key).
+
+Steps (10 min):
+1. Open a new file `weather.py`.
+2. `import requests`.
+3. Copy the URL constant and params dict EXACTLY. Note coordinates for Cairo (30.05, 31.24).
+4. Run `resp = requests.get(URL, params=params)` and `print(data)` to inspect the full JSON.
+
+Pause here deliberately. Have students look at the printed dict and find keys like "current_weather", "temperature". This connects live code to the JSON visual from slide 24.
+
+Expected data["current_weather"] keys: temperature, windspeed, winddirection, weathercode, is_day, time.
+
+If network fails: show the offline fallback — hardcode a sample dict and continue; note that the code itself is correct.
+
+Arabic tip: علّمهم قراءة المخرجات بصبر: "البيانات أمامك — اقرأ المفاتيح ثم استخرج ما تريد".
+</template>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="bottom:-200px; left:-180px;"></div>
+  <div class="bg-glow-magenta" style="top:60px; right:-250px;"></div>
+
+  <div class="chrome-topbar">
+    <span class="chrome-dot"></span>
+    <span>PART 2 // BRANCHES</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-lime); letter-spacing:0.25em; text-transform:uppercase;">🌿 CONCEPT</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi); margin-top:12px;">Branches = parallel <span style="color:var(--neon-lime);">timelines</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:370px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-mid); line-height:1.7;">Your project's official story lives on <span class="mono" style="color:var(--neon-lime);">main</span>. A branch lets you explore a new idea on a separate timeline — without breaking the main story. When the idea works, you <span style="color:var(--neon-cyan);">merge</span> it back.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:520px; width:560px; height:340px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:560px; width:500px; z-index:10;">
+    <div style="font-size:50px;">🌿</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-hi); font-weight:600; margin-top:10px;">Why branches rock</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:14px; line-height:1.6;">• Experiment freely — main stays safe<br>• Multiple features developed at once<br>• Teams work without collisions</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:700px; top:520px; width:560px; height:340px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:730px; top:560px; width:500px; z-index:10;">
+    <div style="font-size:50px;">🛡️</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-hi); font-weight:600; margin-top:10px;">The golden rule</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:14px; line-height:1.6;">Never build directly on <span class="mono" style="color:var(--neon-lime);">main</span> when experimenting. Make a branch, try, then merge if it's good.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1320px; top:520px; width:520px; height:340px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1350px; top:560px; width:460px; z-index:10;">
+    <div style="font-size:50px;">🎬</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-hi); font-weight:600; margin-top:10px;">For your level</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:14px; line-height:1.6;">We keep it simple today: create a branch, switch, commit, merge. No advanced strategies.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:940px; width:1760px; z-index:10;">
+    <span class="chip chip-lime">main = official</span>
+    <span class="chip chip-cyan">feature branch = experiment</span>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:24px;">الفروع: خطوط زمنية متوازية لتجربة أفكارك بأمان دون كسر المشروع الأصلي.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S10</div>
+  <div class="chrome-pagenum">22 / 50</div>
+</div>
+<template data-slide-notes>
+**Slide 22 — Branches intro (3 min)**
+- Analogy: a novel's main plot vs a "what-if" draft you write in another document. If the draft is great, you copy it into the main story.
+- Stress safety: branches let you break things without breaking main. Great for the "boss level" experiment.
+- Keep expectations grounded: today is basic branch + merge only (per prompt: no advanced branching strategies).
+- Mention: default branch is `main` (that's why we used `-b main` at init).
+- Arabic tip: "الفرع" كأنه ورقة تجارب منفصلة؛ النتيجة الناجحة تُنسخ إلى الدفتر الرئيسي.
+</template>
+</body>
+</html>

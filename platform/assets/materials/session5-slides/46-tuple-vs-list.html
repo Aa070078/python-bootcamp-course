@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-cyan"></div>
+<div class="chrome-topbar"><span class="chrome-dot"></span>TUPLES</div>
+
+<div class="kicker" style="position:absolute;top:100px;left:80px;">LIST vs TUPLE</div>
+<div class="arabic" style="position:absolute;top:140px;left:80px;font-size:24px;color:var(--text-lo););font-size:24px;color:var(--text-lo);">القائمة مقابل الصف</div>
+<div style="position:absolute;top:200px;left:80px;width:1760px;display:flex;gap:24px;">
+  <div style="flex:1;padding:28px;border-radius:14px;background:rgba(34,211,238,0.05);border:1px solid rgba(34,211,238,0.2);">
+    <div style="font-size:28px;font-weight:700;color:var(--neon-cyan);margin-bottom:18px;text-align:center;">📦 LIST <span style="font-size:18px;color:var(--text-dim);">[]</span></div>
+    <div style="font-size:21px;color:var(--text-mid);line-height:2.1;">
+      ✅ Mutable — change anytime<br>
+      ✅ append / insert / remove / pop<br>
+      ✅ sort in place<br>
+      ✅ Great for changing data<br>
+      <span style="color:var(--text-hi);">Students, cart items, tasks</span>
+    </div>
+  </div>
+  <div style="flex:1;padding:28px;border-radius:14px;background:rgba(236,72,153,0.05);border:1px solid rgba(236,72,153,0.2);">
+    <div style="font-size:28px;font-weight:700;color:var(--neon-magenta);margin-bottom:18px;text-align:center;">🔒 TUPLE <span style="font-size:18px;color:var(--text-dim);">()</span></div>
+    <div style="font-size:21px;color:var(--text-mid);line-height:2.1;">
+      ❌ Immutable — fixed forever<br>
+      ✅ Faster + safer<br>
+      ✅ Cannot be accidentally changed<br>
+      ✅ Great for fixed data<br>
+      <span style="color:var(--text-hi);">Coordinates, RGB, constants</span>
+    </div>
+  </div>
+</div>
+<div style="position:absolute;bottom:100px;left:80px;max-width:1760px;padding:18px 26px;border-radius:12px;background:rgba(250,204,21,0.07);border:1px solid rgba(250,204,21,0.2);"><span style="font-size:22px;color:var(--neon-yellow);font-weight:700;">Rule of thumb: if the data must never change → tuple. If it can change → list.</span></div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S05</div>
+<div class="chrome-pagenum">46 / 63</div>
+<template data-slide-notes>Side-by-side comparison: mutable vs immutable, methods, use cases. Rule of thumb: changes → list, fixed → tuple.</template>
+</div>
+</body>
+</html>

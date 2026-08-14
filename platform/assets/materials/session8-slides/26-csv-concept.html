@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-200px; right:-160px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-180px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1700px; z-index:10;">
+    <div class="kicker">📊 CONCEPT 08 — CSV</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:88px; font-weight:700; color:var(--text-hi); margin-top:10px;">CSV — tables as text</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:340px; width:1500px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); line-height:1.45;"><b style="color:var(--neon-cyan);">C</b>omma-<b style="color:var(--neon-cyan);">S</b>eparated <b style="color:var(--neon-cyan);">V</b>alues. One row per line, columns split by commas. The lingua franca of spreadsheets.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:480px; width:820px; height:360px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:515px; width:760px; z-index:10;">
+    <div class="kicker" style="font-size:20px;">📄 FILE: scores.csv</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:30px; line-height:1.7; color:var(--text-hi); margin-top:14px;">
+      <div style="color:var(--neon-yellow);">name,score</div>
+      <div>Nour,95</div>
+      <div>Sara,88</div>
+      <div>Omar,72</div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:960px; top:480px; width:820px; height:360px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:990px; top:515px; width:760px; z-index:10;">
+    <div class="kicker" style="font-size:20px; color:var(--neon-lime);">💡 WHY WE LOVE IT</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:31px; color:var(--text-mid); margin-top:16px; line-height:1.6;">📥 opens in Excel / Google Sheets<br>🤝 every language reads it<br>📏 lightweight &amp; human-readable<br>📊 perfect for datasets &amp; exports</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:900px; width:1700px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:32px; color:var(--text-hi);"><span class="tok-com"># header row = column names · each line = one record</span></div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:14px;">CSV يخزّن الجداول كنص مفصول بفواصل، ويُفتح مباشرة في برامج الجداول</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S08</div>
+  <div class="chrome-pagenum">26 / 50</div>
+</div>
+<template data-slide-notes>
+**CSV concept — 5 min.**
+
+- Show the file then the mental table: header row + 3 data rows.
+- Connect: this is how you'd export a Google Sheet and bring it into Python.
+- Keep it simple per the brief: no csv module deep-dive — split(",") is enough today.
+- Arabic tip: «فاصلة = فاصل» (comma = separator) — the whole format in one phrase.
+</template>
+</body>
+</html>

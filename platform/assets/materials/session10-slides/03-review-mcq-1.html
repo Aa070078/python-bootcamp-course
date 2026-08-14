@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:100px; left:-250px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-180px; right:-200px;"></div>
+
+  <div class="chrome-topbar">
+    <span class="chrome-dot"></span>
+    <span>RECAP // SESSION 09 — EXCEPTIONS</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:120px; width:1760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-magenta); letter-spacing:0.25em; text-transform:uppercase;">📖 Review Q1</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:56px; font-weight:700; color:var(--text-hi); margin-top:16px;">When an exception is raised inside a <span class="mono" style="color:var(--neon-magenta);">try</span> block and caught by an <span class="mono" style="color:var(--neon-cyan);">except</span>, what happens next?</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:420px; width:860px; height:240px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.3); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:460px; width:800px; z-index:10; font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid);">
+    <div style="color:var(--neon-cyan); font-family:'JetBrains Mono',monospace;">A &nbsp;The program crashes immediately</div>
+    <div style="color:var(--text-hi); font-family:'JetBrains Mono',monospace; margin-top:26px;">B &nbsp;The <span style="color:var(--neon-cyan);">except</span> block runs, then execution continues after the try/except</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1000px; top:420px; width:820px; height:240px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.3); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1030px; top:460px; width:760px; z-index:10; font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid);">
+    <div style="color:var(--text-hi); font-family:'JetBrains Mono',monospace;">C &nbsp;The <span style="color:var(--neon-cyan);">except</span> block runs, then the program stops</div>
+    <div style="color:var(--text-hi); font-family:'JetBrains Mono',monospace; margin-top:26px;">D &nbsp;Python prints a traceback and skips <span style="color:var(--neon-cyan);">except</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:760px; width:1760px; z-index:10;">
+    <span class="chip chip-cyan">try</span>
+    <span class="chip chip-magenta">except</span>
+    <span class="chip chip-lime">else</span>
+    <span class="chip chip-yellow">finally</span>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:28px;">ماذا تفعل try/except عندما يقع خطأ؟ فكّر في ما يحدث بعد معالجة الخطأ.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S10</div>
+  <div class="chrome-pagenum">03 / 50</div>
+</div>
+<template data-slide-notes>
+**Slide 3 — Review MCQ 1 (2 min) — Exceptions**
+- Give 30 seconds of thinking time, then poll the room (A/B/C/D by show of hands).
+- **Correct answer: B.** The except block runs, then execution continues normally after the try/except construct.
+- Common misconception: students think an exception always kills the program. Remind them: that is the whole point of catching — you keep the program alive.
+- Quick demo: `try: x = int("abc") except ValueError: x = 0` then `print(x)` → 0.
+- Arabic tip: اشرح "إمساك الخطأ" بالعربية: الإكسيبشن هو كرة، وtry/except هي اليد التي تلتقطها قبل أن تتحطم على الأرض.
+</template>
+</body>
+</html>

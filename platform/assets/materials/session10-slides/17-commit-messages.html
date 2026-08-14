@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-150px; left:-200px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-180px; right:-200px;"></div>
+
+  <div class="chrome-topbar">
+    <span class="chrome-dot"></span>
+    <span>PRO TIP // COMMIT MESSAGES</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-cyan); letter-spacing:0.25em; text-transform:uppercase;">💎 PRO TIP</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi); margin-top:12px;">Write messages your <span style="color:var(--neon-yellow);">future self</span> can read</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:390px; width:860px; height:430px; background:rgba(250,204,21,0.05); border:1px solid rgba(250,204,21,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:430px; width:800px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--neon-yellow); font-weight:600;">😵 Bad messages</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:27px; color:var(--text-mid); margin-top:20px; line-height:1.9;">
+      git commit -m <span class="tok-str">"stuff"</span><br>
+      git commit -m <span class="tok-str">"asdf"</span><br>
+      git commit -m <span class="tok-str">"fix"</span>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-lo); margin-top:16px;">In 3 months, "fix" means nothing. 😩</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1000px; top:390px; width:840px; height:430px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1030px; top:430px; width:780px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--neon-lime); font-weight:600;">✨ Good messages</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:27px; color:var(--text-mid); margin-top:20px; line-height:1.9;">
+      git commit -m <span class="tok-str">"Fix score bug in level 3"</span><br>
+      git commit -m <span class="tok-str">"Add boss level with health bar"</span><br>
+      git commit -m <span class="tok-str">"Refactor menu into its own module"</span>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--neon-lime); margin-top:16px;">Rule: short sentence, present tense, says WHAT/WHY.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:880px; width:1760px; z-index:10;">
+    <span class="chip chip-cyan">commit small &amp; often</span>
+    <span class="chip chip-yellow">one logical change per commit</span>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:24px;">اكتب رسائل التزام واضحة يقرأها زملاؤك و"أنت المستقبلي" بسهولة.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S10</div>
+  <div class="chrome-pagenum">17 / 50</div>
+</div>
+<template data-slide-notes>
+**Slide 17 — Commit messages (3 min)**
+- Make it memorable: "The person who reads your commits the most is YOU, six months from now."
+- Show bad vs good side by side and read them aloud with drama.
+- Golden rules: present tense ("Fix", not "Fixed"), short (under ~50 chars), explain the WHY when it's not obvious.
+- Encourage committing small chunks: one feature or one bugfix per commit.
+- MCQ prompt (answer in your head / discuss): which is a good message? → "Fix score bug in level 3".
+- Arabic tip: القاعدة الذهبية: رسالة "التزام" تُخبر القارئ ماذا غيّرت ولماذا.
+</template>
+</body>
+</html>

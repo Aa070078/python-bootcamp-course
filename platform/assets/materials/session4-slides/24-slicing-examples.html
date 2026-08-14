@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-cyan"></div>
+
+<div class="kicker" style="position:absolute;top:100px;left:80px;">SLICING EXAMPLES</div>
+<div class="arabic" style="position:absolute;top:100px;right:80px;font-size:20px;color:rgba(34,211,238,0.5);">أمثالة على التقسيم</div>
+<div style="position:absolute;top:160px;left:80px;width:1760px;">
+<div class="code-window" style="width:1760px;">
+<div class="code-window-header">
+<div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+<span class="code-window-title">main.py</span>
+</div>
+<pre style="padding:24px 28px;margin:0;font-size:20px;line-height:1.55;color:var(--text-hi);overflow:hidden;">word = <span style="color:var(--neon-lime);">"Python"</span>
+
+print(word[<span style="color:var(--neon-cyan);">0</span>:<span style="color:var(--neon-lime);">3</span>])    <span style="color:#6B7280;"># Pyt    (index 0, 1, 2)</span>
+print(word[<span style="color:var(--neon-cyan);">:</span>:<span style="color:var(--neon-lime);">3</span>])     <span style="color:#6B7280;"># Pyt    (same! start defaults to 0)</span>
+print(word[<span style="color:var(--neon-cyan);">2</span>:])      <span style="color:#6B7280;"># thon   (from index 2 to end)</span>
+print(word[<span style="color:var(--neon-cyan);">1</span>:<span style="color:var(--neon-lime);">4</span>])    <span style="color:#6B7280;"># yth    (index 1, 2, 3)</span>
+print(word[<span style="color:var(--neon-cyan);">-3</span>:])     <span style="color:#6B7280;"># hon    (last 3 characters)</span>
+print(word[<span style="color:var(--neon-cyan);">:</span>:<span style="color:var(--neon-lime);">-2</span>])    <span style="color:#6B7280;"># Pto    (every 2nd, reversed direction)</span></pre>
+</div>
+</div>
+<div style="position:absolute;bottom:110px;left:80px;max-width:1600px;display:flex;gap:20px;">
+  <div style="padding:12px 20px;border-radius:8px;background:rgba(34,211,238,0.06);border:1px solid rgba(34,211,238,0.15);font-size:17px;color:var(--text-mid);"><span style="color:var(--neon-cyan);font-weight:600;">[:3]</span> = from start to index 2</div>
+  <div style="padding:12px 20px;border-radius:8px;background:rgba(163,230,53,0.06);border:1px solid rgba(163,230,53,0.15);font-size:17px;color:var(--text-mid);"><span style="color:var(--neon-lime);font-weight:600;">[2:]</span> = from index 2 to end</div>
+  <div style="padding:12px 20px;border-radius:8px;background:rgba(250,204,21,0.06);border:1px solid rgba(250,204,21,0.15);font-size:17px;color:var(--text-mid);"><span style="color:var(--neon-yellow);font-weight:600;">[-3:]</span> = last 3 characters</div>
+  <div style="padding:12px 20px;border-radius:8px;background:rgba(236,72,153,0.06);border:1px solid rgba(236,72,153,0.15);font-size:17px;color:var(--text-mid);"><span style="color:var(--neon-magenta);font-weight:600;">[::-1]</span> = reverse everything</div>
+</div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S04</div>
+<div class="chrome-pagenum">24 / 76</div>
+<template data-slide-notes>Slicing examples showing various ways to extract substrings using start, end, and omitted values.</template>
+</div>
+</body>
+</html>

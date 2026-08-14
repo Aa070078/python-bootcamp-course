@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-240px; right:-160px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-280px; left:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">🔑 CORE CONCEPT #16</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:84px; font-weight:700; color:var(--text-hi); margin-top:14px;">API keys</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:320px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); line-height:1.6;">Some APIs ask <span style="color:var(--neon-lime);">"who are you?"</span> before answering. Your answer is an <span style="color:var(--text-hi);">API key</span> — a secret passphrase they gave you.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:460px; width:860px; height:300px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:500px; width:780px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-cyan);">WHY KEYS EXIST</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:16px; line-height:1.9;">
+      🎫 <span style="color:var(--text-hi);">Identity</span> — the server knows it's really you<br>
+      📊 <span style="color:var(--text-hi);">Usage tracking</span> — how many calls you make<br>
+      🚧 <span style="color:var(--text-hi);">Limits</span> — free tier caps, paid tiers unlock more<br><br>
+      Treat it like a password: <span style="color:var(--neon-yellow);">never share it, never commit it</span>.
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:460px; width:860px; height:300px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1020px; top:500px; width:780px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-lime);">HOW IT'S SENT</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:30px; color:var(--text-hi); margin-top:16px; line-height:1.8;">
+      <span class="tok-var">headers</span> <span class="tok-op">=</span> <span class="tok-op">{</span><span class="tok-str">"X-Api-Key"</span><span class="tok-op">:</span> <span class="tok-str">"YOUR_KEY"</span><span class="tok-op">}</span><br>
+      <span class="tok-var">resp</span> <span class="tok-op">=</span> <span class="tok-var">requests</span>.<span class="tok-fn">get</span>(</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"https://api.example.com/weather?city=Cairo"</span><span class="tok-op">,</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">headers</span><span class="tok-op">=</span><span class="tok-var">headers</span><span class="tok-op">,</span></div>
+    <div>)</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:25px; color:var(--text-lo); margin-top:10px;">Usually in the headers — not in the URL. (Slide 22 🔙)</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:810px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-lo); line-height:1.6;">✅ Today's APIs are <span style="color:var(--neon-lime);">key-free</span> — great for learning. Wrong/no key &rarr; <span class="mono" style="color:var(--neon-orange);">401</span> Unauthorized.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:900px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">مفتاح الـ API هو بطاقة هويتك لدى الخدمة: لا تشاركه أبداً، وضعه في الترويسات لا في الرابط 🔑</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">32 / 50</div>
+</div>
+<template data-slide-notes>
+API keys — identity for your requests.
+
+Why keys: identify you, count usage, enforce free-tier limits. Emphasize security: never paste a real key into public code, never commit it to Git. Mention environment variables as the safe pattern (demonstrate `os.environ.get("KEY")`).
+
+Reassure: today's weather & currency APIs need no key, so students can experiment freely. When they later use OpenWeatherMap or similar, the pattern is just headers + one URL.
+
+Correlate with status codes: missing/wrong key → 401; forbidden permission → 403. Quick tie-back to slide 20.
+
+Do NOT teach OAuth flows, token refresh, etc. — explicitly out of scope.
+
+Arabic tip: شبّه المفتاح بكلمة مرور لحسابك: تُعطى لك بعد تسجيلك لدى الخدمة، وتحفظها كسرّ شخصي.
+</template>
+</body>
+</html>

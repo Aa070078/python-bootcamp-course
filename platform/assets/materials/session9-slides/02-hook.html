@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-180px; left:-120px;"></div>
+  <div class="bg-glow-lime" style="bottom:-220px; right:-80px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:100px; width:1200px; z-index:10;">
+    <div class="kicker">THE PROBLEM // REAL LIFE</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:190px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:84px; font-weight:700; color:var(--text-hi);">💥 Your app just crashed.</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; color:var(--text-mid); margin-top:30px;">A user runs your game and enters <span class="mono" style="color:var(--neon-yellow);">"banana"</span> where a number should go.<br>Python panics, prints a wall of red text, and your program dies.</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:560px; width:860px; height:300px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span><span class="code-dot code-dot-y"></span><span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">game.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:620px; width:820px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.6;">
+    <div><span class="tok-var">age</span> <span class="tok-op">=</span> <span class="tok-fn">int</span>(<span class="tok-fn">input</span>(<span class="tok-str">"Enter your age: "</span>))</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"Next year you'll be"</span>, <span class="tok-var">age</span> <span class="tok-op">+</span> <span class="tok-num">1</span>)</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-com"># user types: banana</span></div>
+    <div><span class="tok-out">Traceback (most recent call last):</span></div>
+    <div><span class="tok-out">&nbsp;&nbsp;File "game.py", line 1, in &lt;module&gt;</span></div>
+    <div><span class="tok-out">ValueError: invalid literal for int() with base 10: 'banana'</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1040px; top:560px; width:800px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:40px; font-weight:700; color:var(--neon-magenta);">😱 Total disaster?</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid); margin-top:24px; line-height:1.5;">Real apps face this <b style="color:var(--text-hi);">every single day</b>: bad input, missing files, broken connections. The question is not <em>if</em> your code breaks — it's <b style="color:var(--text-hi);">whether you handle it with grace</b>.</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-lo); margin-top:30px; line-height:1.5;">Today: you learn to <span style="color:var(--neon-lime); font-weight:700;">catch errors</span>, read scary messages, and build programs that <b>never crash</b> on bad input.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:28px;">الخطأ ليس نهاية العالم؛ السؤال هو: هل يعرف برنامجك كيف يتعامل معه بلطف؟ اليوم ستتعلم كيف تمسك بالأخطاء قبل أن تسقط برامجك.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">02 / 50</div>
+</div>
+<template data-slide-notes>
+## Hook — the crash moment
+
+**Read the code out loud.** Walk through `int(input(...))` and the user typing "banana". Have a volunteer "act as the user" and type banana.
+
+**Make it visceral.** Ask: "How does it feel when an app you use crashes and loses your work?" (Rage.) "Now imagine YOUR users feeling that because you didn't handle one line of input."
+
+**Frame today's promise:** After today, the same program will print a friendly "That's not a number, try again" and keep running.
+
+**Live option (1 min):** actually run `int("banana")` in IDLE/terminal and show the real traceback so students see it's real, not stage magic.
+
+**Arabic tip:** قرّب الفكرة بمثال حياة يومية: المايكروويف الذي يصرخ عند إدخال رقم خاطئ — أي برنامج جيد يتعامل مع الخطأ بدون انهيار. (A microwave that beeps instead of exploding is error handling.)
+</template>
+</body>
+</html>

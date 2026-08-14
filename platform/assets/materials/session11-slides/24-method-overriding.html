@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-magenta"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; z-index:10;">
+    <div class="kicker">OVERRIDE // SAME NAME, NEW SOUND</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:160px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:84px; font-weight:700; color:var(--text-hi);">Method overriding: child takes over 🎙️</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:16px;">تجاوز الدوال: الابن يكتب نسخته الخاصة من دالة الأب</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:360px; width:1080px; height:470px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">override.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:418px; width:1020px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.5;">
+    <div><span class="tok-kw">class</span> <span class="tok-var">Animal</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">speak</span>(<span class="tok-var">self</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-str">"..."</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-kw">class</span> <span class="tok-var">Dog</span>(<span class="tok-var">Animal</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">speak</span>(<span class="tok-var">self</span>): <span class="tok-com"># override!</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-str">"Woof!"</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-kw">class</span> <span class="tok-var">Cat</span>(<span class="tok-var">Animal</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">speak</span>(<span class="tok-var">self</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-str">"Meow!"</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-fn">Dog</span>(<span class="tok-str">"Rex"</span>).<span class="tok-fn">speak</span>()) &nbsp;<span class="tok-com"># Woof!</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-fn">Cat</span>(<span class="tok-str">"Mimi"</span>).<span class="tok-fn">speak</span>()) <span class="tok-com"># Meow!</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1240px; top:360px; width:600px; height:470px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1270px; top:400px; width:540px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700; color:var(--text-hi);">Override rules 📏</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:22px; line-height:1.65;">
+      🔁 Same method <b>name</b>, same parameters.<br><br>
+      🚫 The child's version <b>wins</b> over the parent's.<br><br>
+      🎭 The parent method still exists — you can call it with <span class="mono">super().speak()</span>.
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--neon-lime); margin-top:20px;">Same name, different behavior per child.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S11</div>
+  <div class="chrome-pagenum">24 / 50</div>
+</div>
+<template data-slide-notes>
+**Overriding = redefining an inherited method in the child.**
+
+- Each child defines its own `speak` — the "..." default is replaced.
+- Key point: the *callers* don't change. `pet.speak()` just works and gives the right sound. This is what enables polymorphism (next slides).
+- Demo live: run the file, then ask "what if Dog didn't override speak()?" → prints "..." (inherits parent's).
+- Combine with super(): show a version where Dog.speak() does `return super().speak() + " Woof!"` to *extend* instead of replace.
+- Arabic tip: «التجاوز» = override — الابن يغيّر سلوك الأب.
+- Transition: "Now the payoff — same call, different results."
+</template>
+</body>
+</html>

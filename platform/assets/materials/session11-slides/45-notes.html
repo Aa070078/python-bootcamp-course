@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime"></div>
+  <div class="bg-glow-magenta"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; z-index:10;">
+    <div class="kicker">REFERENCE // KEEP THIS</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:150px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:78px; font-weight:700; color:var(--text-hi);">OOP cheat sheet</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:16px;">ورقة الغش السريعة — احتفظ بها وارجع إليها دائمًا</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:360px; width:1280px; height:620px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">oop_cheatsheet.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:418px; width:1220px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.55;">
+    <div><span class="tok-kw">class</span> <span class="tok-var">Dog</span>(<span class="tok-var">Animal</span>): <span class="tok-com"># 1. blueprint (inherits from Animal)</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">__init__</span>(<span class="tok-var">self</span>, <span class="tok-var">name</span>): <span class="tok-com"># 2. constructor</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">super</span>().<span class="tok-fn">__init__</span>(<span class="tok-var">name</span>) <span class="tok-com"># 3. run the parent</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">name</span> <span class="tok-op">=</span> <span class="tok-var">name</span> <span class="tok-com"># 4. attribute</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">_secret</span> <span class="tok-op">=</span> <span class="tok-num">0</span> <span class="tok-com"># 5. "private" (underscore)</span></div>
+    <div>&nbsp;</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">speak</span>(<span class="tok-var">self</span>): <span class="tok-com"># 6. method (behavior)</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-str">"Woof!"</span> <span class="tok-com"># 7. override the parent's</span></div>
+    <div>&nbsp;</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">__str__</span>(<span class="tok-var">self</span>): <span class="tok-com"># 8. nice printing</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-fn">f</span><span class="tok-str">"Dog({self.name})"</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-var">rex</span> <span class="tok-op">=</span> <span class="tok-fn">Dog</span>(<span class="tok-str">"Rex"</span>) <span class="tok-com"># 9. create an object</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">rex</span>.<span class="tok-fn">speak</span>()) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-com"># 10. use it</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1400px; top:360px; width:440px; height:620px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1430px; top:402px; width:380px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--text-hi);">Quick rules 📏</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:20px; line-height:1.8;">
+      🐍 PascalCase for <b>classes</b><br>
+      🔤 snake_case for <b>methods/vars</b><br>
+      👮 Every method takes <b>self</b><br>
+      🧒 Child calls <b>super().__init__</b><br>
+      🔑 Change state via <b>methods</b>
+    </div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S11</div>
+  <div class="chrome-pagenum">45 / 50</div>
+</div>
+<template data-slide-notes>
+**Cheat sheet — reference slide students keep.**
+
+- Read through the 10 numbered lines fast; each maps to a slide from today.
+- Point out this exact pattern is what the homework Library looks like.
+- Tell them: "When stuck on homework, open this slide." (Share the deck file after class.)
+- Arabic tip: «رقم 5: الشرطة السفلية تعني خاصية داخلية» — underscore = internal.
+- Closing tip: the fastest way to get better is retyping this whole file from memory.
+- Transition: a couple of extra prediction + live-coding slides follow — these are bonus review for fast finishers.
+</template>
+</body>
+</html>

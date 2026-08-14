@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-cyan"></div>
+<div class="bg-glow-magenta"></div>
+<div class="chrome-topbar"><span class="chrome-dot"></span>KNOWLEDGE CHECK</div>
+
+<div class="kicker" data-object="true" data-object-type="textbox" style="position:absolute;top:96px;left:80px;">QUICK CHECK // SETS + DICTS</div>
+<div class="arabic" data-object="true" data-object-type="textbox" style="position:absolute;top:138px;left:80px;font-size:24px;color:var(--text-lo);">تحقق سريع — المجموعات والقواميس معًا</div>
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:204px;left:80px;font-size:34px;font-weight:600;color:var(--text-hi);max-width:1200px;">What does this program print?</div>
+
+<div data-object="true" data-object-type="shape" style="position:absolute;left:80px;top:320px;width:760px;z-index:5;">
+  <div class="code-window" style="width:760px;">
+    <div class="code-window-header">
+      <div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+      <span class="code-window-title">main.py</span>
+    </div>
+    <pre style="padding:22px 26px;margin:0;font-size:21px;line-height:1.6;color:var(--text-hi);overflow:hidden;"><span class="tok-var">tags</span> = {<span class="tok-str">"friend"</span>, <span class="tok-str">"work"</span>}
+<span class="tok-var">contact</span> = {<span class="tok-str">"name"</span>: <span class="tok-str">"Sara"</span>, <span class="tok-str">"tags"</span>: <span class="tok-var">tags</span>}
+<span class="tok-fn">print</span>(<span class="tok-fn">len</span>(<span class="tok-var">contact</span>), <span class="tok-fn">len</span>(<span class="tok-var">contact</span>[<span class="tok-str">"tags"</span>]))</pre>
+  </div>
+</div>
+
+<div data-object="true" data-object-type="textbox" style="position:absolute;left:900px;top:360px;width:940px;display:flex;flex-direction:column;gap:16px;">
+  <div style="display:flex;align-items:center;gap:16px;padding:20px 28px;border-radius:14px;background:rgba(34,211,238,0.08);border:1px solid rgba(34,211,238,0.20);">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;color:var(--neon-cyan);min-width:36px;">A</span>
+    <span style="font-family:'Space Grotesk',sans-serif;font-size:26px;color:var(--text-hi);">2 2</span>
+  </div>
+  <div style="display:flex;align-items:center;gap:16px;padding:20px 28px;border-radius:14px;background:rgba(163,230,53,0.08);border:1px solid rgba(163,230,53,0.20);">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;color:var(--neon-lime);min-width:36px;">B</span>
+    <span style="font-family:'Space Grotesk',sans-serif;font-size:26px;color:var(--text-hi);">2 1</span>
+  </div>
+  <div style="display:flex;align-items:center;gap:16px;padding:20px 28px;border-radius:14px;background:rgba(250,204,21,0.08);border:1px solid rgba(250,204,21,0.20);">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;color:var(--neon-yellow);min-width:36px;">C</span>
+    <span style="font-family:'Space Grotesk',sans-serif;font-size:26px;color:var(--text-hi);">3 2</span>
+  </div>
+  <div style="display:flex;align-items:center;gap:16px;padding:20px 28px;border-radius:14px;background:rgba(236,72,153,0.08);border:1px solid rgba(236,72,153,0.20);">
+    <span style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;color:var(--neon-magenta);min-width:36px;">D</span>
+    <span style="font-family:'Space Grotesk',sans-serif;font-size:26px;color:var(--text-hi);">1 2</span>
+  </div>
+</div>
+
+<div data-object="true" data-object-type="textbox" style="position:absolute;top:900px;left:80px;width:1760px;padding:16px 28px;border-radius:14px;background:rgba(163,230,53,0.06);border:1px solid rgba(163,230,53,0.18);"><span style="font-size:23px;color:var(--text-mid);">💡 Two rules: <b style="color:var(--text-hi);">len(dict)</b> counts <b style="color:var(--neon-magenta);">keys</b> → <b style="color:var(--text-hi);">len(set)</b> counts <b style="color:var(--neon-lime);">unique items</b>.</span></div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S06</div>
+<div class="chrome-pagenum">36 / 45</div>
+</div>
+<template data-slide-notes>
+Quick knowledge check — 1 minute, no code, just think. Ask students to vote by raising a hand (or typing the letter in chat if online).
+
+Answer: **A — "2 2"**
+- `len(contact)` = number of keys in the dict = `"name"` and `"tags"` = 2.
+- `contact["tags"]` returns the set `{"friend", "work"}` → `len()` of a set counts unique elements = 2.
+
+Why the distractors work:
+- B (2 1): someone who thinks a set with 2 elements is "1" (confusing value+key).
+- C (3 2): counting `"name"`, `"Sara"`, `"tags"` as 3 keys (adding values to the key count).
+- D (1 2): thinking a dict counts as 1 key total.
+
+After the vote, explain the two `len()` rules aloud. This is the classic "sets vs dicts" trap — good to clear now, before homework.
+
+Arabic tip: اسأل: «كيف نحسب عدد المفاتيح في القاموس؟» ثم «كيف نحسب عدد العناصر الفريدة في المجموعة؟» — إجابتان قصيرتان تكفيان. (Two quick questions: how to count keys, how to count unique items.)
+</template>
+</body>
+</html>

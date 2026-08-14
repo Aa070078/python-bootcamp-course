@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-lime"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; z-index:10;">
+    <div class="kicker">CONTROL // @property</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:160px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:84px; font-weight:700; color:var(--text-hi);">Properties &amp; "private" attributes</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:16px;">الشرطة السفلية تعني "داخلي"، و@property تمنح تحكمًا آمنًا</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:360px; width:1080px; height:490px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">properties.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:418px; width:1020px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.5;">
+    <div><span class="tok-kw">class</span> <span class="tok-var">Account</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">__init__</span>(<span class="tok-var">self</span>, <span class="tok-var">balance</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">_balance</span> <span class="tok-op">=</span> <span class="tok-var">balance</span></div>
+    <div>&nbsp;</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">@property</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">balance</span>(<span class="tok-var">self</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-var">self</span>.<span class="tok-var">_balance</span></div>
+    <div>&nbsp;</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">@balance.setter</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">balance</span>(<span class="tok-var">self</span>, <span class="tok-var">value</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">if</span> <span class="tok-var">value</span> <span class="tok-op">&lt;</span> <span class="tok-num">0</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">raise</span> <span class="tok-fn">ValueError</span>(<span class="tok-str">"Negative balance not allowed"</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">_balance</span> <span class="tok-op">=</span> <span class="tok-var">value</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-var">acc</span> <span class="tok-op">=</span> <span class="tok-fn">Account</span>(<span class="tok-num">100</span>)</div>
+    <div><span class="tok-var">acc</span>.<span class="tok-var">balance</span> <span class="tok-op">=</span> <span class="tok-num">250</span> &nbsp;<span class="tok-com"># uses the setter</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">acc</span>.<span class="tok-var">balance</span>) <span class="tok-com"># 250 — uses the getter</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1240px; top:360px; width:600px; height:490px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1270px; top:400px; width:540px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700; color:var(--text-hi);">Why bother? 🤷</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:22px; line-height:1.6;">
+      ✅ <b>Read</b> looks like a normal attribute: <span class="mono">acc.balance</span><br>
+      ✅ <b>Write</b> runs validation first<br>
+      ⚠️ <span class="mono">acc.balance = -5</span> → <span style="color:var(--neon-orange);">ValueError!</span><br>
+      🔒 Internal <span class="mono">_balance</span> stays hidden
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--neon-lime); margin-top:20px;">Same code to callers, extra safety under the hood.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S11</div>
+  <div class="chrome-pagenum">19 / 50</div>
+</div>
+<template data-slide-notes>
+**Properties = methods that pretend to be plain attributes.**
+
+- Show getter + setter. `@property` on the getter; `@x.setter` on the setter. Callers keep using `acc.balance` on both sides.
+- Demo the guard: `acc.balance = -5` → the setter runs, raises ValueError. Show the red traceback on purpose (it's a good thing!).
+- This is the "professional" form of encapsulation vs the simple underscore convention on the previous slide.
+- Don't over-explain — this is a "nice to know" they'll meet in real codebases. If time is short, say: "properties let you add rules to attributes without changing how code uses them."
+- Arabic tip: property = «خاصية» تُدار عبر دوال.
+- Common trap: getter/setter name must match (`balance`), internal is `_balance`.
+</template>
+</body>
+</html>

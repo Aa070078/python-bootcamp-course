@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime" style="top:-150px; right:-120px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-200px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">CORE // 14 — BATTERIES INCLUDED</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi);">🧩 The Standard Library</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); margin-top:26px;">"Batteries included" — Python ships with <b style="color:var(--text-hi);">hundreds of free modules</b>. You never start from zero.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:420px; width:1760px; z-index:10;">
+    <span class="chip chip-cyan" style="margin-right:16px; font-size:24px;">math — square roots, π</span>
+    <span class="chip chip-lime" style="margin-right:16px; font-size:24px;">random — dice, shuffle</span>
+    <span class="chip chip-magenta" style="margin-right:16px; font-size:24px;">datetime — dates &amp; clocks</span>
+    <span class="chip chip-yellow" style="margin-right:16px; font-size:24px;">json — save &amp; load data</span>
+    <span class="chip chip-violet" style="margin-right:16px; font-size:24px;">os — files &amp; folders</span>
+    <span class="chip chip-cyan" style="margin-right:16px; font-size:24px;">statistics — mean, median</span>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:540px; width:940px; height:360px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span><span class="code-dot code-dot-y"></span><span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">stdlib_tour.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:598px; width:900px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.7;">
+    <div><span class="tok-kw">import</span> <span class="tok-var">statistics</span></div>
+    <div><span class="tok-kw">import</span> <span class="tok-var">random</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">statistics</span>.<span class="tok-fn">mean</span>([<span class="tok-num">90</span>, <span class="tok-num">85</span>, <span class="tok-num">98</span>]))&nbsp;&nbsp;<span class="tok-com"># 91.0</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">random</span>.<span class="tok-fn">choice</span>([<span class="tok-str">"cat"</span>, <span class="tok-str">"dog"</span>]))&nbsp;<span class="tok-com"># random pick</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-fn">sum</span>(<span class="tok-fn">range</span>(<span class="tok-num">1</span>, <span class="tok-num">101</span>)))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-com"># 5050 (built-in!)</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1080px; top:540px; width:760px; height:360px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.3); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1120px; top:582px; width:680px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--neon-lime);">Developer superpower 💪</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:22px; line-height:1.7;">
+      ▶ Before coding, ask: <b style="color:var(--text-hi);">"Is there a module for this?"</b><br><br>
+      ▶ Searching docs beats reinventing. <span class="mono" style="color:var(--neon-cyan);">random</span> → don't write your own RNG!<br><br>
+      ▶ Built-ins like <span class="mono" style="color:var(--neon-yellow);">sum()</span>, <span class="mono" style="color:var(--neon-yellow);">len()</span>, <span class="mono" style="color:var(--neon-yellow);">range()</span> are always there.
+    </div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:26px; color:var(--text-lo); direction:rtl; margin-top:22px;">المكتبة القياسية "بطاريات مشمولة": ابحث أولًا هل يوجد وحدة جاهزة قبل أن تبرمجها بنفسك.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">36 / 50</div>
+</div>
+<template data-slide-notes>
+## The Standard Library
+
+**Concept (4 min):** Python ships with a huge stdlib — modules for math, randomness, dates, files, statistics, and hundreds more. "Batteries included" is the official motto.
+
+**Powerful habit to install:** before writing any helper function, ask "does a module already do this?" Then `import` it. This is how pros save hours.
+
+**Live (4 min):** import statistics and random, run mean/choice. Mention `dir(statistics)` lists everything available.
+
+**Name-drop os/pathlib for files** — they'll see these in projects. Keep it light; don't deep-dive.
+
+**Arabic tip:** "بطاريات مشمولة" — بايثون تأتي جاهزة، ابحث أولًا ثم ابرمج.
+</template>
+</body>
+</html>

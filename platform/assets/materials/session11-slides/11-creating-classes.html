@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-magenta"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; z-index:10;">
+    <div class="kicker">SYNTAX // THE class KEYWORD</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:160px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:84px; font-weight:700; color:var(--text-hi);">Your first class 🐍</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:16px;">أول صنف لك — ابدأ بكلمة class وباسم يبدأ بحرف كبير</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:360px; width:1080px; height:470px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">dog_001.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:418px; width:1020px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.5;">
+    <div><span class="tok-kw">class</span> <span class="tok-var">Dog</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">pass</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-com"># empty body for now</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-var">rex</span> <span class="tok-op">=</span> <span class="tok-fn">Dog</span>() &nbsp;&nbsp;&nbsp;<span class="tok-com"># make an object</span></div>
+    <div><span class="tok-var">bella</span> <span class="tok-op">=</span> <span class="tok-fn">Dog</span>() <span class="tok-com"># another object</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">rex</span>) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-com"># &lt;__main__.Dog object at 0x...&gt;</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-fn">type</span>(<span class="tok-var">rex</span>)) <span class="tok-com"># &lt;class '__main__.Dog'&gt;</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1240px; top:360px; width:600px; height:470px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1270px; top:400px; width:540px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700; color:var(--text-hi);">Anatomy 🔍</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:22px; line-height:1.6;">
+      <b style="color:var(--neon-magenta);">class</b> — the keyword that defines a blueprint<br>
+      <b style="color:var(--text-hi);">Dog</b> — the class name (use <b>PascalCase</b>)<br>
+      <b style="color:var(--neon-cyan);">Dog()</b> — builds an object ("constructor")<br>
+      <b style="color:var(--neon-lime);">pass</b> — empty body, "do nothing yet"
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-lo); margin-top:22px;">⚡ Try it in your terminal — instant objects, zero logic.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S11</div>
+  <div class="chrome-pagenum">11 / 50</div>
+</div>
+<template data-slide-notes>
+**First code slide — have students type along.**
+
+- Steps: create `dog_001.py`, write the class, run it, see the `<__main__.Dog object at 0x...>` output. Explain the memory address in the repr is just Python's internal id.
+- `pass` = valid empty body. Why? Python requires indented content after `:` — `pass` is a no-op placeholder.
+- Naming rule: classes use **PascalCase** (`MyClass`, `DogHouse`), variables/functions use snake_case (`my_class`).
+- Each `Dog()` call makes a *distinct* object: `rex is not bella` → `True`. Demo that live.
+- Arabic tip: اسم الصنف يبدأ بحرف كبير دائمًا — «قاعدة التسمية» بالـ PascalCase.
+- Common mistake to flag: naming a class with lowercase (works, but breaks convention).
+</template>
+</body>
+</html>

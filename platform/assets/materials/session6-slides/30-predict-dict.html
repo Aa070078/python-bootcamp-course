@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-250px; right:-200px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-250px; left:-200px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">🤖 PREDICT THE OUTPUT</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:92px; font-weight:700; color:var(--text-hi); margin-top:18px;">What gets printed?</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-mid); margin-top:14px;">Trace every line on paper — then check. 🧠</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:14px;">تتبّع الشيفرة سطرًا سطرًا قبل أن تكشف النتيجة — تدرّب ذهنيًا على سلوك القواميس.</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:400px; width:940px; height:560px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">predict.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:472px; width:880px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.65;">
+    <div><span class="tok-var">d</span> <span class="tok-op">=</span> <span class="tok-op">{</span><span class="tok-str">"a"</span><span class="tok-op">:</span> <span class="tok-num">1</span>, <span class="tok-str">"b"</span><span class="tok-op">:</span> <span class="tok-num">2</span>, <span class="tok-str">"c"</span><span class="tok-op">:</span> <span class="tok-num">3</span><span class="tok-op">}</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-var">d</span>[<span class="tok-str">"b"</span>] <span class="tok-op">=</span> <span class="tok-num">99</span> <span class="tok-com"># update</span></div>
+    <div><span class="tok-var">d</span>[<span class="tok-str">"d"</span>] <span class="tok-op">=</span> <span class="tok-num">4</span> <span class="tok-com"># add</span></div>
+    <div><span class="tok-kw">del</span> <span class="tok-var">d</span>[<span class="tok-str">"a"</span>] <span class="tok-com"># remove</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-var">total</span> <span class="tok-op">=</span> <span class="tok-fn">sum</span>(<span class="tok-var">d</span>.<span class="tok-fn">values</span>())</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-fn">len</span>(<span class="tok-var">d</span>)) <span class="tok-com"># ???</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">total</span>) <span class="tok-com"># ???</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1080px; top:400px; width:760px; height:560px; background:rgba(250,204,21,0.06); border:1px solid rgba(250,204,21,0.3); border-radius:24px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1110px; top:434px; width:700px; z-index:10;">
+    <div class="kicker" style="font-size:20px;">TRACE ON PAPER</div>
+    <div style="margin-top:22px; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.7;">
+      <div><span class="tok-var">start</span> <span class="tok-op">=</span> <span class="tok-op">{</span><span class="tok-str">"a"</span><span class="tok-op">:</span> <span class="tok-num">1</span>, <span class="tok-str">"b"</span><span class="tok-op">:</span> <span class="tok-num">2</span>, <span class="tok-str">"c"</span><span class="tok-op">:</span> <span class="tok-num">3</span><span class="tok-op">}</span></div>
+      <div><span class="tok-var">b</span> <span class="tok-op">→</span> <span class="tok-num">99</span> &nbsp;·&nbsp; <span class="tok-var">+d</span> <span class="tok-op">=</span> <span class="tok-num">4</span> &nbsp;·&nbsp; <span class="tok-kw">del</span> <span class="tok-var">a</span></div>
+      <div><span class="tok-var">left</span> <span class="tok-op">=</span> <span class="tok-op">{</span><span class="tok-str">"b"</span><span class="tok-op">:</span> <span class="tok-num">99</span>, <span class="tok-str">"c"</span><span class="tok-op">:</span> <span class="tok-num">3</span>, <span class="tok-str">"d"</span><span class="tok-op">:</span> <span class="tok-num">4</span><span class="tok-op">}</span></div>
+    </div>
+    <div style="margin-top:22px; background:rgba(236,72,153,0.08); border:1px solid rgba(236,72,153,0.4); border-radius:16px; padding:14px 22px;">
+      <div style="font-size:25px; font-weight:700; color:var(--neon-magenta);">🔥 &nbsp;Reveal</div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:25px; color:var(--text-hi); margin-top:8px; line-height:1.6;">
+        <span class="tok-fn">print</span>(<span class="tok-fn">len</span>(<span class="tok-var">d</span>)) <span class="tok-op">→</span> <span class="tok-num">3</span><br>
+        <span class="tok-fn">print</span>(<span class="tok-var">total</span>) <span class="tok-op">→</span> <span class="tok-num">106</span>
+      </div>
+    </div>
+    <div style="margin-top:16px; background:rgba(163,230,53,0.08); border:1px solid rgba(163,230,53,0.35); border-radius:16px; padding:14px 22px;">
+      <div style="font-size:24px; color:var(--text-mid);">💡 <span style="font-family:'JetBrains Mono',monospace;">sum(d.values())</span> = <span style="font-family:'JetBrains Mono',monospace;">99 + 3 + 4</span></div>
+    </div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S06</div>
+  <div class="chrome-pagenum">30 / 45</div>
+</div>
+<template data-slide-notes>
+# Slide 30 — Predict the Output (Instructor notes)
+
+**Answers**
+- `print(len(d))` → **3** — after `del d["a"]`, the keys are `"b"`, `"c"`, `"d"`.
+- `print(total)` → **106** — `99 + 3 + 4 = 106`.
+
+**Walkthrough**
+1. `d = {"a": 1, "b": 2, "c": 3}` — three keys.
+2. `d["b"] = 99` — overwrite b (still 3 keys).
+3. `d["d"] = 4` — add d (now 4 keys).
+4. `del d["a"]` — remove a (back to 3 keys: b, c, d).
+5. `sum(d.values())` = `99 + 3 + 4` = 106.
+
+**How to run the check**
+- Have students trace first (2 min, no typing), then run the file and compare. Ask who got both right — and why option mistakes happened.
+
+**Common mistakes**
+- Students forget that assigning to an existing key UPDATES instead of adding — count of keys stays the same.
+- Students count the original values (1, 2, 3) instead of the mutated ones.
+- Students forget `del` removes the entry completely, not sets it to 0.
+
+**Arabic teaching tip**
+- شبّه العملية بدفتر سجل: تعديل رقم لا يزيد عدد الأسطر، وحذف سطر يقلّله. العدد (len) يتبع الأسطر الموجودة فقط.
+</template>
+</body>
+</html>

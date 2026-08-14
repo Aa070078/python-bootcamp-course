@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-200px; right:-160px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-180px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1700px; z-index:10;">
+    <div class="kicker">⚡ LIVE CODING 01 — EVERYONE FOLLOWS</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi); margin-top:10px;">Build: the Diary app 📓</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:330px; width:1600px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-mid); line-height:1.5;">A diary that never forgets. Type lines, they're appended to <span class="mono" style="color:var(--neon-lime);">diary.txt</span> — open it tomorrow, it's all still there.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:460px; width:460px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:30px; line-height:1.9; color:var(--text-hi);">
+      <div><span class="tok-num">1.</span> 📂 open <span class="tok-str">"a"</span> append</div>
+      <div><span class="tok-num">2.</span> ⌨️ <span class="tok-fn">input</span>() a line</div>
+      <div><span class="tok-num">3.</span> ✍️ write it + <span class="tok-str">"\n"</span></div>
+      <div><span class="tok-num">4.</span> 🔁 loop until <span class="tok-str">"quit"</span></div>
+    </div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:560px; top:450px; width:1220px; height:470px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">diary.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:590px; top:500px; width:1160px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.55;">
+    <div><span class="tok-kw">with</span> <span class="tok-fn">open</span>(<span class="tok-str">"diary.txt"</span>, <span class="tok-str">"a"</span>) <span class="tok-kw">as</span> <span class="tok-var">f</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">while</span> <span class="tok-kw">True</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">line</span> <span class="tok-op">=</span> <span class="tok-fn">input</span>(<span class="tok-str">"&gt; "</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">if</span> <span class="tok-var">line</span> <span class="tok-op">==</span> <span class="tok-str">"quit"</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">break</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">f</span>.<span class="tok-fn">write</span>(<span class="tok-var">line</span> <span class="tok-op">+</span> <span class="tok-str">"\n"</span>)</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"Saved to diary.txt ✅"</span>)</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-com"># read it back</span></div>
+    <div><span class="tok-kw">with</span> <span class="tok-fn">open</span>(<span class="tok-str">"diary.txt"</span>) <span class="tok-kw">as</span> <span class="tok-var">f</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-var">f</span>.<span class="tok-fn">read</span>())</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:980px; width:1700px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:29px; color:var(--text-lo); direction:rtl;">تطبيق المذكرة اليومية: اكتب سطراً فيُحفظ تلقائياً، وكلمة quit تنهي الحلقة</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S08</div>
+  <div class="chrome-pagenum">25 / 50</div>
+</div>
+<template data-slide-notes>
+**Live coding 1 — 12 min.** Type together, slowly. Keep the pace: keyboard-up when they watch, keyboard-down when they type.
+
+Steps:
+1. Create `diary.py`. Start with the `with open("diary.txt","a")` line — ask: why append not write? (never lose old lines).
+2. Add the infinite `while True` and `input()`.
+3. Add the `quit` break — predict what happens without it (infinite loop).
+4. `f.write(line + "\n")` — ask why `\n` is needed.
+5. Run it, type 3 lines + quit. Re-run and show history is preserved. Open diary.txt in the editor.
+6. Add the read-back block so the diary "prints itself" at the end.
+
+Common mistakes: forgetting `\n`, infinite loop without break, writing when file opened "r".
+Arabic tip: «المذكرة تحفظ كل جلسة» (the diary saves every session) — remind them the file is the memory.
+</template>
+</body>
+</html>

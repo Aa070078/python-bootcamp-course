@@ -1,0 +1,202 @@
+[
+    {
+        "file":  "01-cover.html",
+        "title":  "01-cover"
+    },
+    {
+        "file":  "02-hook.html",
+        "title":  "02-hook"
+    },
+    {
+        "file":  "03-review-mcq-1.html",
+        "title":  "03-review-mcq-1"
+    },
+    {
+        "file":  "04-review-mcq-2.html",
+        "title":  "04-review-mcq-2"
+    },
+    {
+        "file":  "05-review-mcq-3.html",
+        "title":  "05-review-mcq-3"
+    },
+    {
+        "file":  "06-timeline.html",
+        "title":  "06-timeline"
+    },
+    {
+        "file":  "07-what-is-api.html",
+        "title":  "07-what-is-api"
+    },
+    {
+        "file":  "08-api-analogy.html",
+        "title":  "08-api-analogy"
+    },
+    {
+        "file":  "09-real-world-apis.html",
+        "title":  "09-real-world-apis"
+    },
+    {
+        "file":  "10-real-world-apis-mcq.html",
+        "title":  "10-real-world-apis-mcq"
+    },
+    {
+        "file":  "11-client-server.html",
+        "title":  "11-client-server"
+    },
+    {
+        "file":  "12-client-server-diagram.html",
+        "title":  "12-client-server-diagram"
+    },
+    {
+        "file":  "13-http-basics.html",
+        "title":  "13-http-basics"
+    },
+    {
+        "file":  "14-request-response.html",
+        "title":  "14-request-response"
+    },
+    {
+        "file":  "15-http-methods.html",
+        "title":  "15-http-methods"
+    },
+    {
+        "file":  "16-http-methods-mcq.html",
+        "title":  "16-http-methods-mcq"
+    },
+    {
+        "file":  "17-url-endpoint.html",
+        "title":  "17-url-endpoint"
+    },
+    {
+        "file":  "18-url-parts-visual.html",
+        "title":  "18-url-parts-visual"
+    },
+    {
+        "file":  "19-query-parameters.html",
+        "title":  "19-query-parameters"
+    },
+    {
+        "file":  "20-status-codes.html",
+        "title":  "20-status-codes"
+    },
+    {
+        "file":  "21-status-codes-mcq.html",
+        "title":  "21-status-codes-mcq"
+    },
+    {
+        "file":  "22-headers.html",
+        "title":  "22-headers"
+    },
+    {
+        "file":  "23-json-api.html",
+        "title":  "23-json-api"
+    },
+    {
+        "file":  "24-json-visual.html",
+        "title":  "24-json-visual"
+    },
+    {
+        "file":  "25-requests-library.html",
+        "title":  "25-requests-library"
+    },
+    {
+        "file":  "26-get-request.html",
+        "title":  "26-get-request"
+    },
+    {
+        "file":  "27-predict-output-1.html",
+        "title":  "27-predict-output-1"
+    },
+    {
+        "file":  "28-get-with-params.html",
+        "title":  "28-get-with-params"
+    },
+    {
+        "file":  "29-parsing-json.html",
+        "title":  "29-parsing-json"
+    },
+    {
+        "file":  "30-predict-output-2.html",
+        "title":  "30-predict-output-2"
+    },
+    {
+        "file":  "31-post-requests.html",
+        "title":  "31-post-requests"
+    },
+    {
+        "file":  "32-api-keys.html",
+        "title":  "32-api-keys"
+    },
+    {
+        "file":  "33-error-handling.html",
+        "title":  "33-error-handling"
+    },
+    {
+        "file":  "34-live-coding-1.html",
+        "title":  "34-live-coding-1"
+    },
+    {
+        "file":  "35-live-coding-2.html",
+        "title":  "35-live-coding-2"
+    },
+    {
+        "file":  "36-rate-limits.html",
+        "title":  "36-rate-limits"
+    },
+    {
+        "file":  "37-free-public-apis.html",
+        "title":  "37-free-public-apis"
+    },
+    {
+        "file":  "38-project-intro.html",
+        "title":  "38-project-intro"
+    },
+    {
+        "file":  "39-project-code-1.html",
+        "title":  "39-project-code-1"
+    },
+    {
+        "file":  "40-project-code-2.html",
+        "title":  "40-project-code-2"
+    },
+    {
+        "file":  "41-project-output.html",
+        "title":  "41-project-output"
+    },
+    {
+        "file":  "42-exercises.html",
+        "title":  "42-exercises"
+    },
+    {
+        "file":  "43-homework.html",
+        "title":  "43-homework"
+    },
+    {
+        "file":  "44-final-quiz.html",
+        "title":  "44-final-quiz"
+    },
+    {
+        "file":  "45-recap.html",
+        "title":  "45-recap"
+    },
+    {
+        "file":  "46-common-mistakes.html",
+        "title":  "46-common-mistakes"
+    },
+    {
+        "file":  "47-bridge.html",
+        "title":  "47-bridge"
+    },
+    {
+        "file":  "48-teaser.html",
+        "title":  "48-teaser"
+    },
+    {
+        "file":  "49-closing.html",
+        "title":  "49-closing"
+    },
+    {
+        "file":  "50-cheat-sheet.html",
+        "title":  "50-cheat-sheet"
+    }
+]

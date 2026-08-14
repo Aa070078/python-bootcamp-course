@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-magenta"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:70px; width:1760px; z-index:10;">
+    <div class="kicker">CODE // NAVIGATING THE TREE 🧭</div>
+    <div style="margin-top:22px; font-family:'Space Grotesk',sans-serif; font-size:54px; font-weight:700; color:var(--text-hi);">BeautifulSoup turns HTML into a <span style="color:var(--neon-cyan);">navigable tree</span> — predict the output!</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:12px;">BeautifulSoup يحوّل نص HTML إلى شجرة نتنقل فيها مثل القائمة المتداخلة — توقّع الناتج</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:300px; width:1180px; height:500px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">tree_walk.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" data-lang="python" style="position:absolute; left:110px; top:360px; width:1120px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.6;">
+    <div><span class="tok-kw">from</span> bs4 <span class="tok-kw">import</span> BeautifulSoup</div>
+    <div></div>
+    <div><span class="tok-var">html</span> = <span class="tok-str">"&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello&lt;/h1&gt;&lt;p&gt;Bootcamp&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"</span></div>
+    <div><span class="tok-var">soup</span> = <span class="tok-fn">BeautifulSoup</span>(<span class="tok-var">html</span>, <span class="tok-str">"html.parser"</span>)</div>
+    <div></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">soup.body.h1.text</span>) <span class="tok-com"># walk body → h1</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">soup.body.p.text</span>) <span class="tok-com"># walk body → p</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-fn">soup.body.get_text</span>(<span class="tok-str">", "</span>)) <span class="tok-com"># all text joined</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1320px; top:320px; width:520px; z-index:10;">
+    <div class="chip chip-yellow">PREDICT</div>
+    <div style="margin-top:20px; font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); line-height:1.55;">Three prints. Guess each line before running. <span style="color:var(--neon-lime);">Hint:</span> the tree from the last slide.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:25px; color:var(--text-lo); direction:rtl; margin-top:18px;">توقّع: هل سيطبع Hello وBootcamp ثم Hello, Bootcamp؟</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">19 / 50</div>
+</div>
+<template data-slide-notes>
+Run it live: expect output `Hello`, `Bootcamp`, `Hello, Bootcamp`.
+
+Live-coding flow: type it with them, run, compare with predictions. `.body.h1` reads as "inside body, the h1 tag". `get_text(", ")` collects every text node joined by commas.
+
+Point out: we parse a *string* here — no internet needed. BeautifulSoup works on any HTML string, which makes it great for testing.
+
+Arabic tip: المشي في الشجرة = التنقل من الأب إلى الابن عبر النقطة: soup.body.h1
+</template>
+</body>
+</html>

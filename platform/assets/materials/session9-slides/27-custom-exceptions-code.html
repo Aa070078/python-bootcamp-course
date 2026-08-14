@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime" style="top:-150px; left:-120px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-200px; right:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">CODE // 08 — A REAL BUSINESS RULE</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:70px; font-weight:700; color:var(--text-hi);">🏷️ Define, raise, catch</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:940px; height:520px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span><span class="code-dot code-dot-y"></span><span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">bank.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:388px; width:900px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.75;">
+    <div><span class="tok-kw">class</span> <span class="tok-var">InsufficientFundsError</span>(<span class="tok-var">Exception</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">pass</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-kw">def</span> <span class="tok-fn">withdraw</span>(<span class="tok-var">balance</span>, <span class="tok-var">amount</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">if</span> <span class="tok-var">amount</span> <span class="tok-op">&gt;</span> <span class="tok-var">balance</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">raise</span> <span class="tok-var">InsufficientFundsError</span>(</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">f"Need {amount}, have {balance}"</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-var">balance</span> <span class="tok-op">-</span> <span class="tok-var">amount</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-kw">try</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">withdraw</span>(<span class="tok-num">50</span>, <span class="tok-num">200</span>)</div>
+    <div><span class="tok-kw">except</span> <span class="tok-var">InsufficientFundsError</span> <span class="tok-kw">as</span> <span class="tok-var">e</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-str">"Blocked:"</span>, <span class="tok-var">e</span>)</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1080px; top:330px; width:760px; height:520px; background:rgba(167,139,250,0.05); border:1px solid rgba(167,139,250,0.35); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1120px; top:372px; width:680px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--neon-violet);">Read it aloud 🗣️</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:24px; line-height:1.7;">
+      1️⃣ <b style="color:var(--text-hi);">Define</b>: the class creates a brand-new exception type.<br><br>
+      2️⃣ <b style="color:var(--text-hi);">Raise</b>: <span class="mono" style="color:var(--neon-magenta);">withdraw(50, 200)</span> trips the rule → <span class="mono" style="color:var(--neon-lime);">f"..."</span> builds a rich message.<br><br>
+      3️⃣ <b style="color:var(--text-hi);">Catch</b>: only THIS rule is handled; other errors still crash loudly.
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-hi); margin-top:26px;">Output: <span class="tok-out" style="color:var(--neon-orange);">Blocked: Need 200, have 50</span></div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:26px; color:var(--text-lo); direction:rtl; margin-top:22px;">المثال كامل: عرّف الاستثناء، ثم ارفعه عند مخالفة القاعدة، ثم التقطه في المتصل واطبع الرسالة.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">27 / 50</div>
+</div>
+<template data-slide-notes>
+## Code — define, raise, catch
+
+**Type together (7 min).** A mini bank that refuses over-withdrawals with a domain-specific exception.
+
+**Walk the three lines of the message:** f-string interpolation builds "Need 200, have 50" — this is why messages should be informative. When this error is logged, a human instantly understands.
+
+**Contrast with before:** slide 23 used generic ValueError; today the name itself carries meaning. Both work; custom names scale to big apps.
+
+**Stretch:** catch `InsufficientFundsError` AND `ValueError` separately to show both rules coexisting.
+
+**Arabic tip:** اطلب من طالب أن "يرفع" الاستثناء بصوت مرتفع عند السحب الزائد — تمثيل حي يثبّت الفكرة.
+</template>
+</body>
+</html>

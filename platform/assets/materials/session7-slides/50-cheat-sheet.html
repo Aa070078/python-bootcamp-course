@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-180px; right:-150px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-220px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:100px; width:1720px; z-index:10;">
+    <div class="kicker">📋 CHEAT SHEET — FUNCTIONS REFERENCE</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi); margin-top:14px;">Save this page 🔖</div>
+    <div class="arabic" style="font-size:30px; color:var(--text-lo); margin-top:12px; direction:rtl;">ورقة الغش: كل قواعد الدوال في مكان واحد</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:1150px; height:540px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">cheatsheet.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:385px; width:1090px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:22px; line-height:1.6;">
+    <div><span class="tok-kw">def</span> <span class="tok-fn">greet</span>(<span class="tok-var">name</span>, <span class="tok-var">greeting</span><span class="tok-op">=</span><span class="tok-str">"Hello"</span>):  <span class="tok-com"># default param</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"""Say hi with an optional greeting."""</span>  <span class="tok-com"># docstring</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-str">f"{greeting}, {name}!"</span>  <span class="tok-com"># return hands back a value</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-fn">greet</span>(<span class="tok-str">"Nour"</span>)                     <span class="tok-com"># positional</span></div>
+    <div><span class="tok-fn">greet</span>(<span class="tok-var">name</span><span class="tok-op">=</span><span class="tok-str">"Nour"</span>, <span class="tok-var">greeting</span><span class="tok-op">=</span><span class="tok-str">"Salam"</span>)  <span class="tok-com"># keyword</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-kw">def</span> <span class="tok-fn">flex</span>(<span class="tok-op">*</span><span class="tok-var">args</span>, <span class="tok-op">**</span><span class="tok-var">kwargs</span>): <span class="tok-com"># tuple + dict</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-var">args</span>, <span class="tok-var">kwargs</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-var">double</span> <span class="tok-op">=</span> <span class="tok-kw">lambda</span> <span class="tok-var">x</span>: <span class="tok-var">x</span> <span class="tok-op">*</span> <span class="tok-num">2</span>   <span class="tok-com"># lambda</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-kw">if</span> <span class="tok-var">__name__</span> <span class="tok-op">==</span> <span class="tok-str">"__main__"</span>: <span class="tok-com"># entry point</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-fn">greet</span>(<span class="tok-str">"Sara"</span>))</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1280px; top:340px; width:560px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--neon-yellow);">Golden rules ⭐</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:18px; line-height:1.9;">
+      <div>✔️ One job per function</div>
+      <div>✔️ Use <span class="mono">return</span>, not print</div>
+      <div>✔️ snake_case names = verbs</div>
+      <div>✔️ Defaults go last</div>
+      <div>✔️ Local beats global</div>
+      <div>✔️ Small &gt; clever</div>
+    </div>
+    <div class="arabic" style="font-size:27px; color:var(--text-lo); margin-top:22px; direction:rtl;">دوال صغيرة واضحة، تُرجع القيم، وتُسمّى بأفعال — هذا كل ما تحتاجه</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S07</div>
+  <div class="chrome-pagenum">50 / 50</div>
+</div>
+<template data-slide-notes>
+- Have students save/screenshot this slide — it's the reference for homework.
+- Quick run-through of each line, pointing to the concept it demonstrates.
+- Note the `flex(*args, **kwargs)` line uses tuple unpacking knowledge from earlier.
+- Remind: `__main__` guard makes the file importable AND runnable.
+- Final question time: clear any remaining doubts before they leave.
+- Arabic tip: شجّعهم على تعليق هذه الورقة أمام شاشتهم أثناء حل الواجب.
+- End on motivation: "See you next session for Files & JSON — build something great this week!"
+</template>
+</body>
+</html>

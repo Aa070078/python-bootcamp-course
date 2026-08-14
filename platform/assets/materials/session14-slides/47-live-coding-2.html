@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta"></div>
+  <div class="bg-glow-cyan"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:70px; width:1760px; z-index:10;">
+    <div class="kicker">LIVE CODING // LEVEL UP ⌨️⚡</div>
+    <div style="margin-top:22px; font-family:'Space Grotesk',sans-serif; font-size:52px; font-weight:700; color:var(--text-hi);">Now: 3 pages, cleaned, saved to CSV</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:12px;">نطوّر السكربت: ثلاث صفحات، تنظيف، مهلة مهذبة، وحفظ في CSV</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:290px; width:1200px; height:560px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">live_2.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" data-lang="python" style="position:absolute; left:110px; top:350px; width:1140px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.6;">
+    <div><span class="tok-kw">import</span> csv, time, requests</div>
+    <div><span class="tok-kw">from</span> bs4 <span class="tok-kw">import</span> BeautifulSoup</div>
+    <div></div>
+    <div><span class="tok-var">rows</span> = []</div>
+    <div><span class="tok-kw">for</span> <span class="tok-var">page</span> <span class="tok-kw">in</span> <span class="tok-fn">range</span>(<span class="tok-num">1</span>, <span class="tok-num">4</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">soup</span> = <span class="tok-fn">BeautifulSoup</span>(<span class="tok-fn">requests.get</span>(</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">f</span>(<span class="tok-str">"https://quotes.toscrape.com/page/{page}/"</span>), timeout=<span class="tok-num">10</span>).text,</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"html.parser"</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">for</span> <span class="tok-var">q</span> <span class="tok-kw">in</span> <span class="tok-fn">soup.select</span>(<span class="tok-str">".quote"</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">rows</span>.append([<span class="tok-fn">q.select_one</span>(<span class="tok-str">".text"</span>).get_text().strip(),</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">q.select_one</span>(<span class="tok-str">".author"</span>).get_text()])</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">time.sleep</span>(<span class="tok-num">2</span>)</div>
+    <div></div>
+    <div><span class="tok-kw">with</span> <span class="tok-fn">open</span>(<span class="tok-str">"quotes.csv"</span>, <span class="tok-str">"w"</span>, newline=<span class="tok-str">""</span>, encoding=<span class="tok-str">"utf-8"</span>) <span class="tok-kw">as</span> <span class="tok-var">f</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">w</span> = <span class="tok-fn">csv.writer</span>(<span class="tok-var">f</span>); <span class="tok-var">w.writerow</span>([<span class="tok-str">"text"</span>, <span class="tok-str">"author"</span>]); <span class="tok-var">w.writerows</span>(<span class="tok-var">rows</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-fn">f</span>(<span class="tok-str">"Saved {len(rows)} quotes"</span>))</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1330px; top:320px; width:510px; z-index:10;">
+    <div class="chip chip-magenta">CHALLENGES INSIDE</div>
+    <div style="margin-top:20px; font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-mid); line-height:1.6;">
+      long lines? <span class="mono">black</span> the code formatter fixes that.<br><br>
+      newline=<span class="tok-str">""</span> → no blank rows on Windows.<br><br>
+      Why sleep? politeness.
+    </div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:25px; color:var(--text-lo); direction:rtl; margin-top:20px;">الناتج: ملف quotes.csv بثلاثين اقتباسًا — بيانات حقيقية من ثلاث صفحات</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">47 / 50</div>
+</div>
+<template data-slide-notes>
+Live-coding session #2 (15 min). Extend to the full pipeline. Show how we stay readable: multiline requests.get(...,) and CSV writer.
+
+Run it: expect "Saved 30 quotes" (3 pages × 10). Then open quotes.csv in Excel/Notepad to celebrate.
+
+Debug tips to demo: what if sleep was missing? Show the speed difference and why sites dislike it. What if encoding was missing? Show garbled Arabic/smart-quotes.
+
+Arabic tip: newline="" مهم على ويندوز — بدونه تظهر أسطر فارغة في ملف CSV. جرّبوها لتروا الفرق.
+</template>
+</body>
+</html>

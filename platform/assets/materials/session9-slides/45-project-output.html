@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime" style="top:-150px; left:-120px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-200px; right:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">PROJECT // THE FULL RUN</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:70px; font-weight:700; color:var(--text-hi);">💼 Attack the app — watch it survive</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:1100px; height:600px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span><span class="code-dot code-dot-y"></span><span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">terminal — a hostile user</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:388px; width:1060px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.7;">
+    <div><span class="tok-op">$</span> <span class="tok-var">python pyguess.py</span></div>
+    <div><span class="tok-out" style="color:var(--text-mid);">Your name: Sara</span></div>
+    <div><span class="tok-out" style="color:var(--text-mid);">Guess 1-20: banana</span></div>
+    <div><span class="tok-out" style="color:var(--neon-orange);">Not a number. Try again.&nbsp;&nbsp;# 🎯 ValueError caught</span></div>
+    <div><span class="tok-out" style="color:var(--text-mid);">Guess 1-20: 99</span></div>
+    <div><span class="tok-out" style="color:var(--neon-orange);">Enter a number between 1 and 20.&nbsp;&nbsp;# 🎯 range check</span></div>
+    <div><span class="tok-out" style="color:var(--text-mid);">Guess 1-20: 12</span></div>
+    <div><span class="tok-out" style="color:var(--text-mid);">Too low.</span></div>
+    <div><span class="tok-out" style="color:var(--text-mid);">Guess 1-20: 17</span></div>
+    <div><span class="tok-out" style="color:var(--neon-orange);">Too high.</span></div>
+    <div><span class="tok-out" style="color:var(--text-mid);">Guess 1-20: 15</span></div>
+    <div><span class="tok-out" style="color:var(--neon-lime);">Got it in 4 tries!</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1240px; top:330px; width:600px; height:600px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.35); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1280px; top:372px; width:520px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--neon-lime);">Why it survived 🏆</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:22px; line-height:1.7;">
+      ▶ "banana" → <span class="mono" style="color:var(--neon-magenta);">except ValueError</span> → retry.<br><br>
+      ▶ "99" → <span class="mono" style="color:var(--neon-yellow);">range check</span> → retry.<br><br>
+      ▶ Every hostile input = a <b style="color:var(--text-hi);">friendly retry</b>.<br><br>
+      ▶ scores.json created/updated safely.
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-hi); margin-top:24px;">You built this. 🙌</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:26px; color:var(--text-lo); direction:rtl; margin-top:20px;">اللعبة صمدت أمام "banana" و"99" وكل ما رميناه عليها: هذا هو كود لا ينهار.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">45 / 50</div>
+</div>
+<template data-slide-notes>
+## Project output — attack it (10 min)
+
+**Run the finished app in front of the class.** Then become the hostile user: type "banana", "99", empty string, "17.5", a negative number. Every single one gets a friendly retry and the game continues. This is the payoff moment of the session.
+
+**Narrate each recovery:** "banana → ValueError → caught → retry. 99 → range check → retry." Students should be able to predict which shield catches which attack by now — let them call it out.
+
+**Bonus robustness demo:** after the game, corrupt scores.json (open it, type "not json"), run again → "Corrupt file. Starting fresh." Another shield they built themselves.
+
+**Close the loop:** "Remember slide 2's crash? That same 'banana' now glides past our shields. Compare — this is the whole session in one run."
+
+**Arabic tip:** اجعل التخريب لعبة: طالب يعطي مدخلًا خاطئًا، وآخر يتنبأ بأي درع سيحمي اللعبة.
+</template>
+</body>
+</html>

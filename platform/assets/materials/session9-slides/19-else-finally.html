@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-150px; right:-120px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-200px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">CORE // 05 — THE FULL SHIELD</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi);">➕ else &amp; finally</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); margin-top:26px;">Two extra blocks that make try/except <b style="color:var(--text-hi);">complete</b>.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:420px; width:840px; height:500px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.35); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:460px; width:760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700; color:var(--neon-lime);">else — the "all good" lane</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:22px; line-height:1.7;">Runs only when the <span class="mono" style="color:var(--neon-magenta);">try</span> block completed with <b style="color:var(--text-hi);">no exception</b>. Perfect for "success" logic.</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:25px; color:var(--text-hi); margin-top:28px; line-height:1.7;">
+      <span class="tok-kw">try</span>: <span class="tok-var">data</span> <span class="tok-op">=</span> <span class="tok-fn">json.load</span>(<span class="tok-var">f</span>)<br>
+      <span class="tok-kw">except</span>: <span class="tok-com"># file broken</span><br>
+      <span class="tok-kw">else</span>: <span class="tok-fn">print</span>(<span class="tok-str">"Parsed OK!"</span>)&nbsp;<span class="tok-com"># ✅ success path</span>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:420px; width:840px; height:500px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.35); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1020px; top:460px; width:760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700; color:var(--neon-cyan);">finally — the clean-up lane</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:22px; line-height:1.7;">Runs <b style="color:var(--text-hi);">ALWAYS</b> — error or not, return or not. Use it to close files, release resources.</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:25px; color:var(--text-hi); margin-top:28px; line-height:1.7;">
+      <span class="tok-kw">try</span>:<br>
+      &nbsp;&nbsp;<span class="tok-var">f</span> <span class="tok-op">=</span> <span class="tok-fn">open</span>(<span class="tok-str">"data.txt"</span>)<br>
+      <span class="tok-kw">finally</span>: <span class="tok-var">f</span>.<span class="tok-fn">close</span>()&nbsp;<span class="tok-com"># 🧹 always runs</span>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-lo); margin-top:24px; line-height:1.6;">Order matters: <span class="mono" style="color:var(--neon-yellow);">try → except → else → finally</span>.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:960px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl;">else تُنفَّذ عند النجاح فقط، بينما finally تُنفَّذ دائمًا للتنظيف: try ثم except ثم else ثم finally بالترتيب.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">19 / 50</div>
+</div>
+<template data-slide-notes>
+## else & finally
+
+**Teach as two "lanes" (5 min):**
+- **else** = the success lane: runs only if try finished without exception. Why use it instead of just putting code in try? Because then success-logic can't accidentally trigger an except. It's about clarity.
+- **finally** = the guarantee: always runs, even if an exception occurred or a return happened inside try. Used for cleanup (closing files, connections). Reminder: `with open()` already auto-closes, so finally matters most for resources that need manual cleanup.
+
+**Order recap:** try → except → else → finally. except and else are optional-ish (you need at least try), finally optional but powerful.
+
+**Common exam trap to warn about:** finally runs even after a `return` inside try. Show this later in code slide 20.
+
+**Arabic tip:** "else مثل الطريق الناجح، وfinally مثل التنظيف المضمون مهما حدث."
+</template>
+</body>
+</html>

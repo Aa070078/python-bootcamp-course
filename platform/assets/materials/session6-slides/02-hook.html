@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="left:-200px; top:-150px;"></div>
+  <div class="bg-glow-magenta" style="right:-180px; bottom:-180px;"></div>
+
+  <!-- HOOK QUESTION -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:150px; width:1760px; z-index:10;">
+    <div class="kicker">🎯 THE HOOK — THE PROBLEM</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:64px; font-weight:700; color:var(--text-hi); margin-top:24px; line-height:1.2;">You open your phone 📱 &mdash; <span style="color:var(--neon-yellow);">10,000 contacts</span> inside.</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:54px; font-weight:600; color:var(--text-mid); margin-top:22px;">How do you find the <span style="color:var(--neon-cyan); text-shadow:0 0 30px rgba(34,211,238,0.4);">unique phone numbers</span> &mdash; instantly?</div>
+    <div class="arabic" style="font-size:30px; color:var(--text-lo); margin-top:20px;">ماذا يحدث عندما يكون لديك 10,000 جهة اتصال وتحتاج إلى أرقام الهواتف الفريدة فقط؟</div>
+  </div>
+
+  <!-- PROBLEM CARDS -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:690px; width:540px; height:240px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:108px; top:716px; width:484px; z-index:10;">
+    <div style="font-size:46px;">📥</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; font-weight:700; color:var(--text-hi); margin-top:10px;">10,000 contacts</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:var(--text-lo); margin-top:8px; line-height:1.4;">Same number saved twice, three times, more…</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:650px; top:690px; width:540px; height:240px; background:rgba(250,204,21,0.06); border:1px solid rgba(250,204,21,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:678px; top:716px; width:484px; z-index:10;">
+    <div style="font-size:46px;">🔁</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; font-weight:700; color:var(--text-hi); margin-top:10px;">Duplicates everywhere</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--text-lo); margin-top:8px;">ali, ali, sam, noor, sam, sam…</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1220px; top:690px; width:540px; height:240px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1248px; top:716px; width:484px; z-index:10;">
+    <div style="font-size:46px;">⚡</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; font-weight:700; color:var(--text-hi); margin-top:10px;">Manual search = slow</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:24px; color:var(--text-lo); margin-top:8px; line-height:1.4;">Scanning 10,000 items one by one — that's O(n).</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S06</div>
+  <div class="chrome-pagenum">02 / 45</div>
+</div>
+<template data-slide-notes>
+**Slide 2 — Hook**
+
+Dramatize this: "Scroll your phone's contacts. Ali appears twice. Sam three times. Finding the *unique* ones by hand takes forever — and you'll make mistakes."
+
+- Build tension: "By the end of this hour you'll write 3 lines of Python that solve it instantly."
+- Point at each card as you say it: volume problem → duplicates → slow manual work.
+- Reveal the promise: "The tool? A **set** — a collection that refuses duplicates."
+
+Ask: "How many unique numbers do you think are actually in that list?" Let them guess; they'll learn the exact tool soon.
+
+Arabic tip: اشرح كلمة "فريد/فريدة" بالعربية: القيمة الفريدة تعني التي لا تتكرر. اسأل الطلاب: هل رقم والدك مكرر في هواتفك؟ 😄
+</template>
+</body>
+</html>

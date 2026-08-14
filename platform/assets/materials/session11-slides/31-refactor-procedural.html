@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-lime"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; z-index:10;">
+    <div class="kicker">UPGRADE // SAME LOGIC, NEW STRUCTURE</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:150px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:78px; font-weight:700; color:var(--text-hi);">Refactor: script → class 🛠️</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:16px;">إعادة الهيكلة: من قوائم متفرقة إلى صنف واحد متماسك</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:320px; width:860px; z-index:10;">
+    <span class="chip chip-magenta">BEFORE — PROCEDURAL</span>
+  </div>
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:372px; width:860px; height:450px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">before.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:430px; width:800px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.5;">
+    <div><span class="tok-var">names</span> <span class="tok-op">=</span> [<span class="tok-str">"Sara"</span>, <span class="tok-str">"Omar"</span>]</div>
+    <div><span class="tok-var">grades</span> <span class="tok-op">=</span> [[<span class="tok-num">90</span>], [<span class="tok-num">75</span>]]</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-kw">def</span> <span class="tok-fn">average</span>(<span class="tok-var">name</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">i</span> <span class="tok-op">=</span> <span class="tok-var">names</span>.<span class="tok-fn">index</span>(<span class="tok-var">name</span>)</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-fn">sum</span>(<span class="tok-var">grades</span>[<span class="tok-var">i</span>]) <span class="tok-op">/</span> <span class="tok-fn">len</span>(<span class="tok-var">grades</span>[<span class="tok-var">i</span>])</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-com"># Sara's name & grades live in 2 lists.</span></div>
+    <div><span class="tok-com"># Delete from one → breaks the other.</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1000px; top:320px; width:840px; z-index:10;">
+    <span class="chip chip-lime">AFTER — OOP</span>
+  </div>
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:1000px; top:372px; width:840px; height:450px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">after.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1030px; top:430px; width:780px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.5;">
+    <div><span class="tok-kw">class</span> <span class="tok-var">Student</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">__init__</span>(<span class="tok-var">self</span>, <span class="tok-var">name</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">name</span> <span class="tok-op">=</span> <span class="tok-var">name</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">grades</span> <span class="tok-op">=</span> []</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">average</span>(<span class="tok-var">self</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-fn">sum</span>(<span class="tok-var">self</span>.<span class="tok-var">grades</span>) <span class="tok-op">/</span> <span class="tok-fn">len</span>(<span class="tok-var">self</span>.<span class="tok-var">grades</span>)</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-var">sara</span> <span class="tok-op">=</span> <span class="tok-fn">Student</span>(<span class="tok-str">"Sara"</span>)</div>
+    <div><span class="tok-var">sara</span>.<span class="tok-var">grades</span>.<span class="tok-fn">append</span>(<span class="tok-num">90</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">sara</span>.<span class="tok-fn">average</span>()) <span class="tok-com"># 90.0</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:860px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:31px; color:var(--text-mid);">➡️ Same logic, <b>safer structure</b>. Sara's data + her behavior now live together — refactoring isn't rewriting, it's reorganizing.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S11</div>
+  <div class="chrome-pagenum">31 / 50</div>
+</div>
+<template data-slide-notes>
+**Refactoring = changing structure without changing behavior.**
+
+- Walk both panels line by line: the "after" version computes the exact same average, but the data can't drift out of sync anymore.
+- This is the answer to the hook slide: this is how you'd actually fix the messy `grades.py` from slide 02.
+- Refactoring recipe (write on board):
+  1. Find the nouns → classes (Student).
+  2. Move each noun's data in (name, grades).
+  3. Move each verb in (average).
+  4. Run the tests — same output, better code.
+- Arabic tip: «إعادة الهيكلة» = refactoring — change the shape, keep the meaning.
+- Transition to the project: "Let's do this for real — a whole Bank."
+</template>
+</body>
+</html>

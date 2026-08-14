@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-lime"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; z-index:10;">
+    <div class="kicker">PRINCIPLE #3 // ONE INTERFACE</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:160px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:84px; font-weight:700; color:var(--text-hi);">Polymorphism: one call, many forms 🎭</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:16px;">تعدد الأشكال: نفس الاستدعاء pet.speak() يعطي صوتًا مختلفًا حسب الكائن</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:360px; width:1080px; height:470px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">polymorphism.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:418px; width:1020px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.5;">
+    <div><span class="tok-kw">class</span> <span class="tok-var">Animal</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">__init__</span>(<span class="tok-var">self</span>, <span class="tok-var">name</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">name</span> <span class="tok-op">=</span> <span class="tok-var">name</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-kw">class</span> <span class="tok-var">Dog</span>(<span class="tok-var">Animal</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">speak</span>(<span class="tok-var">self</span>): <span class="tok-kw">return</span> <span class="tok-str">"Woof!"</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-kw">class</span> <span class="tok-var">Cat</span>(<span class="tok-var">Animal</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">speak</span>(<span class="tok-var">self</span>): <span class="tok-kw">return</span> <span class="tok-str">"Meow!"</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-var">zoo</span> <span class="tok-op">=</span> [<span class="tok-fn">Dog</span>(<span class="tok-str">"Rex"</span>), <span class="tok-fn">Cat</span>(<span class="tok-str">"Mimi"</span>), <span class="tok-fn">Dog</span>(<span class="tok-str">"Max"</span>)]</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-kw">for</span> <span class="tok-var">pet</span> <span class="tok-kw">in</span> <span class="tok-var">zoo</span>: <span class="tok-com"># one loop, every pet behaves right</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">print</span>(<span class="tok-fn">f</span><span class="tok-str">"{pet.name} says {pet.speak()}"</span>)</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1240px; top:360px; width:600px; height:470px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1270px; top:400px; width:540px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700; color:var(--text-hi);">The payoff 💥</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:22px; line-height:1.65;">
+      🎠 The loop doesn't know or care which animal is which.<br><br>
+      📞 Same call: <span class="mono">pet.speak()</span><br>
+      🔊 Different result per object.
+    </div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:25px; color:var(--neon-lime); margin-top:22px;">Rex says Woof!<br>Mimi says Meow!<br>Max says Woof!</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S11</div>
+  <div class="chrome-pagenum">26 / 50</div>
+</div>
+<template data-slide-notes>
+**Polymorphism = "many forms".** The same method name behaves differently depending on the object it's called on.
+
+- The magic: the loop is generic. It can handle any future animal you add (a `Duck`, a `Pig`) without changing the loop.
+- This is the biggest practical benefit of inheritance + overriding together.
+- Demo live: add a `class Duck(Animal)` with `speak()` returning "Quack!" — add it to zoo, nothing else changes, output just works.
+- Word origin (quick, fun): poly = many, morph = form.
+- Arabic tip: «تعدد الأشكال» = polymorphism — اسمٌ واحد، أشكالٌ متعددة.
+- This "program to the interface, not the implementation" idea is what they'll see in every framework.
+</template>
+</body>
+</html>

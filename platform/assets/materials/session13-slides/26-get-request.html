@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime" style="top:-240px; right:-160px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-280px; left:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">🚀 CORE CONCEPT #12</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:80px; font-weight:700; color:var(--text-hi); margin-top:14px;">Your first <span style="color:var(--neon-cyan);">GET</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:310px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-lo);">Four lines. One real API. Live currency rates. Let's go. 🐍</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:400px; width:900px; height:360px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:450px; width:840px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:28px; line-height:1.75;">
+    <div><span class="tok-kw">import</span> <span class="tok-var">requests</span></div>
+    <div><br></div>
+    <div><span class="tok-var">resp</span> <span class="tok-op">=</span> <span class="tok-var">requests</span>.<span class="tok-fn">get</span>(</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"https://api.frankfurter.app/latest?from=USD&amp;to=EUR"</span></div>
+    <div>)</div>
+    <div><br></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">resp</span>.<span class="tok-var">status_code</span>)&nbsp;&nbsp;<span class="tok-com"># 200</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">resp</span>.<span class="tok-var">text</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-com"># raw JSON as text</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1030px; top:400px; width:810px; height:360px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.4); border-radius:16px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1070px; top:440px; width:730px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-magenta);">WHAT HAPPENS</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:16px; line-height:1.9;">
+      1️⃣ <span style="color:var(--text-hi);">requests.get()</span> builds the request<br>
+      2️⃣ Sends it to frankfurter.app<br>
+      3️⃣ Program <span style="color:var(--neon-cyan);">waits</span> for the answer<br>
+      4️⃣ Everything lands in the <span style="color:var(--neon-lime);">resp</span> object<br><br>
+      <span style="color:var(--text-hi);">status_code</span> → <span class="mono">200</span><br>
+      <span style="color:var(--text-hi);">text</span> → the JSON as a string
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:810px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-lo);">If you have internet, run it right now. If the network is off, the code is still correct — it just needs a connection.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:900px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">أول طلب GET: أسطر قليلة تجلب لك سعر الصرف الحي — هكذا تتحدث Python مع العالم الخارجي 🚀</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">26 / 50</div>
+</div>
+<template data-slide-notes>
+First GET — live coding moment (5 minutes).
+
+Walk through line by line:
+1. import requests
+2. requests.get(url) — note we pass the URL *with* query params inline here.
+3. resp.status_code → 200
+4. resp.text → raw JSON string
+
+Then LIVE RUN it in the terminal. If no internet, show the expected output (printed on screen) and move on.
+
+Expected output (approx):
+```
+200
+{"amount":1.0,"base":"USD","date":"2026-08-03","rates":{"EUR":0.92}}
+```
+
+Common issue: ModuleNotFoundError → they forgot `pip install requests`.
+
+This is the "hello world" of APIs. Celebrate it: "You just talked to a server in another country."
+
+Arabic tip: هذا أول كود فعلي للجلسة — اجعل الطلاب يكتبونه بأيديهم، لا ينسخونه فقط. الكتابة اليدوية تثبّت التعلم.
+</template>
+</body>
+</html>

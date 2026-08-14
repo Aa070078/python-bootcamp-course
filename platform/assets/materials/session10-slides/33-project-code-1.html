@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="bottom:-180px; left:-200px;"></div>
+  <div class="bg-glow-magenta" style="top:80px; right:-220px;"></div>
+
+  <div class="chrome-topbar">
+    <span class="chrome-dot"></span>
+    <span>PROJECT // STEP 1 — PREPARE</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:100px; width:1760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-cyan); letter-spacing:0.25em; text-transform:uppercase;">🚀 PROJECT · CODE 1/2</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:66px; font-weight:700; color:var(--text-hi); margin-top:12px;">Step 1: <span style="color:var(--neon-lime);">README</span> + <span style="color:var(--neon-lime);">.gitignore</span> + clean folder</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:900px; height:300px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">bash — prepare</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:400px; width:840px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:28px; line-height:1.8;">
+    <div><span class="tok-var">$</span> cd my_project <span class="tok-com"># your old project folder</span></div>
+    <div><span class="tok-var">$</span> touch README.md .gitignore</div>
+    <div><span class="tok-com"># write a short README (title + how to run)</span></div>
+    <div><span class="tok-com"># add __pycache__/ and venv/ to .gitignore</span></div>
+    <div><span class="tok-var">$</span> git init -b main</div>
+    <div><span class="tok-var">$</span> git add README.md .gitignore</div>
+    <div><span class="tok-var">$</span> git commit -m <span class="tok-str">"Add README and gitignore"</span></div>
+    <div class="tok-out">[main 3b2a1c0] Add README and gitignore</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1040px; top:340px; width:800px; height:300px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.3); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1070px; top:380px; width:740px; z-index:10;">
+    <div style="font-size:50px;">🧹</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:33px; color:var(--text-hi); font-weight:600; margin-top:10px;">Why commit docs first?</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:14px; line-height:1.6;">The first commit is the foundation. Clean files first, then code — your history reads like a pro already.</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:1040px; top:690px; width:800px; height:210px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">my_project/ structure</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1070px; top:740px; width:740px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:27px; line-height:1.7;">
+    <div style="color:var(--neon-yellow);">📁 my_project/</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;├── <span class="tok-str">.gitignore</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;├── <span class="tok-str">README.md</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;└── <span class="tok-str">app.py</span> <span class="tok-com">(coming next)</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:930px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">الخطوة 1: أنشئ README و .gitignore والتزمهما قبل الكود — بداية نظيفة.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S10</div>
+  <div class="chrome-pagenum">33 / 50</div>
+</div>
+<template data-slide-notes>
+**Slide 33 — Project code 1 (12 min)**
+- Live: pick a demo project on the projector and do Step 1 with the class.
+- Students do the SAME with their own project. Keep files minimal: one README + one .gitignore first.
+- Remind them `touch` works in Git Bash; in other shells create the files in the editor.
+- README checklist: title + "how to run" + features (from slide 31). .gitignore: `__pycache__/`, `venv/`, `*.pyc`.
+- First commit is docs-only — praise that as a professional habit.
+- Watch for: students naming it `readme.md` (works, but `README.md` is convention).
+- Arabic tip: "النظافة قبل الكود" — اشرح أنها عادة المحترفين: يبدأون بسجل المشروع.
+</template>
+</body>
+</html>

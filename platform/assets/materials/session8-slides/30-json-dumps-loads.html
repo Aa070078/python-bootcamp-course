@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-200px; right:-160px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-180px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1700px; z-index:10;">
+    <div class="kicker">🔄 CONCEPT 10 — SERIALIZATION</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:84px; font-weight:700; color:var(--text-hi); margin-top:10px;">dumps / loads — string edition</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:340px; width:1500px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); line-height:1.45;"><b style="color:var(--neon-cyan);">dumps</b> = <b>d</b>ump → <b>s</b>tring. <b style="color:var(--neon-cyan);">loads</b> = <b>l</b>oad → <b>s</b>tring. They convert between Python objects and <b style="color:var(--text-hi);">JSON text</b> — perfect for sending data over the network.</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:500px; width:1240px; height:380px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">json_strings.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:560px; width:1180px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:27px; line-height:1.6;">
+    <div><span class="tok-kw">import</span> <span class="tok-var">json</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-var">data</span> <span class="tok-op">=</span> {<span class="tok-str">"name"</span>: <span class="tok-str">"Nour"</span>, <span class="tok-str">"age"</span>: <span class="tok-num">18</span>}</div>
+    <div><span class="tok-var">text</span> <span class="tok-op">=</span> <span class="tok-var">json</span>.<span class="tok-fn">dumps</span>(<span class="tok-var">data</span>)&nbsp;&nbsp;<span class="tok-com"># dict → JSON string</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-fn">type</span>(<span class="tok-var">text</span>), <span class="tok-var">text</span>)</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-var">back</span> <span class="tok-op">=</span> <span class="tok-var">json</span>.<span class="tok-fn">loads</span>(<span class="tok-var">text</span>)&nbsp;&nbsp;<span class="tok-com"># JSON string → dict</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">back</span>[<span class="tok-str">"name"</span>])</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1380px; top:530px; width:460px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid);">🖥️ Output:</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-lime); margin-top:16px;">&lt;class 'str'&gt; {"name": "Nour", "age": 18}</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-lime);">Nour</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:20px;">dumps يحوّل القاموس إلى نص JSON، وloads يعيد تحويل النص إلى قاموس</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S08</div>
+  <div class="chrome-pagenum">30 / 50</div>
+</div>
+<template data-slide-notes>
+**dumps / loads — 6 min.**
+
+- mnemonic: the **s** in dumps/loads = **s**tring. dump/load (no s) = **f**ile. Save this slide for the cheat sheet.
+- Live demo: print `type(text)` → str; then loads brings the dict back and we index `back["name"]`.
+- Show what happens with `indent=2` for pretty printing.
+- Arabic tip: «s تعني نص» (s means string).
+</template>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-150px; right:-120px;"></div>
+  <div class="bg-glow-lime" style="bottom:-200px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">CORE // 09 — ORGANIZE YOUR CODE</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi);">📦 What is a module?</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); margin-top:26px;">A module is simply a <b style="color:var(--text-hi);">.py file</b>. Its functions, variables and classes become reusable <b style="color:var(--text-hi);">building blocks</b>.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:420px; width:560px; height:470px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:115px; top:460px; width:500px; z-index:10;">
+    <div style="font-size:52px;">🗄️</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--text-hi); margin-top:8px;">One file = one module</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:18px; line-height:1.6;">Write <span class="mono" style="color:var(--neon-cyan);">math_utils.py</span> once. Import it in 10 other programs. <b style="color:var(--text-hi);">Write once, reuse forever.</b></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-lo); margin-top:20px; line-height:1.6;">You already used modules! <span class="mono" style="color:var(--neon-lime);">json</span>, <span class="mono" style="color:var(--neon-lime);">math</span>, <span class="mono" style="color:var(--neon-lime);">random</span> — all .py files somewhere on disk.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:680px; top:420px; width:1160px; height:470px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.35); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:720px; top:460px; width:1080px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--neon-lime);">Why split code into modules? 🧠</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:22px; line-height:1.8;">
+      ✅ <b style="color:var(--text-hi);">Readability</b> — 3000-line files scare humans.<br>
+      ✅ <b style="color:var(--text-hi);">Reuse</b> — import your helpers anywhere.<br>
+      ✅ <b style="color:var(--text-hi);">Teamwork</b> — each dev owns a file.<br>
+      ✅ <b style="color:var(--text-hi);">Testing</b> — debug one small file at a time.<br><br>
+      💡 Rule of thumb: if a file is doing 3 different jobs, split it.
+    </div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:26px; color:var(--text-lo); direction:rtl; margin-top:20px;">الوحدة النمطية هي ملف .py بسيط؛ تُكتب مرة واحدة وتُستعمل في مشاريع كثيرة، تمامًا مثل json وrandom.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">28 / 50</div>
+</div>
+<template data-slide-notes>
+## What is a module?
+
+**Demystify (3 min):** A module is literally a .py file. Nothing magic. Your game.py is a module! The magic is that other files can import it.
+
+**They've used modules already:** json (session 8!), math, random. Point out that those are just .py files that ship with Python (stdlib) — the SAME mechanism they'll use for their own files.
+
+**Why modularize:** readability, reuse, teamwork, testability. Use a real analogy: a book split into chapters vs one giant wall of text.
+
+**Demo idea:** show `print(math.__file__)` — it prints the actual path of math.py on disk. Students love seeing the real file.
+
+**Arabic tip:** "الوحدة = ملف بايثون واحد." كرّر هذا التعريف لأنه يزيل كل الغموض.
+</template>
+</body>
+</html>

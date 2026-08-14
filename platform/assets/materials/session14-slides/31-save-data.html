@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta"></div>
+  <div class="bg-glow-lime"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:70px; width:1760px; z-index:10;">
+    <div class="kicker">CODE // SAVING RESULTS 💾</div>
+    <div style="margin-top:22px; font-family:'Space Grotesk',sans-serif; font-size:54px; font-weight:700; color:var(--text-hi);">JSON, CSV — then reuse it anywhere</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:12px;">نحفظ القائمة في ملفات JSON وCSV لاستخدامها في التحليل لاحقًا</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:290px; width:1200px; height:560px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">save_books.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" data-lang="python" style="position:absolute; left:110px; top:350px; width:1140px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.6;">
+    <div><span class="tok-kw">import</span> csv, json</div>
+    <div></div>
+    <div><span class="tok-var">rows</span> = [{<span class="tok-str">"title"</span>: <span class="tok-str">"Dune"</span>, <span class="tok-str">"author"</span>: <span class="tok-str">"Frank Herbert"</span>},</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<span class="tok-str">"title"</span>: <span class="tok-str">"1984"</span>, <span class="tok-str">"author"</span>: <span class="tok-str">"George Orwell"</span>}]</div>
+    <div></div>
+    <div><span class="tok-kw">with</span> <span class="tok-fn">open</span>(<span class="tok-str">"books.json"</span>, <span class="tok-str">"w"</span>, encoding=<span class="tok-str">"utf-8"</span>) <span class="tok-kw">as</span> <span class="tok-var">f</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">json.dump</span>(<span class="tok-var">rows</span>, <span class="tok-var">f</span>, indent=<span class="tok-num">2</span>, ensure_ascii=<span class="tok-kw">False</span>)</div>
+    <div></div>
+    <div><span class="tok-kw">with</span> <span class="tok-fn">open</span>(<span class="tok-str">"books.csv"</span>, <span class="tok-str">"w"</span>, newline=<span class="tok-str">""</span>, encoding=<span class="tok-str">"utf-8"</span>) <span class="tok-kw">as</span> <span class="tok-var">f</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">writer</span> = <span class="tok-fn">csv.DictWriter</span>(<span class="tok-var">f</span>, fieldnames=[<span class="tok-str">"title"</span>, <span class="tok-str">"author"</span>])</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">writer.writeheader</span>()</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">writer.writerows</span>(<span class="tok-var">rows</span>)</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1330px; top:320px; width:510px; z-index:10;">
+    <div class="chip chip-magenta">WHEN WHICH?</div>
+    <div style="margin-top:20px; font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-mid); line-height:1.6;">
+      🗂️ <b>JSON</b> → nested data, re-import with <span class="mono">json.load</span><br>
+      📊 <b>CSV</b> → spreadsheets / Excel / pandas<br>
+      🗄️ <b>SQLite</b> → big data + queries (session 12!)
+    </div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:25px; color:var(--text-lo); direction:rtl; margin-top:20px;">CSV للجداول، JSON للهياكل المتداخلة، SQLite للبيانات الكبيرة</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">31 / 50</div>
+</div>
+<template data-slide-notes>
+Live: run save_books.py, then `type books.json` and `type books.csv` to show both files. 
+
+Explain options: encoding="utf-8" for Arabic/special chars (important!), ensure_ascii=False keeps real characters in JSON. newline="" avoids blank lines in CSV on Windows.
+
+SQLite reminder: they already know sqlite3 from session 12 — we can store scraped rows with INSERT.
+
+Arabic tip: utf-8 ضروري حتى لا تتشوه الأحرف العربية عند الحفظ. جرّبوا بدونها وستلاحظون الفرق.
+</template>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime"></div>
+  <div class="bg-glow-magenta"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span> POLYMORPHISM // CHECK</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:140px; width:1760px; z-index:10;">
+    <div class="kicker">QUICK CHECK #7</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:64px; font-weight:700; color:var(--text-hi); margin-top:14px;">zoo holds Dogs and Cats. The SAME call<br><span class="mono">pet.speak()</span> gives different sounds.<br>This is called…</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:560px; width:850px; height:150px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.3); border-radius:18px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:595px; width:790px; z-index:10;">
+    <span class="chip chip-cyan" style="margin-right:16px;">A</span><span style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid);">composition</span>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:990px; top:560px; width:850px; height:150px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.3); border-radius:18px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1020px; top:595px; width:790px; z-index:10;">
+    <span class="chip chip-lime" style="margin-right:16px;">B</span><span style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid);">polymorphism</span>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:750px; width:850px; height:150px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.3); border-radius:18px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:785px; width:790px; z-index:10;">
+    <span class="chip chip-cyan" style="margin-right:16px;">C</span><span style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid);">recursion</span>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:990px; top:750px; width:850px; height:150px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.3); border-radius:18px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1020px; top:785px; width:790px; z-index:10;">
+    <span class="chip chip-cyan" style="margin-right:16px;">D</span><span style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid);">exception handling</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:950px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">نفس الاستدعاء على كائنات مختلفة يعطي نتائج مختلفة — ما اسم هذا المبدأ؟</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S11</div>
+  <div class="chrome-pagenum">27 / 50</div>
+</div>
+<template data-slide-notes>
+**Answer: B — polymorphism.** Same method call, object-specific behavior.
+
+- Reinforce with the phrase: "the caller writes the call once; each object decides what it means."
+- Contrast with A (composition = has-a, next slide) and C (recursion = a function calling itself).
+- Quick memory hook: «نفس الكلمة، نطق مختلف» — same word, different pronunciation.
+- If time allows, extend the zoo with a `Duck` and show nothing else changes — the strongest proof of polymorphism.
+- Keep moving — composition is next, then the big design-practice section (when to use OOP, refactoring).
+</template>
+</body>
+</html>

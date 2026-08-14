@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="left:-200px; top:-160px;"></div>
+  <div class="bg-glow-lime" style="right:-160px; bottom:-180px;"></div>
+
+  <!-- HEADER -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:150px; width:1760px; z-index:10;">
+    <div class="kicker">🔍 MEMBERSHIP</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:64px; font-weight:700; color:var(--text-hi); margin-top:16px;">Is it inside? <span class="mono" style="color:var(--neon-cyan);">in</span> / <span class="mono" style="color:var(--neon-magenta);">not in</span></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:12px;">Ask a set "does it contain this?" — it answers in <span style="color:var(--neon-lime);">one step</span>. ⚡</div>
+  </div>
+
+  <!-- CODE WINDOW -->
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:440px; width:1000px; height:480px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">check.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:112px; top:502px; width:940px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.8;">
+    <div><span class="tok-var">skills</span> <span class="tok-op">=</span> {<span class="tok-str">"python"</span>, <span class="tok-str">"sql"</span>, <span class="tok-str">"git"</span>}</div>
+    <div>&nbsp;</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"python"</span> <span class="tok-kw">in</span> <span class="tok-var">skills</span>)       <span class="tok-com"># True</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"java"</span> <span class="tok-kw">in</span> <span class="tok-var">skills</span>)         <span class="tok-com"># False</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"java"</span> <span class="tok-kw">not in</span> <span class="tok-var">skills</span>)    <span class="tok-com"># True</span></div>
+  </div>
+
+  <!-- O(1) CARD -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1140px; top:440px; width:700px; height:260px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.4); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1172px; top:468px; width:640px; z-index:10;">
+    <div style="font-size:44px;">⚡</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; font-weight:700; color:var(--text-hi); margin-top:8px;">Instant check — O(1)</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-mid); margin-top:10px; line-height:1.5;">A set answers "is X here?" in <span style="color:var(--neon-lime); font-weight:700;">one step</span> — even with a million items.</div>
+  </div>
+
+  <!-- VISUAL SEARCH -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1140px; top:740px; width:700px; height:180px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.35); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1172px; top:770px; width:640px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-mid); line-height:1.5;">🔍 <span style="color:var(--text-hi);">python</span> <span style="color:var(--neon-lime);">→ found ✅</span> &nbsp;·&nbsp; <span style="color:var(--text-hi);">java</span> <span style="color:var(--neon-magenta);">→ not here ❌</span></div>
+    <div class="arabic" style="font-size:24px; color:var(--text-lo); margin-top:10px;">هل القيمة داخل المجموعة؟ — اختبار سريع باستخدام in و not in</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S06</div>
+  <div class="chrome-pagenum">11 / 45</div>
+</div>
+<template data-slide-notes>
+**Slide 11 — Membership with `in` / `not in`**
+
+This is THE killer feature of sets. Contrast with lists:
+
+- A list answers `in` by scanning every item (O(n)) — 10,000 steps for 10,000 contacts.
+- A set answers in one step (O(1)) — always fast, no matter the size.
+
+Demo in shell with `timeit` (optional, quick): searching a big list vs a big set.
+
+Emphasize the phrase: "If you only need *does it exist?*, a set is the right tool." That's the vocabulary for the project.
+
+Arabic tip: اربط بـ"هل الكلمة موجودة في القاموس؟" بالعربية. القاموس يجد الكلمة مباشرة — نفس فكرة O(1). هذا تمهيد أيضًا للقواميس.
+</template>
+</body>
+</html>

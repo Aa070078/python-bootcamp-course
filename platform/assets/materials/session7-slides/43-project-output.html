@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-180px; right:-150px;"></div>
+  <div class="bg-glow-lime" style="bottom:-220px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:100px; width:1720px; z-index:10;">
+    <div class="kicker">🖥️ PROJECT OUTPUT — IT RUNS!</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi); margin-top:14px;">🎉 The calculator works</div>
+    <div class="arabic" style="font-size:32px; color:var(--text-lo); margin-top:14px; direction:rtl;">ناتج تشغيل آلة الحاسبة — كل دالة تؤدي دورها</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:900px; height:480px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">terminal — sample run</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:400px; width:840px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:24px; line-height:1.6;">
+    <div><span class="tok-out">1) Add  2) Subtract  3) Multiply  4) Divide  5) Exit</span></div>
+    <div><span class="tok-out">Choose: 1</span></div>
+    <div><span class="tok-out">First number: 12</span></div>
+    <div><span class="tok-out">Second number: 8</span></div>
+    <div><span class="tok-out">20.0</span></div>
+    <div><span class="tok-out">1) Add  2) Subtract  3) Multiply  4) Divide  5) Exit</span></div>
+    <div><span class="tok-out">Choose: 4</span></div>
+    <div><span class="tok-out">First number: 10</span></div>
+    <div><span class="tok-out">Second number: 0</span></div>
+    <div><span class="tok-out">Cannot divide by zero!</span></div>
+    <div><span class="tok-out">Choose: 5</span></div>
+    <div><span class="tok-out">Bye!</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1060px; top:400px; width:760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700; color:var(--neon-lime);">Celebrate the details 🎊</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:18px; line-height:1.8;">
+      <div>✅ add(12, 8) → 20.0</div>
+      <div>✅ divide guard handles 0</div>
+      <div>✅ menu loops forever until 5</div>
+      <div>✅ clean exit message</div>
+    </div>
+    <div class="arabic" style="font-size:28px; color:var(--text-lo); margin-top:24px; direction:rtl;">برنامج حقيقي مبني من دوال صغيرة — هذا ما تعلمته اليوم كله</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S07</div>
+  <div class="chrome-pagenum">43 / 50</div>
+</div>
+<template data-slide-notes>
+- Run the finished program live — celebrate every working branch.
+- Point at each output line and which function produced it.
+- Have a volunteer try to break it: divide by zero → guard message.
+- Discuss the program flow: loop → menu → input → dispatch → print.
+- This is the proof: functions made the program modular and readable.
+- Arabic tip: كل خطوة في هذا الناتج تقابل دالة أو فرعًا كتبناه — اربط الاثنين.
+- Transition: "Time to train on your own — exercises."
+</template>
+</body>
+</html>

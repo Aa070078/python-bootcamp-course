@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-150px; right:-120px;"></div>
+  <div class="bg-glow-lime" style="bottom:-200px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">HOMEWORK // DO IT AT HOME</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:70px; font-weight:700; color:var(--text-hi);">🏠 Homework — build &amp; ship</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:1760px; height:200px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.35); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:380px; width:1680px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; font-weight:700; color:var(--neon-cyan);">1️⃣ Build a module — geometry.py</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:14px; line-height:1.6;">Functions: <span class="mono" style="color:var(--neon-lime);">area_circle(r)</span>, <span class="mono" style="color:var(--neon-lime);">area_rect(w, h)</span>. Guard the test prints with <span class="mono" style="color:var(--neon-yellow);">__name__ == "__main__"</span>. Then <span class="mono" style="color:var(--neon-yellow);">import geometry</span> in a second file and use it.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:570px; width:1760px; height:200px; background:rgba(250,204,21,0.05); border:1px solid rgba(250,204,21,0.35); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:610px; width:1680px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; font-weight:700; color:var(--neon-yellow);">2️⃣ Fix this broken program</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:14px; line-height:1.6;">Run it, read the traceback, fix it, then make it unbreakable: <span class="mono" style="color:var(--neon-orange);">print("welcome"); num = int("42abc"); print(10 / num)</span>. Explain what you changed and why, in two sentences.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:800px; width:1760px; height:200px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.35); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:840px; width:1680px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; font-weight:700; color:var(--neon-lime);">3️⃣ Go pro — venv + a real package</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:14px; line-height:1.6;">Create <span class="mono" style="color:var(--neon-cyan);">.venv</span>, activate it, <span class="mono" style="color:var(--neon-cyan);">pip install colorama</span>, print a colored message, then <span class="mono" style="color:var(--neon-cyan);">deactivate</span>. Screenshot the <span class="mono" style="color:var(--neon-yellow);">(.venv)</span> prompt as proof.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:26px; color:var(--text-lo); direction:rtl; margin-top:12px;">الواجب: وحدة هندسية، إصلاح كود مكسور، وبيئة افتراضية مع حزمة حقيقية — الصورة دليل الإنجاز.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">47 / 50</div>
+</div>
+<template data-slide-notes>
+## Homework (5 min to brief)
+
+**Go through all three tasks.**
+1. **geometry.py** — exercises everything from the modules half: functions, import, guard. Accept any naming as long as it works. Watch for ModuleNotFoundError (files must be in same folder).
+2. **Fix the broken program** — traceback reading practice. `int("42abc")` → ValueError; `10 / num` with num=0 → ZeroDivisionError. Two fixes, then wrap in try/except. The two-sentence explanation builds the "explain your debugging" habit.
+3. **venv + colorama** — the pipeline they'll use for every future project. Screenshot proves they saw the (.venv) prompt. Warn about activation path on Windows (.venv\Scripts\activate).
+
+**Deadline & sharing:** next session, quick 3-minute share. Praise any attempt — especially the screenshot.
+
+**Arabic tip:** ذكّرهم أن الواجب يقسّم على ثلاث "مهارات محترف": الوحدات، قراءة الأخطاء، والبيئة الافتراضية.
+</template>
+</body>
+</html>

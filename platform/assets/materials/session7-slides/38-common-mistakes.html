@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-180px; right:-150px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-220px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1720px; z-index:10;">
+    <div class="kicker">🐛 COMMON MISTAKES &amp; DEBUGGING</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi); margin-top:16px;">The 5 classic traps ⚠️</div>
+    <div class="arabic" style="font-size:32px; color:var(--text-lo); margin-top:14px; direction:rtl;">خمسة أخطاء شائعة — تعلّمها الآن لتتجنبها في مشروعك</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:850px; height:180px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.4); border-radius:18px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:366px; width:790px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--text-hi);">1️⃣ <span class="tok-kw">def</span> <span class="tok-fn">greet</span>()  <span class="tok-com"># no colon → SyntaxError</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:960px; top:340px; width:850px; height:180px; background:rgba(250,204,21,0.06); border:1px solid rgba(250,204,21,0.4); border-radius:18px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:990px; top:366px; width:790px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--text-hi);">2️⃣ print <span class="tok-kw">return</span> → prints <span class="tok-out">None</span> everywhere</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:550px; width:850px; height:180px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.4); border-radius:18px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:576px; width:790px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--text-hi);">3️⃣ bad indentation → <span class="tok-op">IndentationError</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:960px; top:550px; width:850px; height:180px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:18px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:990px; top:576px; width:790px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--text-hi);">4️⃣ <span class="tok-fn">add</span>(<span class="tok-num">3</span>) → <span class="tok-op">TypeError</span>: missing argument</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:780px; width:1720px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--neon-lime);">Debug recipe 🧑‍🔬: read the LAST line of the error → find the line number → check indentation &amp; return.</div>
+    <div class="arabic" style="font-size:30px; color:var(--text-lo); margin-top:12px; direction:rtl;">اقرأ السطر الأخير من الخطأ، وافحص رقم السطر، ثم تحقق من الإزاحة و return</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S07</div>
+  <div class="chrome-pagenum">38 / 50</div>
+</div>
+<template data-slide-notes>
+- Make these TRAPS fun: "who can find the bug first" rounds.
+- Read tracebacks aloud together — the LAST line is the real error.
+- #2 is the classic: student prints instead of returns, gets None, is confused.
+- Demo trap 4 live: TypeError message literally tells you what's missing.
+- Add a bonus trap verbally: calling a function before defining it → NameError.
+- Arabic tip: الخطأ ليس عدوًا — إنه رسالة إرشادية من بايثون.
+- Transition: "Same recipe, bigger dish — guided practice with student data."
+</template>
+</body>
+</html>

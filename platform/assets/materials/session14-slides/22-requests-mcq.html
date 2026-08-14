@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime"></div>
+  <div class="bg-glow-cyan"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1760px; z-index:10;">
+    <div class="kicker">CHECKPOINT // QUICK MCQ 🎯</div>
+    <div style="margin-top:26px; font-family:'Space Grotesk',sans-serif; font-size:52px; font-weight:700; color:var(--text-hi);">You request a page that doesn't exist. Which status code do you expect?</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:14px;">طلبت صفحة غير موجودة؛ ما رمز الحالة الذي تتوقعه؟</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:360px; width:1760px; z-index:10;">
+    <div style="display:flex; gap:30px; flex-wrap:wrap;">
+      <div style="width:850px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.3); border-radius:20px; padding:26px 30px;"><span class="chip chip-lime">A</span> <span class="mono" style="font-family:'JetBrains Mono',monospace; font-size:27px; color:var(--text-hi);">200 — OK</span></div>
+      <div style="width:850px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.3); border-radius:20px; padding:26px 30px;"><span class="chip chip-lime">B</span> <span class="mono" style="font-family:'JetBrains Mono',monospace; font-size:27px; color:var(--text-hi);">404 — Not Found</span></div>
+      <div style="width:850px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.3); border-radius:20px; padding:26px 30px;"><span class="chip chip-lime">C</span> <span class="mono" style="font-family:'JetBrains Mono',monospace; font-size:27px; color:var(--text-hi);">403 — Forbidden</span></div>
+      <div style="width:850px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.3); border-radius:20px; padding:26px 30px;"><span class="chip chip-lime">D</span> <span class="mono" style="font-family:'JetBrains Mono',monospace; font-size:27px; color:var(--text-hi);">500 — Server Error</span></div>
+    </div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">22 / 50</div>
+</div>
+<template data-slide-notes>
+Answer: B. 404 = Not Found. 403 means forbidden (you're not allowed), 500 means the server itself broke.
+
+Demo: `requests.get("https://quotes.toscrape.com/nope")` → 404. Show that raise_for_status() would raise HTTPError.
+
+Arabic tip: 404 = «العنوان خاطئ»، 403 = «ممنوع»، 500 = «الخادم مريض».
+</template>
+</body>
+</html>

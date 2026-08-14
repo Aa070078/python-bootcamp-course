@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-cyan"></div>
+<div class="chrome-topbar"><span class="chrome-dot"></span>SEARCH & SORT</div>
+
+<div class="kicker" style="position:absolute;top:100px;left:80px;">SORTING</div>
+<div class="arabic" style="position:absolute;top:140px;left:80px;font-size:24px;color:var(--text-lo);">ترتيب القائمة</div>
+<div style="position:absolute;top:200px;left:80px;"><div class="code-window" style="width:880px;">
+<div class="code-window-header">
+<div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+<span class="code-window-title">sorting.py</span>
+</div>
+<pre style="padding:24px 28px;margin:0;font-size:20px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span class="tok-var">scores</span> = [<span class="tok-num">88</span>, <span class="tok-num">95</span>, <span class="tok-num">70</span>, <span class="tok-num">92</span>]
+
+<span class="tok-com"># sort() — sorts IN PLACE (modifies)</span>
+<span class="tok-var">scores</span>.<span class="tok-fn">sort</span>()
+<span class="tok-fn">print</span>(<span class="tok-var">scores</span>)  <span class="tok-com"># [70, 88, 92, 95]</span>
+
+<span class="tok-com"># reverse() — flips in place</span>
+<span class="tok-var">scores</span>.<span class="tok-fn">reverse</span>()
+<span class="tok-fn">print</span>(<span class="tok-var">scores</span>)  <span class="tok-com"># [95, 92, 88, 70]</span>
+
+<span class="tok-com"># sorted(list) — returns a NEW list</span>
+<span class="tok-var">names</span> = [<span class="tok-str">"Zara"</span>, <span class="tok-str">"Ali"</span>, <span class="tok-str">"Omar"</span>]
+<span class="tok-var">ordered</span> = <span class="tok-fn">sorted</span>(<span class="tok-var">names</span>)
+<span class="tok-fn">print</span>(<span class="tok-var">ordered</span>)  <span class="tok-com"># ["Ali", "Omar", "Zara"]</span>
+<span class="tok-fn">print</span>(<span class="tok-var">names</span>)    <span class="tok-com"># unchanged ✅</span></pre>
+</div></div>
+<div style="position:absolute;top:200px;right:80px;width:800px;padding:24px;border-radius:14px;background:rgba(250,204,21,0.06);border:1px solid rgba(250,204,21,0.15);">
+  <div style="font-size:24px;font-weight:700;color:var(--neon-yellow);margin-bottom:16px;">🔄 sort() vs sorted()</div>
+  <div style="font-size:20px;color:var(--text-hi);line-height:1.8;margin-bottom:10px;"><span style="color:var(--neon-cyan);font-family:JetBrains Mono,monospace;">sort()</span> — changes the list, returns <span style="color:var(--neon-magenta);font-family:JetBrains Mono,monospace;">None</span></div>
+  <div style="font-size:20px;color:var(--text-hi);line-height:1.8;"><span style="color:var(--neon-lime);font-family:JetBrains Mono,monospace;">sorted()</span> — returns a new sorted list, original stays</div>
+</div>
+<div style="position:absolute;bottom:100px;left:80px;max-width:1600px;padding:16px 24px;border-radius:12px;background:rgba(236,72,153,0.06);border:1px solid rgba(236,72,153,0.15);"><span style="font-size:22px;color:var(--text-mid);">💡 <span style="font-family:JetBrains Mono,monospace;color:var(--neon-cyan);">reverse=True</span> sorts descending: <span style="font-family:JetBrains Mono,monospace;color:var(--neon-cyan);">scores.sort(reverse=True)</span></span></div>
+
+<div class="chrome-brand">PY_BOOTCAMP // S05</div>
+<div class="chrome-pagenum">29 / 63</div>
+<template data-slide-notes>sort() sorts in place and returns None. sorted() returns a new sorted list. reverse=True for descending.</template>
+</div>
+</body>
+</html>

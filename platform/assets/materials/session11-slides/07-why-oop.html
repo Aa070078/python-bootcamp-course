@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-magenta"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; z-index:10;">
+    <div class="kicker">THE WHY // MOTIVATION</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:160px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:84px; font-weight:700; color:var(--text-hi);">Why OOP exists 🤖</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:16px;">البيانات والسلوك يسافران معًا داخل كائن واحد</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:380px; width:540px; height:560px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:420px; width:480px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:40px; font-weight:700; color:var(--neon-cyan);">DATA</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--text-mid); margin-top:18px; line-height:1.6;">
+      <div>name = "Rex"</div>
+      <div>age = 3</div>
+      <div>grades = [90, 85]</div>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-lo); margin-top:20px;">Variables scattered across the program 🧩</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:680px; top:520px; width:120px; z-index:10; text-align:center;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--neon-magenta);">+</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:880px; top:380px; width:540px; height:560px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.35); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:910px; top:420px; width:480px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:40px; font-weight:700; color:var(--neon-magenta);">CODE</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--text-mid); margin-top:18px; line-height:1.6;">
+      <div><span class="tok-kw">def</span> <span class="tok-fn">bark</span>():</div>
+      <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">print</span>(<span class="tok-str">"Woof!"</span>)</div>
+      <div>&nbsp;</div>
+      <div><span class="tok-kw">def</span> <span class="tok-fn">fetch</span>():</div>
+      <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">return</span> <span class="tok-str">"ball"</span></div>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-lo); margin-top:20px;">Functions that need 10 parameters 😰</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1480px; top:520px; width:120px; z-index:10; text-align:center;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--neon-cyan);">→</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1640px; top:380px; width:200px; height:560px; background:rgba(163,230,53,0.07); border:1px solid rgba(163,230,53,0.45); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1660px; top:460px; width:160px; z-index:10; text-align:center;">
+    <div style="font-size:60px;">🐕</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--neon-lime); margin-top:10px;">OBJECT</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:22px; color:var(--text-mid); margin-top:14px; line-height:1.5;">name<br>age<br>bark()<br>fetch()</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S11</div>
+  <div class="chrome-pagenum">07 / 50</div>
+</div>
+<template data-slide-notes>
+**Core idea of the session.** OOP exists because real things bundle data AND behavior.
+
+- Analogy: a dog isn't just "a name" in one list and "bark" in another file. The dog is the name + the bark together.
+- Contrast with what they know: procedural code = data in variables, behavior in functions, connected by *convention* (you must remember which function edits which list). OOP = the connection is structural.
+- History note (30s): OOP grew out of simulation projects in the 60s (Simula) — modeling real-world entities.
+- Arabic tip: «البيانات والسلوك في صندوق واحد» = data and behavior in one box.
+- Ask: "Can you think of a program that models things with state?" (bank, game player, library book).
+</template>
+</body>
+</html>

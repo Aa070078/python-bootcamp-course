@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-150px; left:-120px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-200px; right:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">CORE // 04 — KNOW YOUR EXCEPTIONS</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:72px; font-weight:700; color:var(--text-hi);">🔑 The exceptions you'll meet daily</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--text-mid); margin-top:22px;">Each exception = a specific accident. Catch the <b style="color:var(--text-hi);">specific</b> type, not everything.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:340px; width:560px; height:200px; background:rgba(250,204,21,0.06); border:1px solid rgba(250,204,21,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:115px; top:372px; width:500px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:28px; color:var(--neon-yellow);">ValueError</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:10px;">Right type, wrong value. <span class="mono" style="color:var(--text-hi);">int("banana")</span> 😵</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:680px; top:340px; width:560px; height:200px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:715px; top:372px; width:500px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:28px; color:var(--neon-cyan);">TypeError</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:10px;">Wrong type. <span class="mono" style="color:var(--text-hi);">"2" + 2</span> 🤝</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1280px; top:340px; width:560px; height:200px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1315px; top:372px; width:500px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:28px; color:var(--neon-magenta);">IndexError</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:10px;">Out of range. <span class="mono" style="color:var(--text-hi);">nums[99]</span> 🎯</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:580px; width:560px; height:200px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:115px; top:612px; width:500px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:28px; color:var(--neon-lime);">KeyError</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:10px;">Missing dict key. <span class="mono" style="color:var(--text-hi);">data["age"]</span> 🔑</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:680px; top:580px; width:560px; height:200px; background:rgba(167,139,250,0.06); border:1px solid rgba(167,139,250,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:715px; top:612px; width:500px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:28px; color:var(--neon-violet);">FileNotFoundError</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:10px;">File missing. <span class="mono" style="color:var(--text-hi);">open("nope.txt")</span> 📁</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1280px; top:580px; width:560px; height:200px; background:rgba(251,146,60,0.06); border:1px solid rgba(251,146,60,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1315px; top:612px; width:500px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:28px; color:var(--neon-orange);">ZeroDivisionError</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:10px;">Math on zero. <span class="mono" style="color:var(--text-hi);">10 / 0</span> ➗</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:840px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-hi);">🐍 Bonus: <span class="mono" style="color:var(--neon-lime);">Exception</span> is the parent of ALL of these. Catching it = catching everything (use with care!).</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:14px;">هذه أشهر الاستثناءات في بايثون: قيمة خاطئة، نوع خاطئ، فهرس خارج النطاق، مفتاح مفقود، ملف غير موجود، وقسمة على صفر.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">15 / 50</div>
+</div>
+<template data-slide-notes>
+## Common exception types
+
+**Rapid-fire (4 min).** Six exceptions, six one-line accidents. Go fast — this is vocabulary, and vocabulary needs repetition.
+
+- ValueError: the value is invalid for the operation (int("banana")).
+- TypeError: wrong type involved ("2" + 2 — str + int).
+- IndexError: index out of bounds on a list/string.
+- KeyError: dict key doesn't exist.
+- FileNotFoundError: open() on a nonexistent file.
+- ZeroDivisionError: dividing by zero.
+
+**Memory hooks:** each card has an emoji (😵 🤝 🎯 🔑 📁 ➗). Ask students to recall each exception from the emoji.
+
+**Pro tip:** you can catch each one specifically. Mention that later slides (16) show the actual raised messages.
+
+**Arabic tip:** ذكّرهم: اسم الاستثناء بالإنكليزية هو "التشخيص" — احفظ الاسم تعرف العلاج.
+</template>
+</body>
+</html>

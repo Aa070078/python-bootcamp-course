@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="top:-150px; right:-120px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-200px; left:-100px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">CORE // 01 — KNOW YOUR ENEMY</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi);">🐞 Three kinds of errors</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); margin-top:26px;">Before you fix bugs, you must <b style="color:var(--text-hi);">classify</b> them. Different errors → different fixes.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:420px; width:560px; height:460px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.4); border-radius:24px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:115px; top:460px; width:500px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-magenta); letter-spacing:0.1em;">SYNTAX</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:42px; font-weight:700; color:var(--text-hi); margin-top:10px;">Grammar 💢</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:16px; line-height:1.5;">You broke the <b style="color:var(--text-hi);">language rules</b>. Python refuses to even run it.</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-orange); margin-top:20px; line-height:1.5;">SyntaxError: expected ':'</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-lo); margin-top:18px;">→ Fix spelling &amp; structure. Found at <b style="color:var(--text-hi);">startup</b>.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:680px; top:420px; width:560px; height:460px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:24px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:715px; top:460px; width:500px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-cyan); letter-spacing:0.1em;">RUNTIME</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:42px; font-weight:700; color:var(--text-hi); margin-top:10px;">Crash 💥</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:16px; line-height:1.5;">Valid code that <b style="color:var(--text-hi);">blows up mid-run</b>: bad data, missing file, bad input.</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-orange); margin-top:20px; line-height:1.5;">FileNotFoundError</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-lo); margin-top:18px;">→ Handle it: <b style="color:var(--text-hi);">today's main course</b> (try/except).</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1280px; top:420px; width:560px; height:460px; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.4); border-radius:24px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1315px; top:460px; width:500px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-lime); letter-spacing:0.1em;">LOGICAL</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:42px; font-weight:700; color:var(--text-hi); margin-top:10px;">Wrong answer 🧩</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-mid); margin-top:16px; line-height:1.5;">Runs perfectly, <b style="color:var(--text-hi);">no error message</b> — but the result is wrong.</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-orange); margin-top:20px; line-height:1.5;">total = price * 0.05  # 5% not 15%!</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-lo); margin-top:18px;">→ The sneakiest. No crash to catch — <b style="color:var(--text-hi);">test your logic</b>.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:940px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl;">ثلاثة أنواع من الأخطاء: أخطاء الصياغة تمنع التشغيل، وأخطاء التنفيذ تسبب الانهيار أثناء العمل، والأخطاء المنطقية تعطي نتائج خاطئة دون أي رسالة.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">07 / 50</div>
+</div>
+<template data-slide-notes>
+## Three kinds of errors
+
+**Big idea (4 min):** All bugs fall into 3 buckets. When you see an error, first ask "which bucket?"
+
+1. **Syntax** — like a grammar mistake in a sentence. Python can't even understand it, so it stops before running. Fix: look at the line, fix the structure (missing colon, unclosed quote, wrong indentation).
+2. **Runtime** — the code is legal but crashes while running (bad input, missing file, dividing by zero). THIS is what today is about: catch and handle.
+3. **Logical** — no crash at all, but wrong output. This is the hardest because Python gives no help. Example: wrong tax rate in a formula.
+
+**Live demo idea:** type `if True print("hi")` → SyntaxError; `print(1/0)` → ZeroDivisionError; `print(5*3 - 1)` vs `print(5*(3-1))` → logical "bug" no error.
+
+**Arabic tip:** استخدم استعارة "الجرامر": خطأ صياغة = جملة مكسورة، خطأ تنفيذ = طعام محروق، خطأ منطقي = وجبة جاهزة لكن الطعم خاطئ.
+</template>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-magenta"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:80px; width:1760px; z-index:10;">
+    <div class="kicker">CORE CONCEPT // DEFINITION</div>
+    <div style="margin-top:26px; font-family:'Space Grotesk',sans-serif; font-size:88px; font-weight:700; color:var(--text-hi); line-height:1.05;">What is <span style="color:var(--neon-cyan);">Web Scraping?</span></div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:29px; color:var(--text-lo); direction:rtl; margin-top:14px;">ما هو كشط الويب؟ هو استخراج البيانات من صفحات الويب آليًا باستخدام برنامج بدلًا من البشر</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:330px; width:1760px; z-index:10;">
+    <div style="display:flex; gap:40px;">
+      <div style="flex:1; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.35); border-radius:22px; padding:34px 30px;">
+        <div style="font-size:44px;">👀</div>
+        <div style="margin-top:16px; font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--text-hi);">You (the human)</div>
+        <div style="margin-top:12px; font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-mid); line-height:1.5;">Open the browser, eyeball the page, copy-paste what you need. Slow. Boring. 10 tabs/min.</div>
+      </div>
+      <div style="flex:1; background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.35); border-radius:22px; padding:34px 30px;">
+        <div style="font-size:44px;">🤖</div>
+        <div style="margin-top:16px; font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--text-hi);">Your script</div>
+        <div style="margin-top:12px; font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-mid); line-height:1.5;">Fetches the page as text, finds the interesting parts, stores them. Fast. Repeatable. 1000 pages/min.</div>
+      </div>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:790px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-hi);">📦 <span style="color:var(--neon-lime);">Scraping</span> = copy the <span style="color:var(--neon-cyan);">data</span> • <span style="color:var(--neon-lime);">API</span> = server <span style="color:var(--neon-cyan);">gives</span> you the data <span style="color:var(--text-dim);">(both read the web; scraping reads the page itself)</span></div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">07 / 50</div>
+</div>
+<template data-slide-notes>
+Define web scraping simply: "a program that reads a website the way you would — but at machine speed."
+
+Crucial distinction to plant: last session the server handed us JSON through an API. Today most sites won't give us a neat API — so we read the HTML page and extract from it. Both are valid; scraping is for when no API exists (or the page is the source of truth).
+
+Mention real uses: price trackers, job boards, news monitoring, research datasets, search-engine indexes. Guard against misuse early: "scraping reads what's already public — it never breaks into locked data."
+
+Arabic tip: كشط = استخراج. شبهها بقراءة كتاب في مكتبة عامة: تقرأ، تكتب ما يعجبك، لكن لا تمزّق الصفحات.
+</template>
+</body>
+</html>

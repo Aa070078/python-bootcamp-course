@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta"></div>
+  <div class="bg-glow-lime"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; z-index:10;">
+    <div class="kicker">REUSE // THE PARENT HAND</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:160px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:84px; font-weight:700; color:var(--text-hi);">super(): call the parent's code 🤝</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:16px;">super() تسمح لك باستدعاء دوال الأب دون إعادة كتابتها</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:360px; width:1080px; height:470px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">super_demo.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:418px; width:1020px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.5;">
+    <div><span class="tok-kw">class</span> <span class="tok-var">Animal</span>:</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">__init__</span>(<span class="tok-var">self</span>, <span class="tok-var">name</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">name</span> <span class="tok-op">=</span> <span class="tok-var">name</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-kw">class</span> <span class="tok-var">Dog</span>(<span class="tok-var">Animal</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-kw">def</span> <span class="tok-fn">__init__</span>(<span class="tok-var">self</span>, <span class="tok-var">name</span>, <span class="tok-var">breed</span>):</div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-fn">super</span>().<span class="tok-fn">__init__</span>(<span class="tok-var">name</span>) <span class="tok-com"># parent's init</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-var">self</span>.<span class="tok-var">breed</span> <span class="tok-op">=</span> <span class="tok-var">breed</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-var">rex</span> <span class="tok-op">=</span> <span class="tok-fn">Dog</span>(<span class="tok-str">"Rex"</span>, <span class="tok-str">"Husky"</span>)</div>
+    <div><span class="tok-fn">print</span>(<span class="tok-var">rex</span>.<span class="tok-var">name</span>, <span class="tok-var">rex</span>.<span class="tok-var">breed</span>) <span class="tok-com"># Rex Husky</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1240px; top:360px; width:600px; height:470px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1270px; top:400px; width:540px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700; color:var(--text-hi);">Why? 💡</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:29px; color:var(--text-mid); margin-top:22px; line-height:1.65;">
+      ❌ Without it, you'd <b>duplicate</b> the parent's setup.<br><br>
+      ✅ <span class="mono">super().__init__(name)</span> runs the parent's initializer, then Dog adds its own extras.<br><br>
+      🧩 Works for any parent method, not just __init__.
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--neon-lime); margin-top:20px;">Reuse first. Add later.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S11</div>
+  <div class="chrome-pagenum">23 / 50</div>
+</div>
+<template data-slide-notes>
+**super() = "the parent".**
+
+- When the child overrides `__init__` (defines its own), the parent's `__init__` does NOT run automatically. `super().__init__(name)` calls it explicitly.
+- Trace the flow: `Dog("Rex", "Husky")` → Dog's `__init__` → super().__init__ sets self.name → then self.breed is set.
+- If you forget super(): `rex.name` → AttributeError. This is mistake #3 on the common-mistakes slide — flag it now.
+- Analogy: "You do everything your parents taught you, then add your own skills." In Arabic: «أكمل ما بدأه الأب ثم أضف إضافاتك».
+- Show that super() also works in other methods: `super().some_method()`.
+- Practice: have them write `class Cat(Animal)` with a `lives=9` attribute using super().
+</template>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta"></div>
+  <div class="bg-glow-cyan"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; z-index:10;">
+    <div class="kicker">⚡ LIVE CODING #2 // DESIGN FIRST</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:160px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:84px; font-weight:700; color:var(--text-hi);">Bonus app: School System 🏫</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl; margin-top:16px;">برمجة حيّة إضافية: نظام مدرسة — صمّم ثم اكتب ثم شغّل</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:360px; z-index:10;">
+    <span class="chip chip-cyan">NOUNS → CLASSES</span>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:420px; width:540px; height:540px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.45); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:458px; width:480px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--text-hi);">Course</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:25px; color:var(--neon-lime); margin-top:16px;">title · credits</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:25px; color:var(--neon-cyan); margin-top:8px;">(leaf — just data)</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:680px; top:420px; width:540px; height:540px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.45); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:710px; top:458px; width:480px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--text-hi);">Student</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:25px; color:var(--neon-lime); margin-top:16px;">name · age · courses[]</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:25px; color:var(--neon-cyan); margin-top:8px;">enroll(course) · report()</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1280px; top:420px; width:540px; height:540px; background:rgba(236,72,153,0.05); border:1px solid rgba(236,72,153,0.45); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1310px; top:458px; width:480px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--text-hi);">School</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:25px; color:var(--neon-lime); margin-top:16px;">name · students[]</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:25px; color:var(--neon-cyan); margin-top:8px;">add_student(s)</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:1000px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid);">1️⃣ Find the <b>nouns</b> (Course, Student, School) → classes. 2️⃣ Find the <b>verbs</b> (enroll, report) → methods. 3️⃣ Write it — next slide. 💡</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S11</div>
+  <div class="chrome-pagenum">47 / 50</div>
+</div>
+<template data-slide-notes>
+**Bonus live-coding — full design-first flow. Repeat the "nouns → verbs" recipe they saw in refactoring.**
+
+- Step 1 with the class: shout the nouns of a school system → Course, Student, Teacher, School, Room. Pick three for today.
+- Step 2: verbs → enroll, report, add_student.
+- Step 3 (next slide): write the three classes and run.
+- Composition everywhere: Student HAS courses (list), School HAS students (list). Course is a leaf (data-only).
+- Arabic tip: «الأسماء → أصناف، الأفعال → دوال» — nouns → classes, verbs → methods.
+- This is fast — 10 minutes total for both slides. It cements the design skill better than anything else.
+- If time is short: students write it solo from the design; you demo the run.
+</template>
+</body>
+</html>

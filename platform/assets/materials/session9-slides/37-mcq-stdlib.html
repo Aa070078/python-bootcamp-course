@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime" style="top:-150px; right:-120px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-200px; left:-120px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">CHECKPOINT // MCQ #5</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:70px; font-weight:700; color:var(--text-hi);">🎯 MCQ — Pick the right module</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:330px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-hi);">You need to print today's date and time, formatted like <span class="mono" style="color:var(--neon-yellow);">2026-08-03 14:30</span>. Which module is the right tool?</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:33px; color:var(--text-mid); margin-top:28px; line-height:1.9;">
+      <span class="chip chip-cyan" style="margin-right:14px;">A&nbsp; random</span>
+      <span class="chip chip-lime" style="margin-right:14px;">B&nbsp; datetime</span>
+      <span class="chip chip-magenta" style="margin-right:14px;">C&nbsp; math</span>
+      <span class="chip chip-yellow" style="margin-right:14px;">D&nbsp; statistics</span>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:610px; width:1760px; height:250px; background:rgba(167,139,250,0.05); border:1px solid rgba(167,139,250,0.35); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:650px; width:1680px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); line-height:1.7;">
+      🔍 <b style="color:var(--text-hi);">random</b> → chance &amp; shuffles. <b style="color:var(--text-hi);">math</b> → numbers. <b style="color:var(--text-hi);">statistics</b> → averages. None touch clocks.<br><br>
+      ⏰ <b style="color:var(--text-hi);">datetime</b> owns dates &amp; times. Quick win: <span class="mono" style="color:var(--neon-cyan);">from datetime import datetime</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="mono" style="color:var(--neon-lime);">print(datetime.now().strftime("%Y-%m-%d %H:%M"))</span>
+    </div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:900px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:34px; color:var(--neon-lime); font-weight:700;">✔ Answer: B — datetime handles dates &amp; times.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:14px;">وحدة datetime هي الأداة الصحيحة للتواريخ والأوقات، مع strftime لتنسيقها.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">37 / 50</div>
+</div>
+<template data-slide-notes>
+## MCQ #5 — pick the right module
+
+**Quick round (2 min):** students match the tool to the job. This tests the "ask which module" habit, not syntax.
+
+**Show the one-liner win:** `from datetime import datetime` then `datetime.now().strftime("%Y-%m-%d %H:%M")`. Explain strftime codes briefly (Y=year, m=month, d=day, H=hour, M=minute).
+
+**Extension:** ask reverse — "want a random password? → random / secrets." Gives them more module vocabulary.
+
+**Arabic tip:** علّمهم "اختيار الأداة" قبل كتابة الكود: أي وحدة تصلح للمهمة؟ نصف الحل اختيار صحيح.
+</template>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-magenta" style="top:-150px; right:-120px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-200px; left:-100px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">CORE // 02 — THE TRACEBACK</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:76px; font-weight:700; color:var(--text-hi);">📜 Reading error messages</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); margin-top:26px;">Beginners panic at red text. Pros <b style="color:var(--neon-lime);">read it like a map</b>.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:420px; width:860px; height:480px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.3); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:460px; width:780px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:38px; font-weight:700; color:var(--neon-cyan);">The golden rule 🥇</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-mid); margin-top:24px; line-height:1.6;"><b style="color:var(--text-hi);">Read the traceback from the BOTTOM up.</b></div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:18px; line-height:1.6;">The last line names the <b style="color:var(--neon-magenta);">exception type</b> and the <b style="color:var(--neon-yellow);">reason</b>. The lines above trace the calls that led there.</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:28px; color:var(--text-lo); margin-top:26px; line-height:1.6;">Most fixes start with: <span class="mono" style="color:var(--neon-lime);">"Oh, it's a <b>ValueError</b>! It means..."</span></div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:1000px; top:420px; width:840px; height:480px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span><span class="code-dot code-dot-y"></span><span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">error traceback</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1030px; top:478px; width:800px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:25px; line-height:1.65;">
+    <div><span class="tok-com"># 🔽 READ FROM HERE (bottom):</span></div>
+    <div><span class="tok-out" style="color:var(--neon-orange);">ValueError: could not convert string</span></div>
+    <div><span class="tok-out" style="color:var(--neon-orange);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to float: 'abc'</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-com"># the CRIME SCENE 👆</span></div>
+    <div><span class="tok-out" style="color:var(--neon-orange);">File "calc.py", line 7, in &lt;module&gt;</span></div>
+    <div><span class="tok-out" style="color:var(--neon-orange);">value = float(data)</span></div>
+    <div><span class="tok-out" style="color:var(--neon-orange);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;^</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-com"># 🔽 then each caller above</span></div>
+    <div><span class="tok-out" style="color:var(--neon-orange);">File "calc.py", line 12, in main</span></div>
+    <div><span class="tok-out" style="color:var(--neon-orange);">result = compute(data)</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:950px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-hi);">The message <span class="mono" style="color:var(--neon-yellow);">"could not convert string to float: 'abc'"</span> already tells you the fix: <b style="color:var(--neon-lime);">'abc' isn't a number</b>.</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:14px;">القاعدة الذهبية: اقرأ التتبّع من الأسفل؛ السطر الأخير يخبرك بنوع الخطأ وسببه الحقيقي.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">09 / 50</div>
+</div>
+<template data-slide-notes>
+## Reading error messages / tracebacks
+
+**Reframe the fear (3 min):** "The traceback is not punishment — it's Python's diagnosis report. Doctors read reports to find the illness; you read tracebacks to find the bug."
+
+**Golden rule:** read from the BOTTOM. Last line = exception type + reason. Middle lines = the exact line where it blew up (the "crime scene", marked with `^`). Top lines = the chain of calls (the "accomplices").
+
+**Walk the example:** float('abc') → ValueError. The caret points at `float(data)`. The caller `compute()` on line 12 is where the value came from. Fix could be at the caller (validate input) OR at the crime scene (catch the error).
+
+**Common beginner mistake:** reading top-down and getting lost in the "File ... in ..." chain. Teach bottom-up reading like a reflex.
+
+**Arabic tip:** شبّه التتبّع بالتقارير الطبية: آخر سطر هو التشخيص، والسطر الذي تحته علامة ^ هو موضع الجرح.
+</template>
+</body>
+</html>

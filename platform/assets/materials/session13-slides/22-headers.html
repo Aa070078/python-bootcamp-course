@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime" style="top:-240px; right:-160px;"></div>
+  <div class="bg-glow-magenta" style="bottom:-280px; left:-160px;"></div>
+
+  <div class="chrome-topbar"><span class="chrome-dot"></span>PYTHON BOOTCAMP &middot; SESSION 13 &mdash; APIs</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:110px; width:1760px; z-index:10;">
+    <div class="kicker">🧾 CORE CONCEPT #9</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:84px; font-weight:700; color:var(--text-hi); margin-top:14px;">Headers</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:320px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; color:var(--text-mid); line-height:1.6;">The <span style="color:var(--neon-lime);">"meta" envelope</span> around the message — labels, not content. Both requests and responses carry them.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:450px; width:860px; height:330px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:490px; width:780px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-cyan);">REQUEST HEADERS (YOU SEND)</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:30px; color:var(--text-hi); margin-top:16px; line-height:1.8;">
+      <span class="tok-com">User-Agent:</span> <span class="tok-str">my-weather-bot/1.0</span><br>
+      <span class="tok-com">Accept:</span> <span class="tok-str">application/json</span><br>
+      <span class="tok-com">X-Api-Key:</span> <span class="tok-str">••••••••</span>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-lo); margin-top:14px;">Who you are &middot; what format you accept &middot; your key.</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:450px; width:860px; height:330px; background:rgba(236,72,153,0.06); border:1px solid rgba(236,72,153,0.4); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1020px; top:490px; width:780px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--neon-magenta);">RESPONSE HEADERS (SERVER RETURNS)</div>
+    <div style="font-family:'JetBrains Mono',monospace; font-size:30px; color:var(--text-hi); margin-top:16px; line-height:1.8;">
+      <span class="tok-com">Content-Type:</span> <span class="tok-str">application/json</span><br>
+      <span class="tok-com">Date:</span> <span class="tok-str">Mon, 03 Aug 2026</span><br>
+      <span class="tok-com">RateLimit-Remaining:</span> <span class="tok-num">99</span>
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-lo); margin-top:14px;">Format &middot; when it was sent &middot; how many requests left.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:830px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--text-lo);">Today you mostly send <span class="mono" style="color:var(--neon-cyan);">User-Agent</span> and <span class="mono" style="color:var(--neon-cyan);">X-Api-Key</span> (slide 32). The library sets the rest for you.</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:920px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">الترويسات هي "معلومات على الظرف": من أنت، وما الصيغة التي تريدها، وكم طلباً تبقّى لك 🧾</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S13</div>
+  <div class="chrome-pagenum">22 / 50</div>
+</div>
+<template data-slide-notes>
+Headers — the envelope labels.
+
+Analogies: headers are like the outside of a postal envelope (from, to, stamps, priority) while the body is the letter inside.
+
+Key headers students will actually use today:
+- User-Agent: some APIs refuse requests without a real one (bots). requests sets a default; you can override.
+- X-Api-Key: where API keys commonly go (slide 32).
+- Content-Type: tells the server what format the body is in.
+
+Response headers worth noticing: Content-Type (is it really JSON?), and rate-limit headers (slide 36).
+
+Do NOT go deep into auth headers/OAuth — explicitly out of scope this session.
+
+Arabic tip: "الترويسة" ترجمة حرفية؛ اشرحها كـ"بيانات الغلاف": معلومات إضافية خارج الرسالة نفسها.
+</template>
+</body>
+</html>

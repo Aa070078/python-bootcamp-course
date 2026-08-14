@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan"></div>
+  <div class="bg-glow-magenta"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1760px; z-index:10;">
+    <div class="kicker">CHECKPOINT // QUICK MCQ 🎯</div>
+    <div style="margin-top:26px; font-family:'Space Grotesk',sans-serif; font-size:54px; font-weight:700; color:var(--text-hi);">Which piece of this tag is the <span style="color:var(--neon-lime);">attribute</span>?</div>
+    <div style="margin-top:16px;" class="mono" style="font-family:'JetBrains Mono',monospace; font-size:32px; color:var(--text-hi);">&lt;p <span style="color:var(--neon-yellow);">id="intro"</span>&gt;Hello&lt;/p&gt;</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:28px; color:var(--text-lo); direction:rtl; margin-top:14px;">أي جزء من هذا الوسم يُسمى خاصية attribute؟</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:430px; width:1760px; z-index:10;">
+    <div style="display:flex; gap:30px; flex-wrap:wrap;">
+      <div style="width:850px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.3); border-radius:20px; padding:26px 30px;"><span class="chip chip-cyan">A</span> <span class="mono" style="font-family:'JetBrains Mono',monospace; font-size:27px; color:var(--text-hi);">p</span></div>
+      <div style="width:850px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.3); border-radius:20px; padding:26px 30px;"><span class="chip chip-cyan">B</span> <span class="mono" style="font-family:'JetBrains Mono',monospace; font-size:27px; color:var(--text-hi);">id="intro"</span></div>
+      <div style="width:850px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.3); border-radius:20px; padding:26px 30px;"><span class="chip chip-cyan">C</span> <span style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-hi);">Hello</span></div>
+      <div style="width:850px; background:rgba(34,211,238,0.06); border:1px solid rgba(34,211,238,0.3); border-radius:20px; padding:26px 30px;"><span class="chip chip-cyan">D</span> <span class="mono" style="font-family:'JetBrains Mono',monospace; font-size:27px; color:var(--text-hi);">&lt;/p&gt;</span></div>
+    </div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S14</div>
+  <div class="chrome-pagenum">17 / 50</div>
+</div>
+<template data-slide-notes>
+Answer: B. `id="intro"` is the attribute (name="value" pair inside the opening tag). `p` is the tag name, "Hello" is content, `</p>` is the closing tag.
+
+Follow-up: "Which attribute would you use to grab ALL list items?" → class (shared). "Which to grab exactly one element?" → id (unique).
+
+Arabic tip: الخاصية = معلومة إضافية داخل وسم البداية، مثل الاسم الذي يميّز العنصر.
+</template>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-cyan" style="bottom:-200px; left:-180px;"></div>
+  <div class="bg-glow-magenta" style="top:80px; right:-220px;"></div>
+
+  <div class="chrome-topbar">
+    <span class="chrome-dot"></span>
+    <span>REFERENCE // CHEAT SHEET</span>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:100px; width:1760px; z-index:10;">
+    <div style="font-family:'JetBrains Mono',monospace; font-size:24px; color:var(--neon-yellow); letter-spacing:0.25em; text-transform:uppercase;">📚 CHEAT SHEET</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:66px; font-weight:700; color:var(--text-hi); margin-top:12px;">Git &amp; GitHub — <span style="color:var(--neon-yellow);">one page</span></div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:320px; width:1120px; height:620px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span>
+      <span class="code-dot code-dot-y"></span>
+      <span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">bash — everyday commands</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:380px; width:1060px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:27px; line-height:1.95;">
+    <div><span class="tok-kw">Setup</span> &nbsp;git config --global user.name <span class="tok-str">"Name"</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;git config --global user.email <span class="tok-str">"you@ex.com"</span></div>
+    <div style="height:6px;"></div>
+    <div><span class="tok-kw">Start</span> &nbsp;&nbsp;git init -b main &nbsp;&nbsp;<span class="tok-com"># make repo</span></div>
+    <div><span class="tok-kw">Check</span> &nbsp;&nbsp;git status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-com"># what changed?</span></div>
+    <div><span class="tok-kw">Stage</span> &nbsp;&nbsp;git add . &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-com"># select files</span></div>
+    <div><span class="tok-kw">Save</span> &nbsp;&nbsp;git commit -m <span class="tok-str">"message"</span> &nbsp;&nbsp;<span class="tok-com"># snapshot</span></div>
+    <div><span class="tok-kw">History</span> git log --oneline &nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-com"># view history</span></div>
+    <div><span class="tok-kw">Compare</span> git diff &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-com"># see changes</span></div>
+    <div style="height:6px;"></div>
+    <div><span class="tok-kw">Branch</span> &nbsp;git switch -c name &nbsp;&nbsp;<span class="tok-com"># new branch</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;git switch main &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-com"># back</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;git merge name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-com"># combine</span></div>
+    <div style="height:6px;"></div>
+    <div><span class="tok-kw">Remote</span> &nbsp;git remote add origin <span class="tok-str">&lt;url&gt;</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;git push -u origin main &nbsp;<span class="tok-com"># upload</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;git pull origin main &nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-com"># download</span></div>
+    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;git clone <span class="tok-str">&lt;url&gt;</span> &nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-com"># copy repo</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1260px; top:320px; width:580px; height:620px; background:rgba(163,230,53,0.05); border:1px solid rgba(163,230,53,0.3); border-radius:20px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1290px; top:360px; width:520px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:33px; color:var(--text-hi); font-weight:600;">Golden habits ⭐</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--text-mid); margin-top:16px; line-height:1.8;">
+      • pull before you start work<br>
+      • commit small, commit often<br>
+      • write messages for your future self<br>
+      • never commit secrets (.env)<br>
+      • .gitignore first, always
+    </div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; color:var(--neon-lime); margin-top:22px;">Print this. Pin it. Live it. 🖨️</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:980px; width:1760px; z-index:10;">
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:30px; color:var(--text-lo); direction:rtl;">ورقة الغش: كل أوامر Git في صفحة واحدة — احفظها واطبعها إن أردت.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S10</div>
+  <div class="chrome-pagenum">45 / 50</div>
+</div>
+<template data-slide-notes>
+**Slide 45 — Cheat sheet (hand-out, 1 min)**
+- Have students screenshot this slide or copy the block — it's their take-home reference.
+- Go down the list once at speaking pace; no explanation needed, just pointing.
+- Reiterate the golden habits line as the takeaway.
+- Arabic tip: شجعهم على وضع هذه الأوامر كخلفية أو ملصق بجانب الحاسوب خلال الأسبوع.
+- Note: this stays on screen while the extended labs (46–50) follow; it's a great reference during them.
+</template>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="../theme.css">
+</head>
+<body>
+<div class="slide-container">
+  <div class="bg-grid"></div>
+  <div class="bg-glow-lime" style="top:-150px; left:-120px;"></div>
+  <div class="bg-glow-cyan" style="bottom:-220px; right:-100px;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:90px; width:1400px; z-index:10;">
+    <div class="kicker">VISUAL // 01 — SPOT THE DIFFERENCE</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:80px; top:170px; width:1760px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:70px; font-weight:700; color:var(--text-hi);">Same line, three fates 🔍</div>
+  </div>
+
+  <div class="code-window" data-object="true" data-object-type="shape" style="position:absolute; left:80px; top:330px; width:900px; height:520px; z-index:5;">
+    <div class="code-window-header">
+      <span class="code-dot code-dot-r"></span><span class="code-dot code-dot-y"></span><span class="code-dot code-dot-g"></span>
+      <span class="code-window-title">the_line.py</span>
+    </div>
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:110px; top:390px; width:850px; z-index:10; font-family:'JetBrains Mono',monospace; font-size:26px; line-height:1.7;">
+    <div><span class="tok-com"># 1 — SYNTAX: missing closing quote</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-str">"hello</span>)&nbsp;&nbsp;<span class="tok-com"># 😵</span></div>
+    <div><span class="tok-out" style="color:var(--neon-orange);">SyntaxError: unterminated string literal</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-com"># 2 — RUNTIME: division by zero</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-num">10</span> <span class="tok-op">/</span> <span class="tok-num">0</span>)&nbsp;&nbsp;<span class="tok-com"># 💥</span></div>
+    <div><span class="tok-out" style="color:var(--neon-orange);">ZeroDivisionError: division by zero</span></div>
+    <div>&nbsp;</div>
+    <div><span class="tok-com"># 3 — LOGICAL: no error, wrong result</span></div>
+    <div><span class="tok-fn">print</span>(<span class="tok-num">5</span> <span class="tok-op">+</span> <span class="tok-num">3</span> <span class="tok-op">*</span> <span class="tok-num">2</span>)&nbsp;&nbsp;<span class="tok-com"># prints 11 (expect 16?) 🤔</span></div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1040px; top:330px; width:800px; height:520px; background:rgba(34,211,238,0.05); border:1px solid rgba(34,211,238,0.3); border-radius:22px; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1080px; top:370px; width:720px; z-index:10;">
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:36px; font-weight:700; color:var(--neon-cyan);">How to tell them apart</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:24px; line-height:1.6;">🧐 <b style="color:var(--text-hi);">Did it crash before running?</b> → Syntax.</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:18px; line-height:1.6;">💥 <b style="color:var(--text-hi);">Crash while running?</b> → Runtime (an <b style="color:var(--neon-magenta);">exception</b>!).</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:18px; line-height:1.6;">🤔 <b style="color:var(--text-hi);">No crash but output wrong?</b> → Logical.</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:30px; color:var(--text-mid); margin-top:30px; line-height:1.6;">🎯 Today we <b style="color:var(--neon-lime);">master #2</b> — runtime errors — because <b style="color:var(--text-hi);">they are the ones you can catch and survive</b>.</div>
+    <div style="font-family:'Space Grotesk',sans-serif; font-size:26px; color:var(--text-lo); margin-top:24px; line-height:1.5;">(💡 Operator order in #3: <span class="mono">*</span> beats <span class="mono">+</span>, so 5 + 6 = 11 — that's a logic/math trap, not a crash.)</div>
+    <div class="arabic" style="font-family:'Cairo',sans-serif; font-size:26px; color:var(--text-lo); direction:rtl; margin-top:22px;">كيف تفرّق؟ انهار قبل التشغيل = صياغة، انهار أثناء التشغيل = تنفيذ، النتيجة خاطئة بلا انهيار = منطقي.</div>
+  </div>
+
+  <div class="chrome-brand">PY_BOOTCAMP // S09</div>
+  <div class="chrome-pagenum">08 / 50</div>
+</div>
+<template data-slide-notes>
+## Visual — same line, three fates
+
+**Walk the code window (3 min).** Point to each example:
+1. Missing quote → Python can't even tokenize it → SyntaxError before anything runs.
+2. `10 / 0` → ZeroDivisionError mid-run — this is the runtime exception class.
+3. `5 + 3 * 2` → runs, prints 11; if you expected 16 you've got a logic bug. No traceback, no help — you must reason.
+
+**Ask a student:** "What bucket does each fall into?" Quick choral answer.
+
+**Reinforce the key discriminator:** crash-time vs run-time vs wrong-result. That single question classifies almost every bug.
+
+**Arabic tip:** درّبهم على هذا السؤال الثلاثي بالعربية: هل انهار؟ متى انهار؟ هل النتيجة صحيحة؟ — سؤال واحد يصفّي معظم الأخطاء.
+</template>
+</body>
+</html>
