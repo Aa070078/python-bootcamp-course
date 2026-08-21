@@ -1,0 +1,274 @@
+[
+  {
+    "file": "01-cover.html",
+    "title": "01-cover"
+  },
+  {
+    "file": "02-hook.html",
+    "title": "02-hook"
+  },
+  {
+    "file": "03-review-mcq-1-q.html",
+    "title": "REVIEW MCQ // 01 OF 03 — WARM UP"
+  },
+  {
+    "file": "04-review-mcq-1-a.html",
+    "title": "REVIEW MCQ // 01 — ANSWER"
+  },
+  {
+    "file": "05-review-mcq-2-q.html",
+    "title": "REVIEW MCQ // 02 OF 03"
+  },
+  {
+    "file": "06-review-mcq-2-a.html",
+    "title": "REVIEW MCQ // 02 — ANSWER"
+  },
+  {
+    "file": "07-review-mcq-3-q.html",
+    "title": "REVIEW MCQ // 03 OF 03"
+  },
+  {
+    "file": "08-review-mcq-3-a.html",
+    "title": "REVIEW MCQ // 03 — ANSWER"
+  },
+  {
+    "file": "09-timeline.html",
+    "title": "09-timeline"
+  },
+  {
+    "file": "10-while-intro.html",
+    "title": "SECTION 01"
+  },
+  {
+    "file": "11-while-syntax.html",
+    "title": "11-while-syntax"
+  },
+  {
+    "file": "12-while-live-coding.html",
+    "title": "12-while-live-coding"
+  },
+  {
+    "file": "13-mcq-while-q.html",
+    "title": "MCQ // WHILE LOOP"
+  },
+  {
+    "file": "14-mcq-while-a.html",
+    "title": "MCQ // WHILE — ANSWER"
+  },
+  {
+    "file": "15-while-password.html",
+    "title": "15-while-password"
+  },
+  {
+    "file": "16-while-atm.html",
+    "title": "16-while-atm"
+  },
+  {
+    "file": "17-mcq-while-2-q.html",
+    "title": "MCQ // WHILE — PREDICT"
+  },
+  {
+    "file": "18-mcq-while-2-a.html",
+    "title": "MCQ // WHILE — ANSWER"
+  },
+  {
+    "file": "19-infinite-loops.html",
+    "title": "19-infinite-loops"
+  },
+  {
+    "file": "20-for-intro.html",
+    "title": "SECTION 02"
+  },
+  {
+    "file": "21-range.html",
+    "title": "21-range"
+  },
+  {
+    "file": "22-for-live-coding.html",
+    "title": "22-for-live-coding"
+  },
+  {
+    "file": "23-mcq-for-q.html",
+    "title": "MCQ // FOR LOOP"
+  },
+  {
+    "file": "24-mcq-for-a.html",
+    "title": "MCQ // FOR — ANSWER"
+  },
+  {
+    "file": "25-for-strings.html",
+    "title": "25-for-strings"
+  },
+  {
+    "file": "26-for-lists.html",
+    "title": "26-for-lists"
+  },
+  {
+    "file": "27-mcq-for-strings-q.html",
+    "title": "MCQ // STRING ITERATION"
+  },
+  {
+    "file": "28-mcq-for-strings-a.html",
+    "title": "MCQ // STRING — ANSWER"
+  },
+  {
+    "file": "29-for-patterns.html",
+    "title": "29-for-patterns"
+  },
+  {
+    "file": "30-mcq-for-patterns-q.html",
+    "title": "MCQ // FOR PATTERNS"
+  },
+  {
+    "file": "31-mcq-for-patterns-a.html",
+    "title": "MCQ // PATTERNS — ANSWER"
+  },
+  {
+    "file": "32-coding-challenge-for.html",
+    "title": "32-coding-challenge-for"
+  },
+  {
+    "file": "33-break.html",
+    "title": "33-break"
+  },
+  {
+    "file": "34-loop-control-intro.html",
+    "title": "SECTION 03"
+  },
+  {
+    "file": "35-break.html",
+    "title": "35-break"
+  },
+  {
+    "file": "36-continue.html",
+    "title": "36-continue"
+  },
+  {
+    "file": "37-pass.html",
+    "title": "37-pass"
+  },
+  {
+    "file": "38-control-live-coding.html",
+    "title": "38-control-live-coding"
+  },
+  {
+    "file": "39-mcq-loop-control-q.html",
+    "title": "MCQ // LOOP CONTROL"
+  },
+  {
+    "file": "40-mcq-loop-control-a.html",
+    "title": "MCQ // LOOP CONTROL — ANSWER"
+  },
+  {
+    "file": "41-nested-intro.html",
+    "title": "SECTION 04"
+  },
+  {
+    "file": "42-nested.html",
+    "title": "42-nested"
+  },
+  {
+    "file": "43-nested-live-coding.html",
+    "title": "43-nested-live-coding"
+  },
+  {
+    "file": "44-mcq-nested-q.html",
+    "title": "MCQ // NESTED LOOPS"
+  },
+  {
+    "file": "45-mcq-nested-a.html",
+    "title": "MCQ // NESTED — ANSWER"
+  },
+  {
+    "file": "46-loop-data-intro.html",
+    "title": "SECTION 05"
+  },
+  {
+    "file": "47-zip.html",
+    "title": "47-zip"
+  },
+  {
+    "file": "48-comprehension.html",
+    "title": "48-comprehension"
+  },
+  {
+    "file": "49-comp-live-coding.html",
+    "title": "49-comp-live-coding"
+  },
+  {
+    "file": "50-mcq-comp-q.html",
+    "title": "MCQ // COMPREHENSION"
+  },
+  {
+    "file": "51-mcq-comp-a.html",
+    "title": "MCQ // COMPREHENSION — ANSWER"
+  },
+  {
+    "file": "52-coding-challenge-data.html",
+    "title": "52-coding-challenge-data"
+  },
+  {
+    "file": "53-predict.html",
+    "title": "53-predict"
+  },
+  {
+    "file": "54-projects-intro.html",
+    "title": "SECTION 06"
+  },
+  {
+    "file": "55-project-multiply.html",
+    "title": "55-project-multiply"
+  },
+  {
+    "file": "56-project-guess.html",
+    "title": "56-project-guess"
+  },
+  {
+    "file": "57-project-quiz.html",
+    "title": "57-project-quiz"
+  },
+  {
+    "file": "58-project-menu.html",
+    "title": "58-project-menu"
+  },
+  {
+    "file": "59-exercises-easy.html",
+    "title": "59-exercises-easy"
+  },
+  {
+    "file": "60-exercises-medium.html",
+    "title": "60-exercises-medium"
+  },
+  {
+    "file": "61-exercises-challenge.html",
+    "title": "61-exercises-challenge"
+  },
+  {
+    "file": "62-common-mistakes.html",
+    "title": "62-common-mistakes"
+  },
+  {
+    "file": "63-homework.html",
+    "title": "63-homework"
+  },
+  {
+    "file": "64-homework-extra.html",
+    "title": "64-homework-extra"
+  },
+  {
+    "file": "65-final-quiz.html",
+    "title": "65-final-quiz"
+  },
+  {
+    "file": "66-recap.html",
+    "title": "66-recap"
+  },
+  {
+    "file": "67-teaser.html",
+    "title": "67-teaser"
+  },
+  {
+    "file": "68-closing.html",
+    "title": "68-closing"
+  }
+]
