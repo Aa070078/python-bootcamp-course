@@ -205,12 +205,61 @@
                 <h3 class="font-bold text-ink-100">Admin Panel</h3>
               </div>
 
+              <div class="p-5 rounded-xl border border-accent-green/20 bg-accent-green/5">
+                <h4 class="font-bold text-ink-100 mb-3 flex items-center gap-2">
+                  <svg class="w-4 h-4 text-accent-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                  Edit Session Content
+                </h4>
+                <p class="text-xs text-ink-400 mb-4">Changes publish to the live site for all students (via GitHub) in about a minute.</p>
+                <div class="space-y-4">
+                  <div>
+                    <label class="block text-xs font-bold text-ink-400 uppercase tracking-wide mb-2">Session Title</label>
+                    <input type="text" id="admTitle" placeholder="Session title" class="w-full px-4 py-3 rounded-xl bg-surface-2 border border-ink-800 text-sm text-ink-100 placeholder-ink-500 focus:border-accent-green focus:outline-none">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-bold text-ink-400 uppercase tracking-wide mb-2">Video Link (YouTube or MP4)</label>
+                    <input type="url" id="admVideo" placeholder="https://youtu.be/... or https://files.catbox.moe/xxx.mp4" class="w-full px-4 py-3 rounded-xl bg-surface-2 border border-ink-800 text-sm text-ink-100 placeholder-ink-500 focus:border-accent-blue focus:outline-none">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-bold text-ink-400 uppercase tracking-wide mb-2">Assignment / Homework</label>
+                    <textarea id="admHomework" rows="4" placeholder="Describe the homework for this session..." class="w-full px-4 py-3 rounded-xl bg-surface-2 border border-ink-800 text-sm text-ink-100 placeholder-ink-500 focus:border-accent-orange focus:outline-none resize-y"></textarea>
+                  </div>
+                  <label class="flex items-center gap-3 cursor-pointer select-none">
+                    <input type="checkbox" id="admMaterials" class="w-4 h-4 accent-lime-400">
+                    <span class="text-sm text-ink-300 font-bold">Session materials (slides) available to students</span>
+                  </label>
+                  <button onclick="publishSessionContent()" id="publishBtn" class="w-full px-5 py-3 rounded-xl font-bold text-sm bg-accent-green text-black hover:shadow-lg transition-all btn-press">
+                    Publish Changes
+                  </button>
+                  <div id="publishResult" class="hidden p-3 rounded-lg text-xs font-mono break-all"></div>
+                </div>
+              </div>
+
+              <details class="p-5 rounded-xl border border-accent-blue/20 bg-accent-blue/5">
+                <summary class="font-bold text-ink-100 mb-2 cursor-pointer flex items-center gap-2">
+                  <svg class="w-4 h-4 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                  GitHub Sync Setup (one time)
+                </summary>
+                <p class="text-xs text-ink-400 mt-3 mb-4">Paste a GitHub token with <span class="font-mono">Contents: Read and write</span> permission for this repo, so Publish can save changes for everyone. Stored only in this browser.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
+                  <input type="text" id="ghOwner" placeholder="owner" class="px-3 py-2 rounded-lg bg-surface-2 border border-ink-800 text-sm text-ink-100 focus:border-accent-blue focus:outline-none">
+                  <input type="text" id="ghRepo" placeholder="repo" class="px-3 py-2 rounded-lg bg-surface-2 border border-ink-800 text-sm text-ink-100 focus:border-accent-blue focus:outline-none">
+                  <input type="text" id="ghBranch" placeholder="branch (gh-pages)" class="px-3 py-2 rounded-lg bg-surface-2 border border-ink-800 text-sm text-ink-100 focus:border-accent-blue focus:outline-none">
+                </div>
+                <input type="password" id="ghToken" placeholder="github_pat_... / ghp_..." class="w-full px-4 py-3 rounded-xl bg-surface-2 border border-ink-800 text-sm text-ink-100 placeholder-ink-500 focus:border-accent-blue focus:outline-none mb-3">
+                <div class="flex flex-col sm:flex-row gap-3">
+                  <button onclick="saveGhSettings()" class="flex-1 px-4 py-3 rounded-xl font-bold text-sm bg-accent-blue text-white hover:shadow-lg transition-all btn-press">Save Settings</button>
+                  <button onclick="testGhConnection()" class="flex-1 px-4 py-3 rounded-xl font-bold text-sm bg-surface-2 text-ink-100 border border-ink-700 hover:border-accent-blue transition-all btn-press">Test Connection</button>
+                </div>
+                <div id="ghResult" class="hidden mt-3 p-3 rounded-lg text-xs font-mono break-all"></div>
+              </details>
+
               <div class="p-5 rounded-xl border border-accent-blue/20 bg-accent-blue/5">
                 <h4 class="font-bold text-ink-100 mb-3 flex items-center gap-2">
                   <svg class="w-4 h-4 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
-                  Video URL (MP4)
+                  Local Video Preview (this browser only)
                 </h4>
-                <p class="text-xs text-ink-400 mb-3">Paste a direct link to an MP4 video (e.g. from catbox.moe).</p>
+                <p class="text-xs text-ink-400 mb-3">Paste a direct MP4 link to preview it here without publishing.</p>
                 <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                   <input type="url" id="videoUrlInput" placeholder="https://files.catbox.moe/xxxxx.mp4" class="flex-1 px-4 py-3 rounded-xl bg-surface-2 border border-ink-800 text-sm text-ink-100 placeholder-ink-500 focus:border-accent-blue focus:outline-none">
                   <button onclick="saveVideoUrl()" class="px-5 py-3 rounded-xl font-bold text-sm bg-accent-blue text-white hover:shadow-lg transition-all btn-press">
@@ -293,6 +342,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/python/python.min.js"></script>
   <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+  <script src="assets/js/content.js"></script>
   <script>
     const SESSIONS = {
       1: { title: "Introduction to Programming & Python Basics", duration: "3 Hours", difficulty: "Beginner", project: "Student Card Generator", hasVideo: true, hasMaterial: true, topics: ["What is programming?", "Hardware vs Software", "CPU, RAM, Storage", "Compiler vs Interpreter", "Install Python & VS Code", "Terminal basics", "print(), comments, variables", "Data types: int, float, str, bool", "input(), type(), type casting"], exercises: [{ title: "Hello World", desc: "Write a program that prints 'Hello, World!'", starter: "print('Hello, World!')", solution: "print('Hello, World!')" }, { title: "Variables", desc: "Create variables and print them", starter: "# Create your variables here\nname = 'Your Name'\nage = 25\nprint(f'My name is {name} and I am {age} years old')", solution: "" }], homework: "Create a Student Card Generator that takes user input for name, age, grade, and student ID, then displays a formatted student card." },
@@ -356,11 +406,7 @@
 
       if (session.hasVideo) {
         document.getElementById('videoPlaceholder').classList.add('hidden');
-        const videoUrls = {
-          1: 'https://youtu.be/ulme7RXZrZE?si=U3sEn0ZZoV89BGAv',
-          2: 'https://youtu.be/40QsjcKg26s?si=li0xsWPC0POV2Jb_'
-        };
-        const url = videoUrls[currentSession] || '';
+        const url = session.videoUrl || '';
         if (url.includes('youtu')) {
           const ytId = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([^&?#]+)/);
           if (ytId) {
@@ -564,9 +610,12 @@ sys.stdout = StringIO()
     })();
 
     document.addEventListener('DOMContentLoaded', () => {
-      initPage();
-      initEditor();
-      initAdmin();
+      CONTENT.ready.then(() => {
+        Object.keys(SESSIONS).forEach(n => CONTENT.mergeInto(parseInt(n), SESSIONS[n]));
+        initPage();
+        initEditor();
+        initAdmin();
+      });
       loadPyodide().then(p => {
         pyodide = p;
         document.getElementById('pyodideStatus').textContent = 'Python ready';
@@ -597,6 +646,106 @@ sys.stdout = StringIO()
       if (isAdmin()) {
         document.getElementById('adminTabBtn').classList.remove('hidden');
         renderCurrentAssets();
+        CONTENT.ready.then(() => {
+          populateAdminFields();
+          fillGhSettings();
+        });
+      }
+    }
+
+    function showResult(id, text, ok) {
+      const el = document.getElementById(id);
+      el.classList.remove('hidden');
+      el.className = el.className.replace(/(bg|border|text)-(accent-green|red-500)[^\s"]*/g, '');
+      if (ok) {
+        el.classList.add('bg-accent-green/10', 'border', 'border-accent-green/20', 'text-accent-green');
+      } else {
+        el.classList.add('bg-red-500/10', 'border', 'border-red-500/20', 'text-red-400');
+      }
+      el.textContent = text;
+    }
+
+    function populateAdminFields() {
+      const s = SESSIONS[currentSession];
+      document.getElementById('admTitle').value = s.title || '';
+      document.getElementById('admVideo').value = s.videoUrl || '';
+      document.getElementById('admHomework').value = s.homework || '';
+      document.getElementById('admMaterials').checked = !!s.hasMaterial;
+    }
+
+    function collectAdminFields() {
+      const videoUrl = document.getElementById('admVideo').value.trim();
+      return {
+        title: document.getElementById('admTitle').value.trim(),
+        videoUrl: videoUrl,
+        homework: document.getElementById('admHomework').value.trim(),
+        hasMaterial: document.getElementById('admMaterials').checked,
+        hasVideo: !!videoUrl
+      };
+    }
+
+    async function publishSessionContent() {
+      const patch = collectAdminFields();
+      Object.assign(SESSIONS[currentSession], patch);
+
+      CONTENT.raw.sessions[String(currentSession)] = Object.assign(
+        {}, CONTENT.raw.sessions[String(currentSession)] || {}, patch
+      );
+      const json = JSON.stringify(CONTENT.raw, null, 2);
+
+      try { localStorage.setItem('bootcamp_content_draft', json); } catch (e) {}
+
+      initPage();
+
+      const cfg = CONTENT.guessRepo();
+      if (!cfg.token) {
+        showResult('publishResult', 'Saved locally for you, but NOT published. Open "GitHub Sync Setup" below to add a token, then press Publish again.', false);
+        return;
+      }
+      const btn = document.getElementById('publishBtn');
+      btn.disabled = true;
+      btn.textContent = 'Publishing...';
+      try {
+        await CONTENT.ghPutFile(
+          'platform/assets/data/content.json',
+          json,
+          'Admin update: session ' + currentSession + ' content'
+        );
+        showResult('publishResult', 'Published! Students will see the changes in ~1-2 minutes.', true);
+      } catch (err) {
+        showResult('publishResult', 'Publish failed: ' + err.message + ' (changes kept locally)', false);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Publish Changes';
+      }
+    }
+
+    function fillGhSettings() {
+      const cfg = CONTENT.guessRepo();
+      document.getElementById('ghOwner').value = cfg.owner || '';
+      document.getElementById('ghRepo').value = cfg.repo || '';
+      document.getElementById('ghBranch').value = cfg.branch || 'gh-pages';
+      document.getElementById('ghToken').value = (CONTENT.ghConfig().token) || '';
+    }
+
+    function saveGhSettings() {
+      CONTENT.ghSaveConfig({
+        owner: document.getElementById('ghOwner').value.trim(),
+        repo: document.getElementById('ghRepo').value.trim(),
+        branch: document.getElementById('ghBranch').value.trim() || 'gh-pages',
+        token: document.getElementById('ghToken').value.trim()
+      });
+      showResult('ghResult', 'Settings saved in this browser.', true);
+    }
+
+    async function testGhConnection() {
+      saveGhSettings();
+      showResult('ghResult', 'Testing...', true);
+      try {
+        await CONTENT.ghTest();
+        showResult('ghResult', 'Connected to ' + CONTENT.ghConfig().owner + '/' + CONTENT.ghConfig().repo + '. Publishing is ready.', true);
+      } catch (err) {
+        showResult('ghResult', 'Connection failed: ' + err.message, false);
       }
     }
 

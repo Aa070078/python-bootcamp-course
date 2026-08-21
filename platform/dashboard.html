@@ -152,6 +152,7 @@
     </div>
   </footer>
 
+  <script src="assets/js/content.js"></script>
   <script>
     const SESSIONS = [
       { week: 1, title: "Python Fundamentals", sessions: [
@@ -304,7 +305,14 @@
       }
     })();
 
-    renderSessions();
+    CONTENT.ready.then(() => {
+      SESSIONS.forEach(w => w.sessions.forEach(s => {
+        const o = CONTENT.getOverride(s.num);
+        if (o && typeof o.title === 'string' && o.title) s.title = o.title;
+        if (o && typeof o.status === 'string' && o.status) s.status = o.status;
+      }));
+      renderSessions();
+    });
   </script>
   <script src="cursor-follower.js" defer></script>
 </body>

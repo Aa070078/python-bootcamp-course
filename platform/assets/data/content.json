@@ -1,0 +1,7 @@
+{
+  "_info": "Admin-editable session content. Managed from the Admin Panel on any session page.",
+  "sessions": {
+    "1": { "videoUrl": "https://youtu.be/ulme7RXZrZE?si=U3sEn0ZZoV89BGAv" },
+    "2": { "videoUrl": "https://youtu.be/40QsjcKg26s?si=li0xsWPC0POV2Jb_" }
+  }
+}
