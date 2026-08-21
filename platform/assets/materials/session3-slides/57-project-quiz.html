@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="stylesheet" href="../assets/theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-cyan"></div>
+
+<div class="kicker" style="position:absolute;top:100px;left:80px;">PROJECT 03 // SIMPLE QUIZ GAME</div>
+<div class="arabic" style="position:absolute;top:140px;left:80px;font-size:24px;color:var(--text-lo);">المشروع 3 — لعبة اختبار بسيطة</div>
+<div class="code-window" style="position:absolute;left:80px;top:220px;width:1560px;">
+<div class="code-window-header">
+<div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+<span class="code-window-title">quiz-game.py</span>
+</div>
+<pre style="padding:24px 28px;margin:0;font-size:20px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span class="tok-var">questions</span> = [
+    (<span class="tok-str">"What is 2 + 2?"</span>, <span class="tok-str">"4"</span>),
+    (<span class="tok-str">"Capital of France?"</span>, <span class="tok-str">"Paris"</span>),
+    (<span class="tok-str">"Python was created in?"</span>, <span class="tok-str">"1991"</span>),
+]
+<span class="tok-var">score</span> = <span class="tok-num">0</span>
+
+<span class="tok-kw">for</span> <span class="tok-var">i</span>, (<span class="tok-var">q</span>, <span class="tok-var">a</span>) <span class="tok-kw">in</span> <span class="tok-fn">enumerate</span>(<span class="tok-var">questions</span>, <span class="tok-num">1</span>):
+    <span class="tok-kw">print</span>(<span class="tok-str">f"\nQ{i}: {q}"</span>)
+    <span class="tok-var">answer</span> = <span class="tok-fn">input</span>(<span class="tok-str">"Your answer: "</span>)
+    <span class="tok-kw">if</span> <span class="tok-var">answer</span>.<span class="tok-fn">lower</span>() <span class="tok-op">==</span> <span class="tok-var">a</span>.<span class="tok-fn">lower</span>():
+        <span class="tok-kw">print</span>(<span class="tok-str">"Correct!"</span>)
+        <span class="tok-var">score</span> <span class="tok-op">+=</span> <span class="tok-num">1</span>
+    <span class="tok-kw">else</span>:
+        <span class="tok-kw">print</span>(<span class="tok-str">f"Wrong! Answer: {a}"</span>)
+
+<span class="tok-var">total</span> = <span class="tok-fn">len</span>(<span class="tok-var">questions</span>)
+<span class="tok-kw">print</span>(<span class="tok-str">f"\nScore: {score}/{total}"</span>)</pre>
+</div>
+<div style="position:absolute;bottom:60px;left:80px;right:80px;display:flex;gap:16px;">
+<div style="padding:14px 20px;border-radius:10px;background:var(--bg-2);border:1px solid var(--border);">
+  <span style="font-size:18px;color:var(--neon-cyan);">for + enumerate</span></div>
+<div style="padding:14px 20px;border-radius:10px;background:var(--bg-2);border:1px solid var(--border);">
+  <span style="font-size:18px;color:var(--neon-lime);">tuple unpacking</span></div>
+<div style="padding:14px 20px;border-radius:10px;background:var(--bg-2);border:1px solid var(--border);">
+  <span style="font-size:18px;color:var(--neon-yellow);">string comparison</span></div>
+<div style="padding:14px 20px;border-radius:10px;background:var(--bg-2);border:1px solid var(--border);">
+  <span style="font-size:18px;color:var(--neon-magenta);">score tracking</span></div>
+</div>
+<div class="chrome-brand">PY_BOOTCAMP // S03</div>
+<div class="chrome-pagenum">57 / 68</div>
+<template data-slide-notes>Project 3: Quiz game.</template>
+</div>
+</body>
+</html>

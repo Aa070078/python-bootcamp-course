@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="stylesheet" href="../assets/theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-cyan"></div>
+
+<div class="kicker" style="position:absolute;top:100px;left:80px;">PROJECT 04 // TERMINAL MENU SYSTEM</div>
+<div class="arabic" style="position:absolute;top:140px;left:80px;font-size:24px;color:var(--text-lo);">المشروع 4 — نظام القوائم</div>
+<div class="code-window" style="position:absolute;left:80px;top:220px;width:1560px;">
+<div class="code-window-header">
+<div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+<span class="code-window-title">menu-system.py</span>
+</div>
+<pre style="padding:24px 28px;margin:0;font-size:20px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span class="tok-var">students</span> = []
+
+<span class="tok-kw">while</span> <span class="tok-kw">True</span>:
+    <span class="tok-kw">print</span>(<span class="tok-str">"\n=== STUDENT MENU ==="</span>)
+    <span class="tok-kw">print</span>(<span class="tok-str">"1. Add Student"</span>)
+    <span class="tok-kw">print</span>(<span class="tok-str">"2. Show Students"</span>)
+    <span class="tok-kw">print</span>(<span class="tok-str">"3. Count"</span>)
+    <span class="tok-kw">print</span>(<span class="tok-str">"4. Exit"</span>)
+
+    <span class="tok-var">choice</span> = <span class="tok-fn">input</span>(<span class="tok-str">"Choose: "</span>)
+
+    <span class="tok-kw">if</span> <span class="tok-var">choice</span> <span class="tok-op">==</span> <span class="tok-str">"1"</span>:
+        <span class="tok-var">name</span> = <span class="tok-fn">input</span>(<span class="tok-str">"Name: "</span>)
+        <span class="tok-var">students</span>.<span class="tok-fn">append</span>(<span class="tok-var">name</span>)
+        <span class="tok-kw">print</span>(<span class="tok-str">f"{name} added!"</span>)
+    <span class="tok-kw">elif</span> <span class="tok-var">choice</span> <span class="tok-op">==</span> <span class="tok-str">"2"</span>:
+        <span class="tok-kw">for</span> <span class="tok-var">i</span>, <span class="tok-var">s</span> <span class="tok-kw">in</span> <span class="tok-fn">enumerate</span>(<span class="tok-var">students</span>, <span class="tok-num">1</span>):
+            <span class="tok-kw">print</span>(<span class="tok-str">f"  {i}. {s}"</span>)
+    <span class="tok-kw">elif</span> <span class="tok-var">choice</span> <span class="tok-op">==</span> <span class="tok-str">"3"</span>:
+        <span class="tok-kw">print</span>(<span class="tok-str">f"Total: {len(students)}"</span>)
+    <span class="tok-kw">elif</span> <span class="tok-var">choice</span> <span class="tok-op">==</span> <span class="tok-str">"4"</span>:
+        <span class="tok-kw">print</span>(<span class="tok-str">"Goodbye!"</span>)
+        <span class="tok-kw">break</span></pre>
+</div>
+<div style="position:absolute;bottom:60px;left:80px;right:80px;display:flex;gap:16px;">
+<div style="padding:14px 20px;border-radius:10px;background:var(--bg-2);border:1px solid var(--border);">
+  <span style="font-size:18px;color:var(--neon-cyan);">while True</span></div>
+<div style="padding:14px 20px;border-radius:10px;background:var(--bg-2);border:1px solid var(--border);">
+  <span style="font-size:18px;color:var(--neon-lime);">list.append()</span></div>
+<div style="padding:14px 20px;border-radius:10px;background:var(--bg-2);border:1px solid var(--border);">
+  <span style="font-size:18px;color:var(--neon-yellow);">enumerate()</span></div>
+<div style="padding:14px 20px;border-radius:10px;background:var(--bg-2);border:1px solid var(--border);">
+  <span style="font-size:18px;color:var(--neon-magenta);">break to exit</span></div>
+</div>
+<div class="chrome-brand">PY_BOOTCAMP // S03</div>
+<div class="chrome-pagenum">58 / 68</div>
+<template data-slide-notes>Project 4: Terminal menu system.</template>
+</div>
+</body>
+</html>

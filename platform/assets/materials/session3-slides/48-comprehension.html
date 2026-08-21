@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="stylesheet" href="../assets/theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-cyan"></div>
+
+<div class="kicker" style="position:absolute;top:100px;left:80px;">LOOP + DATA // LIST COMPREHENSION</div>
+<div class="arabic" style="position:absolute;top:140px;left:80px;font-size:24px;color:var(--text-lo);">الحلقات والبيانات — استيعاب القوائم</div>
+<div style="position:absolute;top:100px;right:80px;padding:16px 28px;border-radius:12px;background:rgba(251,146,60,0.1);border:1px solid rgba(251,146,60,0.3);">
+<span style="font-size:22px;color:var(--neon-orange);font-weight:600;">Pythonic one-liner</span>
+</div>
+<div class="code-window" style="position:absolute;left:80px;top:220px;width:760px;">
+<div class="code-window-header">
+<div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+<span class="code-window-title">comprehension.py</span>
+</div>
+<pre style="padding:24px 28px;margin:0;font-size:19px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span class="tok-com"># Traditional loop</span>
+<span class="tok-var">squares</span> = []
+<span class="tok-kw">for</span> <span class="tok-var">x</span> <span class="tok-kw">in</span> <span class="tok-fn">range</span>(<span class="tok-num">10</span>):
+    <span class="tok-var">squares</span>.<span class="tok-fn">append</span>(<span class="tok-var">x</span> <span class="tok-op">**</span> <span class="tok-num">2</span>)</pre>
+</div><div class="code-window" style="position:absolute;left:calc(80px + 760px + 40px);top:220px;width:760px;">
+<div class="code-window-header">
+<div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+<span class="code-window-title">comprehension-short.py</span>
+</div>
+<pre style="padding:24px 28px;margin:0;font-size:19px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span class="tok-com"># List comprehension</span>
+<span class="tok-var">squares</span> = [<span class="tok-var">x</span> <span class="tok-op">**</span> <span class="tok-num">2</span> <span class="tok-kw">for</span> <span class="tok-var">x</span> <span class="tok-kw">in</span> <span class="tok-fn">range</span>(<span class="tok-num">10</span>)]
+
+<span class="tok-com"># With condition</span>
+<span class="tok-var">evens</span> = [<span class="tok-var">x</span> <span class="tok-kw">for</span> <span class="tok-var">x</span> <span class="tok-kw">in</span> <span class="tok-fn">range</span>(<span class="tok-num">20</span>) <span class="tok-kw">if</span> <span class="tok-var">x</span> <span class="tok-op">%</span> <span class="tok-num">2</span> <span class="tok-op">==</span> <span class="tok-num">0</span>]
+
+<span class="tok-com"># Transform strings</span>
+<span class="tok-var">names</span> = [<span class="tok-str">"ali"</span>, <span class="tok-str">"sara"</span>, <span class="tok-str">"omar"</span>]
+<span class="tok-var">upper</span> = [<span class="tok-var">n</span>.<span class="tok-fn">upper</span>() <span class="tok-kw">for</span> <span class="tok-var">n</span> <span class="tok-kw">in</span> <span class="tok-var">names</span>]</pre>
+</div>
+<div style="position:absolute;bottom:100px;left:80px;width:1600px;display:flex;gap:20px;">
+<div style="flex:1;padding:16px 24px;border-radius:12px;background:var(--bg-2);border:1px solid var(--border);text-align:center;">
+<div style="font-size:18px;color:var(--text-mid);">3 lines of code</div>
+<div style="font-size:22px;color:var(--neon-magenta);font-weight:600;">for loop version</div>
+</div>
+<div style="font-size:36px;color:var(--text-dim);display:flex;align-items:center;">=></div>
+<div style="flex:1;padding:16px 24px;border-radius:12px;background:var(--bg-2);border:1px solid rgba(251,146,60,0.27);text-align:center;">
+<div style="font-size:18px;color:var(--text-mid);">1 line of code</div>
+<div style="font-size:22px;color:var(--neon-orange);font-weight:600;">comprehension</div>
+</div>
+</div>
+<div class="chrome-brand">PY_BOOTCAMP // S03</div>
+<div class="chrome-pagenum">48 / 68</div>
+<template data-slide-notes>Teach list comprehension. Before/after comparison.</template>
+</div>
+</body>
+</html>

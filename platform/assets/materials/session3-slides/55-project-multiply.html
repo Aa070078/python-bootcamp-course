@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<link rel="stylesheet" href="../assets/theme.css">
+<style></style>
+</head>
+<body>
+<div class="slide-container">
+<div class="bg-grid"></div>
+<div class="bg-glow-cyan"></div>
+
+<div class="kicker" style="position:absolute;top:100px;left:80px;">PROJECT 01 // MULTIPLICATION TABLE GENERATOR</div>
+<div class="arabic" style="position:absolute;top:140px;left:80px;font-size:24px;color:var(--text-lo);">المشروع 1 — مولّد جدول الضرب</div>
+<div class="code-window" style="position:absolute;left:80px;top:220px;width:1560px;">
+<div class="code-window-header">
+<div class="code-dot code-dot-r"></div><div class="code-dot code-dot-y"></div><div class="code-dot code-dot-g"></div>
+<span class="code-window-title">multiplication-table.py</span>
+</div>
+<pre style="padding:24px 28px;margin:0;font-size:24px;line-height:1.55;color:var(--text-hi);overflow:hidden;"><span class="tok-com"># User enters a number, program prints its multiplication table</span>
+<span class="tok-var">num</span> = <span class="tok-fn">int</span>(<span class="tok-fn">input</span>(<span class="tok-str">"Enter a number: "</span>))
+
+<span class="tok-kw">print</span>(<span class="tok-str">f"\n=== Multiplication Table for {num} ==="</span>)
+<span class="tok-kw">for</span> <span class="tok-var">i</span> <span class="tok-kw">in</span> <span class="tok-fn">range</span>(<span class="tok-num">1</span>, <span class="tok-num">11</span>):
+    <span class="tok-kw">print</span>(<span class="tok-str">f"{num} x {i:2d} = {num * i}"</span>)</pre>
+</div>
+<div style="position:absolute;bottom:100px;left:80px;right:80px;display:flex;gap:20px;">
+<div style="flex:1;padding:18px 24px;border-radius:12px;background:rgba(34,211,238,0.06);border:1px solid rgba(34,211,238,0.2);">
+<div style="font-size:20px;color:var(--neon-cyan);font-weight:600;">Concepts used:</div>
+<div style="font-size:19px;color:var(--text-mid);">input, int(), for loop, range(), f-string formatting</div>
+</div>
+<div style="flex:1;padding:18px 24px;border-radius:12px;background:rgba(163,230,53,0.06);border:1px solid rgba(163,203,53,0.2);">
+<div style="font-size:20px;color:var(--neon-lime);font-weight:600;">Extension:</div>
+<div style="font-size:19px;color:var(--text-mid);">Ask user for start/end range (e.g. table 1-20)</div>
+</div>
+</div>
+<div class="chrome-brand">PY_BOOTCAMP // S03</div>
+<div class="chrome-pagenum">55 / 68</div>
+<template data-slide-notes>Project 1: Multiplication table.</template>
+</div>
+</body>
+</html>
