@@ -10,6 +10,13 @@
       "hasMaterial": true,
       "hasVideo": true
     },
+    "4": {
+      "title": "Strings",
+      "videoUrl": "https://youtu.be/xunZAqvjFXg?si=G48Q8eb5Hh6YWDgV",
+      "homework": "Build a Word Counter that counts words, characters, and sentences in a text.",
+      "hasMaterial": true,
+      "hasVideo": true
+    },
     "5": {
       "title": "Lists & Tuples",
       "videoUrl": "https://youtu.be/HpSmZ7qeOfE?si=6TAtfLjYsJACBF88",
