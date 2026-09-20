@@ -9,6 +9,13 @@
       "homework": "Create an ATM menu",
       "hasMaterial": true,
       "hasVideo": true
+    },
+    "5": {
+      "title": "Lists & Tuples",
+      "videoUrl": "https://youtu.be/HpSmZ7qeOfE?si=6TAtfLjYsJACBF88",
+      "homework": "🛒 Build a Shopping Cart Cart of [item, price] pairs. Menu: add, remove, show, total, quit. Compute total with a loop. Show the most expensive item. Hint: reuse the Grade Manager!",
+      "hasMaterial": true,
+      "hasVideo": true
     }
   }
 }
